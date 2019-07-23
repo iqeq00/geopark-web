@@ -1,4 +1,4 @@
-package com.geopark.web.base;
+package com.geopark.framework.responses;
 
 import java.util.List;
 

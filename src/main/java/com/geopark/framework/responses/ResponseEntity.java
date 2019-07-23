@@ -1,4 +1,4 @@
-package com.geopark.web.base;
+package com.geopark.framework.responses;
 
 /**
  * 后台或者前台返回的统一对象

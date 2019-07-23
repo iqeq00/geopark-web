@@ -5,10 +5,11 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.additional.query.impl.QueryChainWrapper;
 import com.geopark.web.Constants;
-import com.geopark.web.base.ResponseEntity;
-import com.geopark.web.base.ResponseList;
+import com.geopark.framework.responses.ResponseEntity;
+import com.geopark.framework.responses.ResponseList;
 import com.geopark.web.model.entity.Task;
 import com.geopark.web.service.TaskService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +19,13 @@ import java.util.Date;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author lichee
  * @since 2019-07-18
  */
+@Slf4j
 @RestController
 @RequestMapping("/task")
 public class TaskController {
@@ -33,18 +35,18 @@ public class TaskController {
 
     @GetMapping("page")
     public ResponseList<Task> page(@RequestParam(value = "page", defaultValue = "1") int pageNum,
-                                   @RequestParam(value = "limit", defaultValue = "10") int pageSize,
-                                   @RequestParam(value = "taskName", defaultValue = "") String taskName,
-                                   @RequestParam(value = "status", defaultValue = "") String status,
-                                   Date startTime,
-                                   Date endTime) {
+        @RequestParam(value = "limit", defaultValue = "10") int pageSize,
+        @RequestParam(value = "taskName", defaultValue = "") String taskName,
+        @RequestParam(value = "status", defaultValue = "") String status,
+        Date startTime, Date endTime) {
 
+        log.info("开始查询了");
         QueryChainWrapper<Task> qw = taskService.query();
         if (StringUtils.isNotBlank(taskName)) {
-            qw.like("task_name",taskName);
+            qw.like("task_name", taskName);
         }
         if (StringUtils.isNotBlank(status)) {
-            qw.eq("status",status);
+            qw.eq("status", status);
         }
         if (null != startTime) {
             qw.ge("create_time", startTime);
@@ -100,8 +102,8 @@ public class TaskController {
     public ResponseEntity<String> delete(@PathVariable("id") Integer id) {
         ResponseEntity<String> res = new ResponseEntity<>();
         try {
-            Boolean isOk = taskService.removeById(id);
-            if (isOk) {
+            Boolean s = taskService.removeById(id);
+            if (s) {
                 res.setData("成功");
             } else {
                 res.setData("失败");
