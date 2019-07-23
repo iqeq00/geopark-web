@@ -1,0 +1,7 @@
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.16.254.16:3306/zigong?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=CONVERT_TO_NULL
+    username: root
+    password: 6818799516

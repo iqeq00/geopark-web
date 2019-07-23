@@ -1,0 +1,16 @@
+package com.geopark.web.mapper;
+
+import com.geopark.web.model.entity.Geological;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+/**
+ * <p>
+ * 地质背景 Mapper 接口
+ * </p>
+ *
+ * @author lichee
+ * @since 2019-07-18
+ */
+public interface GeologicalMapper extends BaseMapper<Geological> {
+
+}
