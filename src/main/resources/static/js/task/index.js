@@ -1,10 +1,11 @@
-layui.use(['jquery', 'layer', 'table', 'form', 'lichee', 'laydate'], function () {
+layui.use(['conf', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], function () {
 
+    var conf = layui.conf;
+    var lichee = layui.lichee;
     var $ = layui.jquery;
     var layer = layui.layer;
     var table = layui.table;
     var form = layui.form;
-    var lichee = layui.lichee;
     var laydate = layui.laydate;
 
     var tableInfo = table.render({
@@ -14,10 +15,12 @@ layui.use(['jquery', 'layer', 'table', 'form', 'lichee', 'laydate'], function ()
         url: '/task/page',
         title: '任务数据表',
         page: true,
-        limit: 10,
+        request: conf.request,
+        parseData: conf.parseData,
+        response: conf.response,
         cols: [[
             {type: 'checkbox', fixed: 'left'},
-            {field: 'id', title: 'ID'},
+            // {field: 'id', title: 'ID'},
             {field: 'taskName', align: 'center', sort: true, title: '任务名称'},
             {field: 'taskDesc', align: 'center', sort: true, title: '任务描述'},
             {field: 'createTime', align: 'center', sort: true, title: '创建时间'},
@@ -58,8 +61,9 @@ layui.use(['jquery', 'layer', 'table', 'form', 'lichee', 'laydate'], function ()
         var data = obj.data;
         if (obj.event === 'del') {
             layer.confirm('确定要删除吗？', function (index) {
+                layer.load(2);
                 lichee.delete('/task/' + obj.data.id, {}, function () {
-                    layer.close(index);
+                    layer.closeAll('loading');
                     layer.msg('删除成功', {icon: 1});
                     obj.del();
                 });
@@ -75,7 +79,7 @@ layui.use(['jquery', 'layer', 'table', 'form', 'lichee', 'laydate'], function ()
             type: 1,
             area: '450px',
             offset: '120px',
-            content: $('#form'),
+            content: $('#form-model').html(),
             success: function () {
                 $('#form')[0].reset();
                 if (data) {
@@ -90,6 +94,7 @@ layui.use(['jquery', 'layer', 'table', 'form', 'lichee', 'laydate'], function ()
 
     var form = layui.form;
     form.on('submit(formSubmit)', function (data) {
+        layer.load(2);
         if (data.field.id) {
             lichee.put('/task/' + data.field.id, {data: data.field}, function (res) {
                 callFunction(res);
@@ -109,15 +114,16 @@ layui.use(['jquery', 'layer', 'table', 'form', 'lichee', 'laydate'], function ()
 
     var callFunction = function (res) {
         layer.closeAll();
-        layer.msg(res.msg);
-        if (res.code == 0) {
+        if (res.status == 200) {
+            layer.msg("修改成功",{icon: 1});
+            tableInfo.reload({where: lichee.getSearchForm()});
+        } else if(res.status == 201)  {
+            layer.msg("添加成功",{icon: 1});
             tableInfo.reload({where: lichee.getSearchForm()});
         }
     };
 
     $('#searchButton').click(function () {
-        console.log("00000");
-        console.log(lichee.getSearchForm());
         tableInfo.reload({where: lichee.getSearchForm()});
     });
 

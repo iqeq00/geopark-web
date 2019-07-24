@@ -188,7 +188,7 @@ layui.define(['jquery','layer', 'element', 'form'], function (exports) {
                     // if (token) {
                     //     xhr.setRequestHeader('Authorization', token);
                     // }
-                    console.log("这里传递token");
+                    // console.log("这里传递token");
                 }
             });
         },
@@ -217,10 +217,7 @@ layui.define(['jquery','layer', 'element', 'form'], function (exports) {
             var inputVals = $('#searchForm').find(':input').filter(function () {
                 return $.trim(this.value).length > 0;
             }).serializeArray();
-            console.log("2222");
-            console.log(inputVals);
             $(inputVals).each(function () {
-                console.log("333");
                 if (val[this.name] !== undefined) {
                     if (!Array.isArray(val[this.name])) {
                         val[this.name] = [val[this.name]];
@@ -230,10 +227,6 @@ layui.define(['jquery','layer', 'element', 'form'], function (exports) {
                     val[this.name] = this.value;
                 }
             });
-            console.log(val);
-            // if(val){
-            //     console.log("555");
-            // }
             return val;
         }
     };

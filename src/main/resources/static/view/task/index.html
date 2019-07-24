@@ -23,8 +23,8 @@
             <hr class="layui-bg-gray">
             <div class="layui-form">
 
-                    <form id="searchForm" onsubmit="return false;">
-                        <div class="layui-form-item">
+                <form id="searchForm" onsubmit="return false;">
+                    <div class="layui-form-item">
                         <div class="layui-inline">
                             <label class="layui-form-labelLeft">任务名称</label>
                             <div class="layui-input-inline">
@@ -43,9 +43,9 @@
                                 </select>
                             </div>
                         </div>
-                        </div>
+                    </div>
 
-                            <div class="layui-form-item">
+                    <div class="layui-form-item">
                         <div class="layui-inline">
                             <label class="layui-form-labelLeft">开始时间</label>
                             <div class="layui-input-inline">
@@ -60,24 +60,26 @@
                             </div>
                         </div>
 
-
                         <div class="layui-inline">
                             <div class="layui-input-inline">
-                                <button id="searchButton" class="layui-btn icon-btn layui-btn-sm"><i class="layui-icon">&#xe615;</i>搜索</button>
+                                <button id="searchButton" class="layui-btn icon-btn layui-btn-sm"><i class="layui-icon">&#xe615;</i>搜索
+                                </button>
                             </div>
                         </div>
-                        </div>
-                    </form>
+                    </div>
+                </form>
 
             </div>
 
             <table class="" id="table" lay-filter="tableFilter"></table>
+
             <script type="text/html" id="toolbar">
-                <a class="layui-btn layui-btn-sm" lay-event="add">添加</a>
+                <a class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon"></i>添加</a>
             </script>
+
             <script type="text/html" id="bar">
-                <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon"></i>编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon"></i>删除</a>
             </script>
 
         </div>
@@ -85,40 +87,40 @@
     <script type="text/javascript" src="/view/layout/footer.js"></script>
 </div>
 <script type="text/javascript" src="/view/layout/scripts.js"></script>
-<script type="text/javascript" src="/js/task/task.js"></script>
+<script type="text/javascript" src="/js/task/index.js"></script>
 
-<form id="form" lay-filter="formFilter" class="layui-form layui-form-pane" style="display:none;padding:10px;">
-    <input type="hidden" name="id" />
-    <div class="layui-form-item">
-        <label class="layui-form-label">任务名称</label>
-        <div class="layui-input-block">
-            <input type="text" name="taskName" lay-verify="required|nameLength"
-                   lay-verType="tips" placeholder="任务名称" autocomplete="off" class="layui-input">
+<script type="text/html" id="form-model">
+    <form id="form" lay-filter="formFilter" class="layui-form model-form">
+        <input type="hidden" id="id" name="id"/>
+        <div class="layui-form-item">
+            <label class="layui-form-label">任务名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="taskName" lay-verify="required|nameLength" lay-verType="tips" placeholder="任务名称" autocomplete="off" class="layui-input">
+            </div>
         </div>
-    </div>
 
-    <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">任务描述</label>
-        <div class="layui-input-block">
-            <textarea name="taskDesc" lay-verify="required|descrLength" placeholder="任务描述" class="layui-textarea"></textarea>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">任务描述</label>
+            <div class="layui-input-block">
+                <textarea name="taskDesc" lay-verify="required|descrLength" placeholder="任务描述" class="layui-textarea"></textarea>
+            </div>
         </div>
-    </div>
 
-
-    <div class="layui-form-item">
-        <label class="layui-form-label">任务状态</label>
-        <div class="layui-input-block">
-            <input type="radio" name="status" value="1" title="任务未开始" checked/>
-            <input type="radio" name="status" value="2" title="任务进行中"/>
-            <input type="radio" name="status" value="3" title="任务完成"/>
-            <input type="radio" name="status" value="4" title="任务失败"/>
+        <div class="layui-form-item">
+            <label class="layui-form-label">任务状态</label>
+            <div class="layui-input-block">
+                <input type="radio" name="status" value="1" title="任务未开始" checked/>
+                <input type="radio" name="status" value="2" title="任务进行中"/>
+                <input type="radio" name="status" value="3" title="任务完成"/>
+                <input type="radio" name="status" value="4" title="任务失败"/>
+            </div>
         </div>
-    </div>
-    <div class="layui-form-item layui-layer-btn" >
-        <button class="layui-btn layui-btn-sm" lay-filter="formSubmit" lay-submit>保存</button>
-        <button class="layui-btn layui-btn-sm layui-btn-primary close" type="button">取消</button>
-    </div>
+        <div class="layui-form-item layui-layer-btn">
+            <button class="layui-btn layui-btn-sm" lay-filter="formSubmit" lay-submit>保存</button>
+            <button class="layui-btn layui-btn-sm layui-btn-primary close" type="button">取消</button>
+        </div>
+    </form>
+</script>
 
-</form>
 </body>
 </html>

@@ -57,7 +57,7 @@
     </Appenders>
     <Loggers>
         <!--AsyncLogger-->
-        <AsyncLogger name="com.geopark.web" level="info" includeLocation="true"/>
+        <AsyncLogger name="com.geopark" level="info" includeLocation="true"/>
         <AsyncLogger name="com.geopark.framework.p6spy" level="debug" includeLocation="true"/>
         <!--AsyncRoot-->
         <AsyncRoot level="warn" includeLocation="true">

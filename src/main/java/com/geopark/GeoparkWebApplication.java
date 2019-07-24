@@ -1,4 +1,4 @@
-package com.geopark.web;
+package com.geopark;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
