@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 业务异常枚举
  *
- * @author Caratacus
+ * @author lichee
  */
 public enum ErrorCodeEnum {
 

@@ -2,6 +2,7 @@ package com.geopark.web.mapper;
 
 import com.geopark.web.model.entity.Menu;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @author lichee
  * @since 2019-07-18
  */
+@Mapper
 public interface MenuMapper extends BaseMapper<Menu> {
 
 }

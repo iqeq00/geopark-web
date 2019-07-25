@@ -15,10 +15,6 @@ import java.io.InputStreamReader;
 
 /**
  * Request包装类
- * <p>
- * 1.预防xss攻击
- * 2.拓展requestbody无限获取(HttpServletRequestWrapper只能获取一次)
- * </p>
  *
  * @author lichee
  */

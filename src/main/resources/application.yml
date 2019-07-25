@@ -6,6 +6,8 @@ server:
 spring:
   profiles:
     active: dev
+  main:
+    banner-mode: "off"
   application:
     name: lichee
     mandatory-file-encoding: UTF-8
@@ -32,11 +34,8 @@ spring:
       enabled: true
       charset: UTF-8
 
-
 mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.geopark.web.model.entity,com.geopark.web.model.vo
   global-config:
     banner: false
-  #configuration:
-    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

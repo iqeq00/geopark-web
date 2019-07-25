@@ -5,6 +5,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+/**
+ * ApplicationContextRegister
+ *
+ * @author lichee
+ */
 @Component
 public class ApplicationContextRegister implements ApplicationContextAware {
 

@@ -15,10 +15,9 @@ import java.util.Objects;
 import java.util.TimeZone;
 
 /**
- * 修改fastjson类型转换
+ * fastjson type
  *
- * @author Caratacus
- * https://github.com/alibaba/fastjson/blob/master/src/main/java/com/alibaba/fastjson/util/TypeUtils.java
+ * @author lichee
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public abstract class TypeUtils {

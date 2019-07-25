@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
  * 菜单树DTO
  * </p>
  *
- * @author Mybatis Plus
+ * @author lichee
  */
 @Data
 @NoArgsConstructor

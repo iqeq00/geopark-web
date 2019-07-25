@@ -1,6 +1,6 @@
 var headerJs = [
     '<div class="layui-header">',
-    '   <div class="layui-logo">地址公园管理后台</div>',
+    '   <div class="layui-logo">自然研究院资产管理后台</div>',
     '	    <ul class="layui-nav layui-layout-right">',
     '		    <li class="layui-nav-item">',
     '		        <a href="javascript:;">',

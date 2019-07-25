@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * P6spy Log Impl
  *
- * @author Caratacus
+ * @author lichee
  * @see com.p6spy.engine.spy.appender.FormattedLogger
  */
 @Slf4j

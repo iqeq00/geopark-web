@@ -7,28 +7,9 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * AntiSQLFilter is a J2EE Web Application Filter that protects web components from SQL Injection hacker attacks.<br>
- * Must to be configured with web.xml descriptors.
- * <br><br>
- * Below, the filter initialization parameters to configure:
- * <br><br>
- * <b>logging</b> - a <i>true</i> value enables output to Servlet Context logging in case of a SQL Injection detection.
- * Defaults to <i>false</i>.
- * <br><br>
- * <b>behavior</b> - there are three possible behaviors in case of a SQL Injection detection:
- * <li> protect : (default) dangerous SQL keywords are 2nd character supressed /
- * dangerous SQL delimitters are blank space replaced.
- * Afterwards the request flows as expected.
- * <li> throw: a ServletException is thrown - breaking the request flow.
- * <li> forward: thre request is forwarded to a specific resource.
- * <br><br>
- * <b>forwardTo</b> - the resource to forward when forward behavior is set.<br>
- * <P>
- * http://antisqlfilter.sourceforge.net/
- * </p>
+ * AntiSQLFilter
  *
- * @author rbellia
- * @version 0.1
+ * @author lichee
  */
 public class AntiSQLFilter {
 
