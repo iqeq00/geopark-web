@@ -18,6 +18,7 @@ logs/
 
 ### IntelliJ IDEA ###
 .idea
+.svn
 .mvn
 *.iws
 *.iml
