@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>自然研究院资产管理后台</title>
+    <title>地址公园管理后台</title>
     <script type="text/javascript" src="/view/layout/css.js"></script>
 </head>
 <body class="layui-layout-body">
@@ -17,7 +17,7 @@
         <div style="padding: 15px;">
 
             <div class="layui-card-header">
-                <h2 class="header-title">资产管理</h2>
+                <h2 class="header-title">公园管理</h2>
             </div>
 
             <hr class="layui-bg-gray">
@@ -26,20 +26,20 @@
                 <form id="searchForm" onsubmit="return false;">
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-labelLeft">资产名称</label>
+                            <label class="layui-form-labelLeft">公园名称</label>
                             <div class="layui-input-inline">
                                 <input name="taskName" class="layui-input search-input" type="text" placeholder="请输入名称" autocomplete="off"/>
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label class="layui-form-labelLeft">资产状态</label>
+                            <label class="layui-form-labelLeft">公园状态</label>
                             <div class="layui-input-inline">
                                 <select name="status" lay-verify="" placeholder="请选择状态">
                                     <option value="">请选择状态</option>
-                                    <option value="1">资产未开始</option>
-                                    <option value="2">资产进行中</option>
-                                    <option value="3">资产完成</option>
-                                    <option value="4">资产失败</option>
+                                    <option value="1">公园未开始</option>
+                                    <option value="2">公园进行中</option>
+                                    <option value="3">公园完成</option>
+                                    <option value="4">公园失败</option>
                                 </select>
                             </div>
                         </div>
@@ -94,26 +94,26 @@
         <form id="form" lay-filter="formFilter" class="layui-form model-form ">
             <input type="hidden" id="id" name="id"/>
             <div class="layui-form-item">
-                <label class="layui-form-label">资产名称</label>
+                <label class="layui-form-label">公园名称</label>
                 <div class="layui-input-block">
-                    <input type="text" name="taskName" lay-verify="required|nameLength" lay-verType="tips" placeholder="资产名称" autocomplete="off" class="layui-input">
+                    <input type="text" name="taskName" lay-verify="required|nameLength" lay-verType="tips" placeholder="公园名称" autocomplete="off" class="layui-input">
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">资产描述</label>
+                <label class="layui-form-label">公园描述</label>
                 <div class="layui-input-block">
-                    <textarea name="taskDesc" lay-verify="required|descrLength" placeholder="资产描述" class="layui-textarea"></textarea>
+                    <textarea name="taskDesc" lay-verify="required|descrLength" placeholder="公园描述" class="layui-textarea"></textarea>
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">资产状态</label>
+                <label class="layui-form-label">公园状态</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="status" value="1" title="资产未开始" checked/>
-                    <input type="radio" name="status" value="2" title="资产进行中"/>
-                    <input type="radio" name="status" value="3" title="资产完成"/>
-                    <input type="radio" name="status" value="4" title="资产失败"/>
+                    <input type="radio" name="status" value="1" title="公园未开始" checked/>
+                    <input type="radio" name="status" value="2" title="公园进行中"/>
+                    <input type="radio" name="status" value="3" title="公园完成"/>
+                    <input type="radio" name="status" value="4" title="公园失败"/>
                 </div>
             </div>
             <div class="layui-form-item layui-layer-btn">

@@ -13,7 +13,7 @@ layui.use(['conf', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], fun
         toolbar: '#toolbar',
         defaultToolbar: [],
         url: '/task/page',
-        title: '资产数据表',
+        title: '公园数据表',
         page: true,
         request: conf.request,
         parseData: conf.parseData,
@@ -21,19 +21,19 @@ layui.use(['conf', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], fun
         cols: [[
             {type: 'checkbox', fixed: 'left'},
             // {field: 'id', title: 'ID'},
-            {field: 'taskName', align: 'center', sort: true, title: '资产名称'},
-            {field: 'taskDesc', align: 'center', sort: true, title: '资产描述'},
+            {field: 'taskName', align: 'center', sort: true, title: '公园名称'},
+            {field: 'taskDesc', align: 'center', sort: true, title: '公园描述'},
             {field: 'createTime', align: 'center', sort: true, title: '创建时间'},
             {
                 minWidth: 80, align: 'center', templet: function (d) {
                     if (d.status == 1) {
-                        return '<span class="layui-badge layui-bg-gray">资产未开始</span>';
+                        return '<span class="layui-badge layui-bg-gray">公园未开始</span>';
                     } else if (d.status == 2) {
-                        return '<span class="layui-badge layui-bg-blue">资产进行中</span>';
+                        return '<span class="layui-badge layui-bg-blue">公园进行中</span>';
                     } else if (d.status == 3) {
-                        return '<span class="layui-badge layui-bg-green">资产完成</span>';
+                        return '<span class="layui-badge layui-bg-green">公园完成</span>';
                     } else if (d.status == 4) {
-                        return '<span class="layui-badge layui-bg-red">资产失败</span>';
+                        return '<span class="layui-badge layui-bg-red">公园失败</span>';
                     }
                 }, title: '状态'
             },

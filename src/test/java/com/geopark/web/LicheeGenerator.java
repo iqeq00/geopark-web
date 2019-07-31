@@ -129,15 +129,15 @@ public class LicheeGenerator {
     private void setSuperClass(StrategyConfig strategy) {
 
         //自定义实体父类
-//        strategy.setSuperEntityClass("com.lichee.core.model.BaseModel");
+//        strategy.setSuperEntityClass("com.geopark.framework.model.BaseModel");
         //自定义 mapper 父类
-//        strategy.setSuperMapperClass("com.lichee.core.mapper.BaseMapper");
+//        strategy.setSuperMapperClass("com.geopark.framework.mapper.BaseMapper");
         //自定义 controller 父类
-//        strategy.setSuperControllerClass("com.lichee.core.controller.SuperController");
+        strategy.setSuperControllerClass("com.geopark.framework.controller.SuperController");
         //自定义 service 实现类父类
-//        strategy.setSuperServiceImplClass("com.lichee.core.service.impl.BaseServiceImpl");
+//        strategy.setSuperServiceImplClass("com.geopark.framework.service.impl.BaseServiceImpl");
         //自定义 service 接口父类
-//        strategy.setSuperServiceClass("com.lichee.core.service.BaseService");
+//        strategy.setSuperServiceClass("com.geopark.framework.service.BaseService");
 
 
     }
