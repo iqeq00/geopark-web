@@ -1,7 +1,7 @@
 package com.geopark.web.service;
 
-import com.geopark.web.model.entity.Humanlandscape;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.geopark.web.model.entity.Humanlandscape;
 
 /**
  * <p>
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author lichee
- * @since 2019-07-18
+ * @since 2019-07-31
  */
 public interface HumanlandscapeService extends IService<Humanlandscape> {
 

@@ -1,8 +1,11 @@
 package com.geopark.web.mapper;
 
-import com.geopark.web.model.entity.SysResource;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
+import com.geopark.web.model.entity.SysResource;
+import com.geopark.web.model.vo.ResourcePermVo;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -10,9 +13,23 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author lichee
- * @since 2019-07-18
+ * @since 2019-07-31
  */
-@Mapper
 public interface SysResourceMapper extends BaseMapper<SysResource> {
 
+    /**
+     * 获取用户权限
+     *
+     * @param id
+     * @return
+     */
+    List<ResourcePermVo> getUserResourcePerms(@Param("id") Integer id);
+
+    /**
+     * 获取用户菜单资源权限
+     *
+     * @param id
+     * @return
+     */
+    List<ResourcePermVo> getUserMenuResourcePerms(@Param("id") Integer id);
 }

@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @author lichee
- * @since 2019-07-19
+ * @since 2019-07-31
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -49,10 +49,10 @@ public class Task implements Serializable {
 
     /**
      * 状态：
-     1. 任务未开始
-     2. 任务进行中
-     3. 任务完成
-     4. 任务失败
+1. 任务未开始
+2. 任务进行中
+3. 任务完成
+4. 任务失败
      */
     private Integer status;
 

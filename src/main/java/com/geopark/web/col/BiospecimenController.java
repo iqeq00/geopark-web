@@ -1,8 +1,8 @@
 package com.geopark.web.col;
 
 
+import com.geopark.framework.controller.SuperController;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author lichee
- * @since 2019-07-18
+ * @since 2019-07-31
  */
 @RestController
 @RequestMapping("/biospecimen")
-public class BiospecimenController {
+public class BiospecimenController extends SuperController {
 
 }

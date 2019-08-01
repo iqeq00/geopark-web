@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 /**
  * <p>
  * 权限 资源DTO
@@ -21,5 +23,7 @@ public class ResourcePermVo {
     private String method;
 
     private String mapping;
+
+    private LocalDateTime updateTime;
 
 }

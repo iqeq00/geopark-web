@@ -1,8 +1,7 @@
 package com.geopark.web.mapper;
 
-import com.geopark.web.model.entity.SysRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
+import com.geopark.web.model.entity.SysRole;
 
 /**
  * <p>
@@ -10,9 +9,8 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author lichee
- * @since 2019-07-18
+ * @since 2019-07-31
  */
-@Mapper
 public interface SysRoleMapper extends BaseMapper<SysRole> {
 
 }

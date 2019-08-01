@@ -1,10 +1,12 @@
 package com.geopark.web.col;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.additional.query.impl.QueryChainWrapper;
+import com.baomidou.mybatisplus.extension.service.additional.query.impl.LambdaQueryChainWrapper;
 import com.geopark.framework.controller.SuperController;
 import com.geopark.framework.responses.ApiResponses;
 import com.geopark.web.model.entity.Task;
+import com.geopark.web.model.vo.ResourcePermVo;
+import com.geopark.web.service.SysResourceService;
 import com.geopark.web.service.TaskService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -31,26 +34,35 @@ public class TaskController extends SuperController {
     @Autowired
     private TaskService taskService;
 
+    @Autowired
+    private SysResourceService sysResourceService;
+
     @GetMapping("page")
     public ApiResponses<IPage<Task>> page(
             @RequestParam(value = "taskName", defaultValue = "") String taskName,
             @RequestParam(value = "status", defaultValue = "") String status,
             Date startTime, Date endTime) {
 
-        QueryChainWrapper<Task> qw = taskService.query();
+        LambdaQueryChainWrapper<Task> qw = taskService.lambdaQuery();
         if (StringUtils.isNotBlank(taskName)) {
-            qw.like("task_name", taskName);
+            qw.like(Task::getTaskName, taskName);
         }
         if (StringUtils.isNotBlank(status)) {
-            qw.eq("status", status);
+            qw.eq(Task::getStatus, status);
         }
         if (null != startTime) {
-            qw.ge("create_time", startTime);
+            qw.ge(Task::getCreateTime, startTime);
         }
         if (null != endTime) {
-            qw.le("create_time", endTime);
+            qw.le(Task::getCreateTime, endTime);
         }
         return success(qw.page(this.<Task>getPage()));
+    }
+
+    @GetMapping("list")
+    public ApiResponses<List<ResourcePermVo>> list() {
+
+        return success(sysResourceService.getResourcePerms("GET"));
     }
 
     @PostMapping
@@ -75,6 +87,8 @@ public class TaskController extends SuperController {
         taskService.removeById(id);
         return success(HttpStatus.NO_CONTENT);
     }
+
+
 
 
 }

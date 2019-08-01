@@ -2,4 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.geopark.web.mapper.SysResourceMapper">
 
+    <select id="getUserResourcePerms" resultType="ResourcePermVo">
+        SELECT
+            sr.mapping,
+            sr.method
+        FROM
+            sys_resource sr
+                LEFT JOIN sys_role_resource srr ON srr.resource_id = sr.id
+                LEFT JOIN sys_user_role sur ON sur.role_id = srr.role_id
+        WHERE
+            sur.id = #{id}
+          AND sr.auth_type = 3
+    </select>
+
+    <select id="getUserMenuResourcePerms" resultType="ResourcePermVo">
+        SELECT
+            sr.mapping,
+            sr.method
+        FROM
+            sys_resource sr
+                LEFT JOIN sys_menu_resource smr ON smr.resource_id = sr.id
+                LEFT JOIN sys_role_menu srm ON smr.menu_id = srm.menu_id
+                LEFT JOIN sys_user_role sur ON sur.role_id = srm.role_id
+        WHERE
+            sur.id = 1
+    </select>
+
 </mapper>
