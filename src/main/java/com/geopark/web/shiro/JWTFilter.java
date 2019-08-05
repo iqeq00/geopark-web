@@ -35,6 +35,10 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     private UrlPathHelper urlPathHelper;
     private String contextPath;
 
+    /**
+     * 这里重写了父类的方法，使用我们自己定义的Token类，提交给shiro。
+     * 这个方法返回null的话会直接抛出异常，进入isAccessAllowed（）的异常处理逻辑。
+     */
     @Override
     protected AuthenticationToken createToken(ServletRequest servletRequest, ServletResponse servletResponse) {
         //获取请求token
@@ -45,6 +49,14 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         return StringUtils.isBlank(token) ? null : new JWTToken(token);
     }
 
+    /**
+     * 执行登录认证
+     *
+     * @param request
+     * @param response
+     * @param mappedValue
+     * @return
+     */
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         request.setAttribute(APICons.API_BEGIN_TIME, System.currentTimeMillis());
@@ -93,6 +105,10 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 
     }
 
+    /**
+     * 如果这个Filter在之前isAccessAllowed（）方法中返回false,则会进入这个方法。
+     * 我们这里直接返回错误的response
+     */
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) {
         HttpServletResponse httpResponse = WebUtils.toHttp(response);
@@ -106,6 +122,10 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         }
     }
 
+    /**
+     * 如果调用shiro的login认证失败，会回调这个方法，
+     * 因为逻辑放到了onAccessDenied（）中。
+     */
     @Override
     protected boolean onLoginFailure(AuthenticationToken token, AuthenticationException e, ServletRequest request, ServletResponse response) {
         return sendUnauthorizedFail(request, response);

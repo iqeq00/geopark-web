@@ -1,6 +1,7 @@
 package com.geopark.web.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.geopark.framework.enums.AuthTypeEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -44,7 +45,7 @@ public class SysResource implements Serializable {
     /**
      * 权限认证类型
      */
-    private Integer authType;
+    private AuthTypeEnum authType;
 
     private LocalDateTime updateTime;
 

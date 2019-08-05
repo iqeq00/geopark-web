@@ -35,11 +35,17 @@ public class JWTRealm extends AuthorizingRealm {
     @Autowired
     private SysResourceService resourceService;
 
+    /**
+     * 限定这个Realm只支持我们自定义的JWT Token
+     */
     @Override
     public boolean supports(AuthenticationToken token) {
         return token instanceof JWTToken;
     }
 
+    /**
+     * 只有当需要检测用户权限的时候才会调用此方法，例如checkRole,checkPermission之类的
+     */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         Integer uid = JWTUtils.getUid(principals.toString());
@@ -50,6 +56,9 @@ public class JWTRealm extends AuthorizingRealm {
         return simpleAuthorizationInfo;
     }
 
+    /**
+     * 更controller登录一样，也是获取用户的salt值，给到shiro，由shiro来调用matcher来做认证
+     */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken auth) throws AuthenticationException {
         String token = (String) auth.getPrincipal();

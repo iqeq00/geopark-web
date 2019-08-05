@@ -37,5 +37,6 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.geopark.web.model.entity,com.geopark.web.model.vo
+  type-enums-package: com.geopark.framework.enums
   global-config:
     banner: false
