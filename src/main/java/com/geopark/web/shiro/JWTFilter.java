@@ -59,16 +59,18 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
      */
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
+
         request.setAttribute(APICons.API_BEGIN_TIME, System.currentTimeMillis());
         HttpServletRequest httpRequest = WebUtils.toHttp(request);
         HttpServletResponse httpResponse = WebUtils.toHttp(response);
 
         String token = getToken(httpRequest);
         String method = httpRequest.getMethod();
-        String requestUri = urlPathHelper.getOriginatingRequestUri(httpRequest);
+        String requestUri = urlPathHelper.getOriginatingRequestUri(httpRequest);//获取原始请求URI
         if (StringUtils.isNotEmpty(contextPath)) {
-            requestUri = requestUri.replaceFirst(contextPath, "");
+            requestUri = requestUri.replaceFirst(contextPath, "");//去掉contextpath
         }
+        //查询最小的mapping
         Optional<String> optional = resourceService.getResourcePerms(method)
                 .stream()
                 .filter(match(method, requestUri))
@@ -76,27 +78,38 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
                 .min(pathMatcher.getPatternComparator(requestUri));
         request.setAttribute(APICons.API_REQURL, requestUri);
         request.setAttribute(APICons.API_METHOD, method);
+        //如果不为空就返回mapping，为空就返回notfound
         if (optional.isPresent()) {
             request.setAttribute(APICons.API_MAPPING, optional.get());
         } else {
             httpResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return false;
         }
+        //如果token为空
         if (Objects.isNull(token)) {
+            //查询无需鉴权的列表
             List<ResourcePermVo> openPerms = resourceService.getOpenPerms();
+            //判断当前的uri，是否存在于无需鉴权的列表中任意一个都可以，
             boolean match = anyMatch(openPerms, method, requestUri);
+            //有权限返回true，没权限就报错401
             if (!match) {
+                //不满足就是没有权限
                 httpResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             }
             return match;
         }
+        //是否是登录请求
         if (isLoginRequest(request, response)) {
+            //执行登录
             if (executeLogin(request, response)) {
                 Integer uid = JWTUtils.getUid(token);
                 request.setAttribute(APICons.API_UID, uid);
+                //获得登录用户的所有权限
                 Set<ResourcePermVo> perms = resourceService.getUserResourcePerms(uid);
+                //只要包含其一就返回
                 return anyMatch(perms, method, requestUri);
             } else {
+                //登录执行失败，直接返回
                 httpResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 return sendUnauthorizedFail(request, response);
             }

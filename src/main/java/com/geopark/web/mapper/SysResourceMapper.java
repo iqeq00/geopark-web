@@ -23,7 +23,7 @@ public interface SysResourceMapper extends BaseMapper<SysResource> {
      * @param id
      * @return
      */
-    List<ResourcePermVo> getUserResourcePerms(@Param("id") Integer id);
+    List<ResourcePermVo> getUserResourcePerms(@Param("uid") Integer uid);
 
     /**
      * 获取用户菜单资源权限
@@ -31,5 +31,5 @@ public interface SysResourceMapper extends BaseMapper<SysResource> {
      * @param id
      * @return
      */
-    List<ResourcePermVo> getUserMenuResourcePerms(@Param("id") Integer id);
+    List<ResourcePermVo> getUserMenuResourcePerms(@Param("uid") Integer uid);
 }

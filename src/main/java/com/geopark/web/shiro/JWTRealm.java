@@ -44,7 +44,7 @@ public class JWTRealm extends AuthorizingRealm {
     }
 
     /**
-     * 只有当需要检测用户权限的时候才会调用此方法，例如checkRole,checkPermission之类的
+     * 只有当需要检测用户权限的时候才会调用此方法，鉴权
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
@@ -57,7 +57,7 @@ public class JWTRealm extends AuthorizingRealm {
     }
 
     /**
-     * 更controller登录一样，也是获取用户的salt值，给到shiro，由shiro来调用matcher来做认证
+     * 默认使用此方法进行用户名正确与否验证，错误抛出异常即可。
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken auth) throws AuthenticationException {

@@ -64,8 +64,11 @@ public class SysResourceServiceImpl extends ServiceImpl<SysResourceMapper, SysRe
 
     @Override
     public Set<ResourcePermVo> getUserResourcePerms(Integer uid) {
+        //查询权限（登录、开放）
         List<ResourcePermVo> perms = getPerms(AuthTypeEnum.OPEN, AuthTypeEnum.LOGIN);
+        //查询权限（需要鉴定是否包含权限）
         List<ResourcePermVo> resourcePerms = baseMapper.getUserResourcePerms(uid);
+        //查询菜单权限
         List<ResourcePermVo> userMenuResourcePerms = getUserMenuResourcePerms(uid);
         perms.addAll(resourcePerms);
         perms.addAll(userMenuResourcePerms);
