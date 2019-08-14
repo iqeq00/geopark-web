@@ -1,12 +1,11 @@
-package com.geopark.web.service;
+package com.geopark.web.cpt;
 
 import com.baomidou.mybatisplus.core.toolkit.ArrayUtils;
-//import io.swagger.annotations.ApiOperation;
-import liquibase.util.MD5Util;
-//import org.crown.common.annotations.Resources;
-//import org.crown.model.entity.Resource;
+import com.geopark.framework.annotations.ApiOperation;
+import com.geopark.web.service.SysResourceService;
 import com.geopark.framework.annotations.Resources;
 import com.geopark.web.model.entity.SysResource;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -68,7 +67,7 @@ public class ScanMappings {
         if (Objects.isNull(requestMappingAnnotation) && Objects.isNull(methodMappingAnnotation)) {
             return Collections.emptyList();
         }
-//        ApiOperation apiOperation = handlerMethod.getMethodAnnotation(ApiOperation.class);
+        ApiOperation apiOperation = handlerMethod.getMethodAnnotation(ApiOperation.class);
         String[] requestMappings = Objects.nonNull(requestMappingAnnotation) ? requestMappingAnnotation.value() : emptyArray;
         String[] methodMappings = Objects.nonNull(methodMappingAnnotation) ? methodMappingAnnotation.path() : emptyArray;
         RequestMethod[] method = Objects.nonNull(methodMappingAnnotation) ? methodMappingAnnotation.method() : new RequestMethod[0];
@@ -85,15 +84,18 @@ public class ScanMappings {
             for (String mapping : mappings) {
                 //接口描述
                 SysResource resource = new SysResource();
-//                resource.setResourceName(Objects.nonNull(apiOperation) ? apiOperation.value() : "未命名资源路径");
+                resource.setResourceName(apiOperation.value());
                 resource.setMapping(mapping);
                 resource.setMethod(requestMethod.name());
-                resource.setAuthType(res.auth());
+                resource.setAuthType(res.value().getValue());
                 resource.setPerm(resourceService.getResourcePermTag(requestMethod.name(), mapping));
-                resource.setId(MD5Util.computeMD5(resource.getPerm()));
+                resource.setId(DigestUtils.md5Hex(resource.getPerm()));
                 resources.add(resource);
             }
         }
+//        resources.forEach(resource -> {
+//            System.out.println(resource.toString());
+//        });
         return resources;
     }
 

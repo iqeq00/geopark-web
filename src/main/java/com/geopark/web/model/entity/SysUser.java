@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @author lichee
- * @since 2019-07-31
+ * @since 2019-08-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -26,8 +26,8 @@ public class SysUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "uid", type = IdType.AUTO)
+    private Integer uid;
 
     /**
      * 用户名
@@ -80,7 +80,7 @@ public class SysUser implements Serializable {
     private String ip;
 
 
-    public static final String ID = "id";
+    public static final String UID = "uid";
 
     public static final String NICKNAME = "nickname";
 

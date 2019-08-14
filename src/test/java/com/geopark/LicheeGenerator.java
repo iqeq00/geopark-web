@@ -1,4 +1,4 @@
-package com.geopark.web;
+package com.geopark;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.FieldFill;

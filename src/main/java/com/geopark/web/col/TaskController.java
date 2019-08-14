@@ -2,7 +2,10 @@ package com.geopark.web.col;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.additional.query.impl.LambdaQueryChainWrapper;
+import com.geopark.framework.annotations.ApiOperation;
+import com.geopark.framework.annotations.Resources;
 import com.geopark.framework.controller.SuperController;
+import com.geopark.framework.enums.AuthTypeEnum;
 import com.geopark.framework.responses.ApiResponses;
 import com.geopark.web.model.entity.Task;
 import com.geopark.web.model.vo.ResourcePermVo;
@@ -37,7 +40,9 @@ public class TaskController extends SuperController {
     @Autowired
     private SysResourceService sysResourceService;
 
-    @GetMapping("page")
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation("任务列表分页查询")
+    @GetMapping("/page")
     public ApiResponses<IPage<Task>> page(
             @RequestParam(value = "taskName", defaultValue = "") String taskName,
             @RequestParam(value = "status", defaultValue = "") String status,
@@ -59,12 +64,14 @@ public class TaskController extends SuperController {
         return success(qw.page(this.<Task>getPage()));
     }
 
-    @GetMapping("list")
-    public ApiResponses<List<ResourcePermVo>> list() {
+//    @GetMapping("list")
+//    public ApiResponses<List<ResourcePermVo>> list() {
+//
+//        return success(sysResourceService.getResourcePerms("GET"));
+//    }
 
-        return success(sysResourceService.getResourcePerms("GET"));
-    }
-
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation("任务保存")
     @PostMapping
     public ApiResponses<Void> save(@RequestBody Task task) {
 
@@ -73,6 +80,8 @@ public class TaskController extends SuperController {
         return success(HttpStatus.CREATED);
     }
 
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation("任务更新")
     @PutMapping("/{id}")
     public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody Task task) {
 
@@ -81,14 +90,12 @@ public class TaskController extends SuperController {
         return success();
     }
 
-
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation("任务删除")
     @DeleteMapping("/{id}")
     public ApiResponses<Void> delete(@PathVariable("id") Integer id) {
         taskService.removeById(id);
         return success(HttpStatus.NO_CONTENT);
     }
-
-
-
 
 }

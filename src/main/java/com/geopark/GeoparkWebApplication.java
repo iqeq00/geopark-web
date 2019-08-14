@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.geopark.web.mapper")
 public class GeoparkWebApplication {
 
-
 	public static void main(String[] args) {
 
 		SpringApplication.run(GeoparkWebApplication.class, args);

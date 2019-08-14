@@ -5,7 +5,7 @@ import com.geopark.framework.enums.AuthTypeEnum;
 import java.lang.annotation.*;
 
 /**
- * 权限认证注解
+ * 权限认证 注解
  *
  * @author lichee
  */
@@ -19,5 +19,6 @@ public @interface Resources {
      *
      * @see AuthTypeEnum
      */
-    AuthTypeEnum auth() default AuthTypeEnum.OPEN;
+    AuthTypeEnum value() default AuthTypeEnum.AUTH;
+
 }
