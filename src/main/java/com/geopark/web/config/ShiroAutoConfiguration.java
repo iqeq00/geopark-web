@@ -26,7 +26,7 @@ import java.util.Map;
  *
  * @author lichee
  */
-//@Configuration
+@Configuration
 public class ShiroAutoConfiguration {
 
     @Value("${server.servlet.context-path:/}")

@@ -31,7 +31,7 @@ import java.util.List;
  */
 @Slf4j
 @RestController
-@RequestMapping("task")
+@RequestMapping("/task")
 public class TaskController extends SuperController {
 
     @Autowired
@@ -40,7 +40,7 @@ public class TaskController extends SuperController {
     @Autowired
     private SysResourceService sysResourceService;
 
-    @Resources(AuthTypeEnum.LOGIN)
+    @Resources(AuthTypeEnum.OPEN)
     @ApiOperation("任务列表分页查询")
     @GetMapping("/page")
     public ApiResponses<IPage<Task>> page(
@@ -80,7 +80,7 @@ public class TaskController extends SuperController {
         return success(HttpStatus.CREATED);
     }
 
-    @Resources(AuthTypeEnum.LOGIN)
+    @Resources(AuthTypeEnum.AUTH)
     @ApiOperation("任务更新")
     @PutMapping("/{id}")
     public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody Task task) {

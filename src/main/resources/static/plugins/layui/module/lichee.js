@@ -176,7 +176,7 @@ layui.define(['jquery','layer', 'element', 'form'], function (exports) {
                     if (xhr.responseJSON.error === 'UNAUTHORIZED') {
                         // config.removeAll();
                         layer.msg('登录过期', {icon: 2}, function () {
-                            location.href = '/login.html';
+                            location.href = '/view/login.html';
                         });
                         return false;
                     }
