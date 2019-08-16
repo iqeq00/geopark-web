@@ -24,74 +24,74 @@ layui.define(function (exports) {
         },
         // 清空本地缓存
         removeAll: function () {
-            layui.data(config.scope, null);
+            layui.data(conf.scope, null);
         },
         // 获取缓存的token
         getToken: function () {
-            var token = layui.data(config.scope).token;
+            var token = layui.data(conf.scope).token;
             if (token) {
                 return JSON.parse(token);
             }
         },
         // 缓存token
         putToken: function (token) {
-            layui.data(config.scope, {
+            layui.data(conf.scope, {
                 key: 'token',
                 value: JSON.stringify('Bearer ' + token)
             });
         },
         // 获取缓存的菜单
         getMenus: function () {
-            var menus = layui.data(config.scope).menus;
+            var menus = layui.data(conf.scope).menus;
             if (menus) {
                 return JSON.parse(menus);
             }
         },
         // 缓存菜单
         putMenus: function (menus) {
-            layui.data(config.scope, {
+            layui.data(conf.scope, {
                 key: 'menus',
                 value: JSON.stringify(menus)
             });
         },
         // 获取缓存的权限按钮
         getPermButtons: function () {
-            var permButtons = layui.data(config.scope).permButtons;
+            var permButtons = layui.data(conf.scope).permButtons;
             if (permButtons) {
                 return JSON.parse(permButtons);
             }
         },
         // 缓存权限按钮
         putPermButtons: function (permButtons) {
-            layui.data(config.scope, {
+            layui.data(conf.scope, {
                 key: 'permButtons',
                 value: JSON.stringify(permButtons)
             });
         },
         // 获取缓存的token
         getUid: function () {
-            var uid = layui.data(config.scope).uid;
+            var uid = layui.data(conf.scope).uid;
             if (uid) {
                 return JSON.parse(uid);
             }
         },
         // 缓存Uid
         putUid: function (uid) {
-            layui.data(config.scope, {
+            layui.data(conf.scope, {
                 key: 'uid',
                 value: JSON.stringify(uid)
             });
         },
         // 当前登录的用户
         getUser: function () {
-            var user = layui.data(config.scope).user;
+            var user = layui.data(conf.scope).user;
             if (user) {
                 return JSON.parse(user);
             }
         },
         // 缓存user
         putUser: function (user) {
-            layui.data(config.scope, {
+            layui.data(conf.scope, {
                 key: 'user',
                 value: JSON.stringify(user)
             });

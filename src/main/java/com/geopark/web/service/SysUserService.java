@@ -2,6 +2,8 @@ package com.geopark.web.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.geopark.web.model.entity.SysUser;
+import com.geopark.web.model.vo.TokenVo;
+import com.geopark.web.model.vo.UserDetailsVo;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,4 +25,31 @@ public interface SysUserService extends IService<SysUser> {
      * @return
      */
     List<Integer> getRoleIds(Integer id);
+
+    /**
+     * 用户登陆
+     *
+     * @param loginName
+     * @param password
+     * @param ipAddr
+     * @return
+     */
+    SysUser login(String loginName, String password, String ipAddr);
+
+    /**
+     * 通过用户对象获取token
+     *
+     * @param user
+     * @return
+     */
+    TokenVo getToken(SysUser user);
+
+    /**
+     * 获取用户详情
+     *
+     * @param uid
+     * @return
+     */
+    UserDetailsVo getUserDetails(Integer uid);
+
 }

@@ -9,6 +9,7 @@ var sideJs = [
     '	                <dd><a href="javascript:;">新闻信息</a></dd>',
     '	                <dd><a href="javascript:;">文章信息</a></dd>',
     '	                <dd><a href="javascript:;">作品信息</a></dd>',
+    '		            <dd><a href="../../view/task/index.html" lang="task">任务信息</a></dd>',
     '		        </dl>',
     '		    </li>',
     // '		    <li class="layui-nav-item">',

@@ -1,4 +1,4 @@
-package com.geopark.web.col;
+package com.geopark.web.col.sys;
 
 
 import com.geopark.framework.controller.SuperController;
@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * 系统用户角色关系表 前端控制器
+ * 菜单表 前端控制器
  * </p>
  *
  * @author lichee
  * @since 2019-07-31
  */
 @RestController
-@RequestMapping("/sys-user-role")
-public class SysUserRoleController extends SuperController {
+@RequestMapping("/sys-menu")
+public class SysMenuController extends SuperController {
 
 }

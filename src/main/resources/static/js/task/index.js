@@ -15,6 +15,7 @@ layui.use(['conf', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], fun
         url: '/task/page',
         title: '公园数据表',
         page: true,
+        headers: {Authorization: conf.getToken()},
         request: conf.request,
         parseData: conf.parseData,
         response: conf.response,

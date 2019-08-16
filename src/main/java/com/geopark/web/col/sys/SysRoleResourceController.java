@@ -1,4 +1,4 @@
-package com.geopark.web.col;
+package com.geopark.web.col.sys;
 
 
 import com.geopark.framework.controller.SuperController;
@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * 角色表 前端控制器
+ * 角色资源关系表 前端控制器
  * </p>
  *
  * @author lichee
  * @since 2019-07-31
  */
 @RestController
-@RequestMapping("/sys-role")
-public class SysRoleController extends SuperController {
+@RequestMapping("/sys-role-resource")
+public class SysRoleResourceController extends SuperController {
 
 }

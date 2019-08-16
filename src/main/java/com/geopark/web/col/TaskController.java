@@ -40,7 +40,7 @@ public class TaskController extends SuperController {
     @Autowired
     private SysResourceService sysResourceService;
 
-    @Resources(AuthTypeEnum.OPEN)
+    @Resources(AuthTypeEnum.LOGIN)
     @ApiOperation("任务列表分页查询")
     @GetMapping("/page")
     public ApiResponses<IPage<Task>> page(

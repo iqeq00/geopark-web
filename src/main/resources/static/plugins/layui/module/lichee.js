@@ -1,5 +1,5 @@
-layui.define(['jquery','layer', 'element', 'form'], function (exports) {
-    // var config = layui.config;
+layui.define(['conf', 'jquery','layer', 'element', 'form'], function (exports) {
+    var conf = layui.conf;
     var $ = layui.jquery;
     var layer = layui.layer;
     var element = layui.element;
@@ -176,7 +176,7 @@ layui.define(['jquery','layer', 'element', 'form'], function (exports) {
                     if (xhr.responseJSON.error === 'UNAUTHORIZED') {
                         // config.removeAll();
                         layer.msg('登录过期', {icon: 2}, function () {
-                            location.href = '/view/login.html';
+                            location.href = '/view/login/login.html';
                         });
                         return false;
                     }
@@ -184,11 +184,11 @@ layui.define(['jquery','layer', 'element', 'form'], function (exports) {
                     layer.closeAll('loading');
                 },
                 beforeSend: function (xhr) {
-                    // var token = config.getToken();
-                    // if (token) {
-                    //     xhr.setRequestHeader('Authorization', token);
-                    // }
                     // console.log("这里传递token");
+                    var token = conf.getToken();
+                    if (token) {
+                        xhr.setRequestHeader('Authorization', token);
+                    }
                 }
             });
         },

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.geopark.framework.cons.PageCons;
 import com.geopark.framework.responses.ApiResponses;
 import com.geopark.framework.utils.AntiSQLFilter;
+import com.geopark.framework.utils.ApiUtils;
 import com.geopark.framework.utils.TypeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -65,12 +66,12 @@ public class SuperController {
         return ApiResponses.<Void>success(response, status);
     }
 
-//    /**
-//     * 获取当前用户id
-//     */
-//    public Integer currentUid() {
-//        return ApiUtils.currentUid();
-//    }
+    /**
+     * 获取当前用户id
+     */
+    public Integer currentUid() {
+        return ApiUtils.currentUid();
+    }
 
     /**
      * 获取分页对象
