@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2019-09-25 23:15:53
+Date: 2019-10-22 16:54:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -105,11 +105,12 @@ CREATE TABLE `earthquake` (
   `threat` varchar(256) DEFAULT NULL COMMENT '威胁对象',
   `note` text COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地灾信息';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地灾信息';
 
 -- ----------------------------
 -- Records of earthquake
 -- ----------------------------
+INSERT INTO `earthquake` VALUES ('1', '1', '3344', '大邑', '1', '天府广场', '1.1000000000000001', '百人', '不稳定', '不危害', '啊哈', '农药', '农民', '222');
 
 -- ----------------------------
 -- Table structure for ecosystem
@@ -217,187 +218,195 @@ CREATE TABLE `geolandscape` (
   `note` varchar(256) DEFAULT NULL COMMENT '备注',
   `img` text COMMENT '照片',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=358 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地质遗迹景观';
+) ENGINE=InnoDB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地质遗迹景观';
 
 -- ----------------------------
 -- Records of geolandscape
 -- ----------------------------
-INSERT INTO `geolandscape` VALUES ('182', '1', 'ZG1002', 'ZG1002', '威远河风景河段', '', '风景河段', '大安区新民镇詹家村', '', '104.7458611', '29.438', '', '', '位于大安区新民镇詹家村，东经104°44′45.11″，北纬29°26′16.78″。河流蜿蜒曲折，从258°方向流来，在350m的范围内发生近180°拐弯，延247°方向流去。河水清澈，水质良好，水深2-6m，河底可见大量砾石，直径约10-60cm，水中不时可见鱼群。河两岸为沙溪庙组二段（J2s2）黄灰色块状砂岩。河水最终汇入釜溪河，河水滋润了两岸人民，两岸农作物茂盛，渔民常在河边捕鱼，借助这有利地势，在此修建两个大坝，已工作90余年，为防洪灌溉作出了重要贡献。', '省级以下', '', '', '', '威远河风景河段', '/images/geolandscape/15694039572312.jpg');
-INSERT INTO `geolandscape` VALUES ('183', '1', 'ZG1004', 'ZG1004', '范家湾层型剖面', '', '地方性标准剖面', '大安区新民乡柏杨村', '', '104.7558889', '29.42347222', '', '', '该剖面位于大安区新民乡柏杨村，东经104°45′21.22″，北纬29°25′24.47″。岩性为沙溪庙组二段（J2s2）黄灰色厚块状砂岩与紫红色泥岩互层，黄灰色砂岩发育平行层理，单层厚度可达4m，岩石发育竖直节理，地貌上形成陡壁，紫红色泥岩破碎，剖面上可见厚度3.5m，其中夹数层黄灰色粉砂岩与砂岩，夹层厚约10-23cm，夹层与泥岩界面混杂，界面凹凸不平，局部甚至弯曲严重，夹层延伸一定长度后尖灭。', '省级以下', '', '', '', '范家湾层型剖面、范家湾层型剖面示意图', '/images/geolandscape/15694039027300.jpg,/images/geolandscape/15694039028541.jpg');
-INSERT INTO `geolandscape` VALUES ('184', '1', 'ZG1005', 'ZG1005', '文家村层型剖面', null, '地方性标准剖面', null, null, '104.78733333332499', '29.432916666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('185', '1', 'ZG1006', 'ZG1006', '燊海井', null, '采矿遗迹景观', null, null, '104.785361111103', '29.376861111108902', null, null, null, '世界级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('186', '1', 'ZG1009', 'ZG1009', '三多寨岩穴群', null, '碎屑岩地貌景观', null, null, '104.87077777776901', '29.4508611111089', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('187', '1', 'ZG1014', 'ZG1014', '金子村“Ω”形河曲', null, '风景河段', null, null, '104.79580555554701', '29.3430277777756', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('188', '1', 'ZG1015', 'ZG1015', '狮湾村层型剖面', null, '地方性标准剖面', null, null, '104.71711111110299', '29.287416666664399', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('189', '1', 'ZG1023', 'ZG1023', '杨柳村崩塌遗址', null, '山体崩塌遗迹景观', null, null, '104.666472222214', '29.227194444442201', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('190', '1', 'ZG1025', 'ZG1025', '飞龙峡岩腔', null, '碎屑岩地貌景观', null, null, '104.646277777769', '29.2345277777756', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('191', '1', 'ZG1026', 'ZG1026', '飞龙峡石球', null, '碎屑岩地貌景观', null, null, '104.64902777776901', '29.234277777775599', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('192', '1', 'ZG1027', 'ZG1027', '飞龙峡环形绝壁', null, '碎屑岩地貌景观', null, null, '104.65349999999199', '29.2336111111089', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('193', '1', 'ZG1031', 'ZG1031', '凉风坳岩腔', null, '碎屑岩地貌景观', null, null, '104.656194444436', '29.2558333333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('194', '1', 'ZG1032', 'ZG1032', '狸狐洞峡谷', null, '构造地貌景观', null, null, '104.625805555547', '29.2121111111089', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('195', '1', 'ZG1033', 'ZG1033', '狮子屋基石柱', null, '碎屑岩地貌景观', null, null, '104.629666666658', '29.2172777777756', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('196', '1', 'ZG1034', 'ZG1034', '狮子屋基交错层理', null, '地方性标准剖面', null, null, '104.626583333325', '29.2180277777756', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('197', '1', 'ZG1037', 'ZG1037', '团结村天生桥', null, '碎屑岩地貌景观', null, null, '104.616555555547', '29.255305555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('198', '1', 'ZG1042', 'ZG1042', '贡井平桥瀑布', null, '瀑布景观', null, null, '104.70966666665799', '29.346638888886702', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('199', '1', 'ZG1043', 'ZG1043', '大坝村交错层理', null, '地方性标准剖面', null, null, '104.69552777777', '29.328999999997801', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('200', '1', 'ZG1053', 'ZG1053', '偏龙桥采石场遗址', null, '采矿遗迹景观', null, null, '104.547055555547', '29.3405833333311', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('201', '1', 'ZG1054', 'ZG1054', '鼎新村层型剖面', null, '地方性标准剖面', null, null, '104.523916666658', '29.306777777775601', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('202', '1', 'ZG1055', 'ZG1055', '西堰村乌龟石', null, '碎屑岩地貌景观', null, null, '104.544805555547', '29.298472222219999', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('203', '1', 'ZG1059', 'ZG1059', '余家嘴蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.49344444443599', '29.361833333331099', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('204', '1', 'ZG1060', 'ZG1060', '天王坝蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.492194444436', '29.361277777775499', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('205', '1', 'ZG1061', 'ZG1061', '磨子村层型剖面', null, '地方性标准剖面', null, null, '104.47074999999199', '29.335861111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('206', '1', 'ZG1063', 'ZG1063', '沙树沱蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.508666666658', '29.307972222219998', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('207', '1', 'ZG1065', 'ZG1065', '阴家沟峡谷', null, '构造地貌景观', null, null, '104.15397222221399', '29.2044166666645', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('208', '1', 'ZG1066', 'ZG1066', '大天井村绝壁', null, '碎屑岩地貌景观', null, null, '104.14558333332501', '29.235166666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('209', '1', 'ZG1070', 'ZG1070', '东佳侏罗系蓬莱镇组地层剖面', null, '区域性标准剖面', null, null, '104.205030555547', '29.265530555553301', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('210', '1', 'ZG1080', 'ZG1080', '油房头洞穴', null, '碎屑岩地貌景观', null, null, '104.36024999999201', '29.397388888886699', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('211', '1', 'ZG1084', 'ZG1084', '土门子岩腔', null, '碎屑岩地貌景观', null, null, '104.11252777777', '29.249027777775598', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('212', '1', 'ZG1085', 'ZG1085', '大坪山绝壁', null, '碎屑岩地貌景观', null, null, '104.126749999992', '29.260611111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('213', '1', 'ZG1090', 'ZG1090', '椅子湾沉积相铺面', null, '地方性标准剖面', null, null, '104.17977777777', '29.303166666664399', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('214', '1', 'ZG1092', 'ZG1092', '瓜木沟板状交错层理', null, '地方性标准剖面', null, null, '104.091694444436', '29.338555555553299', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('215', '1', 'ZG1095', 'ZG1095', '顺河村蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.10280555554699', '29.3346666666644', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('216', '1', 'ZG1099', 'ZG1099', '进山冲驼峰', null, '碎屑岩地貌景观', null, null, '104.15047222221401', '29.280583333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('217', '1', 'ZG1101', 'ZG1101', '姜柏嘴绝壁', null, '碎屑岩地貌景观', null, null, '104.169916666658', '29.273555555553301', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('218', '1', 'ZG1102', 'ZG1102', '寨子坳蓬莱镇组二段与窝头山组一段界线', null, '地方性标准剖面', null, null, '104.163861111103', '29.285638888886702', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('219', '1', 'ZG1103', 'ZG1103', '赶场冲层型剖面', null, '地方性标准剖面', null, null, '104.24530555554701', '29.329083333331099', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('220', '1', 'ZG1106', 'ZG1106', '柏杨村越溪河风景河段', null, '风景河段', null, null, '104.187472222214', '29.424138888886699', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('221', '1', 'ZG1115', 'ZG1115', '铁厂镇铁炉嘴冶铁遗址', null, '采矿遗迹景观', null, null, '104.31083333332499', '29.478333333331101', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('222', '1', 'ZG1117', 'ZG1117', '花龙沟峡谷', null, '构造地貌景观', null, null, '104.28877777776999', '29.4803333333311', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('223', '1', 'ZG1121', 'ZG1121', '玉皇村蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.08852777777', '29.398694444442199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('224', '1', 'ZG1122', 'ZG1122', '水斗村层型剖面', null, '地方性标准剖面', null, null, '104.124388888881', '29.447833333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('225', '1', 'ZG1125', 'ZG1125', '正江村越溪河“Ω”形风景河段', null, '风景河段', null, null, '104.194944444436', '29.441166666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('226', '1', 'ZG1128', 'ZG1128', '杉树湾三叠系须家河组地层剖面', null, '区域性标准剖面', null, null, '104.22133333332501', '29.4251388888867', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('227', '1', 'ZG1131', 'ZG1131', '余家坡硅化木化石产地', null, '古植物', null, null, '104.137944444436', '29.456249999997802', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('228', '1', 'ZG1135', 'ZG1135', '白岩寺采石遗址', null, '采矿遗迹景观', null, null, '104.174805555547', '29.485694444442199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('229', '1', 'ZG1136', 'ZG1136', '晋家湾蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.204666666658', '29.489777777775501', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('230', '1', 'ZG1137', 'ZG1137', '长山盐矿', null, '采矿遗迹景观', null, null, '104.218666666658', '29.480722222219999', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('231', '1', 'ZG1138', 'ZG1138', '干沟儿蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.202361111103', '29.469194444442198', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('232', '1', 'ZG1140', 'ZG1140', '石笋沟断崖', null, '碎屑岩地貌景观', null, null, '104.318999999992', '29.4968333333311', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('233', '1', 'ZG1142', 'ZG1142', '石笋沟犀牛山', null, '碎屑岩地貌景观', null, null, '104.32527777777', '29.505805555553302', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('234', '1', 'ZG1143', 'ZG1143', '石笋沟石笋', null, '碎屑岩地貌景观', null, null, '104.325416666658', '29.5046388888866', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('235', '1', 'ZG1144', 'ZG1144', '石笋沟岩穴', null, '碎屑岩地貌景观', null, null, '104.33152777777001', '29.505249999997801', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('236', '1', 'ZG1146', 'ZG1146', '石笋沟大型交错层理', null, '地方性标准剖面', null, null, '104.330944444436', '29.5020833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('237', '1', 'ZG1147', 'ZG1147', '石笋沟巨石阵', null, '山体崩塌遗迹景观', null, null, '104.33052777777', '29.502333333331102', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('238', '1', 'ZG1148', 'ZG1148', '山王村平行层理与交错层理', null, '地方性标准剖面', null, null, '104.347999999992', '29.499444444442201', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('239', '1', 'ZG1149', 'ZG1149', '山王村方山', null, '碎屑岩地貌景观', null, null, '104.343749999992', '29.508527777775502', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('240', '1', 'ZG1150', 'ZG1150', '劳武村峡谷', null, '构造地貌景观', null, null, '104.33927777776999', '29.493583333331099', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('241', '1', 'ZG1151', 'ZG1151', '茨芭坳村三叠系与侏罗系地层整合接触', null, '地方性标准剖面', null, null, '104.353555555547', '29.480999999997799', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('242', '1', 'ZG1152', 'ZG1152', '高石梯上三叠统须家河组地层', null, '区域性标准剖面', null, null, '104.329083333325', '29.512944444442201', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('243', '1', 'ZG1154', 'ZG1154', '上观音绝壁', null, '碎屑岩地貌景观', null, null, '104.299749999992', '29.499222222219998', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('244', '1', 'ZG1156', 'ZG1156', '鸡冠石绝壁', null, '碎屑岩地貌景观', null, null, '104.277638888881', '29.5031388888866', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('245', '1', 'ZG1159', 'ZG1159', '上三叠统河湖沉积地层剖面', null, '区域性标准剖面', null, null, '104.261883333325', '29.548805555553301', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('246', '1', 'ZG1160', 'ZG1160', '威西背斜', null, '中小型构造', null, null, '104.29138611110299', '29.531724999997799', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('247', '1', 'ZG1164', 'ZG1164', '大安区油建大队叶肢介化石产地', null, '无脊椎动物', null, null, '104.84205555554701', '29.416083333331098', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('248', '1', 'ZG1165', 'ZG1165', '长山岭硅化木', null, '古植物', null, null, '104.803305555547', '29.382833333331099', null, null, null, '国家级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('249', '1', 'ZG1167', 'ZG1167', '凉高山溶洞', null, '可溶岩地貌（喀斯特地貌）景观', null, null, '104.800333333325', '29.382555555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('250', '1', 'ZG1168', 'ZG1168', '凉高山砂岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.802583333325', '29.385305555553298', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('251', '1', 'ZG1169', 'ZG1169', '源通井遗址', null, '采矿遗迹景观', null, null, '104.814083333325', '29.378138888886699', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('252', '1', 'ZG1170', 'ZG1170', '和平永川龙化石产地', null, '古脊椎动物', null, null, '104.805888888881', '29.360055555553298', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('253', '1', 'ZG1171', 'ZG1171', '大坟堡粘土地层命名地', null, '区域性标准剖面', null, null, '104.780638888881', '29.368305555553299', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('254', '1', 'ZG1172', 'ZG1172', '大安寨灰岩地层命名地', null, '区域性标准剖面', null, null, '104.784388888881', '29.3622499999978', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('255', '1', 'ZG1173', 'ZG1173', '自流井组典型地层剖面', null, '区域性标准剖面', null, null, '104.78744444443601', '29.3638611111089', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('256', '1', 'ZG1174', 'ZG1174', '吉成井遗址', null, '采矿遗迹景观', null, null, '104.771111111103', '29.371305555553299', null, null, null, '国家级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('257', '1', 'ZG1175', 'ZG1175', '小桥井遗址', null, '采矿遗迹景观', null, null, '104.75799999999199', '29.352055555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('258', '1', 'ZG1176', 'ZG1176', '通虹井遗址', null, '采矿遗迹景观', null, null, '104.751527777769', '29.354083333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('259', '1', 'ZG1177', 'ZG1177', '宝隆井遗址', null, '采矿遗迹景观', null, null, '104.751833333325', '29.353638888886699', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('260', '1', 'ZG1178', 'ZG1178', '双成井遗址', null, '采矿遗迹景观', null, null, '104.741999999992', '29.342777777775499', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('261', '1', 'ZG1179', 'ZG1179', '郭家坳砂岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.749722222214', '29.3444444444422', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('262', '1', 'ZG1180', 'ZG1180', '马鞍山泥岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.75986111110301', '29.374333333331101', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('263', '1', 'ZG1182', 'ZG1182', '釜溪河（沙湾段）', null, '风景河段', null, null, '104.766138888881', '29.350388888886702', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('264', '1', 'ZG1183', 'ZG1183', '焦氏峨眉龙化石遗址（大山铺后山恐龙化石群）', null, '古脊椎动物', null, null, '104.826694444436', '29.399666666664402', null, null, null, '国家级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('265', '1', 'ZG1184', 'ZG1184', '沙溪庙组一段含恐龙化石地层剖面', null, '区域性标准剖面', null, null, '104.826361111103', '29.399972222220001', null, null, null, '国家级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('266', '1', 'ZG1185', 'ZG1185', '大山铺恐龙化石群', null, '古脊椎动物', null, null, '104.826333333325', '29.399749999997798', null, null, null, '世界级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('267', '1', 'ZG1186', 'ZG1186', '杨家湾角齿鱼化石产地', null, '古脊椎动物', null, null, '104.477916666658', '29.401555555553301', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('268', '1', 'ZG1187', 'ZG1187', '云蒸井遗址', null, '采矿遗迹景观', null, null, '104.699999999992', '29.340916666664398', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('269', '1', 'ZG1188', 'ZG1188', '东岳面石灰岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.768277777769', '29.384555555553298', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('270', '1', 'ZG1189', 'ZG1189', '珍珠冲粘土命名地地层剖面', null, '区域性标准剖面', null, null, '104.745694444436', '29.367944444442202', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('271', '1', 'ZG2001', 'ZG2001', '杨氏马门溪龙化石产地', null, '古脊椎动物', null, null, '104.748555555547', '29.4435277777755', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('272', '1', 'ZG2005', 'ZG2005', '谢家坝“Ω”河曲', null, '风景河段', null, null, '104.74438888888101', '29.4105833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('273', '1', 'ZG2012', 'ZG2012', '马吃水交错层理', null, '地方性标准剖面', null, null, '104.742833333325', '29.336944444442199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('274', '1', 'ZG2013', 'ZG2013', '雷公滩自流井组（J1-2z）与新田沟组（J2zt）接触界线', null, '地方性标准剖面', null, null, '104.72513888888101', '29.366416666664399', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('275', '1', 'ZG2027', 'ZG2027', '贡井平桥瀑布', null, '瀑布景观', null, null, '104.709916666658', '29.346472222220001', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('276', '1', 'ZG2028', 'ZG2028', '艾叶滩楔状交错层理', null, '地方性标准剖面', null, null, '104.682777777769', '29.352583333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('277', '1', 'ZG2029', 'ZG2029', '旭水河（艾叶段）', null, '风景河段', null, null, '104.683972222214', '29.352638888886698', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('278', '1', 'ZG2030', 'ZG2030', '艾叶壶穴', null, '流水侵蚀地貌景观', null, null, '104.681055555547', '29.354249999997801', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('279', '1', 'ZG2033', 'ZG2033', '桥坝上层型剖面', null, '地方性标准剖面', null, null, '104.662138888881', '29.3769166666644', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('280', '1', 'ZG2034', 'ZG2034', '新烧坊楔形交错层理', null, '地方性标准剖面', null, null, '104.65333333332499', '29.3936944444422', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('281', '1', 'ZG2036', 'ZG2036', '杨柳塘层型剖面', null, '地方性标准剖面', null, null, '104.63952777777', '29.426305555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('282', '1', 'ZG2039', 'ZG2039', '三口塘层型剖面', null, '地方性标准剖面', null, null, '104.579888888881', '29.413083333331102', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('283', '1', 'ZG2041', 'ZG2041', '喜家冲层型剖面', null, '地方性标准剖面', null, null, '104.571361111103', '29.401416666664399', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('284', '1', 'ZG2045', 'ZG2045', '骡子岭交错层理', null, '地方性标准剖面', null, null, '104.602638888881', '29.362333333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('285', '1', 'ZG2047', 'ZG2047', '燕石峰交错层理', null, '地方性标准剖面', null, null, '104.597388888881', '29.3631944444422', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('286', '1', 'ZG2060', 'ZG2060', '铁板村采石场', null, '采矿遗迹景观', null, null, '104.53861111110299', '29.3756944444422', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('287', '1', 'ZG2064', 'ZG2064', '大才村采石场', null, '采矿遗迹景观', null, null, '104.518999999992', '29.3800833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('288', '1', 'ZG2073', 'ZG2073', '两口塘村层型剖面', null, '地方性标准剖面', null, null, '104.47558333332501', '29.4110555555533', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('289', '1', 'ZG2075', 'ZG2075', '青龙山恐龙化石群', null, '古脊椎动物', null, null, '104.198333333325', '29.6180833333311', null, null, null, '世界级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('290', '1', 'ZG2076', 'ZG2076', '八角山绝壁', null, '碎屑岩地貌景观', null, null, '104.191749999992', '29.6288888888866', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('291', '1', 'ZG2077', 'ZG2077', '龙洞冲岩穴', null, '碎屑岩地貌景观', null, null, '104.184166666658', '29.6300833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('292', '1', 'ZG2078', 'ZG2078', '立子坡交错层理', null, '地方性标准剖面', null, null, '104.17255555554701', '29.616277777775501', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('293', '1', 'ZG2082', 'ZG2082', '凤凰山层型剖面', null, '地方性标准剖面', null, null, '104.499833333325', '29.296361111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('294', '1', 'ZG2083', 'ZG2083', '新屋村球形风化', null, '碎屑岩地貌景观', null, null, '104.471694444436', '29.303972222220001', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('295', '1', 'ZG2084', 'ZG2084', '梯子沟层型剖面', null, '地方性标准剖面', null, null, '104.472055555547', '29.313611111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('296', '1', 'ZG2087', 'ZG2087', '尖山子蓬莱镇组（J3p）与窝头山组（K1w）接触界线', null, '地方性标准剖面', null, null, '104.452805555547', '29.321527777775501', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('297', '1', 'ZG2088', 'ZG2088', '山边村层型剖面', null, '地方性标准剖面', null, null, '104.44227777776899', '29.295138888886701', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('298', '1', 'ZG2090', 'ZG2090', '宝泉村交错层理', null, '地方性标准剖面', null, null, '104.437194444436', '29.310138888886701', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('299', '1', 'ZG2091', 'ZG2091', '手爬岩丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.433694444436', '29.308527777775598', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('300', '1', 'ZG2092', 'ZG2092', '石缸坝大型交错层理', null, '地方性标准剖面', null, null, '104.42036111110301', '29.310388888886699', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('301', '1', 'ZG2095', 'ZG2095', '严家山丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.40141666665799', '29.310055555553301', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('302', '1', 'ZG2099', 'ZG2099', '麦子山岩腔', null, '碎屑岩地貌景观', null, null, '104.356083333325', '29.3366388888867', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('303', '1', 'ZG2100', 'ZG2100', '青龙嘴交错层理', null, '地方性标准剖面', null, null, '104.371833333325', '29.326749999997801', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('304', '1', 'ZG2101', 'ZG2101', '乌龟山丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.34383333332499', '29.339583333331099', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('305', '1', 'ZG2102', 'ZG2102', '乐德白垩系窝头山组地层剖面', null, '区域性标准剖面', null, null, '104.353694444436', '29.351305555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('306', '1', 'ZG2103', 'ZG2103', '太平坳天生桥', null, '碎屑岩地貌景观', null, null, '104.380833333325', '29.318416666664401', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('307', '1', 'ZG2108', 'ZG2108', '三星顶下白垩统窝头山组地层剖面', null, '区域性标准剖面', null, null, '104.29772222221401', '29.359694444442201', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('308', '1', 'ZG2110', 'ZG2110', '长埂山村丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.265333333325', '29.321694444442201', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('309', '1', 'ZG2115', 'ZG2115', '刘家坝层型剖面', null, '地方性标准剖面', null, null, '104.216583333325', '29.318638888886699', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('310', '1', 'ZG2119', 'ZG2119', '老河沟遂宁组（J3sn）与沙溪庙组（J2s）接触界线', null, '地方性标准剖面', null, null, '104.282916666658', '29.386694444442199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('311', '1', 'ZG2120', 'ZG2120', '窝圈岩绝壁', null, '碎屑岩地貌景观', null, null, '104.25605555554699', '29.390388888886701', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('312', '1', 'ZG2123', 'ZG2123', '度佳侏罗系沙溪庙组地层剖面', null, '区域性标准剖面', null, null, '104.25386111110301', '29.403333333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('313', '1', 'ZG2124', 'ZG2124', '黄桷湾自流井组（J1-2z）与新田沟组（J2xt）接触界线', null, '地方性标准剖面', null, null, '104.287249999992', '29.423333333331101', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('314', '1', 'ZG2125', 'ZG2125', '青岗咀河曲', null, '风景河段', null, null, '104.248694444436', '29.317749999997801', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('315', '1', 'ZG2128', 'ZG2128', '合江村绝壁', null, '碎屑岩地貌景观', null, null, '104.25149999999201', '29.272749999997799', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('316', '1', 'ZG2130', 'ZG2130', '老王沟岩腔', null, '碎屑岩地貌景观', null, null, '104.23224999999201', '29.275166666664401', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('317', '1', 'ZG2131', 'ZG2131', '石峡子坝丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.232499999992', '29.2669166666644', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('318', '1', 'ZG2133', 'ZG2133', '斜石板村自流井组（J1-2z）与新田沟组（J2xt）接触界线', null, '地方性标准剖面', null, null, '104.26219444443601', '29.411194444442199', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('319', '1', 'ZG2137', 'ZG2137', '寨子山大型绝壁', null, '碎屑岩地貌景观', null, null, '104.061333333325', '29.447083333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('320', '1', 'ZG2138', 'ZG2138', '凉水沟层型剖面', null, '地方性标准剖面', null, null, '104.112388888881', '29.458499999997802', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('321', '1', 'ZG2139', 'ZG2139', '胡家山岩腔', null, '碎屑岩地貌景观', null, null, '104.113138888881', '29.481611111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('322', '1', 'ZG2141', 'ZG2141', '求雨山蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.11727777777', '29.4539444444422', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('323', '1', 'ZG2142', 'ZG2142', '巴子塘层型剖面', null, '地方性标准剖面', null, null, '104.43833333332501', '29.4420277777755', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('324', '1', 'ZG2143', 'ZG2143', '沙蛋坡蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.424249999992', '29.446555555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('325', '1', 'ZG2144', 'ZG2144', '1936年荣县西瓜山荣县峨眉龙化石产地', null, '古脊椎动物', null, null, '104.440277777769', '29.440972222220001', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('326', '1', 'ZG2145', 'ZG2145', '西瓜山蛇颈龟化石产地', null, '古脊椎动物', null, null, '104.443833333325', '29.4416666666644', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('327', '1', 'ZG2149', 'ZG2149', '龙洞湾蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.433416666658', '29.475472222219999', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('328', '1', 'ZG2150', 'ZG2150', '钱家坝蜥脚类化石产地', null, '古脊椎动物', null, null, '104.435138888881', '29.427999999997802', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('329', '1', 'ZG2151', 'ZG2151', '烟龙嘴恐龙化石产地', null, '古脊椎动物', null, null, '104.428055555547', '29.430166666664402', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('330', '1', 'ZG2152', 'ZG2152', '1915年荣县第一具恐龙化石产地', null, '古脊椎动物', null, null, '104.42852777776901', '29.452777777775498', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('331', '1', 'ZG2153', 'ZG2153', '高连山恐龙化石产地', null, '古脊椎动物', null, null, '104.435333333325', '29.4640833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('332', '1', 'ZG2155', 'ZG2155', '程家桥沙溪庙组地层剖面', null, '区域性标准剖面', null, null, '104.388055555547', '29.465249999997798', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('333', '1', 'ZG2156', 'ZG2156', '荣县程家桥村蜥脚类化石产地', null, '古脊椎动物', null, null, '104.385249999992', '29.46672222222', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('334', '1', 'ZG2158', 'ZG2158', '王家冲层型剖面', null, '地方性标准剖面', null, null, '104.397722222214', '29.450361111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('335', '1', 'ZG2159', 'ZG2159', '但家湾恐龙化石产地', null, '古脊椎动物', null, null, '104.403083333325', '29.4432499999978', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('336', '1', 'ZG2161', 'ZG2161', '楠木村蜂窝状岩穴', null, '碎屑岩地貌景观', null, null, '104.220833333325', '29.602444444442199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('337', '1', 'ZG2163', 'ZG2163', '河坡高恐龙化石产地', null, '古脊椎动物', null, null, '104.17463888888101', '29.5847777777755', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('338', '1', 'ZG2167', 'ZG2167', '王家河沙溪庙组（J2s）与新田沟组（J2xt）接触界线', null, '地方性标准剖面', null, null, '104.17005555554699', '29.508333333331102', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('339', '1', 'ZG2168', 'ZG2168', '瓜瓢洞断层', null, '中小型构造', null, null, '104.258944444436', '29.441027777775499', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('340', '1', 'ZG2172', 'ZG2172', '平头山蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.543416666658', '29.369805555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('341', '1', 'ZG2173', 'ZG2173', '四平村蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.63402777776901', '29.382888888886701', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('342', '1', 'ZG2174', 'ZG2174', '幺塘村蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.646638888881', '29.343333333331099', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('343', '1', 'ZG2175', 'ZG2175', '东源井遗址', null, '采矿遗迹景观', null, null, '104.680333333325', '29.345861111108899', null, null, null, '国家级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('344', '1', 'ZG2176', 'ZG2176', '丰盛井遗址', null, '采矿遗迹景观', null, null, '104.68158333332499', '29.349666666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('345', '1', 'ZG2177', 'ZG2177', '檬坳村蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.691472222214', '29.379388888886702', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('346', '1', 'ZG2178', 'ZG2178', '大公井遗址', null, '采矿遗迹景观', null, null, '104.709305555547', '29.3558055555533', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('347', '1', 'ZG2179', 'ZG2179', '贡井河街东岳庙恐龙足迹化石产地（东岳庙恐龙化石足迹化石产地）', null, '古生物活动遗迹', null, null, '104.708944444436', '29.355583333331101', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('348', '1', 'ZG2180', 'ZG2180', '四川巨棘龙化石产地', null, '古脊椎动物', null, null, '104.70936111110299', '29.218194444442201', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('349', '1', 'ZG2181', 'ZG2181', '舒坪镇磨刀岭肉食龙化石产地', null, '古脊椎动物', null, null, '104.71405555554701', '29.291749999997801', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('350', '1', 'ZG2182', 'ZG2182', '汇东四川鳄化石产地', null, '古脊椎动物', null, null, '104.743694444436', '29.338972222220001', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('351', '1', 'ZG2183', 'ZG2183', '合川马门溪龙化石产地', null, '古脊椎动物', null, null, '104.77011111110301', '29.3435833333311', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('352', '1', 'ZG2184', 'ZG2184', '周氏西蜀鳄化石产地', null, '古脊椎动物', null, null, '104.768611111103', '29.343666666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('353', '1', 'ZG2185', 'ZG2185', '伍家坝恐龙化石群', null, '古脊椎动物', null, null, '104.781166666658', '29.351722222220001', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('354', '1', 'ZG2186', 'ZG2186', '凉高山逆断层', null, '中小型构造', null, null, '104.799138888881', '29.3926666666644', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('355', '1', 'ZG2187', 'ZG2187', '谢家松林波状层理', null, '地方性标准剖面', null, null, '104.75149999999201', '29.3435833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('356', '1', 'ZG2188', 'ZG2188', '自流井楔形交错层理', null, '地方性标准剖面', null, null, '104.754611111103', '29.34397222222', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('357', '1', 'ZG2189', 'ZG2189', '自流井背斜', null, '中小型构造', null, null, '104.734249999992', '29.353388888886698', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('1', '1', 'ZG1004', 'ZG1004', '范家湾层型剖面', null, '地方性标准剖面', null, null, '104.755888888881', '29.4234722222199', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('2', '1', 'ZG1005', 'ZG1005', '文家村层型剖面', null, '地方性标准剖面', null, null, '104.78733333332499', '29.432916666664401', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('3', '1', 'ZG1004', 'ZG1004', '范家湾层型剖面', null, '地方性标准剖面', null, null, '104.755888888881', '29.4234722222199', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('4', '1', 'ZG1005', 'ZG1005', '文家村层型剖面', null, '地方性标准剖面', null, null, '104.78733333332499', '29.432916666664401', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('6', '1', 'ZG1004', 'ZG1004', '范家湾层型剖面', null, '地方性标准剖面', null, null, '104.755888888881', '29.4234722222199', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('7', '1', 'ZG1005', 'ZG1005', '文家村层型剖面', null, '地方性标准剖面', null, null, '104.78733333332499', '29.432916666664401', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('8', '1', 'ZG1002', 'ZG1002', '威远河风景河段', null, '风景河段', null, null, '104.745861111103', '29.4379999999978', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('9', '1', 'ZG1004', 'ZG1004', '范家湾层型剖面', null, '地方性标准剖面', null, null, '104.755888888881', '29.4234722222199', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('10', '1', 'ZG1005', 'ZG1005', '文家村层型剖面', null, '地方性标准剖面', null, null, '104.78733333332499', '29.432916666664401', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('11', '1', 'ZG1006', 'ZG1006', '燊海井', null, '采矿遗迹景观', null, null, '104.785361111103', '29.376861111108902', null, null, null, '世界级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('12', '1', 'ZG1009', 'ZG1009', '三多寨岩穴群', null, '碎屑岩地貌景观', null, null, '104.87077777776901', '29.4508611111089', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('13', '1', 'ZG1014', 'ZG1014', '金子村“Ω”形河曲', null, '风景河段', null, null, '104.79580555554701', '29.3430277777756', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('14', '1', 'ZG1015', 'ZG1015', '狮湾村层型剖面', null, '地方性标准剖面', null, null, '104.71711111110299', '29.287416666664399', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('15', '1', 'ZG1023', 'ZG1023', '杨柳村崩塌遗址', null, '山体崩塌遗迹景观', null, null, '104.666472222214', '29.227194444442201', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('16', '1', 'ZG1025', 'ZG1025', '飞龙峡岩腔', null, '碎屑岩地貌景观', null, null, '104.646277777769', '29.2345277777756', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('17', '1', 'ZG1026', 'ZG1026', '飞龙峡石球', null, '碎屑岩地貌景观', null, null, '104.64902777776901', '29.234277777775599', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('18', '1', 'ZG1027', 'ZG1027', '飞龙峡环形绝壁', null, '碎屑岩地貌景观', null, null, '104.65349999999199', '29.2336111111089', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('19', '1', 'ZG1031', 'ZG1031', '凉风坳岩腔', null, '碎屑岩地貌景观', null, null, '104.656194444436', '29.2558333333311', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('20', '1', 'ZG1032', 'ZG1032', '狸狐洞峡谷', null, '构造地貌景观', null, null, '104.625805555547', '29.2121111111089', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('21', '1', 'ZG1033', 'ZG1033', '狮子屋基石柱', null, '碎屑岩地貌景观', null, null, '104.629666666658', '29.2172777777756', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('22', '1', 'ZG1034', 'ZG1034', '狮子屋基交错层理', null, '地方性标准剖面', null, null, '104.626583333325', '29.2180277777756', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('23', '1', 'ZG1037', 'ZG1037', '团结村天生桥', null, '碎屑岩地貌景观', null, null, '104.616555555547', '29.255305555553299', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('24', '1', 'ZG1042', 'ZG1042', '贡井平桥瀑布', null, '瀑布景观', null, null, '104.70966666665799', '29.346638888886702', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('25', '1', 'ZG1043', 'ZG1043', '大坝村交错层理', null, '地方性标准剖面', null, null, '104.69552777777', '29.328999999997801', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('26', '1', 'ZG1053', 'ZG1053', '偏龙桥采石场遗址', null, '采矿遗迹景观', null, null, '104.547055555547', '29.3405833333311', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('27', '1', 'ZG1054', 'ZG1054', '鼎新村层型剖面', null, '地方性标准剖面', null, null, '104.523916666658', '29.306777777775601', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('28', '1', 'ZG1055', 'ZG1055', '西堰村乌龟石', null, '碎屑岩地貌景观', null, null, '104.544805555547', '29.298472222219999', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('29', '1', 'ZG1059', 'ZG1059', '余家嘴蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.49344444443599', '29.361833333331099', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('30', '1', 'ZG1060', 'ZG1060', '天王坝蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.492194444436', '29.361277777775499', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('31', '1', 'ZG1061', 'ZG1061', '磨子村层型剖面', null, '地方性标准剖面', null, null, '104.47074999999199', '29.335861111108901', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('32', '1', 'ZG1063', 'ZG1063', '沙树沱蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.508666666658', '29.307972222219998', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('33', '1', 'ZG1065', 'ZG1065', '阴家沟峡谷', null, '构造地貌景观', null, null, '104.15397222221399', '29.2044166666645', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('34', '1', 'ZG1066', 'ZG1066', '大天井村绝壁', null, '碎屑岩地貌景观', null, null, '104.14558333332501', '29.235166666664401', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('35', '1', 'ZG1070', 'ZG1070', '东佳侏罗系蓬莱镇组地层剖面', null, '区域性标准剖面', null, null, '104.205030555547', '29.265530555553301', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('36', '1', 'ZG1080', 'ZG1080', '油房头洞穴', null, '碎屑岩地貌景观', null, null, '104.36024999999201', '29.397388888886699', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('37', '1', 'ZG1084', 'ZG1084', '土门子岩腔', null, '碎屑岩地貌景观', null, null, '104.11252777777', '29.249027777775598', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('38', '1', 'ZG1085', 'ZG1085', '大坪山绝壁', null, '碎屑岩地貌景观', null, null, '104.126749999992', '29.260611111108901', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('39', '1', 'ZG1090', 'ZG1090', '椅子湾沉积相铺面', null, '地方性标准剖面', null, null, '104.17977777777', '29.303166666664399', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('40', '1', 'ZG1092', 'ZG1092', '瓜木沟板状交错层理', null, '地方性标准剖面', null, null, '104.091694444436', '29.338555555553299', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('41', '1', 'ZG1095', 'ZG1095', '顺河村蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.10280555554699', '29.3346666666644', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('42', '1', 'ZG1099', 'ZG1099', '进山冲驼峰', null, '碎屑岩地貌景观', null, null, '104.15047222221401', '29.280583333331101', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('43', '1', 'ZG1101', 'ZG1101', '姜柏嘴绝壁', null, '碎屑岩地貌景观', null, null, '104.169916666658', '29.273555555553301', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('44', '1', 'ZG1102', 'ZG1102', '寨子坳蓬莱镇组二段与窝头山组一段界线', null, '地方性标准剖面', null, null, '104.163861111103', '29.285638888886702', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('45', '1', 'ZG1103', 'ZG1103', '赶场冲层型剖面', null, '地方性标准剖面', null, null, '104.24530555554701', '29.329083333331099', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('46', '1', 'ZG1106', 'ZG1106', '柏杨村越溪河风景河段', null, '风景河段', null, null, '104.187472222214', '29.424138888886699', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('47', '1', 'ZG1115', 'ZG1115', '铁厂镇铁炉嘴冶铁遗址', null, '采矿遗迹景观', null, null, '104.31083333332499', '29.478333333331101', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('48', '1', 'ZG1117', 'ZG1117', '花龙沟峡谷', null, '构造地貌景观', null, null, '104.28877777776999', '29.4803333333311', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('49', '1', 'ZG1121', 'ZG1121', '玉皇村蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.08852777777', '29.398694444442199', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('50', '1', 'ZG1122', 'ZG1122', '水斗村层型剖面', null, '地方性标准剖面', null, null, '104.124388888881', '29.447833333331101', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('51', '1', 'ZG1125', 'ZG1125', '正江村越溪河“Ω”形风景河段', null, '风景河段', null, null, '104.194944444436', '29.441166666664401', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('52', '1', 'ZG1128', 'ZG1128', '杉树湾三叠系须家河组地层剖面', null, '区域性标准剖面', null, null, '104.22133333332501', '29.4251388888867', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('53', '1', 'ZG1131', 'ZG1131', '余家坡硅化木化石产地', null, '古植物', null, null, '104.137944444436', '29.456249999997802', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('54', '1', 'ZG1135', 'ZG1135', '白岩寺采石遗址', null, '采矿遗迹景观', null, null, '104.174805555547', '29.485694444442199', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('55', '1', 'ZG1136', 'ZG1136', '晋家湾蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.204666666658', '29.489777777775501', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('56', '1', 'ZG1137', 'ZG1137', '长山盐矿', null, '采矿遗迹景观', null, null, '104.218666666658', '29.480722222219999', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('57', '1', 'ZG1138', 'ZG1138', '干沟儿蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.202361111103', '29.469194444442198', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('58', '1', 'ZG1140', 'ZG1140', '石笋沟断崖', null, '碎屑岩地貌景观', null, null, '104.318999999992', '29.4968333333311', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('59', '1', 'ZG1142', 'ZG1142', '石笋沟犀牛山', null, '碎屑岩地貌景观', null, null, '104.32527777777', '29.505805555553302', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('60', '1', 'ZG1143', 'ZG1143', '石笋沟石笋', null, '碎屑岩地貌景观', null, null, '104.325416666658', '29.5046388888866', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('61', '1', 'ZG1144', 'ZG1144', '石笋沟岩穴', null, '碎屑岩地貌景观', null, null, '104.33152777777001', '29.505249999997801', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('62', '1', 'ZG1146', 'ZG1146', '石笋沟大型交错层理', null, '地方性标准剖面', null, null, '104.330944444436', '29.5020833333311', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('63', '1', 'ZG1147', 'ZG1147', '石笋沟巨石阵', null, '山体崩塌遗迹景观', null, null, '104.33052777777', '29.502333333331102', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('64', '1', 'ZG1148', 'ZG1148', '山王村平行层理与交错层理', null, '地方性标准剖面', null, null, '104.347999999992', '29.499444444442201', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('65', '1', 'ZG1149', 'ZG1149', '山王村方山', null, '碎屑岩地貌景观', null, null, '104.343749999992', '29.508527777775502', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('66', '1', 'ZG1150', 'ZG1150', '劳武村峡谷', null, '构造地貌景观', null, null, '104.33927777776999', '29.493583333331099', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('67', '1', 'ZG1151', 'ZG1151', '茨芭坳村三叠系与侏罗系地层整合接触', null, '地方性标准剖面', null, null, '104.353555555547', '29.480999999997799', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('68', '1', 'ZG1152', 'ZG1152', '高石梯上三叠统须家河组地层', null, '区域性标准剖面', null, null, '104.329083333325', '29.512944444442201', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('69', '1', 'ZG1154', 'ZG1154', '上观音绝壁', null, '碎屑岩地貌景观', null, null, '104.299749999992', '29.499222222219998', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('70', '1', 'ZG1156', 'ZG1156', '鸡冠石绝壁', null, '碎屑岩地貌景观', null, null, '104.277638888881', '29.5031388888866', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('71', '1', 'ZG1159', 'ZG1159', '上三叠统河湖沉积地层剖面', null, '区域性标准剖面', null, null, '104.261883333325', '29.548805555553301', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('72', '1', 'ZG1160', 'ZG1160', '威西背斜', null, '中小型构造', null, null, '104.29138611110299', '29.531724999997799', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('73', '1', 'ZG1164', 'ZG1164', '大安区油建大队叶肢介化石产地', null, '无脊椎动物', null, null, '104.84205555554701', '29.416083333331098', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('74', '1', 'ZG1165', 'ZG1165', '长山岭硅化木', null, '古植物', null, null, '104.803305555547', '29.382833333331099', null, null, null, '国家级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('75', '1', 'ZG1167', 'ZG1167', '凉高山溶洞', null, '可溶岩地貌（喀斯特地貌）景观', null, null, '104.800333333325', '29.382555555553299', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('76', '1', 'ZG1168', 'ZG1168', '凉高山砂岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.802583333325', '29.385305555553298', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('77', '1', 'ZG1169', 'ZG1169', '源通井遗址', null, '采矿遗迹景观', null, null, '104.814083333325', '29.378138888886699', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('78', '1', 'ZG1170', 'ZG1170', '和平永川龙化石产地', null, '古脊椎动物', null, null, '104.805888888881', '29.360055555553298', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('79', '1', 'ZG1171', 'ZG1171', '大坟堡粘土地层命名地', null, '区域性标准剖面', null, null, '104.780638888881', '29.368305555553299', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('80', '1', 'ZG1172', 'ZG1172', '大安寨灰岩地层命名地', null, '区域性标准剖面', null, null, '104.784388888881', '29.3622499999978', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('81', '1', 'ZG1173', 'ZG1173', '自流井组典型地层剖面', null, '区域性标准剖面', null, null, '104.78744444443601', '29.3638611111089', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('82', '1', 'ZG1174', 'ZG1174', '吉成井遗址', null, '采矿遗迹景观', null, null, '104.771111111103', '29.371305555553299', null, null, null, '国家级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('83', '1', 'ZG1175', 'ZG1175', '小桥井遗址', null, '采矿遗迹景观', null, null, '104.75799999999199', '29.352055555553299', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('84', '1', 'ZG1176', 'ZG1176', '通虹井遗址', null, '采矿遗迹景观', null, null, '104.751527777769', '29.354083333331101', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('85', '1', 'ZG1177', 'ZG1177', '宝隆井遗址', null, '采矿遗迹景观', null, null, '104.751833333325', '29.353638888886699', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('86', '1', 'ZG1178', 'ZG1178', '双成井遗址', null, '采矿遗迹景观', null, null, '104.741999999992', '29.342777777775499', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('87', '1', 'ZG1179', 'ZG1179', '郭家坳砂岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.749722222214', '29.3444444444422', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('88', '1', 'ZG1180', 'ZG1180', '马鞍山泥岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.75986111110301', '29.374333333331101', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('89', '1', 'ZG1182', 'ZG1182', '釜溪河（沙湾段）', null, '风景河段', null, null, '104.766138888881', '29.350388888886702', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('90', '1', 'ZG1183', 'ZG1183', '焦氏峨眉龙化石遗址（大山铺后山恐龙化石群）', null, '古脊椎动物', null, null, '104.826694444436', '29.399666666664402', null, null, null, '国家级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('91', '1', 'ZG1184', 'ZG1184', '沙溪庙组一段含恐龙化石地层剖面', null, '区域性标准剖面', null, null, '104.826361111103', '29.399972222220001', null, null, null, '国家级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('92', '1', 'ZG1185', 'ZG1185', '大山铺恐龙化石群', null, '古脊椎动物', null, null, '104.826333333325', '29.399749999997798', null, null, null, '世界级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('93', '1', 'ZG1186', 'ZG1186', '杨家湾角齿鱼化石产地', null, '古脊椎动物', null, null, '104.477916666658', '29.401555555553301', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('94', '1', 'ZG1187', 'ZG1187', '云蒸井遗址', null, '采矿遗迹景观', null, null, '104.699999999992', '29.340916666664398', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('95', '1', 'ZG1188', 'ZG1188', '东岳面石灰岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.768277777769', '29.384555555553298', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('96', '1', 'ZG1189', 'ZG1189', '珍珠冲粘土命名地地层剖面', null, '区域性标准剖面', null, null, '104.745694444436', '29.367944444442202', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('97', '1', 'ZG2001', 'ZG2001', '杨氏马门溪龙化石产地', null, '古脊椎动物', null, null, '104.748555555547', '29.4435277777755', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('98', '1', 'ZG2005', 'ZG2005', '谢家坝“Ω”河曲', null, '风景河段', null, null, '104.74438888888101', '29.4105833333311', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('99', '1', 'ZG2012', 'ZG2012', '马吃水交错层理', null, '地方性标准剖面', null, null, '104.742833333325', '29.336944444442199', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('100', '1', 'ZG2013', 'ZG2013', '雷公滩自流井组（J1-2z）与新田沟组（J2zt）接触界线', null, '地方性标准剖面', null, null, '104.72513888888101', '29.366416666664399', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('101', '1', 'ZG2027', 'ZG2027', '贡井平桥瀑布', null, '瀑布景观', null, null, '104.709916666658', '29.346472222220001', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('102', '1', 'ZG2028', 'ZG2028', '艾叶滩楔状交错层理', null, '地方性标准剖面', null, null, '104.682777777769', '29.352583333331101', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('103', '1', 'ZG2029', 'ZG2029', '旭水河（艾叶段）', null, '风景河段', null, null, '104.683972222214', '29.352638888886698', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('104', '1', 'ZG2030', 'ZG2030', '艾叶壶穴', null, '流水侵蚀地貌景观', null, null, '104.681055555547', '29.354249999997801', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('105', '1', 'ZG2033', 'ZG2033', '桥坝上层型剖面', null, '地方性标准剖面', null, null, '104.662138888881', '29.3769166666644', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('106', '1', 'ZG2034', 'ZG2034', '新烧坊楔形交错层理', null, '地方性标准剖面', null, null, '104.65333333332499', '29.3936944444422', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('107', '1', 'ZG2036', 'ZG2036', '杨柳塘层型剖面', null, '地方性标准剖面', null, null, '104.63952777777', '29.426305555553299', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('108', '1', 'ZG2039', 'ZG2039', '三口塘层型剖面', null, '地方性标准剖面', null, null, '104.579888888881', '29.413083333331102', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('109', '1', 'ZG2041', 'ZG2041', '喜家冲层型剖面', null, '地方性标准剖面', null, null, '104.571361111103', '29.401416666664399', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('110', '1', 'ZG2045', 'ZG2045', '骡子岭交错层理', null, '地方性标准剖面', null, null, '104.602638888881', '29.362333333331101', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('111', '1', 'ZG2047', 'ZG2047', '燕石峰交错层理', null, '地方性标准剖面', null, null, '104.597388888881', '29.3631944444422', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('112', '1', 'ZG2060', 'ZG2060', '铁板村采石场', null, '采矿遗迹景观', null, null, '104.53861111110299', '29.3756944444422', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('113', '1', 'ZG2064', 'ZG2064', '大才村采石场', null, '采矿遗迹景观', null, null, '104.518999999992', '29.3800833333311', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('114', '1', 'ZG2073', 'ZG2073', '两口塘村层型剖面', null, '地方性标准剖面', null, null, '104.47558333332501', '29.4110555555533', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('115', '1', 'ZG2075', 'ZG2075', '青龙山恐龙化石群', null, '古脊椎动物', null, null, '104.198333333325', '29.6180833333311', null, null, null, '世界级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('116', '1', 'ZG2076', 'ZG2076', '八角山绝壁', null, '碎屑岩地貌景观', null, null, '104.191749999992', '29.6288888888866', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('117', '1', 'ZG2077', 'ZG2077', '龙洞冲岩穴', null, '碎屑岩地貌景观', null, null, '104.184166666658', '29.6300833333311', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('118', '1', 'ZG2078', 'ZG2078', '立子坡交错层理', null, '地方性标准剖面', null, null, '104.17255555554701', '29.616277777775501', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('119', '1', 'ZG2082', 'ZG2082', '凤凰山层型剖面', null, '地方性标准剖面', null, null, '104.499833333325', '29.296361111108901', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('120', '1', 'ZG2083', 'ZG2083', '新屋村球形风化', null, '碎屑岩地貌景观', null, null, '104.471694444436', '29.303972222220001', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('121', '1', 'ZG2084', 'ZG2084', '梯子沟层型剖面', null, '地方性标准剖面', null, null, '104.472055555547', '29.313611111108901', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('122', '1', 'ZG2087', 'ZG2087', '尖山子蓬莱镇组（J3p）与窝头山组（K1w）接触界线', null, '地方性标准剖面', null, null, '104.452805555547', '29.321527777775501', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('123', '1', 'ZG2088', 'ZG2088', '山边村层型剖面', null, '地方性标准剖面', null, null, '104.44227777776899', '29.295138888886701', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('124', '1', 'ZG2090', 'ZG2090', '宝泉村交错层理', null, '地方性标准剖面', null, null, '104.437194444436', '29.310138888886701', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('125', '1', 'ZG2091', 'ZG2091', '手爬岩丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.433694444436', '29.308527777775598', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('126', '1', 'ZG2092', 'ZG2092', '石缸坝大型交错层理', null, '地方性标准剖面', null, null, '104.42036111110301', '29.310388888886699', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('127', '1', 'ZG2095', 'ZG2095', '严家山丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.40141666665799', '29.310055555553301', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('128', '1', 'ZG2099', 'ZG2099', '麦子山岩腔', null, '碎屑岩地貌景观', null, null, '104.356083333325', '29.3366388888867', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('129', '1', 'ZG2100', 'ZG2100', '青龙嘴交错层理', null, '地方性标准剖面', null, null, '104.371833333325', '29.326749999997801', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('130', '1', 'ZG2101', 'ZG2101', '乌龟山丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.34383333332499', '29.339583333331099', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('131', '1', 'ZG2102', 'ZG2102', '乐德白垩系窝头山组地层剖面', null, '区域性标准剖面', null, null, '104.353694444436', '29.351305555553299', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('132', '1', 'ZG2103', 'ZG2103', '太平坳天生桥', null, '碎屑岩地貌景观', null, null, '104.380833333325', '29.318416666664401', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('133', '1', 'ZG2108', 'ZG2108', '三星顶下白垩统窝头山组地层剖面', null, '区域性标准剖面', null, null, '104.29772222221401', '29.359694444442201', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('134', '1', 'ZG2110', 'ZG2110', '长埂山村丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.265333333325', '29.321694444442201', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('135', '1', 'ZG2115', 'ZG2115', '刘家坝层型剖面', null, '地方性标准剖面', null, null, '104.216583333325', '29.318638888886699', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('136', '1', 'ZG2119', 'ZG2119', '老河沟遂宁组（J3sn）与沙溪庙组（J2s）接触界线', null, '地方性标准剖面', null, null, '104.282916666658', '29.386694444442199', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('137', '1', 'ZG2120', 'ZG2120', '窝圈岩绝壁', null, '碎屑岩地貌景观', null, null, '104.25605555554699', '29.390388888886701', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('138', '1', 'ZG2123', 'ZG2123', '度佳侏罗系沙溪庙组地层剖面', null, '区域性标准剖面', null, null, '104.25386111110301', '29.403333333331101', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('139', '1', 'ZG2124', 'ZG2124', '黄桷湾自流井组（J1-2z）与新田沟组（J2xt）接触界线', null, '地方性标准剖面', null, null, '104.287249999992', '29.423333333331101', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('140', '1', 'ZG2125', 'ZG2125', '青岗咀河曲', null, '风景河段', null, null, '104.248694444436', '29.317749999997801', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('141', '1', 'ZG2128', 'ZG2128', '合江村绝壁', null, '碎屑岩地貌景观', null, null, '104.25149999999201', '29.272749999997799', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('142', '1', 'ZG2130', 'ZG2130', '老王沟岩腔', null, '碎屑岩地貌景观', null, null, '104.23224999999201', '29.275166666664401', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('143', '1', 'ZG2131', 'ZG2131', '石峡子坝丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.232499999992', '29.2669166666644', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('144', '1', 'ZG2133', 'ZG2133', '斜石板村自流井组（J1-2z）与新田沟组（J2xt）接触界线', null, '地方性标准剖面', null, null, '104.26219444443601', '29.411194444442199', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('145', '1', 'ZG2137', 'ZG2137', '寨子山大型绝壁', null, '碎屑岩地貌景观', null, null, '104.061333333325', '29.447083333331101', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('146', '1', 'ZG2138', 'ZG2138', '凉水沟层型剖面', null, '地方性标准剖面', null, null, '104.112388888881', '29.458499999997802', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('147', '1', 'ZG2139', 'ZG2139', '胡家山岩腔', null, '碎屑岩地貌景观', null, null, '104.113138888881', '29.481611111108901', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('148', '1', 'ZG2141', 'ZG2141', '求雨山蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.11727777777', '29.4539444444422', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('149', '1', 'ZG2142', 'ZG2142', '巴子塘层型剖面', null, '地方性标准剖面', null, null, '104.43833333332501', '29.4420277777755', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('150', '1', 'ZG2143', 'ZG2143', '沙蛋坡蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.424249999992', '29.446555555553299', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('151', '1', 'ZG2144', 'ZG2144', '1936年荣县西瓜山荣县峨眉龙化石产地', null, '古脊椎动物', null, null, '104.440277777769', '29.440972222220001', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('152', '1', 'ZG2145', 'ZG2145', '西瓜山蛇颈龟化石产地', null, '古脊椎动物', null, null, '104.443833333325', '29.4416666666644', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('153', '1', 'ZG2149', 'ZG2149', '龙洞湾蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.433416666658', '29.475472222219999', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('154', '1', 'ZG2150', 'ZG2150', '钱家坝蜥脚类化石产地', null, '古脊椎动物', null, null, '104.435138888881', '29.427999999997802', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('155', '1', 'ZG2151', 'ZG2151', '烟龙嘴恐龙化石产地', null, '古脊椎动物', null, null, '104.428055555547', '29.430166666664402', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('156', '1', 'ZG2152', 'ZG2152', '1915年荣县第一具恐龙化石产地', null, '古脊椎动物', null, null, '104.42852777776901', '29.452777777775498', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('157', '1', 'ZG2153', 'ZG2153', '高连山恐龙化石产地', null, '古脊椎动物', null, null, '104.435333333325', '29.4640833333311', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('158', '1', 'ZG2155', 'ZG2155', '程家桥沙溪庙组地层剖面', null, '区域性标准剖面', null, null, '104.388055555547', '29.465249999997798', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('159', '1', 'ZG2156', 'ZG2156', '荣县程家桥村蜥脚类化石产地', null, '古脊椎动物', null, null, '104.385249999992', '29.46672222222', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('160', '1', 'ZG2158', 'ZG2158', '王家冲层型剖面', null, '地方性标准剖面', null, null, '104.397722222214', '29.450361111108901', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('161', '1', 'ZG2159', 'ZG2159', '但家湾恐龙化石产地', null, '古脊椎动物', null, null, '104.403083333325', '29.4432499999978', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('162', '1', 'ZG2161', 'ZG2161', '楠木村蜂窝状岩穴', null, '碎屑岩地貌景观', null, null, '104.220833333325', '29.602444444442199', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('163', '1', 'ZG2163', 'ZG2163', '河坡高恐龙化石产地', null, '古脊椎动物', null, null, '104.17463888888101', '29.5847777777755', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('164', '1', 'ZG2167', 'ZG2167', '王家河沙溪庙组（J2s）与新田沟组（J2xt）接触界线', null, '地方性标准剖面', null, null, '104.17005555554699', '29.508333333331102', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('165', '1', 'ZG2168', 'ZG2168', '瓜瓢洞断层', null, '中小型构造', null, null, '104.258944444436', '29.441027777775499', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('166', '1', 'ZG2172', 'ZG2172', '平头山蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.543416666658', '29.369805555553299', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('167', '1', 'ZG2173', 'ZG2173', '四平村蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.63402777776901', '29.382888888886701', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('168', '1', 'ZG2174', 'ZG2174', '幺塘村蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.646638888881', '29.343333333331099', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('169', '1', 'ZG2175', 'ZG2175', '东源井遗址', null, '采矿遗迹景观', null, null, '104.680333333325', '29.345861111108899', null, null, null, '国家级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('170', '1', 'ZG2176', 'ZG2176', '丰盛井遗址', null, '采矿遗迹景观', null, null, '104.68158333332499', '29.349666666664401', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('171', '1', 'ZG2177', 'ZG2177', '檬坳村蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.691472222214', '29.379388888886702', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('172', '1', 'ZG2178', 'ZG2178', '大公井遗址', null, '采矿遗迹景观', null, null, '104.709305555547', '29.3558055555533', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('173', '1', 'ZG2179', 'ZG2179', '贡井河街东岳庙恐龙足迹化石产地（东岳庙恐龙化石足迹化石产地）', null, '古生物活动遗迹', null, null, '104.708944444436', '29.355583333331101', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('174', '1', 'ZG2180', 'ZG2180', '四川巨棘龙化石产地', null, '古脊椎动物', null, null, '104.70936111110299', '29.218194444442201', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('175', '1', 'ZG2181', 'ZG2181', '舒坪镇磨刀岭肉食龙化石产地', null, '古脊椎动物', null, null, '104.71405555554701', '29.291749999997801', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('176', '1', 'ZG2182', 'ZG2182', '汇东四川鳄化石产地', null, '古脊椎动物', null, null, '104.743694444436', '29.338972222220001', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('177', '1', 'ZG2183', 'ZG2183', '合川马门溪龙化石产地', null, '古脊椎动物', null, null, '104.77011111110301', '29.3435833333311', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('178', '1', 'ZG2184', 'ZG2184', '周氏西蜀鳄化石产地', null, '古脊椎动物', null, null, '104.768611111103', '29.343666666664401', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('179', '1', 'ZG2185', 'ZG2185', '伍家坝恐龙化石群', null, '古脊椎动物', null, null, '104.781166666658', '29.351722222220001', null, null, null, '省级', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('180', '1', 'ZG2186', 'ZG2186', '凉高山逆断层', null, '中小型构造', null, null, '104.799138888881', '29.3926666666644', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('181', '1', 'ZG2187', 'ZG2187', '谢家松林波状层理', null, '地方性标准剖面', null, null, '104.75149999999201', '29.3435833333311', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('182', '1', 'ZG2188', 'ZG2188', '自流井楔形交错层理', null, '地方性标准剖面', null, null, '104.754611111103', '29.34397222222', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('183', '1', 'ZG2189', 'ZG2189', '自流井背斜', null, '中小型构造', null, null, '104.734249999992', '29.353388888886698', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('184', '1', 'ZG1004', 'ZG1004', '范家湾层型剖面', null, '地方性标准剖面', null, null, '104.755888888881', '29.4234722222199', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('185', '1', 'ZG1005', 'ZG1005', '文家村层型剖面', null, '地方性标准剖面', null, null, '104.78733333332499', '29.432916666664401', null, null, null, '省级以下', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for geological
@@ -466,7 +475,7 @@ CREATE TABLE `gueststat` (
   `update_time` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='游客统计';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='游客统计';
 
 -- ----------------------------
 -- Records of gueststat
@@ -475,6 +484,10 @@ INSERT INTO `gueststat` VALUES ('1', '1', '2012', '63.400000', '无', '1', '2019
 INSERT INTO `gueststat` VALUES ('2', '1', '2013', '64.900000', '无', '', '2019-09-20 17:58:58', '2019-09-20 17:59:05', null);
 INSERT INTO `gueststat` VALUES ('3', '1', '2014', '88.800000', '无', '', '2019-09-20 17:59:27', '2019-09-20 17:59:27', null);
 INSERT INTO `gueststat` VALUES ('4', '1', '2015', '302.800000', '无', '', '2019-09-20 17:59:49', '2019-09-20 17:59:49', null);
+INSERT INTO `gueststat` VALUES ('5', '1', '2012', '63.400000', '无', '1', '2019-10-16 15:35:38', '2019-10-16 15:35:38', null);
+INSERT INTO `gueststat` VALUES ('6', '1', '2013', '64.900000', '无', '2', '2019-10-16 15:35:38', '2019-10-16 15:35:38', null);
+INSERT INTO `gueststat` VALUES ('7', '1', '2014', '88.800000', '无', '3', '2019-10-16 15:35:38', '2019-10-16 15:35:38', null);
+INSERT INTO `gueststat` VALUES ('8', '1', '2015', '302.800000', '无', '4', '2019-10-16 15:35:38', '2019-10-16 15:35:38', null);
 
 -- ----------------------------
 -- Table structure for humanlandscape
@@ -499,7 +512,7 @@ CREATE TABLE `humanlandscape` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=206 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='人文景观';
+) ENGINE=InnoDB AUTO_INCREMENT=270 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='人文景观';
 
 -- ----------------------------
 -- Records of humanlandscape
@@ -568,6 +581,70 @@ INSERT INTO `humanlandscape` VALUES ('202', '1', 'ZG2166', '来牟千佛崖摩�
 INSERT INTO `humanlandscape` VALUES ('203', '1', 'ZG2169', '荣县大佛', null, null, '104.428777777769', '29.455694444442202', null, null, null, null, null, null, null, null, null);
 INSERT INTO `humanlandscape` VALUES ('204', '1', 'ZG2170', '虎榜山摩崖造像', null, null, '104.533138888881', '29.4033611111089', null, null, null, null, null, null, null, null, null);
 INSERT INTO `humanlandscape` VALUES ('205', '1', 'ZG2171', '西秦会馆', null, null, '104.768277777769', '29.351916666664401', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('206', '1', 'ZG1008', '青龙水库', null, null, '104.831083333325', '29.4243888888867', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('207', '1', 'ZG1010', '世平村梯田', null, null, '104.855444444436', '29.402194444442198', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('208', '1', 'ZG1011', '江姐故居', null, null, '104.847888888881', '29.376555555553299', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('209', '1', 'ZG1012', '雁溪谷', null, null, '104.908638888881', '29.429861111108899', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('210', '1', 'ZG1017', '王爷庙', null, null, '104.76774999999201', '29.3493888888867', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('211', '1', 'ZG1021', '茶马古道•漆树乐善坊', null, null, '104.66594444443599', '29.202488888886698', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('212', '1', 'ZG1030', '卢德铭故居', null, null, '104.664527777769', '29.263972222220001', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('213', '1', 'ZG1041', '老唐梯田', null, null, '104.714638888881', '29.3061388888867', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('214', '1', 'ZG1046', '中坝钟氏庄园', null, null, '104.595333333325', '29.2976111111089', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('215', '1', 'ZG1058', '奉先桥', null, null, '104.48977777776901', '29.3493055555533', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('216', '1', 'ZG1062', '药王寺摩崖造像', null, null, '104.50327777776999', '29.309472222219998', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('217', '1', 'ZG1064', '洞云寺', null, null, '104.675972222214', '29.331499999997799', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('218', '1', 'ZG1069', '桅杆坳村梯田', null, null, '104.192861111103', '29.2488888888867', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('219', '1', 'ZG1074', '乐德红土地', null, null, '104.37394444443601', '29.35447222222', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('220', '1', 'ZG1078', '窝棚湾摩崖造像', null, null, '104.28338888888101', '29.3899444444422', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('221', '1', 'ZG1104', '杨家山茶园', null, null, '104.182638888881', '29.4044166666644', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('222', '1', 'ZG1105', '小井沟水库', null, null, '104.165138888881', '29.4028888888867', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('223', '1', 'ZG1107', '高坎山崖墓群', null, null, '104.19199999999201', '29.386972222219999', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('224', '1', 'ZG1109', '永顺桥四方碑', null, null, '104.174861111103', '29.3899444444422', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('225', '1', 'ZG1114', '花雾山休闲庄', null, null, '104.320972222214', '29.476833333331101', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('226', '1', 'ZG1126', '观音岩摩崖造像', null, null, '104.227083333325', '29.452222222220001', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('227', '1', 'ZG1127', '真武山醒悟寺', null, null, '104.228999999992', '29.447027777775499', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('228', '1', 'ZG1132', '郭家冲碉楼', null, null, '104.137999999992', '29.480583333331101', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('229', '1', 'ZG1145', '杨泗岩摩崖石刻', null, null, '104.331249999992', '29.5019999999978', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('230', '1', 'ZG1153', '伍寨坪', null, null, '104.306305555547', '29.5063055555533', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('231', '1', 'ZG1155', '黄茅埂茶园', null, null, '104.29713888888099', '29.5429999999978', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('232', '1', 'ZG1161', '佛耳湾摩崖造像', null, null, '104.28019444443601', '29.394027777775499', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('233', '1', 'ZG1162', '佛耳坝摩崖造像', null, null, '104.275833333325', '29.392527777775499', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('234', '1', 'ZG1163', '棚石岩摩崖造像', null, null, '104.269055555547', '29.392361111108901', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('235', '1', 'ZG1166', '凉高山牌坊群', null, null, '104.80766666665799', '29.387749999997801', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('236', '1', 'ZG1181', '恒侯宫', null, null, '104.765805555547', '29.351861111108899', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('237', '1', 'ZG2007', '自贡彩灯公园', null, null, '104.766611111103', '29.3575833333311', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('238', '1', 'ZG2008', '中国彩灯博物馆', null, null, '104.76630555554701', '29.354694444442199', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('239', '1', 'ZG2010', '三多古寨', null, null, '104.87205555554701', '29.4508611111089', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('240', '1', 'ZG2018', '艾叶古镇', null, null, '104.679972222214', '29.3562777777755', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('241', '1', 'ZG2019', '艾叶码头', null, null, '104.681055555547', '29.354166666664401', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('242', '1', 'ZG2020', '雷公坡崖墓群', null, null, '104.68347222221399', '29.355777777775501', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('243', '1', 'ZG2021', '天池寺', null, null, '104.704138888881', '29.357527777775498', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('244', '1', 'ZG2022', '贡井老街', null, null, '104.709861111103', '29.352472222220001', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('245', '1', 'ZG2023', '贵州庙', null, null, '104.709583333325', '29.352361111108898', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('246', '1', 'ZG2024', '贡井南华宫', null, null, '104.70888888888101', '29.351999999997801', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('247', '1', 'ZG2025', '陈家祠堂', null, null, '104.710361111103', '29.351722222220001', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('248', '1', 'ZG2026', '张伯卿公馆', null, null, '104.714583333325', '29.3435833333311', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('249', '1', 'ZG2043', '花香田园', null, null, '104.66480555554701', '29.365388888886699', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('250', '1', 'ZG2046', '七一水库', null, null, '104.584861111103', '29.353277777775499', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('251', '1', 'ZG2063', '吴玉章故居', null, null, '104.523444444436', '29.376777777775601', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('252', '1', 'ZG2069', '七零水库', null, null, '104.52405555554699', '29.400388888886699', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('253', '1', 'ZG2096', '棋盘山水库', null, null, '104.40027777777', '29.306944444442198', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('254', '1', 'ZG2104', '洞子湾石室', null, null, '104.381111111103', '29.318749999997799', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('255', '1', 'ZG2114', '老筒车人工瀑布', null, null, '104.168888888881', '29.3393611111089', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('256', '1', 'ZG2117', '大观桥牌坊', null, null, '104.169333333325', '29.3392777777756', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('257', '1', 'ZG2118', '盐井坝摩崖造像', null, null, '104.159388888881', '29.345916666664401', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('258', '1', 'ZG2126', '白鹿洞摩崖造像', null, null, '104.250111111103', '29.294388888886701', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('259', '1', 'ZG2134', '白云寺', null, null, '104.25669444443599', '29.438611111108901', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('260', '1', 'ZG2140', '跳石河水库', null, null, '104.11952777777', '29.475083333331099', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('261', '1', 'ZG2146', '荣县镇南塔', null, null, '104.42377777777', '29.453361111108901', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('262', '1', 'ZG2147', '荣县二佛', null, null, '104.419805555547', '29.453333333331098', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('263', '1', 'ZG2154', '双溪水库', null, null, '104.410333333325', '29.474611111108899', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('264', '1', 'ZG2160', '五根树村茶园', null, null, '104.20366666665799', '29.597749999997799', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('265', '1', 'ZG2165', '乐山竹园烈士纪念园', null, null, '104.146999999992', '29.540305555553299', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('266', '1', 'ZG2166', '来牟千佛崖摩崖造像', null, null, '104.188611111103', '29.520416666664399', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('267', '1', 'ZG2169', '荣县大佛', null, null, '104.428777777769', '29.455694444442202', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('268', '1', 'ZG2170', '虎榜山摩崖造像', null, null, '104.533138888881', '29.4033611111089', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('269', '1', 'ZG2171', '西秦会馆', null, null, '104.768277777769', '29.351916666664401', null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for humenexhibit
@@ -665,7 +742,7 @@ CREATE TABLE `manageperson` (
   `job` varchar(256) DEFAULT NULL COMMENT '工作内容',
   `img` text COMMENT '照片',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='管理人员';
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='管理人员';
 
 -- ----------------------------
 -- Records of manageperson
@@ -673,6 +750,64 @@ CREATE TABLE `manageperson` (
 INSERT INTO `manageperson` VALUES ('1', '1', '陶宏', '男', '汉族', '1963.11', '四川省教育学院', '化学教育', '无', '副研究员', '地质公园管理', '/images/geolandscape/15689650367790.jpg');
 INSERT INTO `manageperson` VALUES ('2', '1', '王文伟', '男', '汉族', '1983.04', '成都理工大学', '第四纪地质学', '硕士研究生', '文博馆员', '地质公园管理', '/images/geolandscape/15689651894001.jpg');
 INSERT INTO `manageperson` VALUES ('3', '1', '孙莉', '女', '汉族', '1983.09', '中国地质大学（北京）', '自然地理学', '硕士研究生', '业务科长、文博馆员', '公园管理、遗迹保护及评价、环境教育', '/images/geolandscape/15689672480172.jpg');
+INSERT INTO `manageperson` VALUES ('5', '0', '姓名', '性别', '民族', '出生年月', '毕业院校', '专业', '学历学位', '职务职称', '工作内容', '');
+INSERT INTO `manageperson` VALUES ('6', '1', '王玲玲', '女', '汉', '1987.01', '贵州大学', '生态学', '硕士研究生', '文博馆员', '生态保育', '');
+INSERT INTO `manageperson` VALUES ('7', '2', '程龙刚', '男', '汉', '1973.9', '四川大学', '行政管理', '本科', '副馆长、文博副研究馆员', '盐业史研究、盐文化研究、博物馆学研究', '');
+INSERT INTO `manageperson` VALUES ('8', '2', '黄健', '男', '汉', '1963.9', '四川电大、自贡\n师专\n', '汉语语言文学、英语', '本科', '文博副研究员', '盐业历史及文物、博物馆学研究', '');
+INSERT INTO `manageperson` VALUES ('9', '2', '梁鹰', '男', '汉', '1958.07', '自贡教育学院', '英语', '大专', '文博馆员', '英语', '');
+INSERT INTO `manageperson` VALUES ('10', '2', '邓军', '男', '汉', '1984.12', '西南大学', '民族学', '研究生，法学硕士', '文博馆员', '盐业历史文化研究', '');
+INSERT INTO `manageperson` VALUES ('11', '2', '李敏', '女', '汉', '1982.3', '四川师范大学', '专门史', '硕士研究生', '文博馆员', '文物保护', '');
+INSERT INTO `manageperson` VALUES ('12', '2', '周劲', '男', '汉', '1980.1', '四川师范大学', '专门史', '硕士研究生', '文博馆员', '展陈设计', '');
+INSERT INTO `manageperson` VALUES ('13', '2', '侯虹', '男', '汉', '1969.11', '中央电大', '行政管理', '本科', '文博馆员', '文物保护研究、盐业史研究', '');
+INSERT INTO `manageperson` VALUES ('14', '2', '李貌', '女', '汉', '1977.4', '乐山师范学院', '音乐学', '本科', '文博馆员', '科普教育', '');
+INSERT INTO `manageperson` VALUES ('15', '2', '张新国', '女', '汉', '1961.5', '中央党校', '行政管理', '本科', '群文馆员', '文物修复', '');
+INSERT INTO `manageperson` VALUES ('16', '2', '林鹰', '女', '汉', '1967.1', '四川省委党校', '行政管理', '本科', '群文馆员', '文物修复', '');
+INSERT INTO `manageperson` VALUES ('17', '2', '王放兰', '女', '汉', '1985.8', '四川师范大学', '翻译', '硕士', '导游', '中文、英文讲解', '');
+INSERT INTO `manageperson` VALUES ('18', '2', '晏冰聪', '女', '汉', '1989.8', '河北大学', '旅游管理', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('19', '2', '邹丽莎', '女', '汉', '1986.04', '成都理工大学广播影视学院', '播音主持', '本科', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('20', '2', '姚晶晶', '女', '汉', '1986.3', '眉山职业技术学院', '旅游管理', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('21', '2', '王莹', '女', '汉', '1988.11', '四川文化传媒职业学院', '旅游管理', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('22', '2', '廖雪薇', '女', '汉', '1988.12', '四川文化传媒职业学院', '旅游管理', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('23', '3', '叶勇', '男', '汉', '1967.05', '南京大学', '古生物地层学', '本科/学士', '研究部主任、文博研究馆员', '古生物地层学及\n博物馆学研究\n', '');
+INSERT INTO `manageperson` VALUES ('24', '3', '江山', '男', '汉', '1976.07', '成都理工大学', '地质学', '本科/学士', '研究部副主任、文博副研究馆员', '古生物地层学及博物馆学研究', '');
+INSERT INTO `manageperson` VALUES ('25', '3', '徐娟', '女', '汉', '1970.1', '中共中央党校函授学院', '法律', '本科', '科教部主任、群文馆员\n', '科普教育', '');
+INSERT INTO `manageperson` VALUES ('26', '3', '李飞', '男', '汉', '1982.02', '中国地质大学', '地质学/地质\n工程\n', '本科/硕士', '科教部副主任、文博馆员', '古生物研究及科普教育\n', '');
+INSERT INTO `manageperson` VALUES ('27', '3', '高玉辉', '男', '汉', '1961.09', '四川大学', '动物学', '学士', '副研究员', '古生物研究', '');
+INSERT INTO `manageperson` VALUES ('28', '3', '彭光照', '男', '汉', '1963.09', '中科院古脊椎动物与古人类研究所', '古生物学与\n地层学', '硕士', '研究馆员', '古生物学与地层学研究、博物馆学研究', '');
+INSERT INTO `manageperson` VALUES ('29', '3', '郝宝鞘', '男', '汉', '1984.02', '云南大学', '古生物学与地层学', '硕士研究生', '文博馆员', '古生物与地层学研究', '');
+INSERT INTO `manageperson` VALUES ('30', '3', '李毅', '女', '汉', '1972.08', '中共四川省委党校', '经济管理', '本科', '信息中心副主任、助理会计师', '英语、环境教育、网络科普', '');
+INSERT INTO `manageperson` VALUES ('31', '3', '曾上游', '', '', '1963.08', '中共四川省委党校', '行政管理', '大专', '保卫科副科长、群文馆员\n', '科普宣传', '');
+INSERT INTO `manageperson` VALUES ('32', '3', '吴林', '女', '汉', '1965.05', '西南师范大学', '财会审计', '大专', '群文馆员', '藏品管理', '');
+INSERT INTO `manageperson` VALUES ('33', '3', '舒纯康', '男', '汉', '1962.11', '中共四川省委党校函授学院\n', '法律', '本科', '文博馆员', '化石野外调查', '');
+INSERT INTO `manageperson` VALUES ('34', '3', '朱莎', '女', '汉', '1978.1', '四川理工学院', '会计学', '本科', '文博馆员', '科普教育', '');
+INSERT INTO `manageperson` VALUES ('35', '3', '余勇', '男', '汉', '1970.03', '自贡师专', '美术', '大专', '陈列部主任、二级美术师\n', '展示设计、恐龙绘画', '');
+INSERT INTO `manageperson` VALUES ('36', '3', '罗舒', '女', '汉', '1991.06', '重庆大学', '动画', '本科/学士', '文博馆员', '美术设计、恐龙绘画', '');
+INSERT INTO `manageperson` VALUES ('37', '3', '余刚', '男', '汉', '1960.1', '四川师范大学', '汉语言文学', '大专', '群文馆员', '摄影摄像', '');
+INSERT INTO `manageperson` VALUES ('38', '3', '杨华', '男', '汉', '1985.05', '四川理工大学', '电子信息科学与技术', '本科/学士', '助理工程师', '电子设备维护与信息化建设', '');
+INSERT INTO `manageperson` VALUES ('39', '3', '凌曼', '女', '汉', '1970.01', '四川理工学院', '美术', '大专', '二级美术师', '展示设计、恐龙绘画', '');
+INSERT INTO `manageperson` VALUES ('40', '3', '何旭', '男', '汉', '1973.04', '四川大学网络教育学院\n', '信息与技术', '本科', '工程师', '电子设备维护与信息化建设', '');
+INSERT INTO `manageperson` VALUES ('41', '3', '张永聪', '女', '汉', '1982.08', '泸州医学院外国语学院\n', '医药英语', '本科/学士', '助理翻译', '英语翻译', '');
+INSERT INTO `manageperson` VALUES ('42', '3', '王晓娟', '女', '汉', '1977.11', '四川省委党校', '经济管理', '本科', '文博助理馆员', '讲解', '');
+INSERT INTO `manageperson` VALUES ('43', '3', '胡晓冬', '男', '汉', '1976.01', '四川大学', '信息与技术经济管理', '本科', '群文助理馆员', '藏品管理', '');
+INSERT INTO `manageperson` VALUES ('44', '3', '陈蓓艳', '女', '汉', '1976.07', '四川理工学院', '工商管理', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('45', '3', '王晓娟', '女', '汉', '1977.11', '四川省委党校函授学院', '经济管理', '本科', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('46', '3', '陈丹妮', '女', '汉', '1990.02', '四川理工学院', '法学', '本科', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('47', '3', '余蝶', '女', '汉', '1985.09', '四川理工学院', '汉语言文学', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('48', '3', '王梦远', '女', '汉', '1990.08', '江西服装学院', '服装设计', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('49', '3', '万小惠', '女', '汉', '1989.11', '四川师范大学文理学院', '英语', '本科/学士', '导游', '中文、英文讲解', '');
+INSERT INTO `manageperson` VALUES ('50', '3', '毛静', '女', '汉', '1991.03', '自贡电视广播大学', '行政管理', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('51', '3', '王梦雨', '女', '汉', '1990.1', '西华师范大学', '播音与主持', '本科/学士', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('52', '4', '李玲琳', '女', '汉', '1985.5.27', '四川外语学院', '计算机及英语\n', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('53', '4', '王玉', '女', '汉', '1983.4.3', '中共四川省委党校函授学院', '经济管理', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('54', '4', '李亚兰', '女', '汉', '1986.10.15', '四川外语学院重庆南方翻译学院', '英语（旅游酒店管理）', '大专', '导游', '中文、英文讲解', '');
+INSERT INTO `manageperson` VALUES ('55', '4', '王文倩', '女', '汉', '1991.2.25', '四川音乐学院', '现代流行舞系', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('56', '4', '杨霞', '女', '汉', '1987.8.17', '四川理工学院', '工商管理', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('57', '4', '张雪', '女', '汉', '1992.12.13', '肇庆市工程技术学院', '旅游与酒店管理', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('58', '4', '罗芹', '女', '汉', '1981.8.20', '中央广播电视大学', '工商管理', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('59', '4', '杨夏敏', '女', '汉', '1987.10.17', '中央广播电视大学', '法律', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('60', '4', '柯林利', '女', '汉', '1978.5.12', '党校', '法律', '大专', '导游', '中文讲解', '');
+INSERT INTO `manageperson` VALUES ('61', '4', '李玲', '女', '汉', '1989.8.24', '四川外语学院成都学院', '英语', '本科', '导游', '中文、英语、西班牙语讲解', '');
+INSERT INTO `manageperson` VALUES ('62', '4', '程小玲', '女', '汉', '1986.6.3', '四川理工学院', '商务英语', '大专', '导游', '中文、英语讲解', '');
 
 -- ----------------------------
 -- Table structure for mineralright
@@ -769,7 +904,7 @@ CREATE TABLE `naturallandscape` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='自然景观';
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='自然景观';
 
 -- ----------------------------
 -- Records of naturallandscape
@@ -781,6 +916,20 @@ INSERT INTO `naturallandscape` VALUES ('12', '1', 'ZG1094', '同心树', null, n
 INSERT INTO `naturallandscape` VALUES ('13', '1', 'ZG1141', '高石梯国家森林公园', null, null, '104.338583333325', '29.5081944444422', null, null, null, null, null, null, null, null, null);
 INSERT INTO `naturallandscape` VALUES ('14', '1', 'ZG2059', '吴家山村黄桷树', null, null, '104.552111111103', '29.3882777777755', null, null, null, null, null, null, null, null, null);
 INSERT INTO `naturallandscape` VALUES ('15', '1', 'ZG2113', '九龙庙黄葛树', null, null, '104.171166666658', '29.322083333331101', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('16', '1', 'ZG1016', '尖山风景区', null, null, '104.64983333332501', '29.267083333331101', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('17', '1', 'ZG1024', '飞龙峡', null, null, '104.64811111110301', '29.235138888886699', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('18', '1', 'ZG1086', '金花桫椤自然保护区', null, null, '104.142388888881', '29.262388888886701', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('19', '1', 'ZG1094', '同心树', null, null, '104.116611111103', '29.320027777775501', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('20', '1', 'ZG1141', '高石梯国家森林公园', null, null, '104.338583333325', '29.5081944444422', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('21', '1', 'ZG2059', '吴家山村黄桷树', null, null, '104.552111111103', '29.3882777777755', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('22', '1', 'ZG2113', '九龙庙黄葛树', null, null, '104.171166666658', '29.322083333331101', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('23', '1', 'ZG1016', '尖山风景区', null, null, '104.64983333332501', '29.267083333331101', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('24', '1', 'ZG1024', '飞龙峡', null, null, '104.64811111110301', '29.235138888886699', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('25', '1', 'ZG1086', '金花桫椤自然保护区', null, null, '104.142388888881', '29.262388888886701', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('26', '1', 'ZG1094', '同心树', null, null, '104.116611111103', '29.320027777775501', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('27', '1', 'ZG1141', '高石梯国家森林公园', null, null, '104.338583333325', '29.5081944444422', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('28', '1', 'ZG2059', '吴家山村黄桷树', null, null, '104.552111111103', '29.3882777777755', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('29', '1', 'ZG2113', '九龙庙黄葛树', null, null, '104.171166666658', '29.322083333331101', null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for news
@@ -862,7 +1011,7 @@ CREATE TABLE `park` (
 -- ----------------------------
 -- Records of park
 -- ----------------------------
-INSERT INTO `park` VALUES ('1', '1', '自贡联合国教科文组织世界地质公园', 'AAAAA', '四川省自贡市', '自贡', '456122', '无', '无', '1630.46km2', '地质遗迹', '保护区总面积约361.03km2，占调查区面积约40.15%。', '2001年3月', '自贡', '自贡', '国土资源部', null, null, '自贡管理局', null, null, null);
+INSERT INTO `park` VALUES ('1', '1', '自贡联合国教科文组织世界地质公园', 'AAAAA', '四川省自贡市', '自贡', '456122', '无', '无', '1630.46km2', '地质遗迹', '保护区总面积约361.03km2，占调查区面积约40.15%。', '2001年3月', '自贡地质公园位于素有“千年盐都、恐龙之乡、南国灯城”美誉的四川省自贡市，北起荣县复兴乡青龙山，南至荣县金华乡桫椤谷，西达自贡与乐山市界，东抵大安区三多寨镇，面积为1630.46平方千米。 \n在距今约2.5亿年前（晚古生代—早中生代），公园区域完成了海陆转换，残留的咸水盆地形成盐类矿床；地质构造运动继续进行，形成了平原、河流、湖沼相间的盆地。距今1亿多年前（中—晚侏罗世）以来，恐龙等生物繁荣昌盛，在适当的条件下形成了恐龙、硅化木化石群。公元1世纪以来，生活在此的先民们，开采古海洋形成的盐类矿床，创造了灿烂的盐业文明。\n独特而丰富的恐龙化石、举世闻名的井盐文化、源远流长的文化传承、得天独厚的生态环境和谐统一，记录了公园地区从远古到现代的沧海桑田、铺开了一幅幅蔚为壮观、神奇瑰丽的画卷。\n', '自贡', '国土资源部', null, null, '自贡管理局', null, null, null);
 
 -- ----------------------------
 -- Table structure for parkinfo
@@ -893,7 +1042,7 @@ CREATE TABLE `parkinfo` (
 -- ----------------------------
 -- Records of parkinfo
 -- ----------------------------
-INSERT INTO `parkinfo` VALUES ('1', '1', '12510200560713156T', '陶宏', '', '孙莉', '+86-0979-8421539', '', 'https://www.ziggeopark.com/', '+86-0979-8421539', '9998564', '中华人民共和国自然资源部', '财政补助收支统管、全额保障', 'ziggeopark@foxmail.com ', '自贡市自流井区解放路安全巷63号 643000', '2019-08-29 14:52:38', '2019-09-20 15:15:17', null);
+INSERT INTO `parkinfo` VALUES ('1', '1', '12510200560713156T', '陶宏', '', '孙莉', '+86-0979-8421539', '陶宏、王文伟、孙莉、王玲玲', 'https://www.ziggeopark.com/', '0813-2218611', '813-2218611', '中华人民共和国自然资源部', '财政补助收支统管、全额保障', '158974244@qq.com', '自贡市自流井区解放路安全巷63号 643000', '2019-08-29 14:52:38', '2019-10-22 14:29:51', null);
 
 -- ----------------------------
 -- Table structure for parklibrary
@@ -914,12 +1063,13 @@ CREATE TABLE `parklibrary` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园专家库与导游库';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园专家库与导游库';
 
 -- ----------------------------
 -- Records of parklibrary
 -- ----------------------------
 INSERT INTO `parklibrary` VALUES ('1', '1', '1', '1', '1', '1', '1', '1', '/images/parklibrary/15689861279750.jpg', '22', null, null, null);
+INSERT INTO `parklibrary` VALUES ('2', '1', '52893475', '阿大', '男', '200012', '科研', '聘用', '11.jpg', '啊哈', null, null, null);
 
 -- ----------------------------
 -- Table structure for parkmeeting
@@ -1054,6 +1204,7 @@ CREATE TABLE `planning` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `park_id` int(10) NOT NULL COMMENT '地质公园ID',
   `number` varchar(256) DEFAULT NULL COMMENT '文件编号',
+  `type` varchar(256) DEFAULT NULL COMMENT '规划类型',
   `filename` varchar(256) DEFAULT NULL COMMENT '文件名称',
   `publishtime` varchar(256) DEFAULT NULL COMMENT '发布时间',
   `unit` varchar(256) DEFAULT NULL COMMENT '发布单位',
@@ -1068,7 +1219,7 @@ CREATE TABLE `planning` (
 -- ----------------------------
 -- Records of planning
 -- ----------------------------
-INSERT INTO `planning` VALUES ('1', '1', '11', '11', '11', null, '11', '11', '11', '/files/planning/156896048333312.txt', '111');
+INSERT INTO `planning` VALUES ('1', '1', '11', null, '11', '11', null, '11', '11', '11', '/files/planning/156896048333312.txt', '111');
 
 -- ----------------------------
 -- Table structure for production
@@ -1116,11 +1267,12 @@ CREATE TABLE `researchpaper` (
   `note` text COMMENT '备注',
   `url` text COMMENT '存储地址',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='相关科研论文';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='相关科研论文';
 
 -- ----------------------------
 -- Records of researchpaper
 -- ----------------------------
+INSERT INTO `researchpaper` VALUES ('3', '1', '1111', '222', '阿大', '2010', '阿大', 'SCI', '1', '2', '及时达', '大大', '111', '111.pdf');
 
 -- ----------------------------
 -- Table structure for sampling
@@ -1141,11 +1293,12 @@ CREATE TABLE `sampling` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='采样信息';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='采样信息';
 
 -- ----------------------------
 -- Records of sampling
 -- ----------------------------
+INSERT INTO `sampling` VALUES ('1', '1', 'sss', '1', '大萨达', '31.56', 's', 'd', '好', '1', null, null, null);
 
 -- ----------------------------
 -- Table structure for scienceactivity
@@ -1290,9 +1443,9 @@ INSERT INTO `sys_menu` VALUES ('43', '41', '编辑', '', '3', 'layui-icon-edit',
 INSERT INTO `sys_menu` VALUES ('44', '41', '删除', '', '3', 'layui-icon-delete', '1', '1', '2019-09-02 10:49:28', '2019-09-20 16:57:45', '1', '', 'exchangeexhibition:delete', '0');
 INSERT INTO `sys_menu` VALUES ('45', '29', '专家与导游库', 'science-parklibrary.html', '2', '', '1', '1', '2019-09-02 12:38:40', '2019-09-20 16:55:48', '0', 'parklibrary', 'parklibrary:page', '5');
 INSERT INTO `sys_menu` VALUES ('46', '30', '博物馆基本情况', 'museum-baseInfo.html', '2', '', '1', '1', '2019-09-02 16:58:10', '2019-09-20 16:54:23', '0', 'museum-baseInfo', 'museum:page', '1');
-INSERT INTO `sys_menu` VALUES ('47', '30', '地质标本', 'museum-geospecimen.html', '2', '', '1', '1', '2019-09-02 16:59:25', '2019-09-20 16:54:31', '0', 'geospecimen', 'geospecimen:page', '2');
-INSERT INTO `sys_menu` VALUES ('48', '30', '生物标本', 'museum-biospecimen.html', '2', '', '1', '1', '2019-09-02 17:00:13', '2019-09-20 16:54:37', '0', 'biospecimen', 'biospecimen:page', '3');
-INSERT INTO `sys_menu` VALUES ('49', '30', '人文展品', 'museum-humenexhibit.html', '2', '', '1', '1', '2019-09-02 17:01:41', '2019-09-20 16:54:46', '0', 'humenexhibit', 'humenexhibit:page', '4');
+INSERT INTO `sys_menu` VALUES ('47', '30', '古生物化石标本', 'museum-geospecimen.html', '2', '', '1', '1', '2019-09-02 16:59:25', '2019-10-22 14:01:09', '0', 'geospecimen', 'geospecimen:page', '2');
+INSERT INTO `sys_menu` VALUES ('48', '30', '生物标本', 'museum-biospecimen.html', '2', '', '1', '1', '2019-09-02 17:00:13', '2019-10-22 14:01:18', '1', 'biospecimen', 'biospecimen:page', '3');
+INSERT INTO `sys_menu` VALUES ('49', '30', '人文展品', 'museum-humenexhibit.html', '2', '', '1', '1', '2019-09-02 17:01:41', '2019-10-22 14:01:41', '1', 'humenexhibit', 'humenexhibit:page', '4');
 INSERT INTO `sys_menu` VALUES ('50', '30', '展板', 'museum-displayboard.html', '2', '', '1', '1', '2019-09-02 17:02:30', '2019-09-20 16:54:51', '0', 'displayboard', 'displayboard:page', '5');
 INSERT INTO `sys_menu` VALUES ('51', '22', '管理机构基本情况', 'pkmanage-managementagency.html', '2', '', '1', '1', '2019-09-03 17:20:39', '2019-09-20 16:48:42', '0', 'managementagency', 'managementagency:page', '3');
 INSERT INTO `sys_menu` VALUES ('52', '22', '公园相关法规文件', 'pkmanage-legal.html', '2', '', '1', '1', '2019-09-03 17:41:11', '2019-09-20 16:49:02', '0', 'legal', 'legal:page', '5');
@@ -1301,7 +1454,7 @@ INSERT INTO `sys_menu` VALUES ('54', '31', '地质公园内人文景观', 'pkman
 INSERT INTO `sys_menu` VALUES ('55', '31', '地质灾害信息', 'pkmanage-earthquake.html', '2', '', '1', '1', '2019-09-04 16:58:56', '2019-09-20 16:52:53', '0', 'earthquake', 'earthquake:page', '5');
 INSERT INTO `sys_menu` VALUES ('56', '31', '与其他景区重叠情况', 'pkmanage-overlapping.html', '2', '', '1', '1', '2019-09-04 17:00:27', '2019-09-20 17:05:09', '1', 'overlapping', 'overlapping:page', '0');
 INSERT INTO `sys_menu` VALUES ('57', '31', '标示解说系统', 'pkmanage-commentary.html', '2', '', '1', '1', '2019-09-04 17:01:24', '2019-09-20 17:04:51', '1', 'commentary', 'commentary:page', '0');
-INSERT INTO `sys_menu` VALUES ('58', '31', '采样信息', 'pkmanage-sampling.html', '2', '', '1', '1', '2019-09-04 17:02:28', '2019-09-20 16:53:03', '0', 'sampling', 'sampling:page', '6');
+INSERT INTO `sys_menu` VALUES ('58', '31', '采样信息', 'pkmanage-sampling.html', '2', '', '1', '1', '2019-09-04 17:02:28', '2019-10-22 14:00:26', '1', 'sampling', 'sampling:page', '6');
 INSERT INTO `sys_menu` VALUES ('59', '40', '产品推介', 'data-production.html', '2', 'layui-icon-cart-simple', '1', '1', '2019-09-04 17:18:02', '2019-09-20 16:57:46', '1', 'production', 'production:page', '0');
 INSERT INTO `sys_menu` VALUES ('60', '59', '添加', '', '3', 'layui-icon-add-circle-fine', '1', '1', '2019-09-04 17:42:49', '2019-09-20 16:57:46', '1', '', 'production:add', '0');
 INSERT INTO `sys_menu` VALUES ('61', '59', '编辑', '', '3', 'layui-icon-edit', '1', '1', '2019-09-04 17:43:35', '2019-09-20 16:57:47', '1', '', 'production:edit', '0');
@@ -1335,7 +1488,7 @@ CREATE TABLE `sys_menu_resource` (
   `menu_id` int(11) DEFAULT NULL COMMENT '菜单ID',
   `resource_id` varchar(32) DEFAULT NULL COMMENT '资源ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=464 DEFAULT CHARSET=utf8mb4 COMMENT='菜单资源关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=468 DEFAULT CHARSET=utf8mb4 COMMENT='菜单资源关系表';
 
 -- ----------------------------
 -- Records of sys_menu_resource
@@ -1466,10 +1619,6 @@ INSERT INTO `sys_menu_resource` VALUES ('355', '46', '33b8bec21288534e35fbccdfac
 INSERT INTO `sys_menu_resource` VALUES ('356', '46', '6588452dd7adc2cf0b3a634c7eaba578');
 INSERT INTO `sys_menu_resource` VALUES ('357', '46', '9513d9c346dc6afdbcef07fad075ca96');
 INSERT INTO `sys_menu_resource` VALUES ('358', '46', 'e94e936ee35513a5cbaa0b670a806677');
-INSERT INTO `sys_menu_resource` VALUES ('359', '47', '61ffa059261d938164f12a0feae60779');
-INSERT INTO `sys_menu_resource` VALUES ('360', '47', '6594f272facd4b263779a5898408d6f5');
-INSERT INTO `sys_menu_resource` VALUES ('361', '47', '6e8bb84dfd74bd76918cbc7b7b97e241');
-INSERT INTO `sys_menu_resource` VALUES ('362', '47', 'cd6de4b154e91389697aaa16f9e70f03');
 INSERT INTO `sys_menu_resource` VALUES ('363', '48', 'e8294671c0aeae7195fc3c43e2457436');
 INSERT INTO `sys_menu_resource` VALUES ('364', '48', 'a0a1a4a566471fe2a2556bd873a3f036');
 INSERT INTO `sys_menu_resource` VALUES ('365', '48', '49b2accbfba5ff13f7f1f9b368c310ec');
@@ -1526,6 +1675,10 @@ INSERT INTO `sys_menu_resource` VALUES ('460', '39', '099a483818e8ec192f966b6bc6
 INSERT INTO `sys_menu_resource` VALUES ('461', '39', '8cb83a749812f5d14d518d080fa12773');
 INSERT INTO `sys_menu_resource` VALUES ('462', '39', 'a9301ba0ce8390ecd756fb60b0487496');
 INSERT INTO `sys_menu_resource` VALUES ('463', '39', 'b9766aef2e0a38ab87f640ca592c3569');
+INSERT INTO `sys_menu_resource` VALUES ('464', '47', '61ffa059261d938164f12a0feae60779');
+INSERT INTO `sys_menu_resource` VALUES ('465', '47', '6594f272facd4b263779a5898408d6f5');
+INSERT INTO `sys_menu_resource` VALUES ('466', '47', '6e8bb84dfd74bd76918cbc7b7b97e241');
+INSERT INTO `sys_menu_resource` VALUES ('467', '47', 'cd6de4b154e91389697aaa16f9e70f03');
 
 -- ----------------------------
 -- Table structure for sys_resource
@@ -1545,200 +1698,205 @@ CREATE TABLE `sys_resource` (
 -- ----------------------------
 -- Records of sys_resource
 -- ----------------------------
-INSERT INTO `sys_resource` VALUES ('034fe06c0ce7f3ad0db70e0ccf313dcc', '交流互展查询(分页)', '/exchangeexhibition/page', 'GET', '3', '2019-09-25 23:07:48', 'GET:/exchangeexhibition/page');
-INSERT INTO `sys_resource` VALUES ('039bec1c73824aebd6dac61de133f336', '管理机构编辑', '/managementagency/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/managementagency/{id}');
-INSERT INTO `sys_resource` VALUES ('0401dbc5d8eaad57931edbf0ee36a10c', '公园规划查询(分页)', '/planning/page', 'GET', '3', '2019-09-25 23:07:48', 'GET:/planning/page');
-INSERT INTO `sys_resource` VALUES ('0584acbf717e9848bfbd5cb2e149754a', '社会经济状况添加', '/socialeconomy', 'POST', '1', '2019-09-25 23:07:48', 'POST:/socialeconomy');
-INSERT INTO `sys_resource` VALUES ('06031eda73fcffa209c91c414a6b4766', 'openApi自然景观列表', '/openApi/naturallandscapeList', 'GET', '2', '2019-09-25 23:07:48', 'GET:/openApi/naturallandscapeList');
-INSERT INTO `sys_resource` VALUES ('061c512368ad8a4fa5632e1c2a39189c', '博物馆展厅编辑', '/museumexhibition/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/museumexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('07d648ddf63c20317df4f5cbf7786a48', '人文景观删除', '/humanlandscape/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/humanlandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('099a483818e8ec192f966b6bc6bacd0a', '科普作品添加', '/sciencework', 'POST', '1', '2019-09-25 23:07:48', 'POST:/sciencework');
-INSERT INTO `sys_resource` VALUES ('0a9c4972fbf5b50eb76d78cd40c8c269', '地灾信息查询(分页)', '/earthquake/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/earthquake/page');
-INSERT INTO `sys_resource` VALUES ('0b2af0dd22363820966999f84a845ea2', '影像资料添加', '/vediodocs', 'POST', '3', '2019-09-25 23:07:48', 'POST:/vediodocs');
-INSERT INTO `sys_resource` VALUES ('0b3acbd943d2bdf421984f80a96c9739', '科研论文删除', '/researchpaper/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/researchpaper/{id}');
-INSERT INTO `sys_resource` VALUES ('0ef17c27ae7717cc75b3940ad4958c29', '科普活动查询(分页)', '/scienceactivity/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/scienceactivity/page');
-INSERT INTO `sys_resource` VALUES ('104e2c82415429f04455f1d079890c96', '专家导游编辑', '/parklibrary/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/parklibrary/{id}');
-INSERT INTO `sys_resource` VALUES ('151d826eafc7b5174de85dd7df216b98', '图片资料删除', '/picdocs/{id}', 'DELETE', '3', '2019-09-25 23:07:48', 'DELETE:/picdocs/{id}');
-INSERT INTO `sys_resource` VALUES ('15da52a5f4f4a6eac3b0d6f046f040c9', '菜单删除', '/menu/{id}', 'DELETE', '3', '2019-09-25 23:07:49', 'DELETE:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('166654543c708f5e91eab662095bd764', '重叠情况删除', '/overlapping/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/overlapping/{id}');
-INSERT INTO `sys_resource` VALUES ('16ec009eee72f9a3146f3ed6e6e3bccd', '标示解说添加', '/commentary', 'POST', '1', '2019-09-25 23:07:48', 'POST:/commentary');
-INSERT INTO `sys_resource` VALUES ('179887b5bd6e42be960b83982a684b10', '角色查询(所有)', '/role/list', 'GET', '3', '2019-09-25 23:07:49', 'GET:/role/list');
-INSERT INTO `sys_resource` VALUES ('1adec59980b460bb8db5198953608b87', '任务编辑', '/task/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/task/{id}');
-INSERT INTO `sys_resource` VALUES ('1c42a29f7a1a0fb0c6c3e213ebd9d6e4', '缔结姊妹公园删除', '/parkrelation/{id}', 'DELETE', '3', '2019-09-25 23:07:48', 'DELETE:/parkrelation/{id}');
-INSERT INTO `sys_resource` VALUES ('1e1146393b91b9a02a11284eea132962', '公园信息删除', '/parkinfo/{id}', 'DELETE', '3', '2019-09-25 23:07:48', 'DELETE:/parkinfo/{id}');
-INSERT INTO `sys_resource` VALUES ('1edadc539135c5dc8ea6dd767b51133a', '自然景观编辑', '/naturallandscape/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/naturallandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('21b182bd4b864b88d6424717673c2fdd', '公园查询(分页)', '/park/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/park/page');
-INSERT INTO `sys_resource` VALUES ('222549de7b85d74ff912e4e258670af6', '地质背景编辑', '/geological/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/geological/{id}');
-INSERT INTO `sys_resource` VALUES ('22c8d4ad02ae696458f3de13053e4dbc', '专题研究查询(分页)', '/parktopic/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/parktopic/page');
-INSERT INTO `sys_resource` VALUES ('2410dac6fb2e4396e28d720f19bc7c45', '地质遗迹景观删除', '/geolandscape/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/geolandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('24bf74d47e8322146e38f0c68333f90c', '角色授权', '/role/{id}/menu', 'PUT', '3', '2019-09-25 23:07:49', 'PUT:/role/{id}/menu');
-INSERT INTO `sys_resource` VALUES ('262bfee5cd0edf4d5cd47fa1f9380cb4', '人文景观编辑', '/humanlandscape/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/humanlandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('2b46448ef3c969f64046c9ed8e294b41', '交流互展编辑', '/exchangeexhibition/{id}', 'PUT', '3', '2019-09-25 23:07:48', 'PUT:/exchangeexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('2c8f52fdf31d935744bf7b4a309e8d37', '导入xls', '/import/xls', 'POST', '1', '2019-09-25 23:07:48', 'POST:/import/xls');
-INSERT INTO `sys_resource` VALUES ('2caca33f4fa40079ba1d86d9961634a5', '矿权情况查询(分页)', '/mineralright/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/mineralright/page');
+INSERT INTO `sys_resource` VALUES ('034fe06c0ce7f3ad0db70e0ccf313dcc', '交流互展查询(分页)', '/exchangeexhibition/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/exchangeexhibition/page');
+INSERT INTO `sys_resource` VALUES ('039bec1c73824aebd6dac61de133f336', '管理机构编辑', '/managementagency/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/managementagency/{id}');
+INSERT INTO `sys_resource` VALUES ('0401dbc5d8eaad57931edbf0ee36a10c', '公园规划查询(分页)', '/planning/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/planning/page');
+INSERT INTO `sys_resource` VALUES ('0584acbf717e9848bfbd5cb2e149754a', '社会经济状况添加', '/socialeconomy', 'POST', '1', '2019-10-22 13:58:46', 'POST:/socialeconomy');
+INSERT INTO `sys_resource` VALUES ('06031eda73fcffa209c91c414a6b4766', 'openApi自然景观列表', '/openApi/naturallandscapeList', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/naturallandscapeList');
+INSERT INTO `sys_resource` VALUES ('061c512368ad8a4fa5632e1c2a39189c', '博物馆展厅编辑', '/museumexhibition/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/museumexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('07d648ddf63c20317df4f5cbf7786a48', '人文景观删除', '/humanlandscape/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/humanlandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('099a483818e8ec192f966b6bc6bacd0a', '科普作品添加', '/sciencework', 'POST', '1', '2019-10-22 13:58:45', 'POST:/sciencework');
+INSERT INTO `sys_resource` VALUES ('0a9c4972fbf5b50eb76d78cd40c8c269', '地灾信息查询(分页)', '/earthquake/page', 'GET', '1', '2019-10-22 13:58:45', 'GET:/earthquake/page');
+INSERT INTO `sys_resource` VALUES ('0b2af0dd22363820966999f84a845ea2', '影像资料添加', '/vediodocs', 'POST', '3', '2019-10-22 13:58:47', 'POST:/vediodocs');
+INSERT INTO `sys_resource` VALUES ('0b3acbd943d2bdf421984f80a96c9739', '科研论文删除', '/researchpaper/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/researchpaper/{id}');
+INSERT INTO `sys_resource` VALUES ('0ef17c27ae7717cc75b3940ad4958c29', '科普活动查询(分页)', '/scienceactivity/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/scienceactivity/page');
+INSERT INTO `sys_resource` VALUES ('104e2c82415429f04455f1d079890c96', '专家导游编辑', '/parklibrary/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/parklibrary/{id}');
+INSERT INTO `sys_resource` VALUES ('151d826eafc7b5174de85dd7df216b98', '图片资料删除', '/picdocs/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/picdocs/{id}');
+INSERT INTO `sys_resource` VALUES ('15da52a5f4f4a6eac3b0d6f046f040c9', '菜单删除', '/menu/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('166654543c708f5e91eab662095bd764', '重叠情况删除', '/overlapping/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/overlapping/{id}');
+INSERT INTO `sys_resource` VALUES ('16ec009eee72f9a3146f3ed6e6e3bccd', '标示解说添加', '/commentary', 'POST', '1', '2019-10-22 13:58:46', 'POST:/commentary');
+INSERT INTO `sys_resource` VALUES ('179887b5bd6e42be960b83982a684b10', '角色查询(所有)', '/role/list', 'GET', '3', '2019-10-22 13:58:46', 'GET:/role/list');
+INSERT INTO `sys_resource` VALUES ('1a78d8aa6ba0ffe46bc99de9c820a298', '导出xls', '/exportBackup/xls', 'GET', '1', '2019-10-22 13:58:46', 'GET:/exportBackup/xls');
+INSERT INTO `sys_resource` VALUES ('1adec59980b460bb8db5198953608b87', '任务编辑', '/task/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/task/{id}');
+INSERT INTO `sys_resource` VALUES ('1c42a29f7a1a0fb0c6c3e213ebd9d6e4', '缔结姊妹公园删除', '/parkrelation/{id}', 'DELETE', '3', '2019-10-22 13:58:45', 'DELETE:/parkrelation/{id}');
+INSERT INTO `sys_resource` VALUES ('1e1146393b91b9a02a11284eea132962', '公园信息删除', '/parkinfo/{id}', 'DELETE', '3', '2019-10-22 13:58:45', 'DELETE:/parkinfo/{id}');
+INSERT INTO `sys_resource` VALUES ('1edadc539135c5dc8ea6dd767b51133a', '自然景观编辑', '/naturallandscape/{id}', 'PUT', '1', '2019-10-22 13:58:45', 'PUT:/naturallandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('21b182bd4b864b88d6424717673c2fdd', '公园查询(分页)', '/park/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/park/page');
+INSERT INTO `sys_resource` VALUES ('222549de7b85d74ff912e4e258670af6', '地质背景编辑', '/geological/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/geological/{id}');
+INSERT INTO `sys_resource` VALUES ('22c8d4ad02ae696458f3de13053e4dbc', '专题研究查询(分页)', '/parktopic/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/parktopic/page');
+INSERT INTO `sys_resource` VALUES ('2410dac6fb2e4396e28d720f19bc7c45', '地质遗迹景观删除', '/geolandscape/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/geolandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('24bf74d47e8322146e38f0c68333f90c', '角色授权', '/role/{id}/menu', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/role/{id}/menu');
+INSERT INTO `sys_resource` VALUES ('262bfee5cd0edf4d5cd47fa1f9380cb4', '人文景观编辑', '/humanlandscape/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/humanlandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('2b46448ef3c969f64046c9ed8e294b41', '交流互展编辑', '/exchangeexhibition/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/exchangeexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('2c8f52fdf31d935744bf7b4a309e8d37', '导入xls', '/import/xls', 'POST', '1', '2019-10-22 13:58:46', 'POST:/import/xls');
+INSERT INTO `sys_resource` VALUES ('2caca33f4fa40079ba1d86d9961634a5', '矿权情况查询(分页)', '/mineralright/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/mineralright/page');
 INSERT INTO `sys_resource` VALUES ('30928c0d0e2e7a454426990767919239', '事务测试', '/tasktransaction', 'POST', '1', '2019-08-29 09:41:56', 'POST:/tasktransaction');
-INSERT INTO `sys_resource` VALUES ('30f1ef71d284550e5f7144f2b0a79ad5', '产品推介编辑', '/production/{id}', 'PUT', '3', '2019-09-25 23:07:48', 'PUT:/production/{id}');
-INSERT INTO `sys_resource` VALUES ('328f29a3ed6b6f792f994aeb1c4abab5', '人文景观查询(分页)', '/humanlandscape/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/humanlandscape/page');
-INSERT INTO `sys_resource` VALUES ('33b8bec21288534e35fbccdfac9f1494', '博物馆基本情况删除', '/museum/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/museum/{id}');
-INSERT INTO `sys_resource` VALUES ('35497ac6603e18992159e83005be0d64', '公园编辑', '/park/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/park/{id}');
-INSERT INTO `sys_resource` VALUES ('36113bab48568e5885a8f34bcc91bb11', '管理机构添加', '/managementagency', 'POST', '1', '2019-09-25 23:07:48', 'POST:/managementagency');
-INSERT INTO `sys_resource` VALUES ('36c191be2786a1dfd730b649d9f9d88f', '管理人员编辑', '/manageperson/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/manageperson/{id}');
-INSERT INTO `sys_resource` VALUES ('375edb54e85dc981c8df62c76f3782ed', '菜单详情', '/menu/{id}', 'GET', '3', '2019-09-25 23:07:49', 'GET:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('37687195b63b44e0d22436080de117bc', '菜单编辑', '/menu/{id}', 'PUT', '3', '2019-09-25 23:07:49', 'PUT:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('3a3445306b2ef32a0c5976a4d3e91f64', '生物标本编辑', '/biospecimen/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/biospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('3a62355efcfa84646b390d508efea9b6', '菜单添加', '/menu', 'POST', '3', '2019-09-25 23:07:49', 'POST:/menu');
-INSERT INTO `sys_resource` VALUES ('3dca30c2118ff6158ffa88191003128e', '用户删除', '/user/{id}', 'DELETE', '3', '2019-09-25 23:07:49', 'DELETE:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('3e5a0b5a1156439cd32a82b7dfedc865', '重叠情况添加', '/overlapping', 'POST', '1', '2019-09-25 23:07:48', 'POST:/overlapping');
-INSERT INTO `sys_resource` VALUES ('3e97140625dc7fc53c2c7bbb0d01813c', '图片资料查询(分页)', '/picdocs/page', 'GET', '3', '2019-09-25 23:07:48', 'GET:/picdocs/page');
-INSERT INTO `sys_resource` VALUES ('43083dba76bdf1e10b51a95974f30141', '公园信息查询(分页)', '/parkinfo/page', 'GET', '3', '2019-09-25 23:07:48', 'GET:/parkinfo/page');
-INSERT INTO `sys_resource` VALUES ('442504feccde8320f201a26b363f2db9', '会议删除', '/parkmeeting/{id}', 'DELETE', '3', '2019-09-25 23:07:48', 'DELETE:/parkmeeting/{id}');
-INSERT INTO `sys_resource` VALUES ('4684b8f300152ee482a2fbd95a070a8e', '产品推介添加', '/production', 'POST', '3', '2019-09-25 23:07:48', 'POST:/production');
-INSERT INTO `sys_resource` VALUES ('46947be1849f0a3fb065d4c4bb9e8ed4', '地灾信息编辑', '/earthquake/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/earthquake/{id}');
-INSERT INTO `sys_resource` VALUES ('46a5d7a79e6ba91e6709f3361a2edd81', '角色添加', '/role', 'POST', '3', '2019-09-25 23:07:49', 'POST:/role');
-INSERT INTO `sys_resource` VALUES ('47aad34069f0e8713b6df562b4b2029f', '资源查询(分页)', '/resource/page', 'GET', '3', '2019-09-25 23:07:49', 'GET:/resource/page');
-INSERT INTO `sys_resource` VALUES ('49764a50d0e0f74790ced2586b03bff8', '用户状态设置', '/user/{id}/status', 'PUT', '3', '2019-09-25 23:07:49', 'PUT:/user/{id}/status');
-INSERT INTO `sys_resource` VALUES ('498fe7906e76a4caff0b82c9115d11a0', '博物馆展厅删除', '/museumexhibition/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/museumexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('49a3211ef7ddd065888fc6ad093bff6f', '缔结姊妹公园查询(分页)', '/parkrelation/page', 'GET', '3', '2019-09-25 23:07:48', 'GET:/parkrelation/page');
-INSERT INTO `sys_resource` VALUES ('49b2accbfba5ff13f7f1f9b368c310ec', '生物标本删除', '/biospecimen/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/biospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('4aa3a9dc3d7612e3eeab0eed6cf5fd75', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo', 'GET', '2', '2019-09-25 23:07:48', 'GET:/openApi/geolandscapeInfo');
-INSERT INTO `sys_resource` VALUES ('4b67b670f546e7a11310a70c1383d795', '管理人员添加', '/manageperson', 'POST', '1', '2019-09-25 23:07:48', 'POST:/manageperson');
-INSERT INTO `sys_resource` VALUES ('4cc53717ed7201af2526a716f0071287', '科研论文查询(分页)', '/researchpaper/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/researchpaper/page');
-INSERT INTO `sys_resource` VALUES ('4eac907c193cfa96ada396cdbfbacb31', '地质背景删除', '/geological/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/geological/{id}');
-INSERT INTO `sys_resource` VALUES ('4f431508eaf3ae2b72c87ecde3334212', '缔结姊妹公园编辑', '/parkrelation/{id}', 'PUT', '3', '2019-09-25 23:07:48', 'PUT:/parkrelation/{id}');
-INSERT INTO `sys_resource` VALUES ('4f53b04b850f87536c19f6cb16f2ba32', '标示解说删除', '/commentary/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/commentary/{id}');
-INSERT INTO `sys_resource` VALUES ('4f59f04de013a04c9c4a2459382da5e9', '公园规划删除', '/planning/{id}', 'DELETE', '3', '2019-09-25 23:07:48', 'DELETE:/planning/{id}');
-INSERT INTO `sys_resource` VALUES ('4f680eaa21e61bfde7178684c506765f', '博物馆展厅添加', '/museumexhibition', 'POST', '1', '2019-09-25 23:07:48', 'POST:/museumexhibition');
-INSERT INTO `sys_resource` VALUES ('502a61b04aad79fbddd5ecc70d4fc99c', '导出xls', '/export/xls', 'GET', '1', '2019-09-25 23:07:48', 'GET:/export/xls');
-INSERT INTO `sys_resource` VALUES ('512082c7c24e77c5496977206d823f48', '任务查询(分页)', '/task/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/task/page');
-INSERT INTO `sys_resource` VALUES ('544a69d536f460d511a271ac2468cafc', '科普活动添加', '/scienceactivity', 'POST', '1', '2019-09-25 23:07:48', 'POST:/scienceactivity');
-INSERT INTO `sys_resource` VALUES ('54522abbe7d3a2a40e7edbc9339acc50', '用户编辑', '/user/{id}', 'PUT', '3', '2019-09-25 23:07:49', 'PUT:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('55295a3ce5c98c008672159097f20813', '上传图片', '/upload/img', 'POST', '1', '2019-09-25 23:07:48', 'POST:/upload/img');
-INSERT INTO `sys_resource` VALUES ('566f824387a06feea407439bd6f4be8f', '会议添加', '/parkmeeting', 'POST', '3', '2019-09-25 23:07:48', 'POST:/parkmeeting');
-INSERT INTO `sys_resource` VALUES ('5a1196055f5773be65b2669ea37f3978', 'openApi人文景观详情', '/openApi/humanlandscapeInfo', 'GET', '2', '2019-09-25 23:07:48', 'GET:/openApi/humanlandscapeInfo');
-INSERT INTO `sys_resource` VALUES ('5cc53e1d69c9023759841eb2c41f9bfd', '游客统计删除', '/gueststat/{id}', 'DELETE', '3', '2019-09-25 23:07:48', 'DELETE:/gueststat/{id}');
+INSERT INTO `sys_resource` VALUES ('30f1ef71d284550e5f7144f2b0a79ad5', '产品推介编辑', '/production/{id}', 'PUT', '3', '2019-10-22 13:58:45', 'PUT:/production/{id}');
+INSERT INTO `sys_resource` VALUES ('328f29a3ed6b6f792f994aeb1c4abab5', '人文景观查询(分页)', '/humanlandscape/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/humanlandscape/page');
+INSERT INTO `sys_resource` VALUES ('33b8bec21288534e35fbccdfac9f1494', '博物馆基本情况删除', '/museum/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/museum/{id}');
+INSERT INTO `sys_resource` VALUES ('35497ac6603e18992159e83005be0d64', '公园编辑', '/park/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/park/{id}');
+INSERT INTO `sys_resource` VALUES ('36113bab48568e5885a8f34bcc91bb11', '管理机构添加', '/managementagency', 'POST', '1', '2019-10-22 13:58:46', 'POST:/managementagency');
+INSERT INTO `sys_resource` VALUES ('36c191be2786a1dfd730b649d9f9d88f', '管理人员编辑', '/manageperson/{id}', 'PUT', '1', '2019-10-22 13:58:45', 'PUT:/manageperson/{id}');
+INSERT INTO `sys_resource` VALUES ('375edb54e85dc981c8df62c76f3782ed', '菜单详情', '/menu/{id}', 'GET', '3', '2019-10-22 13:58:46', 'GET:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('37687195b63b44e0d22436080de117bc', '菜单编辑', '/menu/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('3a3445306b2ef32a0c5976a4d3e91f64', '生物标本编辑', '/biospecimen/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/biospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('3a62355efcfa84646b390d508efea9b6', '菜单添加', '/menu', 'POST', '3', '2019-10-22 13:58:46', 'POST:/menu');
+INSERT INTO `sys_resource` VALUES ('3dca30c2118ff6158ffa88191003128e', '用户删除', '/user/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('3e5a0b5a1156439cd32a82b7dfedc865', '重叠情况添加', '/overlapping', 'POST', '1', '2019-10-22 13:58:46', 'POST:/overlapping');
+INSERT INTO `sys_resource` VALUES ('3e97140625dc7fc53c2c7bbb0d01813c', '图片资料查询(分页)', '/picdocs/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/picdocs/page');
+INSERT INTO `sys_resource` VALUES ('43083dba76bdf1e10b51a95974f30141', '公园信息查询(分页)', '/parkinfo/page', 'GET', '3', '2019-10-22 13:58:45', 'GET:/parkinfo/page');
+INSERT INTO `sys_resource` VALUES ('442504feccde8320f201a26b363f2db9', '会议删除', '/parkmeeting/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/parkmeeting/{id}');
+INSERT INTO `sys_resource` VALUES ('4684b8f300152ee482a2fbd95a070a8e', '产品推介添加', '/production', 'POST', '3', '2019-10-22 13:58:45', 'POST:/production');
+INSERT INTO `sys_resource` VALUES ('46947be1849f0a3fb065d4c4bb9e8ed4', '地灾信息编辑', '/earthquake/{id}', 'PUT', '1', '2019-10-22 13:58:45', 'PUT:/earthquake/{id}');
+INSERT INTO `sys_resource` VALUES ('46a5d7a79e6ba91e6709f3361a2edd81', '角色添加', '/role', 'POST', '3', '2019-10-22 13:58:46', 'POST:/role');
+INSERT INTO `sys_resource` VALUES ('47aad34069f0e8713b6df562b4b2029f', '资源查询(分页)', '/resource/page', 'GET', '3', '2019-10-22 13:58:45', 'GET:/resource/page');
+INSERT INTO `sys_resource` VALUES ('49764a50d0e0f74790ced2586b03bff8', '用户状态设置', '/user/{id}/status', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/user/{id}/status');
+INSERT INTO `sys_resource` VALUES ('498fe7906e76a4caff0b82c9115d11a0', '博物馆展厅删除', '/museumexhibition/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/museumexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('49a3211ef7ddd065888fc6ad093bff6f', '缔结姊妹公园查询(分页)', '/parkrelation/page', 'GET', '3', '2019-10-22 13:58:45', 'GET:/parkrelation/page');
+INSERT INTO `sys_resource` VALUES ('49b2accbfba5ff13f7f1f9b368c310ec', '生物标本删除', '/biospecimen/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/biospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('4aa3a9dc3d7612e3eeab0eed6cf5fd75', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/geolandscapeInfo');
+INSERT INTO `sys_resource` VALUES ('4b67b670f546e7a11310a70c1383d795', '管理人员添加', '/manageperson', 'POST', '1', '2019-10-22 13:58:45', 'POST:/manageperson');
+INSERT INTO `sys_resource` VALUES ('4cc53717ed7201af2526a716f0071287', '科研论文查询(分页)', '/researchpaper/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/researchpaper/page');
+INSERT INTO `sys_resource` VALUES ('4eac907c193cfa96ada396cdbfbacb31', '地质背景删除', '/geological/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/geological/{id}');
+INSERT INTO `sys_resource` VALUES ('4f431508eaf3ae2b72c87ecde3334212', '缔结姊妹公园编辑', '/parkrelation/{id}', 'PUT', '3', '2019-10-22 13:58:45', 'PUT:/parkrelation/{id}');
+INSERT INTO `sys_resource` VALUES ('4f53b04b850f87536c19f6cb16f2ba32', '标示解说删除', '/commentary/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/commentary/{id}');
+INSERT INTO `sys_resource` VALUES ('4f59f04de013a04c9c4a2459382da5e9', '公园规划删除', '/planning/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/planning/{id}');
+INSERT INTO `sys_resource` VALUES ('4f680eaa21e61bfde7178684c506765f', '博物馆展厅添加', '/museumexhibition', 'POST', '1', '2019-10-22 13:58:46', 'POST:/museumexhibition');
+INSERT INTO `sys_resource` VALUES ('502a61b04aad79fbddd5ecc70d4fc99c', '导出xls', '/export/xls', 'GET', '1', '2019-10-15 10:15:22', 'GET:/export/xls');
+INSERT INTO `sys_resource` VALUES ('512082c7c24e77c5496977206d823f48', '任务查询(分页)', '/task/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/task/page');
+INSERT INTO `sys_resource` VALUES ('544a69d536f460d511a271ac2468cafc', '科普活动添加', '/scienceactivity', 'POST', '1', '2019-10-22 13:58:46', 'POST:/scienceactivity');
+INSERT INTO `sys_resource` VALUES ('54522abbe7d3a2a40e7edbc9339acc50', '用户编辑', '/user/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('55295a3ce5c98c008672159097f20813', '上传图片', '/upload/img', 'POST', '1', '2019-10-22 13:58:46', 'POST:/upload/img');
+INSERT INTO `sys_resource` VALUES ('566f824387a06feea407439bd6f4be8f', '会议添加', '/parkmeeting', 'POST', '3', '2019-10-22 13:58:46', 'POST:/parkmeeting');
+INSERT INTO `sys_resource` VALUES ('5a1196055f5773be65b2669ea37f3978', 'openApi人文景观详情', '/openApi/humanlandscapeInfo', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/humanlandscapeInfo');
+INSERT INTO `sys_resource` VALUES ('5cc53e1d69c9023759841eb2c41f9bfd', '游客统计删除', '/gueststat/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/gueststat/{id}');
+INSERT INTO `sys_resource` VALUES ('5d3d1df82e3cbf85373f4e68afded452', '导入xls', '/import1/xls', 'POST', '1', '2019-10-16 09:52:37', 'POST:/import1/xls');
 INSERT INTO `sys_resource` VALUES ('5d678decf6c8a93b629ea4dc928dd2d4', '导出xls', '/excel/xls', 'GET', '1', '2019-09-25 22:25:54', 'GET:/excel/xls');
-INSERT INTO `sys_resource` VALUES ('61ffa059261d938164f12a0feae60779', '地质标本编辑', '/geospecimen/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/geospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('6588452dd7adc2cf0b3a634c7eaba578', '博物馆基本情况查询(分页)', '/museum/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/museum/page');
-INSERT INTO `sys_resource` VALUES ('6594f272facd4b263779a5898408d6f5', '地质标本添加', '/geospecimen', 'POST', '1', '2019-09-25 23:07:48', 'POST:/geospecimen');
-INSERT INTO `sys_resource` VALUES ('65bbd93b69d8dd2d5cade59dc0ccd8e6', '公园规划编辑', '/planning/{id}', 'PUT', '3', '2019-09-25 23:07:48', 'PUT:/planning/{id}');
-INSERT INTO `sys_resource` VALUES ('664f3db603c5855b208fc969984e1603', '采样信息添加', '/sampling', 'POST', '1', '2019-09-25 23:07:48', 'POST:/sampling');
-INSERT INTO `sys_resource` VALUES ('6847ea5e1845717af3d32125277a5eea', '管理机构查询(列表)', '/managementagency/list', 'GET', '3', '2019-09-25 23:07:48', 'GET:/managementagency/list');
-INSERT INTO `sys_resource` VALUES ('68655ee2d14ea4f555d8c6bd91004381', '科研论文编辑', '/researchpaper/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/researchpaper/{id}');
-INSERT INTO `sys_resource` VALUES ('6aa7aabe9b977d40b24dc5af059f2782', '人文展品编辑', '/humenexhibit/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/humenexhibit/{id}');
-INSERT INTO `sys_resource` VALUES ('6ab0f8a49671e489f11a1bef2fcaf102', '账户清除', '/account/token', 'DELETE', '1', '2019-09-25 23:07:49', 'DELETE:/account/token');
-INSERT INTO `sys_resource` VALUES ('6c3514540b1e2e1589a9c9566273c7c7', '用户详情', '/user/{id}', 'GET', '3', '2019-09-25 23:07:49', 'GET:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('6e8bb84dfd74bd76918cbc7b7b97e241', '地质标本删除', '/geospecimen/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/geospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('6f64396b3c7a68b40194169e09380fd0', '采样信息删除', '/sampling/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/sampling/{id}');
-INSERT INTO `sys_resource` VALUES ('7025c7532d2a58d3de4dde7c66d363f3', '资源刷新', '/resource', 'PUT', '3', '2019-09-25 23:07:49', 'PUT:/resource');
-INSERT INTO `sys_resource` VALUES ('70a8486a7b06e085a6e5d5249cd68c19', '博物馆查询(列表)', '/museum/list', 'GET', '3', '2019-09-25 23:07:48', 'GET:/museum/list');
-INSERT INTO `sys_resource` VALUES ('71d5f2e10db38eaebdaa44fa89cb1163', '任务删除', '/task/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/task/{id}');
-INSERT INTO `sys_resource` VALUES ('71ff8d6843b1023eaa48a6a0113b9307', '人文展品添加', '/humenexhibit', 'POST', '1', '2019-09-25 23:07:48', 'POST:/humenexhibit');
-INSERT INTO `sys_resource` VALUES ('72331b4d9d6a4d884f54d75b7ebc3b0b', '展板添加', '/displayboard', 'POST', '1', '2019-09-25 23:07:48', 'POST:/displayboard');
-INSERT INTO `sys_resource` VALUES ('729f78186228a271d4035747eb4ad465', '专题研究添加', '/parktopic', 'POST', '1', '2019-09-25 23:07:48', 'POST:/parktopic');
-INSERT INTO `sys_resource` VALUES ('7ad036add7309273ab46935c955cd547', '地质遗迹景观查询(分页)', '/geolandscape/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/geolandscape/page');
-INSERT INTO `sys_resource` VALUES ('7d5889685e76e54b05e5f88169fd5e20', '影像资料编辑', '/vediodocs/{id}', 'PUT', '3', '2019-09-25 23:07:48', 'PUT:/vediodocs/{id}');
-INSERT INTO `sys_resource` VALUES ('7e5982583c9805792c523b32ca5ef88b', '图片资料添加', '/picdocs', 'POST', '3', '2019-09-25 23:07:48', 'POST:/picdocs');
-INSERT INTO `sys_resource` VALUES ('7f4c9278a2d5d361b584e8db2c0f9d64', '采样信息编辑', '/sampling/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/sampling/{id}');
-INSERT INTO `sys_resource` VALUES ('8069b90f45605898c6b48c513785194e', '专题研究编辑', '/parktopic/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/parktopic/{id}');
-INSERT INTO `sys_resource` VALUES ('80e9634eadbb61b2d2c8e3b8477aa313', '会议查询(分页)', '/parkmeeting/page', 'GET', '3', '2019-09-25 23:07:48', 'GET:/parkmeeting/page');
-INSERT INTO `sys_resource` VALUES ('82755b8a0b46c30b88df630c0175c625', 'VR全景删除', '/vrdata/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/vrdata/{id}');
-INSERT INTO `sys_resource` VALUES ('82ae5ea4f71f8e9f4ff625dbc8d28819', '影像资料查询(分页)', '/vediodocs/page', 'GET', '3', '2019-09-25 23:07:48', 'GET:/vediodocs/page');
-INSERT INTO `sys_resource` VALUES ('82d143f7b01b3cb8cf2617a9efb7a8b8', '产品推介查询(分页)', '/production/page', 'GET', '3', '2019-09-25 23:07:48', 'GET:/production/page');
-INSERT INTO `sys_resource` VALUES ('842e33410b5a97b6c797e4782c97a90e', '账户获取', '/account/token', 'POST', '2', '2019-09-25 23:07:48', 'POST:/account/token');
-INSERT INTO `sys_resource` VALUES ('85b2608158865a37dd2c4cdd8c91f387', '公园信息编辑', '/parkinfo/{id}', 'PUT', '3', '2019-09-25 23:07:48', 'PUT:/parkinfo/{id}');
-INSERT INTO `sys_resource` VALUES ('86047dad161b62bae784f2f77cb44cb8', '管理机构删除', '/managementagency/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/managementagency/{id}');
-INSERT INTO `sys_resource` VALUES ('8690f1577b8abe64aa841cb763a32b47', '地质背景添加', '/geological', 'POST', '1', '2019-09-25 23:07:48', 'POST:/geological');
-INSERT INTO `sys_resource` VALUES ('8b98b499b8e85136a0cbb44fee38385a', '上传文件', '/upload/file', 'POST', '1', '2019-09-25 23:07:48', 'POST:/upload/file');
-INSERT INTO `sys_resource` VALUES ('8cb83a749812f5d14d518d080fa12773', '科普作品查询(分页)', '/sciencework/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/sciencework/page');
-INSERT INTO `sys_resource` VALUES ('8f0edeb755b80546b041872d0c867874', 'openApi地质遗迹景观列表', '/openApi/geolandscapeList', 'GET', '2', '2019-09-25 23:07:48', 'GET:/openApi/geolandscapeList');
-INSERT INTO `sys_resource` VALUES ('9113537364ae8b5e8864864039a6ce61', 'VR全景编辑', '/vrdata/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/vrdata/{id}');
-INSERT INTO `sys_resource` VALUES ('9141e80baac708a8863498ff7a41d276', '任务添加', '/task', 'POST', '1', '2019-09-25 23:07:48', 'POST:/task');
-INSERT INTO `sys_resource` VALUES ('91f929d78067ee9198830bad15703b52', 'VR全景查询(分页)', '/vrdata/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/vrdata/page');
-INSERT INTO `sys_resource` VALUES ('924b18eaf488496f46b09c2faa561a4c', 'VR全景添加', '/vrdata', 'POST', '1', '2019-09-25 23:07:48', 'POST:/vrdata');
-INSERT INTO `sys_resource` VALUES ('93541f9d26ff3e388f53744d70679dd4', '科普活动删除', '/scienceactivity/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/scienceactivity/{id}');
-INSERT INTO `sys_resource` VALUES ('9513d9c346dc6afdbcef07fad075ca96', '博物馆基本情况编辑', '/museum/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/museum/{id}');
-INSERT INTO `sys_resource` VALUES ('956578f7a1e6fe0239b03232faa0dfda', '公园规划添加', '/planning', 'POST', '3', '2019-09-25 23:07:48', 'POST:/planning');
-INSERT INTO `sys_resource` VALUES ('98c864bdce956341baa4f83cf8a74ddc', '法律法规查询(分页)', '/legal/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/legal/page');
-INSERT INTO `sys_resource` VALUES ('9964cc368380f9bd7c782855389068d2', '公园添加', '/park', 'POST', '1', '2019-09-25 23:07:48', 'POST:/park');
-INSERT INTO `sys_resource` VALUES ('9be8e0df48c8ba879e5b079c73662ee4', '用户添加', '/user', 'POST', '3', '2019-09-25 23:07:49', 'POST:/user');
-INSERT INTO `sys_resource` VALUES ('9c649f2b5cc9a0948958033038e6786b', '游客统计编辑', '/gueststat/{id}', 'PUT', '3', '2019-09-25 23:07:48', 'PUT:/gueststat/{id}');
-INSERT INTO `sys_resource` VALUES ('9d47323a8cf271afa3794a41d01ebd8d', '地灾信息删除', '/earthquake/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/earthquake/{id}');
-INSERT INTO `sys_resource` VALUES ('a0a1a4a566471fe2a2556bd873a3f036', '生物标本添加', '/biospecimen', 'POST', '1', '2019-09-25 23:07:48', 'POST:/biospecimen');
-INSERT INTO `sys_resource` VALUES ('a114f29b98a6faa95ac89139008f0e8c', '会议编辑', '/parkmeeting/{id}', 'PUT', '3', '2019-09-25 23:07:48', 'PUT:/parkmeeting/{id}');
-INSERT INTO `sys_resource` VALUES ('a2cf21f89380c679e13e76a46e63de18', '角色查询(分页)', '/role/page', 'GET', '3', '2019-09-25 23:07:49', 'GET:/role/page');
-INSERT INTO `sys_resource` VALUES ('a36d86152fb3241feef81a9ccee6faed', '生态环境查询', '/ecosystem/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/ecosystem/page');
-INSERT INTO `sys_resource` VALUES ('a9301ba0ce8390ecd756fb60b0487496', '科普作品编辑', '/sciencework/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/sciencework/{id}');
-INSERT INTO `sys_resource` VALUES ('ab34bcc1abb35eb4c7926c4f8e88bfa0', '展板查询(分页)', '/displayboard/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/displayboard/page');
-INSERT INTO `sys_resource` VALUES ('abb48abd102deb57718e6210fd5b55f9', '矿权情况编辑', '/mineralright/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/mineralright/{id}');
-INSERT INTO `sys_resource` VALUES ('abe8fd7846f776abf7f9a52778a48cf0', '专家导游删除', '/parklibrary/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/parklibrary/{id}');
-INSERT INTO `sys_resource` VALUES ('af29194331dabc32c641585380ff714f', '游客统计查询(分页)', '/gueststat/page', 'GET', '3', '2019-09-25 23:07:48', 'GET:/gueststat/page');
-INSERT INTO `sys_resource` VALUES ('af63a08383a750461f23208b6d99bfc1', '重叠情况编辑', '/overlapping/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/overlapping/{id}');
-INSERT INTO `sys_resource` VALUES ('b0b5dc6a4d472e5160e289eee92ad5d4', '公园查询(列表)', '/park/list', 'GET', '3', '2019-09-25 23:07:48', 'GET:/park/list');
-INSERT INTO `sys_resource` VALUES ('b11f70e89e5f1fd419cce8af6f632e92', 'openApi自然景观详情', '/openApi/naturallandscapeInfo1', 'GET', '2', '2019-09-25 23:07:48', 'GET:/openApi/naturallandscapeInfo1');
-INSERT INTO `sys_resource` VALUES ('b42c4411f27e50bafc6094b31b323996', '自然景观删除', '/naturallandscape/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/naturallandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('b4a89208a3f348ad68f57a0ca16c94ec', '公园删除', '/park/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/park/{id}');
-INSERT INTO `sys_resource` VALUES ('b5bd54c21e5412a49f4f656c8f33f77b', '人文景观添加', '/humanlandscape', 'POST', '1', '2019-09-25 23:07:48', 'POST:/humanlandscape');
-INSERT INTO `sys_resource` VALUES ('b74d54f1f4be2958369a704a50f6900a', '交流互展添加', '/exchangeexhibition', 'POST', '3', '2019-09-25 23:07:48', 'POST:/exchangeexhibition');
-INSERT INTO `sys_resource` VALUES ('b799b91c2cb5d49953a7308c93aef3e6', '人文展品删除', '/humenexhibit/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/humenexhibit/{id}');
-INSERT INTO `sys_resource` VALUES ('b7b1c22076c0d28c8d0fe4c0b09b6a6e', '角色编辑', '/role/{id}', 'PUT', '3', '2019-09-25 23:07:49', 'PUT:/role/{id}');
-INSERT INTO `sys_resource` VALUES ('b9766aef2e0a38ab87f640ca592c3569', '科普作品删除', '/sciencework/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/sciencework/{id}');
-INSERT INTO `sys_resource` VALUES ('bab73118731876a830ed12630846422d', '博物馆展厅查询(分页)', '/museumexhibition/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/museumexhibition/page');
-INSERT INTO `sys_resource` VALUES ('bb72308d143b0fc7a397e2756fbc8d6f', 'openApi人文景观列表', '/openApi/humanlandscapeList', 'GET', '2', '2019-09-25 23:07:48', 'GET:/openApi/humanlandscapeList');
-INSERT INTO `sys_resource` VALUES ('bc90809c5084a45eda6ece88e426d0b8', '生态环境删除', '/ecosystem/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/ecosystem/{id}');
-INSERT INTO `sys_resource` VALUES ('c2db9729dcd4a7d703e45411bb445dfd', '账户密码修改', '/account/password', 'PUT', '1', '2019-09-25 23:07:49', 'PUT:/account/password');
-INSERT INTO `sys_resource` VALUES ('c360a16bbc9b4c5a8378d48bb1fa4ffd', '专题研究删除', '/parktopic/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/parktopic/{id}');
-INSERT INTO `sys_resource` VALUES ('c7e7ed1fdcc753f9fb5aab85bc639da6', '社会经济状况编辑', '/socialeconomy/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/socialeconomy/{id}');
-INSERT INTO `sys_resource` VALUES ('c83ae91d496426d8dc8c8d265f959cd0', '重叠情况查询(分页)', '/overlapping/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/overlapping/page');
-INSERT INTO `sys_resource` VALUES ('ca6fc80fa67b8178d040d951efed929e', '展板删除', '/displayboard/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/displayboard/{id}');
-INSERT INTO `sys_resource` VALUES ('cc88c5473c49ef83cad40ab279db16bf', '标示解说查询(分页)', '/commentary/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/commentary/page');
-INSERT INTO `sys_resource` VALUES ('cd6de4b154e91389697aaa16f9e70f03', '地质标本查询(分页)', '/geospecimen/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/geospecimen/page');
-INSERT INTO `sys_resource` VALUES ('cf2f5e841d1fa963c3a511c4ea23c6b8', '科研论文添加', '/researchpaper', 'POST', '1', '2019-09-25 23:07:48', 'POST:/researchpaper');
-INSERT INTO `sys_resource` VALUES ('cf644f767183f7940a094d82fd075ed5', '影像资料删除', '/vediodocs/{id}', 'DELETE', '3', '2019-09-25 23:07:48', 'DELETE:/vediodocs/{id}');
-INSERT INTO `sys_resource` VALUES ('d1cee74a3c8ecc212ec1fbfffd7d4b7a', '缔结姊妹公园添加', '/parkrelation', 'POST', '3', '2019-09-25 23:07:48', 'POST:/parkrelation');
-INSERT INTO `sys_resource` VALUES ('d245ace645ea40e898178ee13c24297f', '用户密码重置', '/user/{id}/password', 'PUT', '3', '2019-09-25 23:07:49', 'PUT:/user/{id}/password');
-INSERT INTO `sys_resource` VALUES ('d260fc5e4c10a4fbd1661acb739c6119', '矿权情况删除', '/mineralright/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/mineralright/{id}');
-INSERT INTO `sys_resource` VALUES ('d289b64ef206771d89ed2670d93049b9', '地质遗迹景观添加', '/geolandscape', 'POST', '1', '2019-09-25 23:07:48', 'POST:/geolandscape');
-INSERT INTO `sys_resource` VALUES ('d374ba0bb7e6ed122a2c04cbdb759b81', '人文展品查询(分页)', '/humenexhibit/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/humenexhibit/page');
-INSERT INTO `sys_resource` VALUES ('d3ec728a0d9d66b8351cd0278962a384', '图片资料编辑', '/picdocs/{id}', 'PUT', '3', '2019-09-25 23:07:48', 'PUT:/picdocs/{id}');
-INSERT INTO `sys_resource` VALUES ('d431b135887822c5c012561c96f1ec84', '生态环境编辑', '/ecosystem/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/ecosystem/{id}');
-INSERT INTO `sys_resource` VALUES ('d4dcfc78a6b0f5f84ede3740b391825f', '社会经济状况删除', '/socialeconomy/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/socialeconomy/{id}');
-INSERT INTO `sys_resource` VALUES ('d6119390317deda395c1487d401dd47f', '管理人员删除', '/manageperson/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/manageperson/{id}');
-INSERT INTO `sys_resource` VALUES ('d7b1e397718a5e2bb30ee16d81fe8839', '展板编辑', '/displayboard/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/displayboard/{id}');
-INSERT INTO `sys_resource` VALUES ('d81bffa6ffd70cc443703820b5a95e8d', '账户菜单', '/account/menus', 'GET', '1', '2019-09-25 23:07:49', 'GET:/account/menus');
-INSERT INTO `sys_resource` VALUES ('d83a249e0e0ed84806ecba2fd8c7148d', '菜单父级查询(下拉框)', '/menu/combos', 'GET', '3', '2019-09-25 23:07:49', 'GET:/menu/combos');
-INSERT INTO `sys_resource` VALUES ('d8544217f479cfb39559e4b94f413aaa', '资源查询(所有)', '/resource/list', 'GET', '3', '2019-09-25 23:07:49', 'GET:/resource/list');
-INSERT INTO `sys_resource` VALUES ('dcd22be9d250bc20abed2b5390259a3f', '自然景观查询(分页)', '/naturallandscape/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/naturallandscape/page');
-INSERT INTO `sys_resource` VALUES ('dd00babb9be667747337654d68354531', '科普活动编辑', '/scienceactivity/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/scienceactivity/{id}');
-INSERT INTO `sys_resource` VALUES ('ddf4e3fd39264da50eec54cfd02731f4', '角色删除', '/role/{id}', 'DELETE', '3', '2019-09-25 23:07:49', 'DELETE:/role/{id}');
-INSERT INTO `sys_resource` VALUES ('de16f2ea5e499ebcb81154efec1d2df4', '游客统计添加', '/gueststat', 'POST', '3', '2019-09-25 23:07:48', 'POST:/gueststat');
-INSERT INTO `sys_resource` VALUES ('de2199682fdb8768d3dada69bf282f63', '管理机构查询(分页)', '/managementagency/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/managementagency/page');
-INSERT INTO `sys_resource` VALUES ('de8b6406105c3ea1c71de78e0870595e', '菜单状态设置', '/menu/{id}/status', 'PUT', '3', '2019-09-25 23:07:49', 'PUT:/menu/{id}/status');
-INSERT INTO `sys_resource` VALUES ('dfdff4d1f7e710eb21962c2f6df810b4', '管理人员查询(分页)', '/manageperson/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/manageperson/page');
-INSERT INTO `sys_resource` VALUES ('e113d9ae14c1ba583228d0974ccdfab1', '地质遗迹景观编辑', '/geolandscape/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/geolandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('e39c62db55dba9e58d9f996096e97c63', '专家导游添加', '/parklibrary', 'POST', '1', '2019-09-25 23:07:48', 'POST:/parklibrary');
-INSERT INTO `sys_resource` VALUES ('e6785c61264683eaa3e7b6bcd5190f69', '法律法规添加', '/legal', 'POST', '1', '2019-09-25 23:07:48', 'POST:/legal');
-INSERT INTO `sys_resource` VALUES ('e742172f7e82773b48f7075ffbf3060c', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo1', 'GET', '2', '2019-09-25 23:07:48', 'GET:/openApi/geolandscapeInfo1');
-INSERT INTO `sys_resource` VALUES ('e78940daf86b9ac5563d539e8802429c', '账户详情', '/account/info', 'GET', '1', '2019-09-25 23:07:49', 'GET:/account/info');
-INSERT INTO `sys_resource` VALUES ('e78b1e45561db580a21ebe962414aaa9', '自然景观添加', '/naturallandscape', 'POST', '1', '2019-09-25 23:07:48', 'POST:/naturallandscape');
-INSERT INTO `sys_resource` VALUES ('e8294671c0aeae7195fc3c43e2457436', '生物标本查询(分页)', '/biospecimen/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/biospecimen/page');
-INSERT INTO `sys_resource` VALUES ('e94e936ee35513a5cbaa0b670a806677', '博物馆基本情况添加', '/museum', 'POST', '1', '2019-09-25 23:07:48', 'POST:/museum');
-INSERT INTO `sys_resource` VALUES ('ea1ff9435f36746204efc424f2386a3e', '地质背景查询(分页)', '/geological/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/geological/page');
-INSERT INTO `sys_resource` VALUES ('eb0766e055b34846e6f0e8a003dc0f51', '产品推介删除', '/production/{id}', 'DELETE', '3', '2019-09-25 23:07:48', 'DELETE:/production/{id}');
-INSERT INTO `sys_resource` VALUES ('ec06a315849b5fe61ea032f908e04998', 'openApi人文景观详情', '/openApi/humanlandscapeInfo1', 'GET', '2', '2019-09-25 23:07:48', 'GET:/openApi/humanlandscapeInfo1');
-INSERT INTO `sys_resource` VALUES ('eed40b7746f536ba707e8c7b3bc3d600', '公园信息添加', '/parkinfo', 'POST', '3', '2019-09-25 23:07:48', 'POST:/parkinfo');
-INSERT INTO `sys_resource` VALUES ('ef0c2202d21ea0a946a1aa1fc96b1099', '交流互展删除', '/exchangeexhibition/{id}', 'DELETE', '3', '2019-09-25 23:07:48', 'DELETE:/exchangeexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('f084f47ab2ec0ce7d2846ca0465f9926', '采样信息查询(分页)', '/sampling/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/sampling/page');
-INSERT INTO `sys_resource` VALUES ('f4912e9c64d9c95d761a642caac77a3c', '地灾信息添加', '/earthquake', 'POST', '1', '2019-09-25 23:07:48', 'POST:/earthquake');
-INSERT INTO `sys_resource` VALUES ('f4b369788d0d337b34bfe8e763168124', 'openApi自然景观详情', '/openApi/naturallandscapeInfo', 'GET', '2', '2019-09-25 23:07:48', 'GET:/openApi/naturallandscapeInfo');
-INSERT INTO `sys_resource` VALUES ('f86b169919bf24ce08507f2dcea7de8f', '标示解说编辑', '/commentary/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/commentary/{id}');
-INSERT INTO `sys_resource` VALUES ('f880f8a35613b38182612a061291f8a5', '菜单查询(所有)', '/menu/list', 'GET', '3', '2019-09-25 23:07:49', 'GET:/menu/list');
-INSERT INTO `sys_resource` VALUES ('f8afb5ec48a65cb7c9cd7e9372118748', '生态环境添加', '/ecosystem', 'POST', '1', '2019-09-25 23:07:48', 'POST:/ecosystem');
-INSERT INTO `sys_resource` VALUES ('fad1ecbafb22f1ac0f63486d71393745', '用户查询(分页)', '/user/page', 'GET', '3', '2019-09-25 23:07:49', 'GET:/user/page');
-INSERT INTO `sys_resource` VALUES ('fcefc2a889894309e8eaff8f5762240a', '法律法规编辑', '/legal/{id}', 'PUT', '1', '2019-09-25 23:07:48', 'PUT:/legal/{id}');
-INSERT INTO `sys_resource` VALUES ('fd1c22d987d0c74044917917a85acfdc', '矿权情况添加', '/mineralright', 'POST', '1', '2019-09-25 23:07:48', 'POST:/mineralright');
-INSERT INTO `sys_resource` VALUES ('fdbe8e0f7ae93c33c165fdbc68fdb719', '社会经济状况查询(分页)', '/socialeconomy/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/socialeconomy/page');
-INSERT INTO `sys_resource` VALUES ('fe7a8147c0721226e5de8e3e8f6ebf93', '专家导游查询(分页)', '/parklibrary/page', 'GET', '1', '2019-09-25 23:07:48', 'GET:/parklibrary/page');
-INSERT INTO `sys_resource` VALUES ('ffdbcf5be43ec6452a9b568c833f8f0a', '法律法规删除', '/legal/{id}', 'DELETE', '1', '2019-09-25 23:07:48', 'DELETE:/legal/{id}');
+INSERT INTO `sys_resource` VALUES ('61ffa059261d938164f12a0feae60779', '地质标本编辑', '/geospecimen/{id}', 'PUT', '1', '2019-10-22 13:58:45', 'PUT:/geospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('6588452dd7adc2cf0b3a634c7eaba578', '博物馆基本情况查询(分页)', '/museum/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/museum/page');
+INSERT INTO `sys_resource` VALUES ('6594f272facd4b263779a5898408d6f5', '地质标本添加', '/geospecimen', 'POST', '1', '2019-10-22 13:58:45', 'POST:/geospecimen');
+INSERT INTO `sys_resource` VALUES ('65bbd93b69d8dd2d5cade59dc0ccd8e6', '公园规划编辑', '/planning/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/planning/{id}');
+INSERT INTO `sys_resource` VALUES ('664f3db603c5855b208fc969984e1603', '采样信息添加', '/sampling', 'POST', '1', '2019-10-22 13:58:46', 'POST:/sampling');
+INSERT INTO `sys_resource` VALUES ('6847ea5e1845717af3d32125277a5eea', '管理机构查询(列表)', '/managementagency/list', 'GET', '3', '2019-10-22 13:58:46', 'GET:/managementagency/list');
+INSERT INTO `sys_resource` VALUES ('68655ee2d14ea4f555d8c6bd91004381', '科研论文编辑', '/researchpaper/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/researchpaper/{id}');
+INSERT INTO `sys_resource` VALUES ('6aa7aabe9b977d40b24dc5af059f2782', '人文展品编辑', '/humenexhibit/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/humenexhibit/{id}');
+INSERT INTO `sys_resource` VALUES ('6ab0f8a49671e489f11a1bef2fcaf102', '账户清除', '/account/token', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/account/token');
+INSERT INTO `sys_resource` VALUES ('6c3514540b1e2e1589a9c9566273c7c7', '用户详情', '/user/{id}', 'GET', '3', '2019-10-22 13:58:46', 'GET:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('6e8bb84dfd74bd76918cbc7b7b97e241', '地质标本删除', '/geospecimen/{id}', 'DELETE', '1', '2019-10-22 13:58:45', 'DELETE:/geospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('6f64396b3c7a68b40194169e09380fd0', '采样信息删除', '/sampling/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/sampling/{id}');
+INSERT INTO `sys_resource` VALUES ('7025c7532d2a58d3de4dde7c66d363f3', '资源刷新', '/resource', 'PUT', '3', '2019-10-22 13:58:45', 'PUT:/resource');
+INSERT INTO `sys_resource` VALUES ('70a8486a7b06e085a6e5d5249cd68c19', '博物馆查询(列表)', '/museum/list', 'GET', '3', '2019-10-22 13:58:46', 'GET:/museum/list');
+INSERT INTO `sys_resource` VALUES ('71d5f2e10db38eaebdaa44fa89cb1163', '任务删除', '/task/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/task/{id}');
+INSERT INTO `sys_resource` VALUES ('71ff8d6843b1023eaa48a6a0113b9307', '人文展品添加', '/humenexhibit', 'POST', '1', '2019-10-22 13:58:46', 'POST:/humenexhibit');
+INSERT INTO `sys_resource` VALUES ('72331b4d9d6a4d884f54d75b7ebc3b0b', '展板添加', '/displayboard', 'POST', '1', '2019-10-22 13:58:46', 'POST:/displayboard');
+INSERT INTO `sys_resource` VALUES ('729f78186228a271d4035747eb4ad465', '专题研究添加', '/parktopic', 'POST', '1', '2019-10-22 13:58:46', 'POST:/parktopic');
+INSERT INTO `sys_resource` VALUES ('7ad036add7309273ab46935c955cd547', '地质遗迹景观查询(分页)', '/geolandscape/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/geolandscape/page');
+INSERT INTO `sys_resource` VALUES ('7d5889685e76e54b05e5f88169fd5e20', '影像资料编辑', '/vediodocs/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/vediodocs/{id}');
+INSERT INTO `sys_resource` VALUES ('7e5982583c9805792c523b32ca5ef88b', '图片资料添加', '/picdocs', 'POST', '3', '2019-10-22 13:58:46', 'POST:/picdocs');
+INSERT INTO `sys_resource` VALUES ('7f4c9278a2d5d361b584e8db2c0f9d64', '采样信息编辑', '/sampling/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/sampling/{id}');
+INSERT INTO `sys_resource` VALUES ('8069b90f45605898c6b48c513785194e', '专题研究编辑', '/parktopic/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/parktopic/{id}');
+INSERT INTO `sys_resource` VALUES ('80e9634eadbb61b2d2c8e3b8477aa313', '会议查询(分页)', '/parkmeeting/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/parkmeeting/page');
+INSERT INTO `sys_resource` VALUES ('82755b8a0b46c30b88df630c0175c625', 'VR全景删除', '/vrdata/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/vrdata/{id}');
+INSERT INTO `sys_resource` VALUES ('82ae5ea4f71f8e9f4ff625dbc8d28819', '影像资料查询(分页)', '/vediodocs/page', 'GET', '3', '2019-10-22 13:58:47', 'GET:/vediodocs/page');
+INSERT INTO `sys_resource` VALUES ('82d143f7b01b3cb8cf2617a9efb7a8b8', '产品推介查询(分页)', '/production/page', 'GET', '3', '2019-10-22 13:58:45', 'GET:/production/page');
+INSERT INTO `sys_resource` VALUES ('842e33410b5a97b6c797e4782c97a90e', '账户获取', '/account/token', 'POST', '2', '2019-10-22 13:58:46', 'POST:/account/token');
+INSERT INTO `sys_resource` VALUES ('85b2608158865a37dd2c4cdd8c91f387', '公园信息编辑', '/parkinfo/{id}', 'PUT', '3', '2019-10-22 13:58:45', 'PUT:/parkinfo/{id}');
+INSERT INTO `sys_resource` VALUES ('86047dad161b62bae784f2f77cb44cb8', '管理机构删除', '/managementagency/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/managementagency/{id}');
+INSERT INTO `sys_resource` VALUES ('8690f1577b8abe64aa841cb763a32b47', '地质背景添加', '/geological', 'POST', '1', '2019-10-22 13:58:46', 'POST:/geological');
+INSERT INTO `sys_resource` VALUES ('8b98b499b8e85136a0cbb44fee38385a', '上传文件', '/upload/file', 'POST', '1', '2019-10-22 13:58:45', 'POST:/upload/file');
+INSERT INTO `sys_resource` VALUES ('8cb83a749812f5d14d518d080fa12773', '科普作品查询(分页)', '/sciencework/page', 'GET', '1', '2019-10-22 13:58:45', 'GET:/sciencework/page');
+INSERT INTO `sys_resource` VALUES ('8f0edeb755b80546b041872d0c867874', 'openApi地质遗迹景观列表', '/openApi/geolandscapeList', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/geolandscapeList');
+INSERT INTO `sys_resource` VALUES ('9113537364ae8b5e8864864039a6ce61', 'VR全景编辑', '/vrdata/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/vrdata/{id}');
+INSERT INTO `sys_resource` VALUES ('9141e80baac708a8863498ff7a41d276', '任务添加', '/task', 'POST', '1', '2019-10-22 13:58:46', 'POST:/task');
+INSERT INTO `sys_resource` VALUES ('91f929d78067ee9198830bad15703b52', 'VR全景查询(分页)', '/vrdata/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/vrdata/page');
+INSERT INTO `sys_resource` VALUES ('924b18eaf488496f46b09c2faa561a4c', 'VR全景添加', '/vrdata', 'POST', '1', '2019-10-22 13:58:46', 'POST:/vrdata');
+INSERT INTO `sys_resource` VALUES ('93541f9d26ff3e388f53744d70679dd4', '科普活动删除', '/scienceactivity/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/scienceactivity/{id}');
+INSERT INTO `sys_resource` VALUES ('9513d9c346dc6afdbcef07fad075ca96', '博物馆基本情况编辑', '/museum/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/museum/{id}');
+INSERT INTO `sys_resource` VALUES ('956578f7a1e6fe0239b03232faa0dfda', '公园规划添加', '/planning', 'POST', '3', '2019-10-22 13:58:46', 'POST:/planning');
+INSERT INTO `sys_resource` VALUES ('98c864bdce956341baa4f83cf8a74ddc', '法律法规查询(分页)', '/legal/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/legal/page');
+INSERT INTO `sys_resource` VALUES ('9964cc368380f9bd7c782855389068d2', '公园添加', '/park', 'POST', '1', '2019-10-22 13:58:46', 'POST:/park');
+INSERT INTO `sys_resource` VALUES ('9a7d73a1f4ebe1e284337e98cf564aee', '导出xls', '/export1xls', 'GET', '1', '2019-10-15 10:15:22', 'GET:/export1xls');
+INSERT INTO `sys_resource` VALUES ('9be8e0df48c8ba879e5b079c73662ee4', '用户添加', '/user', 'POST', '3', '2019-10-22 13:58:46', 'POST:/user');
+INSERT INTO `sys_resource` VALUES ('9c649f2b5cc9a0948958033038e6786b', '游客统计编辑', '/gueststat/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/gueststat/{id}');
+INSERT INTO `sys_resource` VALUES ('9d47323a8cf271afa3794a41d01ebd8d', '地灾信息删除', '/earthquake/{id}', 'DELETE', '1', '2019-10-22 13:58:45', 'DELETE:/earthquake/{id}');
+INSERT INTO `sys_resource` VALUES ('a0a1a4a566471fe2a2556bd873a3f036', '生物标本添加', '/biospecimen', 'POST', '1', '2019-10-22 13:58:46', 'POST:/biospecimen');
+INSERT INTO `sys_resource` VALUES ('a114f29b98a6faa95ac89139008f0e8c', '会议编辑', '/parkmeeting/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/parkmeeting/{id}');
+INSERT INTO `sys_resource` VALUES ('a2cf21f89380c679e13e76a46e63de18', '角色查询(分页)', '/role/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/role/page');
+INSERT INTO `sys_resource` VALUES ('a36d86152fb3241feef81a9ccee6faed', '生态环境查询', '/ecosystem/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/ecosystem/page');
+INSERT INTO `sys_resource` VALUES ('a9301ba0ce8390ecd756fb60b0487496', '科普作品编辑', '/sciencework/{id}', 'PUT', '1', '2019-10-22 13:58:45', 'PUT:/sciencework/{id}');
+INSERT INTO `sys_resource` VALUES ('ab34bcc1abb35eb4c7926c4f8e88bfa0', '展板查询(分页)', '/displayboard/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/displayboard/page');
+INSERT INTO `sys_resource` VALUES ('abb48abd102deb57718e6210fd5b55f9', '矿权情况编辑', '/mineralright/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/mineralright/{id}');
+INSERT INTO `sys_resource` VALUES ('abe8fd7846f776abf7f9a52778a48cf0', '专家导游删除', '/parklibrary/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/parklibrary/{id}');
+INSERT INTO `sys_resource` VALUES ('af29194331dabc32c641585380ff714f', '游客统计查询(分页)', '/gueststat/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/gueststat/page');
+INSERT INTO `sys_resource` VALUES ('af63a08383a750461f23208b6d99bfc1', '重叠情况编辑', '/overlapping/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/overlapping/{id}');
+INSERT INTO `sys_resource` VALUES ('b0b5dc6a4d472e5160e289eee92ad5d4', '公园查询(列表)', '/park/list', 'GET', '3', '2019-10-22 13:58:46', 'GET:/park/list');
+INSERT INTO `sys_resource` VALUES ('b11f70e89e5f1fd419cce8af6f632e92', 'openApi自然景观详情', '/openApi/naturallandscapeInfo1', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/naturallandscapeInfo1');
+INSERT INTO `sys_resource` VALUES ('b42c4411f27e50bafc6094b31b323996', '自然景观删除', '/naturallandscape/{id}', 'DELETE', '1', '2019-10-22 13:58:45', 'DELETE:/naturallandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('b4a89208a3f348ad68f57a0ca16c94ec', '公园删除', '/park/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/park/{id}');
+INSERT INTO `sys_resource` VALUES ('b5bd54c21e5412a49f4f656c8f33f77b', '人文景观添加', '/humanlandscape', 'POST', '1', '2019-10-22 13:58:46', 'POST:/humanlandscape');
+INSERT INTO `sys_resource` VALUES ('b74d54f1f4be2958369a704a50f6900a', '交流互展添加', '/exchangeexhibition', 'POST', '3', '2019-10-22 13:58:46', 'POST:/exchangeexhibition');
+INSERT INTO `sys_resource` VALUES ('b799b91c2cb5d49953a7308c93aef3e6', '人文展品删除', '/humenexhibit/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/humenexhibit/{id}');
+INSERT INTO `sys_resource` VALUES ('b7b1c22076c0d28c8d0fe4c0b09b6a6e', '角色编辑', '/role/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/role/{id}');
+INSERT INTO `sys_resource` VALUES ('b9766aef2e0a38ab87f640ca592c3569', '科普作品删除', '/sciencework/{id}', 'DELETE', '1', '2019-10-22 13:58:45', 'DELETE:/sciencework/{id}');
+INSERT INTO `sys_resource` VALUES ('bab73118731876a830ed12630846422d', '博物馆展厅查询(分页)', '/museumexhibition/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/museumexhibition/page');
+INSERT INTO `sys_resource` VALUES ('bb72308d143b0fc7a397e2756fbc8d6f', 'openApi人文景观列表', '/openApi/humanlandscapeList', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/humanlandscapeList');
+INSERT INTO `sys_resource` VALUES ('bc90809c5084a45eda6ece88e426d0b8', '生态环境删除', '/ecosystem/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/ecosystem/{id}');
+INSERT INTO `sys_resource` VALUES ('c2db9729dcd4a7d703e45411bb445dfd', '账户密码修改', '/account/password', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/account/password');
+INSERT INTO `sys_resource` VALUES ('c360a16bbc9b4c5a8378d48bb1fa4ffd', '专题研究删除', '/parktopic/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/parktopic/{id}');
+INSERT INTO `sys_resource` VALUES ('c7e7ed1fdcc753f9fb5aab85bc639da6', '社会经济状况编辑', '/socialeconomy/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/socialeconomy/{id}');
+INSERT INTO `sys_resource` VALUES ('c83ae91d496426d8dc8c8d265f959cd0', '重叠情况查询(分页)', '/overlapping/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/overlapping/page');
+INSERT INTO `sys_resource` VALUES ('ca6fc80fa67b8178d040d951efed929e', '展板删除', '/displayboard/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/displayboard/{id}');
+INSERT INTO `sys_resource` VALUES ('cb5c88079e3665683307a99ee46a865e', '导入xls', '/importBackup/xls', 'POST', '1', '2019-10-22 13:58:45', 'POST:/importBackup/xls');
+INSERT INTO `sys_resource` VALUES ('cc88c5473c49ef83cad40ab279db16bf', '标示解说查询(分页)', '/commentary/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/commentary/page');
+INSERT INTO `sys_resource` VALUES ('cd6de4b154e91389697aaa16f9e70f03', '地质标本查询(分页)', '/geospecimen/page', 'GET', '1', '2019-10-22 13:58:45', 'GET:/geospecimen/page');
+INSERT INTO `sys_resource` VALUES ('cf2f5e841d1fa963c3a511c4ea23c6b8', '科研论文添加', '/researchpaper', 'POST', '1', '2019-10-22 13:58:46', 'POST:/researchpaper');
+INSERT INTO `sys_resource` VALUES ('cf644f767183f7940a094d82fd075ed5', '影像资料删除', '/vediodocs/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/vediodocs/{id}');
+INSERT INTO `sys_resource` VALUES ('d1cee74a3c8ecc212ec1fbfffd7d4b7a', '缔结姊妹公园添加', '/parkrelation', 'POST', '3', '2019-10-22 13:58:45', 'POST:/parkrelation');
+INSERT INTO `sys_resource` VALUES ('d245ace645ea40e898178ee13c24297f', '用户密码重置', '/user/{id}/password', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/user/{id}/password');
+INSERT INTO `sys_resource` VALUES ('d260fc5e4c10a4fbd1661acb739c6119', '矿权情况删除', '/mineralright/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/mineralright/{id}');
+INSERT INTO `sys_resource` VALUES ('d289b64ef206771d89ed2670d93049b9', '地质遗迹景观添加', '/geolandscape', 'POST', '1', '2019-10-22 13:58:46', 'POST:/geolandscape');
+INSERT INTO `sys_resource` VALUES ('d374ba0bb7e6ed122a2c04cbdb759b81', '人文展品查询(分页)', '/humenexhibit/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/humenexhibit/page');
+INSERT INTO `sys_resource` VALUES ('d3ec728a0d9d66b8351cd0278962a384', '图片资料编辑', '/picdocs/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/picdocs/{id}');
+INSERT INTO `sys_resource` VALUES ('d431b135887822c5c012561c96f1ec84', '生态环境编辑', '/ecosystem/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/ecosystem/{id}');
+INSERT INTO `sys_resource` VALUES ('d4dcfc78a6b0f5f84ede3740b391825f', '社会经济状况删除', '/socialeconomy/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/socialeconomy/{id}');
+INSERT INTO `sys_resource` VALUES ('d6119390317deda395c1487d401dd47f', '管理人员删除', '/manageperson/{id}', 'DELETE', '1', '2019-10-22 13:58:45', 'DELETE:/manageperson/{id}');
+INSERT INTO `sys_resource` VALUES ('d7b1e397718a5e2bb30ee16d81fe8839', '展板编辑', '/displayboard/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/displayboard/{id}');
+INSERT INTO `sys_resource` VALUES ('d81bffa6ffd70cc443703820b5a95e8d', '账户菜单', '/account/menus', 'GET', '1', '2019-10-22 13:58:46', 'GET:/account/menus');
+INSERT INTO `sys_resource` VALUES ('d83a249e0e0ed84806ecba2fd8c7148d', '菜单父级查询(下拉框)', '/menu/combos', 'GET', '3', '2019-10-22 13:58:46', 'GET:/menu/combos');
+INSERT INTO `sys_resource` VALUES ('d8544217f479cfb39559e4b94f413aaa', '资源查询(所有)', '/resource/list', 'GET', '3', '2019-10-22 13:58:45', 'GET:/resource/list');
+INSERT INTO `sys_resource` VALUES ('dcd22be9d250bc20abed2b5390259a3f', '自然景观查询(分页)', '/naturallandscape/page', 'GET', '1', '2019-10-22 13:58:45', 'GET:/naturallandscape/page');
+INSERT INTO `sys_resource` VALUES ('dd00babb9be667747337654d68354531', '科普活动编辑', '/scienceactivity/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/scienceactivity/{id}');
+INSERT INTO `sys_resource` VALUES ('ddf4e3fd39264da50eec54cfd02731f4', '角色删除', '/role/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/role/{id}');
+INSERT INTO `sys_resource` VALUES ('de16f2ea5e499ebcb81154efec1d2df4', '游客统计添加', '/gueststat', 'POST', '3', '2019-10-22 13:58:46', 'POST:/gueststat');
+INSERT INTO `sys_resource` VALUES ('de2199682fdb8768d3dada69bf282f63', '管理机构查询(分页)', '/managementagency/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/managementagency/page');
+INSERT INTO `sys_resource` VALUES ('de8b6406105c3ea1c71de78e0870595e', '菜单状态设置', '/menu/{id}/status', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/menu/{id}/status');
+INSERT INTO `sys_resource` VALUES ('dfdff4d1f7e710eb21962c2f6df810b4', '管理人员查询(分页)', '/manageperson/page', 'GET', '1', '2019-10-22 13:58:45', 'GET:/manageperson/page');
+INSERT INTO `sys_resource` VALUES ('e113d9ae14c1ba583228d0974ccdfab1', '地质遗迹景观编辑', '/geolandscape/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/geolandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('e39c62db55dba9e58d9f996096e97c63', '专家导游添加', '/parklibrary', 'POST', '1', '2019-10-22 13:58:46', 'POST:/parklibrary');
+INSERT INTO `sys_resource` VALUES ('e6785c61264683eaa3e7b6bcd5190f69', '法律法规添加', '/legal', 'POST', '1', '2019-10-22 13:58:46', 'POST:/legal');
+INSERT INTO `sys_resource` VALUES ('e742172f7e82773b48f7075ffbf3060c', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo1', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/geolandscapeInfo1');
+INSERT INTO `sys_resource` VALUES ('e78940daf86b9ac5563d539e8802429c', '账户详情', '/account/info', 'GET', '1', '2019-10-22 13:58:46', 'GET:/account/info');
+INSERT INTO `sys_resource` VALUES ('e78b1e45561db580a21ebe962414aaa9', '自然景观添加', '/naturallandscape', 'POST', '1', '2019-10-22 13:58:45', 'POST:/naturallandscape');
+INSERT INTO `sys_resource` VALUES ('e8294671c0aeae7195fc3c43e2457436', '生物标本查询(分页)', '/biospecimen/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/biospecimen/page');
+INSERT INTO `sys_resource` VALUES ('e94e936ee35513a5cbaa0b670a806677', '博物馆基本情况添加', '/museum', 'POST', '1', '2019-10-22 13:58:46', 'POST:/museum');
+INSERT INTO `sys_resource` VALUES ('ea1ff9435f36746204efc424f2386a3e', '地质背景查询(分页)', '/geological/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/geological/page');
+INSERT INTO `sys_resource` VALUES ('eb0766e055b34846e6f0e8a003dc0f51', '产品推介删除', '/production/{id}', 'DELETE', '3', '2019-10-22 13:58:45', 'DELETE:/production/{id}');
+INSERT INTO `sys_resource` VALUES ('ec06a315849b5fe61ea032f908e04998', 'openApi人文景观详情', '/openApi/humanlandscapeInfo1', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/humanlandscapeInfo1');
+INSERT INTO `sys_resource` VALUES ('eed40b7746f536ba707e8c7b3bc3d600', '公园信息添加', '/parkinfo', 'POST', '3', '2019-10-22 13:58:45', 'POST:/parkinfo');
+INSERT INTO `sys_resource` VALUES ('ef0c2202d21ea0a946a1aa1fc96b1099', '交流互展删除', '/exchangeexhibition/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/exchangeexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('f084f47ab2ec0ce7d2846ca0465f9926', '采样信息查询(分页)', '/sampling/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/sampling/page');
+INSERT INTO `sys_resource` VALUES ('f11ce5f9757df03f88b94a924c1f3512', '导出xls', '/exportxls', 'GET', '1', '2019-10-22 13:58:45', 'GET:/exportxls');
+INSERT INTO `sys_resource` VALUES ('f4912e9c64d9c95d761a642caac77a3c', '地灾信息添加', '/earthquake', 'POST', '1', '2019-10-22 13:58:45', 'POST:/earthquake');
+INSERT INTO `sys_resource` VALUES ('f4b369788d0d337b34bfe8e763168124', 'openApi自然景观详情', '/openApi/naturallandscapeInfo', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/naturallandscapeInfo');
+INSERT INTO `sys_resource` VALUES ('f86b169919bf24ce08507f2dcea7de8f', '标示解说编辑', '/commentary/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/commentary/{id}');
+INSERT INTO `sys_resource` VALUES ('f880f8a35613b38182612a061291f8a5', '菜单查询(所有)', '/menu/list', 'GET', '3', '2019-10-22 13:58:46', 'GET:/menu/list');
+INSERT INTO `sys_resource` VALUES ('f8afb5ec48a65cb7c9cd7e9372118748', '生态环境添加', '/ecosystem', 'POST', '1', '2019-10-22 13:58:46', 'POST:/ecosystem');
+INSERT INTO `sys_resource` VALUES ('fad1ecbafb22f1ac0f63486d71393745', '用户查询(分页)', '/user/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/user/page');
+INSERT INTO `sys_resource` VALUES ('fcefc2a889894309e8eaff8f5762240a', '法律法规编辑', '/legal/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/legal/{id}');
+INSERT INTO `sys_resource` VALUES ('fd1c22d987d0c74044917917a85acfdc', '矿权情况添加', '/mineralright', 'POST', '1', '2019-10-22 13:58:46', 'POST:/mineralright');
+INSERT INTO `sys_resource` VALUES ('fdbe8e0f7ae93c33c165fdbc68fdb719', '社会经济状况查询(分页)', '/socialeconomy/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/socialeconomy/page');
+INSERT INTO `sys_resource` VALUES ('fe7a8147c0721226e5de8e3e8f6ebf93', '专家导游查询(分页)', '/parklibrary/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/parklibrary/page');
+INSERT INTO `sys_resource` VALUES ('ffdbcf5be43ec6452a9b568c833f8f0a', '法律法规删除', '/legal/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/legal/{id}');
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -1914,7 +2072,7 @@ CREATE TABLE `sys_user` (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', '超级管理员', 'root@163.com', '13866668888', '0', '1', '2019-08-23 10:56:12', '2019-09-25 22:26:11', 'admin', '$apr1$admin$Sl27Fb32LUppR7w2Ovw4V/', '127.0.0.1');
+INSERT INTO `sys_user` VALUES ('1', '超级管理员', 'root@163.com', '13866668888', '0', '1', '2019-08-23 10:56:12', '2019-10-22 15:01:23', 'admin', '$apr1$admin$Sl27Fb32LUppR7w2Ovw4V/', '127.0.0.1');
 INSERT INTO `sys_user` VALUES ('2', '阿大', '8888@163.com', '13888888888', '0', '1', '2019-08-23 10:57:17', '2019-08-23 10:57:17', 'lichee', '$apr1$lichee$2XUDSi4pQtv7EUyYcswB91', '127.0.0.1');
 INSERT INTO `sys_user` VALUES ('3', '李勇', '946509621@qq.com', '17723321245', '0', '1', '2019-09-17 17:31:06', '2019-09-18 17:59:54', 'liyong', '$apr1$liyong$f4uNIOJAUPQKwkBTU.QyD/', '127.0.0.1');
 
