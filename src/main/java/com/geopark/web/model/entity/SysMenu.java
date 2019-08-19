@@ -3,6 +3,7 @@ package com.geopark.web.model.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.geopark.framework.enums.MenuTypeEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -47,7 +48,7 @@ public class SysMenu implements Serializable {
     /**
      * 类型:0:目录,1:菜单,2:按钮
      */
-    private Integer menuType;
+    private MenuTypeEnum menuType;
 
     /**
      * 菜单图标

@@ -1,0 +1,10 @@
+<div class="layui-side-scroll">
+    <ul class="layui-nav layui-nav-tree " lay-filter="test" style="margin-top: 15px;">
+        <li class="layui-nav-item" p-for="menus"><!--layui-nav-itemed-->
+            <a href="javascript:;"><i p-bind="class:layui-icon {{icon}}"></i>&emsp;<cite>{{menuName}}</cite></a>
+            <dl class="layui-nav-child" p-each="childrens">
+                <dd><a p-bind="href:{{path}} ^ lang:{{router}}">{{menuName}}</a></dd><!--layui-this-->
+            </dl>
+        </li>
+    </ul>
+</div>

@@ -8,8 +8,10 @@ import com.geopark.framework.responses.ApiResponses;
 import com.geopark.framework.utils.IpUtils;
 import com.geopark.web.model.entity.SysUser;
 import com.geopark.web.model.param.LoginPARM;
+import com.geopark.web.model.vo.MenuTreeVo;
 import com.geopark.web.model.vo.TokenVo;
 import com.geopark.web.model.vo.UserDetailsVo;
+import com.geopark.web.service.SysMenuService;
 import com.geopark.web.service.SysUserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +38,8 @@ public class AccountRestController extends SuperController {
     @Autowired
     private SysUserService userService;
 
-//    @Autowired
-//    private IMenuService menuService;
+    @Autowired
+    private SysMenuService menuService;
 
     @Resources(AuthTypeEnum.OPEN)
     @ApiOperation("获取Token")
@@ -87,13 +89,13 @@ public class AccountRestController extends SuperController {
 //        return success();
 //    }
 //
-//    @Resources(auth = AuthTypeEnum.LOGIN)
-//    @ApiOperation("获取账户菜单")
-//    @GetMapping("/menus")
-//    public ApiResponses<List<MenuTreeDTO>> menus() {
-//        List<MenuTreeDTO> menuTrees = menuService.getUserPermMenus(currentUid());
-//        return success(menuTrees);
-//    }
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation("获取账户菜单")
+    @GetMapping("/menus")
+    public ApiResponses<List<MenuTreeVo>> menus() {
+        List<MenuTreeVo> menuTrees = menuService.getUserPermMenus(currentUid());
+        return success(menuTrees);
+    }
 //
 //    @Resources(auth = AuthTypeEnum.LOGIN)
 //    @ApiOperation("获取账户按钮")

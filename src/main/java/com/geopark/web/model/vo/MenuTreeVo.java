@@ -1,5 +1,6 @@
 package com.geopark.web.model.vo;
 
+import com.geopark.framework.model.TreeNode;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,6 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class MenuTreeVo extends TreeNode {
 
-    private Integer id;
     private String menuName;
     private Integer menuType;
     private String router;

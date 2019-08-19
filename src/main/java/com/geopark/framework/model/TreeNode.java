@@ -1,4 +1,4 @@
-package com.geopark.web.model.vo;
+package com.geopark.framework.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -17,9 +17,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class TreeNode {
-
-    private Integer id;
+public class TreeNode extends BaseModel {
 
     protected Integer parentId;
 

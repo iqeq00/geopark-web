@@ -686,10 +686,10 @@ CREATE TABLE `sys_menu`  (
 -- Records of sys_menu
 -- ----------------------------
 INSERT INTO `sys_menu` VALUES (1, 0, '系统管理', '', 1, 'layui-icon-set', 1, 1, '2018-11-27 14:52:10', '2018-11-27 15:11:15', 0, NULL, '');
-INSERT INTO `sys_menu` VALUES (23, 1, '用户管理', 'views/user/index.html', 2, 'layui-icon-username', 1, 1, '2018-11-27 15:10:32', '2018-12-12 15:39:18', 0, 'user', 'sys:user:list');
-INSERT INTO `sys_menu` VALUES (24, 1, '角色管理', 'views/role/index.html', 2, 'layui-icon-face-surprised', 1, 1, '2018-11-27 15:16:59', '2018-12-12 15:40:03', 0, 'role', 'sys:role:list');
-INSERT INTO `sys_menu` VALUES (25, 1, '菜单管理', 'views/menu/index.html', 2, 'layui-icon-template', 1, 1, '2018-11-27 15:17:59', '2018-12-12 15:37:35', 0, 'menu', 'sys:menu:list');
-INSERT INTO `sys_menu` VALUES (26, 1, '资源管理', 'views/resource/index.html', 2, 'layui-icon-read', 1, 1, '2018-11-27 15:18:31', '2018-12-12 15:35:38', 0, 'resource', 'sys:resource:list');
+INSERT INTO `sys_menu` VALUES (23, 1, '用户管理', 'views/user/task.html', 2, 'layui-icon-username', 1, 1, '2018-11-27 15:10:32', '2018-12-12 15:39:18', 0, 'user', 'sys:user:list');
+INSERT INTO `sys_menu` VALUES (24, 1, '角色管理', 'views/role/task.html', 2, 'layui-icon-face-surprised', 1, 1, '2018-11-27 15:16:59', '2018-12-12 15:40:03', 0, 'role', 'sys:role:list');
+INSERT INTO `sys_menu` VALUES (25, 1, '菜单管理', 'views/menu/task.html', 2, 'layui-icon-template', 1, 1, '2018-11-27 15:17:59', '2018-12-12 15:37:35', 0, 'menu', 'sys:menu:list');
+INSERT INTO `sys_menu` VALUES (26, 1, '资源管理', 'views/resource/task.html', 2, 'layui-icon-read', 1, 1, '2018-11-27 15:18:31', '2018-12-12 15:35:38', 0, 'resource', 'sys:resource:list');
 INSERT INTO `sys_menu` VALUES (27, 26, '刷新资源', '', 3, 'layui-icon-refresh-3', 1, 1, '2018-11-27 15:19:15', '2018-12-12 15:35:14', 0, NULL, 'sys:resource:refresh');
 INSERT INTO `sys_menu` VALUES (28, 25, '添加', '', 3, 'layui-icon-add-circle-fine', 1, 1, '2018-11-27 15:20:06', '2018-12-12 15:45:47', 0, NULL, 'sys:menu:add');
 INSERT INTO `sys_menu` VALUES (29, 25, '修改', '', 3, 'layui-icon-senior', 1, 1, '2018-11-27 15:20:27', '2018-12-12 15:36:51', 0, NULL, 'sys:menu:edit');

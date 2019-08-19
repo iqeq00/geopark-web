@@ -16,6 +16,18 @@ layui.define(['conf', 'jquery','layer', 'element', 'form'], function (exports) {
                 lichee.removeLoading('.layui-layout-admin .layui-body');
             });
         },
+        // 设置导航栏选中
+        activeNav: function () {
+            $('.layui-layout-admin .layui-side .layui-nav .layui-nav-item .layui-nav-child dd').removeClass('layui-this');
+            $('.layui-layout-admin .layui-side .layui-nav .layui-nav-item').removeClass('layui-nav-itemed');
+            $(".layui-nav-child dd a").each(function() {
+                var lang = $(this).attr("lang");
+                if (window.location.href.indexOf(lang)>0) {
+                    $(this).addClass("layui-this");
+                    $(this).parent('dd').parent('.layui-nav-child').parent('.layui-nav-item').addClass('layui-nav-itemed');
+                }
+            });
+        },
         // 右侧弹出
         popupRight: function (path) {
             popupRightIndex = layer.open({

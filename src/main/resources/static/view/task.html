@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>地址公园管理后台</title>
-    <script type="text/javascript" src="/view/layout/css.js"></script>
+    <script type="text/javascript" src="/view/base/css.js"></script>
+
 </head>
 <body class="layui-layout-body">
 
 <div class="layui-layout layui-layout-admin">
 
-    <script type="text/javascript" src="/view/layout/header.js"></script>
-    <script type="text/javascript" src="/view/layout/side.js"></script>
+    <div class="layui-header" p-com="header"></div>
+
+    <div class="layui-side layui-bg-black" p-com="side"></div>
 
     <div class="layui-body">
         <div style="padding: 15px;">
@@ -84,9 +90,13 @@
 
         </div>
     </div>
-    <script type="text/javascript" src="/view/layout/footer.js"></script>
+
+    <div class="layui-footer" p-com="footer"></div>
+
+
 </div>
-<script type="text/javascript" src="/view/layout/scripts.js"></script>
+
+<script type="text/javascript" src="/view/base/scripts.js"></script>
 <script type="text/javascript" src="/js/task/index.js"></script>
 
 <script type="text/html" id="form-model">

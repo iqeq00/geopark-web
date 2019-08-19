@@ -144,4 +144,6 @@ layui.use(['conf', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], fun
         });
     });
 
+    // $('.layui-layout-admin').vm();
+
 });

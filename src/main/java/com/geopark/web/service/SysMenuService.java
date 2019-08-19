@@ -2,6 +2,9 @@ package com.geopark.web.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.geopark.web.model.entity.SysMenu;
+import com.geopark.web.model.vo.MenuTreeVo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,11 @@ import com.geopark.web.model.entity.SysMenu;
  */
 public interface SysMenuService extends IService<SysMenu> {
 
+    /**
+     * 获取用户权限菜单
+     *
+     * @param uid
+     * @return
+     */
+    List<MenuTreeVo> getUserPermMenus(Integer uid);
 }

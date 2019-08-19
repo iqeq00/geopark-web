@@ -6,7 +6,7 @@ layui.config({
     var form = layui.form;
     var conf = layui.conf;
 
-    var url = "/view/task/index.html";
+    var url = "/view/task.html";
     if (conf.getToken()) {
         location.replace(url);
         return;

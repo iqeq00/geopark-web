@@ -5,12 +5,18 @@ layui.define(['conf', 'lichee', 'layer'], function (exports) {
     var layer = layui.layer;
 
     var index = {
-        // // 渲染左侧导航栏
-        // initLeftNav: function () {
-        //     var menus = config.getMenus();
-        //     $('.layui-layout-admin .layui-side').vm({menus: menus});
-        //     crown.activeNav(Q.lash);
-        // },
+        // 渲染左侧导航栏
+        initLeftNav: function () {
+            // var menus = conf.getMenus();
+            // console.log({menus: conf.getMenus()});
+
+            // var data = {
+            //     menus: conf.getMenus()
+            // };
+            // console.log(JSON.stringify(data));
+            $('.layui-side').vm({menus: conf.getMenus()});
+            lichee.activeNav();
+        },
         // // 路由注册
         // initRouter: function () {
         //     index.regRouter(config.getMenus());
@@ -34,9 +40,9 @@ layui.define(['conf', 'lichee', 'layer'], function (exports) {
         // 从服务器获取登录用户的信息
         getUser: function (success) {
             lichee.get('/account/info', {}, function (data) {
-                console.log(data);
+                // console.log(data);
                 conf.putUser(data.result);
-                $("#nickname").html(data.result.nickname);
+                // $("#nickname").html(data.result.nickname);
                 success(data.result);
             });
         },
