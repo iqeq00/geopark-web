@@ -6,11 +6,11 @@ layui.config({
     var form = layui.form;
     var conf = layui.conf;
 
-    var url = "/view/task.html";
-    if (conf.getToken()) {
-        location.replace(url);
-        return;
-    }
+    var url = "/views/task.html";
+    // if (conf.getToken()) {
+    //     location.replace(url);
+    //     return;
+    // }
     form.verify({
         loginName: function (value) {
             if (/^\s*$/g.test(value)) {

@@ -87,7 +87,7 @@ public class ScanMappings {
                 resource.setResourceName(apiOperation.value());
                 resource.setMapping(mapping);
                 resource.setMethod(requestMethod.name());
-                resource.setAuthType(res.value().getValue());
+                resource.setAuthType(res.value());
                 resource.setPerm(resourceService.getResourcePermTag(requestMethod.name(), mapping));
                 resource.setId(DigestUtils.md5Hex(resource.getPerm()));
                 resources.add(resource);

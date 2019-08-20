@@ -11,7 +11,7 @@ layui.config({
     var element = layui.element;
     // 检查是否登录
     if (!conf.getToken() || conf.getToken() == '') {
-        location.replace('/view/login/login.html');
+        location.replace('/views/login/login.html');
         return;
     }
     // 获取当前用户信息
