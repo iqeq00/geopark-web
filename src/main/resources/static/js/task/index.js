@@ -1,6 +1,6 @@
-layui.use(['conf', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], function () {
+layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], function () {
 
-    var conf = layui.conf;
+    var config = layui.config;
     var lichee = layui.lichee;
     var $ = layui.jquery;
     var layer = layui.layer;
@@ -15,10 +15,10 @@ layui.use(['conf', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], fun
         url: '/task/page',
         title: '公园数据表',
         page: true,
-        headers: {Authorization: conf.getToken()},
-        request: conf.request,
-        parseData: conf.parseData,
-        response: conf.response,
+        headers: {Authorization: config.getToken()},
+        request: config.request,
+        parseData: config.parseData,
+        response: config.response,
         cols: [[
             {type: 'checkbox', fixed: 'left'},
             // {field: 'id', title: 'ID'},

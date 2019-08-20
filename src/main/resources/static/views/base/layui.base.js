@@ -1,17 +1,17 @@
 layui.config({
     base : '/plugins/layui/module/'
 }).extend({
-    conf : 'conf',
-    lichee : 'lichee',
-    index : 'index'
-}).use(['conf', 'index', 'lichee', 'element'], function () {
-    var conf = layui.conf;
+    formSelects: 'formSelects/formSelects-v4',
+    iconPicker: 'iconPicker/iconPicker',
+    treetable: 'treetable/treetable'
+}).use(['config', 'index', 'lichee', 'element'], function () {
+    var config = layui.config;
     var index = layui.index;
     var lichee = layui.lichee;
     var element = layui.element;
     // 检查是否登录
-    if (!conf.getToken() || conf.getToken() == '') {
-        location.replace('/views/login/login.html');
+    if (!config.getToken() || config.getToken() == '') {
+        location.replace('/views/login.html');
         return;
     }
     // 获取当前用户信息
@@ -22,7 +22,7 @@ layui.config({
         index.bindEvent();
     });
     lichee.get('/account/menus', {async: false}, function (data) {
-        conf.putMenus(data.result);
+        config.putMenus(data.result);
         index.initLeftNav();
     });
 

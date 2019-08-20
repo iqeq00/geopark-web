@@ -1,14 +1,17 @@
 package com.geopark.web.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.geopark.framework.enums.ErrorCodeEnum;
 import com.geopark.framework.enums.MenuTypeEnum;
 import com.geopark.framework.enums.StatusEnum;
+import com.geopark.framework.utils.ApiAssert;
 import com.geopark.framework.utils.TreeUtils;
 import com.geopark.web.mapper.SysMenuMapper;
 import com.geopark.web.model.entity.SysMenu;
 import com.geopark.web.model.vo.MenuTreeVo;
 import com.geopark.web.service.SysMenuService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
@@ -41,5 +44,16 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
      */
     private boolean parentIdNotNull(Integer parentId) {
         return Objects.nonNull(parentId) && parentId != 0;
+    }
+
+    @Override
+    @Transactional
+    public void updateStatus(Integer menuId, StatusEnum status) {
+
+        SysMenu menu = getById(menuId);
+        if (null != menu) {
+            menu.setStatus(status);
+            updateById(menu);
+        }
     }
 }

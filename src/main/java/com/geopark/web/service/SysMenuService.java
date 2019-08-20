@@ -1,6 +1,7 @@
 package com.geopark.web.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.geopark.framework.enums.StatusEnum;
 import com.geopark.web.model.entity.SysMenu;
 import com.geopark.web.model.vo.MenuTreeVo;
 
@@ -23,4 +24,12 @@ public interface SysMenuService extends IService<SysMenu> {
      * @return
      */
     List<MenuTreeVo> getUserPermMenus(Integer uid);
+
+    /**
+     * 修改菜单状态
+     *
+     * @param id
+     * @param status
+     */
+    void updateStatus(Integer id, StatusEnum status);
 }

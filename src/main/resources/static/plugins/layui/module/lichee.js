@@ -1,5 +1,5 @@
-layui.define(['conf', 'jquery','layer', 'element', 'form'], function (exports) {
-    var conf = layui.conf;
+layui.define(['config', 'jquery','layer', 'element', 'form'], function (exports) {
+    var config = layui.config;
     var $ = layui.jquery;
     var layer = layui.layer;
     var element = layui.element;
@@ -197,7 +197,7 @@ layui.define(['conf', 'jquery','layer', 'element', 'form'], function (exports) {
                 },
                 beforeSend: function (xhr) {
                     // console.log("这里传递token");
-                    var token = conf.getToken();
+                    var token = config.getToken();
                     if (token) {
                         xhr.setRequestHeader('Authorization', token);
                     }

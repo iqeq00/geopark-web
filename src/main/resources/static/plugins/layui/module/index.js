@@ -1,25 +1,25 @@
-layui.define(['conf', 'lichee', 'layer'], function (exports) {
+layui.define(['config', 'lichee', 'layer'], function (exports) {
     var $ = layui.$;
-    var conf = layui.conf;
+    var config = layui.config;
     var lichee = layui.lichee;
     var layer = layui.layer;
 
     var index = {
         // 渲染左侧导航栏
         initLeftNav: function () {
-            // var menus = conf.getMenus();
-            // console.log({menus: conf.getMenus()});
+            // var menus = config.getMenus();
+            // console.log({menus: config.getMenus()});
 
             // var data = {
-            //     menus: conf.getMenus()
+            //     menus: config.getMenus()
             // };
             // console.log(JSON.stringify(data));
-            $('.layui-side').vm({menus: conf.getMenus()});
+            $('.layui-side').vm({menus: config.getMenus()});
             lichee.activeNav();
         },
         // // 路由注册
         // initRouter: function () {
-        //     index.regRouter(config.getMenus());
+        //     index.regRouter(configig.getMenus());
         //     Q.init({
         //         index: 'user'
         //     });
@@ -41,7 +41,7 @@ layui.define(['conf', 'lichee', 'layer'], function (exports) {
         getUser: function (success) {
             lichee.get('/account/info', {}, function (data) {
                 // console.log(data);
-                conf.putUser(data.result);
+                config.putUser(data.result);
                 // $("#nickname").html(data.result.nickname);
                 success(data.result);
             });
@@ -53,7 +53,7 @@ layui.define(['conf', 'lichee', 'layer'], function (exports) {
             $('#logout').click(function () {
                 layer.confirm('确定退出登录？', function (i) {
                     layer.close(i);
-                    conf.removeAll();
+                    config.removeAll();
                     location.replace('/views/login.html');
                 });
             });

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.geopark.framework.enums.MenuTypeEnum;
+import com.geopark.framework.enums.StatusEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -78,7 +79,7 @@ public class SysMenu implements Serializable {
     /**
      * 状态 0：禁用 1：正常
      */
-    private Integer status;
+    private StatusEnum status;
 
     /**
      * 路由
