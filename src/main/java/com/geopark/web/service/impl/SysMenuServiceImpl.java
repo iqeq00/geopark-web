@@ -1,15 +1,21 @@
 package com.geopark.web.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.geopark.framework.converter.BeanConverter;
 import com.geopark.framework.enums.ErrorCodeEnum;
 import com.geopark.framework.enums.MenuTypeEnum;
 import com.geopark.framework.enums.StatusEnum;
 import com.geopark.framework.utils.ApiAssert;
 import com.geopark.framework.utils.TreeUtils;
+import com.geopark.framework.utils.TypeUtils;
 import com.geopark.web.mapper.SysMenuMapper;
 import com.geopark.web.model.entity.SysMenu;
+import com.geopark.web.model.entity.SysMenuResource;
 import com.geopark.web.model.vo.MenuTreeVo;
+import com.geopark.web.model.vo.MenuVo;
+import com.geopark.web.service.SysMenuResourceService;
 import com.geopark.web.service.SysMenuService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,6 +34,9 @@ import java.util.stream.Collectors;
  */
 @Service
 public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> implements SysMenuService {
+
+    @Autowired
+    private SysMenuResourceService menuResourceService;
 
     @Override
     public List<MenuTreeVo> getUserPermMenus(Integer uid) {
@@ -56,4 +65,19 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             updateById(menu);
         }
     }
+
+    @Override
+    public MenuVo getMenuVoDetails(Integer menuId) {
+
+        SysMenu menu = getById(menuId);
+        if (null != menu) {
+            MenuVo menuVo = BeanConverter.convert(MenuVo.class, menu);
+            List<String> resourceIds = menuResourceService.listObjs(menuResourceService.lambdaQuery()
+                    .select(SysMenuResource::getResourceId).eq(SysMenuResource::getMenuId, menuId), TypeUtils::castToString);
+            menuVo.setResourceIds(resourceIds);
+            return menuVo;
+        }
+        return null;
+    }
+
 }

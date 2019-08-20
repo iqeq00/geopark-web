@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.geopark.framework.enums.StatusEnum;
 import com.geopark.web.model.entity.SysMenu;
 import com.geopark.web.model.vo.MenuTreeVo;
+import com.geopark.web.model.vo.MenuVo;
+import org.springframework.http.HttpStatus;
 
 import java.util.List;
 
@@ -32,4 +34,12 @@ public interface SysMenuService extends IService<SysMenu> {
      * @param status
      */
     void updateStatus(Integer id, StatusEnum status);
+
+    /**
+     * 获取菜单详情
+     *
+     * @param menuId
+     * @return
+     */
+    MenuVo getMenuVoDetails(Integer menuId);
 }

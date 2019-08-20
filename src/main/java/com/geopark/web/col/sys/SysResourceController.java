@@ -13,6 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -35,11 +36,6 @@ public class SysResourceController extends SuperController {
 
     @Resources(AuthTypeEnum.LOGIN)
     @ApiOperation("查询所有资源(分页)")
-//    @ApiImplicitParams({
-//            @ApiImplicitParam(name = "resourceName", value = "需要查询的资源名", paramType = "query"),
-//            @ApiImplicitParam(name = "method", value = "需要查询的请求方式", paramType = "query"),
-//            @ApiImplicitParam(name = "authType", value = "权限认证类型", paramType = "query")
-//    })
     @GetMapping("/page")
     public ApiResponses<IPage<SysResource>> page(
             @RequestParam(value = "resourceName", required = false) String resourceName,
@@ -53,6 +49,13 @@ public class SysResourceController extends SuperController {
                 .page(this.<SysResource>getPage()));
     }
 
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation("查询所有资源")
+    @GetMapping("/list")
+    public ApiResponses<List<SysResource>> list() {
+
+        return success(resourceService.list());
+    }
 
     @Resources(AuthTypeEnum.LOGIN)
     @ApiOperation("刷新资源")

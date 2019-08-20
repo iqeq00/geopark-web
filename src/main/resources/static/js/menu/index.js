@@ -1,4 +1,4 @@
-layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'treetable', 'form'], function () {
+layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'treetable', 'form', 'iconPicker', 'formSelects'], function () {
 
     var config = layui.config;
     var lichee = layui.lichee;
@@ -7,6 +7,8 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'treetable', 'form'],
     var table = layui.table;
     var treetable = layui.treetable;
     var form = layui.form;
+    var iconPicker = layui.iconPicker;
+    var formSelects = layui.formSelects;
 
     var tableId = '#table';
     var tableInfo = treetable.render({
@@ -90,6 +92,59 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'treetable', 'form'],
     });
 
     var showEditModel = function (data) {
+
+        if (data) {
+            lichee.get('/menu/' + data.id, {async: false}, function (data) {
+                lichee.putTempData('t_menu', data.result);
+            });
+        }
+
+        var menu = liche.getTempData('t_menu');
+        lichee.get('/resource/list', {async: false}, function (data) {
+            // 渲染多选下拉框
+            var resourceSelectData = new Array();
+            for (var i = 0; i < data.result.length; i++) {
+                resourceSelectData.push({
+                    name: data.result[i].resourceName + ':' + data.result[i].perm,
+                    value: data.result[i].id
+                });
+            }
+            formSelects.data('resourceIds', 'local', {arr: resourceSelectData});
+        });
+
+        // 获取所有菜单
+        lichee.get('/menu/combos', {}, function (data) {
+            $('#parentId').vm({parents: data.result});
+            form.render('select');
+            // 回显menu数据
+            if (menu) {
+                if (menu.menuType == 1) {
+                    $("#resourceIdsDiv").hide();
+                    $("#pathDiv").hide();
+                    $("#routerDiv").hide();
+                } else if (menu.menuType == 2) {
+                    $("#pathDiv").show();
+                    $("#routerDiv").show();
+                    $("#resourceIdsDiv").show();
+                } else if (menu.menuType == 3) {
+                    $("#pathDiv").hide();
+                    $("#routerDiv").hide();
+                    $("#resourceIdsDiv").show();
+                }
+                if (menu.resourceIds) {
+                    var rds = new Array();
+                    for (var i = 0; i < menu.resourceIds.length; i++) {
+                        rds.push(menu.resourceIds[i]);
+                    }
+                    formSelects.value('resourceIds', rds);
+                }
+                crown.fromVal('menu-form', menu);
+                iconPicker.checkIcon('iconPicker', menu.icon);
+            } else {
+                iconPicker.checkIcon('iconPicker', 'layui-icon-rate-half');
+            }
+        });
+
         layer.open({
             title: data ? '修改' : '添加',
             type: 1,

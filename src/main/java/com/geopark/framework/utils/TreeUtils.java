@@ -11,7 +11,7 @@ import java.util.Objects;
  * Tree工具类
  * </p>
  *
- * @author Caratacus
+ * @author lichee
  */
 public abstract class TreeUtils {
 
