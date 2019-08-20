@@ -54,7 +54,7 @@ layui.define(['conf', 'lichee', 'layer'], function (exports) {
                 layer.confirm('确定退出登录？', function (i) {
                     layer.close(i);
                     conf.removeAll();
-                    location.replace('/view/login/login.html');
+                    location.replace('/views/login.html');
                 });
             });
             // // 主题设置
