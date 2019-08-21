@@ -42,4 +42,27 @@ public interface SysMenuService extends IService<SysMenu> {
      * @return
      */
     MenuVo getMenuVoDetails(Integer menuId);
+
+    /**
+     * 保存菜单
+     *
+     * @param menu
+     * @param resourceIds
+     */
+    void saveMenu(SysMenu menu, List<String> resourceIds);
+
+    /**
+     * 修改菜单
+     *
+     * @param menu
+     * @param resourceIds
+     */
+    void updateMenu(SysMenu menu, List<String> resourceIds);
+
+    /**
+     * 递归删除菜单
+     *
+     * @param menuId
+     */
+    void removeMenu(Integer menuId);
 }

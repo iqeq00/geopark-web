@@ -40,7 +40,7 @@ public class SysResourceServiceImpl extends ServiceImpl<SysResourceMapper, SysRe
 
     @Override
     public List<ResourcePermVo> getPerms(AuthTypeEnum... authTypes) {
-        List<SysResource> list =lambdaQuery().select(SysResource::getMethod, SysResource::getMapping).in(ArrayUtils.isNotEmpty(authTypes), SysResource::getAuthType, (Object[]) authTypes).list();
+        List<SysResource> list = lambdaQuery().select(SysResource::getMethod, SysResource::getMapping).in(ArrayUtils.isNotEmpty(authTypes), SysResource::getAuthType, (Object[]) authTypes).list();
 
         return BeanConverter.convert(ResourcePermVo.class, list);
     }

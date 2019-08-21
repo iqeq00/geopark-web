@@ -1,13 +1,13 @@
 var codeflag = false;
 layui.config({
     base : '/plugins/layui/module/'
-}).use(['conf', 'form'], function () {
+}).use(['config', 'form'], function () {
     var $ = layui.jquery;
     var form = layui.form;
-    var conf = layui.conf;
+    var config = layui.config;
 
     var url = "/views/task.html";
-    // if (conf.getToken()) {
+    // if (config.getToken()) {
     //     location.replace(url);
     //     return;
     // }
@@ -28,15 +28,15 @@ layui.config({
         if (codeflag) {
             layer.load(2);
             $.ajax({
-                url: conf.serverUrl + '/account/token',
+                url: config.serverUrl + '/account/token',
                 data: JSON.stringify(obj.field),
                 type: 'POST',
                 contentType: 'application/json',
                 success: function (data) {
                     console.log(data);
                     console.log(data.result);
-                    conf.putUid(data.result.uid);
-                    conf.putToken(data.result.token);
+                    config.putUid(data.result.uid);
+                    config.putToken(data.result.token);
                     location.replace(url);
                 },
                 error: function (xhr) {

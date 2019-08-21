@@ -38,6 +38,20 @@ public class SysMenuResource implements Serializable {
      */
     private String resourceId;
 
+    public SysMenuResource(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    public SysMenuResource(Integer menuId, String resourceId) {
+        this.menuId = menuId;
+        this.resourceId = resourceId;
+    }
+
+    public SysMenuResource(Integer id, Integer menuId, String resourceId) {
+        this.id = id;
+        this.menuId = menuId;
+        this.resourceId = resourceId;
+    }
 
     public static final String ID = "id";
 

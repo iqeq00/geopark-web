@@ -78,7 +78,7 @@
                 <label class="layui-form-label">权限别名</label>
                 <div class="layui-input-block">
                     <input type="text" name="alias" class="layui-input" placeholder="请输入权限别名"
-                           maxlength="64" lay-verify="required" lay-verType="tips" autocomplete="off"/>
+                           maxlength="64" lay-verType="tips" autocomplete="off"/>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -122,7 +122,7 @@
                     <select id="parentId" name="parentId" lay-filter="parentId" lay-verify="required">
                         <option value="">请选择</option>
                         <option value="0">首级菜单</option>
-                        <option p-for="parents" p-bind="value:{{id}}">{{name}}</option>
+                        <option p-for="parents" p-bind="value:{{id}}">{{menuName}}</option>
                     </select>
                 </div>
             </div>

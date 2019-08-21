@@ -1,11 +1,13 @@
 package com.geopark.web.service.impl;
 
+import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.geopark.framework.converter.BeanConverter;
 import com.geopark.framework.enums.ErrorCodeEnum;
 import com.geopark.framework.enums.MenuTypeEnum;
 import com.geopark.framework.enums.StatusEnum;
 import com.geopark.framework.utils.ApiAssert;
+import com.geopark.framework.utils.ApiUtils;
 import com.geopark.framework.utils.TreeUtils;
 import com.geopark.framework.utils.TypeUtils;
 import com.geopark.web.mapper.SysMenuMapper;
@@ -19,6 +21,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -37,6 +41,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
 
     @Autowired
     private SysMenuResourceService menuResourceService;
+
+
 
     @Override
     public List<MenuTreeVo> getUserPermMenus(Integer uid) {
@@ -72,12 +78,60 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         SysMenu menu = getById(menuId);
         if (null != menu) {
             MenuVo menuVo = BeanConverter.convert(MenuVo.class, menu);
-            List<String> resourceIds = menuResourceService.listObjs(menuResourceService.lambdaQuery()
-                    .select(SysMenuResource::getResourceId).eq(SysMenuResource::getMenuId, menuId), TypeUtils::castToString);
+            List<SysMenuResource> list = menuResourceService.lambdaQuery()
+                    .select(SysMenuResource::getResourceId).eq(SysMenuResource::getMenuId, menuId).list();
+            List<String> resourceIds = new ArrayList<>();
+            list.forEach(menuResource -> {
+                resourceIds.add(menuResource.getResourceId());
+            });
             menuVo.setResourceIds(resourceIds);
             return menuVo;
         }
         return null;
+    }
+
+
+    @Override
+    @Transactional
+    public void saveMenu(SysMenu menu, List<String> resourceIds) {
+        menu.setCreateTime(LocalDateTime.now());
+        menu.setCreateUid(ApiUtils.currentUid());
+        menu.setUpdateTime(LocalDateTime.now());
+        menu.setUpdateUid(ApiUtils.currentUid());
+        save(menu);
+        if (CollectionUtils.isNotEmpty(resourceIds)) {
+            Integer menuId = menu.getId();
+            //添加resource关联
+            menuResourceService.saveBatch(menuResourceService.getMenuResources(menuId, resourceIds));
+        }
+    }
+
+    @Override
+    @Transactional
+    public void updateMenu(SysMenu menu, List<String> resourceIds) {
+        updateById(menu);
+        if (CollectionUtils.isNotEmpty(resourceIds)) {
+            Integer menuId = menu.getId();
+            //删除resource关联
+            menuResourceService.removeByMenuId(menuId);
+            //添加resource关联
+            menuResourceService.saveBatch(menuResourceService.getMenuResources(menuId, resourceIds));
+        }
+    }
+
+    @Override
+    @Transactional
+    public void removeMenu(Integer menuId) {
+        if (parentIdNotNull(menuId)) {
+            lambdaQuery().eq(SysMenu::getParentId, menuId).list().stream()
+                    .filter(e -> parentIdNotNull(e.getParentId()))
+                    .forEach(e -> removeMenu(e.getId()));
+            //删除resource关联
+            menuResourceService.removeByMenuId(menuId);
+            //删除菜单
+            removeById(menuId);
+        }
+
     }
 
 }

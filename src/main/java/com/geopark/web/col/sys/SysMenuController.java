@@ -8,12 +8,15 @@ import com.geopark.framework.converter.BeanConverter;
 import com.geopark.framework.enums.AuthTypeEnum;
 import com.geopark.framework.enums.MenuTypeEnum;
 import com.geopark.framework.responses.ApiResponses;
+import com.geopark.framework.utils.TypeUtils;
 import com.geopark.web.model.entity.SysMenu;
 import com.geopark.web.model.param.MenuPARM;
 import com.geopark.web.model.vo.ComboVo;
 import com.geopark.web.model.vo.MenuVo;
 import com.geopark.web.service.SysMenuService;
+import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,18 +51,9 @@ public class SysMenuController extends SuperController {
     @GetMapping("/combos")
     public ApiResponses<List<ComboVo>> combos() {
 
-        LambdaQueryChainWrapper<SysMenu> lqcw = menuService.lambdaQuery().select(SysMenu::getId, SysMenu::getMenuName)
-                .in(SysMenu::getMenuType, MenuTypeEnum.CATALOG, MenuTypeEnum.MENU);
-
-//        menuService.listObjs(lqcw, );
-//        List<ComboVo> list = menuService.listObjs(lqcw, menu -> {
-//            ComboVo combo = new ComboVo();
-//            combo.setId(menu.getId());
-//            combo.setName(menu.getMenuName());
-//            return combo;
-//        });
-//        return success(list);
-        return null;
+        List<SysMenu> list = menuService.lambdaQuery().select(SysMenu::getId, SysMenu::getMenuName)
+                .in(SysMenu::getMenuType, MenuTypeEnum.CATALOG, MenuTypeEnum.MENU).list();
+        return success(BeanConverter.convert(ComboVo.class, list));
     }
 
     @Resources(AuthTypeEnum.LOGIN)
@@ -68,6 +62,36 @@ public class SysMenuController extends SuperController {
     public ApiResponses<MenuVo> get(@PathVariable("id") Integer id) {
 
         return success(menuService.getMenuVoDetails(id));
+    }
+
+
+
+
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation("添加菜单")
+    @PostMapping
+    public ApiResponses<Void> create(@RequestBody @Validated(MenuPARM.Create.class) MenuPARM menuPARM) {
+        SysMenu menu = menuPARM.convert(SysMenu.class);
+        menuService.saveMenu(menu, menuPARM.getResourceIds());
+        return success(HttpStatus.CREATED);
+    }
+
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation(value = "修改菜单")
+    @PutMapping("/{id}")
+    public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody @Validated(MenuPARM.Update.class) MenuPARM menuPARM) {
+        SysMenu menu = menuPARM.convert(SysMenu.class);
+        menu.setId(id);
+        menuService.updateMenu(menu, menuPARM.getResourceIds());
+        return success();
+    }
+
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation(value = "删除菜单")
+    @DeleteMapping("/{id}")
+    public ApiResponses<Void> delete(@PathVariable("id") Integer id) {
+        menuService.removeMenu(id);
+        return success(HttpStatus.NO_CONTENT);
     }
 
     @Resources(AuthTypeEnum.LOGIN)
