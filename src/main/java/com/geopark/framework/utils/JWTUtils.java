@@ -26,7 +26,7 @@ public abstract class JWTUtils {
 
     public static final String UID = "uid";
     private static final String SECRET = "WgtqaT1HNTZPZNMDJu3k";
-    private static final long EXPIRE = 60 * 1000;
+    private static final long EXPIRE = 60 * 60;
 
     /**
      * 生成token
