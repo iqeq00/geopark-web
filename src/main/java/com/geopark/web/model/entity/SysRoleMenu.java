@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -18,12 +19,17 @@ import java.io.Serializable;
  * @since 2019-08-14
  */
 @Data
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
 @TableName("sys_role_menu")
 public class SysRoleMenu implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    public SysRoleMenu(Integer roleId, Integer menuId) {
+        this.roleId = roleId;
+        this.menuId = menuId;
+    }
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;

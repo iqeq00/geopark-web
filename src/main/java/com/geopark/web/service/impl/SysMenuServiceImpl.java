@@ -109,6 +109,8 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     @Override
     @Transactional
     public void updateMenu(SysMenu menu, List<String> resourceIds) {
+        menu.setUpdateTime(LocalDateTime.now());
+        menu.setUpdateUid(ApiUtils.currentUid());
         updateById(menu);
         if (CollectionUtils.isNotEmpty(resourceIds)) {
             Integer menuId = menu.getId();

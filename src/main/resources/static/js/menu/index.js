@@ -26,7 +26,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'treetable', 'form', 
             treeDefaultClose: false,
             toolbar: '#toolbar',
             defaultToolbar: [],
-            url: '/menu/page',
+            url: '/menu/list',
             title: '菜单数据表',
             headers: {Authorization: config.getToken()},
             cols: [[

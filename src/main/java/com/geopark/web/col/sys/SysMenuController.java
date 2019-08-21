@@ -40,7 +40,7 @@ public class SysMenuController extends SuperController {
 
     @Resources(AuthTypeEnum.LOGIN)
     @ApiOperation("查询所有菜单")
-    @GetMapping("/page")
+    @GetMapping("/list")
     public ApiResponses<List<SysMenu>> list() {
 
         return success(menuService.list());
