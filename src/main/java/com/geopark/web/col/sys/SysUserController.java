@@ -69,7 +69,7 @@ public class SysUserController extends SuperController {
     }
 
     @Resources
-    @ApiOperation("用户创建")
+    @ApiOperation("用户添加")
     @PostMapping
     public ApiResponses<Void> create(@RequestBody @Validated(UserPARM.Create.class) UserPARM userPARM) {
 
@@ -93,7 +93,7 @@ public class SysUserController extends SuperController {
     }
 
     @Resources
-    @ApiOperation("用户修改")
+    @ApiOperation("用户编辑")
     @PutMapping("/{id}")
     public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody @Validated(UserPARM.Update.class) UserPARM userPARM) {
 

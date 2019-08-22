@@ -68,7 +68,7 @@ public class SysRoleController extends SuperController {
     }
 
     @Resources
-    @ApiOperation("角色修改")
+    @ApiOperation("角色编辑")
     @PutMapping("/{id}")
     public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody @Validated(RolePARM.Update.class) RolePARM rolePARM) {
 
@@ -89,7 +89,7 @@ public class SysRoleController extends SuperController {
     }
 
     @Resources
-    @ApiOperation("角色菜单修改")
+    @ApiOperation("角色授权")
     @PutMapping("/{id}/menu")
     public ApiResponses<Void> menu(@PathVariable("id") Integer id, @RequestBody @NotEmpty(message = "菜单ID不能为空") List<Integer> menuIds) {
 

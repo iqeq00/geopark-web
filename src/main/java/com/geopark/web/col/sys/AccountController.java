@@ -59,7 +59,7 @@ public class AccountController extends SuperController {
     }
 
     @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("账户修改密码")
+    @ApiOperation("账户密码修改")
     @PutMapping("/password")
     public ApiResponses<Void> updatePassword(@RequestBody @Validated PasswordPARM passwordPARM) {
 

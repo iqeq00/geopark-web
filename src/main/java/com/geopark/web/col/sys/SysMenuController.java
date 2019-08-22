@@ -70,7 +70,7 @@ public class SysMenuController extends SuperController {
     }
 
     @Resources
-    @ApiOperation("菜单修改")
+    @ApiOperation("菜单编辑")
     @PutMapping("/{id}")
     public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody @Validated(MenuPARM.Update.class) MenuPARM menuPARM) {
 
