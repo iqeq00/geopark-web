@@ -40,7 +40,8 @@ layui.config({
                     location.replace(url);
                 },
                 error: function (xhr) {
-                    layer.msg(JSON.parse(xhr.responseText).msg, {icon: 5});
+                    // console.log(xhr);
+                    layer.msg(JSON.parse(xhr.responseText).message, {icon: 5});
                     layer.closeAll('loading');
                 }
             });

@@ -192,7 +192,7 @@ layui.define(['config', 'jquery','layer', 'element', 'form'], function (exports)
                         });
                         return false;
                     }
-                    layer.msg(JSON.parse(xhr.responseText).msg, {icon: 5});
+                    layer.msg(JSON.parse(xhr.responseText).message, {icon: 5});
                     layer.closeAll('loading');
                 },
                 beforeSend: function (xhr) {
