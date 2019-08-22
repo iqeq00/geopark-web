@@ -27,7 +27,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form'], function () 
             {
                 minWidth: 80, align: 'center', templet: function (d) {
                     if (d.authType == 1) {
-                        return '<span class="layui-badge layui-bg-blue">需要登录</span>';
+                        return '<span class="layui-badge layui-bg-blue">登录</span>';
                     } else if (d.authType == 2) {
                         return '<span class="layui-badge layui-bg-green">开放</span>';
                     } else if (d.authType == 3) {
