@@ -44,9 +44,9 @@ layui.define(['config', 'jquery','layer', 'element', 'form'], function (exports)
                 area: '336px',
                 skin: 'layui-layer-licheeRight',
                 success: function () {
-                    //lichee.showLoading('#licheePopupR');
+                    lichee.showLoading('#licheePopupR');
                     $('#licheePopupR').load(path, function () {
-                        //lichee.removeLoading('#licheePopupR');
+                        lichee.removeLoading('#licheePopupR');
                     });
                 },
                 end: function () {
@@ -248,9 +248,6 @@ layui.define(['config', 'jquery','layer', 'element', 'form'], function (exports)
         flexible: function (e) {  // 折叠侧导航
             var expand = $('.layui-layout-admin').hasClass('lichee-nav-mini');
             lichee.flexible(expand);
-        },
-        refresh: function () {  // 刷新主体部分
-            Q.refresh();
         },
         back: function () {  //后退
             history.back();

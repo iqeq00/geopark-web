@@ -121,4 +121,15 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         user.setPassword(Md5Crypt.apr1Crypt(user.getLoginName(), user.getLoginName()));
         updateById(user);
     }
+
+    @Override
+    @Transactional
+    public void updatePassword(Integer uid, String oldPassword, String newPassword) {
+        SysUser user = getById(uid);
+        ApiAssert.notNull(ErrorCodeEnum.USER_NOT_FOUND, user);
+        //用户名密码错误
+        ApiAssert.isTrue(ErrorCodeEnum.ORIGINAL_PASSWORD_IS_INCORRECT, Md5Crypt.apr1Crypt(oldPassword, user.getLoginName()).equals(user.getPassword()));
+        user.setPassword(Md5Crypt.apr1Crypt(newPassword, user.getLoginName()));
+        updateById(user);
+    }
 }

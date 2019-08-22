@@ -75,4 +75,14 @@ public interface SysUserService extends IService<SysUser> {
      * @param id
      */
     void resetPwd(Integer id);
+
+    /**
+     * 用户修改密码
+     *
+     * @param uid
+     * @param oldPassword
+     * @param newPassword
+     * @return
+     */
+    void updatePassword(Integer uid, String oldPassword, String newPassword);
 }

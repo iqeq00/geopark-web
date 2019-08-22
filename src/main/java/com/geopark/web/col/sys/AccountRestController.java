@@ -8,6 +8,7 @@ import com.geopark.framework.responses.ApiResponses;
 import com.geopark.framework.utils.IpUtils;
 import com.geopark.web.model.entity.SysUser;
 import com.geopark.web.model.param.LoginPARM;
+import com.geopark.web.model.param.PasswordPARM;
 import com.geopark.web.model.vo.MenuTreeVo;
 import com.geopark.web.model.vo.TokenVo;
 import com.geopark.web.model.vo.UserDetailsVo;
@@ -57,18 +58,15 @@ public class AccountRestController extends SuperController {
 //        return success(HttpStatus.NO_CONTENT);
 //    }
 //
-//    @Resources(auth = AuthTypeEnum.LOGIN)
-//    @ApiOperation("修改密码")
-//    @ApiImplicitParams({
-//            @ApiImplicitParam(name = "oldPassword", value = "原密码", required = true, dataType = "String"),
-//            @ApiImplicitParam(name = "newPassword", value = "新密码", required = true, dataType = "String"),
-//    })
-//    @PutMapping("/password")
-//    public ApiResponses<Void> updatePassword(@RequestBody @Validated PasswordPARM passwordPARM) {
-//        userService.updatePassword(currentUid(), passwordPARM.getOldPassword(), passwordPARM.getNewPassword());
-//        return success();
-//    }
-//
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation("修改密码")
+    @PutMapping("/password")
+    public ApiResponses<Void> updatePassword(@RequestBody @Validated PasswordPARM passwordPARM) {
+
+        userService.updatePassword(currentUid(), passwordPARM.getOldPassword(), passwordPARM.getNewPassword());
+        return success();
+    }
+
     @Resources(AuthTypeEnum.LOGIN)
     @ApiOperation("获取账户详情")
     @GetMapping("/info")
