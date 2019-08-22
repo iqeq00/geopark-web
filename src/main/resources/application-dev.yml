@@ -1,9 +1,9 @@
 spring:
   profiles: dev
   datasource:
-    url: jdbc:p6spy:mysql://172.16.254.17:3306/zigong?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=CONVERT_TO_NULL
+    url: jdbc:p6spy:mysql://172.16.254.16:3306/zigong?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=CONVERT_TO_NULL
     username: root
-    password: 6818799517
+    password: 6818799516
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver
     hikari:

@@ -13,7 +13,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         toolbar: '#toolbar',
         defaultToolbar: [],
         url: '/task/page',
-        title: '公园数据表',
+        title: '任务数据表',
         page: true,
         headers: {Authorization: config.getToken()},
         request: config.request,
@@ -22,19 +22,19 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         cols: [[
             {type: 'checkbox', fixed: 'left'},
             // {field: 'id', title: 'ID'},
-            {field: 'taskName', align: 'center', sort: true, title: '公园名称'},
-            {field: 'taskDesc', align: 'center', sort: true, title: '公园描述'},
+            {field: 'taskName', align: 'center', sort: true, title: '任务名称'},
+            {field: 'taskDesc', align: 'center', sort: true, title: '任务描述'},
             {field: 'createTime', align: 'center', sort: true, title: '创建时间'},
             {
                 minWidth: 80, align: 'center', templet: function (d) {
                     if (d.status == 1) {
-                        return '<span class="layui-badge layui-bg-gray">公园未开始</span>';
+                        return '<span class="layui-badge layui-bg-gray">任务未开始</span>';
                     } else if (d.status == 2) {
-                        return '<span class="layui-badge layui-bg-blue">公园进行中</span>';
+                        return '<span class="layui-badge layui-bg-blue">任务进行中</span>';
                     } else if (d.status == 3) {
-                        return '<span class="layui-badge layui-bg-green">公园完成</span>';
+                        return '<span class="layui-badge layui-bg-green">任务完成</span>';
                     } else if (d.status == 4) {
-                        return '<span class="layui-badge layui-bg-red">公园失败</span>';
+                        return '<span class="layui-badge layui-bg-red">任务失败</span>';
                     }
                 }, title: '状态'
             },
@@ -143,7 +143,5 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             trigger: 'click'
         });
     });
-
-    // $('.layui-layout-admin').vm();
 
 });

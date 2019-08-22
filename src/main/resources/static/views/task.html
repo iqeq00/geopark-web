@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
     <meta http-equiv="expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>地质公园管理后台--任务管理</title>
+    <title>地质任务管理后台--任务管理</title>
     <script type="text/javascript" src="/views/base/css.js"></script>
 
 </head>
@@ -23,7 +23,7 @@
         <div style="padding: 15px;">
 
             <div class="layui-card-header">
-                <h2 class="header-title">公园管理</h2>
+                <h2 class="header-title">任务管理</h2>
             </div>
 
             <hr class="layui-bg-gray">
@@ -32,20 +32,20 @@
                 <form id="searchForm" onsubmit="return false;">
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-labelLeft">公园名称</label>
+                            <label class="layui-form-labelLeft">任务名称</label>
                             <div class="layui-input-inline">
-                                <input name="taskName" class="layui-input search-input" type="text" placeholder="请输入名称" autocomplete="off"/>
+                                <input name="taskName" class="layui-input search-input" type="text" placeholder="请输入任务名称" autocomplete="off"/>
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label class="layui-form-labelLeft">公园状态</label>
+                            <label class="layui-form-labelLeft">任务状态</label>
                             <div class="layui-input-inline">
                                 <select name="status" lay-verify="" placeholder="请选择状态">
                                     <option value="">请选择状态</option>
-                                    <option value="1">公园未开始</option>
-                                    <option value="2">公园进行中</option>
-                                    <option value="3">公园完成</option>
-                                    <option value="4">公园失败</option>
+                                    <option value="1">任务未开始</option>
+                                    <option value="2">任务进行中</option>
+                                    <option value="3">任务完成</option>
+                                    <option value="4">任务失败</option>
                                 </select>
                             </div>
                         </div>
@@ -93,7 +93,6 @@
 
     <div class="layui-footer" p-com="footer"></div>
 
-
 </div>
 
 <script type="text/javascript" src="/views/base/scripts.js"></script>
@@ -104,26 +103,26 @@
         <form id="form" lay-filter="formFilter" class="layui-form model-form ">
             <input type="hidden" id="id" name="id"/>
             <div class="layui-form-item">
-                <label class="layui-form-label">公园名称</label>
+                <label class="layui-form-label">任务名称</label>
                 <div class="layui-input-block">
-                    <input type="text" name="taskName" lay-verify="required|nameLength" lay-verType="tips" placeholder="公园名称" autocomplete="off" class="layui-input">
+                    <input type="text" name="taskName" lay-verify="required|nameLength" lay-verType="tips" placeholder="任务名称" autocomplete="off" class="layui-input">
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">公园描述</label>
+                <label class="layui-form-label">任务描述</label>
                 <div class="layui-input-block">
-                    <textarea name="taskDesc" lay-verify="required|descrLength" placeholder="公园描述" class="layui-textarea"></textarea>
+                    <textarea name="taskDesc" lay-verify="required|descrLength" placeholder="任务描述" class="layui-textarea"></textarea>
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">公园状态</label>
+                <label class="layui-form-label">任务状态</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="status" value="1" title="公园未开始" checked/>
-                    <input type="radio" name="status" value="2" title="公园进行中"/>
-                    <input type="radio" name="status" value="3" title="公园完成"/>
-                    <input type="radio" name="status" value="4" title="公园失败"/>
+                    <input type="radio" name="status" value="1" title="任务未开始" checked/>
+                    <input type="radio" name="status" value="2" title="任务进行中"/>
+                    <input type="radio" name="status" value="3" title="任务完成"/>
+                    <input type="radio" name="status" value="4" title="任务失败"/>
                 </div>
             </div>
             <div class="layui-form-item layui-layer-btn">

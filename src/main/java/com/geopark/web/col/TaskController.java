@@ -41,7 +41,7 @@ public class TaskController extends SuperController {
     private SysResourceService sysResourceService;
 
     @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("任务列表分页查询")
+    @ApiOperation("任务查询(分页)")
     @GetMapping("/page")
     public ApiResponses<IPage<Task>> page(
             @RequestParam(value = "taskName", defaultValue = "") String taskName,
@@ -64,12 +64,6 @@ public class TaskController extends SuperController {
         return success(qw.page(this.<Task>getPage()));
     }
 
-//    @GetMapping("list")
-//    public ApiResponses<List<ResourcePermVo>> list() {
-//
-//        return success(sysResourceService.getResourcePerms("GET"));
-//    }
-
     @Resources(AuthTypeEnum.LOGIN)
     @ApiOperation("任务保存")
     @PostMapping
@@ -80,7 +74,7 @@ public class TaskController extends SuperController {
         return success(HttpStatus.CREATED);
     }
 
-    @Resources(AuthTypeEnum.AUTH)
+    @Resources(AuthTypeEnum.LOGIN)
     @ApiOperation("任务更新")
     @PutMapping("/{id}")
     public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody Task task) {
@@ -94,6 +88,7 @@ public class TaskController extends SuperController {
     @ApiOperation("任务删除")
     @DeleteMapping("/{id}")
     public ApiResponses<Void> delete(@PathVariable("id") Integer id) {
+
         taskService.removeById(id);
         return success(HttpStatus.NO_CONTENT);
     }
