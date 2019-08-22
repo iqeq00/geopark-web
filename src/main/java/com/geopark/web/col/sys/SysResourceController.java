@@ -34,8 +34,8 @@ public class SysResourceController extends SuperController {
     @Autowired
     private ScanMappings scanMappings;
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("查询所有资源(分页)")
+    @Resources
+    @ApiOperation("资源查询(分页)")
     @GetMapping("/page")
     public ApiResponses<IPage<SysResource>> page(
             @RequestParam(value = "resourceName", required = false) String resourceName,
@@ -49,20 +49,21 @@ public class SysResourceController extends SuperController {
                 .page(this.<SysResource>getPage()));
     }
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("查询所有资源")
+    @Resources
+    @ApiOperation("资源查询(所有)")
     @GetMapping("/list")
     public ApiResponses<List<SysResource>> list() {
 
         return success(resourceService.list());
     }
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("刷新资源")
+    @Resources
+    @ApiOperation("资源刷新")
     @PutMapping
     public ApiResponses<Void> refresh() {
 
         scanMappings.doScan();
         return success();
     }
+
 }

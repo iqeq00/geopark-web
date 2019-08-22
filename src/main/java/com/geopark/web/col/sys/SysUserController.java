@@ -1,13 +1,11 @@
 package com.geopark.web.col.sys;
 
-
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.geopark.framework.annotations.ApiOperation;
 import com.geopark.framework.annotations.Resources;
 import com.geopark.framework.controller.SuperController;
 import com.geopark.framework.converter.BeanConverter;
-import com.geopark.framework.enums.AuthTypeEnum;
 import com.geopark.framework.enums.ErrorCodeEnum;
 import com.geopark.framework.enums.StatusEnum;
 import com.geopark.framework.responses.ApiResponses;
@@ -41,8 +39,8 @@ public class SysUserController extends SuperController {
     @Autowired
     private SysUserService userService;
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("查询所有用户")
+    @Resources
+    @ApiOperation("用户查询(分页)")
     @GetMapping("/page")
     public ApiResponses<IPage<UserVo>> page(@RequestParam(value = "loginName", required = false) String loginName,
             @RequestParam(value = "nickname", required = false) String nickname,
@@ -57,10 +55,11 @@ public class SysUserController extends SuperController {
         );
     }
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("查询单个用户")
+    @Resources
+    @ApiOperation("用户详情")
     @GetMapping("/{id}")
     public ApiResponses<UserVo> get(@PathVariable("id") Integer id) {
+
         SysUser user = userService.getById(id);
         ApiAssert.notNull(ErrorCodeEnum.USER_NOT_FOUND, user);
         UserVo userVo = BeanConverter.convert(UserVo.class, user);
@@ -69,8 +68,8 @@ public class SysUserController extends SuperController {
         return success(userVo);
     }
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("创建用户")
+    @Resources
+    @ApiOperation("用户创建")
     @PostMapping
     public ApiResponses<Void> create(@RequestBody @Validated(UserPARM.Create.class) UserPARM userPARM) {
 
@@ -93,8 +92,8 @@ public class SysUserController extends SuperController {
         return success(HttpStatus.CREATED);
     }
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("修改用户")
+    @Resources
+    @ApiOperation("用户修改")
     @PutMapping("/{id}")
     public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody @Validated(UserPARM.Update.class) UserPARM userPARM) {
 
@@ -106,16 +105,17 @@ public class SysUserController extends SuperController {
         return success();
     }
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("删除用户")
+    @Resources
+    @ApiOperation("用户删除")
     @DeleteMapping("/{id}")
     public ApiResponses<Void> delete(@PathVariable("id") Integer id) {
+
         userService.removeById(id);
         return success(HttpStatus.NO_CONTENT);
     }
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("设置用户状态")
+    @Resources
+    @ApiOperation("用户状态设置")
     @PutMapping("/{id}/status")
     public ApiResponses<Void> updateStatus(@PathVariable("id") Integer id, @RequestBody @Validated(UserPARM.Status.class) UserPARM userPARM) {
 
@@ -123,10 +123,11 @@ public class SysUserController extends SuperController {
         return success();
     }
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("重置用户密码")
+    @Resources
+    @ApiOperation("用户密码重置")
     @PutMapping("/{id}/password")
     public ApiResponses<Void> resetPwd(@PathVariable("id") Integer id) {
+
         userService.resetPwd(id);
         return success();
     }
