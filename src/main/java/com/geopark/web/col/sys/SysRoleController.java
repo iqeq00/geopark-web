@@ -8,6 +8,7 @@ import com.geopark.framework.enums.AuthTypeEnum;
 import com.geopark.framework.responses.ApiResponses;
 import com.geopark.web.model.entity.SysRole;
 import com.geopark.web.model.param.RolePARM;
+import com.geopark.web.model.param.UserPARM;
 import com.geopark.web.model.vo.RoleVo;
 import com.geopark.web.service.SysResourceService;
 import com.geopark.web.service.SysRoleMenuService;
@@ -45,6 +46,14 @@ public class SysRoleController extends SuperController {
     public ApiResponses<IPage<RoleVo>> page(@RequestParam(value = "roleName", required = false) String roleName) {
 
         return success(roleService.pageRoleVo(this.<SysRole>getPage(), roleName));
+    }
+
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation("查询所有角色")
+    @GetMapping("/list")
+    public ApiResponses<List<SysRole>> list() {
+
+        return success(roleService.list());
     }
 
     @Resources(AuthTypeEnum.LOGIN)
@@ -91,5 +100,7 @@ public class SysRoleController extends SuperController {
         roleMenuService.saveRoleMenu(id, menuIds);
         return success();
     }
+
+
 
 }

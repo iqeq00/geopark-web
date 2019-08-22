@@ -1,6 +1,7 @@
 package com.geopark.web.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.geopark.framework.enums.StatusEnum;
 import com.geopark.web.model.entity.SysUser;
 import com.geopark.web.model.vo.TokenVo;
 import com.geopark.web.model.vo.UserDetailsVo;
@@ -52,4 +53,19 @@ public interface SysUserService extends IService<SysUser> {
      */
     UserDetailsVo getUserDetails(Integer uid);
 
+    /**
+     * 添加用户角色
+     *
+     * @param id
+     * @param roleIds
+     */
+    void saveUserRoles(Integer id, List<Integer> roleIds);
+
+    /**
+     * 设置用户状态
+     *
+     * @param uid
+     * @param status
+     */
+    void updateStatus(Integer uid, StatusEnum status);
 }

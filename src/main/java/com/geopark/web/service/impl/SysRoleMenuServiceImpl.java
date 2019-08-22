@@ -27,13 +27,12 @@ public class SysRoleMenuServiceImpl extends ServiceImpl<SysRoleMenuMapper, SysRo
     @Transactional
     public void saveRoleMenu(Integer roleId, List<Integer> menuIds) {
 
-//        remove(lambdaQuery().eq(SysRoleMenu::getRoleId, roleId));
         List<SysRoleMenu> list = lambdaQuery().eq(SysRoleMenu::getRoleId, roleId).list();
         List<Integer> ids = new ArrayList<>();
         list.forEach(val -> {
             ids.add(val.getId());
         });
-        if(ids.size()>0) {
+        if(ids.size() > 0) {
             removeByIds(ids);
         }
         saveBatch(menuIds.stream().map(menuId -> new SysRoleMenu(roleId, menuId)).collect(Collectors.toList()));

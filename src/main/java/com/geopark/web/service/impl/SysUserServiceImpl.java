@@ -9,6 +9,7 @@ import com.geopark.framework.utils.ApiAssert;
 import com.geopark.framework.utils.JWTUtils;
 import com.geopark.framework.utils.TypeUtils;
 import com.geopark.web.mapper.SysUserMapper;
+import com.geopark.web.model.entity.SysRoleMenu;
 import com.geopark.web.model.entity.SysUser;
 import com.geopark.web.model.entity.SysUserRole;
 import com.geopark.web.model.vo.ResourcePermVo;
@@ -18,10 +19,14 @@ import com.geopark.web.service.SysResourceService;
 import com.geopark.web.service.SysUserRoleService;
 import com.geopark.web.service.SysUserService;
 import org.apache.commons.codec.digest.Md5Crypt;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -43,9 +48,12 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Override
     public List<Integer> getRoleIds(Integer uid) {
 
-        LambdaQueryChainWrapper<SysUserRole> lambdaQueryChainWrapper = userRoleService.lambdaQuery();
-        lambdaQueryChainWrapper.select(SysUserRole::getRoleId).eq(SysUserRole::getUid, uid);
-        return userRoleService.listObjs(lambdaQueryChainWrapper, TypeUtils::castToInt);
+        List<SysUserRole> list = userRoleService.lambdaQuery().select(SysUserRole::getRoleId).eq(SysUserRole::getUid, uid).list();
+        List<Integer> ids = new ArrayList<>();
+        list.forEach(val -> {
+            ids.add(val.getRoleId());
+        });
+        return ids;
     }
 
     @Override
@@ -64,7 +72,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public TokenVo getToken(SysUser user) {
-        Integer uid = user.getUid();
+        Integer uid = user.getId();
         TokenVo tokenVo = new TokenVo();
         tokenVo.setUid(uid);
         tokenVo.setToken(JWTUtils.generate(uid));
@@ -78,5 +86,30 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         UserDetailsVo userDetails = BeanConverter.convert(UserDetailsVo.class, user);
         userDetails.setPerms(resourceService.getUserPerms(uid));
         return userDetails;
+    }
+
+    @Override
+    @Transactional
+    public void saveUserRoles(Integer uid, List<Integer> roleIds) {
+        if (CollectionUtils.isNotEmpty(roleIds)) {
+            List<SysUserRole> list = userRoleService.lambdaQuery().eq(SysUserRole::getUid, uid).list();
+            List<Integer> ids = new ArrayList<>();
+            list.forEach(val -> {
+                ids.add(val.getId());
+            });
+            if(ids.size() > 0) {
+                removeByIds(ids);
+            }
+            userRoleService.saveBatch(roleIds.stream().map(e -> new SysUserRole(uid, e)).collect(Collectors.toList()));
+        }
+    }
+
+    @Override
+    @Transactional
+    public void updateStatus(Integer uid, StatusEnum status) {
+        SysUser user = getById(uid);
+        ApiAssert.notNull(ErrorCodeEnum.USER_NOT_FOUND, user);
+        user.setStatus(status);
+        updateById(user);
     }
 }

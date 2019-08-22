@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -18,12 +19,23 @@ import java.io.Serializable;
  * @since 2019-08-14
  */
 @Data
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
 @TableName("sys_user_role")
 public class SysUserRole implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    public SysUserRole(Integer uid, Integer roleId) {
+        this.uid = uid;
+        this.roleId = roleId;
+    }
+
+    public SysUserRole(Integer id, Integer uid, Integer roleId) {
+        this.id = id;
+        this.uid = uid;
+        this.roleId = roleId;
+    }
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
