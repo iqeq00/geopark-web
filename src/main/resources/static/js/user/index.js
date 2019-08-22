@@ -65,7 +65,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'formSelects'
             layer.confirm('确定重置此用户密码？', function (i) {
                 layer.close(i);
                 layer.load(2);
-                crown.put('/users/' + obj.data.id + '/password', {}, function () {
+                lichee.put('/user/' + obj.data.id + '/password', {}, function () {
                     layer.closeAll('loading');
                     layer.msg('重置密码成功', {icon: 1});
                 });

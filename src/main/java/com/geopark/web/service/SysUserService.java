@@ -68,4 +68,11 @@ public interface SysUserService extends IService<SysUser> {
      * @param status
      */
     void updateStatus(Integer uid, StatusEnum status);
+
+    /**
+     * 重置用户密码
+     *
+     * @param id
+     */
+    void resetPwd(Integer id);
 }

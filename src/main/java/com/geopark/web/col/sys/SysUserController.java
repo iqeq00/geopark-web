@@ -122,4 +122,12 @@ public class SysUserController extends SuperController {
         userService.updateStatus(id, userPARM.getStatus());
         return success();
     }
+
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation("重置用户密码")
+    @PutMapping("/{id}/password")
+    public ApiResponses<Void> resetPwd(@PathVariable("id") Integer id) {
+        userService.resetPwd(id);
+        return success();
+    }
 }

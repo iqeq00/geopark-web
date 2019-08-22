@@ -112,4 +112,13 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         user.setStatus(status);
         updateById(user);
     }
+
+    @Override
+    @Transactional
+    public void resetPwd(Integer uid) {
+        SysUser user = getById(uid);
+        ApiAssert.notNull(ErrorCodeEnum.USER_NOT_FOUND, user);
+        user.setPassword(Md5Crypt.apr1Crypt(user.getLoginName(), user.getLoginName()));
+        updateById(user);
+    }
 }
