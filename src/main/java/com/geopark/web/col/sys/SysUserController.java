@@ -20,7 +20,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
@@ -34,6 +33,7 @@ import java.util.Objects;
  */
 @RestController
 @RequestMapping("/user")
+@Validated
 public class SysUserController extends SuperController {
 
     @Autowired
@@ -84,9 +84,6 @@ public class SysUserController extends SuperController {
         }
         //默认禁用
         user.setStatus(StatusEnum.DISABLE);
-        user.setCreateUid(currentUid());
-        user.setCreateTime(LocalDateTime.now());
-        user.setUpdateTime(LocalDateTime.now());
         userService.save(user);
         userService.saveUserRoles(user.getId(), userPARM.getRoleIds());
         return success(HttpStatus.CREATED);
@@ -99,7 +96,6 @@ public class SysUserController extends SuperController {
 
         SysUser user = userPARM.convert(SysUser.class);
         user.setId(id);
-        user.setUpdateTime(LocalDateTime.now());
         userService.updateById(user);
         userService.saveUserRoles(id, userPARM.getRoleIds());
         return success();

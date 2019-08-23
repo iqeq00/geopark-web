@@ -28,6 +28,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/menu")
+@Validated
 public class SysMenuController extends SuperController {
 
     @Autowired

@@ -14,7 +14,6 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import javax.annotation.PostConstruct;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -91,7 +90,6 @@ public class ScanMappings {
                 resource.setAuthType(res.value());
                 resource.setPerm(resourceService.getResourcePermTag(requestMethod.name(), mapping));
                 resource.setId(DigestUtils.md5Hex(resource.getPerm()));
-                resource.setUpdateTime(LocalDateTime.now());
                 resources.add(resource);
             }
         }

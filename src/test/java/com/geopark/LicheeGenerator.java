@@ -94,14 +94,14 @@ public class LicheeGenerator {
 
     private StrategyConfig getStrategyConfig() {
 
-//        List<TableFill> tableFillList = getTableFills();
+        List<TableFill> tableFillList = getTableFills();
         StrategyConfig strategy = new StrategyConfig();
 //        strategy.setTablePrefix("sys_");
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);//字段名生成策略
         // 自定义实体，公共字段
 //        strategy.setSuperEntityColumns("id");
-//        strategy.setTableFillList(tableFillList);
+        strategy.setTableFillList(tableFillList);
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setEntityLombokModel(true);
         // Boolean类型字段是否移除is前缀处理

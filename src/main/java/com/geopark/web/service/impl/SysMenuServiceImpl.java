@@ -7,9 +7,7 @@ import com.geopark.framework.enums.ErrorCodeEnum;
 import com.geopark.framework.enums.MenuTypeEnum;
 import com.geopark.framework.enums.StatusEnum;
 import com.geopark.framework.utils.ApiAssert;
-import com.geopark.framework.utils.ApiUtils;
 import com.geopark.framework.utils.TreeUtils;
-import com.geopark.framework.utils.TypeUtils;
 import com.geopark.web.mapper.SysMenuMapper;
 import com.geopark.web.model.entity.SysMenu;
 import com.geopark.web.model.entity.SysMenuResource;
@@ -21,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -66,38 +63,31 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     public void updateStatus(Integer menuId, StatusEnum status) {
 
         SysMenu menu = getById(menuId);
-        if (null != menu) {
-            menu.setStatus(status);
-            updateById(menu);
-        }
+        ApiAssert.notNull(ErrorCodeEnum.MENU_NOT_FOUND, menu);
+        menu.setStatus(status);
+        updateById(menu);
     }
 
     @Override
     public MenuVo getMenuVoDetails(Integer menuId) {
 
         SysMenu menu = getById(menuId);
-        if (null != menu) {
-            MenuVo menuVo = BeanConverter.convert(MenuVo.class, menu);
-            List<SysMenuResource> list = menuResourceService.lambdaQuery()
-                    .select(SysMenuResource::getResourceId).eq(SysMenuResource::getMenuId, menuId).list();
-            List<String> resourceIds = new ArrayList<>();
-            list.forEach(menuResource -> {
-                resourceIds.add(menuResource.getResourceId());
-            });
-            menuVo.setResourceIds(resourceIds);
-            return menuVo;
-        }
-        return null;
+        ApiAssert.notNull(ErrorCodeEnum.MENU_NOT_FOUND, menu);
+        MenuVo menuVo = BeanConverter.convert(MenuVo.class, menu);
+        List<SysMenuResource> list = menuResourceService.lambdaQuery()
+                .select(SysMenuResource::getResourceId).eq(SysMenuResource::getMenuId, menuId).list();
+        List<String> resourceIds = new ArrayList<>();
+        list.forEach(menuResource -> {
+            resourceIds.add(menuResource.getResourceId());
+        });
+        menuVo.setResourceIds(resourceIds);
+        return menuVo;
     }
 
 
     @Override
     @Transactional
     public void saveMenu(SysMenu menu, List<String> resourceIds) {
-        menu.setCreateTime(LocalDateTime.now());
-        menu.setCreateUid(ApiUtils.currentUid());
-        menu.setUpdateTime(LocalDateTime.now());
-        menu.setUpdateUid(ApiUtils.currentUid());
         save(menu);
         if (CollectionUtils.isNotEmpty(resourceIds)) {
             Integer menuId = menu.getId();
@@ -109,8 +99,6 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     @Override
     @Transactional
     public void updateMenu(SysMenu menu, List<String> resourceIds) {
-        menu.setUpdateTime(LocalDateTime.now());
-        menu.setUpdateUid(ApiUtils.currentUid());
         updateById(menu);
         if (CollectionUtils.isNotEmpty(resourceIds)) {
             Integer menuId = menu.getId();

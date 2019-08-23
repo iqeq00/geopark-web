@@ -16,7 +16,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotEmpty;
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -29,6 +28,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/role")
+@Validated
 public class SysRoleController extends SuperController {
 
     @Autowired
@@ -58,12 +58,7 @@ public class SysRoleController extends SuperController {
     @PostMapping
     public ApiResponses<Void> create(@RequestBody @Validated(RolePARM.Create.class) RolePARM rolePARM) {
 
-        SysRole role = rolePARM.convert(SysRole.class);
-        role.setCreateUid(currentUid());
-        role.setCreateTime(LocalDateTime.now());
-        role.setUpdateUid(currentUid());
-        role.setUpdateTime(LocalDateTime.now());
-        roleService.save(role);
+        roleService.save(rolePARM.convert(SysRole.class));
         return success(HttpStatus.CREATED);
     }
 
@@ -74,8 +69,6 @@ public class SysRoleController extends SuperController {
 
         SysRole role = rolePARM.convert(SysRole.class);
         role.setId(id);
-        role.setUpdateUid(currentUid());
-        role.setUpdateTime(LocalDateTime.now());
         roleService.updateById(role);
         return success();
     }
@@ -84,6 +77,7 @@ public class SysRoleController extends SuperController {
     @ApiOperation("角色删除")
     @DeleteMapping("/{id}")
     public ApiResponses<Void> delete(@PathVariable("id") Integer id) {
+
         roleService.removeById(id);
         return success(HttpStatus.NO_CONTENT);
     }

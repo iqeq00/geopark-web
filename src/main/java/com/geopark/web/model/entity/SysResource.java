@@ -1,6 +1,9 @@
 package com.geopark.web.model.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.Version;
 import com.geopark.framework.enums.AuthTypeEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -47,6 +50,8 @@ public class SysResource implements Serializable {
      */
     private AuthTypeEnum authType;
 
+    @Version
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
     /**

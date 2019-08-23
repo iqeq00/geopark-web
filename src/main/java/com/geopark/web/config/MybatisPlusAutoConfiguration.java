@@ -2,6 +2,7 @@ package com.geopark.web.config;
 
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import com.geopark.framework.mybatisplus.CommonMetaObjectHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,24 +14,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MybatisPlusAutoConfiguration {
 
-    /**
-     * 分页
-     *
-     * @return
-     */
     @Bean
     public PaginationInterceptor paginationInterceptor() {
         return new PaginationInterceptor();
     }
 
-    /**
-     * 乐观锁
-     *
-     * @return
-     */
     @Bean
     public OptimisticLockerInterceptor optimisticLockerInterceptor() {
         return new OptimisticLockerInterceptor();
     }
 
+    @Bean
+    public CommonMetaObjectHandler commonMetaObjectHandler() {
+        return new CommonMetaObjectHandler();
+    }
 }

@@ -13,7 +13,7 @@ import java.util.List;
  * 角色表
  * </p>
  *
- * @author Caratacus
+ * @author lichee
  */
 @Data
 @NoArgsConstructor

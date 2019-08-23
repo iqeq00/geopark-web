@@ -8,7 +8,6 @@ import com.geopark.framework.controller.SuperController;
 import com.geopark.framework.enums.AuthTypeEnum;
 import com.geopark.framework.responses.ApiResponses;
 import com.geopark.web.model.entity.Task;
-import com.geopark.web.model.vo.ResourcePermVo;
 import com.geopark.web.service.SysResourceService;
 import com.geopark.web.service.TaskService;
 import lombok.extern.slf4j.Slf4j;
@@ -17,9 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.List;
 
 /**
  * <p>
@@ -69,7 +66,6 @@ public class TaskController extends SuperController {
     @PostMapping
     public ApiResponses<Void> save(@RequestBody Task task) {
 
-        task.setCreateTime(LocalDateTime.now());
         taskService.save(task);
         return success(HttpStatus.CREATED);
     }

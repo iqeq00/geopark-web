@@ -11,7 +11,7 @@
  Target Server Version : 50718
  File Encoding         : 65001
 
- Date: 23/08/2019 11:17:46
+ Date: 23/08/2019 17:16:35
 */
 
 SET NAMES utf8mb4;
@@ -690,7 +690,7 @@ INSERT INTO `sys_menu` VALUES (2, 1, '用户管理', 'user.html', 2, 'layui-icon
 INSERT INTO `sys_menu` VALUES (3, 2, '添加', '', 3, 'layui-icon-add-circle-fine', 1, 1, '2019-08-22 16:53:54', '2019-08-22 17:07:03', 0, '', 'sys:user:add');
 INSERT INTO `sys_menu` VALUES (4, 2, '编辑', '', 3, 'layui-icon-edit', 1, 1, '2019-08-22 16:56:41', '2019-08-22 17:08:18', 0, '', 'sys:user:edit');
 INSERT INTO `sys_menu` VALUES (5, 2, '删除', '', 3, 'layui-icon-delete', 1, 1, '2019-08-22 16:58:46', '2019-08-22 17:08:27', 0, '', 'sys:user:delete');
-INSERT INTO `sys_menu` VALUES (6, 2, '重置密码', '', 3, 'layui-icon-password', 1, 1, '2019-08-22 17:10:37', '2019-08-22 17:10:37', 0, '', 'password');
+INSERT INTO `sys_menu` VALUES (6, 2, '重置密码', '', 3, 'layui-icon-password', 1, 1, '2019-08-22 17:10:37', '2019-08-22 17:10:37', 0, '', 'sys:user:password');
 INSERT INTO `sys_menu` VALUES (7, 1, '角色管理', 'role.html', 2, 'layui-icon-face-surprised', 1, 1, '2019-08-22 17:20:57', '2019-08-22 17:20:57', 0, 'role', 'sys:role:page');
 INSERT INTO `sys_menu` VALUES (8, 7, '添加', '', 3, 'layui-icon-add-circle-fine', 1, 1, '2019-08-22 17:25:47', '2019-08-22 17:25:47', 0, '', 'sys:role:add');
 INSERT INTO `sys_menu` VALUES (9, 7, '编辑', '', 3, 'layui-icon-edit', 1, 1, '2019-08-22 17:26:20', '2019-08-22 17:26:20', 0, '', 'sys:role:edit');
@@ -698,7 +698,7 @@ INSERT INTO `sys_menu` VALUES (10, 7, '删除', '', 3, 'layui-icon-delete', 1, 1
 INSERT INTO `sys_menu` VALUES (11, 7, '授权', '', 3, 'layui-icon-auz', 1, 1, '2019-08-22 17:31:15', '2019-08-22 17:31:15', 0, '', 'sys:role:authority');
 INSERT INTO `sys_menu` VALUES (12, 1, '菜单管理', 'menu.html', 2, 'layui-icon-template', 1, 1, '2019-08-22 17:35:34', '2019-08-22 17:35:34', 0, 'menu', 'sys:menu:list');
 INSERT INTO `sys_menu` VALUES (13, 12, '添加', '', 3, 'layui-icon-add-circle-fine', 1, 1, '2019-08-22 17:37:47', '2019-08-22 17:39:06', 0, '', 'sys:menu:add');
-INSERT INTO `sys_menu` VALUES (14, 12, '编辑', '', 3, 'layui-icon-edit', 1, 1, '2019-08-22 17:41:04', '2019-08-22 17:41:04', 0, '', 'sys:menu:edit');
+INSERT INTO `sys_menu` VALUES (14, 12, '编辑', '', 3, 'layui-icon-edit', 1, 1, '2019-08-22 17:41:04', '2019-08-23 14:11:19', 0, '', 'sys:menu:edit');
 INSERT INTO `sys_menu` VALUES (15, 12, '删除', '', 3, 'layui-icon-delete', 1, 1, '2019-08-22 17:42:04', '2019-08-22 17:42:04', 0, '', 'sys:menu:delete');
 INSERT INTO `sys_menu` VALUES (16, 1, '资源管理', 'resource.html', 2, 'layui-icon-read', 1, 1, '2019-08-22 17:44:23', '2019-08-22 17:44:23', 0, 'resource', 'sys:resource:page');
 INSERT INTO `sys_menu` VALUES (17, 16, '刷新', '', 3, 'layui-icon-refresh', 1, 1, '2019-08-22 17:46:10', '2019-08-22 17:46:10', 0, '', 'sys:resource:refresh');
@@ -716,7 +716,7 @@ CREATE TABLE `sys_menu_resource`  (
   `menu_id` int(11) NULL DEFAULT NULL COMMENT '菜单ID',
   `resource_id` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '资源ID',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '菜单资源关系表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '菜单资源关系表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_menu_resource
@@ -738,9 +738,6 @@ INSERT INTO `sys_menu_resource` VALUES (14, 12, 'de8b6406105c3ea1c71de78e0870595
 INSERT INTO `sys_menu_resource` VALUES (15, 13, '3a62355efcfa84646b390d508efea9b6');
 INSERT INTO `sys_menu_resource` VALUES (16, 13, 'd83a249e0e0ed84806ecba2fd8c7148d');
 INSERT INTO `sys_menu_resource` VALUES (17, 13, 'd8544217f479cfb39559e4b94f413aaa');
-INSERT INTO `sys_menu_resource` VALUES (18, 14, '37687195b63b44e0d22436080de117bc');
-INSERT INTO `sys_menu_resource` VALUES (19, 14, 'd83a249e0e0ed84806ecba2fd8c7148d');
-INSERT INTO `sys_menu_resource` VALUES (20, 14, 'd8544217f479cfb39559e4b94f413aaa');
 INSERT INTO `sys_menu_resource` VALUES (21, 15, '15da52a5f4f4a6eac3b0d6f046f040c9');
 INSERT INTO `sys_menu_resource` VALUES (22, 16, '47aad34069f0e8713b6df562b4b2029f');
 INSERT INTO `sys_menu_resource` VALUES (23, 17, '7025c7532d2a58d3de4dde7c66d363f3');
@@ -748,6 +745,10 @@ INSERT INTO `sys_menu_resource` VALUES (24, 18, '512082c7c24e77c5496977206d823f4
 INSERT INTO `sys_menu_resource` VALUES (25, 19, '9141e80baac708a8863498ff7a41d276');
 INSERT INTO `sys_menu_resource` VALUES (26, 20, '1adec59980b460bb8db5198953608b87');
 INSERT INTO `sys_menu_resource` VALUES (27, 21, '71d5f2e10db38eaebdaa44fa89cb1163');
+INSERT INTO `sys_menu_resource` VALUES (28, 14, '37687195b63b44e0d22436080de117bc');
+INSERT INTO `sys_menu_resource` VALUES (29, 14, 'd83a249e0e0ed84806ecba2fd8c7148d');
+INSERT INTO `sys_menu_resource` VALUES (30, 14, 'd8544217f479cfb39559e4b94f413aaa');
+INSERT INTO `sys_menu_resource` VALUES (31, 14, '375edb54e85dc981c8df62c76f3782ed');
 
 -- ----------------------------
 -- Table structure for sys_resource
@@ -767,38 +768,38 @@ CREATE TABLE `sys_resource`  (
 -- ----------------------------
 -- Records of sys_resource
 -- ----------------------------
-INSERT INTO `sys_resource` VALUES ('15da52a5f4f4a6eac3b0d6f046f040c9', '菜单删除', '/menu/{id}', 'DELETE', 3, '2019-08-23 11:14:10', 'DELETE:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('179887b5bd6e42be960b83982a684b10', '角色查询(所有)', '/role/list', 'GET', 3, '2019-08-23 11:14:10', 'GET:/role/list');
-INSERT INTO `sys_resource` VALUES ('1adec59980b460bb8db5198953608b87', '任务编辑', '/task/{id}', 'PUT', 1, '2019-08-23 11:14:10', 'PUT:/task/{id}');
-INSERT INTO `sys_resource` VALUES ('24bf74d47e8322146e38f0c68333f90c', '角色授权', '/role/{id}/menu', 'PUT', 3, '2019-08-23 11:14:10', 'PUT:/role/{id}/menu');
-INSERT INTO `sys_resource` VALUES ('375edb54e85dc981c8df62c76f3782ed', '菜单详情', '/menu/{id}', 'GET', 3, '2019-08-23 11:14:10', 'GET:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('37687195b63b44e0d22436080de117bc', '菜单编辑', '/menu/{id}', 'PUT', 3, '2019-08-23 11:14:10', 'PUT:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('3a62355efcfa84646b390d508efea9b6', '菜单添加', '/menu', 'POST', 3, '2019-08-23 11:14:10', 'POST:/menu');
-INSERT INTO `sys_resource` VALUES ('3dca30c2118ff6158ffa88191003128e', '用户删除', '/user/{id}', 'DELETE', 3, '2019-08-23 11:14:10', 'DELETE:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('46a5d7a79e6ba91e6709f3361a2edd81', '角色添加', '/role', 'POST', 3, '2019-08-23 11:14:10', 'POST:/role');
-INSERT INTO `sys_resource` VALUES ('47aad34069f0e8713b6df562b4b2029f', '资源查询(分页)', '/resource/page', 'GET', 3, '2019-08-23 11:14:10', 'GET:/resource/page');
-INSERT INTO `sys_resource` VALUES ('49764a50d0e0f74790ced2586b03bff8', '用户状态设置', '/user/{id}/status', 'PUT', 3, '2019-08-23 11:14:10', 'PUT:/user/{id}/status');
-INSERT INTO `sys_resource` VALUES ('512082c7c24e77c5496977206d823f48', '任务查询(分页)', '/task/page', 'GET', 1, '2019-08-23 11:14:10', 'GET:/task/page');
-INSERT INTO `sys_resource` VALUES ('54522abbe7d3a2a40e7edbc9339acc50', '用户编辑', '/user/{id}', 'PUT', 3, '2019-08-23 11:14:10', 'PUT:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('6ab0f8a49671e489f11a1bef2fcaf102', '账户清除', '/account/token', 'DELETE', 1, '2019-08-23 11:14:10', 'DELETE:/account/token');
-INSERT INTO `sys_resource` VALUES ('6c3514540b1e2e1589a9c9566273c7c7', '用户详情', '/user/{id}', 'GET', 3, '2019-08-23 11:14:10', 'GET:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('7025c7532d2a58d3de4dde7c66d363f3', '资源刷新', '/resource', 'PUT', 3, '2019-08-23 11:14:10', 'PUT:/resource');
-INSERT INTO `sys_resource` VALUES ('71d5f2e10db38eaebdaa44fa89cb1163', '任务删除', '/task/{id}', 'DELETE', 1, '2019-08-23 11:14:10', 'DELETE:/task/{id}');
-INSERT INTO `sys_resource` VALUES ('842e33410b5a97b6c797e4782c97a90e', '账户获取', '/account/token', 'POST', 2, '2019-08-23 11:14:10', 'POST:/account/token');
-INSERT INTO `sys_resource` VALUES ('9141e80baac708a8863498ff7a41d276', '任务添加', '/task', 'POST', 1, '2019-08-23 11:14:10', 'POST:/task');
-INSERT INTO `sys_resource` VALUES ('9be8e0df48c8ba879e5b079c73662ee4', '用户添加', '/user', 'POST', 3, '2019-08-23 11:14:10', 'POST:/user');
-INSERT INTO `sys_resource` VALUES ('a2cf21f89380c679e13e76a46e63de18', '角色查询(分页)', '/role/page', 'GET', 3, '2019-08-23 11:14:10', 'GET:/role/page');
-INSERT INTO `sys_resource` VALUES ('b7b1c22076c0d28c8d0fe4c0b09b6a6e', '角色编辑', '/role/{id}', 'PUT', 3, '2019-08-23 11:14:10', 'PUT:/role/{id}');
-INSERT INTO `sys_resource` VALUES ('c2db9729dcd4a7d703e45411bb445dfd', '账户密码修改', '/account/password', 'PUT', 1, '2019-08-23 11:14:10', 'PUT:/account/password');
-INSERT INTO `sys_resource` VALUES ('d245ace645ea40e898178ee13c24297f', '用户密码重置', '/user/{id}/password', 'PUT', 3, '2019-08-23 11:14:10', 'PUT:/user/{id}/password');
-INSERT INTO `sys_resource` VALUES ('d81bffa6ffd70cc443703820b5a95e8d', '账户菜单', '/account/menus', 'GET', 1, '2019-08-23 11:14:10', 'GET:/account/menus');
-INSERT INTO `sys_resource` VALUES ('d83a249e0e0ed84806ecba2fd8c7148d', '菜单父级查询(下拉框)', '/menu/combos', 'GET', 3, '2019-08-23 11:14:10', 'GET:/menu/combos');
-INSERT INTO `sys_resource` VALUES ('d8544217f479cfb39559e4b94f413aaa', '资源查询(所有)', '/resource/list', 'GET', 3, '2019-08-23 11:14:10', 'GET:/resource/list');
-INSERT INTO `sys_resource` VALUES ('ddf4e3fd39264da50eec54cfd02731f4', '角色删除', '/role/{id}', 'DELETE', 3, '2019-08-23 11:14:10', 'DELETE:/role/{id}');
-INSERT INTO `sys_resource` VALUES ('de8b6406105c3ea1c71de78e0870595e', '菜单状态设置', '/menu/{id}/status', 'PUT', 3, '2019-08-23 11:14:10', 'PUT:/menu/{id}/status');
-INSERT INTO `sys_resource` VALUES ('e78940daf86b9ac5563d539e8802429c', '账户详情', '/account/info', 'GET', 1, '2019-08-23 11:14:10', 'GET:/account/info');
-INSERT INTO `sys_resource` VALUES ('f880f8a35613b38182612a061291f8a5', '菜单查询(所有)', '/menu/list', 'GET', 3, '2019-08-23 11:14:10', 'GET:/menu/list');
-INSERT INTO `sys_resource` VALUES ('fad1ecbafb22f1ac0f63486d71393745', '用户查询(分页)', '/user/page', 'GET', 3, '2019-08-23 11:14:10', 'GET:/user/page');
+INSERT INTO `sys_resource` VALUES ('15da52a5f4f4a6eac3b0d6f046f040c9', '菜单删除', '/menu/{id}', 'DELETE', 3, '2019-08-23 14:11:53', 'DELETE:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('179887b5bd6e42be960b83982a684b10', '角色查询(所有)', '/role/list', 'GET', 3, '2019-08-23 14:11:53', 'GET:/role/list');
+INSERT INTO `sys_resource` VALUES ('1adec59980b460bb8db5198953608b87', '任务编辑', '/task/{id}', 'PUT', 1, '2019-08-23 14:11:53', 'PUT:/task/{id}');
+INSERT INTO `sys_resource` VALUES ('24bf74d47e8322146e38f0c68333f90c', '角色授权', '/role/{id}/menu', 'PUT', 3, '2019-08-23 14:11:53', 'PUT:/role/{id}/menu');
+INSERT INTO `sys_resource` VALUES ('375edb54e85dc981c8df62c76f3782ed', '菜单详情', '/menu/{id}', 'GET', 3, '2019-08-23 14:11:53', 'GET:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('37687195b63b44e0d22436080de117bc', '菜单编辑', '/menu/{id}', 'PUT', 3, '2019-08-23 14:11:53', 'PUT:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('3a62355efcfa84646b390d508efea9b6', '菜单添加', '/menu', 'POST', 3, '2019-08-23 14:11:53', 'POST:/menu');
+INSERT INTO `sys_resource` VALUES ('3dca30c2118ff6158ffa88191003128e', '用户删除', '/user/{id}', 'DELETE', 3, '2019-08-23 14:11:53', 'DELETE:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('46a5d7a79e6ba91e6709f3361a2edd81', '角色添加', '/role', 'POST', 3, '2019-08-23 14:11:53', 'POST:/role');
+INSERT INTO `sys_resource` VALUES ('47aad34069f0e8713b6df562b4b2029f', '资源查询(分页)', '/resource/page', 'GET', 3, '2019-08-23 14:11:53', 'GET:/resource/page');
+INSERT INTO `sys_resource` VALUES ('49764a50d0e0f74790ced2586b03bff8', '用户状态设置', '/user/{id}/status', 'PUT', 3, '2019-08-23 14:11:53', 'PUT:/user/{id}/status');
+INSERT INTO `sys_resource` VALUES ('512082c7c24e77c5496977206d823f48', '任务查询(分页)', '/task/page', 'GET', 1, '2019-08-23 14:11:53', 'GET:/task/page');
+INSERT INTO `sys_resource` VALUES ('54522abbe7d3a2a40e7edbc9339acc50', '用户编辑', '/user/{id}', 'PUT', 3, '2019-08-23 14:11:53', 'PUT:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('6ab0f8a49671e489f11a1bef2fcaf102', '账户清除', '/account/token', 'DELETE', 1, '2019-08-23 14:11:53', 'DELETE:/account/token');
+INSERT INTO `sys_resource` VALUES ('6c3514540b1e2e1589a9c9566273c7c7', '用户详情', '/user/{id}', 'GET', 3, '2019-08-23 14:11:53', 'GET:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('7025c7532d2a58d3de4dde7c66d363f3', '资源刷新', '/resource', 'PUT', 3, '2019-08-23 14:11:53', 'PUT:/resource');
+INSERT INTO `sys_resource` VALUES ('71d5f2e10db38eaebdaa44fa89cb1163', '任务删除', '/task/{id}', 'DELETE', 1, '2019-08-23 14:11:53', 'DELETE:/task/{id}');
+INSERT INTO `sys_resource` VALUES ('842e33410b5a97b6c797e4782c97a90e', '账户获取', '/account/token', 'POST', 2, '2019-08-23 14:11:53', 'POST:/account/token');
+INSERT INTO `sys_resource` VALUES ('9141e80baac708a8863498ff7a41d276', '任务添加', '/task', 'POST', 1, '2019-08-23 14:11:53', 'POST:/task');
+INSERT INTO `sys_resource` VALUES ('9be8e0df48c8ba879e5b079c73662ee4', '用户添加', '/user', 'POST', 3, '2019-08-23 14:11:53', 'POST:/user');
+INSERT INTO `sys_resource` VALUES ('a2cf21f89380c679e13e76a46e63de18', '角色查询(分页)', '/role/page', 'GET', 3, '2019-08-23 14:11:53', 'GET:/role/page');
+INSERT INTO `sys_resource` VALUES ('b7b1c22076c0d28c8d0fe4c0b09b6a6e', '角色编辑', '/role/{id}', 'PUT', 3, '2019-08-23 14:11:53', 'PUT:/role/{id}');
+INSERT INTO `sys_resource` VALUES ('c2db9729dcd4a7d703e45411bb445dfd', '账户密码修改', '/account/password', 'PUT', 1, '2019-08-23 14:11:53', 'PUT:/account/password');
+INSERT INTO `sys_resource` VALUES ('d245ace645ea40e898178ee13c24297f', '用户密码重置', '/user/{id}/password', 'PUT', 3, '2019-08-23 14:11:53', 'PUT:/user/{id}/password');
+INSERT INTO `sys_resource` VALUES ('d81bffa6ffd70cc443703820b5a95e8d', '账户菜单', '/account/menus', 'GET', 1, '2019-08-23 14:11:53', 'GET:/account/menus');
+INSERT INTO `sys_resource` VALUES ('d83a249e0e0ed84806ecba2fd8c7148d', '菜单父级查询(下拉框)', '/menu/combos', 'GET', 3, '2019-08-23 14:11:53', 'GET:/menu/combos');
+INSERT INTO `sys_resource` VALUES ('d8544217f479cfb39559e4b94f413aaa', '资源查询(所有)', '/resource/list', 'GET', 3, '2019-08-23 14:11:53', 'GET:/resource/list');
+INSERT INTO `sys_resource` VALUES ('ddf4e3fd39264da50eec54cfd02731f4', '角色删除', '/role/{id}', 'DELETE', 3, '2019-08-23 14:11:53', 'DELETE:/role/{id}');
+INSERT INTO `sys_resource` VALUES ('de8b6406105c3ea1c71de78e0870595e', '菜单状态设置', '/menu/{id}/status', 'PUT', 3, '2019-08-23 14:11:53', 'PUT:/menu/{id}/status');
+INSERT INTO `sys_resource` VALUES ('e78940daf86b9ac5563d539e8802429c', '账户详情', '/account/info', 'GET', 1, '2019-08-23 14:11:53', 'GET:/account/info');
+INSERT INTO `sys_resource` VALUES ('f880f8a35613b38182612a061291f8a5', '菜单查询(所有)', '/menu/list', 'GET', 3, '2019-08-23 14:11:53', 'GET:/menu/list');
+INSERT INTO `sys_resource` VALUES ('fad1ecbafb22f1ac0f63486d71393745', '用户查询(分页)', '/user/page', 'GET', 3, '2019-08-23 14:11:53', 'GET:/user/page');
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -895,7 +896,7 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, '超级管理员', 'root@163.com', '13866668888', 0, 1, '2019-08-23 10:56:12', '2019-08-23 10:56:12', 'admin', '$apr1$admin$Sl27Fb32LUppR7w2Ovw4V/', '127.0.0.1');
+INSERT INTO `sys_user` VALUES (1, '超级管理员', 'root@163.com', '13866668888', 0, 1, '2019-08-23 10:56:12', '2019-08-23 10:56:12', 'admin', '$apr1$admin$Sl27Fb32LUppR7w2Ovw4V/', '0:0:0:0:0:0:0:1');
 INSERT INTO `sys_user` VALUES (2, '阿大', '8888@163.com', '13888888888', 0, 1, '2019-08-23 10:57:17', '2019-08-23 10:57:17', 'lichee', '$apr1$lichee$2XUDSi4pQtv7EUyYcswB91', '127.0.0.1');
 
 -- ----------------------------

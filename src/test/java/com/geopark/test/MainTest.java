@@ -1,4 +1,4 @@
-package com.geopark.web;
+package com.geopark.test;
 
 import org.springframework.util.StringUtils;
 

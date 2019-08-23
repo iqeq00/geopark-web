@@ -11,6 +11,7 @@ import com.geopark.web.model.entity.SysResource;
 import com.geopark.web.service.SysResourceService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +27,7 @@ import java.util.Objects;
  */
 @RestController
 @RequestMapping("/resource")
+@Validated
 public class SysResourceController extends SuperController {
 
     @Autowired
