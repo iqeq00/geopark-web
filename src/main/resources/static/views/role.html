@@ -105,18 +105,17 @@
 <script type="text/html" id="menu-tree">
     <form id="tree-form" lay-filter="tree-form" class="layui-form model-form">
         <input name="roleId" type="hidden"/>
-        <div class="content_wrap" style="padding:20px 70px 100px;height:200px;overflow-y: auto">
+        <div class="content_wrap" style="padding:20px 100px 20px;overflow-y: auto">
             <div>
                 <ul id="menuTreeData" class="ztree"></ul>
             </div>
         </div>
-        <div class="layui-form-item model-form-footer" style="padding:10px 30px;">
-            <button class="layui-btn layui-btn-primary layui-btn-sm close" type="button">取消</button>
+        <div class="layui-form-item layui-layer-btn">
             <button class="layui-btn layui-btn-sm" lay-filter="tree-form-submit" lay-submit>保存</button>
+            <button class="layui-btn layui-btn-sm layui-btn-primary close" type="button">取消</button>
         </div>
     </form>
 </script>
-
 
 </body>
 </html>

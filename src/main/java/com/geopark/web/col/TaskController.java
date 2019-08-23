@@ -65,7 +65,7 @@ public class TaskController extends SuperController {
     }
 
     @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("任务保存")
+    @ApiOperation("任务添加")
     @PostMapping
     public ApiResponses<Void> save(@RequestBody Task task) {
 
@@ -75,7 +75,7 @@ public class TaskController extends SuperController {
     }
 
     @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("任务更新")
+    @ApiOperation("任务编辑")
     @PutMapping("/{id}")
     public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody Task task) {
 

@@ -117,8 +117,8 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form'], function () 
         var menuIds = data.menuIds;
         layer.open({
             type: 1,
-            title: '菜单关联',
-            area: '450px',
+            title: '菜单授权',
+            area: '400px',
             offset: '120px',
             content: $('#menu-tree').html(),
             success: function () {
@@ -166,13 +166,13 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form'], function () 
             menuIds.push(checked[i].id);
         }
         if (menuIds.length == 0) {
-            layer.msg('请选择关联菜单', {icon: 5});
+            layer.msg('请选择授权菜单', {icon: 5});
             layer.closeAll('page');
             return false;
         }
         lichee.put('/role/' + data.field.roleId + '/menu', {data: menuIds}, function () {
             layer.closeAll('loading');
-            layer.msg('关联成功', {icon: 1});
+            layer.msg('授权成功', {icon: 1});
             tableInfo.reload({where: lichee.getSearchForm()});
             layer.closeAll('page');
         });

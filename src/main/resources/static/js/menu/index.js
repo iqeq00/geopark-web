@@ -42,11 +42,11 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'treetable', 'form', 
                 {
                     align: 'center', templet: function (d) {
                         if (d.menuType === 1) {
-                            return '<span class="layui-badge layui-bg-gray">目录</span>';
+                            return '<span class="layui-badge layui-bg-red">目录</span>';
                         } else if (d.menuType === 2) {
-                            return '<span class="layui-badge layui-bg-blue">菜单</span>';
+                            return '<span class="layui-badge layui-bg-green">菜单</span>';
                         } else if (d.menuType === 3) {
-                            return '<span class="layui-badge layui-badge-rim">按钮</span>';
+                            return '<span class="layui-badge layui-bg-blue">按钮</span>';
                         } else {
                             return '<span class="layui-bg-black">未知</span>';
                         }
