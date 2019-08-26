@@ -6,12 +6,12 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
 /**
- * Controller统一切点日志处理
+ * Log Record
  *
  * @author lichee
  */
 @Aspect
-public class LogRecordAspect {
+public class LogRecord {
 
     @Pointcut("execution(public * com.*.*.col.*Controller.*(..))")
     @SuppressWarnings("EmptyMethod")

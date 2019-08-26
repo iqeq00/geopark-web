@@ -13,4 +13,5 @@ import com.geopark.web.model.entity.Task;
  */
 public interface TaskService extends IService<Task> {
 
+    void saveTransaction(Task task);
 }

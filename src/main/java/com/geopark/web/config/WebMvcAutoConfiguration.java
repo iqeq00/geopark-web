@@ -1,6 +1,6 @@
 package com.geopark.web.config;
 
-import com.geopark.framework.aspect.LogRecordAspect;
+import com.geopark.framework.aspect.LogRecord;
 import com.geopark.framework.spring.IEnumConverterFactory;
 import com.geopark.framework.spring.LicheeHandlerExceptionResolver;
 import com.geopark.framework.spring.validator.ValidatorCollectionImpl;
@@ -30,8 +30,8 @@ import java.util.List;
 public class WebMvcAutoConfiguration implements WebMvcConfigurer {
 
     @Bean
-    public LogRecordAspect logRecordAspect() {
-        return new LogRecordAspect();
+    public LogRecord logRecord() {
+        return new LogRecord();
     }
 
     @Override

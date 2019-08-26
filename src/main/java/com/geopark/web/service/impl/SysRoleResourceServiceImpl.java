@@ -17,4 +17,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysRoleResourceServiceImpl extends ServiceImpl<SysRoleResourceMapper, SysRoleResource> implements SysRoleResourceService {
 
+    @Override
+    public void saveTransaction() {
+
+        throw new RuntimeException("报错了");
+    }
 }

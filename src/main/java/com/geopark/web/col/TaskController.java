@@ -89,4 +89,13 @@ public class TaskController extends SuperController {
         return success(HttpStatus.NO_CONTENT);
     }
 
+    @Resources(AuthTypeEnum.LOGIN)
+    @ApiOperation("事务测试")
+    @PostMapping("transaction")
+    public ApiResponses<Void> transaction(@RequestBody Task task) {
+
+        taskService.saveTransaction(task);
+        return success(HttpStatus.CREATED);
+    }
+
 }
