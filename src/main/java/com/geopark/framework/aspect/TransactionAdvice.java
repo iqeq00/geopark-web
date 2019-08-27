@@ -44,6 +44,7 @@ public class TransactionAdvice {
         source.addTransactionalMethod("modify*", required);
         source.addTransactionalMethod("delete*", required);
         source.addTransactionalMethod("remove*", required);
+        source.addTransactionalMethod("login*", required);
         source.addTransactionalMethod("exec*", required);
         source.addTransactionalMethod("set*", required);
 
