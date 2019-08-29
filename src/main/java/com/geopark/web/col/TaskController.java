@@ -59,6 +59,7 @@ public class TaskController extends SuperController {
             Date startTime, Date endTime) {
 
         return success(taskService.page(taskName, status, startTime, endTime, this.<Task>getPage()));
+
     }
 
     @Resources(AuthTypeEnum.LOGIN)
@@ -89,8 +90,6 @@ public class TaskController extends SuperController {
         return success(HttpStatus.NO_CONTENT);
     }
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("事务测试")
     @PostMapping("transaction")
     public ApiResponses<Void> transaction(@RequestBody Task task) {
 

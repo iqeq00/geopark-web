@@ -29,4 +29,5 @@ public class ApplicationContextRegister implements ApplicationContextAware {
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         APPLICATION_CONTEXT = applicationContext;
     }
+
 }

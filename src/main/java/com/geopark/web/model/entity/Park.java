@@ -87,7 +87,7 @@ public class Park implements Serializable {
     /**
      * 建立时间
      */
-    private String create;
+    private String createDate;
 
     /**
      * 公园地质遗迹景观特色
@@ -117,7 +117,7 @@ public class Park implements Serializable {
     /**
      * 公园主管部门
      */
-    private String master;
+    private String masterDepartment;
 
     private LocalDateTime createdAt;
 
@@ -150,7 +150,7 @@ public class Park implements Serializable {
 
     public static final String DIVIDE = "divide";
 
-    public static final String CREATE = "create";
+    public static final String CREATE_DATE = "create_date";
 
     public static final String CHARACTERISTIC = "characteristic";
 
@@ -162,7 +162,7 @@ public class Park implements Serializable {
 
     public static final String HISTORICAL_TYPE = "historical_type";
 
-    public static final String MASTER = "master";
+    public static final String MASTER_DEPARTMENT = "master_department";
 
     public static final String CREATED_AT = "created_at";
 
