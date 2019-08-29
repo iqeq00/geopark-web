@@ -1,7 +1,6 @@
 package com.geopark.web.col;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.additional.query.impl.LambdaQueryChainWrapper;
 import com.geopark.framework.annotations.ApiOperation;
 import com.geopark.framework.annotations.Resources;
 import com.geopark.framework.controller.SuperController;
@@ -11,7 +10,6 @@ import com.geopark.web.model.entity.Task;
 import com.geopark.web.service.SysResourceService;
 import com.geopark.web.service.TaskService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
