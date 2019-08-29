@@ -3,6 +3,7 @@ server:
   servlet:
     context-path: /
 
+
 spring:
   profiles:
     active: dev
@@ -33,6 +34,25 @@ spring:
     encoding:
       enabled: true
       charset: UTF-8
+  redis:
+    database: 0
+    timeout: 10000
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+  cache:
+    redis:
+
+      ## Entry expiration in milliseconds. By default the entries never expire.
+#      time-to-live: 1d
+#      use-key-prefix: true
+
+
+
+
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml

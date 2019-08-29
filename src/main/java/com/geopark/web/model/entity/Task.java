@@ -1,6 +1,7 @@
 package com.geopark.web.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -17,6 +18,7 @@ import java.time.LocalDateTime;
  * @since 2019-08-14
  */
 @Data
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("task")
