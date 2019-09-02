@@ -50,3 +50,7 @@ mybatis-plus:
   type-aliases-package: com.geopark.web.model.entity,com.geopark.web.model.vo
   global-config:
     banner: false
+
+geopark:
+  photo:
+    contentType: jpg

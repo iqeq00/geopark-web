@@ -43,19 +43,19 @@ public class ParkinfoController extends SuperController {
     @Resources
     @ApiOperation("公园信息添加")
     @PostMapping
-    public ApiResponses<Void> save(@RequestBody Parkinfo Parkinfo) {
+    public ApiResponses<Void> save(@RequestBody Parkinfo parkinfo) {
 
-        parkinfoService.save(Parkinfo);
+        parkinfoService.save(parkinfo);
         return success(HttpStatus.CREATED);
     }
 
     @Resources
     @ApiOperation("公园信息编辑")
     @PutMapping("/{id}")
-    public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody Parkinfo Parkinfo) {
+    public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody Parkinfo parkinfo) {
 
-        Parkinfo.setId(id);
-        parkinfoService.updateById(Parkinfo);
+        parkinfo.setId(id);
+        parkinfoService.updateById(parkinfo);
         return success();
     }
 

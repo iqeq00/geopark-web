@@ -1,6 +1,4 @@
-//公园概况
-
-layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], function () {
+layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], function () {
 
     var config = layui.config;
     var lichee = layui.lichee;
@@ -8,36 +6,26 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
     var layer = layui.layer;
     var table = layui.table;
     var form = layui.form;
-    var laydate = layui.laydate;
+    var upload = layui.upload;
 
     var tableInfo = table.render({
         elem: '#table',
         toolbar: '#toolbar',
         defaultToolbar: [],
-        //width:'auto',
-        url: '/researchpaper/page',
-        title: '科研论文',
+        url: '/exchangeexhibition/page',
+        title: '交流活动信息数据表',
         page: true,
         headers: {Authorization: config.getToken()},
         request: config.request,
         parseData: config.parseData,
         response: config.response,
         cols: [[
-            //{type: 'checkbox', fixed: 'left'},
-            // {field: 'id', title: 'ID'},
-            {field: 'parkId', align: 'center', sort: true, title: '地质公园ID',minwidth: 110},
-            {field: 'achievementnumber', align: 'center', sort: true, title: '成果编号',minwidth: 100},
-            {field: 'papernumber', align: 'center', sort: true, title: '论文编号',minwidth: 100},
-            {field: 'author', align: 'center', sort: true, title: '作者',minwidth: 100},
-            {field: 'year', align: 'center', sort: true, title: '年份',minwidth: 100},
-            {field: 'heading', align: 'center', sort: true, title: '名称',minwidth: 100},
-            {field: 'periodical', align: 'center', sort: true, title: '期刊',minwidth: 100},
-            {field: 'volume', align: 'center', sort: true, title: '卷期',minwidth: 100},
-            {field: 'pagenumber', align: 'center', sort: true, title: '页码',minwidth: 100},
-            {field: 'summary', align: 'center', sort: true, title: '摘要',minwidth: 100},
-            {field: 'collect', align: 'center', sort: true, title: '收集情况',minwidth: 100},
-            {field: 'note', align: 'center', sort: true, title: '备注',minwidth: 100},
-            {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
+            {field: 'position', align: 'center', sort: true, title: '地点'},
+            {field: 'time', align: 'center', sort: true, title: '时间'},
+            {field: 'exhibitionobject', align: 'center', sort: true, title: '互展对象'},
+            {field: 'exhibitioncontent', align: 'center', sort: true, title: '互展内容'},
+            {field: 'exhibitionhuman', align: 'center', sort: true, title: '主要互展人员'},
+            {fixed: 'right', title: '操作', toolbar: '#bar', width: 150}
         ]]
     });
 
@@ -62,7 +50,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         if (obj.event === 'del') {
             layer.confirm('确定要删除吗？', function (index) {
                 layer.load(2);
-                lichee.delete('/researchpaper/' + obj.data.id, {}, function () {
+                lichee.delete('/exchangeexhibition/' + obj.data.id, {}, function () {
                     layer.closeAll('loading');
                     layer.msg('删除成功', {icon: 1});
                     obj.del();
@@ -75,19 +63,24 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
 
     var showEditModel = function (data) {
         layer.open({
-            title: data ? '详情/修改' : '添加',
+            title: data ? '修改' : '添加',
             type: 1,
-            area: '800px',
-            offset: '20px',
+            area: '450px',
+            offset: '120px',
             content: $('#form-model').html(),
             success: function () {
                 $('#form')[0].reset();
+                lichee.get('/park/list', {async: false}, function (data) {
+                    $('#parkId').vm({parks: data.result});
+                    form.render('select');
+                });
                 if (data) {
                     form.val('formFilter', data);
                 }
                 $('#form .close').click(function () {
                     layer.closeAll('page');
                 });
+                uploadImg();
             }
         });
     };
@@ -96,20 +89,15 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
     form.on('submit(formSubmit)', function (data) {
         layer.load(2);
         if (data.field.id) {
-            lichee.put('/researchpaper/' + data.field.id, {data: data.field}, function (res) {
+            lichee.put('/exchangeexhibition/' + data.field.id, {data: data.field}, function (res) {
                 callFunction(res);
             });
         } else {
-            lichee.post('/researchpaper', {data: data.field}, function (res) {
+            lichee.post('/exchangeexhibition', {data: data.field}, function (res) {
                 callFunction(res);
             });
         }
         return false;
-    });
-
-    form.verify({
-        commonLength: [/^[\S]{1,100}$/, '字符长度最大100'],
-        descrLength: [/^[\S]{0,180}$/, '字符长度最大180']
     });
 
     var callFunction = function (res) {
@@ -127,20 +115,43 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         tableInfo.reload({where: lichee.getSearchForm()});
     });
 
-    laydate.render({
-        elem: '#startTime',
-        type: 'datetime',
-        value: '',
-        trigger: 'click'
-    });
-
-    $(".laydate").each(function (i,e) {
-        laydate.render({
-            elem: this,
-            type: 'datetime',
-            value: '',
-            trigger: 'click'
+    var load = function() {
+        lichee.get('/park/list', {}, function (data) {
+            $('#parkIdSearch').vm({parkIds: data.result});
+            form.render('select');
         });
-    });
+    }
+    load();
+
+
+    var uploadImg = function (){
+        var uploadInst = upload.render({
+            elem: '#imgBtn',
+            url: '/upload/img',
+            headers: config.getToken(),
+            before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#img').attr('src', result); //图片链接（base64）
+                });
+            },
+            done: function(res){
+                //如果上传失败
+                if(res.code > 0){
+                    return layer.msg('上传失败');
+                }
+                //上传成功
+            },
+            error: function(){
+                //演示失败状态，并实现重传
+                // var demoText = $('#demoText');
+                // demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                // demoText.find('.demo-reload').on('click', function(){
+                //     uploadInst.upload();
+                // });
+            }
+        });
+    }
+
 
 });

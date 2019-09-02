@@ -1,8 +1,6 @@
 package com.geopark.web.model.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -69,9 +67,11 @@ public class Exchangeexhibition implements Serializable {
      */
     private String img;
 
-    private LocalDateTime createdAt;
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
 
-    private LocalDateTime updatedAt;
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
 
     private LocalDateTime deletedAt;
 
@@ -94,9 +94,9 @@ public class Exchangeexhibition implements Serializable {
 
     public static final String IMG = "img";
 
-    public static final String CREATED_AT = "created_at";
+    public static final String CREATE_TIME = "create_time";
 
-    public static final String UPDATED_AT = "updated_at";
+    public static final String UPDATE_TIME = "update_time";
 
     public static final String DELETED_AT = "deleted_at";
 

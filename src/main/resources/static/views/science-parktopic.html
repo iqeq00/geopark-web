@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
     <meta http-equiv="expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>地质公园管理后台--科研论文管理</title>
+    <title>地质公园管理后台--公园专题研究</title>
     <script type="text/javascript" src="/views/base/css.js"></script>
 
 </head>
@@ -23,7 +23,7 @@
         <div style="padding: 15px;">
 
             <div class="layui-card-header">
-                <h2 class="header-title">科研论文管理</h2>
+                <h2 class="header-title">公园专题研究</h2>
             </div>
 
             <hr class="layui-bg-gray">
@@ -38,9 +38,9 @@
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label class="layui-form-labelLeft">论文名称</label>
+                            <label class="layui-form-labelLeft">报告名称</label>
                             <div class="layui-input-inline">
-                                <input name="heading" class="layui-input search-input" type="text" placeholder="请输入论文名称" autocomplete="off"/>
+                                <input name="reportname" class="layui-input search-input" type="text" placeholder="请输入报告名称" autocomplete="off"/>
                             </div>
                         </div>
                         <div class="layui-inline">
@@ -73,7 +73,7 @@
 </div>
 
 <script type="text/javascript" src="/views/base/scripts.js"></script>
-<script type="text/javascript" src="/js/science/researchpaper.js"></script>
+<script type="text/javascript" src="/js/science/parktopic.js"></script>
 
 <script type="text/html" id="form-model">
     <div class="layui-tab-content">
@@ -88,77 +88,73 @@
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">成果编号</label>
+                    <label class="layui-form-label">报告编号</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="achievementnumber" id= "achievementnumber" required lay-verify="required|commonLength" placeholder="成果编号" autocomplete="off" class="layui-input">
+                        <input type="text" name="reportnumber" id= "reportnumber" required lay-verify="required|commonLength" placeholder="报告编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
-
             <div class="layui-form-item">
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">论文编号</label>
+                    <label class="layui-form-label">报告名称</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="papernumber" id= "papernumber" required lay-verify="required|commonLength" placeholder="论文编号" autocomplete="off" class="layui-input">
+                        <input type="text" name="reportname" id= "reportname" required lay-verify="required|commonLength" placeholder="报告名称" autocomplete="off" class="layui-input">
                     </div>
                 </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">成果类型</label>
+                    <div class="layui-input-inline" style="width: 260px">
+                        <input type="text" name="achievementtype" id= "achievementtype" required lay-verify="required|commonLength" placeholder="成果类型" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">作者</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="author" id= "author" required lay-verify="required|commonLength" placeholder="作者" autocomplete="off" class="layui-input">
+                        <input type="text" name="auther" id= "auther" required lay-verify="required|commonLength" placeholder="作者" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">完成时间</label>
+                    <div class="layui-input-inline" style="width: 260px">
+                        <input type="text" name="carrytime" id= "carrytime" required lay-verify="required|commonLength" placeholder="完成时间" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
-
             <div class="layui-form-item">
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">年份</label>
+                    <label class="layui-form-label">完成单位</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="year" id= "year" required lay-verify="required|commonLength" placeholder="年份" autocomplete="off" class="layui-input">
+                        <input type="text" name="carryunit" id= "carryunit" required lay-verify="commonLength" placeholder="完成单位" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">名称</label>
+                    <label class="layui-form-label">主管单位</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="heading" id= "heading" required lay-verify="required|commonLength" placeholder="名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="organizer" id= "organizer" required lay-verify="commonLength" placeholder="主管单位" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
-
             <div class="layui-form-item">
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">期刊</label>
+                    <label class="layui-form-label">主题词</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="periodical" id= "periodical" required lay-verify="commonLength" placeholder="期刊" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-col-md6">
-                    <label class="layui-form-label">卷期</label>
-                    <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="volume" id= "volume" required lay-verify="commonLength" placeholder="卷期" autocomplete="off" class="layui-input">
+                        <input type="text" name="theme" id= "theme" required lay-verify="commonLength" placeholder="主题词" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
-
-            <div class="layui-form-item">
-                <div class="layui-col-md6">
-                    <label class="layui-form-label">页码</label>
-                    <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="pagenumber" id= "pagenumber" required lay-verify="commonLength" placeholder="页码" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-col-md6">
-                    <label class="layui-form-label">收集情况</label>
-                    <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="collect" id= "collect" required lay-verify="commonLength" placeholder="收集情况" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-            </div>
-
             <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">摘要</label>
+                <label class="layui-form-label">成果摘要</label>
                 <div class="layui-input-block">
-	            <textarea name="summary" style="width: 600px;height:60px" placeholder="请输入摘要"
+	            <textarea name="achievementsummary" style="width: 600px;height:60px" placeholder="请输入成果摘要"
+                          class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">公园收藏情况</label>
+                <div class="layui-input-block">
+	            <textarea name="parkcollect" style="width: 600px;height:60px" placeholder="请输入公园收藏情况"
                           class="layui-textarea"></textarea>
                 </div>
             </div>

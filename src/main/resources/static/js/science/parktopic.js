@@ -14,9 +14,8 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         elem: '#table',
         toolbar: '#toolbar',
         defaultToolbar: [],
-        //width:'auto',
-        url: '/researchpaper/page',
-        title: '科研论文',
+        url: '/parktopic/page',
+        title: '专题研究',
         page: true,
         headers: {Authorization: config.getToken()},
         request: config.request,
@@ -25,19 +24,20 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         cols: [[
             //{type: 'checkbox', fixed: 'left'},
             // {field: 'id', title: 'ID'},
-            {field: 'parkId', align: 'center', sort: true, title: '地质公园ID',minwidth: 110},
-            {field: 'achievementnumber', align: 'center', sort: true, title: '成果编号',minwidth: 100},
-            {field: 'papernumber', align: 'center', sort: true, title: '论文编号',minwidth: 100},
-            {field: 'author', align: 'center', sort: true, title: '作者',minwidth: 100},
-            {field: 'year', align: 'center', sort: true, title: '年份',minwidth: 100},
-            {field: 'heading', align: 'center', sort: true, title: '名称',minwidth: 100},
-            {field: 'periodical', align: 'center', sort: true, title: '期刊',minwidth: 100},
-            {field: 'volume', align: 'center', sort: true, title: '卷期',minwidth: 100},
-            {field: 'pagenumber', align: 'center', sort: true, title: '页码',minwidth: 100},
-            {field: 'summary', align: 'center', sort: true, title: '摘要',minwidth: 100},
-            {field: 'collect', align: 'center', sort: true, title: '收集情况',minwidth: 100},
-            {field: 'note', align: 'center', sort: true, title: '备注',minwidth: 100},
-            {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
+            {field: 'parkId', align: 'center', sort: true, title: '地质公园ID',width: 110},
+            {field: 'reportnumber', align: 'center', sort: true, title: '报告编号'},
+            {field: 'reportname', align: 'center', sort: true, title: '报告名称'},
+            {field: 'achievementtype', align: 'center', sort: true, title: '成果类型'},
+            {field: 'auther', align: 'center', sort: true, title: '作者'},
+            {field: 'carrytime', align: 'center', sort: true, title: '完成时间'},
+            {field: 'carryunit', align: 'center', sort: true, title: '完成单位'},
+            {field: 'organizer', align: 'center', sort: true, title: '主管单位'},
+            {field: 'theme', align: 'center', sort: true, title: '主题词'},
+            {field: 'achievementsummary', align: 'center', sort: true, title: '成果摘要'},
+            {field: 'parkcollect', align: 'center', sort: true, title: '收藏情况'},
+            {field: 'note', align: 'center', sort: true, title: '备注'},
+            {field: 'img', align: 'center', sort: true, title: '照片'},
+            {align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });
 
@@ -62,7 +62,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         if (obj.event === 'del') {
             layer.confirm('确定要删除吗？', function (index) {
                 layer.load(2);
-                lichee.delete('/researchpaper/' + obj.data.id, {}, function () {
+                lichee.delete('/parktopic/' + obj.data.id, {}, function () {
                     layer.closeAll('loading');
                     layer.msg('删除成功', {icon: 1});
                     obj.del();
@@ -96,11 +96,11 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
     form.on('submit(formSubmit)', function (data) {
         layer.load(2);
         if (data.field.id) {
-            lichee.put('/researchpaper/' + data.field.id, {data: data.field}, function (res) {
+            lichee.put('/parktopic/' + data.field.id, {data: data.field}, function (res) {
                 callFunction(res);
             });
         } else {
-            lichee.post('/researchpaper', {data: data.field}, function (res) {
+            lichee.post('/parktopic', {data: data.field}, function (res) {
                 callFunction(res);
             });
         }

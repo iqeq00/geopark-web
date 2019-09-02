@@ -9,7 +9,6 @@ import com.geopark.framework.controller.SuperController;
 import com.geopark.framework.enums.AuthTypeEnum;
 import com.geopark.framework.responses.ApiResponses;
 import com.geopark.web.model.entity.Researchpaper;
-import com.geopark.web.model.entity.Task;
 import com.geopark.web.service.ResearchpaperService;
 import com.geopark.web.service.SysResourceService;
 import lombok.extern.slf4j.Slf4j;
@@ -18,11 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-
 /**
  * <p>
- * 科普活动 前端控制器
+ * 科研论文 前端控制器
  * </p>
  *
  * @author lichee
