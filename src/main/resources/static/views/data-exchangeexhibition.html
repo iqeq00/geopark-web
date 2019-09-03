@@ -79,7 +79,7 @@
     <div class="layui-tab-content">
         <form id="form" lay-filter="formFilter" class="layui-form model-form ">
             <input type="hidden" id="id" name="id"/>
-
+            <input type="hidden" id="imgHid" name="img"/>
             <div class="layui-form-item">
                 <label class="layui-form-label">地址公园</label>
                 <div class="layui-input-block">
@@ -128,19 +128,15 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">照片</label>
                 <div class="layui-input-block">
-                   <!-- <button type="button" class="layui-btn" id="img">
-                        <i class="layui-icon">&#xe67c;</i>上传图片
-                    </button>-->
                     <div class="layui-upload">
                         <button type="button" class="layui-btn" id="imgBtn">上传图片</button>
                         <div class="layui-upload-list">
                             <img class="layui-upload-img" id="img" width="100" height="100">
-                            <p id="demoText"></p>
+                            <p id="msgText"></p>
                         </div>
                     </div>
-
+                </div>
             </div>
-
 
             <div class="layui-form-item">
                 <label class="layui-form-label">备注</label>

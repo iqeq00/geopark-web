@@ -54,7 +54,7 @@ public class UploadController extends SuperController {
     @ApiOperation("上传图片")
     @PostMapping(value = "/img")
     public ApiResponses<ImageVo> upload(HttpServletRequest servletRequest, String keyPath,
-        @RequestParam("file") MultipartFile file) {
+         @RequestParam(value="file",required=false)  MultipartFile file) {
 
         ApiAssert.notNull(ErrorCodeEnum.BAD_REQUEST, map.get(keyPath));
         ImageVo imageVo = new ImageVo();
