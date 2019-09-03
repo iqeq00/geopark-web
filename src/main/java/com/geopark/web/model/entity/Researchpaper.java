@@ -8,15 +8,14 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * <p>
- * 科普活动
+ * 相关科研论文
  * </p>
  *
  * @author lichee
- * @since 2019-08-14
+ * @since 2019-08-29
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -35,76 +34,85 @@ public class Researchpaper implements Serializable {
     private Integer parkId;
 
     /**
-     * 活动名称
+     * 成果编号
      */
-    private String activityname;
+    private String achievementnumber;
 
     /**
-     * 时间
+     * 论文编号
      */
-    private String time;
+    private String papernumber;
 
     /**
-     * 地点
+     * 作者
      */
-    private String position;
+    private String author;
 
     /**
-     * 科普对象
+     * 年份
      */
-    private String scienceobject;
+    private String year;
 
     /**
-     * 科普内容
+     * 名称
      */
-    private String sciencecontent;
+    private String heading;
 
     /**
-     * 科普工作人员
+     * 期刊
      */
-    private String sciencestaff;
+    private String periodical;
+
+    /**
+     * 卷期
+     */
+    private String volume;
+
+    /**
+     * 页码
+     */
+    private String pagenumber;
+
+    /**
+     * 摘要
+     */
+    private String summary;
+
+    /**
+     * 收集情况
+     */
+    private String collect;
 
     /**
      * 备注
      */
     private String note;
 
-    /**
-     * 照片
-     */
-    private String img;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
-
-    private LocalDateTime deletedAt;
-
 
     public static final String ID = "id";
 
     public static final String PARK_ID = "park_id";
 
-    public static final String ACTIVITYNAME = "activityname";
+    public static final String ACHIEVEMENTNUMBER = "achievementnumber";
 
-    public static final String TIME = "time";
+    public static final String PAPERNUMBER = "papernumber";
 
-    public static final String POSITION = "position";
+    public static final String AUTHOR = "author";
 
-    public static final String SCIENCEOBJECT = "scienceobject";
+    public static final String YEAR = "year";
 
-    public static final String SCIENCECONTENT = "sciencecontent";
+    public static final String HEADING = "heading";
 
-    public static final String SCIENCESTAFF = "sciencestaff";
+    public static final String PERIODICAL = "periodical";
+
+    public static final String VOLUME = "volume";
+
+    public static final String PAGENUMBER = "pagenumber";
+
+    public static final String SUMMARY = "summary";
+
+    public static final String COLLECT = "collect";
 
     public static final String NOTE = "note";
-
-    public static final String IMG = "img";
-
-    public static final String CREATED_AT = "created_at";
-
-    public static final String UPDATED_AT = "updated_at";
-
-    public static final String DELETED_AT = "deleted_at";
 
 }

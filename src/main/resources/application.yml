@@ -3,6 +3,7 @@ server:
   servlet:
     context-path: /
 
+
 spring:
   profiles:
     active: dev
@@ -33,6 +34,15 @@ spring:
     encoding:
       enabled: true
       charset: UTF-8
+  redis:
+    database: 0
+    timeout: 10000
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml
@@ -40,3 +50,7 @@ mybatis-plus:
   type-aliases-package: com.geopark.web.model.entity,com.geopark.web.model.vo
   global-config:
     banner: false
+
+geopark:
+  photo:
+    contentType: jpg

@@ -28,7 +28,6 @@ public class SysResourceServiceImpl extends ServiceImpl<SysResourceMapper, SysRe
 
     @Override
     public List<ResourcePermVo> getResourcePerms(String method) {
-
         List<SysResource> list = query().select("method", "mapping").eq("method",method).list();
         return BeanConverter.convert(ResourcePermVo.class, list);
     }

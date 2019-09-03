@@ -13,4 +13,5 @@ import com.geopark.web.model.entity.SysRoleResource;
  */
 public interface SysRoleResourceService extends IService<SysRoleResource> {
 
+    void saveTransaction();
 }

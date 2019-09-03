@@ -168,9 +168,9 @@ public class LicheeGenerator {
             }
         });
         dataSourceConfig.setDriverName("com.mysql.cj.jdbc.Driver");
-        dataSourceConfig.setUrl("jdbc:mysql://172.16.254.17:3306/zigong?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT");
+        dataSourceConfig.setUrl("jdbc:mysql://172.16.254.16:3306/zigong?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT");
         dataSourceConfig.setUsername("root");
-        dataSourceConfig.setPassword("6818799517");
+        dataSourceConfig.setPassword("6818799516");
         return dataSourceConfig;
     }
 

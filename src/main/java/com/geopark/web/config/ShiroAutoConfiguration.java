@@ -68,6 +68,7 @@ public class ShiroAutoConfiguration {
     }
 
     private String cleanContextPath(String contextPath) {
+
         if (StringUtils.hasText(contextPath) && contextPath.endsWith("/")) {
             return contextPath.substring(0, contextPath.length() - 1);
         }
