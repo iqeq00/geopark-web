@@ -36,7 +36,6 @@ public class MysqlGenerator {
         gc.setOutputDir(projectPath + "/mybatis-plus-sample-generator/src/main/java");
         gc.setAuthor("jobob");
         gc.setOpen(false);
-        gc.setEntityName("%s");
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
