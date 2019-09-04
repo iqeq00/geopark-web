@@ -78,7 +78,11 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
                 if (data) {
                     form.val('formFilter', data);
                     if(data.img){
-                        $('#img').attr('src', data.img); //图片链接（base64）
+                        var imgArray = data.img.split(",");
+                        $.each()
+                        $(imgArray).each(function(index,element){
+                            $('#imgDiv').append('<img src="'+ element +'" alt="'+ element +'" width="100" class="layui-upload-img">')
+                        });
                     }
                 }
                 $('#form .close').click(function () {
@@ -123,38 +127,33 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
             $('#parkIdSearch').vm({parkIds: data.result});
             form.render('select');
         });
-    }
+    };
     load();
 
-
     var uploadImg = function (){
-        var uploadInst = upload.render({
+        upload.render({
             elem: '#imgBtn',
             url: '/upload/img',
             headers: {Authorization:config.getToken()},
             data: {keyPath : "exchange"},
+            multiple: true,
+            number : 2,
             before: function(obj){
-                console.log(obj);
+                //预读本地文件示例，不支持ie8
                 obj.preview(function(index, file, result){
-                    $('#img').attr('src', result); //图片链接（base64）
+                    $('#imgDiv').append('<img src="'+ result +'" alt="'+ file.name +'" width="100" class="layui-upload-img">')
                 });
             },
             done: function(res){
                 if(res.status = 200){
-                    $('#imgHid').val(res.result.name);
+                    $('#img').val($('#img').val() + res.result.name + ",");
+                    console.log($('#img').val());
                     return layer.msg('上传成功');
                 } else {
                     return layer.msg('上传失败');
                 }
-            },
-            error: function(){
-                var msgText = $('#msgText');
-                msgText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
-                msgText.find('.demo-reload').on('click', function(){
-                    uploadInst.upload();
-                });
             }
         });
-    }
+    };
 
 });
