@@ -21,10 +21,13 @@
 
 * #### 邮件
 
-* #### redis
+* #### ~~redis~~
 
-* #### image组件
+* #### ~~image组件~~
 
 * **Mybatis-Plus 优化**
 
 * **提炼core包**
+
+* **Spring Cache**
+
