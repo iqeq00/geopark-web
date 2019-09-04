@@ -33,8 +33,8 @@ public class MysqlGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath + "/mybatis-plus-sample-generator/src/main/java");
-        gc.setAuthor("jobob");
+        gc.setOutputDir(projectPath + "/src/test/java");
+        gc.setAuthor("lichee");
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);
 
@@ -49,7 +49,7 @@ public class MysqlGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.baomidou.mybatisplus.samples.generator");
+        pc.setParent("com.geopark.web");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -64,7 +64,7 @@ public class MysqlGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输入文件名称
-                return projectPath + "/mybatis-plus-sample-generator/src/main/resources/mapper/" + pc.getModuleName()
+                return projectPath + "/src/test/resources/mapper/" + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
