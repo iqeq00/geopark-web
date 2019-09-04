@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>地质公园管理后台--与其他景区重叠情况</title>
+    <script type="text/javascript" src="/views/base/css.js"></script>
+    <!--解决表单字段名长度-->
+    <style>
+        .layui-form-label{
+            width: 110px;
+        }
+    </style>
+</head>
+<body class="layui-layout-body">
+
+<div class="layui-layout layui-layout-admin">
+
+    <div class="layui-header" p-com="header"></div>
+
+    <div class="layui-side layui-bg-black" p-com="side"></div>
+
+    <div class="layui-body">
+        <div style="padding: 15px;">
+
+            <div class="layui-card-header">
+                <h2 class="header-title">与其他景区重叠情况</h2>
+            </div>
+
+            <hr class="layui-bg-gray">
+            <div class="layui-form">
+
+                <form id="searchForm" onsubmit="return false;">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-labelLeft">其他景区名称</label>
+                            <div class="layui-input-inline">
+                                <input name="othername" class="layui-input search-input" type="text" placeholder="其他景区名称" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <button id="searchButton" class="layui-btn icon-btn layui-btn-sm"><i class="layui-icon">&#xe615;</i>搜索
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <table class="" id="table" lay-filter="tableFilter"></table>
+
+            <script type="text/html" id="toolbar">
+                <a class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon"></i>添加</a>
+            </script>
+
+            <script type="text/html" id="bar">
+                <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon"></i>详情/编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon"></i>删除</a>
+            </script>
+
+        </div>
+    </div>
+
+    <div class="layui-footer" p-com="footer"></div>
+
+</div>
+
+<script type="text/javascript" src="/views/base/scripts.js"></script>
+<script type="text/javascript" src="/js/pkmanage/overlapping.js"></script>
+
+<script type="text/html" id="form-model">
+    <div class="layui-tab-content">
+        <form id="form" lay-filter="formFilter" class="layui-form model-form ">
+            <input type="hidden" id="id" name="id"/>
+
+            <div class="layui-form-item">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">公园编号</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <select id="parkId" name="parkId" lay-filter="parkId" lay-verify="required">
+                            <option value="">请选择</option>
+                            <option p-for="parks" p-bind="value:{{id}}">{{name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">其他景区名称</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="othername" id= "othername" required lay-verify="required|commonLength" placeholder="其他景区名称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">其他景区类型</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="othertype" id= "othertype" required lay-verify="commonLength" placeholder="其他景区类型" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">其他景区主管部门</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="othersupervisor" id= "othersupervisor" required lay-verify="commonLength" placeholder="其他景区主管部门" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">重叠区域位置</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="overposition" id= "overposition" required lay-verify="descLength" placeholder="重叠区域位置" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">重叠区域面积</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="overarea" id= "overarea" required lay-verify="descLength" placeholder="重叠区域面积" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">其他景区建设情况</label>
+                <div class="layui-input-block">
+	            <textarea name="othermatter" style="width: 600px;height:60px" placeholder="请输入其他景区开发建设情况"
+                          class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">重叠区情况说明</label>
+                <div class="layui-input-block">
+	            <textarea name="overinstruction" style="width: 600px;height:60px" placeholder="请输入重叠区管理情况说明"
+                          class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">备注</label>
+                <div class="layui-input-block">
+	            <textarea name="note" style="width: 600px;height:60px" placeholder="请输入备注"
+                          class="layui-textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-layer-btn">
+                <button class="layui-btn layui-btn-sm" lay-filter="formSubmit" lay-submit>保存</button>
+                <button class="layui-btn layui-btn-sm layui-btn-primary close" type="button">取消</button>
+            </div>
+        </form>
+    </div>
+</script>
+
+</body>
+</html>

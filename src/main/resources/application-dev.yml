@@ -37,3 +37,6 @@ geopark:
     exchange:
       server: http://www.geopark.com/exchange/
       path: C:/geopark/images/exchange
+    production:
+      server: http://www.geopark.com/production/
+      path: C:/geopark/images/production

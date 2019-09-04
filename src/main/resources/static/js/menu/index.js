@@ -31,7 +31,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'treetable', 'form', 
             headers: {Authorization: config.getToken()},
             cols: [[
                 {field: 'id', align: 'center', sort: true, width: 60, title: 'ID'},
-                {field: 'menuName', align: 'center', sort: true, title: '菜单名称'},
+                {field: 'menuName', align: 'left', sort: true, title: '菜单名称'},
                 {
                     field: 'icon', title: '图标', align: 'center', width: 60, templet: function (d) {
                         return d.icon ? '<i class="layui-icon ' + d.icon + '"></i>' : '';

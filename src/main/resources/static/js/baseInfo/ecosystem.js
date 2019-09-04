@@ -39,7 +39,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             {field: 'plantcover', align: 'center', sort: true, title: '植被绿地',width: 100},
             {field: 'climate', align: 'center', sort: true, title: '气候特征',width: 100},
             {field: 'disaster', align: 'center', sort: true, title: '公园内灾害情',width: 120},
-            {align : 'center', title: '操作', toolbar: '#bar', width: 150}
+            {align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });
 
@@ -84,6 +84,10 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             content: $('#form-model').html(),
             success: function () {
                 $('#form')[0].reset();
+                lichee.get('/park/list', {async: false}, function (data) {
+                    $('#parkId').vm({parks: data.result});
+                    form.render('select');
+                });
                 if (data) {
                     form.val('formFilter', data);
                 }
@@ -111,7 +115,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
 
     form.verify({
         commonLength: [/^[\S]{1,100}$/, '字符长度最大100'],
-        descrLength: [/^[\S]{0,180}$/, '字符长度最大180']
+        descLength: [/^[\S]{0,180}$/, '字符长度最大180']
     });
 
     var callFunction = function (res) {
@@ -144,5 +148,6 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             trigger: 'click'
         });
     });
+
 
 });

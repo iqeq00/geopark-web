@@ -92,7 +92,10 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">地质公园编号</label>
                 <div class="layui-input-inline" style="width: 220px">
-                    <input type="text" name="parkId" id= "parkId" required lay-verify="required|commonLength" placeholder="地质公园编号" autocomplete="off" class="layui-input">
+                    <select id="parkId" name="parkId" lay-filter="parkId" lay-verify="required">
+                        <option value="">请选择</option>
+                        <option p-for="parks" p-bind="value:{{id}}">{{name}}</option>
+                    </select>
                 </div>
             </div>
 

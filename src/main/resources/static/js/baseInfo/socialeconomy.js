@@ -75,6 +75,10 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             content: $('#form-model').html(),
             success: function () {
                 $('#form')[0].reset();
+                lichee.get('/park/list', {async: false}, function (data) {
+                    $('#parkId').vm({parks: data.result});
+                    form.render('select');
+                });
                 if (data) {
                     form.val('formFilter', data);
                 }
@@ -102,7 +106,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
 
     form.verify({
         commonLength: [/^[\S]{1,100}$/, '字符长度最大100'],
-        descrLength: [/^[\S]{0,180}$/, '字符长度最大180']
+        descLength: [/^[\S]{0,180}$/, '字符长度最大180']
     });
 
     var callFunction = function (res) {

@@ -78,7 +78,10 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">公园编号</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="parkId" id= "parkId" required lay-verify="required|commonLength" placeholder="公园编号" autocomplete="off" class="layui-input">
+                        <select id="parkId" name="parkId" lay-filter="parkId" lay-verify="required">
+                            <option value="">请选择</option>
+                            <option p-for="parks" p-bind="value:{{id}}">{{name}}</option>
+                        </select>
                     </div>
                 </div>
                 <div class="layui-col-md6">

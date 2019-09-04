@@ -110,7 +110,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
 
     form.verify({
         nameLength: [/^[\S]{1,100}$/, '字符长度1-100（不包含空格）'],
-        descrLength: [/^[\S]{0,200}$/, '字符长度最大200（不包含空格）']
+        descLength: [/^[\S]{0,200}$/, '字符长度最大200（不包含空格）']
     });
 
     var callFunction = function (res) {

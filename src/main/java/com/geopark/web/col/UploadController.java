@@ -40,6 +40,9 @@ public class UploadController extends SuperController {
     @Value("${geopark.image.exchange.path}")
     private String exchangePath;
 
+    @Value("${geopark.image.production.path}")
+    private String productionPath;
+
     @Value("${geopark.image.exchange.server}")
     private String exchangeServer;
 
@@ -47,7 +50,9 @@ public class UploadController extends SuperController {
 
     @PostConstruct
     public void init() {
+
         map.put("exchange", exchangePath);
+        map.put("production", productionPath);
     }
 
     @Resources(AuthTypeEnum.LOGIN)

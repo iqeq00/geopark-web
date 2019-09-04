@@ -28,7 +28,7 @@ public class ExchangeexhibitionController extends SuperController {
     private ExchangeexhibitionService exchangeexhibitionService;
 
     @Resources
-    @ApiOperation("交流活动查询(分页)")
+    @ApiOperation("交流互展查询(分页)")
     @GetMapping("/page")
     public ApiResponses<IPage<Exchangeexhibition>> page(
             @RequestParam(value = "parkId", required = false) Integer parkId) {
@@ -41,7 +41,7 @@ public class ExchangeexhibitionController extends SuperController {
     }
 
     @Resources
-    @ApiOperation("交流活动添加")
+    @ApiOperation("交流互展添加")
     @PostMapping
     public ApiResponses<Void> save(@RequestBody Exchangeexhibition exchangeexhibition) {
 
@@ -50,7 +50,7 @@ public class ExchangeexhibitionController extends SuperController {
     }
 
     @Resources
-    @ApiOperation("交流活动编辑")
+    @ApiOperation("交流互展编辑")
     @PutMapping("/{id}")
     public ApiResponses<Void> update(@PathVariable("id") Integer id, @RequestBody Exchangeexhibition exchangeexhibition) {
 
@@ -60,7 +60,7 @@ public class ExchangeexhibitionController extends SuperController {
     }
 
     @Resources
-    @ApiOperation("交流活动删除")
+    @ApiOperation("交流互展删除")
     @DeleteMapping("/{id}")
     public ApiResponses<Void> delete(@PathVariable("id") Integer id) {
 
