@@ -27,32 +27,6 @@
             </div>
 
             <hr class="layui-bg-gray">
-           <!-- <div class="layui-form">
-
-                <form id="searchForm" onsubmit="return false;">
-                    <div class="layui-form-item">
-
-                        <div class="layui-inline">
-                            <label class="layui-form-labelLeft">地址公园</label>
-                            <div class="layui-input-inline">
-                                <select id="parkIdSearch" name="parkId" lay-verify="required">
-                                    <option value="">请选择</option>
-                                    <option p-for="parkIds" p-bind="value:{{id}}">{{name}}</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="layui-inline">
-                            <div class="layui-input-inline">
-                                <button id="searchButton" class="layui-btn icon-btn layui-btn-sm"><i class="layui-icon">&#xe615;</i>搜索
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
-
-            </div>-->
 
             <table class="" id="table" lay-filter="tableFilter"></table>
 
@@ -91,37 +65,32 @@
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">推介会名称</label>
-                <div class="layui-input-block">
-                    <input type="text" name="promotionname" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="推介会名称" autocomplete="off" class="layui-input">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">推介会</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="promotionname" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="推介会名称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">地点</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="position" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="地点" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">地点</label>
-                <div class="layui-input-block">
-                    <input type="text" name="position" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="地点" autocomplete="off" class="layui-input">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="time" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="时间" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">时间</label>
-                <div class="layui-input-block">
-                    <input type="text" name="time" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="时间" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">参加代表</label>
-                <div class="layui-input-block">
-                    <input type="text" name="representative" lay-verify="required" lay-verType="tips" placeholder="参加代表" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">推介内容</label>
-                <div class="layui-input-block">
-                    <textarea name="promotioncontent" placeholder="推介内容" class="layui-textarea"></textarea>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">参加代表</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="representative" lay-verify="required" lay-verType="tips" placeholder="参加代表" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
             </div>
 
@@ -135,6 +104,13 @@
                             <div class="layui-upload-list" id="imgDiv"></div>
                         </blockquote>
                     </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">推介内容</label>
+                <div class="layui-input-block">
+                    <textarea id="promotioncontent" name="promotioncontent" class="layui-textarea" lay-verify="content" placeholder="推介内容"></textarea>
                 </div>
             </div>
 

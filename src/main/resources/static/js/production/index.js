@@ -1,4 +1,4 @@
-layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], function () {
+layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload', 'layedit'], function () {
 
     var config = layui.config;
     var lichee = layui.lichee;
@@ -7,6 +7,9 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
     var table = layui.table;
     var form = layui.form;
     var upload = layui.upload;
+    var layedit = layui.layedit
+    var content;
+
 
     var tableInfo = table.render({
         elem: '#table',
@@ -64,7 +67,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
         layer.open({
             title: data ? '修改' : '添加',
             type: 1,
-            area: '450px',
+            area: '800px',
             offset: '120px',
             content: $('#form-model').html(),
             success: function () {
@@ -84,6 +87,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
                         });
                     }
                 }
+                editCpt();
                 $('#form .close').click(function () {
                     layer.closeAll('page');
                 });
@@ -94,6 +98,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
     var form = layui.form;
     form.on('submit(formSubmit)', function (data) {
         layer.load(2);
+        data.field.promotioncontent = layedit.getContent(content);
         if (data.field.id) {
             lichee.put('/production/' + data.field.id, {data: data.field}, function (res) {
                 callFunction(res);
@@ -130,6 +135,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
     load();
 
     var uploadImg = function (){
+        var index = 0;
         upload.render({
             elem: '#imgBtn',
             url: '/upload/img',
@@ -145,8 +151,12 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
             },
             done: function(res){
                 if(res.status = 200){
+                    if(index == 0){
+                        $('#img').val("");
+                        $('#imgDiv').html("");
+                    }
                     $('#img').val($('#img').val() + res.result.name + ",");
-                    console.log($('#img').val());
+                    index = index + 1;
                     return layer.msg('上传成功');
                 } else {
                     return layer.msg('上传失败');
@@ -154,5 +164,21 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
             }
         });
     };
+
+    var editCpt = function () {
+        layedit.set({
+            uploadImage: {
+                url: '/upload/img',
+                type: 'post',
+                headers: {Authorization:config.getToken()},
+                data: {keyPath : "production"},
+                dataType:'json',
+                success: function(data){
+                    layer.msg('上传成功');
+                }
+            }
+        });
+        content = layedit.build('promotioncontent');
+    }
 
 });

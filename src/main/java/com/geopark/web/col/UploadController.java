@@ -46,6 +46,9 @@ public class UploadController extends SuperController {
     @Value("${geopark.image.exchange.server}")
     private String exchangeServer;
 
+    @Value("${geopark.image.production.server}")
+    private String productionServer;
+
     private Map<String, String> map = new HashMap<String, String>();
 
     @PostConstruct
@@ -62,21 +65,29 @@ public class UploadController extends SuperController {
          @RequestParam(value="file",required=false)  MultipartFile file) {
 
         ApiAssert.notNull(ErrorCodeEnum.BAD_REQUEST, map.get(keyPath));
-        ImageVo imageVo = new ImageVo();
+        ImageVo imageVo = null;
         if (!file.isEmpty()) {
-            String originalFileName = file.getOriginalFilename();
-            String filename = null;
             if (keyPath.equals("exchange")) {
-                filename = imageUpload.imageUpload(map.get(keyPath), file);
-                imageVo.setPath(exchangeServer + filename);
-                imageVo.setName(filename);
-                imageVo.setOriginalName(originalFileName);
+                imageVo = invokeUpload(keyPath, exchangeServer, file);
+            } else if(keyPath.equals("production")) {
+                imageVo = invokeUpload(keyPath, productionServer, file);
             }
         } else {
             ApiAssert.failure(ErrorCodeEnum.BAD_REQUEST);
         }
         return success(imageVo);
     }
+
+    private ImageVo invokeUpload(String keyPath, String serverPath, MultipartFile file) {
+
+        String filename = imageUpload.imageUpload(map.get(keyPath), file);
+        ImageVo imageVo = new ImageVo();
+        imageVo.setPath(serverPath + filename);
+        imageVo.setName(filename);
+        imageVo.setOriginalName(file.getOriginalFilename());
+        return imageVo;
+    }
+
 
 
 }
