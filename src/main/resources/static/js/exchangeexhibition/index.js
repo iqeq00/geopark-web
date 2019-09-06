@@ -1,4 +1,4 @@
-layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], function () {
+layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'imageUpload'], function () {
 
     var config = layui.config;
     var lichee = layui.lichee;
@@ -6,7 +6,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
     var layer = layui.layer;
     var table = layui.table;
     var form = layui.form;
-    var upload = layui.upload;
+    var imageUpload = layui.imageUpload;
 
     var tableInfo = table.render({
         elem: '#table',
@@ -65,7 +65,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
         layer.open({
             title: data ? '修改' : '添加',
             type: 1,
-            area: '450px',
+            area: '800px',
             offset: '120px',
             content: $('#form-model').html(),
             success: function () {
@@ -74,16 +74,10 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
                     $('#parkId').vm({parks: data.result});
                     form.render('select');
                 });
-                uploadImg();
+                imageUpload.init("uploadBtn", "img", "exchange");
                 if (data) {
                     form.val('formFilter', data);
-                    if(data.img){
-                        var imgArray = data.img.split(",");
-                        $.each()
-                        $(imgArray).each(function(index,element){
-                            $('#imgDiv').append('<img src="'+ element +'" alt="'+ element +'" width="100" class="layui-upload-img">')
-                        });
-                    }
+                    imageUpload.initImageList(data.img);
                 }
                 $('#form .close').click(function () {
                     layer.closeAll('page');
@@ -130,30 +124,30 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
     };
     load();
 
-    var uploadImg = function (){
-        upload.render({
-            elem: '#imgBtn',
-            url: '/upload/img',
-            headers: {Authorization:config.getToken()},
-            data: {keyPath : "exchange"},
-            multiple: true,
-            number : 2,
-            before: function(obj){
-                //预读本地文件示例，不支持ie8
-                obj.preview(function(index, file, result){
-                    $('#imgDiv').append('<img src="'+ result +'" alt="'+ file.name +'" width="100" class="layui-upload-img">')
-                });
-            },
-            done: function(res){
-                if(res.status = 200){
-                    $('#img').val($('#img').val() + res.result.name + ",");
-                    console.log($('#img').val());
-                    return layer.msg('上传成功');
-                } else {
-                    return layer.msg('上传失败');
-                }
-            }
-        });
-    };
+    // var uploadImg = function (){
+    //     upload.render({
+    //         elem: '#imgBtn',
+    //         url: '/upload/img',
+    //         headers: {Authorization:config.getToken()},
+    //         data: {keyPath : "exchange"},
+    //         multiple: true,
+    //         number : 2,
+    //         before: function(obj){
+    //             //预读本地文件示例，不支持ie8
+    //             obj.preview(function(index, file, result){
+    //                 $('#imgDiv').append('<img src="'+ result +'" alt="'+ file.name +'" width="100" class="layui-upload-img">')
+    //             });
+    //         },
+    //         done: function(res){
+    //             if(res.status = 200){
+    //                 $('#img').val($('#img').val() + res.result.name + ",");
+    //                 console.log($('#img').val());
+    //                 return layer.msg('上传成功');
+    //             } else {
+    //                 return layer.msg('上传失败');
+    //             }
+    //         }
+    //     });
+    // };
 
 });

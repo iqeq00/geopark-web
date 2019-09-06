@@ -80,27 +80,50 @@
         <form id="form" lay-filter="formFilter" class="layui-form model-form ">
             <input type="hidden" id="id" name="id"/>
             <input type="hidden" id="img" name="img"/>
+
             <div class="layui-form-item">
-                <label class="layui-form-label">地址公园</label>
-                <div class="layui-input-block">
-                    <select id="parkId" name="parkId" lay-filter="parkId" lay-verify="required">
-                        <option value="">请选择</option>
-                        <option p-for="parks" p-bind="value:{{id}}">{{name}}</option>
-                    </select>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">地址公园</label>
+                    <div class="layui-input-block">
+                        <select id="parkId" name="parkId" lay-filter="parkId" lay-verify="required">
+                            <option value="">请选择</option>
+                            <option p-for="parks" p-bind="value:{{id}}">{{name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">互展人员</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="exhibitionhuman" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="主要互展人员" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">地点</label>
-                <div class="layui-input-block">
-                    <input type="text" name="position" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="地点" autocomplete="off" class="layui-input">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">地点</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="position" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="地点" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="time" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="时间" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">时间</label>
+                <label class="layui-form-label">照片</label>
                 <div class="layui-input-block">
-                    <input type="text" name="time" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="时间" autocomplete="off" class="layui-input">
+                    <div class="layui-upload">
+                        <button type="button" class="layui-btn" id="uploadBtn">图片上传</button>
+                        <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top:10px;">
+                            预览图：
+                            <div class="layui-upload-list upload-list"></div>
+                        </blockquote>
+                    </div>
                 </div>
             </div>
 
@@ -115,36 +138,6 @@
                 <label class="layui-form-label">互展内容</label>
                 <div class="layui-input-block">
                     <textarea name="exhibitioncontent" placeholder="互展内容" class="layui-textarea"></textarea>
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">互展人员</label>
-                <div class="layui-input-block">
-                    <input type="text" name="exhibitionhuman" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="主要互展人员" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">照片</label>
-                <div class="layui-input-block">
-                    <div class="layui-upload">
-                        <!--<button type="button" class="layui-btn" id="imgBtn">上传图片</button>
-                        <div class="layui-upload-list">
-                            <img class="layui-upload-img" id="img" width="100" height="100">
-                            <p id="msgText"></p>
-                        </div>-->
-
-                        <button type="button" class="layui-btn" id="imgBtn">多图片上传</button>
-                        <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top:10px;">
-                            预览图：
-                            <div class="layui-upload-list" id="imgDiv"></div>
-                        </blockquote>
-
-
-
-
-                    </div>
                 </div>
             </div>
 

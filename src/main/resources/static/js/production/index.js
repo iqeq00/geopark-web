@@ -1,4 +1,4 @@
-layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload', 'layedit'], function () {
+layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'imageUpload', 'layedit'], function () {
 
     var config = layui.config;
     var lichee = layui.lichee;
@@ -6,10 +6,10 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload', 'la
     var layer = layui.layer;
     var table = layui.table;
     var form = layui.form;
-    var upload = layui.upload;
+    var imageUpload = layui.imageUpload;
     var layedit = layui.layedit
-    var content;
 
+    var content;
 
     var tableInfo = table.render({
         elem: '#table',
@@ -76,16 +76,10 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload', 'la
                     $('#parkId').vm({parks: data.result});
                     form.render('select');
                 });
-                uploadImg();
+                imageUpload.init("uploadBtn", "img", "production");
                 if (data) {
                     form.val('formFilter', data);
-                    if(data.img){
-                        var imgArray = data.img.split(",");
-                        $.each()
-                        $(imgArray).each(function(index,element){
-                            $('#imgDiv').append('<img src="'+ element +'" alt="'+ element +'" width="100" class="layui-upload-img">')
-                        });
-                    }
+                    imageUpload.initImageList(data.img);
                 }
                 editCpt();
                 $('#form .close').click(function () {
@@ -133,37 +127,6 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload', 'la
         });
     };
     load();
-
-    var uploadImg = function (){
-        var index = 0;
-        upload.render({
-            elem: '#imgBtn',
-            url: '/upload/img',
-            headers: {Authorization:config.getToken()},
-            data: {keyPath : "production"},
-            multiple: true,
-            number : 2,
-            before: function(obj){
-                //预读本地文件示例，不支持ie8
-                obj.preview(function(index, file, result){
-                    $('#imgDiv').append('<img src="'+ result +'" alt="'+ file.name +'" width="100" class="layui-upload-img">')
-                });
-            },
-            done: function(res){
-                if(res.status = 200){
-                    if(index == 0){
-                        $('#img').val("");
-                        $('#imgDiv').html("");
-                    }
-                    $('#img').val($('#img').val() + res.result.name + ",");
-                    index = index + 1;
-                    return layer.msg('上传成功');
-                } else {
-                    return layer.msg('上传失败');
-                }
-            }
-        });
-    };
 
     var editCpt = function () {
         layedit.set({
