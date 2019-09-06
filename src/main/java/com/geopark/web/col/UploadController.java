@@ -1,6 +1,5 @@
 package com.geopark.web.col;
 
-import java.io.IOException;
 import java.util.*;
 
 import javax.annotation.PostConstruct;
@@ -26,7 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * 文件上传
  *
- * @author lpf
+ * @author lichee
  */
 @Slf4j
 @RestController
@@ -87,7 +86,5 @@ public class UploadController extends SuperController {
         imageVo.setOriginalName(file.getOriginalFilename());
         return imageVo;
     }
-
-
 
 }
