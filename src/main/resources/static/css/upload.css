@@ -1,0 +1,21 @@
+.upload-list {
+    overflow: hidden;
+}
+
+.upload-list div {
+    float: left;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.upload-list div img {
+    width: 100px;
+    height: 100px;
+}
+
+.upload-list div span {
+    text-align: center;
+    cursor: pointer;
+}
