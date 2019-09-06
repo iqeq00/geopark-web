@@ -25,7 +25,7 @@ layui.define(['config', 'lichee', 'upload', 'layer'], function (exports) {
                 headers: {Authorization: config.getToken()},
                 data: {keyPath: keyPath},
                 multiple: true,
-                number: 2,
+                number: 5,
                 done: function (res) {
                     if (res.status = 200) {
                         imageUpload.push(res.result);
