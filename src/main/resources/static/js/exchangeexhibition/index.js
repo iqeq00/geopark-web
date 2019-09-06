@@ -124,30 +124,4 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'imageUpload'
     };
     load();
 
-    // var uploadImg = function (){
-    //     upload.render({
-    //         elem: '#imgBtn',
-    //         url: '/upload/img',
-    //         headers: {Authorization:config.getToken()},
-    //         data: {keyPath : "exchange"},
-    //         multiple: true,
-    //         number : 2,
-    //         before: function(obj){
-    //             //预读本地文件示例，不支持ie8
-    //             obj.preview(function(index, file, result){
-    //                 $('#imgDiv').append('<img src="'+ result +'" alt="'+ file.name +'" width="100" class="layui-upload-img">')
-    //             });
-    //         },
-    //         done: function(res){
-    //             if(res.status = 200){
-    //                 $('#img').val($('#img').val() + res.result.name + ",");
-    //                 console.log($('#img').val());
-    //                 return layer.msg('上传成功');
-    //             } else {
-    //                 return layer.msg('上传失败');
-    //             }
-    //         }
-    //     });
-    // };
-
 });

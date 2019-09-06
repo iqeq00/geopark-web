@@ -1,6 +1,6 @@
 //公园概况
 
-layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], function () {
+layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','layedit'], function () {
 
     var config = layui.config;
     var lichee = layui.lichee;
@@ -9,6 +9,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
     var table = layui.table;
     var form = layui.form;
     var laydate = layui.laydate;
+    var layedit = layui.layedit;
 
     var tableInfo = table.render({
         elem: '#table',
@@ -74,7 +75,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         layer.open({
             title: data ? '详情/修改' : '添加',
             type: 1,
-            area: '800px',
+            area: ['800px,700px'],
             offset: '20px',
             content: $('#form-model').html(),
             success: function () {
@@ -86,6 +87,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
                 if (data) {
                     form.val('formFilter', data);
                 }
+                editCpt();
                 $('#form .close').click(function () {
                     layer.closeAll('page');
                 });
@@ -143,5 +145,21 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             trigger: 'click'
         });
     });
+
+    var editCpt = function () {
+        layedit.set({
+            uploadImage: {
+                url: '/upload/img',
+                type: 'post',
+                headers: {Authorization:config.getToken()},
+                data: {keyPath : "production"},
+                dataType:'json',
+                success: function(data){
+                    layer.msg('上传成功');
+                }
+            }
+        });
+        content = layedit.build('othermatter');
+    }
 
 });

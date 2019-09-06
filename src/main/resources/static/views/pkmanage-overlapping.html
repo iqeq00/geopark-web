@@ -9,12 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>地质公园管理后台--与其他景区重叠情况</title>
     <script type="text/javascript" src="/views/base/css.js"></script>
-    <!--解决表单字段名长度-->
-    <style>
-        .layui-form-label{
-            width: 110px;
-        }
-    </style>
+
 </head>
 <body class="layui-layout-body">
 
@@ -90,7 +85,7 @@
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">其他景区名称</label>
+                    <label class="layui-form-label">景区名称</label>
                     <div class="layui-input-inline" style="width: 220px">
                         <input type="text" name="othername" id= "othername" required lay-verify="required|commonLength" placeholder="其他景区名称" autocomplete="off" class="layui-input">
                     </div>
@@ -99,13 +94,13 @@
 
             <div class="layui-form-item">
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">其他景区类型</label>
+                    <label class="layui-form-label">景区类型</label>
                     <div class="layui-input-inline" style="width: 220px">
                         <input type="text" name="othertype" id= "othertype" required lay-verify="commonLength" placeholder="其他景区类型" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">其他景区主管部门</label>
+                    <label class="layui-form-label">主管部门</label>
                     <div class="layui-input-inline" style="width: 220px">
                         <input type="text" name="othersupervisor" id= "othersupervisor" required lay-verify="commonLength" placeholder="其他景区主管部门" autocomplete="off" class="layui-input">
                     </div>
@@ -114,31 +109,29 @@
 
             <div class="layui-form-item">
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">重叠区域位置</label>
+                    <label class="layui-form-label">重叠位置</label>
                     <div class="layui-input-inline" style="width: 220px">
                         <input type="text" name="overposition" id= "overposition" required lay-verify="descLength" placeholder="重叠区域位置" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">重叠区域面积</label>
+                    <label class="layui-form-label">重叠面积</label>
                     <div class="layui-input-inline" style="width: 220px">
                         <input type="text" name="overarea" id= "overarea" required lay-verify="descLength" placeholder="重叠区域面积" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
-
             <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">其他景区建设情况</label>
-                <div class="layui-input-block">
-	            <textarea name="othermatter" style="width: 600px;height:60px" placeholder="请输入其他景区开发建设情况"
-                          class="layui-textarea"></textarea>
-                </div>
-            </div>
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">重叠区情况说明</label>
+                <label class="layui-form-label">情况说明</label>
                 <div class="layui-input-block">
 	            <textarea name="overinstruction" style="width: 600px;height:60px" placeholder="请输入重叠区管理情况说明"
                           class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">景区建设情况</label>
+                <div class="layui-input-block">
+                    <textarea id="othermatter" name="othermatter" class="layui-textarea" lay-verify="content" placeholder="其他景区建设情况"></textarea>
                 </div>
             </div>
             <div class="layui-form-item layui-form-text">
