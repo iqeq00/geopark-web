@@ -37,3 +37,4 @@ build/
 
 ### Mac OS X ###
 .DS_Store
+/src/test/java/com/geopark/LicheeGenerator.java
