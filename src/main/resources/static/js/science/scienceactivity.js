@@ -1,6 +1,6 @@
 //公园概况
 
-layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], function () {
+layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','imageUpload'], function () {
 
     var config = layui.config;
     var lichee = layui.lichee;
@@ -9,6 +9,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
     var table = layui.table;
     var form = layui.form;
     var laydate = layui.laydate;
+    var imageUpload = layui.imageUpload;
 
     var tableInfo = table.render({
         elem: '#table',
@@ -32,7 +33,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             {field: 'sciencecontent', align: 'center', sort: true, title: '科普内容'},
             {field: 'sciencestaff', align: 'center', sort: true, title: '科普工作人员'},
             {field: 'note', align: 'center', sort: true, title: '备注'},
-            {field: 'img', align: 'center', sort: true, title: '照片'},
+            //{field: 'img', align: 'center', sort: true, title: '照片'},
             {align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });
@@ -82,8 +83,10 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
                     $('#parkId').vm({parks: data.result});
                     form.render('select');
                 });
+                imageUpload.init("uploadBtn", "img", "scienceactivity");
                 if (data) {
                     form.val('formFilter', data);
+                    imageUpload.initImageList(data.img);
                 }
                 $('#form .close').click(function () {
                     layer.closeAll('page');

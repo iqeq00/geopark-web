@@ -17,3 +17,39 @@ geopark:
     production:
       server: http://www.geopark.com/production/
       path: C:/geopark/images/production
+    geolandscape:
+      server: http://www.geopark.com/geolandscape/
+      path: C:/geopark/images/geolandscape
+    humanlandscape:
+      server: http://www.geopark.com/humanlandscape/
+      path: C:/geopark/images/humanlandscape
+    parktopic:
+      server: http://www.geopark.com/parktopic/
+      path: C:/geopark/images/parktopic
+    scienceactivity:
+      server: http://www.geopark.com/scienceactivity/
+      path: C:/geopark/images/scienceactivity
+    geospecimen:
+      server: http://www.geopark.com/geospecimen/
+      path: C:/geopark/images/geospecimen
+    biospecimen:
+      server: http://www.geopark.com/biospecimen/
+      path: C:/geopark/images/biospecimen
+    humenexhibit:
+      server: http://www.geopark.com/humenexhibit/
+      path: C:/geopark/images/humenexhibit
+    displayboard:
+      server: http://www.geopark.com/displayboard/
+      path: C:/geopark/images/displayboard
+    parkmeeting:
+      server: http://www.geopark.com/parkmeeting/
+      path: C:/geopark/images/parkmeeting
+    exchangeexhibition:
+      server: http://www.geopark.com/exchangeexhibition/
+      path: C:/geopark/images/exchangeexhibition
+    parkrelation:
+      server: http://www.geopark.com/parkrelation/
+      path: C:/geopark/images/parkrelation
+    researchpaper:
+      server: http://www.geopark.com/researchpaper/
+      path: C:/geopark/images/researchpaper
