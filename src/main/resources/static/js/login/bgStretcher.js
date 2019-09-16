@@ -1,6 +1,6 @@
 $(function () {
     $('.login-wrapper').bgStretcher({
-        images: ['/img/bg/bg1.jpg', '/img/bg/bg2.jpeg', '/img/bg/bg3.jpg', '/img/bg/bg4.jpg', '/img/bg/bg5.jpg', '/img/bg/bg6.jpg'],
+        images: ['/img/bg/01.jpg', '/img/bg/02.jpg', '/img/bg/03.jpg', '/img/bg/04.jpg', '/img/bg/05.jpg'],
         imageWidth: 1920,
         imageHeight: 1080,
         nextSlideDelay: 5000,
