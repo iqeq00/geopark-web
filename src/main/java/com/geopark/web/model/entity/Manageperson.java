@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 公园管理法律法规
+ * 管理人员
  * </p>
  *
  * @author lichee
@@ -20,8 +20,8 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("legal")
-public class Legal implements Serializable {
+@TableName("manageperson")
+public class Manageperson implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,49 +29,59 @@ public class Legal implements Serializable {
     private Integer id;
 
     /**
-     * 地质公园ID
+     * 管理机构ID
      */
-    private Integer parkId;
+    private Integer managementId;
 
     /**
-     * 文件编号
+     * 姓名
      */
-    private String number;
+    private String name;
 
     /**
-     * 文件名称
+     * 性别
      */
-    private String filename;
+    private String sex;
 
     /**
-     * 发布时间
+     * 民族
      */
-    private String publishtime;
+    private String nation;
 
     /**
-     * 发布单位
+     * 出生年月
      */
-    private String unit;
+    private String birth;
 
     /**
-     * 规划期限
+     * 毕业院校
      */
-    private String time;
+    private String college;
 
     /**
-     * 关键字
+     * 专业
      */
-    private String keyword;
+    private String subject;
 
     /**
-     * 摘要
+     * 学历学位
      */
-    private String summary;
+    private String degree;
 
     /**
-     * 备注
+     * 职务职称
      */
-    private String note;
+    private String position;
+
+    /**
+     * 工作内容
+     */
+    private String job;
+
+    /**
+     * 照片
+     */
+    private String img;
 
 
 }
