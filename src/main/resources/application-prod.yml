@@ -11,9 +11,4 @@ spring:
 
 geopark:
   image:
-    exchange:
-      server: http://www.geopark.com/exchange/
-      path: /Users/Lichee/soft/develop/application/images/exchange
-    production:
-      server: http://www.geopark.com/production/
-      path: /Users/Lichee/soft/develop/application/images/production
+    location: C:/geopark/images/

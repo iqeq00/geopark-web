@@ -77,3 +77,5 @@ mybatis-plus:
 geopark:
   photo:
     contentType: jpg
+  image:
+    url: /images/

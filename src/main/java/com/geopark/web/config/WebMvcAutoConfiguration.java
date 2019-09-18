@@ -15,6 +15,7 @@ import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.SpringValidatorAdapter;
 import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.servlet.HandlerExceptionResolver;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
@@ -31,33 +32,50 @@ public class WebMvcAutoConfiguration implements WebMvcConfigurer {
 
     @Bean
     public LogRecord logRecord() {
+
         return new LogRecord();
     }
 
     @Override
     public Validator getValidator() {
+
         return new SpringValidatorAdapter(new ValidatorCollectionImpl());
     }
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
+
         registry.addConverterFactory(new IEnumConverterFactory());
     }
 
     @Bean
     @ConditionalOnMissingBean(RequestContextListener.class)
     public RequestContextListener requestContextListener() {
+
         return new RequestContextListener();
     }
 
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+
         converters.forEach(JacksonUtils.wrapperObjectMapper());
     }
 
     @Override
     public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
+
         exceptionResolvers.add(new LicheeHandlerExceptionResolver());
+    }
+
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        /**
+         * 资源映射路径
+         * addResourceHandler：访问映射路径
+         * addResourceLocations：资源绝对路径
+         */
+        registry.addResourceHandler("/images/**").addResourceLocations("file:C:/geopark/images/");
     }
 
 }
