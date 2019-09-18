@@ -6,6 +6,7 @@ import com.geopark.framework.spring.LicheeHandlerExceptionResolver;
 import com.geopark.framework.spring.validator.ValidatorCollectionImpl;
 import com.geopark.framework.utils.JacksonUtils;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +30,12 @@ import java.util.List;
  */
 @Configuration
 public class WebMvcAutoConfiguration implements WebMvcConfigurer {
+
+    @Value("${geopark.image.url}")
+    private String url;
+
+    @Value("${geopark.image.location}")
+    private String location;
 
     @Bean
     public LogRecord logRecord() {
@@ -75,7 +82,7 @@ public class WebMvcAutoConfiguration implements WebMvcConfigurer {
          * addResourceHandler：访问映射路径
          * addResourceLocations：资源绝对路径
          */
-        registry.addResourceHandler("/images/**").addResourceLocations("file:C:/geopark/images/");
+        registry.addResourceHandler(url + "**").addResourceLocations("file:" + location);
     }
 
 }
