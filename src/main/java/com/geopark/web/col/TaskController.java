@@ -11,8 +11,6 @@ import com.geopark.web.service.SysResourceService;
 import com.geopark.web.service.TaskService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,11 +40,11 @@ public class TaskController extends SuperController {
     @Autowired
     private SysResourceService sysResourceService;
 
-    @Autowired
-    private StringRedisTemplate stringRedisTemplate;
-
-    @Autowired
-    private RedisTemplate<String, Serializable> redisCacheTemplate;
+//    @Autowired
+//    private StringRedisTemplate stringRedisTemplate;
+//
+//    @Autowired
+//    private RedisTemplate<String, Serializable> redisCacheTemplate;
 
     @Resources(AuthTypeEnum.LOGIN)
     @ApiOperation("任务查询(分页)")
@@ -95,23 +93,23 @@ public class TaskController extends SuperController {
         return success(HttpStatus.CREATED);
     }
 
-    @GetMapping("/redis")
-    public void test(){
-
-        // TODO 测试线程安全
-        ExecutorService executorService = Executors.newFixedThreadPool(1000);
-        IntStream.range(0, 1000).forEach(i ->
-                executorService.execute(() -> stringRedisTemplate.opsForValue().increment("kk", 1))
-        );
-        stringRedisTemplate.opsForValue().set("k1", "v1");
-        final String k1 = stringRedisTemplate.opsForValue().get("k1");
-        log.info("[字符缓存结果] - [{}]", k1);
-        // TODO 以下只演示整合，具体Redis命令可以参考官方文档，Spring Data Redis 只是改了个名字而已，Redis支持的命令它都支持
-        String key = "battcn:user:1";
-        redisCacheTemplate.opsForValue().set(key, new Task(1, "名字", "描述", LocalDateTime.now(), 1));
-        // TODO 对应 String（字符串）
-        final Task user = (Task) redisCacheTemplate.opsForValue().get(key);
-        log.info("[对象缓存结果] - [{}]", user);
-    }
+//    @GetMapping("/redis")
+//    public void test(){
+//
+//        // TODO 测试线程安全
+//        ExecutorService executorService = Executors.newFixedThreadPool(1000);
+//        IntStream.range(0, 1000).forEach(i ->
+//                executorService.execute(() -> stringRedisTemplate.opsForValue().increment("kk", 1))
+//        );
+//        stringRedisTemplate.opsForValue().set("k1", "v1");
+//        final String k1 = stringRedisTemplate.opsForValue().get("k1");
+//        log.info("[字符缓存结果] - [{}]", k1);
+//        // TODO 以下只演示整合，具体Redis命令可以参考官方文档，Spring Data Redis 只是改了个名字而已，Redis支持的命令它都支持
+//        String key = "battcn:user:1";
+//        redisCacheTemplate.opsForValue().set(key, new Task(1, "名字", "描述", LocalDateTime.now(), 1));
+//        // TODO 对应 String（字符串）
+//        final Task user = (Task) redisCacheTemplate.opsForValue().get(key);
+//        log.info("[对象缓存结果] - [{}]", user);
+//    }
 
 }
