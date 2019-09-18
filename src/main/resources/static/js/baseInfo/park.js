@@ -24,6 +24,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         cols: [[
             //{type: 'checkbox', fixed: 'left'},
             // {field: 'id', title: 'ID'},
+
             {field: 'name', align: 'center', sort: true, title: '公园名称'},
             {field: 'rank', align: 'center', sort: true, title: '级别'},
             {field: 'position', align: 'center', sort: true, title: '位置'},

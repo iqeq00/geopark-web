@@ -93,13 +93,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">级别</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="rank" id= "rank" required lay-verify="required" placeholder="级别" autocomplete="off" class="layui-input">
+                        <input type="text" name="rank" id= "rank" required lay-verify="commonLength" placeholder="级别" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">位置</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="position" id= "position" required lay-verify="required" placeholder="位置" autocomplete="off" class="layui-input">
+                        <input type="text" name="position" id= "position" required lay-verify="commonLength" placeholder="位置" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -108,28 +108,71 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">行政区</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="district" id= "district" required lay-verify="required" placeholder="行政区" autocomplete="off" class="layui-input">
+                        <input type="text" name="district" id= "district" required lay-verify="commonLength" placeholder="行政区" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">邮政编码</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="zip" id= "zip" required lay-verify="required" placeholder="邮政编码" autocomplete="off" class="layui-input">
+                        <input type="text" name="zip" id= "zip" required lay-verify="commonLength" placeholder="邮政编码" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
+
+            <!--<div class="layui-form-item">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">法人代表</label>
+                    <div class="layui-input-inline" style="width: 260px">
+                        <input type="text" name="legelperson" id= "legelperson" required lay-verify="commonLength" placeholder="法人代表" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">安全责任人</label>
+                    <div class="layui-input-inline" style="width: 260px">
+                        <input type="text" name="secrityperson" id= "secrityperson" required lay-verify="commonLength" placeholder="安全责任人" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">联系电话</label>
+                    <div class="layui-input-inline" style="width: 260px">
+                        <input type="text" name="phone" id= "phone" required lay-verify="commonLength" placeholder="联系电话" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">传真</label>
+                    <div class="layui-input-inline" style="width: 260px">
+                        <input type="text" name="fax" id= "fax" required lay-verify="commonLength" placeholder="传真" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">网址</label>
+                    <div class="layui-input-inline" style="width: 260px">
+                        <input type="text" name="website" id= "website" required lay-verify="commonLength" placeholder="网址" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">电子邮件</label>
+                    <div class="layui-input-inline" style="width: 260px">
+                        <input type="text" name="email" id= "email" required lay-verify="commonLength" placeholder="电子邮件" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>-->
 
             <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">经度</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="lng" id= "lng" required lay-verify="required" placeholder="经度" autocomplete="off" class="layui-input">
+                        <input type="text" name="lng" id= "lng" required lay-verify="commonLength" placeholder="经度" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">纬度</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="lat" id= "lat" required lay-verify="required" placeholder="纬度" autocomplete="off" class="layui-input">
+                        <input type="text" name="lat" id= "lat" required lay-verify="commonLength" placeholder="纬度" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -138,13 +181,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">面积</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="area" id= "area" required lay-verify="required" placeholder="面积" autocomplete="off" class="layui-input">
+                        <input type="text" name="area" id= "area" required lay-verify="commonLength" placeholder="面积" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">公园类型</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="type" id= "type" required lay-verify="required" placeholder="公园类型" autocomplete="off" class="layui-input">
+                        <input type="text" name="type" id= "type" required lay-verify="commonLength" placeholder="公园类型" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -153,22 +196,31 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">建立时间</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="createDate" id= "createDate" required lay-verify="required" placeholder="建立时间" autocomplete="off" class="layui-input">
+                        <input type="text" name="createDate" id= "createDate" required lay-verify="commonLength" placeholder="建立时间" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">批准单位</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="ratifier" id= "ratifier" required lay-verify="required" placeholder="批准单位" autocomplete="off" class="layui-input">
+                        <input type="text" name="ratifier" id= "ratifier" required lay-verify="commonLength" placeholder="批准单位" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
 
             <div class="layui-form-item">
+                <div class="layui-col-md12">
                     <label class="layui-form-label">主管部门</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="master_department" id= "master_department" required lay-verify="required" placeholder="公园主管部门" autocomplete="off" class="layui-input">
+                        <input type="text" name="master_department" id= "master_department" required lay-verify="commonLength" placeholder="公园主管部门" autocomplete="off" class="layui-input">
                     </div>
+                </div>
+<!--                <div class="layui-col-md6">
+                    <label class="layui-form-label">经费来源</label>
+                    <div class="layui-input-inline" style="width: 260px">
+                        <input type="text" name="funds" id= "funds" required lay-verify="commonLength" placeholder="经费来源" autocomplete="off" class="layui-input">
+                    </div>
+                </div>-->
+
             </div>
 
             <div class="layui-form-item layui-form-text">

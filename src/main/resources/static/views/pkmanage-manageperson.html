@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
     <meta http-equiv="expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>地质公园管理后台--法律法规</title>
+    <title>地质公园管理后台--管理人员</title>
     <script type="text/javascript" src="/views/base/css.js"></script>
     <!--解决表单字段名长度-->
     <style>
@@ -28,7 +28,7 @@
         <div style="padding: 15px;">
 
             <div class="layui-card-header">
-                <h2 class="header-title">法律法规</h2>
+                <h2 class="header-title">管理人员</h2>
             </div>
 
             <hr class="layui-bg-gray">
@@ -37,9 +37,9 @@
                 <form id="searchForm" onsubmit="return false;">
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-labelLeft">文件名称</label>
+                            <label class="layui-form-labelLeft">管理人员姓名</label>
                             <div class="layui-input-inline">
-                                <input name="filename" class="layui-input search-input" type="text" placeholder="文件名称" autocomplete="off"/>
+                                <input name="name" class="layui-input search-input" type="text" placeholder="管理人员姓名" autocomplete="off"/>
                             </div>
                         </div>
                         <div class="layui-inline">
@@ -72,7 +72,7 @@
 </div>
 
 <script type="text/javascript" src="/views/base/scripts.js"></script>
-<script type="text/javascript" src="/js/pkmanage/legal.js"></script>
+<script type="text/javascript" src="/js/pkmanage/manageperson.js"></script>
 
 <script type="text/html" id="form-model">
     <div class="layui-tab-content">
@@ -81,76 +81,94 @@
 
             <div class="layui-form-item">
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">公园编号</label>
+                    <label class="layui-form-label">机构编号</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <select id="parkId" name="parkId" lay-filter="parkId" lay-verify="required">
+                        <select id="managementId" name="managementId" lay-filter="managementId" lay-verify="required">
                             <option value="">请选择</option>
-                            <option p-for="parks" p-bind="value:{{id}}">{{name}}</option>
+                            <option p-for="managementagencys" p-bind="value:{{id}}">{{managename}}</option>
                         </select>
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">文件编号</label>
+                    <label class="layui-form-label">姓名</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="number" id= "number" required lay-verify="required|commonLength" placeholder="文件编号" autocomplete="off" class="layui-input">
+                        <input type="text" name="name" id= "name" required lay-verify="required|commonLength" placeholder="姓名" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
 
             <div class="layui-form-item">
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">文件名称</label>
+                    <label class="layui-form-label">性别</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="filename" id= "filename" required lay-verify="required|commonLength" placeholder="文件名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="sex" id= "sex" required lay-verify="commonLength" placeholder="性别" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">发布单位</label>
+                    <label class="layui-form-label">民族</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="unit" id= "unit" required lay-verify="commonLength" placeholder="发布单位" autocomplete="off" class="layui-input">
+                        <input type="text" name="nation" id= "nation" required lay-verify="commonLength" placeholder="民族" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
 
             <div class="layui-form-item">
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">规划期限</label>
+                    <label class="layui-form-label">出生年月</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="time" id= "time" required lay-verify="commonLength" placeholder="规划期限" autocomplete="off" class="layui-input">
+                        <input type="text" name="birth" id= "birth" required lay-verify="commonLength" placeholder="出生年月" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">发布时间</label>
+                    <label class="layui-form-label">毕业院校</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="publishtime" id= "publishtime" required lay-verify="commonLength" placeholder="发布时间" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <div class="layui-col-md12">
-                    <label class="layui-form-label">关键字</label>
-                    <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="keyword" id= "keyword" required lay-verify="descLength" placeholder="关键字" autocomplete="off" class="layui-input">
+                        <input type="text" name="college" id= "college" required lay-verify="commonLength" placeholder="毕业院校" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
             <div class="layui-form-item">
-                <div class="layui-col-md12">
-                    <label class="layui-form-label">摘要</label>
-                    <div class="layui-input-inline" style="width: 600px">
-                        <input type="text" name="summary" id= "summary" required lay-verify="descLength" placeholder="摘要" autocomplete="off" class="layui-input">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">专业</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="subject" id= "subject" required lay-verify="commonLength" placeholder="专业" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">学历学位</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="degree" id= "degree" required lay-verify="commonLength" placeholder="学历学位" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">职务职称</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="position" id= "position" required lay-verify="commonLength" placeholder="职务职称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">工作内容</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="job" id= "job" required lay-verify="commonLength" placeholder="工作内容" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
 
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">备注</label>
+            <input type="hidden" id="img" name="img"/>
+            <div class="layui-form-item">
+                <label class="layui-form-label">照片</label>
                 <div class="layui-input-block">
-	            <textarea name="note" style="width: 600px;height:60px" placeholder="请输入备注"
-                          class="layui-textarea"></textarea>
+                    <div class="layui-upload">
+                        <button type="button" class="layui-btn" id="uploadBtn">图片上传</button>
+                        <blockquote  class="layui-elem-quote layui-quote-nm" style="margin-top:10px;margin-left:30px;width: 565px;">
+                            预览图：
+                            <div class="layui-upload-list upload-list"></div>
+                        </blockquote>
+                    </div>
                 </div>
             </div>
+
 
             <div class="layui-form-item layui-layer-btn">
                 <button class="layui-btn layui-btn-sm" lay-filter="formSubmit" lay-submit>保存</button>

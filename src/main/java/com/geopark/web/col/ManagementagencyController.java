@@ -17,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p>
  * 管理机构 前端控制器
@@ -45,9 +47,15 @@ public class ManagementagencyController extends SuperController {
         if (StringUtils.isNotBlank(managename)) {
             qw.like(Managementagency::getManagename, managename);
         }
-
         return success(qw.page(this.<Managementagency>getPage()));
+    }
 
+    @Resources
+    @ApiOperation("管理机构查询(列表)")
+    @GetMapping("/list")
+    public ApiResponses<List<Managementagency>> list() {
+
+        return success(managementagencyService.lambdaQuery().list());
     }
 
     @Resources(AuthTypeEnum.LOGIN)
