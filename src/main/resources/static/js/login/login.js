@@ -6,7 +6,7 @@ layui.config({
     var form = layui.form;
     var config = layui.config;
 
-    var url = "/views/task.html";
+    var url = "/views/baseInfo-park.html";
     // if (config.getToken()) {
     //     location.replace(url);
     //     return;
