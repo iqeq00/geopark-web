@@ -61,7 +61,7 @@ public class Vediodocs implements Serializable {
     /**
      * 文件描述
      */
-    private String desc;
+    private String note;
 
 
 }

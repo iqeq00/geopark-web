@@ -41,9 +41,7 @@ public class PlanningController extends SuperController {
         if (StringUtils.isNotBlank(filename)) {
             qw.like(Planning::getFilename, filename);
         }
-
         return success(qw.page(this.<Planning>getPage()));
-
     }
 
     @Resources

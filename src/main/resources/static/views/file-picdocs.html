@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
     <meta http-equiv="expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>地质公园管理后台--公园规划</title>
+    <title>地质公园管理后台--图片资料</title>
     <script type="text/javascript" src="/views/base/css.js"></script>
 </head>
 <body class="layui-layout-body">
@@ -22,7 +22,7 @@
         <div style="padding: 15px;">
 
             <div class="layui-card-header">
-                <h2 class="header-title">公园规划</h2>
+                <h2 class="header-title">图片资料</h2>
             </div>
 
             <hr class="layui-bg-gray">
@@ -33,7 +33,7 @@
                         <div class="layui-inline">
                             <label class="layui-form-labelLeft">文件名称</label>
                             <div class="layui-input-inline">
-                                <input name="filename" class="layui-input search-input" type="text" placeholder="文件名称" autocomplete="off"/>
+                                <input name="docname" class="layui-input search-input" type="text" placeholder="文件名称" autocomplete="off"/>
                             </div>
                         </div>
                         <div class="layui-inline">
@@ -62,11 +62,10 @@
     </div>
 
     <div class="layui-footer" p-com="footer"></div>
-
 </div>
 
 <script type="text/javascript" src="/views/base/scripts.js"></script>
-<script type="text/javascript" src="/js/pkmanage/planning.js"></script>
+<script type="text/javascript" src="/js/file/picdocs.js"></script>
 
 <script type="text/html" id="form-model">
     <div class="layui-tab-content">
@@ -83,34 +82,29 @@
                         </select>
                     </div>
                 </div>
+            </div>
+
+            <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">文件编号</label>
                     <div class="layui-input-block">
                         <input type="text" name="number" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="文件编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
-            </div>
-
-            <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">文件名称</label>
                     <div class="layui-input-block">
-                        <input type="text" name="filename" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="文件名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="docname" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="文件名称" autocomplete="off" class="layui-input">
                     </div>
                 </div>
+
+            </div>
+
+            <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">发布单位</label>
                     <div class="layui-input-block">
                         <input type="text" name="unit" lay-verify="required" maxlength="256" lay-verType="tips" placeholder="发布单位" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <div class="layui-col-md6">
-                    <label class="layui-form-label">规划期限</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="time" maxlength="256" placeholder="规划期限" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
@@ -122,44 +116,20 @@
             </div>
 
             <div class="layui-form-item">
-                <div class="layui-col-md12">
-                    <label class="layui-form-label">关键字</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="keyword" maxlength="256" placeholder="关键字" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <div class="layui-col-md12">
-                    <label class="layui-form-label">摘要</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="summary" maxlength="256" placeholder="摘要" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">文件</label>
+                <label class="layui-form-label">照片</label>
                 <div class="layui-input-block">
                     <div class="layui-upload">
-                        <button type="button" class="layui-btn" id="uploadBtn">文件上传</button>
-                        <div class="layui-upload-list">
-                            <table class="layui-table">
-                                <thead>
-                                    <tr>
-                                        <th>文件名</th>
-                                        <th>操作</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="fileList"></tbody>
-                            </table>
-                        </div>
+                        <button type="button" class="layui-btn" id="uploadBtn">图片上传</button>
+                        <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top:10px;">
+                            预览图：
+                            <div class="layui-upload-list upload-list"></div>
+                        </blockquote>
                     </div>
                 </div>
             </div>
 
             <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">备注</label>
+                <label class="layui-form-label">文件描述</label>
                 <div class="layui-input-block">
                     <textarea name="note" placeholder="备注信息" class="layui-textarea"></textarea>
                 </div>

@@ -61,7 +61,7 @@ public class Picdocs implements Serializable {
     /**
      * 文件描述
      */
-    private String desc;
+    private String note;
 
 
 }
