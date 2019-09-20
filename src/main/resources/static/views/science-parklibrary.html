@@ -82,7 +82,7 @@
     <div class="layui-tab-content">
         <form id="form" lay-filter="formFilter" class="layui-form model-form ">
             <input type="hidden" id="id" name="id"/>
-
+            <input type="hidden" id="img" name="img"/>
             <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">公园编号</label>
@@ -143,10 +143,23 @@
                 </div>
             </div>
 
+            <div class="layui-form-item">
+                <label class="layui-form-label">照片</label>
+                <div class="layui-input-block">
+                    <div class="layui-upload">
+                        <button type="button" class="layui-btn" id="uploadBtn">图片上传</button>
+                        <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top:10px;">
+                            预览图：
+                            <div class="layui-upload-list upload-list"></div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
             <div class="layui-form-item layui-form-text">
                 <label class="layui-form-label">备注</label>
                 <div class="layui-input-block">
-	            <textarea name="note" style="width: 600px;height:60px" placeholder="请输入备注"
+	            <textarea name="remark" style="width: 600px;height:60px" placeholder="请输入备注"
                           class="layui-textarea"></textarea>
                 </div>
             </div>

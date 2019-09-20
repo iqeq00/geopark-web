@@ -73,5 +73,8 @@ public class Legal implements Serializable {
      */
     private String note;
 
-
+    /**
+     * 存储地址
+     */
+    private String url;
 }
