@@ -28,7 +28,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
             // {field: 'id', title: 'ID'},
             {field: 'parkId', align: 'center', sort: true, title: '地质公园ID'},
             {field: 'humanitnumber', align: 'center', sort: true, title: '景观编号'},
-            {field: 'hName', align: 'center', sort: true, title: '景观名称'},
+            {field: 'hname', align: 'center', sort: true, title: '景观名称'},
             {field: 'position', align: 'center', sort: true, title: '地理位置'},
             //{field: 'traffic', align: 'center', sort: true, title: '交通状况'},
             //{field: 'lat', align: 'center', sort: true, title: '经度'},

@@ -28,7 +28,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
             // {field: 'id', title: 'ID'},
             {field: 'parkId', align: 'center', sort: true, title: '地质公园ID'},
             {field: 'unitenumber', align: 'center', sort: true, title: '统一编号'},
-            {field: 'gName', align: 'center', sort: true, title: '遗迹名称'},
+            {field: 'gname', align: 'center', sort: true, title: '遗迹名称'},
             {field: 'originalname', align: 'center', sort: true, title: '原名称'},
             {field: 'type', align: 'center', sort: true, title: '遗迹类型'},
             {field: 'position', align: 'center', sort: true, title: '地理位置'},
