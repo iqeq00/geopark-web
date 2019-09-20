@@ -18,7 +18,6 @@ import java.time.LocalDateTime;
  * @since 2019-08-14
  */
 @Data
-@AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("task")
@@ -40,7 +39,7 @@ public class Task implements Serializable {
     /**
      * 描述
      */
-    private String taskDesc;
+    private String taskNote;
 
     /**
      * 创建时间
@@ -56,16 +55,5 @@ public class Task implements Serializable {
 4. 任务失败
      */
     private Integer status;
-
-
-    public static final String ID = "id";
-
-    public static final String TASK_NAME = "task_name";
-
-    public static final String TASK_DESC = "task_desc";
-
-    public static final String CREATE_TIME = "create_time";
-
-    public static final String STATUS = "status";
 
 }

@@ -28,18 +28,23 @@ import java.util.Date;
 @Service
 public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements TaskService {
 
-    @Autowired
-    public SysRoleResourceService roleResourceService;
+//    @Autowired
+//    public SysRoleResourceService roleResourceService;
+//
+//    @Override
+//    public void saveTransaction(Task task) {
+//
+//        this.save(task);
+//        roleResourceService.saveTransaction();
+//    }
 
     @Override
     public void saveTransaction(Task task) {
 
-        this.save(task);
-        roleResourceService.saveTransaction();
     }
 
     @Override
-    @Cacheable("taskPageCache")
+//    @Cacheable("taskPageCache")
     public IPage<Task> page(String taskName, String status, Date startTime, Date endTime, Page<Task> page) {
 
         System.out.println("进来了");
