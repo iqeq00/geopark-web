@@ -4,11 +4,12 @@ layui.config({
     formSelects: 'formSelects/formSelects-v4',
     iconPicker: 'iconPicker/iconPicker',
     treetable: 'treetable/treetable'
-}).use(['config', 'index', 'lichee', 'imageUpload', 'element'], function () {
+}).use(['config', 'index', 'lichee', 'imageUpload', 'fileUpload', 'element'], function () {
     var config = layui.config;
     var index = layui.index;
     var lichee = layui.lichee;
     var imageUpload = layui.imageUpload;
+    var fileUpload = layui.fileUpload;
     var element = layui.element;
     // 检查是否登录
     if (!config.getToken() || config.getToken() == '') {

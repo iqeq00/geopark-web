@@ -79,3 +79,5 @@ geopark:
     contentType: jpg
   image:
     url: /images/
+  file:
+    url: /files/

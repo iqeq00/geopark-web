@@ -32,10 +32,16 @@ import java.util.List;
 public class WebMvcAutoConfiguration implements WebMvcConfigurer {
 
     @Value("${geopark.image.url}")
-    private String url;
+    private String imageUrl;
 
     @Value("${geopark.image.location}")
-    private String location;
+    private String imageLocation;
+
+    @Value("${geopark.file.url}")
+    private String fileUrl;
+
+    @Value("${geopark.file.location}")
+    private String fileLocation;
 
     @Bean
     public LogRecord logRecord() {
@@ -82,7 +88,8 @@ public class WebMvcAutoConfiguration implements WebMvcConfigurer {
          * addResourceHandler：访问映射路径
          * addResourceLocations：资源绝对路径
          */
-        registry.addResourceHandler(url + "**").addResourceLocations("file:" + location);
+        registry.addResourceHandler(imageUrl + "**").addResourceLocations("file:" + imageLocation);
+        registry.addResourceHandler(fileUrl + "**").addResourceLocations("file:" + fileLocation);
     }
 
 }

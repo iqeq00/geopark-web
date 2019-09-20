@@ -12,3 +12,5 @@ spring:
 geopark:
   image:
     location: C:/geopark/images/
+  file:
+    location: C:/geopark/files/

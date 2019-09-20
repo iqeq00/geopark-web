@@ -4,33 +4,34 @@ layui.define(['config', 'lichee', 'upload', 'layer'], function (exports) {
     var lichee = layui.lichee;
     var upload = layui.upload;
     var layer = layui.layer;
-    var imageList = new Array();
+    var fileList = new Array();
     var pathList = new Array();
 
     var defaults = {
         elementId: '',
         hiddenId: '',
-        listElement: 'upload-list',
+        listElement: 'fileList',
         keyPath: ''
     };
 
-    var imageUpload = {
+    var fileUpload = {
 
         init: function (elementId, hiddenId, keyPath) {
-            imageUpload.clear();
-            imageUpload.initValue(elementId, hiddenId, keyPath)
+            fileUpload.clear();
+            fileUpload.initValue(elementId, hiddenId, keyPath)
             upload.render({
                 elem: '#' + elementId,
-                url: '/upload/img',
+                url: '/upload/file',
                 headers: {Authorization: config.getToken()},
                 data: {keyPath: keyPath},
                 multiple: true,
+                accept: 'file',
                 number: 5,
                 done: function (res) {
                     if (res.status = 200) {
-                        imageUpload.push(res.result);
-                        imageUpload.join();
-                        imageUpload.html(res.result);
+                        fileUpload.push(res.result);
+                        fileUpload.join();
+                        fileUpload.html(res.result);
                         return layer.msg('上传成功');
                     } else {
                         return layer.msg('上传失败');
@@ -45,54 +46,56 @@ layui.define(['config', 'lichee', 'upload', 'layer'], function (exports) {
             defaults.keyPath = keyPath;
         },
 
-        initImageList: function (imageListStr) {
-            if (imageListStr) {
-                pathList = imageListStr.split(",");
+        initFileList: function (fileListStr) {
+            if (fileListStr) {
+                pathList = fileListStr.split(",");
                 $(pathList).each(function (index, path) {
-                    var image = new Object();
-                    image.path = path;
-                    image.name = path.substring(path.lastIndexOf("/") + 1);
-                    imageList.push(image);
-                    imageUpload.html(image);
+                    var file = new Object();
+                    file.path = path;
+                    file.name = path.substring(path.lastIndexOf("/") + 1);
+                    fileList.push(file);
+                    fileUpload.html(file);
                 });
             }
         },
 
         clear: function () {
-            imageList.length = 0;
+            fileList.length = 0;
             pathList.length = 0;
         },
 
-        push: function (image) {
-            imageList.push(image);
-            pathList.push(image.path);
+        push: function (file) {
+            fileList.push(file);
+            pathList.push(file.path);
         },
 
-        html: function (image) {
-            var html = '<div><img src="' + image.path + '" alt="' + image.name + '" class="layui-upload-img"><span class="delete" data-id="' + image.path + '">删除</span></div>';
-            $('.' + defaults.listElement).append(html);
-            imageUpload.deleteElement();
+        html: function (file) {
+            var html = '<tr><td>' + file.name + '</td><td><button class="layui-btn layui-btn-xs layui-btn-danger delete" data-id="' + file.path + '">删除</button></td></tr>';
+            $('#' + defaults.listElement).append(html);
+            fileUpload.deleteElement();
         },
 
         join: function () {
             $('#' + defaults.hiddenId).val(pathList.join());
+            console.log($('#' + defaults.hiddenId).val()+"@@@");
         },
 
         deleteElement: function () {
             $(".delete").unbind("click").click(function () {
+                console.log("coming");
                 var path = $(this).attr("data-id");
-                $(this).parent().remove();
-                imageUpload.deleteArray(path);
+                $(this).parent().parent().remove();
+                fileUpload.deleteArray(path);
             });
         },
 
         deleteArray: function (path) {
-            imageList.splice(imageList.findIndex(image => image.path === path), 1);
+            fileList.splice(fileList.findIndex(file => file.path === path), 1);
             pathList.splice(pathList.findIndex(val => val === path), 1);
-            imageUpload.join();
+            fileUpload.join();
         },
 
     };
 
-    exports('imageUpload', imageUpload);
+    exports('fileUpload', fileUpload);
 });
