@@ -8,7 +8,6 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 /**
  * <p>
@@ -52,7 +51,7 @@ public class Displayboard implements Serializable {
     /**
      * 制作时间
      */
-    private LocalDate makingtime;
+    private String makingtime;
 
     /**
      * 设计施工单位

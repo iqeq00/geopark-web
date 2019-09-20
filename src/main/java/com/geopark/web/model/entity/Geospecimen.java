@@ -8,7 +8,6 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 /**
  * <p>
@@ -72,7 +71,7 @@ public class Geospecimen implements Serializable {
     /**
      * 采集时间
      */
-    private LocalDate collectiontime;
+    private String collectiontime;
 
     /**
      * 采集人

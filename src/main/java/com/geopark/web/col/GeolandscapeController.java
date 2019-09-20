@@ -39,11 +39,11 @@ public class GeolandscapeController extends SuperController {
     @ApiOperation("地质遗迹景观查询(分页)")
     @GetMapping("/page")
     public ApiResponses<IPage<Geolandscape>> page(
-            @RequestParam(value = "gName", defaultValue = "") String gName) {
+            @RequestParam(value = "gname", defaultValue = "") String gname) {
 
         LambdaQueryChainWrapper<Geolandscape> qw = geolandscapeService.lambdaQuery();
-        if (StringUtils.isNotBlank(gName)) {
-            qw.like(Geolandscape::getGname, gName);
+        if (StringUtils.isNotBlank(gname)) {
+            qw.like(Geolandscape::getGname, gname);
         }
 
         return success(qw.page(this.<Geolandscape>getPage()));

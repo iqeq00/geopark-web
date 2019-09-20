@@ -65,6 +65,11 @@ public class Parklibrary implements Serializable {
     private String relationship;
 
     /**
+     * 图片
+     */
+    private String img;
+
+    /**
      * 备注
      */
     private String remark;
@@ -74,30 +79,5 @@ public class Parklibrary implements Serializable {
     private LocalDateTime updatedAt;
 
     private LocalDateTime deletedAt;
-
-
-    public static final String ID = "id";
-
-    public static final String PARK_ID = "park_id";
-
-    public static final String NUMBER = "number";
-
-    public static final String NAME = "name";
-
-    public static final String SEX = "sex";
-
-    public static final String BIRTH = "birth";
-
-    public static final String SUBJECT_DIRECTION = "subject_direction";
-
-    public static final String RELATIONSHIP = "relationship";
-
-    public static final String REMARK = "remark";
-
-    public static final String CREATED_AT = "created_at";
-
-    public static final String UPDATED_AT = "updated_at";
-
-    public static final String DELETED_AT = "deleted_at";
 
 }
