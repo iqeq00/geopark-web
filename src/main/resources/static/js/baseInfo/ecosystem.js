@@ -14,7 +14,6 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         elem: '#table',
         toolbar: '#toolbar',
         defaultToolbar: [],
-        width:1500,
         url: '/ecosystem/page',
         title: '公园生态环境',
         page: true,
