@@ -92,7 +92,7 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">样品编号</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="samplenumber" id= "samplenumber" required lay-verify="required|commonLength" placeholder="样品编号" autocomplete="off" class="layui-input">
+                        <input type="text" name="samplenumber" id= "samplenumber" required lay-verify="required" maxlength="180" placeholder="样品编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -100,13 +100,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">样品类型</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="sampletype" id= "sampletype" required lay-verify="commonLength" placeholder="样品类型" autocomplete="off" class="layui-input">
+                        <input type="text" name="sampletype" id= "sampletype" maxlength="180" placeholder="样品类型" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">采样位置</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="sampleposition" id= "sampleposition" required lay-verify="descLength" placeholder="采样位置" autocomplete="off" class="layui-input">
+                        <input type="text" name="sampleposition" id= "sampleposition" maxlength="180" placeholder="采样位置" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -115,13 +115,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">坐标</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="coordinate" id= "coordinate" required lay-verify="descLength" placeholder="坐标" autocomplete="off" class="layui-input">
+                        <input type="text" name="coordinate" id= "coordinate" maxlength="180" placeholder="坐标" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">地质代号</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="code" id= "code" required lay-verify="descLength" placeholder="地质代号" autocomplete="off" class="layui-input">
+                        <input type="text" name="code" id= "code" maxlength="180" placeholder="地质代号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                 <div class="layui-col-md12">
                     <label class="layui-form-label">野外定名</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="research" id= "research" required lay-verify="descLength" placeholder="野外定名" autocomplete="off" class="layui-input">
+                        <input type="text" name="research" id= "research" maxlength="180" placeholder="野外定名" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>

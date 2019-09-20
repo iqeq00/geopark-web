@@ -33,7 +33,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             {field: 'carrytime', align: 'center', sort: true, title: '完成时间'},
             {field: 'carryunit', align: 'center', sort: true, title: '完成单位'},
             {field: 'publishing', align: 'center', sort: true, title: '是否出版'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });

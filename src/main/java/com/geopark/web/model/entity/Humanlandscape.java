@@ -42,7 +42,7 @@ public class Humanlandscape implements Serializable {
     /**
      * 景观名称
      */
-    private String hName;
+    private String hname;
 
     /**
      * 地理位置
@@ -99,40 +99,5 @@ public class Humanlandscape implements Serializable {
     private LocalDateTime updatedAt;
 
     private LocalDateTime deletedAt;
-
-
-    public static final String ID = "id";
-
-    public static final String PARK_ID = "park_id";
-
-    public static final String HUMANITNUMBER = "humanitnumber";
-
-    public static final String H_NAME = "h_name";
-
-    public static final String POSITION = "position";
-
-    public static final String TRAFFIC = "traffic";
-
-    public static final String LAT = "lat";
-
-    public static final String LNG = "lng";
-
-    public static final String ALTITUDE = "altitude";
-
-    public static final String FEATURE = "feature";
-
-    public static final String LEVEL = "level";
-
-    public static final String APPROVEDTIME = "approvedtime";
-
-    public static final String STATUS = "status";
-
-    public static final String IMG = "img";
-
-    public static final String CREATED_AT = "created_at";
-
-    public static final String UPDATED_AT = "updated_at";
-
-    public static final String DELETED_AT = "deleted_at";
 
 }

@@ -30,12 +30,12 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             {field: 'area', align: 'center', sort: true, title: '面积'},
             {field: 'buildtime', align: 'center', sort: true, title: '建馆时间'},
             {field: 'museummechanism', align: 'center', sort: true, title: '管理机构'},
-            {field: 'museumpartition', align: 'center', sort: true, title: '分区布展情况'},
-            {field: 'exhibitsoverview', align: 'center', sort: true, title: '馆藏展品'},
+            //{field: 'museumpartition', align: 'center', sort: true, title: '分区布展情况'},
+            //{field: 'exhibitsoverview', align: 'center', sort: true, title: '馆藏展品'},
             {field: 'position', align: 'center', sort: true, title: '地址'},
             {field: 'contact', align: 'center', sort: true, title: '联系电话'},
             {field: 'email', align: 'center', sort: true, title: 'E-MAIL'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });

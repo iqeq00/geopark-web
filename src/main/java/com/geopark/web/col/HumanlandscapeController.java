@@ -39,13 +39,12 @@ public class HumanlandscapeController extends SuperController {
     @ApiOperation("人文景观查询(分页)")
     @GetMapping("/page")
     public ApiResponses<IPage<Humanlandscape>> page(
-            @RequestParam(value = "hName", defaultValue = "") String hName) {
+            @RequestParam(value = "hname", defaultValue = "") String hname) {
 
         LambdaQueryChainWrapper<Humanlandscape> qw = humanlandscapeService.lambdaQuery();
-        if (StringUtils.isNotBlank(hName)) {
-            qw.like(Humanlandscape::getHName, hName);
+        if (StringUtils.isNotBlank(hname)) {
+            qw.like(Humanlandscape::getHname, hname);
         }
-
         return success(qw.page(this.<Humanlandscape>getPage()));
 
     }

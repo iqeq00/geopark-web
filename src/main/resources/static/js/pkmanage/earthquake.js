@@ -34,10 +34,10 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             {field: 'scale', align: 'center', sort: true, title: '规模'},
             {field: 'stability', align: 'center', sort: true, title: '稳定性'},
             {field: 'dangerous', align: 'center', sort: true, title: '危险性'},
-            {field: 'description', align: 'center', sort: true, title: '特征描述'},
-            {field: 'factor', align: 'center', sort: true, title: '诱发因素'},
-            {field: 'threat', align: 'center', sort: true, title: '威胁对象'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'description', align: 'center', sort: true, title: '特征描述'},
+            //{field: 'factor', align: 'center', sort: true, title: '诱发因素'},
+            //{field: 'threat', align: 'center', sort: true, title: '威胁对象'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });

@@ -46,7 +46,7 @@ public class Geolandscape implements Serializable {
     /**
      * 地质遗迹名称
      */
-    private String gName;
+    private String gname;
 
     /**
      * 地质遗迹原名称
@@ -122,46 +122,5 @@ public class Geolandscape implements Serializable {
      * 照片
      */
     private String img;
-
-
-    public static final String ID = "id";
-
-    public static final String PARK_ID = "park_id";
-
-    public static final String UNITENUMBER = "unitenumber";
-
-    public static final String ORIGINALNUMBER = "originalnumber";
-
-    public static final String G_NAME = "g_name";
-
-    public static final String ORIGINALNAME = "originalname";
-
-    public static final String TYPE = "type";
-
-    public static final String POSITION = "position";
-
-    public static final String TRAFFIC = "traffic";
-
-    public static final String LAT = "lat";
-
-    public static final String LNG = "lng";
-
-    public static final String ALTITUDE = "altitude";
-
-    public static final String BACKGROUND = "background";
-
-    public static final String FEATURE = "feature";
-
-    public static final String EVALUATION = "evaluation";
-
-    public static final String PROTECTION = "protection";
-
-    public static final String VALUE = "value";
-
-    public static final String CAUSES = "causes";
-
-    public static final String NOTE = "note";
-
-    public static final String IMG = "img";
 
 }

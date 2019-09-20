@@ -42,7 +42,7 @@ public class Naturallandscape implements Serializable {
     /**
      * 景观名称
      */
-    private String nName;
+    private String nname;
 
     /**
      * 地理位置

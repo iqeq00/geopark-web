@@ -7,16 +7,14 @@
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
     <meta http-equiv="expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>地质任务管理后台--生态环境</title>
+    <title>地质公园管理后台--自然景观</title>
     <script type="text/javascript" src="/views/base/css.js"></script>
-
     <!--解决表单字段名长度-->
     <style>
         .layui-form-label{
             width: 110px;
         }
     </style>
-
 </head>
 <body class="layui-layout-body">
 
@@ -30,7 +28,7 @@
         <div style="padding: 15px;">
 
             <div class="layui-card-header">
-                <h2 class="header-title">生态环境管理</h2>
+                <h2 class="header-title">人文景观</h2>
             </div>
 
             <hr class="layui-bg-gray">
@@ -39,9 +37,9 @@
                 <form id="searchForm" onsubmit="return false;">
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-labelLeft">地质公园编号</label>
+                            <label class="layui-form-labelLeft">自然景观名称</label>
                             <div class="layui-input-inline">
-                                <input name="parkId" class="layui-input search-input" type="text" placeholder="地质公园编号" autocomplete="off"/>
+                                <input name="nname" class="layui-input search-input" type="text" placeholder="自然景观名称" autocomplete="off"/>
                             </div>
                         </div>
                         <div class="layui-inline">
@@ -74,7 +72,7 @@
 </div>
 
 <script type="text/javascript" src="/views/base/scripts.js"></script>
-<script type="text/javascript" src="/js/baseInfo/ecosystem.js"></script>
+<script type="text/javascript" src="/js/pkmanage/humanlandscape.js"></script>
 
 <script type="text/html" id="form-model">
     <div class="layui-tab-content">
@@ -83,7 +81,7 @@
 
             <div class="layui-form-item">
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">地质公园编号</label>
+                    <label class="layui-form-label">公园编号</label>
                     <div class="layui-input-inline" style="width: 220px">
                         <select id="parkId" name="parkId" lay-filter="parkId" lay-verify="required">
                             <option value="">请选择</option>
@@ -92,99 +90,95 @@
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">公园年平均气温</label>
+                    <label class="layui-form-label">自然景观编号</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="number" id= "number" lay-verify="required" maxlength="180" placeholder="公园年平均气温" autocomplete="off" class="layui-input">
+                        <input type="text" name="naturalnumber" id= "naturalnumber" required lay-verify="required" maxlength="180" placeholder="人文景观编号" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">景观名称</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="nname" id= "nname" required lay-verify="required" maxlength="180" placeholder="景观名称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">批准时间</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="approvedtime" id= "approvedtime" maxlength="180" placeholder="批准时间" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
 
             <div class="layui-form-item">
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">公园年最高气温</label>
+                    <label class="layui-form-label">地理位置</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="toptempera" id= "toptempera" lay-verify="required" maxlength="180" placeholder="公园年最高气温" autocomplete="off" class="layui-input">
+                        <input type="text" name="position" id= "position" maxlength="180" placeholder="地理位置" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">公园年最低气温</label>
+                    <label class="layui-form-label">交通状况</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="bottomtempera" id= "bottomtempera"  lay-verify="required" maxlength="180"  placeholder="公园年最低气温" autocomplete="off" class="layui-input">
+                        <input type="text" name="traffic" id= "traffic" maxlength="180" placeholder="交通状况" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
-
             <div class="layui-form-item">
-                    <label class="layui-form-label">公园地貌类型</label>
-                    <div class="layui-input-inline" style="width: 600px">
-                        <input type="text" name="type" id= "type"  lay-verify="required" maxlength="180"  placeholder="公园地貌类型(不超过200字)" autocomplete="off" class="layui-input">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">经度</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="lat" id= "lat" required lay-verify="number" placeholder="经度" autocomplete="off" class="layui-input">
                     </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">纬度</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="lng" id= "lng" required lay-verify="number" placeholder="纬度" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">海拔高度</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="altitude" id= "altitude" maxlength="180" placeholder="海拔高度" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">文物保护单位</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="level" id= "level" maxlength="180" placeholder="文物保护单位" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">景观特色</label>
+                <div class="layui-input-block">
+	            <textarea name="feature" style="width: 600px;height:60px" placeholder="请输入景观特色"
+                          class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">保护现状</label>
+                <div class="layui-input-block">
+	            <textarea name="status" style="width: 600px;height:60px" placeholder="请输入保护现状"
+                          class="layui-textarea"></textarea>
+                </div>
             </div>
 
-<!--            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">公园地貌类型</label>
+            <input type="hidden" id="img" name="img"/>
+            <div class="layui-form-item">
+                <label class="layui-form-label">照片</label>
                 <div class="layui-input-block">
-	            <textarea name="type" style="width: 600px;height:50px" required lay-verify="required|descLength" placeholder="请输入地貌类型(不超过200字)"
-                          class="layui-textarea"></textarea>
-                </div>
-            </div>-->
-
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">公园年平均降水</label>
-                <div class="layui-input-block">
-	            <textarea name="averagerain" style="width: 600px;height:50px" placeholder="请输入公园年平均降水情况"
-                          class="layui-textarea"></textarea>
-                </div>
-            </div>
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">植被绿地</label>
-                <div class="layui-input-block">
-	            <textarea name="plantcover" style="width: 600px;height:50px" placeholder="请输入植被、绿地"
-                          class="layui-textarea"></textarea>
-                </div>
-            </div>
-
-
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">珍稀动物</label>
-                <div class="layui-input-block">
-	            <textarea name="animal" style="width: 600px;height:50px" placeholder="请输入珍稀动物"
-                          class="layui-textarea"></textarea>
-                </div>
-            </div>
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">珍稀植物</label>
-                <div class="layui-input-block">
-	            <textarea name="plant" style="width: 600px;height:50px" placeholder="请输入珍稀植物"
-                          class="layui-textarea"></textarea>
-                </div>
-            </div>
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">水资源概况</label>
-                <div class="layui-input-block">
-	            <textarea name="water" style="width: 600px;height:50px" placeholder="请输入水资源概况"
-                          class="layui-textarea"></textarea>
-                </div>
-            </div>
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">气候特征</label>
-                <div class="layui-input-block">
-	            <textarea name="climate" style="width: 600px;height:50px" placeholder="请输入气候特征"
-                          class="layui-textarea"></textarea>
-                </div>
-            </div>
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">公园内灾害情况</label>
-                <div class="layui-input-block">
-	            <textarea name="disaster" style="width: 600px;height:50px" placeholder="请输入公园内灾害情况"
-                          class="layui-textarea"></textarea>
-                </div>
-            </div>
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">备注</label>
-                <div class="layui-input-block">
-	            <textarea name="note" style="width: 600px;height:50px" placeholder="请输入备注"
-                          class="layui-textarea"></textarea>
+                    <div class="layui-upload">
+                        <button type="button" class="layui-btn" id="uploadBtn">图片上传</button>
+                        <blockquote  class="layui-elem-quote layui-quote-nm" style="margin-top:10px;margin-left:30px;width: 565px;">
+                            预览图：
+                            <div class="layui-upload-list upload-list"></div>
+                        </blockquote>
+                    </div>
                 </div>
             </div>
 

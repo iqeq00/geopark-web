@@ -33,7 +33,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
             {field: 'makingtime', align: 'center', sort: true, title: '制作时间'},
             {field: 'constructionunit', align: 'center', sort: true, title: '设计施工单位'},
             {field: 'contentauther', align: 'center', sort: true, title: '内容作者'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             //{field: 'img', align: 'center', sort: true, title: '照片'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]

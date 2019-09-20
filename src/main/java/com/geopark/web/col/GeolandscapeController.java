@@ -43,7 +43,7 @@ public class GeolandscapeController extends SuperController {
 
         LambdaQueryChainWrapper<Geolandscape> qw = geolandscapeService.lambdaQuery();
         if (StringUtils.isNotBlank(gName)) {
-            qw.like(Geolandscape::getGName, gName);
+            qw.like(Geolandscape::getGname, gName);
         }
 
         return success(qw.page(this.<Geolandscape>getPage()));

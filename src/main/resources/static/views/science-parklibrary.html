@@ -96,7 +96,7 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">人员编号</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="number" id= "number" required lay-verify="required|commonLength" placeholder="人员编号" autocomplete="off" class="layui-input">
+                        <input type="text" name="number" id= "number" required lay-verify="required" maxlength="180" placeholder="人员编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">姓名</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="name" id= "name" required lay-verify="required|commonLength" placeholder="姓名" autocomplete="off" class="layui-input">
+                        <input type="text" name="name" id= "name" required lay-verify="required" maxlength="180" placeholder="姓名" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
@@ -123,13 +123,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">出生年月</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="birth" id= "birth" required lay-verify="commonLength" placeholder="出生年月" autocomplete="off" class="layui-input">
+                        <input type="text" name="birth" id= "birth" maxlength="180" placeholder="出生年月" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">学科方向</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="subjectDirection" id= "subjectDirection" required lay-verify="descrLength" placeholder="学科方向" autocomplete="off" class="layui-input">
+                        <input type="text" name="subjectDirection" id= "subjectDirection" maxlength="180" placeholder="学科方向" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@
                 <div class="layui-col-md12">
                     <label class="layui-form-label">聘用关系</label>
                     <div class="layui-input-inline" style="width: 260px">
-                        <input type="text" name="relationship" id= "relationship" required lay-verify="descrLength" placeholder="聘用关系" autocomplete="off" class="layui-input">
+                        <input type="text" name="relationship" id= "relationship" maxlength="180" placeholder="聘用关系" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>

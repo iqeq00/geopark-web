@@ -30,11 +30,11 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','la
             {field: 'othername', align: 'center', sort: true, title: '其他景区名称'},
             {field: 'othertype', align: 'center', sort: true, title: '景区类型'},
             {field: 'othersupervisor', align: 'center', sort: true, title: '主管部门'},
-            {field: 'othermatter', align: 'center', sort: true, title: '开发建设情况'},
+            //{field: 'othermatter', align: 'center', sort: true, title: '开发建设情况'},
             {field: 'overposition', align: 'center', sort: true, title: '重叠区域位置'},
             {field: 'overarea', align: 'center', sort: true, title: '重叠区域面积'},
-            {field: 'overinstruction', align: 'center', sort: true, title: '管理情况'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'overinstruction', align: 'center', sort: true, title: '管理情况'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });

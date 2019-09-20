@@ -16,8 +16,8 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
         toolbar: '#toolbar',
         defaultToolbar: [],
         //width:'auto',
-        url: '/humanlandscape/page',
-        title: '人文景观',
+        url: '/naturallandscape/page',
+        title: '自然景观',
         page: true,
         headers: {Authorization: config.getToken()},
         request: config.request,
@@ -27,14 +27,14 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
             //{type: 'checkbox', fixed: 'left'},
             // {field: 'id', title: 'ID'},
             {field: 'parkId', align: 'center', sort: true, title: '地质公园ID'},
-            {field: 'humanitnumber', align: 'center', sort: true, title: '景观编号'},
-            {field: 'hName', align: 'center', sort: true, title: '景观名称'},
+            {field: 'naturalnumber', align: 'center', sort: true, title: '景观编号'},
+            {field: 'nName', align: 'center', sort: true, title: '景观名称'},
             {field: 'position', align: 'center', sort: true, title: '地理位置'},
             //{field: 'traffic', align: 'center', sort: true, title: '交通状况'},
-            //{field: 'lat', align: 'center', sort: true, title: '经度'},
-            //{field: 'lng', align: 'center', sort: true, title: '纬度'},
+            {field: 'lat', align: 'center', sort: true, title: '经度'},
+            {field: 'lng', align: 'center', sort: true, title: '纬度'},
             {field: 'altitude', align: 'center', sort: true, title: '海拔高度'},
-            {field: 'feature', align: 'center', sort: true, title: '特色'},
+            //{field: 'feature', align: 'center', sort: true, title: '特色'},
             {field: 'level', align: 'center', sort: true, title: '保护单位'},
             {field: 'approvedtime', align: 'center', sort: true, title: '批准时间'},
             //{field: 'status', align: 'center', sort: true, title: '保护现状'},
@@ -63,7 +63,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
         if (obj.event === 'del') {
             layer.confirm('确定要删除吗？', function (index) {
                 layer.load(2);
-                lichee.delete('/humanlandscape/' + obj.data.id, {}, function () {
+                lichee.delete('/naturallandscape/' + obj.data.id, {}, function () {
                     layer.closeAll('loading');
                     layer.msg('删除成功', {icon: 1});
                     obj.del();
@@ -103,11 +103,11 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
     form.on('submit(formSubmit)', function (data) {
         layer.load(2);
         if (data.field.id) {
-            lichee.put('/humanlandscape/' + data.field.id, {data: data.field}, function (res) {
+            lichee.put('/naturallandscape/' + data.field.id, {data: data.field}, function (res) {
                 callFunction(res);
             });
         } else {
-            lichee.post('/humanlandscape', {data: data.field}, function (res) {
+            lichee.post('/naturallandscape', {data: data.field}, function (res) {
                 callFunction(res);
             });
         }

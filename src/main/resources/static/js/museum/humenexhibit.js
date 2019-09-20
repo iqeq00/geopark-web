@@ -29,13 +29,13 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
             {field: 'parkId', align: 'center', sort: true, title: '地质公园ID'},
             {field: 'specimennumber', align: 'center', sort: true, title: '标本编号'},
             {field: 'specimenname', align: 'center', sort: true, title: '标本名称'},
-            {field: 'hallnumber', align: 'center', sort: true, title: '馆内编号'},
+            //{field: 'hallnumber', align: 'center', sort: true, title: '馆内编号'},
             {field: 'specimentype', align: 'center', sort: true, title: '标本类型'},
             {field: 'specimensource', align: 'center', sort: true, title: '标本来源'},
             {field: 'collectionnumber', align: 'center', sort: true, title: '收藏数量'},
             {field: 'savestate', align: 'center', sort: true, title: '保存状态'},
-            {field: 'featuredescription', align: 'center', sort: true, title: '特征描述'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'featuredescription', align: 'center', sort: true, title: '特征描述'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             //{field: 'img', align: 'center', sort: true, title: '照片'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]

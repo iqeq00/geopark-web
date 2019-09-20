@@ -39,7 +39,7 @@
                         <div class="layui-inline">
                             <label class="layui-form-labelLeft">遗迹景观名称</label>
                             <div class="layui-input-inline">
-                                <input name="gName" class="layui-input search-input" type="text" placeholder="遗迹景观名称" autocomplete="off"/>
+                                <input name="gname" class="layui-input search-input" type="text" placeholder="遗迹景观名称" autocomplete="off"/>
                             </div>
                         </div>
                         <div class="layui-inline">
@@ -92,7 +92,7 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">统一编号</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="unitenumber" id= "unitenumber" required lay-verify="required|commonLength" placeholder="统一编号" autocomplete="off" class="layui-input">
+                        <input type="text" name="unitenumber" id= "unitenumber"  lay-verify="required" maxlength="180" placeholder="统一编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -101,13 +101,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">原编号</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="originalnumber" id= "originalnumber" required lay-verify="commonLength" placeholder="原编号" autocomplete="off" class="layui-input">
+                        <input type="text" name="originalnumber" id= "originalnumber" maxlength="180" placeholder="原编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">地质遗迹名称</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="gName" id= "gName" required lay-verify="required|descLength" placeholder="地质遗迹名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="gname" id="gname"  lay-verify="required" maxlength="180" placeholder="地质遗迹名称" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -116,13 +116,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">原名称</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="originalname" id= "originalname" required lay-verify="descLength" placeholder="原名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="originalname" id= "originalname" maxlength="180" placeholder="原名称" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">遗迹类型</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="type" id= "type" required lay-verify="descLength" placeholder="遗迹类型" autocomplete="off" class="layui-input">
+                        <input type="text" name="type" id= "type" maxlength="180" placeholder="遗迹类型" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -130,13 +130,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">地理位置</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="position" id= "position" required lay-verify="descLength" placeholder="地理位置" autocomplete="off" class="layui-input">
+                        <input type="text" name="position" id= "position" maxlength="180" placeholder="地理位置" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">交通状况</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="traffic" id= "traffic" required lay-verify="descLength" placeholder="交通状况" autocomplete="off" class="layui-input">
+                        <input type="text" name="traffic" id= "traffic" maxlength="180" placeholder="交通状况" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -144,13 +144,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">经度</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="lat" id= "lat" required lay-verify="number" placeholder="经度" autocomplete="off" class="layui-input">
+                        <input type="text" name="lat" id= "lat"  lay-verify="number" placeholder="经度" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">纬度</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="lng" id= "lng" required lay-verify="number" placeholder="纬度" autocomplete="off" class="layui-input">
+                        <input type="text" name="lng" id= "lng"  lay-verify="number" placeholder="纬度" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -158,13 +158,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">海拔高度</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="altitude" id= "altitude" required lay-verify="descLength" placeholder="海拔高度" autocomplete="off" class="layui-input">
+                        <input type="text" name="altitude" id= "altitude" maxlength="180" placeholder="海拔高度" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">地质背景</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="background" id= "background" required lay-verify="descLength" placeholder="地质背景" autocomplete="off" class="layui-input">
+                        <input type="text" name="background" id= "background" maxlength="180" placeholder="地质背景" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -172,13 +172,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">评价级别</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="evaluation" id= "evaluation" required lay-verify="descLength" placeholder="评价级别" autocomplete="off" class="layui-input">
+                        <input type="text" name="evaluation" id= "evaluation" maxlength="180" placeholder="评价级别" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">保护级别</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="protection" id= "protection" required lay-verify="descLength" placeholder="保护级别" autocomplete="off" class="layui-input">
+                        <input type="text" name="protection" id= "protection" maxlength="180" placeholder="保护级别" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -186,13 +186,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">观赏价值</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="value" id= "value" required lay-verify="descLength" placeholder="观赏价值" autocomplete="off" class="layui-input">
+                        <input type="text" name="value" id= "value" maxlength="180" placeholder="观赏价值" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">遗迹成因类型</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="causes" id= "causes" required lay-verify="descLength" placeholder="遗迹成因类型" autocomplete="off" class="layui-input">
+                        <input type="text" name="causes" id= "causes" maxlength="180" placeholder="遗迹成因类型" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>

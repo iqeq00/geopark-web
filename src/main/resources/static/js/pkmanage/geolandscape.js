@@ -32,17 +32,17 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
             {field: 'originalname', align: 'center', sort: true, title: '原名称'},
             {field: 'type', align: 'center', sort: true, title: '遗迹类型'},
             {field: 'position', align: 'center', sort: true, title: '地理位置'},
-            {field: 'traffic', align: 'center', sort: true, title: '交通状况'},
-            {field: 'lat', align: 'center', sort: true, title: '经度'},
-            {field: 'lng', align: 'center', sort: true, title: '纬度'},
+            //{field: 'traffic', align: 'center', sort: true, title: '交通状况'},
+            //{field: 'lat', align: 'center', sort: true, title: '经度'},
+            //{field: 'lng', align: 'center', sort: true, title: '纬度'},
             {field: 'altitude', align: 'center', sort: true, title: '海拔高度'},
-            {field: 'background', align: 'center', sort: true, title: '地质背景'},
+            //{field: 'background', align: 'center', sort: true, title: '地质背景'},
             {field: 'feature', align: 'center', sort: true, title: '特征'},
             {field: 'evaluation', align: 'center', sort: true, title: '评价级别'},
             {field: 'protection', align: 'center', sort: true, title: '保护级别'},
             {field: 'value', align: 'center', sort: true, title: '观赏价值'},
-            {field: 'causes', align: 'center', sort: true, title: '成因类型'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'causes', align: 'center', sort: true, title: '成因类型'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });

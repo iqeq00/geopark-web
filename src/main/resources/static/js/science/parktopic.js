@@ -34,9 +34,9 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
             {field: 'carryunit', align: 'center', sort: true, title: '完成单位'},
             {field: 'organizer', align: 'center', sort: true, title: '主管单位'},
             {field: 'theme', align: 'center', sort: true, title: '主题词'},
-            {field: 'achievementsummary', align: 'center', sort: true, title: '成果摘要'},
-            {field: 'parkcollect', align: 'center', sort: true, title: '收藏情况'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'achievementsummary', align: 'center', sort: true, title: '成果摘要'},
+            //{field: 'parkcollect', align: 'center', sort: true, title: '收藏情况'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             //{field: 'img', align: 'center', sort: true, title: '照片'},
             {align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]

@@ -33,7 +33,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             {field: 'code', align: 'center', sort: true, title: '地质代号'},
             {field: 'research', align: 'center', sort: true, title: '野外定名'},
             {field: 'achievement', align: 'center', sort: true, title: '测试成果'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });

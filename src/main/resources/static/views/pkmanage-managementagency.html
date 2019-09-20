@@ -10,11 +10,11 @@
     <title>地质任务管理后台--管理机构</title>
     <script type="text/javascript" src="/views/base/css.js"></script>
     <!--解决表单字段名长度-->
-    <style>
-        .layui-form-label{
-            width: 110px;
-        }
-    </style>
+<!--    <style>-->
+<!--        .layui-form-label{-->
+<!--            width: 110px;-->
+<!--        }-->
+<!--    </style>-->
 </head>
 <body class="layui-layout-body">
 
@@ -53,7 +53,9 @@
 
             </div>
 
-            <table class="" id="table" lay-filter="tableFilter"></table>
+            <div>
+                <table class="" id="table" lay-filter="tableFilter"></table>
+            </div>
 
             <script type="text/html" id="toolbar">
                 <a class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon"></i>添加</a>
@@ -92,7 +94,7 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">管理机构名称</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="managename" id= "managename" required lay-verify="required|commonLength" placeholder="管理机构名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="managename" id= "managename" required lay-verify="required" maxlength="180" placeholder="管理机构名称" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -101,13 +103,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">管理机构级别</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="level" id= "level" required lay-verify="commonLength" placeholder="管理机构级别" autocomplete="off" class="layui-input">
+                        <input type="text" name="level" id= "level" maxlength="180" placeholder="管理机构级别" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">主要负责人</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="maincharge" id= "maincharge" required lay-verify="commonLength" placeholder="主要负责人" autocomplete="off" class="layui-input">
+                        <input type="text" name="maincharge" id= "maincharge"  maxlength="180" placeholder="主要负责人" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -116,13 +118,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">次要负责人</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="secondarycharge" id= "secondarycharge" required lay-verify="commonLength" placeholder="次要负责人" autocomplete="off" class="layui-input">
+                        <input type="text" name="secondarycharge" id= "secondarycharge"  maxlength="180" placeholder="次要负责人" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">负责人职务</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="job" id= "job" required lay-verify="commonLength" placeholder="负责人职务" autocomplete="off" class="layui-input">
+                        <input type="text" name="job" id= "job"  maxlength="180" placeholder="负责人职务" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -131,13 +133,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">管理机构人数</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="number" id= "number" required lay-verify="number" placeholder="管理机构人数" autocomplete="off" class="layui-input">
+                        <input type="text" name="number" id= "number"  lay-verify="number" placeholder="管理机构人数" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">负责人电话</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="phone" id= "phone" required lay-verify="commonLength" placeholder="负责人电话" autocomplete="off" class="layui-input">
+                        <input type="text" name="phone" id= "phone"  maxlength="180" placeholder="负责人电话" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -146,7 +148,7 @@
                 <div class="layui-col-md12">
                     <label class="layui-form-label">机构工作人员</label>
                     <div class="layui-input-inline" style="width: 600px">
-                        <input type="text" name="responsibility" id= "responsibility" required lay-verify="descLength" placeholder="机构工作人员" autocomplete="off" class="layui-input">
+                        <input type="text" name="responsibility" id= "responsibility"  maxlength="180" placeholder="机构工作人员" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -154,7 +156,7 @@
                 <div class="layui-col-md12">
                     <label class="layui-form-label">机构职责分工</label>
                     <div class="layui-input-inline" style="width: 600px">
-                        <input type="text" name="area" id= "area" required lay-verify="descLength" placeholder="机构职责分工" autocomplete="off" class="layui-input">
+                        <input type="text" name="area" id= "area"  maxlength="180" placeholder="机构职责分工" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>

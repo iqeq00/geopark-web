@@ -92,7 +92,7 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">文件编号</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="number" id= "number" required lay-verify="required|commonLength" placeholder="文件编号" autocomplete="off" class="layui-input">
+                        <input type="text" name="number" id= "number"  lay-verify="required" maxlength="180" placeholder="文件编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -101,13 +101,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">文件名称</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="filename" id= "filename" required lay-verify="required|commonLength" placeholder="文件名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="filename" id= "filename"  lay-verify="required" maxlength="180" placeholder="文件名称" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">发布单位</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="unit" id= "unit" required lay-verify="commonLength" placeholder="发布单位" autocomplete="off" class="layui-input">
+                        <input type="text" name="unit" id= "unit" maxlength="180" placeholder="发布单位" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -116,13 +116,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">规划期限</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="time" id= "time" required lay-verify="commonLength" placeholder="规划期限" autocomplete="off" class="layui-input">
+                        <input type="text" name="time" id= "time" maxlength="180" placeholder="规划期限" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">发布时间</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="publishtime" id= "publishtime" required lay-verify="commonLength" placeholder="发布时间" autocomplete="off" class="layui-input">
+                        <input type="text" name="publishtime" id= "publishtime" maxlength="180" placeholder="发布时间" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                 <div class="layui-col-md12">
                     <label class="layui-form-label">关键字</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="keyword" id= "keyword" required lay-verify="descLength" placeholder="关键字" autocomplete="off" class="layui-input">
+                        <input type="text" name="keyword" id= "keyword" maxlength="180" placeholder="关键字" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -139,7 +139,7 @@
                 <div class="layui-col-md12">
                     <label class="layui-form-label">摘要</label>
                     <div class="layui-input-inline" style="width: 600px">
-                        <input type="text" name="summary" id= "summary" required lay-verify="descLength" placeholder="摘要" autocomplete="off" class="layui-input">
+                        <input type="text" name="summary" id= "summary" maxlength="180" placeholder="摘要" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>

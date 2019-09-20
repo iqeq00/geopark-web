@@ -92,7 +92,7 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">标本编号</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="specimennumber" id= "specimennumber" required lay-verify="required|commonLength" placeholder="标本编号" autocomplete="off" class="layui-input">
+                        <input type="text" name="specimennumber" id= "specimennumber" required lay-verify="required" maxlength="180"  placeholder="标本编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -101,13 +101,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">标本名称</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="specimenname" id= "specimenname" required lay-verify="required|commonLength" placeholder="标本名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="specimenname" id= "specimenname"  lay-verify="required" maxlength="180"  placeholder="标本名称" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">野外编号</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="fieldnumber" id= "fieldnumber" required lay-verify="descLength" placeholder="野外编号" autocomplete="off" class="layui-input">
+                        <input type="text" name="fieldnumber" id= "fieldnumber" maxlength="180"  placeholder="野外编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -116,13 +116,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">馆内编号</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="hallnumber" id= "hallnumber" required lay-verify="descLength" placeholder="馆内编号" autocomplete="off" class="layui-input">
+                        <input type="text" name="hallnumber" id= "hallnumber" maxlength="180"  placeholder="馆内编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">英文或拉丁学名</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="englishlatin" id= "englishlatin" required lay-verify="descLength" placeholder="英文拉丁学名" autocomplete="off" class="layui-input">
+                        <input type="text" name="englishlatin" id= "englishlatin" maxlength="180"  placeholder="英文拉丁学名" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -131,13 +131,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">标本类型</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="specimentype" id= "specimentype" required lay-verify="descLength" placeholder="标本类型" autocomplete="off" class="layui-input">
+                        <input type="text" name="specimentype" id= "specimentype" maxlength="180"  placeholder="标本类型" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">采集位置</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="collectionposition" id= "collectionposition" required lay-verify="descLength" placeholder="采集位置" autocomplete="off" class="layui-input">
+                        <input type="text" name="collectionposition" id= "collectionposition" maxlength="180"  placeholder="采集位置" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -146,13 +146,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">采集时间</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="collectiontime" id= "collectiontime" required lay-verify="descLength" placeholder="采集时间" autocomplete="off" class="layui-input">
+                        <input type="text" name="collectiontime" id= "collectiontime" maxlength="180"  placeholder="采集时间" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">采集人</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="collectionhuman" id= "collectionhuman" required lay-verify="descLength" placeholder="采集人" autocomplete="off" class="layui-input">
+                        <input type="text" name="collectionhuman" id= "collectionhuman" maxlength="180"  placeholder="采集人" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -160,13 +160,13 @@
                 <div class="layui-col-md6">
                     <label class="layui-form-label">鉴定人</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="identificationhuman" id= "identificationhuman" required lay-verify="descLength" placeholder="鉴定人" autocomplete="off" class="layui-input">
+                        <input type="text" name="identificationhuman" id= "identificationhuman" maxlength="180"  placeholder="鉴定人" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-md6">
                     <label class="layui-form-label">收藏数量</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="collectionnumber" id= "collectionnumber" required lay-verify="descLength" placeholder="收藏数量" autocomplete="off" class="layui-input">
+                        <input type="text" name="collectionnumber" id= "collectionnumber" maxlength="180"  placeholder="收藏数量" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
@@ -174,7 +174,7 @@
                 <div class="layui-col-md12">
                     <label class="layui-form-label">保存状态</label>
                     <div class="layui-input-inline" style="width: 220px">
-                        <input type="text" name="savestate" id= "savestate" required lay-verify="descLength" placeholder="保存状态" autocomplete="off" class="layui-input">
+                        <input type="text" name="savestate" id= "savestate" maxlength="256"  placeholder="保存状态" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>

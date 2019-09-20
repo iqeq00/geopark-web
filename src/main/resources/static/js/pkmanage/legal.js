@@ -32,8 +32,8 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate', 'f
             {field: 'unit', align: 'center', sort: true, title: '发布单位'},
             {field: 'time', align: 'center', sort: true, title: '规划期限'},
             {field: 'keyword', align: 'center', sort: true, title: '关键字'},
-            {field: 'summary', align: 'center', sort: true, title: '摘要'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'summary', align: 'center', sort: true, title: '摘要'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });

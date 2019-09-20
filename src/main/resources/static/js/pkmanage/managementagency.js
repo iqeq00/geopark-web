@@ -14,7 +14,6 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         elem: '#table',
         toolbar: '#toolbar',
         defaultToolbar: [],
-        width:1500,
         url: '/managementagency/page',
         title: '管理机构',
         page: true,
@@ -22,10 +21,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
         request: config.request,
         parseData: config.parseData,
         response: config.response,
-
         cols: [[
-            //{type: 'checkbox', fixed: 'left'},
-            // {field: 'id', title: 'ID'},
             {field: 'parkId', align: 'center', sort: true, title: '公园编号'},
             {field: 'managename', align: 'center', sort: true, title: '管理机构名称'},
             {field: 'level', align: 'center', sort: true, title: '级别'},
@@ -33,11 +29,17 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             {field: 'secondarycharge', align: 'center', sort: true, title: '次要负责人'},
             {field: 'job', align: 'center', sort: true, title: '负责人职务'},
             {field: 'number', align: 'center', sort: true, title: '机构人数'},
-            {field: 'list', align: 'center', sort: true, title: '工作人员'},
-            {field: 'responsibility', align: 'center', sort: true, title: '职责与分工'},
+            //{field: 'list', align: 'center', sort: true, title: '工作人员'},
+            //{field: 'responsibility', align: 'center', sort: true, title: '职责与分工'},
             {field: 'phone', align: 'center', sort: true, title: '负责人电话'},
-            {align : 'center', title: '操作', toolbar: '#bar', width: 180}
-        ]]
+            {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
+        ]],
+        done: function (res, curr, count) {
+            var fixedArray=$(".layui-table-fixed-r");
+            $.each(fixedArray,function (index, item) {
+                $(this).removeClass("layui-hide");
+            })
+        }
     });
 
     table.on('toolbar(tableFilter)', function (obj) {

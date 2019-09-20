@@ -31,7 +31,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             {field: 'position', align: 'center', sort: true, title: '位置'},
             {field: 'coordinate', align: 'center', sort: true, title: '坐标'},
             {field: 'constructiontime', align: 'center', sort: true, title: '建设时间'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });

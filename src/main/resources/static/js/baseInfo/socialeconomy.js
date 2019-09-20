@@ -30,7 +30,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
             {field: 'economic', align: 'center', sort: true, title: '公园内经济发展情况'},
             {field: 'areaeconomic', align: 'center', sort: true, title: '所在区域经济发展情况'},
             {field: 'develop', align: 'center', sort: true, title: '公园对于持续发展的贡献'},
-            {align : 'center', title: '操作', toolbar: '#bar', width: 150}
+            {align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });
 

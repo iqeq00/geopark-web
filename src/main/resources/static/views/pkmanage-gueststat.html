@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">时间</label>
+                    <label class="layui-form-label">时间（年）</label>
                     <div class="layui-input-block">
                         <input type="text" name="time" maxlength="256" placeholder="时间" autocomplete="off" class="layui-input">
                     </div>
@@ -99,9 +99,9 @@
                     </div>
                 </div>
                 <div class="layui-col-md6">
-                    <label class="layui-form-label">游客人数</label>
+                    <label class="layui-form-label">游客(万人次)</label>
                     <div class="layui-input-block">
-                        <input type="text" name="touristsnumber" lay-verify="required" lay-verType="tips" placeholder="游客人数" autocomplete="off" class="layui-input">
+                        <input type="text" name="touristsnumber" lay-verify="required|number" lay-verType="tips" placeholder="游客人数" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>

@@ -32,7 +32,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
             {field: 'scienceobject', align: 'center', sort: true, title: '科普对象'},
             {field: 'sciencecontent', align: 'center', sort: true, title: '科普内容'},
             {field: 'sciencestaff', align: 'center', sort: true, title: '科普工作人员'},
-            {field: 'note', align: 'center', sort: true, title: '备注'},
+            //{field: 'note', align: 'center', sort: true, title: '备注'},
             //{field: 'img', align: 'center', sort: true, title: '照片'},
             {align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
