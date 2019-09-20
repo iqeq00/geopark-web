@@ -39,7 +39,7 @@ public class SysMenuController extends SuperController {
     @GetMapping("/list")
     public ApiResponses<List<SysMenu>> list() {
 
-        return success(menuService.list());
+        return success(menuService.query().orderByAsc("sort").list());
     }
 
     @Resources

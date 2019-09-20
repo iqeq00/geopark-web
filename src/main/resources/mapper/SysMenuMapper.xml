@@ -11,7 +11,8 @@
         sm.router,
         sm.alias,
         sm.icon,
-        sm.path
+        sm.path,
+        sm.sort
         FROM
         sys_menu sm
         LEFT JOIN sys_role_menu srm ON sm.id = srm.menu_id
@@ -28,6 +29,7 @@
                 #{item}
             </foreach>
         </if>
+        ORDER BY sm.sort
     </select>
 
 </mapper>

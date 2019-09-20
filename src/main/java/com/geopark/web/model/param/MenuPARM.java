@@ -42,6 +42,8 @@ public class MenuPARM extends Convert {
 
     private String alias;
 
+    private Integer sort;
+
     @NotNull(groups = {MenuPARM.Create.class, MenuPARM.Status.class}, message = "状态不能为空")
     private StatusEnum status;
 
