@@ -1,6 +1,8 @@
 package com.geopark.web.col.open;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.additional.query.impl.LambdaQueryChainWrapper;
 import com.geopark.framework.annotations.ApiOperation;
@@ -66,6 +68,16 @@ public class OpenApiController extends SuperController {
     }
 
     @Resources(AuthTypeEnum.OPEN)
+    @ApiOperation("openApi地质遗迹景观详情")
+    @GetMapping("/geolandscapeInfo1")
+    public ApiResponses<Geolandscape> geolandscapeInfo(String unitenumber) {
+
+        QueryWrapper<Geolandscape> queryWrapper = new QueryWrapper<Geolandscape>();
+        queryWrapper.eq("unitenumber", unitenumber);
+        return success(geolandscapeService.getOne(queryWrapper));
+    }
+
+    @Resources(AuthTypeEnum.OPEN)
     @ApiOperation("openApi人文景观列表")
     @GetMapping("/humanlandscapeList")
     public ApiResponses<List<Humanlandscape>> humanlandscapeList(Integer parkId) {
@@ -86,6 +98,15 @@ public class OpenApiController extends SuperController {
     }
 
     @Resources(AuthTypeEnum.OPEN)
+    @ApiOperation("openApi人文景观详情")
+    @GetMapping("/humanlandscapeInfo1")
+    public ApiResponses<Humanlandscape> humanlandscapeInfo(String humanitnumber) {
+
+        ;
+        return success(humanlandscapeService.getOne(new LambdaQueryWrapper<Humanlandscape>().eq(Humanlandscape::getHumanitnumber, humanitnumber)));
+    }
+
+    @Resources(AuthTypeEnum.OPEN)
     @ApiOperation("openApi自然景观列表")
     @GetMapping("/naturallandscapeList")
     public ApiResponses<List<Naturallandscape>> naturallandscapeList(Integer parkId) {
@@ -103,5 +124,13 @@ public class OpenApiController extends SuperController {
     public ApiResponses<Naturallandscape> naturallandscapeInfo(Integer id) {
 
         return success(naturallandscapeService.getById(id));
+    }
+
+    @Resources(AuthTypeEnum.OPEN)
+    @ApiOperation("openApi自然景观详情")
+    @GetMapping("/naturallandscapeInfo1")
+    public ApiResponses<Naturallandscape> naturallandscapeInfo(String naturalnumber) {
+
+        return success(naturallandscapeService.getOne(new LambdaQueryWrapper<Naturallandscape>().eq(Naturallandscape::getNaturalnumber, naturalnumber)));
     }
 }
