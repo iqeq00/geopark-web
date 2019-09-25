@@ -3,10 +3,8 @@ package com.geopark.web.model.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -73,12 +71,12 @@ public class Geolandscape implements Serializable {
     /**
      * 经度
      */
-    private Double lat;
+    private String lat;
 
     /**
      * 纬度
      */
-    private Double lng;
+    private String lng;
 
     /**
      * 海拔高度

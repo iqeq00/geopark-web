@@ -57,12 +57,12 @@ public class Naturallandscape implements Serializable {
     /**
      * 经度
      */
-    private Double lat;
+    private String lat;
 
     /**
      * 纬度
      */
-    private Double lng;
+    private String lng;
 
     /**
      * 海拔高度

@@ -16,8 +16,8 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
         toolbar: '#toolbar',
         defaultToolbar: [],
         //width:'auto',
-        url: '/humanlandscape/page',
-        title: '人文景观',
+        url: '/museumexhibition/page',
+        title: '博物馆展厅',
         page: true,
         headers: {Authorization: config.getToken()},
         request: config.request,
@@ -27,17 +27,10 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
             //{type: 'checkbox', fixed: 'left'},
             // {field: 'id', title: 'ID'},
             {field: 'parkId', align: 'center', sort: true, title: '地质公园ID'},
-            {field: 'humanitnumber', align: 'center', sort: true, title: '景观编号'},
-            {field: 'hname', align: 'center', sort: true, title: '景观名称'},
-            //{field: 'position', align: 'center', sort: true, title: '地理位置'},
-            //{field: 'traffic', align: 'center', sort: true, title: '交通状况'},
-            {field: 'lat', align: 'center', sort: true, title: '经度'},
-            {field: 'lng', align: 'center', sort: true, title: '纬度'},
-            //{field: 'altitude', align: 'center', sort: true, title: '海拔高度'},
-            //{field: 'feature', align: 'center', sort: true, title: '特色'},
-            //{field: 'level', align: 'center', sort: true, title: '保护单位'},
-            //{field: 'approvedtime', align: 'center', sort: true, title: '批准时间'},
-            //{field: 'status', align: 'center', sort: true, title: '保护现状'},
+            {field: 'number', align: 'center', sort: true, title: '展厅编号'},
+            {field: 'exhibitionname', align: 'center', sort: true, title: '展厅名称'},
+            {field: 'facilities', align: 'center', sort: true, title: '公共服务设施情况'},
+            {field: 'exhibitiondesc', align: 'center', sort: true, title: '展厅描述'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]
     });
@@ -63,7 +56,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
         if (obj.event === 'del') {
             layer.confirm('确定要删除吗？', function (index) {
                 layer.load(2);
-                lichee.delete('/humanlandscape/' + obj.data.id, {}, function () {
+                lichee.delete('/museumexhibition/' + obj.data.id, {}, function () {
                     layer.closeAll('loading');
                     layer.msg('删除成功', {icon: 1});
                     obj.del();
@@ -87,7 +80,11 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
                     $('#parkId').vm({parks: data.result});
                     form.render('select');
                 });
-                imageUpload.init("uploadBtn", "img", "humanlandscape");
+                lichee.get('/museum/list', {async: false}, function (data) {
+                    $('#museumid').vm({museums: data.result});
+                    form.render('select');
+                });
+                imageUpload.init("uploadBtn", "img", "museumexhibition");
                 if (data) {
                     form.val('formFilter', data);
                     imageUpload.initImageList(data.img);
@@ -103,11 +100,11 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
     form.on('submit(formSubmit)', function (data) {
         layer.load(2);
         if (data.field.id) {
-            lichee.put('/humanlandscape/' + data.field.id, {data: data.field}, function (res) {
+            lichee.put('/museumexhibition/' + data.field.id, {data: data.field}, function (res) {
                 callFunction(res);
             });
         } else {
-            lichee.post('/humanlandscape', {data: data.field}, function (res) {
+            lichee.post('/museumexhibition', {data: data.field}, function (res) {
                 callFunction(res);
             });
         }

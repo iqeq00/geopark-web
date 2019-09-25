@@ -17,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p>
  * 博物馆基本情况 前端控制器
@@ -48,6 +50,14 @@ public class MuseumController extends SuperController {
 
         return success(qw.page(this.<Museum>getPage()));
 
+    }
+
+    @Resources
+    @ApiOperation("博物馆查询(列表)")
+    @GetMapping("/list")
+    public ApiResponses<List<Museum>> list() {
+
+        return success(museumService.lambdaQuery().list());
     }
 
     @Resources(AuthTypeEnum.LOGIN)
