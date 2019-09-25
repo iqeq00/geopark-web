@@ -62,6 +62,7 @@ public class ShiroAutoConfiguration {
         Map<String, String> filterMap = new LinkedHashMap<>();
         filterMap.put("/**/**.*", "anon");
         filterMap.put("/", "anon");
+        filterMap.put("/export/**", "anon");
         filterMap.put("/**", "jwt");
         shiroFilter.setFilterChainDefinitionMap(filterMap);
         return shiroFilter;
