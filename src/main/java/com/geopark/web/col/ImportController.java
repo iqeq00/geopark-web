@@ -9,8 +9,11 @@ import com.geopark.framework.file.FileUpload;
 import com.geopark.framework.image.ImageUpload;
 import com.geopark.framework.responses.ApiResponses;
 import com.geopark.framework.utils.ApiAssert;
+import com.geopark.web.cpt.xls.GeolandscapeExcel;
+import com.geopark.web.model.entity.Geolandscape;
 import com.geopark.web.model.vo.FileVo;
 import com.geopark.web.model.vo.ImageVo;
+import com.geopark.web.service.GeolandscapeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,29 +25,22 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.util.List;
 
 /**
- * 文件上传
+ * xls 导入
  *
  * @author lichee
  */
 @Slf4j
 @RestController
 @MultipartConfig
-@RequestMapping(value = "/upload")
-public class UploadController extends SuperController {
-
-    @Autowired
-    private ImageUpload imageUpload;
+@RequestMapping(value = "/import")
+public class ImportController extends SuperController {
 
     @Autowired
     private FileUpload fileUpload;
-
-    @Value("${geopark.image.url}")
-    private String imageUrl;
-
-    @Value("${geopark.image.location}")
-    private String imageLocation;
 
     @Value("${geopark.file.url}")
     private String fileUrl;
@@ -52,25 +48,15 @@ public class UploadController extends SuperController {
     @Value("${geopark.file.location}")
     private String fileLocation;
 
-    @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("上传图片")
-    @PostMapping(value = "/img")
-    public ApiResponses<ImageVo> img(HttpServletRequest servletRequest, String keyPath,
-         @RequestParam(value="file",required=false)  MultipartFile file) {
+    @Autowired
+    private GeolandscapeService geolandscapeService;
 
-        ApiAssert.notNull(ErrorCodeEnum.BAD_REQUEST, keyPath);
-        ImageVo imageVo = null;
-        if (!file.isEmpty()) {
-            imageVo = invokeImgUpload(keyPath, file);
-        } else {
-            ApiAssert.failure(ErrorCodeEnum.BAD_REQUEST);
-        }
-        return success(imageVo);
-    }
+    @Autowired
+    private GeolandscapeExcel geolandscapeExcel;
 
     @Resources(AuthTypeEnum.LOGIN)
-    @ApiOperation("上传文件")
-    @PostMapping(value = "/file")
+    @ApiOperation("导入xls")
+    @PostMapping(value = "/xls")
     public ApiResponses<FileVo> file(HttpServletRequest servletRequest, String keyPath,
                                         @RequestParam(value="file",required=false)  MultipartFile file) {
 
@@ -78,20 +64,20 @@ public class UploadController extends SuperController {
         FileVo fileVo = null;
         if (!file.isEmpty()) {
             fileVo = invokeFileUpload(keyPath, file);
+            importFile(keyPath, fileVo);
         } else {
             ApiAssert.failure(ErrorCodeEnum.BAD_REQUEST);
         }
         return success(fileVo);
     }
 
-    private ImageVo invokeImgUpload(String keyPath, MultipartFile file) {
+    private void importFile(String keyPath, FileVo fileVo) {
 
-        String filename = imageUpload.imageUpload(imageLocation + keyPath, file);
-        ImageVo imageVo = new ImageVo();
-        imageVo.setPath(imageUrl + keyPath + "/" + filename);
-        imageVo.setName(filename);
-        imageVo.setOriginalName(file.getOriginalFilename());
-        return imageVo;
+        File file = new File(fileLocation + keyPath, fileVo.getName());
+        if(keyPath.equals("geolandscape")){
+            List<Geolandscape> list = geolandscapeExcel.readFile(file);
+            geolandscapeService.saveBatch(list);
+        }
     }
 
     private FileVo invokeFileUpload(String keyPath, MultipartFile file) {
