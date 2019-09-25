@@ -74,6 +74,7 @@
     <div class="layui-tab-content">
         <form id="form" lay-filter="formFilter" class="layui-form model-form ">
             <input type="hidden" id="id" name="id"/>
+            <input type="hidden" id="url" name="url"/>
             <div class="layui-form-item">
                 <div class="layui-col-md6">
                     <label class="layui-form-label">公园编号</label>
@@ -133,6 +134,26 @@
                     <label class="layui-form-label">是否出版</label>
                     <div class="layui-input-inline" style="width: 260px">
                         <input type="text" name="publishing" id= "publishing" maxlength="180" placeholder="是否出版" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">文件</label>
+                <div class="layui-input-block">
+                    <div class="layui-upload">
+                        <button type="button" class="layui-btn" id="uploadBtn">文件上传</button>
+                        <div class="layui-upload-list">
+                            <table class="layui-table">
+                                <thead>
+                                <tr>
+                                    <th>文件名</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="fileList"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

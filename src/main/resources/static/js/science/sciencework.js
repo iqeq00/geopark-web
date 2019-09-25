@@ -1,6 +1,6 @@
 //公园概况
 
-layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], function () {
+layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate', 'fileUpload'], function () {
 
     var config = layui.config;
     var lichee = layui.lichee;
@@ -9,6 +9,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
     var table = layui.table;
     var form = layui.form;
     var laydate = layui.laydate;
+    var fileUpload = layui.fileUpload;
 
     var tableInfo = table.render({
         elem: '#table',
@@ -83,8 +84,10 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate'], f
                     $('#parkId').vm({parks: data.result});
                     form.render('select');
                 });
+                fileUpload.init("uploadBtn", "url", "sciencework");
                 if (data) {
                     form.val('formFilter', data);
+                    fileUpload.initFileList(data.url);
                 }
                 $('#form .close').click(function () {
                     layer.closeAll('page');

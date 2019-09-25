@@ -80,31 +80,9 @@ public class Sciencework implements Serializable {
 
     private LocalDateTime deletedAt;
 
-
-    public static final String ID = "id";
-
-    public static final String PARK_ID = "park_id";
-
-    public static final String ITEMNUMBER = "itemnumber";
-
-    public static final String SCIENCEITEM = "scienceitem";
-
-    public static final String MASSES = "masses";
-
-    public static final String AUTHER = "auther";
-
-    public static final String CARRYTIME = "carrytime";
-
-    public static final String CARRYUNIT = "carryunit";
-
-    public static final String PUBLISHING = "publishing";
-
-    public static final String NOTE = "note";
-
-    public static final String CREATED_AT = "created_at";
-
-    public static final String UPDATED_AT = "updated_at";
-
-    public static final String DELETED_AT = "deleted_at";
+    /**
+     * 存储地址
+     */
+    private String url;
 
 }

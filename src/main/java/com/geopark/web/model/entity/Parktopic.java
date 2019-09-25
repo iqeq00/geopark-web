@@ -93,33 +93,9 @@ public class Parktopic implements Serializable {
      */
     private String img;
 
-
-    public static final String ID = "id";
-
-    public static final String PARK_ID = "park_id";
-
-    public static final String REPORTNUMBER = "reportnumber";
-
-    public static final String REPORTNAME = "reportname";
-
-    public static final String ACHIEVEMENTTYPE = "achievementtype";
-
-    public static final String AUTHER = "auther";
-
-    public static final String CARRYTIME = "carrytime";
-
-    public static final String CARRYUNIT = "carryunit";
-
-    public static final String ORGANIZER = "organizer";
-
-    public static final String THEME = "theme";
-
-    public static final String ACHIEVEMENTSUMMARY = "achievementsummary";
-
-    public static final String PARKCOLLECT = "parkcollect";
-
-    public static final String NOTE = "note";
-
-    public static final String IMG = "img";
+    /**
+     * 存储地址
+     */
+    private String url;
 
 }

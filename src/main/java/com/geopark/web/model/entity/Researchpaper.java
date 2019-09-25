@@ -88,31 +88,9 @@ public class Researchpaper implements Serializable {
      */
     private String note;
 
-
-    public static final String ID = "id";
-
-    public static final String PARK_ID = "park_id";
-
-    public static final String ACHIEVEMENTNUMBER = "achievementnumber";
-
-    public static final String PAPERNUMBER = "papernumber";
-
-    public static final String AUTHOR = "author";
-
-    public static final String YEAR = "year";
-
-    public static final String HEADING = "heading";
-
-    public static final String PERIODICAL = "periodical";
-
-    public static final String VOLUME = "volume";
-
-    public static final String PAGENUMBER = "pagenumber";
-
-    public static final String SUMMARY = "summary";
-
-    public static final String COLLECT = "collect";
-
-    public static final String NOTE = "note";
+    /**
+     * 存储地址
+     */
+    private String url;
 
 }
