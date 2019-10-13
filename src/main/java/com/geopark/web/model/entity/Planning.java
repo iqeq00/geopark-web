@@ -78,5 +78,8 @@ public class Planning implements Serializable {
      */
     private String note;
 
-
+    /**
+     * 规划类型
+     */
+    private String type;
 }
