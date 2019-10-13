@@ -13,8 +13,10 @@ public class MainTest {
 //        System.out.println(cleanContextPath("/etc"));
 //        System.out.println("ending");
 
-        Set<String> orderIdList = new HashSet<>(
-                Arrays.asList(StringUtils.split(null, ",")));
+        System.out.println("18583603233".substring("18583603233".length()-4));
+
+//        Set<String> orderIdList = new HashSet<>(
+//                Arrays.asList(StringUtils.split(null, ",")));
 
     }
 
