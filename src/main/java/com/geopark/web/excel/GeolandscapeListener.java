@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 模板的读取类
+ * 地质遗迹 listener
  *
- * @author Jiaju Zhuang
+ * @author lichee
  */
 @Slf4j
 public class GeolandscapeListener extends AnalysisEventListener<GeolandscapeData> {
