@@ -2,6 +2,7 @@ package com.geopark.framework.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.geopark.framework.cons.PageCons;
+import com.geopark.framework.model.ErrorCode;
 import com.geopark.framework.responses.ApiResponses;
 import com.geopark.framework.utils.AntiSQLFilter;
 import com.geopark.framework.utils.ApiUtils;
@@ -55,6 +56,16 @@ public class SuperController {
         return ApiResponses.<T>success(response, status, object);
     }
 
+    /**
+     * 失败返回
+     *
+     * @param errorCode
+     * @param exception
+     * @return
+     */
+    public <T> ApiResponses<T> failure(ErrorCode errorCode, Exception exception) {
+        return ApiResponses.<T>failure(errorCode, exception);
+    }
 
     /**
      * 成功返回

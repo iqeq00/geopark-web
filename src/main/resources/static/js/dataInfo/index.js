@@ -10,7 +10,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
 
     upload.render({
         elem: '#uploadBtn',
-        url: '/import/xls',
+        url: '/import1/xls',
         headers: {Authorization: config.getToken()},
         data: {keyPath: "geolandscape"},
         multiple: true,
