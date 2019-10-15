@@ -1,4 +1,4 @@
-package com.geopark.web.excel;
+package com.geopark.framework.excel.data;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;

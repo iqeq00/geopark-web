@@ -1,10 +1,14 @@
 package com.geopark.web.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.geopark.framework.converter.BeanConverter;
+import com.geopark.framework.excel.data.GeolandscapeData;
 import com.geopark.web.mapper.GeolandscapeMapper;
 import com.geopark.web.model.entity.Geolandscape;
 import com.geopark.web.service.GeolandscapeService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +21,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class GeolandscapeServiceImpl extends ServiceImpl<GeolandscapeMapper, Geolandscape> implements GeolandscapeService {
 
+    @Override
+    public List<GeolandscapeData> getData() {
+        List<Geolandscape> list = lambdaQuery().list();
+        return BeanConverter.convert(GeolandscapeData.class, list);
+    }
 }

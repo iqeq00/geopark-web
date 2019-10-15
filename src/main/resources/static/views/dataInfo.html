@@ -29,21 +29,23 @@
 
             <div class="layui-form">
                 <div class="layui-form-item">
+                    <label class="layui-form-label">数据项选择</label>
+                    <div class="layui-input-block">
+                        <select id="column" name="column" lay-verify="required">
+                            <option value="">请选择</option>
+                            <option p-for="parkIds" p-bind="value:{{id}}">{{name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr class="layui-bg-gray">
+
+            <div class="layui-form">
+                <div class="layui-form-item">
                     <label class="layui-form-label">地址导入xls</label>
                     <div class="layui-input-block">
                         <div class="layui-upload">
                             <button type="button" class="layui-btn" id="uploadBtn">导入</button>
-                            <!--<div class="layui-upload-list">
-                                <table class="layui-table">
-                                    <thead>
-                                    <tr>
-                                        <th>文件名</th>
-                                        <th>操作</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody id="fileList"></tbody>
-                                </table>
-                            </div>-->
                         </div>
                     </div>
                 </div>

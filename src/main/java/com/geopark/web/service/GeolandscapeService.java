@@ -1,7 +1,10 @@
 package com.geopark.web.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.geopark.framework.excel.data.GeolandscapeData;
 import com.geopark.web.model.entity.Geolandscape;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.geopark.web.model.entity.Geolandscape;
  */
 public interface GeolandscapeService extends IService<Geolandscape> {
 
+    List<GeolandscapeData> getData();
 }

@@ -1,38 +1,35 @@
-package com.geopark.web.excel;
+package com.geopark.framework.excel;
 
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
-import com.geopark.framework.converter.BeanConverter;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.geopark.framework.utils.JacksonUtils;
-import com.geopark.web.model.entity.Geolandscape;
-import com.geopark.web.service.GeolandscapeService;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 地质遗迹 listener
+ * Execl Listener
  *
  * @author lichee
  */
 @Slf4j
-public class GeolandscapeListener extends AnalysisEventListener<GeolandscapeData> {
+public class ExcelListener<T> extends AnalysisEventListener<T> {
 
-    private GeolandscapeService geolandscapeService;
+    private IService<T> dataService;
 
     private final int BATCH_COUNT = 1000;
-    List<Geolandscape> list = new ArrayList<Geolandscape>();
+    List<T> list = new ArrayList<>();
 
-    public GeolandscapeListener(GeolandscapeService geolandscapeService) {
-        this.geolandscapeService = geolandscapeService;
+    public ExcelListener(IService<T> dataService) {
+        this.dataService = dataService;
     }
 
     @Override
-    public void invoke(GeolandscapeData data, AnalysisContext context) {
+    public void invoke(T data, AnalysisContext context) {
         log.info("解析到一条数据:{}", JacksonUtils.toJson(data));
-        Geolandscape geolandscape = BeanConverter.convert(Geolandscape.class, data);
-        list.add(geolandscape);
+        list.add(data);
         if (list.size() >= BATCH_COUNT) {
             saveData();
             list.clear();
@@ -50,7 +47,7 @@ public class GeolandscapeListener extends AnalysisEventListener<GeolandscapeData
      */
     private void saveData() {
         log.info("{}条数据，开始存储数据库！", list.size());
-        geolandscapeService.saveBatch(list);
+        dataService.saveBatch(list);
         log.info("存储数据库成功！");
     }
 

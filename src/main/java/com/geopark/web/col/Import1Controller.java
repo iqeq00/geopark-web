@@ -1,17 +1,14 @@
 package com.geopark.web.col;
 
-import com.alibaba.excel.EasyExcel;
 import com.geopark.framework.annotations.ApiOperation;
 import com.geopark.framework.annotations.Resources;
 import com.geopark.framework.controller.SuperController;
 import com.geopark.framework.enums.AuthTypeEnum;
 import com.geopark.framework.enums.ErrorCodeEnum;
+import com.geopark.framework.excel.ExcelOperation;
 import com.geopark.framework.file.FileUpload;
 import com.geopark.framework.responses.ApiResponses;
 import com.geopark.framework.utils.ApiAssert;
-import com.geopark.web.cpt.xls.GeolandscapeExcel;
-import com.geopark.web.excel.GeolandscapeData;
-import com.geopark.web.excel.GeolandscapeListener;
 import com.geopark.web.model.entity.Geolandscape;
 import com.geopark.web.model.vo.FileVo;
 import com.geopark.web.service.GeolandscapeService;
@@ -27,8 +24,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
-import java.io.IOException;
-import java.util.List;
 
 /**
  * xls 导入
@@ -53,34 +48,38 @@ public class Import1Controller extends SuperController {
     @Autowired
     private GeolandscapeService geolandscapeService;
 
-    @Autowired
-    private GeolandscapeExcel geolandscapeExcel;
 
     @Resources(AuthTypeEnum.LOGIN)
     @ApiOperation("导入xls")
     @PostMapping(value = "/xls")
     public ApiResponses<FileVo> file(HttpServletRequest servletRequest, String keyPath,
-                                        @RequestParam(value="file",required=false)  MultipartFile file) {
+        @RequestParam(value="file",required=false)  MultipartFile file) {
 
         ApiAssert.notNull(ErrorCodeEnum.BAD_REQUEST, keyPath);
         FileVo fileVo = null;
         if (!file.isEmpty()) {
             fileVo = invokeFileUpload(keyPath, file);
-            importFile(keyPath, fileVo);
+            importFile1(keyPath, fileVo);
         } else {
             ApiAssert.failure(ErrorCodeEnum.BAD_REQUEST);
         }
         return success(fileVo);
     }
 
-    private void importFile(String keyPath, FileVo fileVo) {
+    /**
+     * excel操作
+     */
+    private void importFile1(String keyPath, FileVo fileVo) {
 
         File file = new File(fileLocation + keyPath, fileVo.getName());
         if(keyPath.equals("geolandscape")){
-            EasyExcel.read(file, GeolandscapeData.class, new GeolandscapeListener(geolandscapeService)).sheet().doRead();
+            new ExcelOperation<Geolandscape>(geolandscapeService, Geolandscape.class).read(file);
         }
     }
 
+    /**
+     * 上传文件
+     */
     private FileVo invokeFileUpload(String keyPath, MultipartFile file) {
 
         String filename = fileUpload.fileUpload(fileLocation + keyPath, file);
