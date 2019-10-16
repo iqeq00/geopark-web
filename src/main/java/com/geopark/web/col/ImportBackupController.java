@@ -5,12 +5,14 @@ import com.geopark.framework.annotations.Resources;
 import com.geopark.framework.controller.SuperController;
 import com.geopark.framework.enums.AuthTypeEnum;
 import com.geopark.framework.enums.ErrorCodeEnum;
-import com.geopark.framework.excel.ExcelOperation;
 import com.geopark.framework.file.FileUpload;
+import com.geopark.framework.image.ImageUpload;
 import com.geopark.framework.responses.ApiResponses;
 import com.geopark.framework.utils.ApiAssert;
+import com.geopark.web.cpt.xls.GeolandscapeExcel;
 import com.geopark.web.model.entity.Geolandscape;
 import com.geopark.web.model.vo.FileVo;
+import com.geopark.web.model.vo.ImageVo;
 import com.geopark.web.service.GeolandscapeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.util.List;
 
 /**
  * xls 导入
@@ -33,8 +36,8 @@ import java.io.File;
 @Slf4j
 @RestController
 @MultipartConfig
-@RequestMapping(value = "/import1")
-public class Import1Controller extends SuperController {
+@RequestMapping(value = "/importBackup")
+public class ImportBackupController extends SuperController {
 
     @Autowired
     private FileUpload fileUpload;
@@ -48,43 +51,40 @@ public class Import1Controller extends SuperController {
     @Autowired
     private GeolandscapeService geolandscapeService;
 
+    @Autowired
+    private GeolandscapeExcel geolandscapeExcel;
 
     @Resources(AuthTypeEnum.LOGIN)
     @ApiOperation("导入xls")
     @PostMapping(value = "/xls")
     public ApiResponses<FileVo> file(HttpServletRequest servletRequest, String keyPath,
-        @RequestParam(value="file",required=false)  MultipartFile file) {
+                                        @RequestParam(value="file",required=false)  MultipartFile file) {
 
         ApiAssert.notNull(ErrorCodeEnum.BAD_REQUEST, keyPath);
         FileVo fileVo = null;
         if (!file.isEmpty()) {
             fileVo = invokeFileUpload(keyPath, file);
-            importFile1(keyPath, fileVo);
+            importFile(keyPath, fileVo);
         } else {
             ApiAssert.failure(ErrorCodeEnum.BAD_REQUEST);
         }
         return success(fileVo);
     }
 
-    /**
-     * excel操作
-     */
-    private void importFile1(String keyPath, FileVo fileVo) {
+    private void importFile(String keyPath, FileVo fileVo) {
 
         File file = new File(fileLocation + keyPath, fileVo.getName());
         if(keyPath.equals("geolandscape")){
-            new ExcelOperation<Geolandscape>(geolandscapeService, Geolandscape.class).read(file);
+            List<Geolandscape> list = geolandscapeExcel.readFile(file);
+            geolandscapeService.saveBatch(list);
         }
     }
 
-    /**
-     * 上传文件
-     */
     private FileVo invokeFileUpload(String keyPath, MultipartFile file) {
 
         String filename = fileUpload.fileUpload(fileLocation + keyPath, file);
         FileVo fileVo = new FileVo();
-        fileVo.setPath(fileUrl + keyPath + File.separator + filename);
+        fileVo.setPath(fileUrl + keyPath + "/" + filename);
         fileVo.setName(filename);
         fileVo.setOriginalName(file.getOriginalFilename());
         fileVo.setSize(file.getSize());

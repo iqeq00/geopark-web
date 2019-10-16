@@ -1,5 +1,7 @@
 package com.geopark.web.model.entity;
 
+import com.alibaba.excel.annotation.ExcelIgnore;
+import com.alibaba.excel.annotation.ExcelProperty;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -19,107 +21,92 @@ import java.io.Serializable;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
 @TableName("earthquake")
 public class Earthquake implements Serializable {
 
+    @ExcelIgnore
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
+    @ExcelProperty(value = "id",index = 0)
     private Integer id;
 
     /**
      * 地质公园ID
      */
+    @ExcelProperty(value = "地质公园ID",index = 1)
     private Integer parkId;
 
     /**
      * 灾害点编号
      */
+    @ExcelProperty(value = "灾害点编号",index = 2)
     private String disasternumber;
 
     /**
      * 灾害点名称
      */
+    @ExcelProperty(value = "灾害点名称",index = 3)
     private String disastername;
 
     /**
      * 类型
      */
+    @ExcelProperty(value = "类型",index = 4)
     private String type;
 
     /**
      * 地理位置
      */
+    @ExcelProperty(value = "地理位置",index = 5)
     private String position;
 
     /**
      * 坐标
      */
+    @ExcelProperty(value = "坐标",index = 6)
     private String coordinate;
 
     /**
      * 规模
      */
+    @ExcelProperty(value = "规模",index = 7)
     private String scale;
 
     /**
      * 稳定性
      */
+    @ExcelProperty(value = "稳定性",index = 8)
     private String stability;
 
     /**
      * 危险性
      */
+    @ExcelProperty(value = "危险性",index = 9)
     private String dangerous;
 
     /**
      * 特征描述
      */
+    @ExcelProperty(value = "特征描述",index = 10)
     private String description;
 
     /**
      * 诱发因素
      */
+    @ExcelProperty(value = "诱发因素",index = 11)
     private String factor;
 
     /**
      * 威胁对象
      */
+    @ExcelProperty(value = "威胁对象",index = 12)
     private String threat;
 
     /**
      * 备注
      */
+    @ExcelProperty(value = "备注",index = 13)
     private String note;
-
-
-    public static final String ID = "id";
-
-    public static final String PARK_ID = "park_id";
-
-    public static final String DISASTERNUMBER = "disasternumber";
-
-    public static final String DISASTERNAME = "disastername";
-
-    public static final String TYPE = "type";
-
-    public static final String POSITION = "position";
-
-    public static final String COORDINATE = "coordinate";
-
-    public static final String SCALE = "scale";
-
-    public static final String STABILITY = "stability";
-
-    public static final String DANGEROUS = "dangerous";
-
-    public static final String DESCRIPTION = "description";
-
-    public static final String FACTOR = "factor";
-
-    public static final String THREAT = "threat";
-
-    public static final String NOTE = "note";
 
 }

@@ -1,5 +1,6 @@
 package com.geopark.web.model.entity;
 
+import com.alibaba.excel.annotation.ExcelIgnore;
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -23,6 +24,7 @@ import java.io.Serializable;
 @TableName("geolandscape")
 public class Geolandscape implements Serializable {
 
+    @ExcelIgnore
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)

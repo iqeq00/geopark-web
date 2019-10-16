@@ -10,17 +10,19 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
 
     upload.render({
         elem: '#uploadBtn',
-        url: '/import1/xls',
+        url: '/import/xls',
         headers: {Authorization: config.getToken()},
-        data: {keyPath: "geolandscape"},
+        data: {
+            keyPath: function(){
+                return $("#column").val();
+            }
+        },
         multiple: true,
         accept: 'file',
         number: 5,
         done: function (res) {
             var file = res.result;
             if (res.status = 200) {
-                // var html = '<tr><td>' + file.name + '</td><td><button class="layui-btn layui-btn-xs layui-btn-danger delete" data-id="' + file.path + '">删除</button></td></tr>';
-                // $('#fileList').append(html);
                 return layer.msg('导入成功');
             } else {
                 return layer.msg('导入失败');
@@ -29,10 +31,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'upload'], fu
     });
 
     $('#export').click(function () {
-        // lichee.get('/export/xls', {}, function (data) {
-        //     layer.msg('导出成功');
-        // });
-        window.location.href="/export/xls";
+        window.location.href="/export/xls?keyPath=" + $("#column").val();
         layer.msg('导出成功');
     });
 

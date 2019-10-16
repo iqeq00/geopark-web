@@ -1,5 +1,7 @@
 package com.geopark.web.model.entity;
 
+import com.alibaba.excel.annotation.ExcelIgnore;
+import com.alibaba.excel.annotation.ExcelProperty;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -20,91 +22,75 @@ import java.time.LocalDateTime;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
 @TableName("sampling")
 public class Sampling implements Serializable {
 
+    @ExcelIgnore
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
+    @ExcelProperty(value = "id",index = 0)
     private Integer id;
 
     /**
      * 地质公园ID
      */
+    @ExcelProperty(value = "公园编号",index = 1)
     private Integer parkId;
 
     /**
      * 样品编号
      */
+    @ExcelProperty(value = "样品编号",index = 2)
     private String samplenumber;
 
     /**
      * 样品类型
      */
+    @ExcelProperty(value = "样品类型",index = 3)
     private String sampletype;
 
     /**
      * 采样位置
      */
+    @ExcelProperty(value = "采样位置",index = 4)
     private String sampleposition;
 
     /**
      * 坐标
      */
+    @ExcelProperty(value = "坐标",index = 5)
     private String coordinate;
 
     /**
      * 地质代号
      */
+    @ExcelProperty(value = "地质代号",index = 6)
     private String code;
 
     /**
      * 野外定名
      */
+    @ExcelProperty(value = "野外定名",index = 7)
     private String research;
 
     /**
      * 测试成果
      */
+    @ExcelProperty(value = "测试成果",index = 8)
     private String achievement;
 
     /**
      * 备注
      */
+    @ExcelProperty(value = "备注",index = 9)
     private String note;
 
+    @ExcelIgnore
     private LocalDateTime createdAt;
-
+    @ExcelIgnore
     private LocalDateTime updatedAt;
-
+    @ExcelIgnore
     private LocalDateTime deletedAt;
-
-
-    public static final String ID = "id";
-
-    public static final String PARK_ID = "park_id";
-
-    public static final String SAMPLENUMBER = "samplenumber";
-
-    public static final String SAMPLETYPE = "sampletype";
-
-    public static final String SAMPLEPOSITION = "sampleposition";
-
-    public static final String COORDINATE = "coordinate";
-
-    public static final String CODE = "code";
-
-    public static final String RESEARCH = "research";
-
-    public static final String ACHIEVEMENT = "achievement";
-
-    public static final String NOTE = "note";
-
-    public static final String CREATED_AT = "created_at";
-
-    public static final String UPDATED_AT = "updated_at";
-
-    public static final String DELETED_AT = "deleted_at";
 
 }

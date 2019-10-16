@@ -30,19 +30,30 @@
             <div class="layui-form">
                 <div class="layui-form-item">
                     <label class="layui-form-label">数据项选择</label>
-                    <div class="layui-input-block">
+                    <div class="layui-input-block" style="width:400px">
                         <select id="column" name="column" lay-verify="required">
-                            <option value="">请选择</option>
-                            <option p-for="parkIds" p-bind="value:{{id}}">{{name}}</option>
+                            <option value="geolandscape">地质遗迹</option>
+                            <option value="humanlandscape">人文景观</option>
+                            <option value="naturallandscape">自然景观</option>
+                            <option value="parklibrary">专家库与导游库</option>
+                            <option value="researchpaper">相关科研论文</option>
+                            <option value="manageperson">管理机构人员</option>
+                            <option value="gueststat">公园游客统计</option>
+                            <option value="sampling">采样信息</option>
+                            <option value="earthquake">地质灾害信息</option>
+
                         </select>
+                        <span style="color: red;font-size: 14px">注意：导入与导出数据之前，请先选择所需要的数据项。</span>
                     </div>
+
                 </div>
+
             </div>
             <hr class="layui-bg-gray">
 
             <div class="layui-form">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">地址导入xls</label>
+                    <label class="layui-form-label">导入xls数据</label>
                     <div class="layui-input-block">
                         <div class="layui-upload">
                             <button type="button" class="layui-btn" id="uploadBtn">导入</button>
@@ -54,7 +65,7 @@
 
             <div class="layui-form">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">导出xls</label>
+                    <label class="layui-form-label">导出xls数据</label>
                     <div class="layui-input-block">
                         <button type="button" class="layui-btn" id="export">导出</button>
                     </div>

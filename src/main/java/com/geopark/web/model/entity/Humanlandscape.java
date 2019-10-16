@@ -1,5 +1,7 @@
 package com.geopark.web.model.entity;
 
+import com.alibaba.excel.annotation.ExcelIgnore;
+import com.alibaba.excel.annotation.ExcelProperty;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -20,84 +22,99 @@ import java.time.LocalDateTime;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
 @TableName("humanlandscape")
 public class Humanlandscape implements Serializable {
 
+    @ExcelIgnore
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
+    @ExcelProperty(value = "id",index = 0)
     private Integer id;
 
     /**
      * 地质公园ID
      */
+    @ExcelProperty(value = "公园编号",index = 1)
     private Integer parkId;
 
     /**
      * 人文景观编号
      */
+    @ExcelProperty(value = "人文景观编号",index = 2)
     private String humanitnumber;
 
     /**
      * 景观名称
      */
+    @ExcelProperty(value = "景观名称",index = 3)
     private String hname;
 
     /**
      * 地理位置
      */
+    @ExcelProperty(value = "地理位置",index = 4)
     private String position;
 
     /**
      * 交通状况
      */
+    @ExcelProperty(value = "交通状况",index = 5)
     private String traffic;
 
     /**
      * 经度
      */
+    @ExcelProperty(value = "经度",index = 6)
     private String lat;
 
     /**
      * 纬度
      */
+    @ExcelProperty(value = "纬度",index = 7)
     private String lng;
 
     /**
      * 海拔高度
      */
+    @ExcelProperty(value = "海拔高度",index = 8)
     private String altitude;
 
     /**
      * 景观特色
      */
+    @ExcelProperty(value = "景观特色",index = 9)
     private String feature;
 
     /**
      * 文物保护单位
      */
+    @ExcelProperty(value = "文物保护单位",index = 10)
     private String level;
 
     /**
      * 批准时间
      */
+    @ExcelProperty(value = "批准时间",index = 11)
     private String approvedtime;
 
     /**
      * 保护现状
      */
+    @ExcelProperty(value = "保护现状",index = 12)
     private String status;
 
     /**
      * 照片
      */
+    @ExcelProperty(value = "照片",index = 13)
     private String img;
 
+    @ExcelIgnore
     private LocalDateTime createdAt;
-
+    @ExcelIgnore
     private LocalDateTime updatedAt;
-
+    @ExcelIgnore
     private LocalDateTime deletedAt;
 
 }
