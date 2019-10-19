@@ -7,7 +7,6 @@ import com.geopark.framework.enums.AuthTypeEnum;
 import com.geopark.framework.enums.ErrorCodeEnum;
 import com.geopark.framework.excel.ExcelOperation;
 import com.geopark.framework.utils.ApiAssert;
-import com.geopark.web.cpt.xls.GeolandscapeExcelView;
 import com.geopark.web.model.entity.*;
 import com.geopark.web.service.*;
 import lombok.extern.slf4j.Slf4j;

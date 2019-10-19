@@ -6,13 +6,11 @@ import com.geopark.framework.controller.SuperController;
 import com.geopark.framework.enums.AuthTypeEnum;
 import com.geopark.framework.enums.ErrorCodeEnum;
 import com.geopark.framework.file.FileUpload;
-import com.geopark.framework.image.ImageUpload;
 import com.geopark.framework.responses.ApiResponses;
 import com.geopark.framework.utils.ApiAssert;
 import com.geopark.web.cpt.xls.GeolandscapeExcel;
 import com.geopark.web.model.entity.Geolandscape;
 import com.geopark.web.model.vo.FileVo;
-import com.geopark.web.model.vo.ImageVo;
 import com.geopark.web.service.GeolandscapeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,7 +56,7 @@ public class ImportBackupController extends SuperController {
     @ApiOperation("导入xls")
     @PostMapping(value = "/xls")
     public ApiResponses<FileVo> file(HttpServletRequest servletRequest, String keyPath,
-                                        @RequestParam(value="file",required=false)  MultipartFile file) {
+        @RequestParam(value="file",required=false)  MultipartFile file) {
 
         ApiAssert.notNull(ErrorCodeEnum.BAD_REQUEST, keyPath);
         FileVo fileVo = null;

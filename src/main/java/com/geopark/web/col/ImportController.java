@@ -127,7 +127,6 @@ public class ImportController extends SuperController {
         } else if(keyPath.equals("earthquake")) {
             new ExcelOperation<Earthquake>(earthquakeService, Earthquake.class).read(file);
         }
-
     }
 
 }
