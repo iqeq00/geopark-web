@@ -2,11 +2,9 @@ package com.geopark.web.model.entity;
 
 import com.alibaba.excel.annotation.ExcelIgnore;
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.alibaba.excel.annotation.format.DateTimeFormat;
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -28,37 +26,37 @@ public class Gueststat implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
-    @ExcelProperty(value = "id",index = 0)
+    @ExcelIgnore
     private Integer id;
 
     /**
      * 地质公园ID
      */
-    @ExcelProperty(value = "地质公园ID",index = 1)
+    @ExcelProperty(value = "地质公园ID",index = 0)
     private Integer parkId;
 
     /**
      * 时间
      */
-    @ExcelProperty(value = "时间",index = 2)
+    @ExcelProperty(value = "时间",index = 1)
     private String time;
 
     /**
      * 游客人数 单位
      */
-    @ExcelProperty(value = "游客人数 单位",index = 3)
+    @ExcelProperty(value = "游客人数 单位",index = 2)
     private Double touristsnumber;
 
     /**
      * 游客来源
      */
-    @ExcelProperty(value = "游客来源",index = 4)
+    @ExcelProperty(value = "游客来源",index = 3)
     private String touristssource;
 
     /**
      * 备注
      */
-    @ExcelProperty(value = "备注",index = 5)
+    @ExcelProperty(value = "备注",index = 4)
     private String note;
 
     @TableField(fill = FieldFill.INSERT)

@@ -7,7 +7,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
@@ -28,85 +27,85 @@ public class Earthquake implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
-    @ExcelProperty(value = "id",index = 0)
+    @ExcelIgnore
     private Integer id;
 
     /**
      * 地质公园ID
      */
-    @ExcelProperty(value = "地质公园ID",index = 1)
+    @ExcelProperty(value = "地质公园ID",index = 0)
     private Integer parkId;
 
     /**
      * 灾害点编号
      */
-    @ExcelProperty(value = "灾害点编号",index = 2)
+    @ExcelProperty(value = "灾害点编号",index = 1)
     private String disasternumber;
 
     /**
      * 灾害点名称
      */
-    @ExcelProperty(value = "灾害点名称",index = 3)
+    @ExcelProperty(value = "灾害点名称",index = 2)
     private String disastername;
 
     /**
      * 类型
      */
-    @ExcelProperty(value = "类型",index = 4)
+    @ExcelProperty(value = "类型",index = 3)
     private String type;
 
     /**
      * 地理位置
      */
-    @ExcelProperty(value = "地理位置",index = 5)
+    @ExcelProperty(value = "地理位置",index = 4)
     private String position;
 
     /**
      * 坐标
      */
-    @ExcelProperty(value = "坐标",index = 6)
+    @ExcelProperty(value = "坐标",index = 5)
     private String coordinate;
 
     /**
      * 规模
      */
-    @ExcelProperty(value = "规模",index = 7)
+    @ExcelProperty(value = "规模",index = 6)
     private String scale;
 
     /**
      * 稳定性
      */
-    @ExcelProperty(value = "稳定性",index = 8)
+    @ExcelProperty(value = "稳定性",index = 7)
     private String stability;
 
     /**
      * 危险性
      */
-    @ExcelProperty(value = "危险性",index = 9)
+    @ExcelProperty(value = "危险性",index = 8)
     private String dangerous;
 
     /**
      * 特征描述
      */
-    @ExcelProperty(value = "特征描述",index = 10)
+    @ExcelProperty(value = "特征描述",index = 9)
     private String description;
 
     /**
      * 诱发因素
      */
-    @ExcelProperty(value = "诱发因素",index = 11)
+    @ExcelProperty(value = "诱发因素",index = 10)
     private String factor;
 
     /**
      * 威胁对象
      */
-    @ExcelProperty(value = "威胁对象",index = 12)
+    @ExcelProperty(value = "威胁对象",index = 11)
     private String threat;
 
     /**
      * 备注
      */
-    @ExcelProperty(value = "备注",index = 13)
+    @ExcelProperty(value = "备注",index = 12)
     private String note;
 
 }
