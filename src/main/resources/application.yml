@@ -29,6 +29,10 @@ spring:
   aop:
     auto: true
     proxy-target-class: true
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
   http:
     encoding:
       enabled: true
