@@ -6,13 +6,17 @@ import com.baomidou.mybatisplus.extension.service.additional.query.impl.LambdaQu
 import com.geopark.framework.annotations.ApiOperation;
 import com.geopark.framework.annotations.Resources;
 import com.geopark.framework.controller.SuperController;
+import com.geopark.framework.enums.AuthTypeEnum;
 import com.geopark.framework.responses.ApiResponses;
+import com.geopark.web.model.entity.Geolandscape;
 import com.geopark.web.model.entity.Gueststat;
 import com.geopark.web.service.GueststatService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -40,6 +44,14 @@ public class GueststatController extends SuperController {
             qw.like(Gueststat::getTouristssource, touristssource);
         }
         return success(qw.page(this.<Gueststat>getPage()));
+    }
+
+    @Resources
+    @ApiOperation("游客统计报表查询")
+    @GetMapping("/list")
+    public ApiResponses<List<Gueststat>> list(Integer parkId) {
+
+        return success(gueststatService.lambdaQuery().list());
     }
 
     @Resources

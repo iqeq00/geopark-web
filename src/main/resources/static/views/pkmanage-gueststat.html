@@ -51,6 +51,7 @@
 
             <script type="text/html" id="toolbar">
                 <a class="layui-btn layui-btn-sm" lay-event="add"><i class="layui-icon"></i>添加</a>
+                <a class="layui-btn layui-btn-sm" lay-event="report"><i class="layui-icon">&#xe63c;</i>统计</a>
             </script>
 
             <script type="text/html" id="bar">
@@ -64,8 +65,9 @@
     <div class="layui-footer" p-com="footer"></div>
 
 </div>
-
 <script type="text/javascript" src="/views/base/scripts.js"></script>
+<script type="text/javascript" src="/plugins/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="/plugins/echarts/theme/macarons.js"></script>
 <script type="text/javascript" src="/js/pkmanage/gueststat.js"></script>
 
 <script type="text/html" id="form-model">
@@ -118,6 +120,26 @@
                 <button class="layui-btn layui-btn-sm layui-btn-primary close" type="button">取消</button>
             </div>
         </form>
+    </div>
+</script>
+
+
+<script type="text/html" id="report-model">
+    <div class="layui-tab-content">
+        <div class="layui-tab layui-tab-brief" lay-filter="reportTab">
+            <ul class="layui-tab-title">
+                <li data-type="line" class="layui-this">线形图</li>
+                <li data-type="bar">柱状图</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div id="reportLine" style="min-width:600px;min-height:400px;"></div>
+                </div>
+                <div class="layui-tab-item">
+                    <div id="reportBar" style="min-width:600px;min-height:400px;"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </script>
 
