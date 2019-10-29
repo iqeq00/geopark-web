@@ -37,7 +37,7 @@
 
 * #### ~~分项目~~
 
-* #### ~~xls 导入导出~~ （采用 alibaba EasyExcel）
+* #### ~~xls 导入导出~~ （alibaba EasyExcel）
 
 * #### cloud config
 
@@ -55,7 +55,7 @@
 
 * #### element-ui
 
-* #### 图表
+* #### ~~图表~~（echarts）
 
 * #### jdk8
 
