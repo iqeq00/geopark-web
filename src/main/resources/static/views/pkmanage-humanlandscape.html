@@ -160,11 +160,13 @@
                           class="layui-textarea"></textarea>
                 </div>
             </div>
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">保护现状</label>
-                <div class="layui-input-block">
-	            <textarea name="status" style="width: 600px;height:60px" placeholder="请输入保护现状"
-                          class="layui-textarea"></textarea>
+
+            <div class="layui-form-item">
+                <div class="layui-col-md12">
+                    <label class="layui-form-label">保护现状</label>
+                    <div class="layui-input-inline" style="width: 600px">
+                        <input type="text" name="status" id= "status" maxlength="512" placeholder="请输入保护现状" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
             </div>
 
@@ -174,7 +176,7 @@
                 <div class="layui-input-block">
                     <div class="layui-upload">
                         <button type="button" class="layui-btn" id="uploadBtn">图片上传</button>
-                        <blockquote  class="layui-elem-quote layui-quote-nm" style="margin-top:10px;margin-left:30px;width: 565px;">
+                        <blockquote  class="layui-elem-quote layui-quote-nm" style="margin-top:5px;margin-left:30px;width: 565px;">
                             预览图：
                             <div class="layui-upload-list upload-list"></div>
                         </blockquote>

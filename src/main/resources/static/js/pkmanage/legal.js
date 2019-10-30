@@ -30,7 +30,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate', 'f
             {field: 'number', align: 'center', sort: true, title: '文件编号'},
             {field: 'filename', align: 'center', sort: true, title: '文件名称'},
             {field: 'unit', align: 'center', sort: true, title: '发布单位'},
-            {field: 'time', align: 'center', sort: true, title: '规划期限'},
+            {field: 'publishtime', align: 'center', sort: true, title: '颁布时间'},
             {field: 'keyword', align: 'center', sort: true, title: '关键字'},
             //{field: 'summary', align: 'center', sort: true, title: '摘要'},
             //{field: 'note', align: 'center', sort: true, title: '备注'},

@@ -81,103 +81,112 @@
             <input type="hidden" id="id" name="id"/>
 
             <div class="layui-form-item">
+                <div class="layui-col-md12">
                 <label class="layui-form-label">地质公园</label>
-                <div class="layui-input-block">
+                <div class="layui-input-inline" style="width: 220px">
                     <select id="parkId" name="parkId" lay-filter="parkId" lay-verify="required">
                         <option value="">请选择</option>
                         <option p-for="parks" p-bind="value:{{id}}">{{name}}</option>
                     </select>
                 </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">组织机构</label>
-                <div class="layui-input-block">
-                    <input type="text" name="orgCode" required lay-verify="required" maxlength="50" lay-verType="tips" placeholder="组织机构代码" autocomplete="off" class="layui-input">
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">法人代表</label>
-                <div class="layui-input-block">
-                    <input type="text" name="legalPerson" required lay-verify="required" maxlength="50" lay-verType="tips" placeholder="法人代表" autocomplete="off" class="layui-input">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">组织机构</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="orgCode" required lay-verify="required" maxlength="50" lay-verType="tips" placeholder="组织机构代码" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">法人代表</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="legalPerson" required lay-verify="required" maxlength="50" lay-verType="tips" placeholder="法人代表" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">在任年限</label>
-                <div class="layui-input-block">
-                    <input type="text" name="tenure" maxlength="256" lay-verType="tips" placeholder="在任年限" autocomplete="off" class="layui-input">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">在任年限</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="tenure" maxlength="256" lay-verType="tips" placeholder="在任年限" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">安全责任人</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="securitySupervisor" maxlength="256" lay-verType="tips" placeholder="公园安全责任人" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">责任人电话</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="telephone" name="mobile" maxlength="256" lay-verType="tips" placeholder="安全责任人联系电话" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">在编职工</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="staffer" maxlength="256" lay-verType="tips" placeholder="在编职工" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">安全责任人</label>
-                <div class="layui-input-block">
-                    <input type="text" name="securitySupervisor" maxlength="256" lay-verType="tips" placeholder="公园安全责任人" autocomplete="off" class="layui-input">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">网站地址</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="website" maxlength="256" lay-verType="tips" placeholder="公园网站地址" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">联系电话</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="telephone" name="contact" maxlength="256" lay-verType="tips" placeholder="公园联系电话" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">责任人电话</label>
-                <div class="layui-input-block">
-                    <input type="telephone" name="mobile" maxlength="256" lay-verType="tips" placeholder="安全责任人联系电话" autocomplete="off" class="layui-input">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">传真</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="fax" maxlength="256" lay-verType="tips" placeholder="传真" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">上级主管</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="supervisor" maxlength="256" lay-verType="tips" placeholder="上级主管" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">在编职工</label>
-                <div class="layui-input-block">
-                    <input type="telephone" name="staffer" maxlength="256" lay-verType="tips" placeholder="在编职工" autocomplete="off" class="layui-input">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">经费来源</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="fundProvider" maxlength="256" lay-verType="tips" placeholder="经费来源" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">邮箱</label>
+                    <div class="layui-input-inline" style="width: 220px">
+                        <input type="text" name="mail" maxlength="256" lay-verType="tips" placeholder="邮箱" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
             </div>
 
-            <div class="layui-form-item">
-                <label class="layui-form-label">网站地址</label>
-                <div class="layui-input-block">
-                    <input type="text" name="website" maxlength="256" lay-verType="tips" placeholder="公园网站地址" autocomplete="off" class="layui-input">
-                </div>
-            </div>
 
-            <div class="layui-form-item">
-                <label class="layui-form-label">联系电话</label>
-                <div class="layui-input-block">
-                    <input type="telephone" name="contact" maxlength="256" lay-verType="tips" placeholder="公园联系电话" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">传真</label>
-                <div class="layui-input-block">
-                    <input type="text" name="fax" maxlength="256" lay-verType="tips" placeholder="传真" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">上级主管</label>
-                <div class="layui-input-block">
-                    <input type="text" name="supervisor" maxlength="256" lay-verType="tips" placeholder="上级主管" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">经费来源</label>
-                <div class="layui-input-block">
-                    <input type="text" name="fundProvider" maxlength="256" lay-verType="tips" placeholder="经费来源" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">邮箱</label>
-                <div class="layui-input-block">
-                    <input type="text" name="mail" maxlength="256" lay-verType="tips" placeholder="邮箱" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
+            <div class="layui-form-item layui-form-text">
                 <label class="layui-form-label">备注</label>
                 <div class="layui-input-block">
-                    <textarea name="remark" placeholder="备注信息" class="layui-textarea"></textarea>
+	            <textarea name="remark" style="width: 600px;height:60px" placeholder="请输入备注信息"
+                          class="layui-textarea"></textarea>
                 </div>
             </div>
 
