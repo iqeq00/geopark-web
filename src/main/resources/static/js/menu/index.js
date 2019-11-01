@@ -103,8 +103,8 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'treetable', 'form', 
         layer.open({
             title: data ? '修改' : '添加',
             type: 1,
-            area: '450px',
-            offset: '120px',
+            area: '800px',
+            offset: '50px',
             content: $('#form-model').html(),
             success: function () {
                 $('#form')[0].reset();
@@ -133,16 +133,20 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'treetable', 'form', 
                     if (menu) {
                         if (menu.menuType == 1) {
                             $("#resourceIdsDiv").hide();
-                            $("#pathDiv").hide();
-                            $("#routerDiv").hide();
+                            //$("#pathDiv").hide();
+                            //$("#routerDiv").hide();
+                            $("#pathRouterDiv").hide();
                         } else if (menu.menuType == 2) {
-                            $("#pathDiv").show();
-                            $("#routerDiv").show();
                             $("#resourceIdsDiv").show();
+                            //$("#pathDiv").show();
+                            //$("#routerDiv").show();
+                            $("#resourceIdsDiv").show();
+                            $("#pathRouterDiv").show();
                         } else if (menu.menuType == 3) {
-                            $("#pathDiv").hide();
-                            $("#routerDiv").hide();
                             $("#resourceIdsDiv").show();
+                            //$("#pathDiv").hide();
+                            //$("#routerDiv").hide();
+                            $("#pathRouterDiv").hide();
                         }
                         if (menu.resourceIds) {
                             var rds = new Array();
@@ -189,16 +193,19 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'treetable', 'form', 
     form.on('select(menuType)', function (data) {
         if (data.value == 1) {
             $("#resourceIdsDiv").hide();
-            $("#pathDiv").hide();
-            $("#routerDiv").hide();
+            // $("#pathDiv").hide();
+            // $("#routerDiv").hide();
+            $("#pathRouterDiv").hide();
         } else if (data.value == 2) {
-            $("#pathDiv").show();
-            $("#routerDiv").show();
             $("#resourceIdsDiv").show();
+            // $("#pathDiv").show();
+            // $("#routerDiv").show();
+            $("#pathRouterDiv").show();
         } else if (data.value == 3) {
-            $("#pathDiv").hide();
-            $("#routerDiv").hide();
             $("#resourceIdsDiv").show();
+            // $("#pathDiv").hide();
+            // $("#routerDiv").hide();
+            $("#pathRouterDiv").hide();
         }
     });
 

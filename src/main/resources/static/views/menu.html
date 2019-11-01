@@ -69,60 +69,75 @@
             <input type="hidden" id="id" name="id"/>
 
             <div class="layui-form-item">
-                <label class="layui-form-label">菜单名称</label>
-                <div class="layui-input-block">
-                    <input type="text" name="menuName" class="layui-input" placeholder="请输入菜单名称"
-                           maxlength="20" lay-verify="required" lay-verType="tips" autocomplete="off"/>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">菜单名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="menuName" class="layui-input" placeholder="请输入菜单名称"
+                               maxlength="20" lay-verify="required" lay-verType="tips" autocomplete="off"/>
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">类型</label>
+                    <div class="layui-input-block">
+                        <select name="menuType" lay-verify="required" lay-filter="menuType">
+                            <option value="1" selected="selected">目录</option>
+                            <option value="2">菜单</option>
+                            <option value="3">按钮</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">权限别名</label>
-                <div class="layui-input-block">
-                    <input type="text" name="alias" class="layui-input" placeholder="请输入权限别名"
-                           maxlength="64" lay-verType="tips" autocomplete="off"/>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">权限别名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="alias" class="layui-input" placeholder="请输入权限别名"
+                               maxlength="64" lay-verType="tips" autocomplete="off"/>
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">选择图标</label>
+                    <div class="layui-input-block">
+                        <input type="text" id="iconPicker" name="icon" class="layui-input" lay-filter="iconPicker"/>
+                    </div>
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">类型</label>
-                <div class="layui-input-block">
-                    <select name="menuType" lay-verify="required" lay-filter="menuType">
-                        <option value="1" selected="selected">目录</option>
-                        <option value="2">菜单</option>
-                        <option value="3">按钮</option>
-                    </select>
+            <div class="layui-form-item" id="pathRouterDiv" style="display: none">
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">菜单路径</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="path" class="layui-input" placeholder="请输入路径" maxlength="64" lay-verify=""/>
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">路由</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="router" class="layui-input" placeholder="请输入路由地址" maxlength="64" lay-verify=""/>
+                    </div>
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">选择图标</label>
-                <div class="layui-input-block">
-                    <input type="text" id="iconPicker" name="icon" class="layui-input" lay-filter="iconPicker"/>
-                </div>
-            </div>
+            <!--
             <div class="layui-form-item" id="pathDiv" style="display: none">
-                <label class="layui-form-label">菜单路径</label>
-                <div class="layui-input-block">
-                    <input type="text" name="path" class="layui-input" placeholder="请输入路径" maxlength="64" lay-verify=""/>
-                </div>
             </div>
             <div class="layui-form-item" id="routerDiv" style="display: none">
-                <label class="layui-form-label">路由</label>
-                <div class="layui-input-block">
-                    <input type="text" name="router" class="layui-input" placeholder="请输入路由地址" maxlength="64" lay-verify=""/>
-                </div>
             </div>
+            -->
             <div class="layui-form-item">
-                <label class="layui-form-label">排序</label>
-                <div class="layui-input-block">
-                    <input type="text" name="sort" class="layui-input" placeholder="请输入排序"/>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">排序</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="sort" class="layui-input" placeholder="请输入排序"/>
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <label class="layui-form-label">状态</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="status" value="0" title="正常" checked="checked">
+                        <input type="radio" name="status" value="1" title="禁用">
+                    </div>
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">状态</label>
-                <div class="layui-input-block">
-                    <input type="radio" name="status" value="0" title="正常" checked="checked">
-                    <input type="radio" name="status" value="1" title="禁用">
-                </div>
-            </div>
+
             <div class="layui-form-item">
                 <label class="layui-form-label">上级菜单</label>
                 <div class="layui-input-block">

@@ -83,7 +83,6 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'formSelects'
             title: data ? '修改' : '添加',
             type: 1,
             area: '450px',
-            offset: '120px',
             content: $('#form-model').html(),
             success: function () {
                 $('#form')[0].reset();

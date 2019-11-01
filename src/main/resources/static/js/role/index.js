@@ -68,7 +68,6 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form'], function () 
             title: data ? '修改' : '添加',
             type: 1,
             area: '450px',
-            offset: '120px',
             content: $('#form-model').html(),
             success: function () {
                 $('#form')[0].reset();
@@ -118,8 +117,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form'], function () 
         layer.open({
             type: 1,
             title: '菜单授权',
-            area: '400px',
-            offset: '120px',
+            area: ['400px', '600px'],
             content: $('#menu-tree').html(),
             success: function () {
                 $('#tree-form')[0].reset();
