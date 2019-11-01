@@ -104,7 +104,6 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'treetable', 'form', 
             title: data ? '修改' : '添加',
             type: 1,
             area: '800px',
-            offset: '50px',
             content: $('#form-model').html(),
             success: function () {
                 $('#form')[0].reset();

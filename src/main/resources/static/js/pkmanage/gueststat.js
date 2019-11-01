@@ -68,7 +68,6 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'element'], f
             title: data ? '详情/修改' : '添加',
             type: 1,
             area: '800px',
-            offset: '20px',
             content: $('#form-model').html(),
             success: function () {
                 $('#form')[0].reset();
@@ -121,7 +120,6 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'element'], f
             title: '报表',
             type: 1,
             area: '800px',
-            offset: '20px',
             content: $('#report-model').html(),
             success: function () {
                 lichee.get('/gueststat/list', {async: false}, function (json) {

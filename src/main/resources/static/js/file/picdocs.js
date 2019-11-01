@@ -65,8 +65,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'imageUpload'
         layer.open({
             title: data ? '详情/修改' : '添加',
             type: 1,
-            area: '800px',
-            offset: '20px',
+            area: ['800px', '560px'],
             content: $('#form-model').html(),
             success: function () {
                 $('#form')[0].reset();
