@@ -39,7 +39,7 @@
 
 * #### ~~分项目~~
 
-* #### ~~xls 导入导出~~ （alibaba EasyExcel）
+* #### ~~xls 导入导出~~ （alibaba EasyExcel，上下标问题待解决）
 
 * #### cloud config
 
