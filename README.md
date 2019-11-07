@@ -70,3 +70,5 @@
 * #### 整合 tkmapper
 
 * #### jetcache
+
+* #### quartz 定时任务
