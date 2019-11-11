@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <exe4j version="6.0.1" transformSequenceNumber="2">
   <directoryPresets config="D:/Lichee/Desktop/releases" />
-  <application name="Startup" distributionSourceDir="D:/Lichee/Desktop">
+  <application name="geopark-web" distributionSourceDir="D:/Lichee/Desktop">
     <languages>
       <principalLanguage id="en" customLocalizationFile="" />
     </languages>

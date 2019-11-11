@@ -79,7 +79,7 @@ layui.define(['config', 'lichee', 'upload', 'layer'], function (exports) {
         },
 
         deleteElement: function () {
-            $(".delete").unbind("click").click(function () {
+            $('.' + defaults.listElement + " div .delete").unbind("click").click(function () {
                 var path = $(this).attr("data-id");
                 $(this).parent().remove();
                 imageUpload.deleteArray(path);
