@@ -2036,8 +2036,8 @@ a cite {
 .layui-form-label {
     float: left;
     display: block;
-    padding: 9px 15px;
-    width: 80px;
+    padding: 9px 10px;
+    width: 90px;
     font-weight: 400;
     line-height: 20px;
     text-align: right
