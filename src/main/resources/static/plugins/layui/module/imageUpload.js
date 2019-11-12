@@ -72,10 +72,40 @@ layui.define(['config', 'lichee', 'upload', 'layer'], function (exports) {
             var html = '<div><img src="' + image.path + '" alt="' + image.name + '" class="layui-upload-img"><span class="delete" data-id="' + image.path + '">删除</span></div>';
             $('.' + defaults.listElement).append(html);
             imageUpload.deleteElement();
+            imageUpload.showElement();
         },
 
         join: function () {
             $('#' + defaults.hiddenId).val(pathList.join());
+        },
+
+        showElement: function () {
+            $('.' + defaults.listElement + " div .layui-upload-img").unbind("click").click(function () {
+                var src = $(this).attr("src");
+                $("<img />").attr("src", src).on("load", function () {
+                    var width = this.width;
+                    var height = this.height;
+                    var scaleWH = (width / height).toFixed(2);
+                    var bigH = 600;
+                    var bigW = scaleWH * bigH;
+                    if(bigW > 900){
+                        bigW = 900;
+                        bigH = bigW / scaleWH;
+                    }
+                    imageUpload.showImage(bigW, bigH, src);
+                });
+            });
+        },
+
+        showImage: function (width, height, src){
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn: 1,
+                shadeClose: true,
+                area: [width + 'px', height + 'px'],
+                content: "<img width='"+width+"' height='"+height+"' src=" + src + " />"
+            });
         },
 
         deleteElement: function () {
