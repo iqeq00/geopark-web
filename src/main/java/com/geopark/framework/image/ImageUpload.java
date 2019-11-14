@@ -1,27 +1,19 @@
 package com.geopark.framework.image;
 
-import java.awt.Graphics;
-import java.awt.GraphicsConfiguration;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import java.awt.HeadlessException;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.Transparency;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.ImageIcon;
-
 import lombok.extern.slf4j.Slf4j;
 import net.coobird.thumbnailator.Thumbnails;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 图片上传组件工具类
@@ -89,7 +81,8 @@ public class ImageUpload {
 			String fileName = null;
 			if (!file.isEmpty()) {
 				File savedir = mkDirs(fileFolder);
-				fileName = imageScale.getImageName() + "." + imageScale.contentType;
+//				fileName = imageScale.getImageName() + "-" + file.getOriginalFilename().substring(0,file.getOriginalFilename().lastIndexOf(".")) + "." + imageScale.contentType;
+				fileName = imageScale.getImageName() + "-" + file.getOriginalFilename();
 				File saveFile = new File(savedir, fileName);
 				FileUtils.copyInputStreamToFile(file.getInputStream(), saveFile);
 			}

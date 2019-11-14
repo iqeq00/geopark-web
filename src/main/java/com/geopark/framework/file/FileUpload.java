@@ -1,16 +1,14 @@
 package com.geopark.framework.file;
 
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 文件上传
@@ -39,7 +37,7 @@ public class FileUpload {
 			String fileName = null;
 			if (!file.isEmpty()) {
 				File savedir = mkDirs(fileFolder);
-				fileName = getFileName()+ file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+				fileName = getFileName() + "-" + file.getOriginalFilename();
 				File saveFile = new File(savedir, fileName);
 				FileUtils.copyInputStreamToFile(file.getInputStream(), saveFile);
 			}

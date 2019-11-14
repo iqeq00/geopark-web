@@ -26,7 +26,7 @@ layui.define(['config', 'lichee', 'upload', 'layer'], function (exports) {
                 data: {keyPath: keyPath},
                 multiple: true,
                 accept: 'file',
-                number: 5,
+                number: 20,
                 done: function (res) {
                     if (res.status = 200) {
                         fileUpload.push(res.result);
