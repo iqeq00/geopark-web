@@ -88,10 +88,10 @@ layui.define(['config', 'lichee', 'upload', 'layer'], function (exports) {
                     var width = this.width;
                     var height = this.height;
                     var scaleWH = (width / height).toFixed(2);
-                    var bigH = 600;
+                    var bigH = 900;
                     var bigW = scaleWH * bigH;
-                    if(bigW > 900){
-                        bigW = 900;
+                    if(bigW > 1600){
+                        bigW = 1600;
                         bigH = bigW / scaleWH;
                     }
                     imageUpload.showImage(bigW, bigH, src);

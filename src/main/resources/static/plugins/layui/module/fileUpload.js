@@ -70,7 +70,9 @@ layui.define(['config', 'lichee', 'upload', 'layer'], function (exports) {
         },
 
         html: function (file) {
-            var html = '<tr><td>' + file.name + '</td><td><button class="layui-btn layui-btn-xs layui-btn-danger delete" data-id="' + file.path + '">删除</button></td></tr>';
+            var html = '<tr><td><a href="/download/' + defaults.keyPath + '/' + file.name + '">' + file.name + '</td>';
+            html += '<td><a class="layui-btn layui-btn-xs" href="/download/' + defaults.keyPath + '/' + file.name + '"><i class="layui-icon layui-icon-download-circle"></i>下载</a>';
+            html += '<button class="layui-btn layui-btn-xs layui-btn-danger delete" data-id="' + file.path + '"><i class="layui-icon layui-icon-delete"></i>删除</button></td></tr>';
             $('#' + defaults.listElement).append(html);
             fileUpload.deleteElement();
         },
