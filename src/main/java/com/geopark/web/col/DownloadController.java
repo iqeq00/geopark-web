@@ -26,7 +26,7 @@ import java.net.URLEncoder;
 @RequestMapping(value = "/download")
 public class DownloadController extends SuperController {
 
-    @Value("${kkth.file.location}")
+    @Value("${geopark.file.location}")
     private String fileLocation;
 
     @Resources(AuthTypeEnum.LOGIN)

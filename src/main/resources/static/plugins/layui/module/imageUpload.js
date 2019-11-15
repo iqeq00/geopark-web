@@ -88,13 +88,17 @@ layui.define(['config', 'lichee', 'upload', 'layer'], function (exports) {
                     var width = this.width;
                     var height = this.height;
                     var scaleWH = (width / height).toFixed(2);
-                    var bigH = 900;
-                    var bigW = scaleWH * bigH;
-                    if(bigW > 1600){
-                        bigW = 1600;
-                        bigH = bigW / scaleWH;
+                    if(height > 900) {
+                        var bigH = 900;
+                        var bigW = scaleWH * bigH;
+                        if(bigW > 1600){
+                            bigW = 1600;
+                            bigH = bigW / scaleWH;
+                        }
+                        imageUpload.showImage(bigW, bigH, src);
+                    } else {
+                        imageUpload.showImage(width, height, src);
                     }
-                    imageUpload.showImage(bigW, bigH, src);
                 });
             });
         },
