@@ -5,7 +5,7 @@ server:
 
 spring:
   profiles:
-    active: dev
+    active: prod
   main:
     banner-mode: "off"
   application:
@@ -31,8 +31,8 @@ spring:
     proxy-target-class: true
   servlet:
     multipart:
-      max-file-size: 20MB
-      max-request-size: 20MB
+      max-file-size: 2048MB
+      max-request-size: 2048MB
   http:
     encoding:
       enabled: true
