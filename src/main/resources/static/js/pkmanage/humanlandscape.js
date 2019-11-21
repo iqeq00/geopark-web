@@ -36,7 +36,7 @@ layui.use(['config', 'lichee', 'jquery', 'layer', 'table', 'form', 'laydate','im
             //{field: 'altitude', align: 'center', sort: true, title: '海拔高度'},
             //{field: 'feature', align: 'center', sort: true, title: '特色'},
             //{field: 'level', align: 'center', sort: true, title: '保护单位'},
-            //{field: 'approvedtime', align: 'center', sort: true, title: '批准时间'},
+            //{field: 'approvedtime', align: 'center', sort: true, title: '原编号'},
             //{field: 'status', align: 'center', sort: true, title: '保护现状'},
             {fixed: 'right',align : 'center', title: '操作', toolbar: '#bar', width: 180}
         ]]

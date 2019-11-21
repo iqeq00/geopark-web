@@ -92,9 +92,9 @@ public class Humanlandscape implements Serializable {
     private String level;
 
     /**
-     * 批准时间
+     * 原编号
      */
-    @ExcelProperty(value = "批准时间",index = 10)
+    @ExcelProperty(value = "原编号",index = 10)
     private String approvedtime;
 
     /**
