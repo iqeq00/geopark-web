@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2019-10-22 16:54:56
+Date: 2019-11-22 14:59:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -64,6 +64,28 @@ CREATE TABLE `commentary` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for culturalsites
+-- ----------------------------
+DROP TABLE IF EXISTS `culturalsites`;
+CREATE TABLE `culturalsites` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `park_id` int(10) NOT NULL COMMENT '公园ID',
+  `sitename` varchar(256) DEFAULT NULL COMMENT '文物保护单位名称',
+  `batch` varchar(256) DEFAULT NULL COMMENT '公布批次',
+  `dates` varchar(256) DEFAULT NULL COMMENT '年代',
+  `type` varchar(256) DEFAULT NULL COMMENT '类别',
+  `address` varchar(256) DEFAULT NULL COMMENT '地址',
+  `level` varchar(256) DEFAULT NULL COMMENT '保护级别',
+  `number` varchar(256) DEFAULT NULL COMMENT '含文物点数量',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='文物保护单位';
+
+-- ----------------------------
+-- Records of culturalsites
+-- ----------------------------
+INSERT INTO `culturalsites` VALUES ('6', '1', '2', '2', '2', '2', '2', '2', '2');
+
+-- ----------------------------
 -- Table structure for displayboard
 -- ----------------------------
 DROP TABLE IF EXISTS `displayboard`;
@@ -110,7 +132,6 @@ CREATE TABLE `earthquake` (
 -- ----------------------------
 -- Records of earthquake
 -- ----------------------------
-INSERT INTO `earthquake` VALUES ('1', '1', '3344', '大邑', '1', '天府广场', '1.1000000000000001', '百人', '不稳定', '不危害', '啊哈', '农药', '农民', '222');
 
 -- ----------------------------
 -- Table structure for ecosystem
@@ -137,7 +158,7 @@ CREATE TABLE `ecosystem` (
 -- ----------------------------
 -- Records of ecosystem
 -- ----------------------------
-INSERT INTO `ecosystem` VALUES ('1', '1', '主要地貌类型有低山、丘陵、坪坝、沟谷 ', '17.8～18.2', '40', '-2.8', '年降水量在 1000～1200 毫米之间，主要集中在夏秋两季，占全年降水量的 80%左右。其中夏季降水量占全年的 56.5%；秋季多阴雨，降水量占全年的 23.1%', '自贡地质公园的植被类型属川东盆地亚热带偏湿性常绿阔叶林，森林以人工松林为主，部分区域有成片针阔混交林。自然植被由亚热带常绿阔叶林、低山常绿针叶林、竹林组成。由于开发历史悠久，原始植被已基本消失，仅在公园范围内的荣县桫椤自然保护区内保存了一片小面积的天然植被。据调查，在公园范围内，有高等植物 77 科 163 属 314种，其中乔木 48 科 129 种，灌木 23 科 79 种，藤本 21 种，竹类 13 种，蕨类 30 种，草本42 种。国家重点保护的野生植物有桫椤、银杏、楠木、油樟、香樟、苏铁、红豆树、厚朴、任豆、红椿、川黄檗、水杉等 18 种。 ', '自贡地质公园内野生动物资源丰富，其中脊椎动物有 5 纲 23 目 58 科 145种。哺乳纲有 3 目 8 科 22 种，如貉、黄鼬、大灵猫、小灵猫等。鸟纲 11 目 27 科 75 种，如巷鹭、绿头鸭、鸢等。爬行纲 3 目 6 科 11 种，有蹼壁虎、北草蜥、赤练蛇等。鱼纲 5 目 14科 31 种，有白鲟、翘嘴江鲵等。两栖纲 1 目 3 科 6 种，有大蟾蜍、泽蛙等。无脊椎动物有环节动物、软体动物、节肢动物甲壳类、蛛类和昆虫类等。其中，野生动物以蛇、蛙、鸟类等的野生动物种群数量居多，主要分布在森林较多的丘陵地区。', '无', '自贡地质公园地面水主要由江水补给，河流发育，形成径流汇入沱江和岷江，均属长江水系。多年平均径流深度为 404 毫米，正常年径流量 17.18 亿立方米。径流年内分配为：11 月至次年 3 月为枯水期，4 月和 10 月为平水期，5 月至 9 月为丰水期。枯水期和平水期水含量占全年总水量的 20%。 ', '无', '无', '无');
+INSERT INTO `ecosystem` VALUES ('1', '1', '主要地貌类型有低山、丘陵、坪坝、沟谷 ', '17.8～18.2', '40', '-2.8', '年降水量在 1000～1200 毫米之间，主要集中在夏秋两季，占全年降水量的 80%左右。其中夏季降水量占全年的 56.5%；秋季多阴雨，降水量占全年的 23.1%', '自贡地质公园的植被类型属川东盆地亚热带偏湿性常绿阔叶林，森林以人工松林为主，部分区域有成片针阔混交林。自然植被由亚热带常绿阔叶林、低山常绿针叶林、竹林组成。由于开发历史悠久，原始植被已基本消失，仅在公园范围内的荣县桫椤自然保护区内保存了一片小面积的天然植被。', '自贡地质公园内野生动物资源丰富，其中脊椎动物有 5 纲 23 目 58 科 145种。哺乳纲有 3 目 8 科 22 种，如貉、黄鼬、大灵猫、小灵猫等。鸟纲 11 目 27 科 75 种，如巷鹭、绿头鸭、鸢等。爬行纲 3 目 6 科 11 种，有蹼壁虎、北草蜥、赤练蛇等。鱼纲 5 目 14科 31 种，有白鲟、翘嘴江鲵等。两栖纲 1 目 3 科 6 种，有大蟾蜍、泽蛙等。无脊椎动物有环节动物、软体动物、节肢动物甲壳类、蛛类和昆虫类等。其中，野生动物以蛇、蛙、鸟类等的野生动物种群数量居多，主要分布在森林较多的丘陵地区。', '据调查，在公园范围内，有高等植物 77 科 163 属 314种，其中乔木 48 科 129 种，灌木 23 科 79 种，藤本 21 种，竹类 13 种，蕨类 30 种，草本42 种。国家重点保护的野生植物有桫椤、银杏、楠木、油樟、香樟、苏铁、红豆树、厚朴、任豆、红椿、川黄檗、水杉等 18 种。 ', '自贡地质公园地面水主要由江水补给，河流发育，形成径流汇入沱江和岷江，均属长江水系。多年平均径流深度为 404 毫米，正常年径流量 17.18 亿立方米。径流年内分配为：11 月至次年 3 月为枯水期，4 月和 10 月为平水期，5 月至 9 月为丰水期。枯水期和平水期水含量占全年总水量的 20%。 ', '自贡市属亚热带季风湿润性气候，四季分明，降水丰富，光照少，湿度大。年平均气温17.8-18.2℃，最冷月（一月）平均气温7.3-7.5℃；最热月（七月）平均气温27.1-28.9℃。年降水量在1100-1200毫米之间，主要集中在夏秋两季，占全年降水量的80%左右。多年平均雾日48.5天，主要集中在冬季和初春季节。年日照时数1240.5小时，是我国日照时数最少的城市之一。', '无', '无');
 
 -- ----------------------------
 -- Table structure for exchangeexhibition
@@ -157,15 +178,13 @@ CREATE TABLE `exchangeexhibition` (
   `update_time` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='交流互展';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='交流互展';
 
 -- ----------------------------
 -- Records of exchangeexhibition
 -- ----------------------------
-INSERT INTO `exchangeexhibition` VALUES ('1', '1', '1', '1', '1', '1', '1', '1', '15674831259661.jpg', '2019-09-03 10:54:57', '2019-09-03 11:58:53', null);
-INSERT INTO `exchangeexhibition` VALUES ('2', '1', '发动机拉克丝积分', '2018-06-12', '发撒打发', '范德萨', '放大算法', '', '15674913075601.jpg', '2019-09-03 14:15:11', '2019-09-03 14:15:11', null);
-INSERT INTO `exchangeexhibition` VALUES ('3', '2', '1', '1', '1', '1', '1', '1', '156758325476647.jpg,156758326266948.jpg,156758327323349.jpg,15676460641770.jpg,15676460641770.jpg,', '2019-09-04 15:48:08', '2019-09-05 09:14:37', null);
-INSERT INTO `exchangeexhibition` VALUES ('4', '1', '1', '1', '1', '1', '1', '1', 'http://www.geopark.com/exchange/156775219319614.jpg,http://www.geopark.com/exchange/156775220986116.jpg,http://www.geopark.com/exchange/156775220985415.jpg,http://www.geopark.com/exchange/156775236896817.jpg,http://www.geopark.com/exchange/156775236900418.jpg,http://www.geopark.com/exchange/156775237561419.jpg', '2019-09-06 14:52:24', '2019-09-06 14:52:55', null);
+INSERT INTO `exchangeexhibition` VALUES ('5', '1', '上海建博会展', '2019年10月31日', '上海建博会展出到11月2日。为期三天的展会同期活动丰富精彩，共有五场分主题学术论坛和多个技能大赛。', '10月31日，第三届2019上海国际建筑遗产保护与修复博览会在上海展览中心开幕。本届博览会以“齐心遗产保护，协力社会发展”为主题，由中国古迹遗址保护协会、中国文物保护技术协会主办，由上海建为历保科技股份有限公司、清源（北京）文化发展中心、德国莱比锡国际展览有限公司联合承办。当天，自贡世界地质公园在会场的四川展区精彩亮相，展示的萌系文创产品惊艳展场，吸睛无数。\n自贡恐龙博物馆展场以张爱萍将军的题词“恐龙群窟 世界奇观”为主题，既有建馆以来精美绝伦的主题展览，震撼的遗址现场，优美的室外景观，益智益趣的活动设施，丰富有趣的教育活动，还展示了30多年来的研究成果和博物馆自主开发的文创产品。与会嘉宾对自贡恐龙的前世今生表现出了极大兴趣，不仅表示要亲临自贡恐龙博物馆一睹风采，同时也被现场展示的恐龙萌系文创产品深深吸引。2013年，自贡恐龙博物馆征集了6个一组吉祥物形象，由此开发了系列恐龙文创产品，目前种类已经上百种。吉祥物公仔、钥匙扣、布包、恐龙雨伞、拼装玩具......样样令人爱不释手。很多嘉宾当即扫码关注了自贡恐龙博物馆的微信公众号，下单购买。恐龙博物馆微博上也有许多粉丝留言询问。', '', '', '/images/exchange/15743903595152-20191118111759283005.png,/images/exchange/15743903595151-20191118111759541003.png,/images/exchange/15743903595150-20191118111758409001.png,/images/exchange/15743903595150-20191118111758839002.png,/images/exchange/15743903595153-20191118111759360004.png', '2019-11-22 10:39:33', '2019-11-22 10:39:33', null);
+INSERT INTO `exchangeexhibition` VALUES ('6', '1', '自贡', '2019年9月16日-19日', '自贡世界地质公园相关景区、博物馆、社区等', '通过开展交流座谈会及实地考察自贡世界地质公园相关景区、博物馆、社区等，双方就地质公园管理机构、地质遗迹保护、科普教育、科学研究、标识解说系统建设、地质公园旅游推广及带动社区发展等进行了深入的探讨与交流，相互学习彼此成功经验。', '神农架世界地质公园一行12人', '自贡与神农架开展地质公园交流活动', '/images/exchange/15743908919726-20190925123154812002 (1).png,/images/exchange/15743908919725-20190925123154195001.png,/images/exchange/15743908919725-20190925123154812002.png', '2019-11-22 10:48:13', '2019-11-22 10:48:13', null);
 
 -- ----------------------------
 -- Table structure for fincestat
@@ -218,195 +237,191 @@ CREATE TABLE `geolandscape` (
   `note` varchar(256) DEFAULT NULL COMMENT '备注',
   `img` text COMMENT '照片',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地质遗迹景观';
+) ENGINE=InnoDB AUTO_INCREMENT=198 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地质遗迹景观';
 
 -- ----------------------------
 -- Records of geolandscape
 -- ----------------------------
-INSERT INTO `geolandscape` VALUES ('1', '1', 'ZG1004', 'ZG1004', '范家湾层型剖面', null, '地方性标准剖面', null, null, '104.755888888881', '29.4234722222199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('2', '1', 'ZG1005', 'ZG1005', '文家村层型剖面', null, '地方性标准剖面', null, null, '104.78733333332499', '29.432916666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('3', '1', 'ZG1004', 'ZG1004', '范家湾层型剖面', null, '地方性标准剖面', null, null, '104.755888888881', '29.4234722222199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('4', '1', 'ZG1005', 'ZG1005', '文家村层型剖面', null, '地方性标准剖面', null, null, '104.78733333332499', '29.432916666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('6', '1', 'ZG1004', 'ZG1004', '范家湾层型剖面', null, '地方性标准剖面', null, null, '104.755888888881', '29.4234722222199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('7', '1', 'ZG1005', 'ZG1005', '文家村层型剖面', null, '地方性标准剖面', null, null, '104.78733333332499', '29.432916666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('8', '1', 'ZG1002', 'ZG1002', '威远河风景河段', null, '风景河段', null, null, '104.745861111103', '29.4379999999978', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('9', '1', 'ZG1004', 'ZG1004', '范家湾层型剖面', null, '地方性标准剖面', null, null, '104.755888888881', '29.4234722222199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('10', '1', 'ZG1005', 'ZG1005', '文家村层型剖面', null, '地方性标准剖面', null, null, '104.78733333332499', '29.432916666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('11', '1', 'ZG1006', 'ZG1006', '燊海井', null, '采矿遗迹景观', null, null, '104.785361111103', '29.376861111108902', null, null, null, '世界级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('12', '1', 'ZG1009', 'ZG1009', '三多寨岩穴群', null, '碎屑岩地貌景观', null, null, '104.87077777776901', '29.4508611111089', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('13', '1', 'ZG1014', 'ZG1014', '金子村“Ω”形河曲', null, '风景河段', null, null, '104.79580555554701', '29.3430277777756', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('14', '1', 'ZG1015', 'ZG1015', '狮湾村层型剖面', null, '地方性标准剖面', null, null, '104.71711111110299', '29.287416666664399', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('15', '1', 'ZG1023', 'ZG1023', '杨柳村崩塌遗址', null, '山体崩塌遗迹景观', null, null, '104.666472222214', '29.227194444442201', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('16', '1', 'ZG1025', 'ZG1025', '飞龙峡岩腔', null, '碎屑岩地貌景观', null, null, '104.646277777769', '29.2345277777756', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('17', '1', 'ZG1026', 'ZG1026', '飞龙峡石球', null, '碎屑岩地貌景观', null, null, '104.64902777776901', '29.234277777775599', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('18', '1', 'ZG1027', 'ZG1027', '飞龙峡环形绝壁', null, '碎屑岩地貌景观', null, null, '104.65349999999199', '29.2336111111089', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('19', '1', 'ZG1031', 'ZG1031', '凉风坳岩腔', null, '碎屑岩地貌景观', null, null, '104.656194444436', '29.2558333333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('20', '1', 'ZG1032', 'ZG1032', '狸狐洞峡谷', null, '构造地貌景观', null, null, '104.625805555547', '29.2121111111089', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('21', '1', 'ZG1033', 'ZG1033', '狮子屋基石柱', null, '碎屑岩地貌景观', null, null, '104.629666666658', '29.2172777777756', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('22', '1', 'ZG1034', 'ZG1034', '狮子屋基交错层理', null, '地方性标准剖面', null, null, '104.626583333325', '29.2180277777756', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('23', '1', 'ZG1037', 'ZG1037', '团结村天生桥', null, '碎屑岩地貌景观', null, null, '104.616555555547', '29.255305555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('24', '1', 'ZG1042', 'ZG1042', '贡井平桥瀑布', null, '瀑布景观', null, null, '104.70966666665799', '29.346638888886702', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('25', '1', 'ZG1043', 'ZG1043', '大坝村交错层理', null, '地方性标准剖面', null, null, '104.69552777777', '29.328999999997801', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('26', '1', 'ZG1053', 'ZG1053', '偏龙桥采石场遗址', null, '采矿遗迹景观', null, null, '104.547055555547', '29.3405833333311', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('27', '1', 'ZG1054', 'ZG1054', '鼎新村层型剖面', null, '地方性标准剖面', null, null, '104.523916666658', '29.306777777775601', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('28', '1', 'ZG1055', 'ZG1055', '西堰村乌龟石', null, '碎屑岩地貌景观', null, null, '104.544805555547', '29.298472222219999', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('29', '1', 'ZG1059', 'ZG1059', '余家嘴蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.49344444443599', '29.361833333331099', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('30', '1', 'ZG1060', 'ZG1060', '天王坝蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.492194444436', '29.361277777775499', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('31', '1', 'ZG1061', 'ZG1061', '磨子村层型剖面', null, '地方性标准剖面', null, null, '104.47074999999199', '29.335861111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('32', '1', 'ZG1063', 'ZG1063', '沙树沱蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.508666666658', '29.307972222219998', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('33', '1', 'ZG1065', 'ZG1065', '阴家沟峡谷', null, '构造地貌景观', null, null, '104.15397222221399', '29.2044166666645', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('34', '1', 'ZG1066', 'ZG1066', '大天井村绝壁', null, '碎屑岩地貌景观', null, null, '104.14558333332501', '29.235166666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('35', '1', 'ZG1070', 'ZG1070', '东佳侏罗系蓬莱镇组地层剖面', null, '区域性标准剖面', null, null, '104.205030555547', '29.265530555553301', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('36', '1', 'ZG1080', 'ZG1080', '油房头洞穴', null, '碎屑岩地貌景观', null, null, '104.36024999999201', '29.397388888886699', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('37', '1', 'ZG1084', 'ZG1084', '土门子岩腔', null, '碎屑岩地貌景观', null, null, '104.11252777777', '29.249027777775598', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('38', '1', 'ZG1085', 'ZG1085', '大坪山绝壁', null, '碎屑岩地貌景观', null, null, '104.126749999992', '29.260611111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('39', '1', 'ZG1090', 'ZG1090', '椅子湾沉积相铺面', null, '地方性标准剖面', null, null, '104.17977777777', '29.303166666664399', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('40', '1', 'ZG1092', 'ZG1092', '瓜木沟板状交错层理', null, '地方性标准剖面', null, null, '104.091694444436', '29.338555555553299', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('41', '1', 'ZG1095', 'ZG1095', '顺河村蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.10280555554699', '29.3346666666644', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('42', '1', 'ZG1099', 'ZG1099', '进山冲驼峰', null, '碎屑岩地貌景观', null, null, '104.15047222221401', '29.280583333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('43', '1', 'ZG1101', 'ZG1101', '姜柏嘴绝壁', null, '碎屑岩地貌景观', null, null, '104.169916666658', '29.273555555553301', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('44', '1', 'ZG1102', 'ZG1102', '寨子坳蓬莱镇组二段与窝头山组一段界线', null, '地方性标准剖面', null, null, '104.163861111103', '29.285638888886702', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('45', '1', 'ZG1103', 'ZG1103', '赶场冲层型剖面', null, '地方性标准剖面', null, null, '104.24530555554701', '29.329083333331099', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('46', '1', 'ZG1106', 'ZG1106', '柏杨村越溪河风景河段', null, '风景河段', null, null, '104.187472222214', '29.424138888886699', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('47', '1', 'ZG1115', 'ZG1115', '铁厂镇铁炉嘴冶铁遗址', null, '采矿遗迹景观', null, null, '104.31083333332499', '29.478333333331101', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('48', '1', 'ZG1117', 'ZG1117', '花龙沟峡谷', null, '构造地貌景观', null, null, '104.28877777776999', '29.4803333333311', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('49', '1', 'ZG1121', 'ZG1121', '玉皇村蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.08852777777', '29.398694444442199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('50', '1', 'ZG1122', 'ZG1122', '水斗村层型剖面', null, '地方性标准剖面', null, null, '104.124388888881', '29.447833333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('51', '1', 'ZG1125', 'ZG1125', '正江村越溪河“Ω”形风景河段', null, '风景河段', null, null, '104.194944444436', '29.441166666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('52', '1', 'ZG1128', 'ZG1128', '杉树湾三叠系须家河组地层剖面', null, '区域性标准剖面', null, null, '104.22133333332501', '29.4251388888867', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('53', '1', 'ZG1131', 'ZG1131', '余家坡硅化木化石产地', null, '古植物', null, null, '104.137944444436', '29.456249999997802', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('54', '1', 'ZG1135', 'ZG1135', '白岩寺采石遗址', null, '采矿遗迹景观', null, null, '104.174805555547', '29.485694444442199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('55', '1', 'ZG1136', 'ZG1136', '晋家湾蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.204666666658', '29.489777777775501', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('56', '1', 'ZG1137', 'ZG1137', '长山盐矿', null, '采矿遗迹景观', null, null, '104.218666666658', '29.480722222219999', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('57', '1', 'ZG1138', 'ZG1138', '干沟儿蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.202361111103', '29.469194444442198', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('58', '1', 'ZG1140', 'ZG1140', '石笋沟断崖', null, '碎屑岩地貌景观', null, null, '104.318999999992', '29.4968333333311', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('59', '1', 'ZG1142', 'ZG1142', '石笋沟犀牛山', null, '碎屑岩地貌景观', null, null, '104.32527777777', '29.505805555553302', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('60', '1', 'ZG1143', 'ZG1143', '石笋沟石笋', null, '碎屑岩地貌景观', null, null, '104.325416666658', '29.5046388888866', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('61', '1', 'ZG1144', 'ZG1144', '石笋沟岩穴', null, '碎屑岩地貌景观', null, null, '104.33152777777001', '29.505249999997801', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('62', '1', 'ZG1146', 'ZG1146', '石笋沟大型交错层理', null, '地方性标准剖面', null, null, '104.330944444436', '29.5020833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('63', '1', 'ZG1147', 'ZG1147', '石笋沟巨石阵', null, '山体崩塌遗迹景观', null, null, '104.33052777777', '29.502333333331102', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('64', '1', 'ZG1148', 'ZG1148', '山王村平行层理与交错层理', null, '地方性标准剖面', null, null, '104.347999999992', '29.499444444442201', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('65', '1', 'ZG1149', 'ZG1149', '山王村方山', null, '碎屑岩地貌景观', null, null, '104.343749999992', '29.508527777775502', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('66', '1', 'ZG1150', 'ZG1150', '劳武村峡谷', null, '构造地貌景观', null, null, '104.33927777776999', '29.493583333331099', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('67', '1', 'ZG1151', 'ZG1151', '茨芭坳村三叠系与侏罗系地层整合接触', null, '地方性标准剖面', null, null, '104.353555555547', '29.480999999997799', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('68', '1', 'ZG1152', 'ZG1152', '高石梯上三叠统须家河组地层', null, '区域性标准剖面', null, null, '104.329083333325', '29.512944444442201', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('69', '1', 'ZG1154', 'ZG1154', '上观音绝壁', null, '碎屑岩地貌景观', null, null, '104.299749999992', '29.499222222219998', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('70', '1', 'ZG1156', 'ZG1156', '鸡冠石绝壁', null, '碎屑岩地貌景观', null, null, '104.277638888881', '29.5031388888866', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('71', '1', 'ZG1159', 'ZG1159', '上三叠统河湖沉积地层剖面', null, '区域性标准剖面', null, null, '104.261883333325', '29.548805555553301', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('72', '1', 'ZG1160', 'ZG1160', '威西背斜', null, '中小型构造', null, null, '104.29138611110299', '29.531724999997799', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('73', '1', 'ZG1164', 'ZG1164', '大安区油建大队叶肢介化石产地', null, '无脊椎动物', null, null, '104.84205555554701', '29.416083333331098', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('74', '1', 'ZG1165', 'ZG1165', '长山岭硅化木', null, '古植物', null, null, '104.803305555547', '29.382833333331099', null, null, null, '国家级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('75', '1', 'ZG1167', 'ZG1167', '凉高山溶洞', null, '可溶岩地貌（喀斯特地貌）景观', null, null, '104.800333333325', '29.382555555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('76', '1', 'ZG1168', 'ZG1168', '凉高山砂岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.802583333325', '29.385305555553298', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('77', '1', 'ZG1169', 'ZG1169', '源通井遗址', null, '采矿遗迹景观', null, null, '104.814083333325', '29.378138888886699', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('78', '1', 'ZG1170', 'ZG1170', '和平永川龙化石产地', null, '古脊椎动物', null, null, '104.805888888881', '29.360055555553298', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('79', '1', 'ZG1171', 'ZG1171', '大坟堡粘土地层命名地', null, '区域性标准剖面', null, null, '104.780638888881', '29.368305555553299', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('80', '1', 'ZG1172', 'ZG1172', '大安寨灰岩地层命名地', null, '区域性标准剖面', null, null, '104.784388888881', '29.3622499999978', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('81', '1', 'ZG1173', 'ZG1173', '自流井组典型地层剖面', null, '区域性标准剖面', null, null, '104.78744444443601', '29.3638611111089', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('82', '1', 'ZG1174', 'ZG1174', '吉成井遗址', null, '采矿遗迹景观', null, null, '104.771111111103', '29.371305555553299', null, null, null, '国家级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('83', '1', 'ZG1175', 'ZG1175', '小桥井遗址', null, '采矿遗迹景观', null, null, '104.75799999999199', '29.352055555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('84', '1', 'ZG1176', 'ZG1176', '通虹井遗址', null, '采矿遗迹景观', null, null, '104.751527777769', '29.354083333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('85', '1', 'ZG1177', 'ZG1177', '宝隆井遗址', null, '采矿遗迹景观', null, null, '104.751833333325', '29.353638888886699', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('86', '1', 'ZG1178', 'ZG1178', '双成井遗址', null, '采矿遗迹景观', null, null, '104.741999999992', '29.342777777775499', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('87', '1', 'ZG1179', 'ZG1179', '郭家坳砂岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.749722222214', '29.3444444444422', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('88', '1', 'ZG1180', 'ZG1180', '马鞍山泥岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.75986111110301', '29.374333333331101', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('89', '1', 'ZG1182', 'ZG1182', '釜溪河（沙湾段）', null, '风景河段', null, null, '104.766138888881', '29.350388888886702', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('90', '1', 'ZG1183', 'ZG1183', '焦氏峨眉龙化石遗址（大山铺后山恐龙化石群）', null, '古脊椎动物', null, null, '104.826694444436', '29.399666666664402', null, null, null, '国家级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('91', '1', 'ZG1184', 'ZG1184', '沙溪庙组一段含恐龙化石地层剖面', null, '区域性标准剖面', null, null, '104.826361111103', '29.399972222220001', null, null, null, '国家级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('92', '1', 'ZG1185', 'ZG1185', '大山铺恐龙化石群', null, '古脊椎动物', null, null, '104.826333333325', '29.399749999997798', null, null, null, '世界级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('93', '1', 'ZG1186', 'ZG1186', '杨家湾角齿鱼化石产地', null, '古脊椎动物', null, null, '104.477916666658', '29.401555555553301', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('94', '1', 'ZG1187', 'ZG1187', '云蒸井遗址', null, '采矿遗迹景观', null, null, '104.699999999992', '29.340916666664398', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('95', '1', 'ZG1188', 'ZG1188', '东岳面石灰岩命名地地层剖面', null, '区域性标准剖面', null, null, '104.768277777769', '29.384555555553298', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('96', '1', 'ZG1189', 'ZG1189', '珍珠冲粘土命名地地层剖面', null, '区域性标准剖面', null, null, '104.745694444436', '29.367944444442202', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('97', '1', 'ZG2001', 'ZG2001', '杨氏马门溪龙化石产地', null, '古脊椎动物', null, null, '104.748555555547', '29.4435277777755', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('98', '1', 'ZG2005', 'ZG2005', '谢家坝“Ω”河曲', null, '风景河段', null, null, '104.74438888888101', '29.4105833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('99', '1', 'ZG2012', 'ZG2012', '马吃水交错层理', null, '地方性标准剖面', null, null, '104.742833333325', '29.336944444442199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('100', '1', 'ZG2013', 'ZG2013', '雷公滩自流井组（J1-2z）与新田沟组（J2zt）接触界线', null, '地方性标准剖面', null, null, '104.72513888888101', '29.366416666664399', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('101', '1', 'ZG2027', 'ZG2027', '贡井平桥瀑布', null, '瀑布景观', null, null, '104.709916666658', '29.346472222220001', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('102', '1', 'ZG2028', 'ZG2028', '艾叶滩楔状交错层理', null, '地方性标准剖面', null, null, '104.682777777769', '29.352583333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('103', '1', 'ZG2029', 'ZG2029', '旭水河（艾叶段）', null, '风景河段', null, null, '104.683972222214', '29.352638888886698', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('104', '1', 'ZG2030', 'ZG2030', '艾叶壶穴', null, '流水侵蚀地貌景观', null, null, '104.681055555547', '29.354249999997801', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('105', '1', 'ZG2033', 'ZG2033', '桥坝上层型剖面', null, '地方性标准剖面', null, null, '104.662138888881', '29.3769166666644', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('106', '1', 'ZG2034', 'ZG2034', '新烧坊楔形交错层理', null, '地方性标准剖面', null, null, '104.65333333332499', '29.3936944444422', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('107', '1', 'ZG2036', 'ZG2036', '杨柳塘层型剖面', null, '地方性标准剖面', null, null, '104.63952777777', '29.426305555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('108', '1', 'ZG2039', 'ZG2039', '三口塘层型剖面', null, '地方性标准剖面', null, null, '104.579888888881', '29.413083333331102', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('109', '1', 'ZG2041', 'ZG2041', '喜家冲层型剖面', null, '地方性标准剖面', null, null, '104.571361111103', '29.401416666664399', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('110', '1', 'ZG2045', 'ZG2045', '骡子岭交错层理', null, '地方性标准剖面', null, null, '104.602638888881', '29.362333333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('111', '1', 'ZG2047', 'ZG2047', '燕石峰交错层理', null, '地方性标准剖面', null, null, '104.597388888881', '29.3631944444422', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('112', '1', 'ZG2060', 'ZG2060', '铁板村采石场', null, '采矿遗迹景观', null, null, '104.53861111110299', '29.3756944444422', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('113', '1', 'ZG2064', 'ZG2064', '大才村采石场', null, '采矿遗迹景观', null, null, '104.518999999992', '29.3800833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('114', '1', 'ZG2073', 'ZG2073', '两口塘村层型剖面', null, '地方性标准剖面', null, null, '104.47558333332501', '29.4110555555533', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('115', '1', 'ZG2075', 'ZG2075', '青龙山恐龙化石群', null, '古脊椎动物', null, null, '104.198333333325', '29.6180833333311', null, null, null, '世界级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('116', '1', 'ZG2076', 'ZG2076', '八角山绝壁', null, '碎屑岩地貌景观', null, null, '104.191749999992', '29.6288888888866', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('117', '1', 'ZG2077', 'ZG2077', '龙洞冲岩穴', null, '碎屑岩地貌景观', null, null, '104.184166666658', '29.6300833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('118', '1', 'ZG2078', 'ZG2078', '立子坡交错层理', null, '地方性标准剖面', null, null, '104.17255555554701', '29.616277777775501', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('119', '1', 'ZG2082', 'ZG2082', '凤凰山层型剖面', null, '地方性标准剖面', null, null, '104.499833333325', '29.296361111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('120', '1', 'ZG2083', 'ZG2083', '新屋村球形风化', null, '碎屑岩地貌景观', null, null, '104.471694444436', '29.303972222220001', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('121', '1', 'ZG2084', 'ZG2084', '梯子沟层型剖面', null, '地方性标准剖面', null, null, '104.472055555547', '29.313611111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('122', '1', 'ZG2087', 'ZG2087', '尖山子蓬莱镇组（J3p）与窝头山组（K1w）接触界线', null, '地方性标准剖面', null, null, '104.452805555547', '29.321527777775501', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('123', '1', 'ZG2088', 'ZG2088', '山边村层型剖面', null, '地方性标准剖面', null, null, '104.44227777776899', '29.295138888886701', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('124', '1', 'ZG2090', 'ZG2090', '宝泉村交错层理', null, '地方性标准剖面', null, null, '104.437194444436', '29.310138888886701', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('125', '1', 'ZG2091', 'ZG2091', '手爬岩丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.433694444436', '29.308527777775598', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('126', '1', 'ZG2092', 'ZG2092', '石缸坝大型交错层理', null, '地方性标准剖面', null, null, '104.42036111110301', '29.310388888886699', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('127', '1', 'ZG2095', 'ZG2095', '严家山丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.40141666665799', '29.310055555553301', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('128', '1', 'ZG2099', 'ZG2099', '麦子山岩腔', null, '碎屑岩地貌景观', null, null, '104.356083333325', '29.3366388888867', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('129', '1', 'ZG2100', 'ZG2100', '青龙嘴交错层理', null, '地方性标准剖面', null, null, '104.371833333325', '29.326749999997801', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('130', '1', 'ZG2101', 'ZG2101', '乌龟山丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.34383333332499', '29.339583333331099', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('131', '1', 'ZG2102', 'ZG2102', '乐德白垩系窝头山组地层剖面', null, '区域性标准剖面', null, null, '104.353694444436', '29.351305555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('132', '1', 'ZG2103', 'ZG2103', '太平坳天生桥', null, '碎屑岩地貌景观', null, null, '104.380833333325', '29.318416666664401', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('133', '1', 'ZG2108', 'ZG2108', '三星顶下白垩统窝头山组地层剖面', null, '区域性标准剖面', null, null, '104.29772222221401', '29.359694444442201', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('134', '1', 'ZG2110', 'ZG2110', '长埂山村丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.265333333325', '29.321694444442201', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('135', '1', 'ZG2115', 'ZG2115', '刘家坝层型剖面', null, '地方性标准剖面', null, null, '104.216583333325', '29.318638888886699', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('136', '1', 'ZG2119', 'ZG2119', '老河沟遂宁组（J3sn）与沙溪庙组（J2s）接触界线', null, '地方性标准剖面', null, null, '104.282916666658', '29.386694444442199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('137', '1', 'ZG2120', 'ZG2120', '窝圈岩绝壁', null, '碎屑岩地貌景观', null, null, '104.25605555554699', '29.390388888886701', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('138', '1', 'ZG2123', 'ZG2123', '度佳侏罗系沙溪庙组地层剖面', null, '区域性标准剖面', null, null, '104.25386111110301', '29.403333333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('139', '1', 'ZG2124', 'ZG2124', '黄桷湾自流井组（J1-2z）与新田沟组（J2xt）接触界线', null, '地方性标准剖面', null, null, '104.287249999992', '29.423333333331101', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('140', '1', 'ZG2125', 'ZG2125', '青岗咀河曲', null, '风景河段', null, null, '104.248694444436', '29.317749999997801', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('141', '1', 'ZG2128', 'ZG2128', '合江村绝壁', null, '碎屑岩地貌景观', null, null, '104.25149999999201', '29.272749999997799', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('142', '1', 'ZG2130', 'ZG2130', '老王沟岩腔', null, '碎屑岩地貌景观', null, null, '104.23224999999201', '29.275166666664401', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('143', '1', 'ZG2131', 'ZG2131', '石峡子坝丹霞地貌', null, '碎屑岩地貌景观', null, null, '104.232499999992', '29.2669166666644', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('144', '1', 'ZG2133', 'ZG2133', '斜石板村自流井组（J1-2z）与新田沟组（J2xt）接触界线', null, '地方性标准剖面', null, null, '104.26219444443601', '29.411194444442199', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('145', '1', 'ZG2137', 'ZG2137', '寨子山大型绝壁', null, '碎屑岩地貌景观', null, null, '104.061333333325', '29.447083333331101', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('146', '1', 'ZG2138', 'ZG2138', '凉水沟层型剖面', null, '地方性标准剖面', null, null, '104.112388888881', '29.458499999997802', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('147', '1', 'ZG2139', 'ZG2139', '胡家山岩腔', null, '碎屑岩地貌景观', null, null, '104.113138888881', '29.481611111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('148', '1', 'ZG2141', 'ZG2141', '求雨山蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.11727777777', '29.4539444444422', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('149', '1', 'ZG2142', 'ZG2142', '巴子塘层型剖面', null, '地方性标准剖面', null, null, '104.43833333332501', '29.4420277777755', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('150', '1', 'ZG2143', 'ZG2143', '沙蛋坡蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.424249999992', '29.446555555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('151', '1', 'ZG2144', 'ZG2144', '1936年荣县西瓜山荣县峨眉龙化石产地', null, '古脊椎动物', null, null, '104.440277777769', '29.440972222220001', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('152', '1', 'ZG2145', 'ZG2145', '西瓜山蛇颈龟化石产地', null, '古脊椎动物', null, null, '104.443833333325', '29.4416666666644', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('153', '1', 'ZG2149', 'ZG2149', '龙洞湾蜥脚类恐龙化石产地', null, '古脊椎动物', null, null, '104.433416666658', '29.475472222219999', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('154', '1', 'ZG2150', 'ZG2150', '钱家坝蜥脚类化石产地', null, '古脊椎动物', null, null, '104.435138888881', '29.427999999997802', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('155', '1', 'ZG2151', 'ZG2151', '烟龙嘴恐龙化石产地', null, '古脊椎动物', null, null, '104.428055555547', '29.430166666664402', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('156', '1', 'ZG2152', 'ZG2152', '1915年荣县第一具恐龙化石产地', null, '古脊椎动物', null, null, '104.42852777776901', '29.452777777775498', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('157', '1', 'ZG2153', 'ZG2153', '高连山恐龙化石产地', null, '古脊椎动物', null, null, '104.435333333325', '29.4640833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('158', '1', 'ZG2155', 'ZG2155', '程家桥沙溪庙组地层剖面', null, '区域性标准剖面', null, null, '104.388055555547', '29.465249999997798', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('159', '1', 'ZG2156', 'ZG2156', '荣县程家桥村蜥脚类化石产地', null, '古脊椎动物', null, null, '104.385249999992', '29.46672222222', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('160', '1', 'ZG2158', 'ZG2158', '王家冲层型剖面', null, '地方性标准剖面', null, null, '104.397722222214', '29.450361111108901', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('161', '1', 'ZG2159', 'ZG2159', '但家湾恐龙化石产地', null, '古脊椎动物', null, null, '104.403083333325', '29.4432499999978', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('162', '1', 'ZG2161', 'ZG2161', '楠木村蜂窝状岩穴', null, '碎屑岩地貌景观', null, null, '104.220833333325', '29.602444444442199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('163', '1', 'ZG2163', 'ZG2163', '河坡高恐龙化石产地', null, '古脊椎动物', null, null, '104.17463888888101', '29.5847777777755', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('164', '1', 'ZG2167', 'ZG2167', '王家河沙溪庙组（J2s）与新田沟组（J2xt）接触界线', null, '地方性标准剖面', null, null, '104.17005555554699', '29.508333333331102', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('165', '1', 'ZG2168', 'ZG2168', '瓜瓢洞断层', null, '中小型构造', null, null, '104.258944444436', '29.441027777775499', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('166', '1', 'ZG2172', 'ZG2172', '平头山蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.543416666658', '29.369805555553299', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('167', '1', 'ZG2173', 'ZG2173', '四平村蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.63402777776901', '29.382888888886701', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('168', '1', 'ZG2174', 'ZG2174', '幺塘村蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.646638888881', '29.343333333331099', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('169', '1', 'ZG2175', 'ZG2175', '东源井遗址', null, '采矿遗迹景观', null, null, '104.680333333325', '29.345861111108899', null, null, null, '国家级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('170', '1', 'ZG2176', 'ZG2176', '丰盛井遗址', null, '采矿遗迹景观', null, null, '104.68158333332499', '29.349666666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('171', '1', 'ZG2177', 'ZG2177', '檬坳村蜥脚类恐龙化石点', null, '古脊椎动物', null, null, '104.691472222214', '29.379388888886702', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('172', '1', 'ZG2178', 'ZG2178', '大公井遗址', null, '采矿遗迹景观', null, null, '104.709305555547', '29.3558055555533', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('173', '1', 'ZG2179', 'ZG2179', '贡井河街东岳庙恐龙足迹化石产地（东岳庙恐龙化石足迹化石产地）', null, '古生物活动遗迹', null, null, '104.708944444436', '29.355583333331101', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('174', '1', 'ZG2180', 'ZG2180', '四川巨棘龙化石产地', null, '古脊椎动物', null, null, '104.70936111110299', '29.218194444442201', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('175', '1', 'ZG2181', 'ZG2181', '舒坪镇磨刀岭肉食龙化石产地', null, '古脊椎动物', null, null, '104.71405555554701', '29.291749999997801', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('176', '1', 'ZG2182', 'ZG2182', '汇东四川鳄化石产地', null, '古脊椎动物', null, null, '104.743694444436', '29.338972222220001', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('177', '1', 'ZG2183', 'ZG2183', '合川马门溪龙化石产地', null, '古脊椎动物', null, null, '104.77011111110301', '29.3435833333311', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('178', '1', 'ZG2184', 'ZG2184', '周氏西蜀鳄化石产地', null, '古脊椎动物', null, null, '104.768611111103', '29.343666666664401', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('179', '1', 'ZG2185', 'ZG2185', '伍家坝恐龙化石群', null, '古脊椎动物', null, null, '104.781166666658', '29.351722222220001', null, null, null, '省级', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('180', '1', 'ZG2186', 'ZG2186', '凉高山逆断层', null, '中小型构造', null, null, '104.799138888881', '29.3926666666644', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('181', '1', 'ZG2187', 'ZG2187', '谢家松林波状层理', null, '地方性标准剖面', null, null, '104.75149999999201', '29.3435833333311', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('182', '1', 'ZG2188', 'ZG2188', '自流井楔形交错层理', null, '地方性标准剖面', null, null, '104.754611111103', '29.34397222222', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('183', '1', 'ZG2189', 'ZG2189', '自流井背斜', null, '中小型构造', null, null, '104.734249999992', '29.353388888886698', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('184', '1', 'ZG1004', 'ZG1004', '范家湾层型剖面', null, '地方性标准剖面', null, null, '104.755888888881', '29.4234722222199', null, null, null, '省级以下', null, null, null, null, null);
-INSERT INTO `geolandscape` VALUES ('185', '1', 'ZG1005', 'ZG1005', '文家村层型剖面', null, '地方性标准剖面', null, null, '104.78733333332499', '29.432916666664401', null, null, null, '省级以下', null, null, null, null, null);
+INSERT INTO `geolandscape` VALUES ('1', '1', 'G069', 'ZG1004', '范家湾剖面', '', '地方性标准剖面', '位于大安区新民乡柏杨村', '', '104.75588889', '29.423472222', '', '', '该剖面位于大安区新民乡柏杨村，东经104°45′21.22″，北纬29°25′24.47″。岩性为沙溪庙组二段（J2s2）黄灰色厚块状砂岩与紫红色泥岩互层，黄灰色砂岩发育平行层理，单层厚度可达4m，岩石发育竖直节理，地貌上形成陡壁，紫红色泥岩破碎，剖面上可见厚度3.5m，其中夹数层黄灰色粉砂岩与砂岩，夹层厚约10-23cm，夹层与泥岩界面混杂，界面凹凸不平，局部甚至弯曲严重，夹层延伸一定长度后尖灭。', '省级以下', '', '', '', '', '/images/geolandscape/157189956555953.jpg,/images/geolandscape/157189956556054.jpg');
+INSERT INTO `geolandscape` VALUES ('2', '1', 'G068', 'ZG1005', '文家村剖面', '', '地方性标准剖面', '该剖面位于大安区新民乡文家村，东经104°47′14.39″，北纬29°25′58.52″。', '', '104.78733333', '29.432916667', '', '', '剖面为人工开挖的纵断面，岩性为沙溪庙组二段（J2s2）紫红色泥岩、浅绿色粉砂岩、黄灰色粗砂岩互层，其中紫红色泥岩与灰绿色粉砂岩互层出露，比例约为1:1，粉砂岩出露厚度为15-45cm，局部尖灭于紫红色泥岩中，粉砂岩和紫红色泥岩中等至强风化，表面破碎。紫红色泥岩和灰绿色粉砂岩层面较平直，局部与主层面成锐角相斜交，具有地层顶底面指示作用，粗砂岩单层厚30-170cm，出露厚度30-320cm，局部尖灭于灰绿色粉砂岩中，粗砂岩中局部夹杂有紫红色泥岩，推测沉积环境为弱动荡的河湖相沉积。', '省级以下', '', '', '', '', '/images/geolandscape/157189962677355.jpg');
+INSERT INTO `geolandscape` VALUES ('8', '1', 'G067', 'ZG1002', '威远河风景河段', '', '风景河段', '位于大安区新民镇詹家村，东经104°44′45.11″，北纬29°26′16.78″。', '', '104.74586111', '29.438', '', '', '河流蜿蜒曲折，从258°方向流来，在350m的范围内发生近180°拐弯，延247°方向流去。河水清澈，水质良好，水深2-6m，河底可见大量砾石，直径约10-60cm，水中不时可见鱼群。河两岸为沙溪庙组二段（J2s2）黄灰色块状砂岩。河水最终汇入釜溪河，河水滋润了两岸人民，两岸农作物茂盛，渔民常在河边捕鱼，借助这有利地势，在此修建两个大坝，已工作90余年，为防洪灌溉作出了重要贡献。', '省级以下', '', '', '', '', '/images/geolandscape/157189966907156.jpg');
+INSERT INTO `geolandscape` VALUES ('11', '1', 'G092', 'ZG1006', '燊海井', '', '采矿遗迹景观', '位于大安区大山铺镇燎原村，东经104°47′07.32″，北纬29°22′36.69″。', '', '104.78536111', '29.376861111', '', '', '燊海井是典型的清代井盐生产现场，世界地质公园主要组成部分，被誉为盐场器官。燊海井凿成于1835年，是世界第一口人工钻凿的超千米（1001.42m）深井，也是全国仅存的手工制盐作坊。该井主要建筑有碓房、大车房和灶房，主要生产设备碓架、井架（天车）、大车等，在钻井技术上，堪称世界之最，是中国古代钻井工艺最具创造性的杰出代表，是世界科技史上的重要里程碑。在燊海井周围1.2平方千米的范围内，先后钻井198口，成为自贡盐场凿井最为密集的地区。至今，燊海井仍采用传统的天然气煎制方法生产食盐，从这里能看到井场从钻井、采气到制盐的全过程，能亲身体会到清末盐场的氛围和气息，是自贡盐业历史的一个缩影。', '世界级', '', '', '', '', '/images/geolandscape/157189973173657.jpg');
+INSERT INTO `geolandscape` VALUES ('12', '1', 'G065', 'ZG1009', '三多寨岩穴群', '', '碎屑岩地貌景观', '位于大安区三多寨镇徐家村，东经104°52′14.79″，北纬29°27′03.11″。', '', '104.87077778', '29.450861111', '', '', '成景岩石为沙溪庙组二段（J2s2）黄灰色巨块状砂岩，岩石经长期的风化剥落后形成一个长70m，高15m，沿101°方向延伸的陡峻绝壁，岩石节理发育，局部可见明显的交错层理，发育多处小型岩腔。最具观赏处在东端，发育多个大小不等，或相对孤立，或相切，大小10cm-2.5m，深15cm-1m的成片洞穴。', '省级', '', '', '', '', '/images/geolandscape/157190097087858.jpg');
+INSERT INTO `geolandscape` VALUES ('13', '1', 'G127', 'ZG1014', '金子村“Ω”形河曲', '', '风景河段', '位于大安区和平镇金子村，东经104°47′44.86″，北纬29°20′34.86″。', '', '104.79580556', '29.343027778', '', '', '釜溪河一路蜿蜒曲折，在大地上镌刻出优美的痕迹，此段为“Ω”形，河段最近处只相隔约45m，大多数人可能不知道这为一条河流的不同河段，河两岸为沙溪庙组二段（J2s2）砂岩与泥岩互层，河水清澈，鱼儿成群，两河段的中间现为小山包，经若干年后河流就或许会走捷径，留下一个孤立的山包在原河流所包围的地方（离堆山），大自然就是这么神奇。', '省级以下', '', '', '', '', '/images/geolandscape/157190100941559.jpg');
+INSERT INTO `geolandscape` VALUES ('14', '1', 'G169', 'ZG1015', '狮湾村剖面', '', '地方性标准剖面', '该剖面位于自流井区舒坪乡狮湾村，东经104°43′01.56″，北纬29°17′14.74″。', '', '104.71711111', '29.287416667', '', '', '剖面为人工挖掘形成的陡峻纵断面，岩性为沙溪庙组一段（J2s1）紫红色泥岩与黄灰色、紫红色砂岩互层，砂岩与泥岩比例为4:3，砂岩的层序都是下部为中薄层黄灰色砂岩，上部为厚层-块状紫红色砂岩。泥岩多为暗紫色，局部呈条带状紫红色，泥岩较破碎，其间分布有灰绿色泥岩，多呈斑状，局部为细条带状。各岩性段在局部尖灭或厚度发生变化。', '省级以下', '', '', '', '', '/images/geolandscape/157190104742160.jpg');
+INSERT INTO `geolandscape` VALUES ('15', '1', 'G175', 'ZG1023', '杨柳村崩塌遗址', '', '山体崩塌遗迹景观', '位于自流井区漆树乡杨柳村，东经104°39′59.28″，北纬29°13′37.87″。', '', '104.66647222', '29.227194444', '', '', '崩塌处基岩为蓬莱镇组一段（J3p1）巨块状紫红色砂岩，人工开挖后形成陡峻的断面，岩石裂隙发育，经风化后易崩塌。现经几家勘查单位施工，已在临空面下部填筑了水泥，阻止了岩石的崩落。该点西北约100m有一座小庙，名曰华阳寺观音庙，庙占地约20m2。', '省级以下', '', '', '', '', '/images/geolandscape/157190108932261.jpg');
+INSERT INTO `geolandscape` VALUES ('16', '1', 'G172', 'ZG1025', '飞龙峡岩腔', '', '碎屑岩地貌景观', '位于自流井区农团乡东升村，东经104°38′46.56″，北纬29°14′04.31″。', '', '104.64627778', '29.234527778', '', '', '地貌上整体为赤壁红墙，岩性为白垩系窝头山组二段（K1w2）砖红色块状砂岩，总高约为34m，长约19m，岩石水平节理发育，顺节理风化后形成上下三层岩腔。其中最上一层岩腔高约2.8m，深约1.5m，顺该层岩腔略微清理后作为栈道；第二层岩腔高约2.1m，深约0.5-1.4m，长约13m；最下一层岩腔高约1.3m，深约0.8m，长约6m。在绝壁底部由于绝壁上方流水渗出形成小型水池，水池长约3.5m，宽约1-1.6m。', '省级以下', '', '', '', '', '/images/geolandscape/157190112474662.jpg');
+INSERT INTO `geolandscape` VALUES ('17', '1', 'G173', 'ZG1026', '飞龙峡石球', '', '碎屑岩地貌景观', '位于自流井区农团乡东升村，东经104°38′56.51″，北纬29°14′03.42″。', '', '104.64902778', '29.234277778', '', '', '石球为白垩系窝头山组二段（K1w2）砖红色砂岩，岩石沿纹层及节理裂隙风化后产生球状风化，岩石呈浑圆状，直径约6m，高约1.8m，其下为一小型岩腔，岩腔沿78°方向延伸，延长约17m，深约2m。其旁侧为水库。', '省级以下', '', '', '', '', '/images/geolandscape/157190114779563.jpg');
+INSERT INTO `geolandscape` VALUES ('18', '1', 'G174', 'ZG1027', '飞龙峡环形绝壁', '', '碎屑岩地貌景观', '位于自流井区农团乡东升村，东经104°39′12.57″，北纬29°14′01.03″。', '', '104.6535', '29.233611111', '', '', '绝壁岩性为白垩纪窝头山组二段（K1w2）砖红色砂岩，绝壁呈弧形，总长约250m，高约42m，砂岩中因夹一层泥、页岩，受差异风化后形成一深1.9-6m，高2.1-2.6m的岩腔。在岩腔上方有细流滴下，滴溅在底部水坑中，并最终流入前方的水库，水滴声回荡，使清幽的山谷显得十分生趣。岩腔处冬暖夏凉，是休息的好去处，也命名为聚仙洞。', '省级', '', '', '', '', '/images/geolandscape/157190119371964.jpg');
+INSERT INTO `geolandscape` VALUES ('19', '1', 'G171', 'ZG1031', '凉风坳岩腔', '', '碎屑岩地貌景观', '位于自流井区仲权乡红岩村，东经104°39′22.34″，北纬29°15′21.05″。', '', '104.65619444', '29.255833333', '', '', '岩腔发育在陡壁之下，陡壁高约13m，延270°方向延伸长约46m，岩腔高约8m，向内高度逐渐降低，最内侧仅半米高，岩腔长约20m，深11m，岩腔壁上发育成片的小洞穴，大小1-10cm，深1-9cm不等，局部为大洞套小洞，岩石裂隙中有流水流出，在腔壁上流水慢渗之后形成灰绿色树枝状条带。其下方有两处人工改造的小水坑，坑中水清澈，有一坑内漂浮长势良好，指示出该处良好的生态，另一水坑有清脆的滴水声。曾有人在岩腔下修建房屋，真是纳凉的好地方。岩腔四周植物茂盛，其中成片的金星蕨纷纷伸出柔嫩的细枝迎风招展，别具一番韵味。', '省级以下', '', '', '', '', '/images/geolandscape/157190126730665.jpg');
+INSERT INTO `geolandscape` VALUES ('20', '1', 'G178', 'ZG1032', '狸狐洞峡谷', '', '构造地貌景观', '位于自流井区农团乡草堂村，东经104°37′32.88″，北纬29°12′43.55″。', '', '104.62580556', '29.212111111', '', '', '峡谷长约1500m，深约170m，岩性为窝头山组二段（K1w2）砖红色砂岩，峡谷沿350°方向延伸，峡谷呈深V型，峡谷两侧的半山腰都有公路可通行，由于人工开挖，砖红色砂岩露头好，红色绝壁顺峡谷之上的公路蜿蜒绵长2000m，魏巍壮观，峡谷从下到上多被松树竹林覆盖，植被覆盖率高，生态良好。', '省级以下', '', '', '', '', '/images/geolandscape/157190131001266.jpg');
+INSERT INTO `geolandscape` VALUES ('21', '1', 'G177', 'ZG1033', '狮子屋基石柱', '', '碎屑岩地貌景观', '位于自流井区农团乡草堂村，东经104°37′46.84″，北纬29°13′02.23″。', '', '104.62966667', '29.217277778', '', '', '地貌形态为沟谷中一孤立石柱，岩性为窝头山组二段（K1w2）砖红色巨块状砂岩，石柱为周边岩石风化剥落形成，直径约10m，高约30m，在石柱中部有局部凹陷，基座上长满灌木。', '省级以下', '', '', '', '', '/images/geolandscape/157190135850267.jpg');
+INSERT INTO `geolandscape` VALUES ('22', '1', 'G176', 'ZG1034', '狮子屋基交错层理', '', '地方性标准剖面', '该交错层理位于自流井区农团乡草堂村，东经104°37′35.66″，北纬29°13′04.85″。', '', '104.62658333', '29.218027778', '', '', '楔状交错层理的组成岩石为窝头山组二段（K1w2）砖红色厚块状砂岩，为大型楔状交错层理，层系厚度为30-70cm，层系之间的上下界面为平面，但不相互平行，层系厚度变化明显呈楔形，彼此相切割，细层的倾角变化不定，细层的厚度为1-6cm，细层倾角约为22°-29°，反应为河流相沉积。整个陡壁上可见多处楔状交错层理，多为两个楔状层系。在细层及层系之间发育几处小型岩腔，长15cm-2m，深10cm-60cm，顶部有崩塌迹象。', '省级', '', '', '', '', '/images/geolandscape/157190141823668.jpg');
+INSERT INTO `geolandscape` VALUES ('23', '1', 'G170', 'ZG1037', '团结村天生桥', '', '碎屑岩地貌景观', '位于贡井区农团乡团结村，东经104°36′59.59″，北纬29°15′19.11″。', '', '104.61655556', '29.255305556', '', '', '绝壁之中共发育两处天生桥，其岩性为窝头山组一段（K2w1）砖红色厚块状砂岩。两处天生桥为天然形成，一处天生桥形似门框，高约4.5m，宽约2m，一处天生桥形似拱桥，长约3m，高约40cm-2.2m，现为人行通道。绝壁沿282°方向延长约110m，高约4-9m，绝壁表面风化较严重，刻的字已看不清楚，绝壁局部有龟裂纹发育。', '省级以下', '', '', '', '', '/images/geolandscape/157190148451469.jpg');
+INSERT INTO `geolandscape` VALUES ('24', '1', 'G110', 'ZG1042', '贡井平桥瀑布', '', '瀑布景观', '位于贡井区筱溪街贡草路，东经104°42′35.72″，北纬29°20′47.29″。', '', '104.70966667', '29.346638889', '', '', '此瀑布位于城区实属难能可贵，瀑布宽约80m，落差约6m，荣溪河流经此处时，遇陡坎而成，陡坎岩性为自流井组（J1-2z）紫红色砂岩与紫红色泥岩互层，比例为2:3，由于泥岩抗风化能力较弱，形成许多凹腔，砂岩突出，瀑布因此而成为多级跌瀑，在流量较大部位，瀑布直接倾泻而下，此季节瀑布共分为8条，数量随上游流量而变，瀑布之下加了灯光装饰，夜幕降临时，瀑布流水大桥更为城市增添了几分美色。瀑布上游为长征大桥，下游为济源桥。', '省级', '', '', '', '', '/images/geolandscape/157190152945270.jpg');
+INSERT INTO `geolandscape` VALUES ('25', '1', 'G112', 'ZG1043', '大坝村交错层理', '', '地方性标准剖面', '该交错层理位于贡井区长土乡大坝村，东经104°41′43.93″，北纬29°19′44.37″。', '', '104.69552778', '29.329', '', '', '剖面为天然纵断面，沿320°方向延长约70m，高约3-11m，岩性为沙溪庙组二段（J2s2）紫红色泥岩与黄灰色砂岩、青灰色砂岩互层，比例为2:1:7，地层产状为180°∠16°。岩石较破碎，局部为紫红色泥岩与黄灰色砂岩密集互层出现，砂岩有尖灭现象。最引人注意的是断面上的交错层理，交错层理由紫红色泥岩与青灰色砂岩组成，细层厚度为1-4cm，向320°方向收敛，交错层理的东南方向为尖灭的砂岩，东南为尖灭的椭球状砂岩，交错层理嵌入砂岩中。', '省级', '', '', '', '', '/images/geolandscape/157190156636171.jpg');
+INSERT INTO `geolandscape` VALUES ('26', '1', 'G082', 'ZG1053', '偏龙桥采石场遗址', '', '采矿遗迹景观', '位于贡井区李子乡观音桥村，东经104°32′49.41″，北纬29°20′26.13″。', '', '104.54705556', '29.340583333', '', '', '采石遗址为大型采石场，规模宏大。岩性为沙溪庙组二段（J2s2）黄灰色巨块状砂岩，采石场长约600m，宽约100m，深约30m，坑壁上可见当时采石时留下的痕迹，采石坑边立有警示牌，并修筑有简单的防护措施，采石坑坑底现已被水注满，水深约30m，有一处岩石只露出一部分在水面上，形成湖心岛。', '省级', '', '', '', '', '/images/geolandscape/157190160158972.jpg');
+INSERT INTO `geolandscape` VALUES ('27', '1', 'G163', 'ZG1054', '鼎新村剖面', '', '地方性标准剖面', '该剖面位于荣县鼎新镇鼎新村，东经104°31′26.06″，北纬29°18′24.45″。', '', '104.52391667', '29.306777778', '', '', '剖面为人工开挖形成的纵断面，岩性为遂宁组（J3sn）紫红色泥岩夹灰绿色砂岩，地层产状为122°∠5°。紫红色泥岩较破碎，局部夹有条带状或斑点状灰绿色泥岩。灰绿色砂岩抗风化能力较强，表面凸出。此地层岩石风化成土壤后，土壤肥沃，该区成为远近闻名的果蔬之乡，该区域引进了国内外名、优、稀、特、高产值作物，向游客展现出现代化农业高科技成果，游客可亲自参加田园劳动，学习农耕文化，采摘生态果蔬，自烹自食等活动，尽享田园风光农家活动。', '省级以下', '', '', '', '', '/images/geolandscape/157190164010273.jpg');
+INSERT INTO `geolandscape` VALUES ('28', '1', 'G167', 'ZG1055', '西堰村乌龟石', '', '碎屑岩地貌景观', '位于荣县鼎新镇西堰村，东经104°32′41.31″，北纬29°17′54.48″。', '', '104.54480556', '29.298472222', '', '', '一孤石形似乌龟，其岩性为蓬莱镇组一段（J3p1）紫红色块状砂岩，岩石发育平行层理，地层产状为278°∠29°。岩石顺层风化后形成凹腔，凹腔之上的岩石形似一只乌龟，龟长约5m，高约2.2m，宽4.5m。', '省级以下', '', '', '', '', '/images/geolandscape/157190166754074.jpg');
+INSERT INTO `geolandscape` VALUES ('29', '1', 'G079', 'ZG1059', '余家嘴蜥脚类恐龙化石产地', '', '古脊椎动物', '该恐龙化石产地位于自贡市荣县双石镇石锣村3组余家嘴，东经104°29′36.40″，北纬29°21′42.56″。', '', '104.49344444', '29.361833333', '', '', '发掘化石层位为沙溪庙组二段（J2s2），岩性为紫红色泥岩，之前挖掘出蜥蜴脚类恐龙化石2件。现状为庄稼和丛生的杂草和小灌木，仅见零星基岩露头，该点为当地村民所指大致位置。', '省级以下', '', '', '', '', '/images/geolandscape/157190176699475.jpg,/images/geolandscape/157190177565676.jpg');
+INSERT INTO `geolandscape` VALUES ('30', '1', 'G078', 'ZG1060', '天王坝蜥脚类恐龙化石产地', '', '古脊椎动物', '', '', '104.49219444', '29.361277778', '', '', '位于荣县双石镇石锣村2组天王坝，东经104°29′31.86″，北纬29°21′40.59″。化石层位为沙溪庙组二段（J2s2），岩性为紫红色泥岩。1985年2月23日，石锣村2组村民刘重恩在开片石时发现化石遗迹并报告，经自贡恐龙博物馆专家调查并挖掘清理，判定该恐龙化石为蜥脚类恐龙化石，且为肢骨化石，共1件。该点现状为种植的油菜，村民只能说出大概位置，发现者现已逝去。', '省级以下', '', '', '', '', '/images/geolandscape/157190183665878.jpg,/images/geolandscape/157190183665777.jpg');
+INSERT INTO `geolandscape` VALUES ('31', '1', 'G083', 'ZG1061', '磨子村剖面', '', '地方性标准剖面', '', '', '104.47075', '29.335861111', '', '', '该剖面位于荣县李晏乡磨子村，东经104°28′14.68″，北纬29°20′09.08″。该处为一小型隆起，长约80m，宽约120m，岩性为遂宁组（J3sn）紫红色泥岩夹紫红色中层状砂岩，二者比例为3：1，地层产状为172°∠11°，砂岩抗风化能力强而凸出，泥岩风化后成为良好土壤，当地人因地制宜，顺层理种植庄稼，砂岩为成为良好的分隔面，共分为3层。', '省级以下', '', '', '', '', '/images/geolandscape/157190187542879.jpg');
+INSERT INTO `geolandscape` VALUES ('32', '1', 'G162', 'ZG1063', '沙树沱蜥脚类恐龙化石产地', '', '古脊椎动物', '', '', '104.50866667', '29.307972222', '', '', '位于自贡市荣县鼎新村老当村7组，东经104°30′31.19″，北纬29°18′28.65″。化石层位为沙溪庙组二段（J2s2），岩性为紫红色泥岩，此前共采集蜥脚类恐龙肢骨1件。该点现状为庄稼地，四周杂草、灌木丛生。', '省级以下', '', '', '', '', '/images/geolandscape/157190190697581.jpg,/images/geolandscape/157190190697480.jpg');
+INSERT INTO `geolandscape` VALUES ('33', '1', 'G149', 'ZG1065', '阴家沟丹霞地貌', '', '构造地貌景观', '', '', '104.15397222', '29.204416667', '', '', '位于荣县柳嘉镇学堂坝村，东经104°09′14.26″，北纬29°12′15.95″。峡谷两侧岩性为窝头山组一段（K1w1）砖红色砂岩，峡谷沿315°方向延伸约2.6km，峡谷宽约280m，深80-120m。峡谷两侧发育连绵的绝壁，峡谷两侧由于植被生长茂盛导致绝壁露头较差，峡谷谷底为大片人工挖掘出的梯田，梯田规模较大，梯田、绝壁、峡谷之间相映成趣，形成独特的风景。该点周边区域同该点一样发育绝壁、峡谷、梯田。该区域内树木茂盛，有观景点为多棵小树组成一颗大树。区域内山脊多层马鞍状，盆岭相间出现。', '省级以下', '', '', '', '', '/images/geolandscape/157190195359082.jpg');
+INSERT INTO `geolandscape` VALUES ('34', '1', 'G148', 'ZG1066', '大天井村绝壁', '', '碎屑岩地貌景观', '', '', '104.14558333', '29.235166667', '', '', '位于荣县金花镇大天井村，东经104°08′44.12″，北纬29°14′06.56″。岩性为蓬莱镇组二段（J3p2）砖红色砂岩夹灰色灰岩，绝壁沿49°方向延伸约288m，绝壁高约48m。绝壁中夹杂一层厚块状灰岩，厚度约7m。绝壁表面大部分被植被覆盖仅局部出露。绝壁周边植被发育茂盛。该区域多见绝壁出露。', '省级以下', '', '', '', '', '/images/geolandscape/157190198997583.jpg');
+INSERT INTO `geolandscape` VALUES ('35', '1', 'G141', 'ZG1070', '东佳侏罗系蓬莱镇组地层剖面', '', '区域性标准剖面', '', '', '104.20503056', '29.265530556', '', '', '该剖面位于荣县东佳镇桅杆坳村，荣县东佳镇南东约7km，东经104°12′18.11″，北纬29°15′55.91″。该剖面沿34°方向断续出露，长约1.5km。该地层为河湖相沉积，为一套颜色鲜艳的泥岩或砂泥岩互层。上覆假整合接触白垩系下统窝头山组（K1w）砖红色含砾长石石英砂岩。下伏整合接触沙溪庙组二段（J2s2）灰白色中厚层细粒含钙长石石英砂岩夹紫灰色泥岩。该点可能为直接从区调报告中提取，点外现状为基岩出露较差，植被比以前长势更好，已几乎无人涉足，仅可见蓬莱镇组的部分岩性组合。', '省级以下', '', '', '', '', '/images/geolandscape/157190207543784.jpg');
+INSERT INTO `geolandscape` VALUES ('36', '1', 'G056', 'ZG1080', '油房头洞穴', '', '碎屑岩地貌景观', '', '', '104.36025', '29.397388889', '', '', '洞穴位于自贡市荣县杨佳乡土地场村，东经104°21′36.89″，北纬29°23′50.56″。洞口呈弧形，洞口长5m，高1.7m，洞内深约7-8m，洞穴沿91°方向延伸。洞穴外为一陡壁，陡壁高约8m，长约32m，岩性为沙溪庙组一段（J2s1）黄灰色厚块状砂岩。陡壁上平行层理和交错层理发育。细层厚度7mm-110mm。洞穴上方岩石节理发育，节理面上岩石位移较大，有再次崩塌迹象。该点沿公路347°方向发育300-400m的砂岩绝壁，绝壁高约12m，长有崩塌现象，最大的崩塌体长8m，直径约3m，其轮廓与上部断口相一致。', '省级以下', '', '', '', '', '/images/geolandscape/157190215511885.jpg');
+INSERT INTO `geolandscape` VALUES ('37', '1', 'G147', 'ZG1084', '土门子岩腔', '', '碎屑岩地貌景观', '', '', '104.11252778', '29.249027778', '', '', '土门子岩腔位于自贡荣县金华乡土门子村，东经104°06′45.09″，北纬29°14′56.52″。岩腔位于陡壁之下，整体岩性为窝头山组一段（K1w1）砖红色巨块状砂岩，岩石表面有成片小型风化洞穴，陡壁长约53m，高约11m左右，陡壁之下发育沿135°方向延伸的岩腔，岩腔长约25m，高约4-7m，深约1m左右，周边地形为沟谷，沟谷与坡顶高差约100m，多处可见赤壁丹崖、岩腔、洞穴，沟谷内植被茂盛，动物较多，生态环境良好。', '省级以下', '', '', '', '', '/images/geolandscape/157190217874886.jpg');
+INSERT INTO `geolandscape` VALUES ('38', '1', 'G142', 'ZG1085', '大坪山绝壁', '', '碎屑岩地貌景观', '', '', '104.12675', '29.260611111', '', '', '大坪山绝壁位于自贡市荣县金花乡大坪山村，东经104°07′38.46″，北纬29°15′38.20″。岩性为窝头山组一段（K1w1）砖红色巨块状砂岩，绝壁顺沟发育，先沿227°方向延伸长约290m，后沿332°方向延长约210m，绝壁高约80m，出露较好，陡立于面前，蔚为壮观，绝壁四周植被茂盛，生态良好。', '省级以下', '', '', '', '', '/images/geolandscape/157190221177387.jpg');
+INSERT INTO `geolandscape` VALUES ('39', '1', 'G134', 'ZG1090', '椅子湾剖面', '', '地方性标准剖面', '', '', '104.17977778', '29.303166667', '', '', '该剖面位于荣县东佳镇赵家桥村，东经104°10′47.24″，北纬29°18′11.42″。剖面为人工开挖形成的纵断面，岩性为蓬莱镇组一段（J3p1）紫红色泥岩夹灰绿色粉砂岩，泥岩较破碎，发育水平层理，地层产状近于水平。典型现象为灰绿色粉砂岩发生尖灭并且沿尖灭方向向下弯曲，弯曲并尖灭的四周泥岩层理发生弯曲并有包卷的现象。', '省级以下', '', '', '', '', '/images/geolandscape/157190230289388.jpg,/images/geolandscape/157190231178089.jpg');
+INSERT INTO `geolandscape` VALUES ('40', '1', 'G128', 'ZG1092', '瓜木沟板状交错层理', '', '地方性标准剖面', '', '', '104.09169444', '29.338555556', '', '', '该交错层理位于荣县东佳镇顺河村，东经104°05′30.14″，北纬29°20′18.77″。该点岩性为沙溪庙组二段（J2s2）黄灰色巨块状砂岩夹紫红色泥岩，地层产状为143°∠14°。砂岩纵断面上发育板状交错层理，可见5个层系，其中最明显为中间3个，层系厚度为35-50cm，细层厚度为5mm-22mm，细层倾向为183°，安息角约为18°-35°。砂岩表面有风化形成的小洞穴和凸起的砂球，小洞穴深5mm左右，长5mm-12mm，砂球颜色不同于周围岩石，为紫红色，长10cm-15cm。', '省级', '', '', '', '', '/images/geolandscape/157190234826290.jpg');
+INSERT INTO `geolandscape` VALUES ('41', '1', 'G129', 'ZG1095', '顺河村蜥脚类恐龙化石产地', '', '古脊椎动物', '', '', '104.10280556', '29.334666667', '', '', '位于自贡市荣县东佳镇顺河村1组，牛尿井大脑壳土，东经104°06′10.12″，北纬29°20′04.84″。年代为晚侏罗世时期，化石层位为沙溪庙组二段，化石点清理面积为12m2，共采集得蜥脚类恐龙尾椎化石6件，化石存放于自贡恐龙博物馆内，本次调查找到了当年化石发现的当事人，为余进（电话：18381368175）、税淑敏夫妻，据当事人回忆，应该是在1996年发现了化石。他们保护化石的意识较强，并未对其他地方挖掘。', '省级以下', '', '', '', '', '/images/geolandscape/157190237766591.jpg');
+INSERT INTO `geolandscape` VALUES ('42', '1', 'G136', 'ZG1099', '进山冲驼峰', '', '碎屑岩地貌景观', '', '', '104.15047222', '29.280583333', '', '', '位于荣县东佳镇寨子坳村，东经104°09′01.74″，北纬29°16′50.13″。两座根部相连的山峰屹立于沟谷中，两座峰的连线方向为251°，平面上两座峰长约400m，宽约270m，高约130m，东北侧山峰略高，两座山峰与之间的凹陷一起形似驼峰，山峰顶部及四周灌木丛生，生态良好。遇上云雾天，山峰若隐若现，充满仙气。驼峰周边区域多见孤峰以及赤壁丹崖。', '省级以下', '', '', '', '', '/images/geolandscape/157190240256792.jpg');
+INSERT INTO `geolandscape` VALUES ('43', '1', 'G137', 'ZG1101', '姜柏嘴绝壁', '', '碎屑岩地貌景观', '', '', '104.16991667', '29.273555556', '', '', '姜柏嘴绝壁位于自贡市荣县东佳镇姜柏嘴村，东经104°10′11.73″，北纬29°16′24.85″。岩性为窝头山组一段（K1w1）紫红色巨块状砂岩，岩石中夹一层厚约20cm的砾岩，砾石成分为砂岩、泥岩，砾石分选磨圆好，大小为5-35  mm，多集中在1cm左右，多为次圆状。绝壁沿145°方向延长约220m，高约18m，东南段绝壁面光滑陡立，西北段岩体沿层系风化形成许多小洞穴，呈串珠状分布，同时此处竖直节理发育，岩石经长期风化后形成岩腔，岩腔长约8m，高约1-7m，深约7m，岩腔之下为公路，几乎可容两辆大卡车同时通过。绝壁之上的岩石发育球状风化，表面浑圆，体型巨大，长约8m，高约6m。', '省级', '', '', '', '', '/images/geolandscape/157190243915293.jpg');
+INSERT INTO `geolandscape` VALUES ('44', '1', 'G135', 'ZG1102', '寨子坳蓬莱镇组二段与窝头山组一段界线', '', '地方性标准剖面', '', '', '104.16386111', '29.285638889', '', '', '该界线位于荣县东佳镇寨子坳村，东经104°09′49.94″，北纬29°17′08.29″。点处为蓬莱镇组二段（J3p2）紫红色泥岩与窝头山组一段（K1w1）紫红色砂岩的界线，地层产状近于水平。泥岩较破碎，发育水平层理，泥岩中夹一层暗紫色泥岩。砂岩为块状，节理较发育。界线处露头较好，界线清晰。', '省级以下', '', '', '', '', '/images/geolandscape/157190247324094.jpg');
+INSERT INTO `geolandscape` VALUES ('45', '1', 'G130', 'ZG1103', '赶场冲剖面', '', '地方性标准剖面', '', '', '104.24530556', '29.329083333', '', '', '该剖面位于荣县新桥镇赶场冲村，东经104°14′43.10″，北纬29°19′44.66″。剖面为人工开外形成的纵断面，岩性为蓬莱镇组一段（J3p1）紫红色泥岩、粉砂岩与灰绿色砂岩互层。剖面上可见下部为紫红色泥岩与紫红色粉砂岩互层，整体较稳定，粉砂岩岩局部有变薄或尖灭现象；上部的灰绿色细砂岩有弯曲、变厚现象，其厚度变化为20cm-2.5m，局部有尖灭现象。该点位于枇杷小镇—新桥镇旁，此地枇杷在川南名气较大，路边栽种有大量枇杷树，此时正是枇杷成熟的季节，树上挂满了套住枇杷的黄色和白色纸袋。村民们忙着批发或零售，常有过往车辆停下来购买枇杷。路旁挂上了宣传语，枇杷旅游节即将举行。', '省级以下', '', '', '', '', '/images/geolandscape/157190250315695.jpg');
+INSERT INTO `geolandscape` VALUES ('46', '1', 'G034', 'ZG1106', '柏杨村越溪河风景河段', '', '风景河段', '', '', '104.18747222', '29.424138889', '', '', '位于荣县保华镇柏杨村，东经104°11′14.87″，北纬29°25′26.93″。河流沿220°方向延伸，河流宽7-25m，河流最终流入小井沟水库。河流水质良好，呈现淡绿色，河里鱼群多，生态环境良好。河流两侧为须家河组（T3xj）黄灰色块状砂岩，河中遍布嶙峋怪石，岩石岩性为钙质砂岩，岩石表面因冲刷溶蚀光滑，有一些溶蚀孔，砂岩表面的交错层理清晰可见，岩石直径约20cm-4.8m。', '省级以下', '', '', '', '', '/images/geolandscape/157190253239296.jpg');
+INSERT INTO `geolandscape` VALUES ('47', '1', 'G038', 'ZG1115', '铁厂镇铁炉嘴冶铁遗址', '', '采矿遗迹景观', '', '', '104.31083333', '29.478333333', '', '', '冶铁遗址位于铁厂镇铁路坝南丛林深沟中，东经104°18′39″，北纬29°28′42″。遗址分布较广，东西长约500m，南北宽约300m，面积约15000m2，高出沟底约35m，一直堆积到河边。该处遗址堆积土层可分五层，主要由炭渣、铁矿石、耐火石、砖瓦、铁器残片堆积而成。此外，在沟中岩石块上发现有许多呈规则圆型分布的支架柱洞，直径约20厘米，深12至26厘米，疑为输卤笕槽支架柱洞。据当地村民介绍，沟中还有圆型井口，不断有水外溢。铁炉嘴现存炼铁炉一座，坐西北向东南，直径3.35m，通高4.4m，基座为长条形耐火石，表面光滑坚硬。', '省级', '', '', '', '', '/images/geolandscape/157190257129897.jpg,/images/geolandscape/157190257735498.jpg');
+INSERT INTO `geolandscape` VALUES ('48', '1', 'G037', 'ZG1117', '花龙沟峡谷', '', '构造地貌景观', '', '', '104.28877778', '29.480333333', '', '', '位于荣县铁厂镇芭茅湾村，东经104°17′19.64″，北纬29°28′49.18″。峡谷两侧岩性为自流井组（J1-2zz）砂岩夹泥岩，须家河组（T3xj）砂岩，主要地层为须家河组。峡谷沿126°方向延伸约3.5km，峡谷深85m，宽约200m，峡谷山顶和山腰部分地段陡峭，可见三叠系须家河组砂岩裸露。峡谷两侧发育有绝壁，但因植被覆盖，露头较差。峡谷两侧树木生长茂盛，生态环境良好，树木主要以松树及竹子为主，景色宜人。', '省级', '', '', '', '', '/images/geolandscape/157190277151099.jpg');
+INSERT INTO `geolandscape` VALUES ('49', '1', 'G053', 'ZG1121', '玉皇村蜥脚类恐龙化石产地', '', '古脊椎动物', '', '', '104.08852778', '29.398694444', '', '', '位于自贡市荣县留佳镇玉皇村7组长土，东经104°05′18.70″，北纬29°23′55.30″。之前采得恐龙尾椎化石1件，为蜥脚类，化石清理点面积为15㎡，如今该处为一土丘，长满竹林、桉树。附近居民较多，但都不知道曾挖掘过恐龙化石，经查阅地质图与观看岩性，此处为自流井组（J1-2z）紫红色泥岩，其历史难以追溯。', '省级以下', '', '', '', '', '/images/geolandscape/1571902806248100.jpg,/images/geolandscape/1571902814262101.jpg');
+INSERT INTO `geolandscape` VALUES ('50', '1', 'G031', 'ZG1122', '水斗村剖面', '', '地方性标准剖面', '', '', '104.12438889', '29.447833333', '', '', '该剖面位于荣县留佳镇水斗村，东经104°07′27.80″，北纬29°26′52.23″。剖面为人工开形成的纵断面，地层为沙溪庙组一段（J2s1），剖面下半部分为黄灰色砂岩与灰绿色粉砂质页岩互层，砂岩厚度为11cm-1.9m，其厚度变化大，有时有尖灭现象，页岩页理发育，较破碎。剖面上半部分为紫红色泥岩与黄绿色泥岩互层，其厚度约为1-4cm，二者交替密集出现，泥岩中发育水平层理。', '省级以下', '', '', '', '', '/images/geolandscape/1571902839470102.jpg');
+INSERT INTO `geolandscape` VALUES ('51', '1', 'G032', 'ZG1125', '正江村越溪河“Ω”形风景河段', '', '风景河段', '', '', '104.19494444', '29.441166667', '', '', '位于荣县长山镇正江村，东经104°11′41.80″，北纬29°26′28.22″。可见河流长度500m，宽约30m，深约5-6m，河流自西向东，河流于观测点323°方向转向，整体形似“Ω”形，河水水质良好，水面波光粼粼。河流上修建有石桥，距今约50年历史，其下有历史更久的老桥墩。河道两岸停靠有游船，为正江村至长山镇的观光交通船，水上航程约15km，河流两侧较平坦开阔，为庄稼地，再往外侧为丘陵低山，绿树成荫，景色宜人。', '省级以下', '', '', '', '', '/images/geolandscape/1571902877124103.jpg');
+INSERT INTO `geolandscape` VALUES ('52', '1', 'G035', 'ZG1128', '杉树湾三叠系须家河组地层剖面', '', '区域性标准剖面', '', '', '104.22133333', '29.425138889', '', '', '该剖面位于荣县保华镇旭湾村，东经104°13′16.80″，北纬29°25′30.55″。该剖面沿瓜瓢洞断层走向而出露，长约1.6km。该组剖面为一套河湖、沼泽相含煤岩系，岩性以长石石英砂岩、泥页岩为主。剖面产多门类化石，其中以植物及瓣鳃化石较丰富。该剖面在杉树湾处厚547.9m，共可分为8段，与上覆珍珠冲组为整合接触，与下覆雷口坡组为假整合接触。剖面出露较差，植被茂盛。', '省级以下', '', '', '', '', '/images/geolandscape/1571902921333104.jpg');
+INSERT INTO `geolandscape` VALUES ('53', '1', 'G028', 'ZG1131', '余家坡硅化木化石产地', '', '古植物', '', '', '104.13794444', '29.45625', '', '', '余家坡硅化木化石点位于自贡市荣县留佳镇五间房村16组，原为余家坡村，东经104°08′16.56″，北纬29°27′22.52″。硅化木化石赋存于沙溪庙组一段（J2s1）黄灰色块状粗砂岩中，之前挖走过硅化木，本次调查时根据老乡刘成祥帮着四处寻找及描述，硅化木的集中区域在竹林处的小沟处，其他地方多为冲去也可能为原地，多为块径较小的硅化木。调查时仅找到小块，如果对竹林处清理可能找到规模更大的硅化木。周边区域沙溪庙组一段（J2s1）砂岩风化剥落后多形成陡壁。', '省级以下', '', '', '', '', '/images/geolandscape/1571903217183107.jpg,/images/geolandscape/1571903217187108.jpg');
+INSERT INTO `geolandscape` VALUES ('54', '1', 'G011', 'ZG1135', '白岩寺采石遗址', '', '采矿遗迹景观', '', '', '104.17480556', '29.485694444', '', '', '位于荣县来牟镇黑山沟村，东经104°10′29.31″，北纬29°29′08.47″。为砂岩条石开采遗址，岩性为沙溪庙组一段（J2s1）黄灰色块状砂岩，采坑沿247°方向延伸约100m，高约7m，宽度约4-8m，坑壁上有明显的梯坎及凿痕。采石场的开设可谓一举两得，采坑现今就是通往内部乡村的道路，采掘的石头也带了收入。', '省级以下', '', '', '', '', '/images/geolandscape/1571903936191109.jpg');
+INSERT INTO `geolandscape` VALUES ('55', '1', 'G010', 'ZG1136', '晋家湾蜥脚类恐龙化石产地', '', '古脊椎动物', '', '', '104.20466667', '29.489777778', '', '', '位于自贡市荣县来牟镇凉风村5组，东经104°12′16.80″，北纬29°29′23.20″。化石赋存岩性为自流井组（J1-2z）紫红色泥岩。1995年2月11日，凉风村5组村民胡兴德在公路边发现并报告，自贡恐龙博物馆傅乾明曾经到该化石点调查并清理，蜥脚类恐龙尾椎化石1件。2009年5月6日，侯虹、舒纯康、李飞等人到该采集点现场走访调查，发现村民胡兴德家中还有大量的恐龙化石，征集了部分化石。胡兴德现已到长山镇做生意，据其他村民描述，该片区域偶有化石发现。', '省级以下', '', '', '', '', '/images/geolandscape/1571903971040110.jpg,/images/geolandscape/1571903971048111.jpg');
+INSERT INTO `geolandscape` VALUES ('56', '1', 'G012', 'ZG1137', '长山盐矿', '', '采矿遗迹景观', '', '', '104.21866667', '29.480722222', '', '', '位于荣县长山镇筒车村省道旁，东倚千年盐都自贡，西临风光名城乐山，东经104°13′07.20″，北纬29°28′50.60″。始建于1971年，矿以山命名，山因矿著称。矿区生产勘探面积27.39km2，岩盐储量9.83亿吨，允许开采储量2.39亿吨(未含大山铺采区)，现有卤井86眼，年产卤（折盐）达210万吨，天然气井52眼，年产气量达1800万方，初步形成了以卤水生产为主，天然气生产为辅，集生产、修治井、科研为一体的专业化矿山，是目前全国生产规模最大、开采工艺最先进的井矿盐生产基地，为自贡盐化工业的发展做出了重大贡献。', '省级', '', '', '', '', '/images/geolandscape/1571904026669113.jpg,/images/geolandscape/1571904026669112.jpg');
+INSERT INTO `geolandscape` VALUES ('57', '1', 'G013', 'ZG1138', '干沟儿蜥脚类恐龙化石产地', '', '古脊椎动物', '', '', '104.20236111', '29.469194444', '', '', '干沟儿蜥脚类恐龙化石点位于自贡市荣县来牟镇鸽子村13组，东经104°12′08.50″，北纬29°12′08.50″。化石层位为自流井组（J1-2z）紫红色泥岩，化石点清理面积为20m2。采集得恐龙尾椎化石1件，经鉴定属蜥脚类恐龙化石。该处现为小山丘，长满树木和杂草。', '省级以下', '', '', '', '', '/images/geolandscape/1571904053497114.jpg');
+INSERT INTO `geolandscape` VALUES ('58', '1', 'G024', 'ZG1140', '石笋沟断崖', '', '碎屑岩地貌景观', '', '', '104.319', '29.496833333', '', '', '位于荣县铁厂镇石笋沟村，东经104°19′08.39″，北纬29°29′48.59″。断崖山体岩性为三叠系须家河组(T3xj)黄灰色砂岩，断崖沿344°方向延伸约2-3km，高约60m，四周陡峭，顶部平缓。主要由地层产状平缓且顶部岩层坚硬的岩体在构造基础上受到强烈切割后形成。岩石节理发育，岩体被切割成平行密集排列的柱状。断崖露头好，底部植被茂盛。该点周围多为须家河组砂岩组成的绵延绝壁。', '省级', '', '', '', '', '/images/geolandscape/1571904082516115.jpg');
+INSERT INTO `geolandscape` VALUES ('59', '1', 'G018', 'ZG1142', '石笋沟犀牛山', '', '碎屑岩地貌景观', '', '', '104.32527778', '29.505805556', '', '', '犀牛山位于荣县石笋沟村，东经104°19′31.04″，北纬29°30′20.89。山体为一平顶山，呈北西—南东方向展布约1km，表明植被发育茂盛，在其南东侧可见一因崩塌作用而形成的呈石笋状模样的岩柱，高约19m，岩柱与山体相隔十余米，从远处望去，整个形态似一只匍匐着的犀牛模样。岩性为须家河组（T3xj）黄灰色砂岩，山脚有大片当地有名的茶园，目前这里已建成绿茗春生态茶观光基地，茶叶面积500亩，年产茶75吨，是自贡地质公园重要合作伙伴。', '省级以下', '', '', '', '', '/images/geolandscape/1571904109763116.jpg');
+INSERT INTO `geolandscape` VALUES ('60', '1', 'G019', 'ZG1143', '石笋沟石柱', '', '碎屑岩地貌景观', '', '', '104.32541667', '29.504638889', '', '', '位于荣县铁厂镇石笋沟村，东经104°19′31.49″，北纬29°30′16.66″。高约40m，下部直径约8m，上部直径约3m，为须家河组(T3xj)黄灰色砂岩岩体沿走向近垂直的两组节理崩塌，后经差异风化而形成石笋状石柱，状似石笋', '省级', '', '', '', '', '/images/geolandscape/1571904245636117.jpg');
+INSERT INTO `geolandscape` VALUES ('61', '1', 'G020', 'ZG1144', '石笋沟岩穴', '', '碎屑岩地貌景观', '', '', '104.33152778', '29.50525', '', '', '位于荣县铁厂镇石笋沟村，东经104°19′53.52″，北纬29°30′18.87″。岩穴分布于三叠系须家河组(T3xj)黄灰色砂岩岩壁上，整个岩壁高约65m，表明布满了大小不一的岩穴，系砂岩中透镜体剥落而风化形成，形成的岩穴直径23-137cm不等，部分区域密集程度如蜂窝一般。', '省级以下', '', '', '', '', '/images/geolandscape/1571904272298118.jpg');
+INSERT INTO `geolandscape` VALUES ('62', '1', 'G022', 'ZG1146', '石笋沟大型交错层理', '', '地方性标准剖面', '', '', '104.33094444', '29.502083333', '', '', '该交错层理位于荣县铁厂镇石笋沟村，	东经104°19′51.38″，北纬29°30′07.46″。交错层理通常也称为斜层理，由沉积介质流动造成的，由一系列斜交于层系界面的纹层组成，斜层系可以彼此重叠、交错、切割的方式组合。最清晰处为板状交错层理，层系厚度约40-70cm，细层厚度约8-155mm，细层沿96°方向收敛，安息角约35°。岩石节理发育，表面有风化形成的岩穴。', '省级以下', '', '', '', '', '/images/geolandscape/1571904319989119.jpg');
+INSERT INTO `geolandscape` VALUES ('63', '1', 'G021', 'ZG1147', '石笋沟巨石阵', '', '山体崩塌遗迹景观', '', '', '104.33052778', '29.502333333', '', '', '位于荣县铁厂镇石笋沟村，东经104°19′49.89″，北纬29°30′08.41″。崖壁上的岩石在构造力的作用下形成裂隙(节理)，在重力作用下顺裂隙不断崩落，然后滚动、堆积在沟谷，最终形成的堆积地貌，形似巨石阵。岩石直径约2-12m，呈尖棱角状，经长期风化后，有些岩石显得浑圆。', '省级以下', '', '', '', '', '/images/geolandscape/1571904352442120.jpg');
+INSERT INTO `geolandscape` VALUES ('64', '1', 'G023', 'ZG1148', '山王村平行层理与交错层理', '', '地方性标准剖面', '', '', '104.348', '29.499444444', '', '', '该层理位于荣县铁厂镇山王村，东经104°20′52.77″，北纬29°29′58.05″。岩性为须家河组（T3xj）黄色厚层状细砂岩，可见岩石上布满了大量的层理结构，岩石上部呈现以水平层理，中段呈现为交错层理，层理总体走向呈335°。交错层理为楔状交错层理，细层厚度为6mm-33mm，岩石节理发育，表面有风化形成的岩穴，直径约3cm-1.2m。', '省级以下', '', '', '', '', '/images/geolandscape/1571904377802121.jpg');
+INSERT INTO `geolandscape` VALUES ('65', '1', 'G017', 'ZG1149', '山王村方山', '', '碎屑岩地貌景观', '', '', '104.34375', '29.508527778', '', '', '位于井荣路穿山洞南东不远处，东经104°20′37.47″，北纬29°30′30.65″。观测点320°方向2km处有一座造型奇特的山体，山体岩性为三叠系徐家河组（T3xj）黄灰色砂岩，高约100m，长约2-3km，四周陡峭，顶部平缓，呈典型的方山地貌，方山底部坐落有大片的梯田，现为三百块田茶园，风景十分秀丽迷人。', '省级以下', '', '', '', '', '/images/geolandscape/1571904407982122.jpg');
+INSERT INTO `geolandscape` VALUES ('66', '1', 'G025', 'ZG1150', '劳武村峡谷', '', '构造地貌景观', '', '', '104.33927778', '29.493583333', '', '', '位于荣县铁厂镇劳武村，东经104°20′21.35″，北纬29°29′36.90″。峡谷两侧岩性为须家河组（T3xj）黄灰色块状砂岩，峡谷沿近南北向延伸，延长约1km，在北端分为两支，峡谷宽约200m，高约100m，两侧壁立，十分陡峻。峡谷内流水潺潺，水颜色为淡蓝色。谷内滚石较多，植被茂盛，鸟语花香，生态环境良好。', '省级以下', '', '', '', '', '/images/geolandscape/1571904433518123.jpg');
+INSERT INTO `geolandscape` VALUES ('67', '1', 'G039', 'ZG1151', '茨芭坳村三叠系与侏罗系地层整合接触', '', '地方性标准剖面', '', '', '104.35355556', '29.481', '', '', '该剖面位于荣县铁厂镇茨芭坳村，东经104°21′12.76″，北纬29°28′51.60″。该点位于威远背斜南西端的南东翼，下部（南东侧）为下侏罗统自流井组珍珠冲段（J1-2zz）紫红色泥岩，属湖相沉积，岩石较破碎，岩石抗风化能力弱而凹陷成为凹腔；上部（北西侧）为上三叠统须家河组（T3xj）黄灰色中厚层—块状砂岩，单层厚40-120cm，属河湖相沉积，砂岩抗风化能力强而突出。二者接触面平面，呈整合接触地层产状为341°∠13°。', '省级以下', '', '', '', '', '/images/geolandscape/1571904465906124.jpg');
+INSERT INTO `geolandscape` VALUES ('68', '1', 'G016', 'ZG1152', '高石梯上三叠统须家河组地层', '', '区域性标准剖面', '', '', '104.32908333', '29.512944444', '', '', '该地层位于荣县铁厂镇石笋沟村，东经104°19′44.71″，北纬29°30′46.56″。岩性为上三叠统须家河组（T3xj）黄灰色巨块状长石石英砂岩夹灰黑色泥岩、炭质页岩及煤线，底部砂岩含菱铁矿结核。巨块状砂岩往往形成绝壁、山丘以及象形石。泥岩、页岩处常形成凹陷，局部为岩腔甚至洞穴。围绕石笋沟景区可看到须家河组的所有岩性及其组成的特殊地貌。', '省级以下', '', '', '', '', '/images/geolandscape/1571904529115125.jpg');
+INSERT INTO `geolandscape` VALUES ('69', '1', 'G015', 'ZG1154', '上观音绝壁', '', '碎屑岩地貌景观', '', '', '104.29975', '29.499222222', '', '', '位于荣县铁厂镇古桥村，东经104°17′59.06″，北纬29°29′57.22″。岩性为须家河组（T3xj）黄灰色巨块状砂岩，绝壁沿123°方向延伸约3.5km，高约180m，绝壁整体连在一起，局部被沟谷切断，顶部连绵起伏，局部为尖状，局部为马鞍状。绝壁顶部和下部长满植被，生态环境良好。', '省级以下', '', '', '', '', '/images/geolandscape/1571904552055126.jpg');
+INSERT INTO `geolandscape` VALUES ('70', '1', 'G014', 'ZG1156', '鸡冠石绝壁', '', '碎屑岩地貌景观', '', '', '104.27763889', '29.503138889', '', '', '位于荣县长山镇双河村，东经104°16′39.45″，北纬29°30′11.29″。岩性为须家河组（T3xj）黄灰色砂岩，绝壁位于观测点264°方向1.3km处，绝壁沿156°方向延伸500m，高90m，绝壁表面光滑，节理发育，绝壁顶部和底部植被发育茂盛。绝壁山脚为连片的茶园。', '省级以下', '', '', '', '', '/images/geolandscape/1571904596220127.jpg');
+INSERT INTO `geolandscape` VALUES ('71', '1', 'G007', 'ZG1159', '上三叠统河湖沉积地层剖面', '', '区域性标准剖面', '', '', '104.26188333', '29.548805556', '', '', '该剖面位于荣县双古乡范家村，东经104°15′42.78″，北纬29°32′55.70″。地形地貌的岩性组成为须家河组（T3xj）黄灰色巨块状砂岩、灰-灰黑色泥岩、炭质页岩含煤线，砂岩风化剥落后常形成绝壁围陷的山体，泥岩、页岩抗风化能力弱而破碎、凹陷。岩性整体以砂岩为主，路旁易观察到。根据岩性组合及砂岩表面平行层理，交错层理等原生沉积构造判定须家河组为河湖相沉积。', '省级以下', '', '', '', '', '/images/geolandscape/1571905144577128.jpg');
+INSERT INTO `geolandscape` VALUES ('72', '1', 'G008', 'ZG1160', '威西背斜', '', '中小型构造', '', '', '104.29138611', '29.531725', '', '', '位于荣县双古乡黄茅埂村，东经104°17′28.99″，北纬29°31′54.21″。遗迹点位于威西背斜核部地带，该背斜是川中褶带规模最大，隆起最高的背斜，长100km。须家河组至沙溪庙组二段构成两翼，两翼倾角8-30°，北翼倾角1-5°。在核部还存有次级褶曲发育，他们多与主轴向一直，且成右行雁列。此外，威西背斜核部还是岩盐及卤水的储存空间。', '省级', '', '', '', '', '/images/geolandscape/1571905180329129.jpg');
+INSERT INTO `geolandscape` VALUES ('73', '1', 'G071', 'ZG1164', '大安区油建大队叶肢介化石产地', '', '无脊椎动物', '', '', '104.84205556', '29.416083333', '', '', '位于自贡市大安区大山铺镇青龙村，东经104°50′31.40″，北纬29°24′57.85″。化石埋藏地层为沙溪庙组一段（J2s1），岩性为黄灰色砂岩与紫红泥岩，原化石点清理面积为20m2，共采集叶肢介化石2件，年代为晚侏罗世时期。因化石挖掘年代较久远，已无法准确确定化石产地。', '省级以下', '', '', '', '', '/images/geolandscape/1571905209328130.jpg');
+INSERT INTO `geolandscape` VALUES ('74', '1', 'G091', 'ZG1165', '长山岭硅化木', '', '古植物', '', '', '104.80330556', '29.382833333', '', '', '位于大安区大山铺镇新燕村，东经104°18′11.88″，北纬29°22′58.25″。长山岭硅化木发现于1983年，分大小2株，大者长23.3m，最大直径1.3m，小者长13m，最大直径1.08m，分枝早，向上又多次分叉，为原始松柏类的南洋杉型木化石。其次生木质部位具有宽而清晰的年轮，早材宽，晚材窄，说明这里当时是有温差和干湿变化的亚热带或暖温带地区，一年中的气温变化较小，气温较高，雨量充足，寒冷或干燥的时间很短，十分适合植物的生长。', '国家级', '', '', '', '', '/images/geolandscape/1571905246108131.jpg,/images/geolandscape/1571905253930132.jpg');
+INSERT INTO `geolandscape` VALUES ('75', '1', 'G090', 'ZG1167', '凉高山溶洞', '', '可溶岩地貌（喀斯特地貌）景观', '', '', '104.80033333', '29.382555556', '', '', '位于恐龙馆至燊海井、硅化木的旅游公路旁，东经104°48′01.15″，北纬29°22′57.22″。洞内有石笋和形态各异的钟乳石，并发育有多处落水洞，是典型的喀斯特地貌特征。该溶洞发育于自流井组大安寨石灰岩中，是两层石灰岩中富含松散钙质的泥岩遭水侵蚀而形成。溶洞延145°方向延伸约500m。溶洞在战争时期作为防空洞使用，内部有一定程度改造，现溶洞已无法进入，被当地农民及水泥厂破坏。', '省级以下', '', '', '', '', '/images/geolandscape/1571905278530133.jpg');
+INSERT INTO `geolandscape` VALUES ('76', '1', 'G088', 'ZG1168', '凉高山砂岩命名地地层剖面', '', '区域性标准剖面', '', '', '104.80258333', '29.385305556', '', '', '该剖面位于大安区凉高山新燕村，东经104°48′09.26″，北纬29°23′07.12″。1933年中国著名地质学家谭锡畴，李春昱以此地出露的一套砂岩命名的最初作为“自流井层”最上部的一个岩性地层，后被证实为中侏罗统下沙溪庙组底部的一套砂岩。“凉高山砂岩”为黄灰色岩屑石英砂岩、石英砂岩，交错层理、波纹层理比较发育，属河道动荡环境形成的沉积地层。砂岩表面发育成片的风化岩穴，该套岩石常被用于建筑石材开采。', '省级', '', '', '', '', '/images/geolandscape/1571905308377134.jpg');
+INSERT INTO `geolandscape` VALUES ('77', '1', 'G093', 'ZG1169', '源通井遗址', '', '采矿遗迹景观', '', '', '104.81408333', '29.378138889', '', '', '位于自贡市大安区大山铺镇新燕村，东经80°36′11.83″，北纬42°32′21.39″。源通井始凿于清光绪二十四年（1898年），并产黄卤。源通井现保存有盐井1口，天车1座，机车房1栋，开火坊2栋，蓄卤池2处等生产建筑。井口坝占地面积50m2，井径为17.6cm，天车始建于清代，四大夹木结构，高度22m。', '省级以下', '', '', '', '', '/images/geolandscape/1571905334522135.jpg');
+INSERT INTO `geolandscape` VALUES ('78', '1', 'G101', 'ZG1170', '和平永川龙化石产地', '', '古脊椎动物', '', '', '104.80588889', '29.360055556', '', '', '位于自贡市和平乡田湾村，东经104°48′22.02″北纬29°21′36.84″。化石埋藏地层为中侏罗统沙溪庙组二段（J2s2），岩性为紫红色粉砂岩，为一具十分完整的大型肉食龙骨架化石，长9m，其中头骨长度就超过1m，命名和平永川龙。化石产地已被破坏，现修建为文化馆。', '省级以下', '', '', '', '', '/images/geolandscape/1571905806442136.jpg,/images/geolandscape/1571905812352137.jpg');
+INSERT INTO `geolandscape` VALUES ('79', '1', 'G098', 'ZG1171', '大坟堡粘土地层命名地', '', '区域性标准剖面', '', '', '104.78063889', '29.368305556', '', '', '该命名地位于位于自贡市大安区大安街社区大安寨村，东经104°46′50.31″，北纬N	29°22′05.90″。1933年中国著名地质学家谭锡畴、李春昱以此地出露的一套泥岩命名为“自流井层”中的一个岩性地层，后归下侏罗统自流井组中部的马鞍山段。大坟堡粘土厚35m，为紫红色泥岩夹绿灰色泥质粉砂岩，粉砂岩中见沙纹层理，属极浅湖-浅湖低能环境形成的沉积地层。', '省级', '', '', '', '', '/images/geolandscape/1571905864022138.jpg');
+INSERT INTO `geolandscape` VALUES ('80', '1', 'G100', 'ZG1172', '大安寨灰岩地层命名地', '', '区域性标准剖面', '', '', '104.78438889', '29.36225', '', '', '位于自贡大安区大安区大安街社区大安寨村大安寨，东经104°47′03.41″，北纬29°21′44.30″。1933年中国著名地质学家谭锡畴、李春昱以此地出露的一套灰岩命名的“自流井层”中的一个岩性地层，后称大安寨段，为下侏罗统自流井组最上部的一个岩性段，厚45m，下部为黄灰、紫灰色泥质。砂屑，介壳灰岩与灰绿色泥质粉砂岩，粉砂质页岩互层，上部为紫红色钙质泥岩，属浅湖-湖泊浅滩环境形成的沉积地层。', '省级', '', '', '', '', '/images/geolandscape/1571905930349139.jpg');
+INSERT INTO `geolandscape` VALUES ('81', '1', 'G099', 'ZG1173', '自流井组典型地层剖面', '', '区域性标准剖面', '', '', '104.78744444', '29.363861111', '', '', '位于自贡市大安区大安街社区大安寨村，东经104°47′14.81″，北纬29°21′49.95″。为典型的早侏罗世地层剖面，古生物化石特别丰富，是“自流井组”建组原型剖面。发现有禄丰蜥龙动物群的分子，可见岩石表面发育有波状层理和交错层理。剖面周边植被发育茂盛，露头较差。', '省级', '', '', '', '', '/images/geolandscape/1571905979417140.jpg');
+INSERT INTO `geolandscape` VALUES ('82', '1', 'G095', 'ZG1174', '吉成井遗址', '', '采矿遗迹景观', '', '', '104.77111111', '29.371305556', '', '', '位于自贡市大安区广华社区五星村，东经104°46′16.02″，北纬29°22′16.67″。吉成井建于清咸同年间，由吉成井、裕成井、益生井、天成井等4口盐井盐业生产设施组成，占地面积1.7万m2。吉成井井深1108m，天车高12m，裕成井井深1213m，天车高18m，益生井井深1018.8m，天车高11m，天成井井深1188m，天车高19m。该作坊历经100多年的生产，2001年停产，盐业生产设施保存基本完好。该遗址是现存世界上最集中的天车群，是清代自贡社会经济发展不可多得的活化石，在井盐生产历史上具有重要地位。', '国家级', '', '', '', '', '/images/geolandscape/1571906016938141.jpg');
+INSERT INTO `geolandscape` VALUES ('83', '1', 'G116', 'ZG1175', '小桥井遗址', '', '采矿遗迹景观', '', '', '104.758', '29.352055556', '', '', '位于自贡市自流井区同兴路，东经104°45′28.79″，北纬29°21′07.40″。是自贡历史上口径最小的井，原名洪海井。凿于清乾隆三十七年(1772年)，井径7.26cm，井深304.92m，固井导管49.33m。在经历了200多年的风风雨雨之后，基本上保留了清代前期的井型和“就井设灶”的生产现场。现盐井已停用，并在盐井出修建广场并设围栏保护。', '省级以下', '', '', '', '', '/images/geolandscape/1571906045266142.jpg');
+INSERT INTO `geolandscape` VALUES ('84', '1', 'G114', 'ZG1176', '通虹井遗址', '', '采矿遗迹景观', '', '', '104.75152778', '29.354083333', '', '', '位于自贡市自流井区郭街路边井社区219号，东经104°45′05.54″，北纬29°21′14.72″。占地面积约400m2。通虹井井深1062m，井径20cm，天车高15m，天车为四脚天车，天车上有两根正柱，两根支杆，一对矮乘，四窝风篾，一个天辊，一个啄井辊。现已设围栏保护，保存良好。', '省级以下', '', '', '', '', '/images/geolandscape/1571906069751143.jpg');
+INSERT INTO `geolandscape` VALUES ('85', '1', 'G115', 'ZG1177', '宝隆井遗址', '', '采矿遗迹景观', '', '', '104.75183333', '29.353638889', '', '', '位于自贡市自流井区大同路与郭家坳路交界处，东经104°45′06.56″，北纬29°21′13.12″。由盐井、天车、柜房及车房组成，其中井盐深1052m，井经12cm。天车为四脚天车，由两根正脚，两根支杆，两根撑弓，四窝风篾及一个天辊组成，高15m。', '省级以下', '', '', '', '', '/images/geolandscape/1571906088892144.jpg');
+INSERT INTO `geolandscape` VALUES ('86', '1', 'G118', 'ZG1178', '双成井遗址', '', '采矿遗迹景观', '', '', '104.742', '29.342777778', '', '', '位于自贡市大安区盐都盐都植物园西山公园，东经104°44′31.24″，北纬29°20′33.98″。双成井始凿于清同治五年（1866年），主产黄卤和天然气。双成井现存生产场地占地面积100m2。所附天车（井架）仍保持生产卤水时原状。天车通高19.8m，天车上天辊、四大柱、十字架、剪刀模均保存完好。盐井深751m，井径0.14m，现已停产。', '省级以下', '', '', '', '', '/images/geolandscape/1571906106457145.jpg');
+INSERT INTO `geolandscape` VALUES ('87', '1', 'G117', 'ZG1179', '郭家坳砂岩命名地地层剖面', '', '区域性标准剖面', '', '', '104.74972222', '29.344444444', '', '', '位于自贡市大安区郭家坳大同路，东经104°44′58.98″，北纬29°20′40.00″。1933年中国地质学家谭锡畴、李春昱以此地出露的一套砂岩命名的“自流井层”的一个岩性地层，现归下侏罗统自流井组中部的马鞍山段。剖面地层为自流井组（J1-2z），岩性为黄灰色粉砂岩、石英砂岩和岩屑石英砂岩。砂岩单层厚约30-110cm，出露厚约3m以上，交错层理、波状层理、沙纹层理非常发育，纹层厚约1-3cm，属湖滨浅滩动荡环境形成的沉积地层，地层产状：227°∠8°。', '省级', '', '', '', '', '/images/geolandscape/1571906131808146.jpg');
+INSERT INTO `geolandscape` VALUES ('88', '1', 'G094', 'ZG1180', '马鞍山泥岩命名地地层剖面', '', '区域性标准剖面', '', '', '104.75986111', '29.374333333', '', '', '该剖面位于大安区新民镇金钱村，东经104°45′35.52″北纬29°22′27.58″。1933年中国地质学家谭锡畴、李春昱以此地出露的一套泥岩命名的“自流井层”的一个岩性地层，现归下侏罗统自流井组中部的马鞍山段。地层为自流井组（J1-2z），岩性为紫红色粉砂质泥岩夹灰绿色泥质粉砂岩，泥岩出露厚约180cm，中等风化，表面较破碎。粉砂岩单层厚约10-80cm，出露厚约20-90cm，粉砂岩中见沙纹层理，属极浅湖-浅湖环境的沉积地层。', '省级', '', '', '', '', '/images/geolandscape/1571906152397147.jpg');
+INSERT INTO `geolandscape` VALUES ('89', '1', 'G123', 'ZG1182', '釜溪河（沙湾段）', '', '风景河段', '', '', '104.76613889', '29.350388889', '', '', '位于自流井区郑家湾滨江路，东经104°45′58.06″，北纬29°21′01.39″。釜溪河旧称盐井河，自旭水河、威远河在自流井区凤凰坝双河口汇合后而始，由沙湾、沿滩、邓关经富顺县李家湾注入沱江，全长73.2km。釜溪河自古为自贡盐场的主要运盐道。河流曲折蜿蜒，向东南流于富顺县李家湾注入沱江。该风景河段位于自贡市自流井区沙湾，河流呈“Z”字形，流向为自东南向西北，河面宽约60m，长约1.8km，水流量约为50m3/s，河两岸发育植被，多为景观古树，此段也为城市居民休闲散步河段，修建有完善的便民设施，还有王爷庙等人文遗址点。', '省级以下', '', '', '', '', '/images/geolandscape/1571906182311148.jpg');
+INSERT INTO `geolandscape` VALUES ('90', '1', 'G074', 'ZG1183', '焦氏峨眉龙化石遗址', '', '古脊椎动物', '', '', '104.82669444', '29.399666667', '', '', '位于恐龙博物馆2号馆内，东经104°49′36.09″，北纬29°23′58.76″。在大山铺恐龙化石群遗址发现二十多年以后，在大山铺恐龙化石群遗址约9m的一层砂岩中，揭露出一具比较完整的蜥脚类恐龙化石-焦氏峨眉龙，一大型蜥脚类恐龙的股骨和胫骨，以及若干爬行动物骨骼碎片，这说明大山铺恐龙化石群不仅分布面积大，而且至少存在两个化石富集层。焦氏峨眉龙为一种特大型的长颈型蜥脚类恐龙，保存骨骼115块，体长达23m，是大山铺迄今发现的个体最大的恐龙。', '国家级', '', '', '', '', '/images/geolandscape/1571906214696149.jpg,/images/geolandscape/1571906238605150.jpg');
+INSERT INTO `geolandscape` VALUES ('91', '1', 'G073', 'ZG1184', '沙溪庙组一段含恐龙化石地层剖面', '', '区域性标准剖面', '', '', '104.82636111', '29.399972222', '', '', '该剖面位于大安区大山铺恐龙村，恐龙博物馆2号馆内大山铺后山新发掘恐龙化石的现场，东经104°49′34.86″，北纬29°23′59.94″。由人工开挖的化石坑揭露形成。剖面四周累计长度约80m，高7-12m，岩层倾向北东，倾角5-10°，为目前国内典型的中侏罗世富含恐龙化石的地层剖面。剖面地层为沙溪庙组一段（J2s1），岩性为紫红色泥岩和黄灰色砂岩。从下至上可见8个岩性层，组成4个小型沉积韵律。泥岩出露最厚约2.5m，最薄约3cm，砂岩单层最厚约55cm，出露最厚约2.1m。可见交错层理、波状层理、地层尖灭、岩性相交、岩石结核等地质现象。地层接触面整体较平直，砂岩局部尖灭于紫红色泥岩中，地层较为水平，为化石埋藏提供了地层基础。沉积环境为河、湖广布的冲击平原，植被繁茂，适合恐龙的生息和繁衍。恐龙化石出露于剖面顶部砂岩中。', '国家级', '', '', '', '', '/images/geolandscape/1571906286716151.jpg,/images/geolandscape/1571906407311152.jpg');
+INSERT INTO `geolandscape` VALUES ('92', '1', 'G072', 'ZG1185', '大山铺恐龙化石群', '', '古脊椎动物', '', '', '104.82633333', '29.39975', '', '', '位于大安区大山铺镇恐龙村，东经104°49′34.81″，北纬29°23′59.15″。保留总面积约1500m2，是目前世界上可供观览保存最密集、最精彩的化石埋藏现场。在这里，中侏罗世（1.6亿年前）的大量恐龙及其他脊椎动物化石原地完好地保留在地层中，层叠堆积，交错横陈，是被称作“世界奇观”的大山铺“恐龙群窟”的缩影。大山铺中侏罗世恐龙动物群的脊椎动物类型丰富、种类繁多，包括了5个纲、11个目、17个科、26个属29个种脊椎动物化石。其中，以恐龙的种类和数量最多，命名有12属13种，既有大量的蜥脚类，也有兽脚类、鸟脚类和剑龙类。此外，还有鱼类3属4种、两栖类1属1种、翼龙类1属1种、蛇颈龙类1属1种、龟鳖类4属5种、鳄类2属2种和似哺乳爬行类2属2种。已发掘出土有29种恐龙及其它脊椎动物的200多个个体的上万件化石标本，其中包括数十具保存很完整的恐龙骨架和十余个保存完整的恐龙头骨化石。该遗址已用于展览参观，修筑有解说牌等设施。在遗址上还用蜡人重现了当时挖掘的整个过程。', '世界级', '', '', '', '', '/images/geolandscape/1571906450247153.jpg');
+INSERT INTO `geolandscape` VALUES ('93', '1', 'G060', 'ZG1186', '杨家湾角齿鱼化石产地', '', '古脊椎动物', '', '', '104.47791667', '29.401555556', '', '', '位于自贡市荣县望佳镇麦子山村11组杨家湾山丘山地中，东经104°28′05.61″，北纬29°24′05.61″。化石埋藏地层为沙溪庙组二段（J2s2），岩性为黄灰色砂岩。是当地居民改造土地种植甘蔗放炮而偶然发现，化石点清理面积为20m2，采集齿板1件和破碎恐龙肋骨化石3件，年代为晚侏罗世时期。现化石产地已被当地农民用于种植农作物。', '省级以下', '', '', '', '', '/images/geolandscape/1571907265653154.jpg,/images/geolandscape/1571907265653155.jpg');
+INSERT INTO `geolandscape` VALUES ('94', '1', 'G111', 'ZG1187', '云蒸井遗址', '', '采矿遗迹景观', '', '', '104.7', '29.340916667', '', '', '位于自贡市贡井区长土镇大坡村张家山，东经104°42′00.04″，北纬29°20′27.27″。为清代1874年开凿的一眼气卤同产井，1983年停废，天车高20m，井深105.18-1335.52m，井径14.3cm，2002年3月修复，结构完整，保存完好，现运用钻技术修井，保持日产气1500m3，现已停产。天车为三脚天车，两根正脚，一根支杆，一个天辊。现灶房、车房已损毁，只剩下卷扬机及传动轴、电机等设备。', '省级以下', '', '', '', '', '/images/geolandscape/1571907313720156.jpg');
+INSERT INTO `geolandscape` VALUES ('95', '1', 'G089', 'ZG1188', '东岳庙石灰岩命名地地层剖面', '', '区域性标准剖面', '', '', '104.76827778', '29.384555556', '', '', '该剖面位于自流井区郭家坳大同路，东经104°46′05.76″，北纬29°23′04.35″。1933年中国地质学家谭锡畴、李春昱以此地出露的一套灰岩命名的“自流井层”的一个岩性地层，后称东岳庙段，为下侏罗统自流井组下部的一个岩性段。地层为自流井组（J1-2z），岩性为青灰色厚层状灰岩和紫红色泥岩。泥岩出露厚约180cm，强风化，表面较破碎。灰岩单层厚约50-100cm，出露厚约500-200cm，以灰色介壳灰岩、介屑灰岩为主，底部含石英砂岩透镜体，为湖泊浅滩高能环境形成的沉积地层。', '省级', '', '', '', '', '/images/geolandscape/1571907385017157.jpg');
+INSERT INTO `geolandscape` VALUES ('96', '1', 'G096', 'ZG1189', '珍珠冲粘土命名地地层剖面', '', '区域性标准剖面', '', '', '104.74569444', '29.367944444', '', '', '该剖面位于自流井区郭家坳大同路，东经104°44′44.48″，北纬29°22′04.57″。1933年由中国著名地质学家谭锡畴、李春昱以此地出露的一套泥页岩命名。地层为自流井组（J1-2z），岩性为紫红色泥岩，泥岩出露厚约180cm，强风化，表面较破碎，人工出露，长约20m，四周发育大量植被。为湖滨－浅湖环境形成的沉积地层。', '省级', '', '', '', '', '/images/geolandscape/1571907433985158.jpg');
+INSERT INTO `geolandscape` VALUES ('97', '1', 'G066', 'ZG2001', '杨氏马门溪龙化石产地', '', '古脊椎动物', '', '', '104.74855556', '29.443527778', '', '', '位于自贡市大安区新民镇詹家村，东经104°44′54.76″，北纬29°26′36.73″。化石埋藏地层为中侏罗统沙溪庙组二段(J2s2)，岩性为紫红色泥岩，夹少量紫红色粉砂岩和黄灰色中厚层状中砂岩。原化石出露于紫红色粉砂岩中，为一具保存非常完好的，长达17m的大型蜥脚类恐龙骨架，命名为杨氏马门溪龙。因化石挖掘年代较久远，已无法确定准确位置，经实地考察和资料推测为此地，位于一农田内侧陡壁处。', '省级', '', '', '', '', '/images/geolandscape/1571907462978159.jpg');
+INSERT INTO `geolandscape` VALUES ('98', '1', 'G070', 'ZG2005', '谢家坝“Ω”河曲', '', '风景河段', '', '', '104.74438889', '29.410583333', '', '', '位于大安区新民乡白果村，东经104°44′39.84″，北纬29°24′38.19″。河曲水系为威远河，总体流向为北西向，在此段区域形成4个“Ω”形河曲，总长约1.2km，单个“Ω”河曲长约300m。河床为U形谷，宽约70m，两岸高约15-25m，转弯处河床底多为基岩，其河漫滩较少，未见或有少量沙砾石堆积，水流较小，现流量约30-50L/s，水流非常平缓，积水较深，水深为1-3m，“Ω”形最窄处仅宽约80-100m。此段河曲已发育中晚期，河床宽广，河曲较复杂，水流较小。未见大型或形成大量河漫滩是由于此区域地层为沙溪庙组二段（J2s2），以泥岩为主，砂岩较少，有形成离堆山的趋势。此河曲形成原因：转弯处多为巨厚层砂岩，被冲刷形成河曲难度相对较高，形成的河床的地方主要为泥岩地层，易被冲刷。', '省级以下', '', '', '', '', '/images/geolandscape/1571907488649160.jpg');
+INSERT INTO `geolandscape` VALUES ('99', '1', 'G122', 'ZG2012', '马吃水交错层理', '', '地方性标准剖面', '', '', '104.74283333', '29.336944444', '', '', '位于贡井区凤凰镇济公村，东经104°44′34.17″，北纬29°20′43.03″。交错层理地层为沙溪庙组二段（J2s2），岩性为黄灰色块状粗砂岩，砂岩单层厚约7m以上，发育平行层理和交错层理，平行层理纹层厚约2-10cm，交错层理纹层厚约1-4cm，斜层理与上层面的平行层理斜交，收敛于下层面，斜交夹角约为15-30°，交错层理出露厚约30-60cm，此交错层理指示地层为正常沉积，无倒转现象。平行层理产状为：205°∠22°。此交错层理可用于研究此地层顶底及沉积环境的水流方向，也具有一定的观赏价值和科普教育价值。', '省级以下', '', '', '', '', '/images/geolandscape/1571907530828161.jpg');
+INSERT INTO `geolandscape` VALUES ('100', '1', 'G097', 'ZG2013', '雷公滩自流井组（J1-2z）与新田沟组（J2xt）接触界线', '', '地方性标准剖面', '', '', '104.72513889', '29.366416667', '', '', '位于贡井区凤凰镇解放村，东经104°43′30.45″，北纬29°21′59.09″。接触界线人工露头好，岩性及界线面清晰。界线西侧为新田沟组（J2xt），岩性为黄灰色块状粗砂岩，单层厚约4m以上，发育平行层理，纹层厚约3-10cm不等;还发育交错层理，纹层厚约1-5cm，斜交于上层面，出露厚约30-50cm，斜交夹角约25°，指示地层为正常沉积，即上层面为顶面，下层面为底面。界线东侧为自流井组（J1-2z）,岩性为灰绿色粉砂岩和紫红色泥岩，均强风化，表面十分破碎，岩性以紫红色泥岩为主，接触面为粉砂岩，厚约80cm。接触面为弱波状起伏，整体较平直，新田沟组（J2xt）地层产状为9°∠9°。', '省级', '', '', '', '', '/images/geolandscape/1571907585186162.jpg,/images/geolandscape/1571907585188163.jpg');
+INSERT INTO `geolandscape` VALUES ('101', '1', 'G110', 'ZG2027', '贡井平桥瀑布', '', '瀑布景观', '', '', '104.70991667', '29.346472222', '', '', '位于贡井区筱溪街贡草路，东经104°42′35.72″，北纬29°20′47.29″。此瀑布位于城区实属难能可贵，瀑布宽约80m，落差约6m，荣溪河流经此处时，遇陡坎而成，陡坎岩性为自流井组（J1-2z）紫红色砂岩与紫红色泥岩互层，比例为2:3，由于泥岩抗风化能力较弱，形成许多凹腔，砂岩突出，瀑布因此而成为多级跌瀑，在流量较大部位，瀑布直接倾泻而下，此季节瀑布共分为8条，数量随上游流量而变，瀑布之下加了灯光装饰，夜幕降临时，瀑布流水大桥更为城市增添了几分美色。瀑布上游为长征大桥，下游为济源桥。', '省级', '', '', '', '', '/images/geolandscape/1571907621167164.jpg');
+INSERT INTO `geolandscape` VALUES ('102', '1', 'G103', 'ZG2028', '艾叶滩楔状交错层理', '', '地方性标准剖面', '', '', '104.68277778', '29.352583333', '', '', '位于贡井区艾叶镇沙塘村艾叶码头河道两旁，东经104°40′58.02″，北纬29°21′9.27″。地层为新田沟组（J2xt），岩性为黄灰色粗砂岩。可见多处楔状交错层理，该层理是一种层系上下界面平直，但层系厚度在小范围内变化明显成楔形，每组出露厚约20-80cm，夹角约为20°，纹层厚约2-4cm。楔形交错层理可能是在异向流动的水动力条件下形成的，多见于三角洲地区和湖、海的浅水高能环境形成的地层中。', '省级以下', '', '', '', '', '/images/geolandscape/1571907671120165.jpg');
+INSERT INTO `geolandscape` VALUES ('103', '1', 'G104', 'ZG2029', '旭水河（艾叶段）', '', '风景河段', '', '', '104.68397222', '29.352638889', '', '', '位于贡井区艾叶镇沙塘村，东经104°41′2.31″，北纬29°21′9.47″。旭水河为釜溪河的一级支流，又称荣县河、荣溪河。发源于荣县北部的荣隐山，自西北向东南流，于大安区凤凰山的双河口与威远河合流为釜溪河，全长120km。河流曲折蜿蜒，美丽迷人。此段河曲呈“Ω”形，长约5.6km，宽约25-30m，河曲中发育壶穴，水量充沛，水流较缓，流量约为80m³/s，河曲两边发育植被，多为树木与杂草。河曲两侧分布有茶马古道、艾叶古镇、艾叶码头、盐井等人文遗址。', '省级以下', '', '', '', '', '/images/geolandscape/1571907743846166.jpg');
+INSERT INTO `geolandscape` VALUES ('104', '1', 'G102', 'ZG2030', '艾叶壶穴', '', '流水侵蚀地貌景观', '', '', '104.68105556', '29.35425', '', '', '位于自贡市贡井区回龙村艾叶码头，东经104°40′51.81″，北纬29°21′15.30″。发育于河床砂岩表面，地层为新田沟组（J2xt），岩性为黄灰色中砂岩，由紊流携带的砂砾石在此长期冲刷侵蚀而形成，因上游截流致河床干枯，导致其演化现已终止。壶穴大小不一，多呈近圆状，直径9-120cm不等，平均直径约45cm，深18-54cm。', '省级', '', '', '', '', '/images/geolandscape/1571907769715167.jpg');
+INSERT INTO `geolandscape` VALUES ('105', '1', 'G086', 'ZG2033', '桥坝上剖面', '', '地方性标准剖面', '', '', '104.66213889', '29.376916667', '', '', '于贡井区艾叶镇象狮村，东经104°39′43.69″，北纬29°22′36.87″。地层为沙溪庙组二段（J2s2），岩性为黄灰色中砂岩、紫红色泥岩。中砂岩与紫红色泥岩呈韵律出露，但出露厚度不稳定。中砂岩单层厚约70-125cm，出露厚约70-240cm，砂岩中夹杂有少量尖灭状或条带状紫红色泥岩，厚约2-4cm。紫红色泥岩出露厚约70-300cm不等，局部出露少量粉砂质泥岩，粉砂质含量约30-40％，出露厚约30cm，表面中等-弱风化，紫红色泥岩强风化，表面十分破碎。地层产状：358°∠15°。', '省级以下', '', '', '', '', '/images/geolandscape/1571907798418168.jpg');
+INSERT INTO `geolandscape` VALUES ('106', '1', 'G064', 'ZG2034', '新烧坊楔形交错层理', '', '地方性标准剖面', '', '', '104.65333333', '29.393694444', '', '', '位于贡井区成佳镇新平村，东经104°39′12.04″，北纬29°23′37.34″。地层为沙溪庙组二段（J2s2），岩性为黄灰色巨厚层粗砂岩，单层厚约10m，岩石坚硬且完整，交错层理约4层，总出露长约10m，高约5m，单层交错层理高约30-80cm不等，单层呈楔状，一边宽一边窄，都斜交于上顶面的平行层理或层理面，纹层厚约1-3cm，斜交夹角约为20°-30°。此种楔形交错层理主要出露于三角洲，湖泊、海洋浅水沉积环境中，表现处于高水动力环境中，斜坡面的快递沉积现象。此套砂岩也是当地建材取石层，周边还发育有小型岩腔，小石山，可见植物根劈作用。', '省级', '', '', '', '', '/images/geolandscape/1571907840163170.jpg,/images/geolandscape/1571907840163169.jpg');
+INSERT INTO `geolandscape` VALUES ('107', '1', 'G061', 'ZG2036', '杨柳塘剖面', '', '地方性标准剖面', '', '', '104.63952778', '29.426305556', '', '', '位于贡井区成佳镇铁桥村，东经104°38′22.30″，北纬29°25′34.72″。地层为沙溪庙组二段（J2s2），岩性为黄灰色块状粗砂岩，紫红色泥岩。粗砂岩上面为遂宁组（J3sn）鲜红色泥岩，接触面不清楚。粗砂岩与紫红色泥岩接触面呈箱状（盆状），中部为紫红色泥岩与黄灰色中薄层状细砂岩互层，比例约为1:1，细砂岩单层厚约5-40cm，出露厚约5-70cm，局部呈尖灭状或突然变厚；泥岩总体与细砂岩平行，局部呈尖灭状，出露厚约5-45cm，强风化，表面十分破碎。上部为粗砂岩，发育平行层理和斜层理，纹层厚约1-5cm，单层厚约70-160cm，出露厚约3.5-8m，下层面与泥岩接触面极度不平直。形成原因：①受砂岩重力作用后期变化形成；②古地貌为一个小山丘，后砂岩沉积形成，③受水动力作用形成。地层产状：335°∠2°。', '省级以下', '', '', '', '', '/images/geolandscape/1571907876322171.jpg,/images/geolandscape/1571907876330172.jpg');
+INSERT INTO `geolandscape` VALUES ('108', '1', 'G062', 'ZG2039', '三口塘剖面', '', '地方性标准剖面', '', '', '104.57988889', '29.413083333', '', '', '位于贡井区成佳镇张家桥村，东经104°34′47.57″，北纬29°24′47.15″。地层为沙溪庙组二段（J2s2），岩性为紫红色泥岩、黄绿色粉砂岩、黄灰色厚层-块状中砂岩，此处紫红色泥岩尖灭于黄灰色中砂岩中，无一例外，且紫红色泥岩外为一层薄层黄绿色粉砂岩。紫红色泥岩呈长条尖灭状，长约0.3-40m，宽约3-50cm，尖灭处有尖核状、尖圆状等，但都伴随一层粉砂岩，粉砂岩风化较强，表面较破碎，厚约1-10cm不等。中砂岩单层厚约5-130cm不等，发育少量球形风化，直径4-15cm，砂岩与粉砂岩及泥岩接触面呈波状起伏。此尖灭状紫红色泥岩形成原因推测为动荡的水动力沉积环境。地层产状：335°∠4°。', '省级以下', '', '', '', '', '/images/geolandscape/1571907901296173.jpg');
+INSERT INTO `geolandscape` VALUES ('109', '1', 'G063', 'ZG2041', '喜家冲剖面', '', '地方性标准剖面', '', '', '104.57136111', '29.401416667', '', '', '位于贡井区成佳镇兴隆村，东经104°34′16.90″，北纬29°24′5.14″。地层为沙溪庙组二段（J2s2），岩性为黄灰色中砂岩和紫红色泥岩，紫红色泥岩呈条带状尖灭于中砂岩中，无一例外。紫红色泥岩出露长约12-80m，厚约3-40cm，强风化，表面十分破碎，局部泥岩分叉尖灭于中砂岩中，部分紫红色泥岩与中砂岩中夹有灰绿色粉砂岩，粉砂岩厚约2-8cm，表面较破碎。中砂岩单层厚约10-90cm，出露厚约20-90cm，中砂岩中含大量岩屑，致砂岩较疏松。中砂岩与紫红色泥岩或粉砂岩接触面整体较平直，局部呈弱波状起伏。地层产状：140°∠5°。沉积环境推测为动荡的水动力环境且沉积序列完整，泥岩-粉砂岩-砂岩。', '省级以下', '', '', '', '', '/images/geolandscape/1571907926593174.jpg');
+INSERT INTO `geolandscape` VALUES ('110', '1', 'G081', 'ZG2045', '骡子岭交错层理', '', '地方性标准剖面', '', '', '104.60263889', '29.362333333', '', '', '位于贡井区建设镇乐玲村，东经104°36′9.46″，北纬29°21′44.44″。地层为沙溪庙组二段（J2s2），岩性为黄灰色粗砂岩，发育多组交错层理，每层交错层理出露厚约80-240cm，层厚不稳定。交错层理纹层厚约1-4cm，斜层理斜交于上层面，指示上层面为顶面，斜交夹角约为25°。整个块状砂岩出露厚约10m，形成陡坎，同时也是一个断层面，断层现象已被风化。断层面产状为：248°∠67°。此交错层理可用于研究此地层顶底及沉积环境的水流方向，也具有一定的观赏价值和科普教育价值。', '省级以下', '', '', '', '', '/images/geolandscape/1571907963875175.jpg');
+INSERT INTO `geolandscape` VALUES ('111', '1', 'G080', 'ZG2047', '燕石峰交错层理', '', '地方性标准剖面', '', '', '104.59738889', '29.363194444', '', '', '位于贡井区白庙镇斑竹村，东经104°35′50.65″，北纬29°21′47.45″。地层为沙溪庙组二段（J2s2），岩性为黄灰色粗砂岩，出露厚约4.5m。发育多组交错层理，交错层理单层厚约40-70cm，纹层厚约1-10cm，斜交夹角约为10°-30°。层面不平直弱弯曲状。地层产状：275°∠8°。此交错层理可用于研究此地层顶底及沉积环境的水流方向，也具有一定的观赏价值和科普教育价值。此套砂岩还发育小型岩腔。', '省级以下', '', '', '', '', '/images/geolandscape/1571907988014176.jpg');
+INSERT INTO `geolandscape` VALUES ('112', '1', 'G076', 'ZG2060', '铁板村采石场', '', '采矿遗迹景观', '', '', '104.53861111', '29.375694444', '', '', '位于荣县双石镇铁板村，东经104°32′18.98″，北纬29°22′32.46″。采石场地层为沙溪庙组二段（J2s2），岩性为黄灰色中砂岩，岩石坚硬致密，是非常好的建筑材料。砂岩单层厚约130cm以上，出露厚约8-25m。采石场由4个相连的采石坑组成，长约80m，宽约30-50m，高约10-30m，采石场还余大量石料。采石场为机械化采石，现场还有一台废弃的切割机。此采石场是从上往下采，直立面留下大量采石梯，每梯高约34-40cm，石材长约70cm。采石场还堆砌少量废石料，从现场推断此处废弃时间不长，也可能是暂时废弃。石材主要用于修建公路、水渠、水库、房屋等，对当地社会发展做出了一定贡献。', '省级以下', '', '', '', '', '/images/geolandscape/1571908014671177.jpg');
+INSERT INTO `geolandscape` VALUES ('113', '1', 'G075', 'ZG2064', '大才村采石场', '', '采矿遗迹景观', '', '', '104.519', '29.380083333', '', '', '位于荣县双石镇大才村，东经104°32′18.98″，北纬29°22′32.46″。采石场为沙溪庙组二段（J2s2），岩性为黄灰色中砂岩，岩石坚硬致密，储量大，是一处天然的石料地。东侧采石场由3个相连采石坑组成，总长约80m，宽约100m，高约15-25m，为机械开采，石梯高约40cm，还剩余大量石料，最下面采石坑现改造为鱼塘。西侧采石场长约20m，宽约15m，高约7m，也为机械化开采，石梯高约30m，周边还可见少量厂房，废弃石料等，现改造为鱼塘。石料用于修建公路、房屋、水库等。此采石场为当地社会经济发展做出了巨大贡献。', '省级以下', '', '', '', '', '/images/geolandscape/1571908040326178.jpg');
+INSERT INTO `geolandscape` VALUES ('114', '1', 'G059', 'ZG2073', '两口塘村剖面', '', '地方性标准剖面', '', '', '104.47558333', '29.411055556', '', '', '位于荣县望佳镇两口塘村，东经104°28′32.12″，北纬29°24′39.77″。地层为沙溪庙组二段（J2s2），岩性为黄灰色粗砂岩和砾岩。上部和下部为黄灰色粗砂岩，粗粒砂状结构，块状构造，单层厚达5m以上，出露厚达10m以上，发育平行层理和交错层理，纹层厚约1-3cm。中部为砾岩，出露厚约90cm，砾状结构，砾石含量达40-70％，砾石次圆状-圆状，直径约1-3cm，砾石成分主要为粉砂质和泥质，胶结物为石英质，砾石杂乱分布，无定向性，泥质砾石被风化后形成孔洞。砾岩和砂岩接触面呈逐渐过渡，在砂岩底面可见槽状层理。地层产状：171°∠5°。此剖面对研究古水动力环境及沉积相具有重要意义。', '省级以下', '', '', '', '', '/images/geolandscape/1571908069487179.jpg');
+INSERT INTO `geolandscape` VALUES ('115', '1', 'G004', 'ZG2075', '青龙山恐龙化石群', '', '古脊椎动物', '', '', '104.19833333', '29.618083333', '', '', '位于荣县复兴乡朱家庙村青龙山，东经104°11′54.05″，北纬29°37′5.06″。化石埋藏地层为沙溪庙组二段（J2s2），岩性主要为黄灰色厚层-块状粗砂岩，其次为紫红色泥岩和粉砂岩。1995年发现6个化石露头点，其中两个化石点厚度达1—1.5米，岩层陡坎上可看到连续的化石出露，辐射面积达2平方公里。1999年4月进行了发掘，在60平方米探方内层层叠叠埋藏着的200多块恐龙骨骼化石，有牙齿、颈椎、尾椎、肢骨等不同部位，还有20多块不能确定的其他骨骼化石。经过本次调查发现，青龙山恐龙化石远远不止前人调查所得，在青龙山一面被剥蚀岩层中发现有大量恐龙化石裸露，且延续10余米直至被泥土掩埋，其埋藏面积及埋藏体量应十分巨大。', '世界级', '', '', '', '', '/images/geolandscape/1571908101155180.jpg');
+INSERT INTO `geolandscape` VALUES ('116', '1', 'G002', 'ZG2076', '八角山绝壁', '', '碎屑岩地貌景观', '', '', '104.19175', '29.628888889', '', '', '位于荣县复兴镇大树村，东经104°30′30.30″，北纬29°37′44.01″。绝壁成景地层为沙溪庙组二段（J2s2），岩性主体为黄灰色块状粗砂岩，底部夹少量紫红色泥岩和青灰色粉砂岩。粗砂岩单层厚约4m以上，总出露厚约20m，局部发育少量交错层理，巨厚砂岩形成了一个直立的绝壁，绝壁长约50m，高约19m，颇为壮观。此绝壁中下部出露一层易被风化的软弱层，风化成凹坑或岩穴，表面较破碎，出露厚约40-100cm。在绝壁表面发育两处爬壁树，即树木的根系沿着绝壁生长，且规模较大，影响范围长约15m，高约20m，可清楚看见树木的根系如何发育，根系直径最粗约20cm，根系非常发达。', '省级以下', '', '', '', '', '/images/geolandscape/1571908123437181.jpg');
+INSERT INTO `geolandscape` VALUES ('117', '1', 'G001', 'ZG2077', '龙洞冲岩穴', '', '碎屑岩地貌景观', '', '', '104.18416667', '29.630083333', '', '', '位于荣县复兴镇大树村，东经104°11′3.02″，北纬29°37′48.26″。岩穴成景地层为沙溪庙组二段（J2s2），岩性为黄灰色块状粗砂岩，单层厚达2.5m以上，出露厚约30m，形成一处直立绝壁，绝壁上发育大量岩穴，多呈长椭球状，大者为圆状，直径约5-50cm，其中最大岩穴（球状）直径约为1.5-2m，深约1m，长椭球状岩穴多呈条带分布，此处岩穴形成原因主要为块状粗砂岩中含大砾石，砾石被风化掉或落脱后形成岩穴。此处还发育一个较大岩腔，呈拱桥状，长约40m，高约6-7m，深约2m，砂岩岩穴受风化作用影响，逐渐垮塌而形成。', '省级以下', '', '', '', '', '/images/geolandscape/1571908147289182.jpg');
+INSERT INTO `geolandscape` VALUES ('118', '1', 'G003', 'ZG2078', '立子坡交错层理', '', '地方性标准剖面', '', '', '104.17255556', '29.616277778', '', '', '位于荣县复兴镇沙溪村，东经104°10′21.15″，北纬29°36′58.64″。地层为沙溪庙组二段（J2s2），岩性为黄灰色块状粗砂岩，单层厚约10m以上，此处为厚约13m的砂岩绝壁。交错层理共发现4处，都为多层交错层理，此处明显可见3层，交错层理厚约20-70cm，最上面一层斜交于平行层理的下底面，交错层理的纹层厚约1-3cm，斜交夹角约15°-20°，平行层理纹层厚约1-5cm，此套地层为正常沉积。地层产状：265°∠4°。此交错层理可用于研究此地层顶底及沉积环境的水流方向，也具有一定的观赏价值和科普教育价值。', '省级以下', '', '', '', '', '/images/geolandscape/1571908831989183.jpg,/images/geolandscape/1571908831990184.jpg');
+INSERT INTO `geolandscape` VALUES ('119', '1', 'G166', 'ZG2082', '凤凰山剖面', '', '地方性标准剖面', '', '', '104.49983333', '29.296361111', '', '', '位于荣县鼎新镇响滩村，东经104°29′59.43″，北纬29°17′46.88″。地层为蓬莱镇组一段（J3p1）,岩性为鲜红色泥岩、砖红色细砂岩。鲜红色泥岩与砖红色细砂岩互层出露，夹少量灰绿色细砂岩和灰白色泥灰岩。砖红色细砂岩单层厚约5-45cm，出露厚约5-45cm，发育少量平行层理，纹层厚约1-3cm，细砂岩出露厚度不稳定，局部尖灭于鲜红色泥岩中。鲜红色泥岩出露厚约80-160cm，强风化，表面十分破碎，为非常好的红砖原材料。泥岩与砂岩接触面较平直，地层产状为：275°∠19°。此沉积韵律非常典型，是一个非常好的基本层序剖面，对研究该地区沉积相及沉积环境具有一定意义。', '省级以下', '', '', '', '', '/images/geolandscape/1571908858834185.jpg');
+INSERT INTO `geolandscape` VALUES ('120', '1', 'G164', 'ZG2083', '新屋村球形风化', '', '碎屑岩地貌景观', '', '', '104.47169444', '29.303972222', '', '', '位于荣县鼎新镇新屋村，东经104°28′18.07″，北纬29°18′14.32″。球形风化发育地层为窝头山组一段（K1w1）,岩性为砖红色粗砂岩，单层厚约100cm，出露厚约200cm。此处发育7个呈球状的砂岩，即球形风化。球状砂岩直径最大约180cm，最小约50cm，其中有两个球状砂岩被人工损坏明显，修建公路时被破坏。此套砂岩未形成球形风化的砂岩表面较光滑，有球形风化的趋势。', '省级以下', '', '', '', '', '/images/geolandscape/1571908886608186.jpg');
+INSERT INTO `geolandscape` VALUES ('121', '1', 'G161', 'ZG2084', '梯子沟剖面', '', '地方性标准剖面', '', '', '104.47205556', '29.313611111', '', '', '位于荣县鼎新镇回龙殿村，东经104°28′19.37″，北纬29°18′49.04″。地层为窝头山组一段（K1w1）,岩性为砖红色块状粗砂岩，砾岩。块状粗砂岩中夹少量砾岩层。砾岩中砾石含量约40％，成分主要为石英质和泥质，胶结物主要为泥质，呈次圆状，直径为1-4cm，出露厚约10-25cm，强风化，表面十分破碎。粗砂岩单层厚约15-170cm，出露厚约3.5m以上，粗砂岩中含少量砾石，不均匀分布，含量约2%，次圆状，直径约1-2cm。地层产状155°∠7°。此套粗砂岩形成绝壁，高约50m。', '省级以下', '', '', '', '', '/images/geolandscape/1571908916022187.jpg');
+INSERT INTO `geolandscape` VALUES ('122', '1', 'G155', 'ZG2087', '尖山子蓬莱镇组（J3p）与窝头山组（K1w）接触界线', '', '地方性标准剖面', '', '', '104.45280556', '29.321527778', '', '', '位于荣县李晏乡佳音村乡村土路旁，东经104°27′10.05″，北纬29°19′17.55″。是一处人工修公路挖掘出的纵剖面，此接触界线非常清晰，接触地层及岩性非常清楚。界线北西侧为蓬莱镇组（J3p），岩性为砖红色泥岩和暗砖红色粗砂岩。泥岩与粗砂岩互层出露，比列约为1:1，泥岩出露厚约100cm，中等风化，表面较破碎。粗砂岩单层厚约135cm，出露厚约135cm以上。界线南东侧为窝头山组（K1w），岩性为砖红色巨块状粗砂岩，单层厚约6m以上，出露厚约10m以上，形成陡壁。底部粗砂岩中含少量砾石，含量约3％，呈层分布，较分散，成分主要有白色石英、杂色泥质等，次圆状，直径0.6-2cm。粗砂岩地层产状：126°∠8°。接触面总体较平直，局部有弱弯曲现象。', '省级', '', '', '', '', '/images/geolandscape/1571908945949189.jpg,/images/geolandscape/1571908945949188.jpg');
+INSERT INTO `geolandscape` VALUES ('123', '1', 'G165', 'ZG2088', '山边村剖面', '', '地方性标准剖面', '', '', '104.44227778', '29.295138889', '', '', '位于荣县古文镇山边村，东经104°26′32.17″，北纬29°17′42.54″。地层为窝头山组二段（K1w2），岩性为砖红色粗砂岩和鲜红色泥岩。粗砂岩与泥岩不等厚互层，比例约为3:1。泥岩出露厚约15-30cm，强风化，表面十分破碎。粗砂岩单层厚约20-150cm，出露厚约20-150cm，发育平行层理，纹层厚约1-4cm。粗砂岩底面发育凹槽，推测为印模或冲刷痕。接触面总体较平直，但局部较弯曲。地层产状：110°∠11°。此沉积韵律非常典型，是一个非常好的基本层序剖面，对研究该地区沉积相及沉积环境具有一定意义。', '省级以下', '', '', '', '', '/images/geolandscape/1571908970860190.jpg');
+INSERT INTO `geolandscape` VALUES ('124', '1', 'G159', 'ZG2090', '宝泉村交错层理', '', '地方性标准剖面', '', '', '104.43719444', '29.310138889', '', '', '位于荣县李晏乡宝泉村，东经104°26′13.89″，北纬29°18′36.54″。地层为窝头山组一段（K1w1），岩性为块状粗砂岩，单层厚约2m以上，出露厚约10m以上，发育平行层理和多组交错层理或波状层理。平行层理出露厚约2.5m，纹层厚约1-5cm。交错层理出露厚约30-200cm，或波状层理散乱弯曲分布，出露厚约50-400cm，纹层厚约1-3cm，斜交于平行层理下底面，夹角约为25°-35°，指示此层地层为正常沉积。粗砂岩表面被风化呈弧状。地层产状：105°∠17°。此套地层易形成岩坎或岩腔。此交错层理可用于研究此地层顶底及沉积环境的水流方向，也具有一定的观赏价值和科普教育价值。', '省级以下', '', '', '', '', '/images/geolandscape/1571908996755191.jpg');
+INSERT INTO `geolandscape` VALUES ('125', '1', 'G160', 'ZG2091', '手爬岩丹霞地貌', '', '碎屑岩地貌景观', '', '', '104.43369444', '29.308527778', '', '', '位于荣县李晏乡宝泉村，东经104°26′1.36″，北纬29°18′30.72″。丹霞地貌成景地层为窝头山组二段（K1w2），岩性为砖红色块状粗砂岩，单层厚约2m以上，出露厚约30m。发育大型交错层理、平行层理，纹层厚约1-5cm，斜层理斜交于平行层理下底面，斜交夹角约为35°，交错层理出露厚约2m以上，平行层理厚约2m以上。砂岩地层较水平，被两侧沟谷切割，形成一座孤立的岩船（岩墙），顶部较平坦，岩船头部为圆弧状，岩船长约90m，宽约40m，高约30m，沿195°方向延伸，岩船两侧岩墙长约90m，高约30m，两侧沟谷呈“V”型。此套砂岩易形成岩坎，岩墙等，表面被风化得比较光滑。此岩船规模较大，形状较典型，颇为壮观。', '省级以下', '', '', '', '', '/images/geolandscape/1571909022841192.jpg');
+INSERT INTO `geolandscape` VALUES ('126', '1', 'G158', 'ZG2092', '石缸坝大型交错层理', '', '地方性标准剖面', '', '', '104.42036111', '29.310388889', '', '', '位于荣县李晏乡宝泉村，东经104°25′13.32″，北纬29°18′37.39″。地层为窝头山组二段（K1w2），岩性为砖红色块状粗砂岩，单层厚达3.5m以上，出露厚约20m，发育多组大型交错层理和平行层理，或波状弯曲的层理，交错层理出露厚约3.5-7m，纹层厚约1-10cm，平行层理出露厚约3-6m，纹层厚约1-6cm，交错层理斜交于平行层理底面，夹角约为26°-37°，指示此套地层为正常沉积。此交错层理可用于研究此地层顶底及沉积环境的水流方向，也具有一定的观赏价值和科普教育价值。此套砂岩出露稳定且巨厚，易形成岩墙、岩墙、岩谷、大型陡坎等，且表面被风化得非常光滑。', '省级', '', '', '', '', '/images/geolandscape/1571909052984193.jpg');
+INSERT INTO `geolandscape` VALUES ('127', '1', 'G157', 'ZG2095', '严家山丹霞地貌', '', '碎屑岩地貌景观', '', '', '104.40141667', '29.310055556', '', '', '位于荣县乐德镇棋盘村，东经104°24′5.13″，北纬29°18′36.17″。丹霞地貌成景地层为窝头山组二段（K1w2）,岩性为砖红色块状粗砂岩，单层厚约170cm以上，出露厚约30m以上，发育平行层理，纹层厚约1-10cm不等。因地层趋于水平，形成了一座如外星人停驻的停机坪（两个高低平坦的方山），停机坪呈圆状，小者直径约10m，大者直径约为30m，顶面平整。也如一个伸长脖子的乌龟，龟头伸入水中，脖子长约50m。此处是一个地层基础和物理风化共同作用演化的自然奇观。', '省级以下', '', '', '', '', '/images/geolandscape/1571909077961194.jpg');
+INSERT INTO `geolandscape` VALUES ('128', '1', 'G153', 'ZG2099', '麦子山岩腔', '', '碎屑岩地貌景观', '', '', '104.35608333', '29.336638889', '', '', '位于荣县乐德镇观音村，东经104°21′21.85″，北纬29°20′11.91″。岩腔成景地层为窝头山组一段（K1w1）,岩性为砖红色块状粗砂岩，发育大型交错层理和平行层理，交错层理和平行层理的夹角约为35°，交错层理纹层厚约2-5cm。岩腔发育于大型交错层理和平行层理的斜交部位，受风化后逐渐垮塌而形成。岩腔共7处，多为长椭球状，长约10m，高约5m，深约2m。', '省级以下', '', '', '', '', '/images/geolandscape/1571909113182195.jpg');
+INSERT INTO `geolandscape` VALUES ('129', '1', 'G154', 'ZG2100', '青龙嘴交错层理', '', '地方性标准剖面', '', '', '104.37183333', '29.32675', '', '', '位于荣县乐德镇板凳坳村，东经104°22′18.61″，北纬29°19′36.34″。地层为窝头山组二段（K1w2）,岩性为砖红色粗砂岩，单层厚约140cm以上，出露厚约8m，发育大型交错层理和平行层理，上斜交于平行层理底面或层理面，斜交夹角约25°-35°，指示此套地层为正常沉积，交错层理出露厚约140cm-350cm，纹层厚约1-3cm。此交错层理可用于研究此地层顶底及沉积环境的水流方向，也具有一定的观赏价值和科普教育价值。', '省级以下', '', '', '', '', '/images/geolandscape/1571909138362196.jpg');
+INSERT INTO `geolandscape` VALUES ('130', '1', 'G152', 'ZG2101', '乌龟山丹霞地貌', '', '碎屑岩地貌景观', '', '', '104.34383333', '29.339583333', '', '', '位于荣县河口镇观音村，东经104°20′37.80″，北纬29°20′22.49″。丹霞地貌成景地层为窝头山组一段（K1w1）,岩性为砖红色中砂岩，此处砂岩受节理和风化剥蚀作用，形成了一个上部宽下部较窄孤立的象形山石，前端呈圆弧弯曲状，后部较平直，形似眼镜蛇蛇头，正四处观望，栩栩如生，象形石高约3m，宽约2m，最窄处宽约1.5m。', '省级以下', '', '', '', '', '/images/geolandscape/1571909163033197.jpg');
+INSERT INTO `geolandscape` VALUES ('131', '1', 'G151', 'ZG2102', '乐德白垩系窝头山组地层剖面', '', '区域性标准剖面', '', '', '104.35369444', '29.351305556', '', '', '位于荣县乐德镇铧山村，东经104°21′13.32″，北纬29°21′4.72″。地层为窝头山组一段（K1w1）,岩性为砖红色粗砂岩、棕红色泥岩。砖红色粗砂岩与棕红色泥岩互层出露。砖红色砂岩单层厚约30-260cm，出露厚约30-300cm，砂岩中夹少量透镜状和条带状泥岩，长约90cm，宽约25cm。棕红色泥岩出露厚约25-120cm，强风化，表面较破碎。粗砂岩与泥岩接触面总体较平直。', '省级以下', '', '', '', '', '/images/geolandscape/1571909190202198.jpg');
+INSERT INTO `geolandscape` VALUES ('132', '1', 'G156', 'ZG2103', '太平坳天生桥', '', '碎屑岩地貌景观', '', '', '104.38083333', '29.318416667', '', '', '位于荣县乐德镇板凳坳村，东经104°22′50.98″，北纬29°19′6.33″。天生桥成景地层为窝头山组二段（K1w2），岩性为砖红色粗砂岩，单层厚约5-30cm，出露厚约10-50cm。此套砂岩地层较水平，地层产状：230°∠3°。狭窄山脊状岩墙受后期节理和风化剥蚀作用影响，被风化形成穿孔的孔洞，孔洞经长时间的风化作用，上部逐渐垮塌，后逐渐演化为现今如门洞的石桥。门洞下部再修公路时局部进行了修整。门洞8m，宽约3m，桥梁趋于水平，厚约3m。天生桥较稳定，暂时不会垮塌。此天生桥规模巨大，形态典型，且发育红色砂岩中，具有极高的观赏价值。此套砂岩出露较稳定，周边发育少量岩腔和绝壁等。', '省级', '', '', '', '', '/images/geolandscape/1571909212000199.jpg');
+INSERT INTO `geolandscape` VALUES ('133', '1', 'G150', 'ZG2108', '三星顶下白垩统窝头山组地层剖面', '', '区域性标准剖面', '', '', '104.29772222', '29.359694444', '', '', '位于荣县正紫镇邱家沟村，东经104°17′51.81″，北纬29°21′34.92″。为窝头山组（K1w）与蓬莱镇组（J3p）接触界线，接触面及岩性清楚。界线北东侧为窝头山组（K1w），岩性为砖红色块状中砂岩，含少量砾石，砾石不均匀分布，砾石呈次圆状-圆状，直径约为0.3-4cm，成分为石英质和泥质。砂岩单层厚约220cm以上，出露厚约5m以上。块状中砂岩中夹杂一层砂岩与泥岩混杂层，出露厚度不稳定，出露厚约3-30cm，局部尖灭于中砂岩中，泥岩局部呈砾石夹于砂岩中。界线南西为蓬莱镇组（J3p），岩性为棕红色泥岩和砖红色中厚层状细砂岩。泥岩与细砂岩互层出露，比例约为1:1.泥岩出露厚约15-60cm，强风化，表面全破碎。细砂岩单层厚约17-60cm不等，出露厚约17-90cm，局部尖灭于泥岩中。接触面产状：160°∠10°，接触面不平直，呈波状弯曲。', '省级以下', '', '', '', '', '/images/geolandscape/1571909236564200.jpg');
+INSERT INTO `geolandscape` VALUES ('134', '1', 'G132', 'ZG2110', '长埂山村丹霞地貌', '', '碎屑岩地貌景观', '', '', '104.26533333', '29.321694444', '', '', '位于荣县新桥镇长埂山村，东经104°15′55.25″，北纬29°19′18.10″。丹霞地貌成景地层为窝头山组一段（K1w1），岩性为砖红色块状中砂岩，单层厚约3m以上，出露厚约8m以上，发育平行层理，纹层厚约1-5cm。地层较水平，砂岩形成一个孤立小山丘，山丘周边为砂岩绝壁，如岩墙；山丘下部为蓬莱镇组（J3p）泥岩和砂岩。岩墙近直立，长约200m，高约8-30m，局部被沟谷切割，致岩墙不连续，岩墙延165°方向延伸。此套砂岩在周边也形成多个孤立的小山丘，四周为直立的绝壁岩墙，山丘上植被较茂密，山丘下为一个个小型梯田。此处丹霞地貌成因为此套块状砂岩地层较平缓，周边被河谷切割、水流冲刷侵蚀，后逐渐演化为孤立小山丘，后风化垮塌后形成直立岩墙。', '省级以下', '', '', '', '', '/images/geolandscape/1571909289185201.jpg');
+INSERT INTO `geolandscape` VALUES ('135', '1', 'G131', 'ZG2115', '刘家坝剖面', '', '地方性标准剖面', '', '', '104.21658333', '29.318638889', '', '', '位于荣县东佳镇麻柳场村，东经104°12′59.71″，北纬29°19′7.09″。地层为遂宁组（J3sn），岩性为紫红色泥岩、黄灰色中薄层状粉砂岩，夹有少量厚层状细砂岩，泥岩与粉砂岩互层出露。泥岩出露厚约50-250cm，强风化，表面较破碎。粉砂岩单层厚约5-25cm，出露厚约5-40cm。厚层状细砂岩出露厚约60-90cm，局部细砂岩呈中薄层状与泥岩互层，且斜交于上层面，斜交夹角约为20°。泥岩与中薄层状粉砂岩接触较平直，局部弱弯曲。', '省级以下', '', '', '', '', '/images/geolandscape/1571909315356202.jpg');
+INSERT INTO `geolandscape` VALUES ('136', '1', 'G058', 'ZG2119', '老河沟遂宁组（J3sn）与沙溪庙组（J2s）接触界线', '', '地方性标准剖面', '', '', '104.28291667', '29.386694444', '', '', '位于荣县正紫镇窝棚湾村，地理东经104°16′58.52″，北纬29°23′12.09″。为遂宁组（J3sn）与沙溪庙组（J2s）接触界线，接触面及岩性较清楚。界线东南侧为遂宁组（J3sn），岩性为棕红色泥岩夹少量黄灰色细砂岩。泥岩局部呈薄层状（页理），风化中等，表面较破碎。细砂岩单层厚约10-25cm，出露厚约35cm。此套地层易被风化，主要为庄稼地。界线北西侧为沙溪庙组（J2s），岩性为紫红色泥岩，黄灰色块状粗砂岩。此地层以紫红色泥岩为主，仅接触面为块状粗砂岩。泥岩强风化，表面全破碎，易被风化形成凹坑。粗砂岩单层厚约200cm，出露厚约200cm，发育平行层理，纹层厚约5-15cm。粗砂岩与上下泥岩接触面较平直，局部弱弯曲，接触面地层产状：122°∠12°。', '省级以下', '', '', '', '', '/images/geolandscape/1571909356001203.jpg,/images/geolandscape/1571909356001204.jpg');
+INSERT INTO `geolandscape` VALUES ('137', '1', 'G057', 'ZG2120', '锅圈岩绝壁', '', '碎屑岩地貌景观', '', '', '104.25605556', '29.390388889', '', '', '位于荣县正紫镇张家庙村，东经104°15′21.84″，北纬29°23′25.45″。绝壁成景地层为沙溪庙组二段（J2s2），岩性为黄灰色块状粗砂岩，单层厚约3m以上，出露厚约5-40m，绝壁呈直立直角三角形，北西侧最高，高约40m，南东侧较矮，高约5m，总长约200m，绝壁底部还发育小型岩腔，周边堆积少量大型岩块（推测取石遗留或崩塌物），绝壁规模较大，颇为壮观，周边为狭长梯田和茂密植被。', '省级以下', '', '', '', '', '/images/geolandscape/1571909436531205.jpg');
+INSERT INTO `geolandscape` VALUES ('138', '1', 'G055', 'ZG2123', '度佳侏罗系沙溪庙组地层剖面', '', '区域性标准剖面', '', '', '104.25386111', '29.403333333', '', '', '位于荣县度佳镇斜石板村李家山，东经104°15′13.94″，北纬29°24′12.03″。剖面走向约345°，地层断续出露，露头较好段约700m，地层为沙溪庙组一段（J2s1），岩性为黄灰色块状粗砂岩，紫红色泥岩。粗砂岩与泥岩互层出露，比列约为1:5-1:10。粗砂岩单层厚约2.5m以上，出露厚约6.5m以上，发育平行层理和板状交错层理。板状交错层理出露厚约1.5-3m，纹层厚约1-3cm，交错层理上斜交于层理面，夹角约为15°-25°。此套砂岩易被风化后形成岩腔和绝壁。泥岩强风化，表面破碎，形成负地貌，多为庄稼地。砂岩与泥岩接触面较平直。', '省级以下', '', '', '', '', '/images/geolandscape/1571909472205206.jpg');
+INSERT INTO `geolandscape` VALUES ('139', '1', 'G036', 'ZG2124', '黄桷湾自流井组（J1-2z）与新田沟组（J2xt）接触界线', '', '地方性标准剖面', '', '', '104.28725', '29.423333333', '', '', '位于荣县度佳镇鸭子凼村，东经104°17′14.13″，北纬29°15′23.97″。为自流井组（J1-2z）与新田沟组（J2xt）接触界线，接触面及岩性清楚。界线东侧为新田沟组（J2xt），岩性为黄灰色块状中砂岩，单层厚约60-160cm，出露厚约4-7m，发育少量平行层理，纹层厚约1-3cm，此砂岩出露厚度不稳定且层面不平直，呈波状起伏弯曲。界线西侧为自流井组（J1-2z），岩性为暗紫色泥岩和灰绿色粉砂岩。泥岩与粉砂岩互层出露，比列约为1:1，中部泥岩与粉砂岩呈薄层状互层。泥岩出露厚约3-230cm，强风化，表面全破碎。粉砂岩单层厚约5-45cm，出露厚约5-50cm，中等风化，表面较破碎。泥岩与粉砂岩接触面平直。地层产状：155°∠20°。', '省级', '', '', '', '', '/images/geolandscape/1571909507082207.jpg');
+INSERT INTO `geolandscape` VALUES ('140', '1', 'G133', 'ZG2125', '青岗咀河曲', '', '风景河段', '', '', '104.24869444', '29.31775', '', '', '位于荣县新桥镇螺丝坝村，东经104°14′55.29″，北纬29°19′3.85″。河曲是越溪河新桥镇段，此段河曲极度弯曲，有6个转弯处，总长约10km，宽约40m。河曲总流向为北西向，河曲水质较清澈，两岸生长大量植被，多为竹林、灌木等，周边还有屋舍、农田等。此极度弯曲的河曲成因主要为转弯凹岸处多为块状砂岩，水流冲刷侵蚀难度远高于泥岩，经长时间作用而形成。', '省级以下', '', '', '', '', '/images/geolandscape/1571909541957208.jpg');
+INSERT INTO `geolandscape` VALUES ('141', '1', 'G139', 'ZG2128', '合江村绝壁', '', '碎屑岩地貌景观', '', '', '104.2515', '29.27275', '', '', '位于荣县新桥镇合江村，东经104°15′5.39″，北纬29°16′21.94″。绝壁成景地层为窝头山组一段（K1w1），岩性为砖红色砂岩，发育交错层理和平行层理，交错层理纹层厚约1-4cm，平行层理纹层厚约1-3cm，斜层理斜交于平行层理下底面。绝壁沿120°方向延伸，长约60m，高约10m，绝壁近直立。成因主要为此套块状砂岩受风化、崩塌、人为等作用形成。', '省级以下', '', '', '', '', '/images/geolandscape/1571909574588209.jpg');
+INSERT INTO `geolandscape` VALUES ('142', '1', 'G138', 'ZG2130', '老王沟岩腔', '', '碎屑岩地貌景观', '', '', '104.23225', '29.275166667', '', '', '位于荣县雷音乡糖嘴村，东经104°13′56.05″，北纬29°16′30.56″。岩腔成景地层为窝头山组一段（K1w1），岩性为灰绿色粗砂岩。岩腔整体呈弧形，拱桥状，长25m，高约4m，深约3m，其西端已风化成小型岩洞。此岩腔成因主要为块状砂岩受差异性风化后崩塌作用形成，底面还可见少量崩塌物。此岩腔体型较大，形状较好，较罕见。', '省级', '', '', '', '', '/images/geolandscape/1571909599295210.jpg');
+INSERT INTO `geolandscape` VALUES ('143', '1', 'G140', 'ZG2131', '石峡子坝丹霞地貌', '', '碎屑岩地貌景观', '', '', '104.2325', '29.266916667', '', '', '位于荣县雷音乡塘嘴村乡村土路旁庄稼地中，东经104°13′56.97″，北纬29°16′0.93″。丹霞地貌为一只海豚象形石，该象形石成景地层为窝头山组一段（K1w1），岩性为灰绿色块状粗砂岩。砂岩受差异性风化后形成此形似一正从水面跃起的海豚，该海豚高约2m，宽约1.1m，前段受差异性风化作用呈凹状，似海豚头部，下部略窄，似海豚的身体，细细品味，活灵活现。', '省级以下', '', '', '', '', '/images/geolandscape/1571909622445211.jpg');
+INSERT INTO `geolandscape` VALUES ('144', '1', 'G054', 'ZG2133', '斜石板村自流井组（J1-2z）与新田沟组（J2xt）接触界线', '', '地方性标准剖面', '', '', '104.26219444', '29.411194444', '', '', '位于荣县保华镇斜石板村，东经104°15′43.87″，北纬29°24′40.34″。为自流井组（J1-2z）与新田沟组（J2xt）接触界线，界线及两侧岩性非常清楚。界线北侧为自流井组（J1-2z），岩性为黄灰色、紫红色、暗紫色泥岩，暗紫色粉砂岩，灰色灰岩等，接触面为一层厚约20cm黄灰色泥岩，紫红色泥岩出露厚约10-90cm不等，强风化，表面较破碎。粉砂岩单层厚约10-35cm，弱风化，出露厚约10-35cm。灰岩单层厚约15-60cm，出露厚约15-320cm,表面溶蚀现象明显。界线南侧为新田沟组（J2xt），岩性为黄灰色厚层状中砂岩，单层厚约70-90cm，出露厚约7m以上，砂岩中含少量砾石，分布不均匀，次圆状，风化后留下孔洞，砾径长约0.5-2cm。接触面不平直，弱波状弯曲，产状：128°∠18°。', '省级', '', '', '', '', '/images/geolandscape/1571909670363212.jpg,/images/geolandscape/1571909670365213.jpg');
+INSERT INTO `geolandscape` VALUES ('145', '1', 'G030', 'ZG2137', '寨子山大型绝壁', '', '碎屑岩地貌景观', '', '', '104.06133333', '29.447083333', '', '', '位于荣县留佳镇来龙村，东经104°3′40.81″，北纬29°26′49.50″。绝壁成景地层为沙溪庙组二段（J2s2），岩性为黄灰色巨块状粗砂岩，发育平行层理和交错层理，纹层厚约1-5cm。此套块状砂岩受风化剥蚀出露地表，后逐渐风化及崩塌后形成，绝壁规模巨大，分布于一座孤峰的四周，长约250m，高约40m，近直立，表面较光滑。绝壁下部受差异性风化和水流冲蚀作用，有形成岩腔的趋势，远观此孤峰绝壁又犹如一顶帽子。此套砂岩在周边也形成类似绝壁。此区域绝壁规模巨大，且直立，周边配套有梯田和村庄，是一处美景优美的世外桃源地。', '省级以下', '', '', '', '', '/images/geolandscape/1571909694355214.jpg');
+INSERT INTO `geolandscape` VALUES ('146', '1', 'G027', 'ZG2138', '凉水沟剖面', '', '地方性标准剖面', '', '', '104.11238889', '29.4585', '', '', '位于荣县留佳镇文晶宫村，东经104°6′44.63″，北纬29°27′30.56″。地层为沙溪庙组二段（J2s2），岩性为紫红色泥岩、黄灰色中厚层状中砂岩，泥岩与中砂岩互层出露。泥岩出露厚约20-180cm，强风化，表面全破碎。中砂岩单层厚约30-140cm，出露厚约50-140cm。泥岩与中砂岩接触面总体较平直，局部呈波状弯曲。', '省级以下', '', '', '', '', '/images/geolandscape/1571909721883215.jpg');
+INSERT INTO `geolandscape` VALUES ('147', '1', 'G026', 'ZG2139', '胡家山岩腔', '', '碎屑岩地貌景观', '', '', '104.11313889', '29.481611111', '', '', '位于荣县留佳镇大屋坡村，东经104°6′47.38″，北纬29°28′53.80″。岩腔成景地层为沙溪庙组二段（J2s2），岩性为灰绿色块状粗砂岩，发育少量交错层理和平行层理。块状砂岩受差异性风化及水流冲刷侵蚀作用后逐渐垮塌而形成，底部还见少量垮塌物。岩腔规模较大，延伸方向约55°，长约50m，高约20m，深约5m，岩腔内还发育少量球形风化。岩腔位于峡谷西北岸，峡谷长约1.5km，宽约150m，深约100m，谷中发育有河床，但河床规模较小，现种植了大量果树风景独特。', '省级以下', '', '', '', '', '/images/geolandscape/1571909745631216.jpg');
+INSERT INTO `geolandscape` VALUES ('148', '1', 'G029', 'ZG2141', '求雨山蜥脚类恐龙化石产地', '', '古脊椎动物', '', '', '104.11727778', '29.453944444', '', '', '化石产地位于自贡市荣县留佳镇留佳场社区求雨山街130号，东经104°7′2.18″，北纬29°27′14.22″。原化石埋藏地层为沙溪庙组（J2s），清理面积10m2，采得恐龙肢骨化石1件，为蜥脚类,化石年代为晚侏罗世时期。经多方了解打听，因化石挖掘年代久远，现已无人知晓确切原化石产地，原化石产地大致位置已修建为居民楼。', '省级以下', '', '', '', '', '/images/geolandscape/1571909819047218.jpg,/images/geolandscape/1571909819047217.jpg');
+INSERT INTO `geolandscape` VALUES ('149', '1', 'G048', 'ZG2142', '巴子塘剖面', '', '地方性标准剖面', '', '', '104.43833333', '29.442027778', '', '', '位于荣县旭阳镇观斗山村，东经104°26′18.04″，北纬29°26′31.30″。地层为沙溪庙组二段（J2s2），岩性为紫红色泥岩、灰绿色粉砂岩、黄灰色细砂岩。泥岩与粉砂岩互层出露，比例约为3:1，夹两层块状细砂岩，细砂岩单层厚约120-400cm，出露厚约120-400cm。紫红色泥岩出露厚约20-230cm，强风化，表面全破碎。粉砂岩单层厚约5-30cm，出露厚约10-50cm不等，中等-强风化，局部表面全破碎，发育少量水平层理，纹层厚约1-3cm。粉砂岩与泥岩接触面较平直，粉砂岩局部呈尖灭状，尖灭于泥岩中，细砂岩接触面呈波状弯曲。此沉积韵律非常典型，是一个非常好的基本层序剖面，对研究该地区沉积相及沉积环境具有一定意义。', '省级以下', '', '', '', '', '/images/geolandscape/1571909849418219.jpg');
+INSERT INTO `geolandscape` VALUES ('150', '1', 'G046', 'ZG2143', '沙蛋坡蜥脚类恐龙化石产地', '', '古脊椎动物', '', '', '104.42425', '29.446555556', '', '', '化石产地位于自贡市荣县旭阳镇荣州路社区2组沙蛋坡，东经104°25′27.34″，北纬29°26′17.58″。原化石埋藏地层为沙溪庙组二段（J2s2），岩性为紫红色泥岩、黄灰色中砂岩。原化石产地清理面积40m²，产地后期未保护，已被破坏，已改造成农民的庄稼地，完全无清理面及化石产地痕迹，且植被较茂密。经询问周边农民，已无人知晓化石确切原产地。推测原化石产地的山地较平整，长约35m，宽约7m，内侧壁高2m。', '省级以下', '', '', '', '', '/images/geolandscape/1571909878700220.jpg,/images/geolandscape/1571909878703221.jpg');
+INSERT INTO `geolandscape` VALUES ('151', '1', 'G049', 'ZG2144', '1936年荣县西瓜山荣县峨眉龙化石产地', '', '古脊椎动物', '', '', '104.44027778', '29.440972222', '', '', '化石产地位于荣县旭阳镇观斗山村西瓜山西北坡，东经104°26′24.96″，北纬29°26′27.48″。是1936年中国古脊椎动物学奠基人杨钟健教授和美国古生物学家甘颇教授发现并采集，化石为一大型蜥脚类恐龙骨架，体长约15m，1939年经杨钟键教授研究后，命名为荣县峨眉龙。这不仅是自贡地区发现的第一具较完整的恐龙骨架，也是自贡地区和四川盆地最早被科学命名的恐龙化石。原化石产地因年代久远，周边农民已无人知晓此恐龙化石这事，无法准确确定其位置。根据化石埋藏层位沙溪庙组二段（J2s2），岩性为紫红色泥岩、黄灰色粗砂岩，化石的尺寸及挖掘的面积推测原化石埋藏地为一个山地，内侧（现为林地）长约20m，高约2.5m，植被茂密。', '省级', '', '', '', '', '/images/geolandscape/1571909916107222.jpg,/images/geolandscape/1571909944657223.jpg');
+INSERT INTO `geolandscape` VALUES ('152', '1', 'G050', 'ZG2145', '西瓜山蛇颈龟化石产地', '', '古脊椎动物', '', '', '104.44383333', '29.441666667', '', '', '化石产地坐落于荣县旭阳镇大沙村西瓜山东北侧废弃采石场中，原产地已被破坏，东经104°26′37.75″，北纬29°26′30.02″。化石埋藏地层为沙溪庙组二段（J2s2），岩性为黄灰色块状中砂岩，中砂岩单层厚达130cm以上，出露厚约6m以上。原化石为蛇颈龟，清理面积为20m²。现为废弃采石场，改造为一个废弃物堆积地，有围墙圈闭，采石场长约20m，深约6m，宽约13m。', '省级以下', '', '', '', '', '/images/geolandscape/1571909968837224.jpg');
+INSERT INTO `geolandscape` VALUES ('153', '1', 'G040', 'ZG2149', '龙洞湾蜥脚类恐龙化石产地', '', '古脊椎动物', '', '', '104.43341667', '29.475472222', '', '', '化石产地位于荣县旭阳镇龙洞村龙洞湾西侧山坡上原水泥厂旁（当地人记忆中原化石产地位于水泥厂旁），东经104°26′0.26″，北纬29°28′31.72″。化石埋藏地层为自流井组（J1-2z），岩性为灰岩，原化石鉴定为2件蜥脚类恐龙胫骨化石。因水泥厂采石原化石产地已消失，完全被破坏，现水泥厂已废弃，杂草等植被非常茂密。', '省级以下', '', '', '', '', '/images/geolandscape/1571909992880225.jpg');
+INSERT INTO `geolandscape` VALUES ('154', '1', 'G052', 'ZG2150', '钱家坝蜥脚类化石产地', '', '古脊椎动物', '', '', '104.43513889', '29.428', '', '', '化石产地位于荣县旭阳镇观音铺村8组钱家坝，东经104°26′6.50″，北纬29°25′40.84″。化石层位为沙溪庙组二段（J2s2），化石点清理面积为10m2，化石点所处位置为河坝，在小河岩坎的西南角。东南向西北有一条小河从化石点流经，化石点四周土壤为黄沙土，四周植被较少。该化石为1990年3月16日，观音铺村8组村民朱翠容在河坝采沙发现并报告，自贡恐龙博物馆曾派发掘人员到该化石点调查并发掘清理，出土蜥脚类恐龙肢骨化石1件。因保护意识不够，且年代较久远，原产地地貌已被破坏，无法确定准确位置。周边现修建了污水处理厂，环境较差。', '省级以下', '', '', '', '', '/images/geolandscape/1571910015615226.jpg');
+INSERT INTO `geolandscape` VALUES ('155', '1', 'G051', 'ZG2151', '烟龙嘴恐龙化石产地', '', '古脊椎动物', '', '', '104.42805556', '29.430166667', '', '', '化石产地位于自贡市荣县旭阳镇观斗山村9组，东经104°25′41.03″，北纬29°25′48.03″。化石层位为沙溪庙组二段（J2s2），岩性主要为紫红色泥岩和黄灰色粉砂岩,化石点清理面积为12m2，采集蜥脚类恐龙肋骨化石1件,化石年代为晚侏罗世时期。化石原产地已修建为房屋。', '省级以下', '', '', '', '', '/images/geolandscape/1571910041096227.jpg');
+INSERT INTO `geolandscape` VALUES ('156', '1', 'G044', 'ZG2152', '1915年荣县第一具恐龙化石产地', '', '古脊椎动物', '', '', '104.42852778', '29.452777778', '', '', '化石产地位于荣县旭阳镇菠萝村大佛寺旁的小山丘上，东经104°25′42.68″，北纬29°27′10.04″。化石埋藏地层为沙溪庙组二段（J2s2），岩性为紫红色泥岩、黄灰色细砂岩，该化石为1915年，美国地质学家乔治•劳德伯克（George D. Louderback）首次发现。据杨钟健教授于《地质论评》书中记载，化石产于棕色砂岩中，为一段大腿骨、一颗残破不全的牙齿化石以及若干碎骨。化石采出后，被劳德伯克带回美国，于1935年被美国古生物学家甘颇教授鉴定为巨型肉食龙。因年代久远，已无法准确确定原化石产地。', '省级', '', '', '', '', '/images/geolandscape/1571910068276229.jpg,/images/geolandscape/1571910068274228.jpg');
+INSERT INTO `geolandscape` VALUES ('157', '1', 'G043', 'ZG2153', '高连山恐龙化石产地', '', '古脊椎动物', '', '', '104.43533333', '29.464083333', '', '', '化石产地位于自贡市荣县旭阳镇徐家塘村3组，东经104°26′7.24″，北纬29°27′50.67″。化石埋藏地层为沙溪庙组一段（J2s1），岩性为紫红色泥岩、黄灰色砂岩，化石点清理面积为20m2，自贡恐龙博物馆叶勇、舒纯康曾经到该化石点调查并采集巨齿龙科蜥脚类次亚目肉食龙肢骨4件，蜥脚类股骨1件，化石年代为中侏罗世时期。化石产地现已栽种果树和农田，植被发育较茂密。', '省级以下', '', '', '', '', '/images/geolandscape/1571910090336230.jpg,/images/geolandscape/1571910090343231.jpg');
+INSERT INTO `geolandscape` VALUES ('158', '1', 'G042', 'ZG2155', '程家桥沙溪庙组地层剖面', '', '区域性标准剖面', '', '', '104.38805556', '29.46525', '', '', '位于荣县旭阳镇程家桥村，东经104°23′17.02″，北纬29°27′54.87″。地层为沙溪庙组一段（J2s1），岩性为暗紫色、紫红色泥岩，黄、黄灰色厚层块状中—细粒长石石英砂岩。泥岩与砂岩互层，比例约为2:1。泥岩强风化，表面较破碎。砂岩单层厚约20-150cm，出露厚约170cm。砂岩与泥岩接触面呈弱波状-波状弯曲，地层产状：195°∠12°。此沉积韵律非常典型，是一个非常好的基本层序剖面，对研究该地区沉积相及沉积环境具有一定意义。', '省级以下', '', '', '', '', '/images/geolandscape/1571910121987232.jpg');
+INSERT INTO `geolandscape` VALUES ('159', '1', 'G041', 'ZG2156', '荣县程家桥村蜥脚类化石产地', '', '古脊椎动物', '', '', '104.38525', '29.466722222', '', '', '化石产地位于荣县程家桥村3组，东经104°23′6.92″，北纬29°28′0.23″。化石埋藏地层为沙溪庙组一段（J2s1），岩性为紫红色泥岩、黄灰色粗砂岩，地层产状：165°∠10°。化石点清理面积为20m2，出土大型蜥脚类恐龙骨架一具。2015年10月，自贡恐龙博物馆组织工作人员在面积10平米范围内，发掘有零星恐龙化石，经恐龙博物馆专家鉴定为蜥脚类恐龙的趾骨、尾椎等化石。', '省级以下', '', '', '', '', '/images/geolandscape/1571910151724233.jpg');
+INSERT INTO `geolandscape` VALUES ('160', '1', 'G045', 'ZG2158', '王家冲剖面', '', '地方性标准剖面', '', '', '104.39772222', '29.450361111', '', '', '位于荣县旭阳镇劳动村，东经104°23′51.76″，北纬29°27′1.32″。地层为沙溪庙组一段（J2s1），岩性为紫红色泥岩，黄灰色粉砂岩，黄灰色细砂岩。紫红色泥岩与黄灰色粉砂岩互层出露，比例约为1:1，夹两层细砂岩，其下部互层的泥岩和粉砂岩全尖灭于巨块状细砂岩中，与细砂岩接触面呈锯齿状，细砂岩出露厚约50-650cm。紫红色泥岩出露厚约20-160cm，强风化，表面全破碎。粉砂岩单层厚约10-70cm，出露厚约20-180cm，粉砂岩局部出露厚度不稳定，呈尖灭状，尖灭于泥岩中。泥岩与粉砂岩接触面总体较平直。地层产状:162°∠7°。此沉积韵律非常典型，是一个非常好的基本层序剖面，对研究该地区沉积相及沉积环境具有一定意义。', '省级以下', '', '', '', '', '/images/geolandscape/1571910179353234.jpg');
+INSERT INTO `geolandscape` VALUES ('161', '1', 'G047', 'ZG2159', '但家湾恐龙化石产地', '', '古脊椎动物', '', '', '104.40308333', '29.44325', '', '', '化石产地位于自贡市荣县旭阳镇朝阳村6组但家湾乡村土公路陡壁下，东经104°24′11.06″，北纬29°25′35.66″。化石埋藏地层为沙溪庙组二段（J2s2），岩性为紫红色泥岩、黄灰色砂岩，地层产状：170°∠10°。化石点清理面积为25m2，经自贡恐龙博物馆专家鉴定为蜥脚类恐龙化石，共计1件，年代为晚侏罗世时期。经当地居民介绍，化石产地中还埋藏有化石。', '省级以下', '', '', '', '', '/images/geolandscape/1571910206946235.jpg');
+INSERT INTO `geolandscape` VALUES ('162', '1', 'G005', 'ZG2161', '楠木村蜂窝状岩穴', '', '碎屑岩地貌景观', '', '', '104.22083333', '29.602444444', '', '', '位于荣县复兴镇楠木村，东经104°13′15.02″，北纬29°36′08.79″。岩穴成景地层为新田沟组（J2xt），岩性为黄灰色块状中砂岩，单层厚约80-150cm，出露厚约150-210cm，发育交错层理，纹层厚约1-5cm，斜交夹角约15°。岩穴分布非常密集，如蜂窝状，岩穴呈圆状、椭圆状、心形状等，大小约1-55cm不等，深约1-25cm，部分岩穴沿层理面分布。成因主要受差异性风化影响，在抗风化能力薄弱处形成岩穴，如交错层理斜交处或层理面，局部孔穴为前期充填物被剥蚀后风化所形成。', '省级以下', '', '', '', '', '/images/geolandscape/1571910232454236.jpg');
+INSERT INTO `geolandscape` VALUES ('163', '1', 'G006', 'ZG2163', '河坡高恐龙化石产地', '', '古脊椎动物', '', '', '104.17463889', '29.584777778', '', '', '化石产地位于荣县观山镇方冲村7组，东经104°10′28.82″，北纬29°35′05.16″。化石埋藏地层为沙溪庙组一段（J2s1），岩性为紫红色泥岩、黄灰色块状中砂岩，化石点清理面积为20m²，该化石为1989年1月26日，方冲村7组村民但唐轩在采石场发现并报告自贡恐龙博物馆，经鉴定为巨齿龙科肉食龙肢骨，年代为中侏罗世。', '省级以下', '', '', '', '', '/images/geolandscape/1571910277473237.jpg,/images/geolandscape/1571910286488239.jpg');
+INSERT INTO `geolandscape` VALUES ('164', '1', 'G009', 'ZG2167', '王家河沙溪庙组（J2s）与新田沟组（J2xt）接触界线', '', '地方性标准剖面', '', '', '104.17005556', '29.508333333', '', '', '位于荣县来牟镇大桊树村，东经104°10′12.23″，北纬29°30′30.02″。为王家河沙溪庙组（J2s）与新田沟组（J2xt）接触界线，接触面及岩性清楚。界线北西侧为沙溪庙组（J2s），岩性为黄灰色块状粗砂岩，单层厚约15m，出露厚约15-20m，发育少量平行层理和交错层理，纹层厚约1-4cm，砂岩表面受风化作用影响，较光滑，同时发育1组纵向节理，把砂岩绝壁裂解为几个岩柱，形似总统山，中部被人为挖掘出几个岩穴，如人脸，推测为放棺材或佛像地。界线南东侧为新田沟组（J2xt），岩性为暗黄色、灰黑色粉砂岩、紫红色泥岩，暗黄色粉砂岩发育水平层理，纹层厚约2-7cm，出露厚约45cm，局部被风化，较破碎；灰黑色粉砂岩出露厚约22cm，与暗黄色粉砂岩呈渐变关系；紫红色泥岩出露厚约50cm以上，强风化，表面较破碎。接触面弱波状起伏，接触面产状：231°∠6°。周边都为绝壁，绝壁下种植大量茶树，风景十分优美。', '省级', '', '', '', '', '/images/geolandscape/1571910321711240.jpg');
+INSERT INTO `geolandscape` VALUES ('165', '1', 'G033', 'ZG2168', '瓜瓢洞断层', '', '中小型构造', '', '', '104.25894444', '29.441027778', '', '', '瓜瓢洞断层北起铁厂铺，南至犍为县，观测点位于荣县度佳镇高湾村，东经104°15′32.2″，北纬29°26′27.7″。长22km，走向NE65°，倾向南东，倾角30°-50°。瓜瓢洞附近挤压带宽约4-6m，上部有叠瓦状小断层，下盘有断层泥，断层角砾和擦痕，并有两条小型压性断层与主断层构成入字形构造，体现为顺时针扭动，属压扭性逆断层。此处断层现象不明显，地貌上表现为断层崖，岩壁较直立，长约200m，高约30m，长满植被，断层崖底部发育一个泉眼，以前水量较大，近几年开始干枯，现已无水。', '省级以下', '', '', '', '', '/images/geolandscape/1571910364223241.jpg,/images/geolandscape/1571910364223242.jpg,/images/geolandscape/1571910364229243.jpg');
+INSERT INTO `geolandscape` VALUES ('166', '1', 'G077', 'ZG2172', '平头山蜥脚类恐龙化石点', '', '古脊椎动物', '', '', '104.54341667', '29.369805556', '', '', '位于荣县双石镇黄家村21组平头山，东经104°32′36.32″，北纬29°22′11.34″。化石埋藏地层为沙溪庙组二段（J2s2），岩性为黄灰色块状粗砂岩、黄灰色粉砂岩和紫红色泥岩，原化石点清理面积约15m²，采集蜥脚类恐龙尾椎化石6件，剑龙右肱骨1件，因化石挖掘年代较久远，当地居民已无人知晓恐龙化石这事，即已无法确切定位恐龙化石挖掘地。推测挖掘地为一个山地内侧陡壁下，长约30m，高约2m，为庄稼地，发育少量植被。', '省级以下', '', '', '', '', '/images/geolandscape/1571910388259244.jpg');
+INSERT INTO `geolandscape` VALUES ('167', '1', 'G084', 'ZG2173', '四平村蜥脚类恐龙化石点', '', '古脊椎动物', '', '', '104.63402778', '29.382888889', '', '', '位于自贡市贡井区成佳镇四平村1组郭板坡，东经104°38′02.52″，北纬29°22′58.32″。化石埋藏地层为沙溪庙组二段（J2s2），岩性为黄灰色厚层状粗砂岩和紫红色泥岩。原化石点清理面积为20m²，采集蜥脚类恐龙尾椎化石1件，年代为晚侏罗世时期，因挖掘年代较久远，周围居民已无人知晓此事，其准确的挖掘位置已无法确定，推测化石挖掘地陡壁长约15m，高约2.5m，发育大量植被。', '省级以下', '', '', '', '', '/images/geolandscape/1571910418055245.jpg');
+INSERT INTO `geolandscape` VALUES ('168', '1', 'G107', 'ZG2174', '幺塘村蜥脚类恐龙化石点', '', '古脊椎动物', '', '', '104.64663889', '29.343333333', '', '', '位于自贡市贡井区建设镇幺塘村6组塑料厂内，东经104°38′47.93″，北纬29°20′36.05″。化石埋藏地层为沙溪庙组一段（J2s1），岩性为紫红色泥岩和粉砂岩。原化石点清理面积为15m²，采集蜥脚类恐龙化石3件，年代为晚侏罗世时期，因挖掘年代久远，已无法准确确定挖掘点，据当地居民介绍，化石产地原位于一个砖厂内，是烧砖取土时偶然发现，后取土把原产地破坏，原砖厂现改为塑料厂。', '省级以下', '', '', '', '', '/images/geolandscape/1571910541573246.jpg');
+INSERT INTO `geolandscape` VALUES ('169', '1', 'G106', 'ZG2175', '东源井遗址', '', '采矿遗迹景观', '', '', '104.68033333', '29.345861111', '', '', '位于自贡市贡井区建设镇大塘山（建设镇重滩村6组），东经104°40′49.16″，北纬29°20′45.05″。始凿于清咸丰八年（1838年），建筑占地面积1606m²，采用古代顿钻冲击式钻井技术开凿，井口直径为13cm，井深949m，四角木质井盖高23.4m，井口转职为“床盆”结构，“床盆”上口直径2.54m，下口直径1.6m，井口直径157mm，井底直径113mm，井深949m。在自贡古盐场，已开凿出一万三千余口气卤井中，生产时间最长采气量最大，是中国现在盐井中仍在生产的最古老盐井，在世界古代井盐科技史上占有重要的地位。', '国家级', '', '', '', '', '/images/geolandscape/1571910570172247.jpg');
+INSERT INTO `geolandscape` VALUES ('170', '1', 'G105', 'ZG2176', '丰盛井遗址', '', '采矿遗迹景观', '', '', '104.68158333', '29.349666667', '', '', '位于自贡市贡井区艾叶镇沙塘村3组居民屋竹林旁，东经104°40′53.66″，北纬29°20′58.78″。为一个古盐井，井口直径约20cm，现已停用，被植被、树叶、竹叶覆盖，现完全废弃，后期被改造为水井，后因旁修建房屋，其水井也被废弃，周边环境较差，井口面积4m²。其原井厂房还保留，已被当地居民作为居住房，现也被废弃，未修缮，已被破坏。', '省级以下', '', '', '', '', '/images/geolandscape/1571910591156248.jpg');
+INSERT INTO `geolandscape` VALUES ('171', '1', 'G085', 'ZG2177', '檬坳村蜥脚类恐龙化石点', '', '古脊椎动物', '', '', '104.69147222', '29.379388889', '', '', '位于自贡市贡井区艾叶镇橡坳村3组三人桥居民垃圾点旁，东经104°41′29.30″，北纬29°22′45.80″。化石埋藏地层为沙溪庙组一段（J2s1），岩性为黄灰色块状粗砂岩。化石点清理面积为20m²，采集蜥脚类恐龙胫骨1件，年代为晚侏罗世时期，为当地修建公路时偶然挖掘而出，因挖掘年代较久远，已无法准确确定化石挖掘点，据当地居民介绍，推测点位于公路内侧，长约4m，高约1-3m，发育大量植被。', '省级以下', '', '', '', '', '/images/geolandscape/1571910605540249.jpg');
+INSERT INTO `geolandscape` VALUES ('172', '1', 'G109', 'ZG2178', '大公井遗址', '', '采矿遗迹景观', '', '', '104.70930556', '29.355805556', '', '', '位于自贡市贡井区贡井街道老街子社区5组旭水河北岸河街边（天池寺下），东经104°42′33.52″，北纬29°21′20.91″。开凿于南北朝时期的北周武帝年间（公元560-578年），距今已有1400余年，是贡井地区最早的盐井。因该井而设公井镇进而演变为公井县，由于此井盐卤制醇香，曾作为朝廷的贡品，故将公井镇改名为贡井镇，为纪念大公井的功绩，在该盐井废弃多年之后，清乾隆四十四年（1779年）在其遗址上修建了东岳庙。东岳庙现存正殿4间，左右殿12间，庙前山门、石阶、石柱、月亮坝、围住、三合院较完整，局部损坏较严重。', '省级以下', '', '', '', '', '/images/geolandscape/1571910628364250.jpg');
+INSERT INTO `geolandscape` VALUES ('173', '1', 'G108', 'ZG2179', '贡井河街东岳庙恐龙足迹化石产地', '', '古生物活动遗迹', '', '', '104.70894444', '29.355583333', '', '', '位于自贡市贡井区贡井街道老街子社区5组旭水河北岸河街边大公井遗址背后小陡崖上，东经104°42′32.18″，北纬29°21′20.11″。恐龙足迹发育地层为自流井组马鞍山段（J1-2z），岩性为黄灰色细砂岩。在已采集的7m²的岩石上发现有小型兽脚类恐龙足迹300余个和大型蜥脚类恐龙足迹8个，年代为早侏罗世时期。遗迹化石产地现为长约20m，高约7m的小岩陡壁，底部现修建了一个小水渠。化石产地因无人维护看管，长满杂草。', '省级', '', '', '', '', '/images/geolandscape/1571910663401251.jpg');
+INSERT INTO `geolandscape` VALUES ('174', '1', 'G179', 'ZG2180', '四川巨棘龙化石产地', '', '古脊椎动物', '', '', '104.70936111', '29.218194444', '', '', '化石产地位于自贡市自流井区仲权镇银河村4组观音菩萨竹林中，东经104°42′33.68″，北纬29°13′05.47″。化石埋藏地层为沙溪庙组二段（J2s2），岩性为黄灰色砂岩。为一具解剖关系清楚、保存十分完好的剑龙类恐龙骨架，命名为四川巨棘龙，是当地居民取石修房时无意间发现，据当地居民回忆，清理规模较大，化石也较大。化石产地竹林、植被覆盖严重，产地保存较差。', '省级', '', '', '', '', '/images/geolandscape/1571910719116252.jpg');
+INSERT INTO `geolandscape` VALUES ('175', '1', 'G168', 'ZG2181', '舒坪镇磨刀岭肉食龙化石产地', '', '古脊椎动物', '', '', '104.71405556', '29.29175', '', '', '位于自贡市自流井区舒坪镇磨刀岭村高速出口公路的采石场内，东经104°42′50.60″，北纬29°17′30.27″。化石埋藏地层为沙溪庙组二段（J2s2），岩性为黄灰色块状粗砂岩，是采石中无意发现的恐龙化石，化石点清理面积为15m²，为一具出土不完整的肉食龙骨架。因采石场规模较大，原化石挖掘点因取石而消失。', '省级以下', '', '', '', '', '/images/geolandscape/1571910744305253.jpg');
+INSERT INTO `geolandscape` VALUES ('176', '1', 'G121', 'ZG2182', '汇东四川鳄化石产地', '', '古脊椎动物', '', '', '104.74369444', '29.338972222', '', '', '位于自贡市凤凰乡济公村马吃水，东经104°44′37.31″，北纬29°20′20.30″。化石埋藏地层为自流井组（J1-2z)，岩性为黄灰色粗砂岩，为一具完整的原鳄类化石，命名为汇东四川鳄，因化石挖掘年代久远，又随着城市变迁和乡镇地名的变化，现已无法确定化石产地，向马吃水居民询问，无人知晓化石这事。推测化石产地为延长石油加油站旁公路内侧陡壁，长约10m，高约3m，植被茂密。', '省级以下', '', '', '', '', '/images/geolandscape/1571910764453254.jpg');
+INSERT INTO `geolandscape` VALUES ('177', '1', 'G126', 'ZG2183', '合川马门溪龙化石产地', '', '古脊椎动物', '', '', '104.77011111', '29.343583333', '', '', '位于自贡市自流井区园丁苑社区小区文化路15号，东经104°46′12.45″，北纬29°20′36.93″。化石埋藏地层为沙溪庙组二段（J2s2），岩性为黄灰色粉砂岩，在大约15m²的范围内获得一具完整的特大型蜥脚类恐龙骨架。根据骨骼推算，恐龙体长22m，被归入合川马门溪龙。因挖掘年代久远，城市变迁，已无法确定化石产地位置，现为园丁苑小区，周边现也为城镇居民楼。', '省级', '', '', '', '', '/images/geolandscape/1571910818041255.jpg,/images/geolandscape/1571910818042256.jpg');
+INSERT INTO `geolandscape` VALUES ('178', '1', 'G125', 'ZG2184', '周氏西蜀鳄化石产地', '', '古脊椎动物', '', '', '104.76861111', '29.343666667', '', '', '位于自贡市自流井区英祥社区罗家湾龙江南洞口，东经104°46′6.98″，北纬29°20′37.20″。化石埋藏地层为沙溪庙组二段（J2s2），岩性为黄灰色细砂岩，化石点清理面积为12m²，出土西蜀鳄1件，年代为晚侏罗世时期。因挖掘年代，城市变迁，地名改变，原化石产地已无法确定。推测原化石产地长约10m，高约3m，为一处陡壁处，植被较茂密。', '省级以下', '', '', '', '', '/images/geolandscape/1571910872747257.jpg,/images/geolandscape/1571910872753258.jpg');
+INSERT INTO `geolandscape` VALUES ('179', '1', 'G124', 'ZG2185', '伍家坝恐龙化石群', '', '古脊椎动物', '', '', '104.78116667', '29.351722222', '', '', '位于自贡市自流井区东兴寺街道蜀光路63号居民楼厕所旁，东经104°46′52.15″，北纬29°21′06.17″。化石埋藏地层为沙溪庙组二段（J2s2），岩性为叶肢介页岩之上约15m的浅黄色砂岩、紫红色粉砂岩。化石包括大型蜥脚类恐龙化石10具、肉食性恐龙化石1具、剑龙化石2具、恐龙牙齿500多枚，以及大量零散化石。共4属4种——多棘沱江龙、甘氏四川龙、釜溪峨眉龙、釜溪自贡龙。当时是修建居民楼挖掘地基时无意中发现，因修居民楼厕所等原产地被破坏，现还保留厕所，部分居民楼已拆除，发育少量植被。据居民介绍下面还埋藏有大量化石。', '省级', '', '', '', '', '/images/geolandscape/1571910901582259.jpg');
+INSERT INTO `geolandscape` VALUES ('180', '1', 'G087', 'ZG2186', '凉高山逆断层', '', '中小型构造', '', '', '104.79913889', '29.392666667', '', '', '位于自贡市大安区凉高山镇黄家村公安分局背后的山坡上，东经104°47′56.90″，北纬29°23′33.64″。原逆断层出露地层为沙溪庙组一段（J2s1），岩性为紫红色泥岩，黄灰色砂岩。现场为黄灰色粗砂岩形成的缓坡。无陡坎及剖面出露，且浮土及植被较发育，推测逆断层已破坏。', '省级以下', '', '', '', '', '/images/geolandscape/1571910927580260.jpg');
+INSERT INTO `geolandscape` VALUES ('181', '1', 'G120', 'ZG2187', '谢家松林波状层理', '', '地方性标准剖面', '', '', '104.7515', '29.343583333', '', '', '位于大安区凤凰乡白果村，东经104°45′5.36″，北纬29°20′36.94″。地层为新田沟组（J2xt），岩性为黄灰色块状粗砂岩，单层厚约2.3m，出露厚约1.5-2.5m，发育一种波状界面的层理。细层呈对称或不对称、规则或不规则的波状，但总的方向都平行于层面。多为湖泊浅水带、海湾、泻湖等地区，由于波浪的振荡运动而形成，在河漫滩等地区由于微弱的单向水流运动可形成不对称波状层理。纹层厚约2-20cm不等，层面呈波状弯曲。地层产状：117°∠18°。', '省级以下', '', '', '', '', '/images/geolandscape/1571910936948261.jpg');
+INSERT INTO `geolandscape` VALUES ('182', '1', 'G119', 'ZG2188', '自流井楔形交错层理', '', '地方性标准剖面', '', '', '104.75461111', '29.343972222', '', '', '位于自流井区高峰乡白果村，东经104°45′16.61″，北纬29°20′38.28″。地层为新田沟组（J2xt），岩性为黄灰色块状中砂岩，单层厚约120cm以上，出露厚约3m。是一种特殊的斜层理，指在一个单层内部的层面与层间的分隔面（主层理）斜交，各层系厚度变化明显成楔形，并彼此割切，细层的倾向和倾角变化不定，纹层厚约1-2cm，斜交夹角约15°-20°。多见于三角洲地区和湖、海的浅水高能环境形成的地层中。单个层系厚约1.2m以上。', '省级以下', '', '', '', '', '/images/geolandscape/1571910967397262.jpg');
+INSERT INTO `geolandscape` VALUES ('183', '1', 'G113', 'ZG2189', '自流井背斜', '', '中小型构造', '', '', '104.73425', '29.353388889', '', '', '背斜分布于自贡市大山铺镇至建设镇一带，观测点位于贡井区长土镇石沟村，东经104°44′3.31″，北纬29°21′12.22″。长8km，沿北东-南西向展布，核部地层为须家河组（J3x）和自流井组（J1-2z），两翼分布有新田沟组（J2xt）和沙溪庙组（J2s）等地层，南西段被一条北西向断裂切割，致背斜轴部被错断。背斜的两翼延伸平缓，倾角8°-10°。自贡地区盐井多产于自流井背斜轴部。', '省级以下', '', '', '', '', '/images/geolandscape/1571910995292263.jpg');
+INSERT INTO `geolandscape` VALUES ('194', '1', 'G143', 'ZG1191', '桫椤谷楔形交错层理', '', '地方性标准剖面', '', '', '104.1401277778', '29.2603861111', '', '', '位于荣县金花乡桫椤谷，东经104°08′24.46″，北纬29°15′37.39″。可见单层内部的层面与层间的分隔面（主层理）斜交，各层系厚度变化明显成楔形，并彼此割切，细层的倾向和倾角变化不定（照片3-139），多见于三角洲地区和湖、海的浅水高能环境形成的地层中。', '省级以下', '', '', '', '', '/images/geolandscape/15728711309081.jpg');
+INSERT INTO `geolandscape` VALUES ('195', '1', 'G146', 'ZG1192', '四方井瀑布', '', '瀑布景观', '', '', '104.1415333333', '29.2594944444', '', '', '位于荣县金花乡桫椤谷，东经104°08′29.52″，北纬29°15′34.18″。瀑布两侧岩性为窝头山组（K1w1）砖红色砂岩，瀑布落差达20多米（照片3-198），主要由地表水和表层裂隙水汇集于此形成，水量受地面降水影响变化很大。', '省级', '', '', '', '', '/images/geolandscape/15728711458892.jpg');
+INSERT INTO `geolandscape` VALUES ('196', '1', 'G145', 'ZG1193', '四方井钟乳石', '', '岩土体地貌', '', '', '104.1413638889', '29.2602888889', '', '', '位于荣县桫金花乡桫椤谷，东经104°08′28.91″，北纬29°15′37.04″。在桫椤谷四方井下白垩统窝头山组巨厚层铁泥质中-细粒长石石英砂岩夹棕红色泥质粉砂岩、泥岩崖壁上，钟乳石规则排列成梳状（照片3-183）。这是在地质营力作用下，透水层中的地下水顺水平状的隔水层面流出，因压力降低，蒸发加快，水中CO2逸出，致使CaCO3沉淀，形成柱状、锥状钟乳石。', '省级', '', '', '', '', '/images/geolandscape/15728711547883.jpg');
+INSERT INTO `geolandscape` VALUES ('197', '1', 'G144', 'ZG1194', '桫椤谷丹霞地貌', '', '岩土体地貌', '', '', '104.1446666667', '29.260438888929.2604388889', '', '', '位于荣县金花乡桫椤谷，东经104°08′40.80″，北纬29°15′37.58″。丹霞地貌的物质基础为白垩系下统窝头山组砖红色巨块状砂岩，岩石中钙质含量高，在长期受到风化侵蚀以及流水溶蚀等作用而形成赤壁丹崖，陡崖多直立一起呈弧形展布，高约30-90m。崖壁或岩腔上钙质析出后形成石钟乳，陡壁组成形成瓮形围谷，陡壁之上还发育有瀑布（照片3-145），真是一片仙境。', '省级', '', '', '', '', '/images/geolandscape/15728710221020.jpg');
 
 -- ----------------------------
 -- Table structure for geological
@@ -428,7 +443,7 @@ CREATE TABLE `geological` (
 -- ----------------------------
 -- Records of geological
 -- ----------------------------
-INSERT INTO `geological` VALUES ('1', '1', '', '公园所在区域出露地层为中生界和新生界。其中：三叠系下、中统及上统普遍遭受不同程度剥蚀或沉积缺失；上侏罗统上部广泛被剥蚀；下白垩统部分有缺失；新近系和下更新统全部沉积缺失。\n公园出露最老的地层为三叠系，包括下统嘉陵江组，中统雷口坡组及上统须家河组。侏罗系在区内分布最广，自下而上有下统自流井组（包括珍珠冲段、东岳庙段、马鞍山段、大安寨段），中统新田沟组、沙溪庙组，上统遂宁组、蓬莱镇组。白垩系仅出露在南西一带，下统窝头山组，上统三合组。新生界有始新统的柳嘉组和第四系，柳嘉组残存于宜宾柳嘉镇一带；第四系主要分布于长江及其支流沿岸。公园内主要的含盐矿地层为三叠系嘉陵江组和雷口坡组；主要的恐龙化石赋存地层为沙溪庙组。\n（一）三叠系（T）\n三叠系主要分布于公园北侧，由一套海相碳酸盐岩与陆相的碎屑岩及含煤层系组成。\n（1）下三叠统：岩石地层为嘉陵江组（T1j），可划分为4个岩性段，总厚314.6～614.5m。\n一段（T1j1）：浅灰色中－薄层状灰岩，偶夹暗紫、浅黄色钙质页岩，西南部夹岩屑凝灰岩。该组含岩盐、卤水和天然气等矿产。厚106～158m。\n二段（T1j2）：绿黄、暗紫色页岩夹少许灰岩，西南部夹少量粉砂岩。厚51～75m。\n三段（T1j3）：灰色中－薄层状灰岩，白云质灰岩，局部夹生物碎屑灰岩。厚100～120m。\n四段（T1j4）：浅灰色中层状白云岩夹角砾状白云岩。富产膏盐，是区内岩盐、黑卤的重要含矿层位。与上覆雷口坡组（T2l）底部“绿豆岩”呈整合接触，但厚度变化较大，厚76～200m。\n其中一、三段以灰岩为主，二、四段以白云岩、岩溶角砾岩为主。二、四段，尤以四段中富产膏盐，是区内岩盐、黑卤的重要含矿层位。\n（2）中三叠统：岩石地层为雷口坡组（T2l），可划分为4个岩性段，总厚0～288m。\n一段（T2l1）：灰色薄－中厚层状含泥质白云岩夹紫红、黄绿、黑色白云质泥岩，其底为灰绿色“绿豆岩”，夹膏岩层。厚37～55m。该段底部的“绿豆岩”是区内嘉陵江组与雷口坡组区分的良好标志层，K2O含量6.25～8.72%。\n二段（T2l2）：黄色薄层状泥质白云岩夹黄绿、紫红色粉砂岩，夹膏岩层。厚70～110m。\n三段（T2l3）：灰色中－薄层状灰岩，白云岩，局部夹白云质灰岩。厚319m。\n四段（T2l4）：灰色厚层状含泥质白云岩。厚57～76m。与上覆须家河组呈假整合接触。\n本组中一、三段的碳酸盐岩中产黑卤水，属沉积变质卤水。\n（3）上三叠统：岩石地层为须家河组（T3xj）。本组岩性、厚度均变化较大。砂岩及裂隙中含淋滤变质卤水，为黄卤。该组还含有煤层。沉积环境为河湖、沼泽相。厚532～764m。\n须家河组一段（T3xj1）\n灰－灰黑色泥岩、灰质页岩含煤线夹中层或块状长石石英砂岩。产：Pterophyllumptilim，Neocalamitescarrerei，Otozamites sp.，Taeniopterisrhizomoides，Toditesdenticulata；Darwinulapraecipua；Modiolus cf. frugi；Anyuanestheria? sp.等。厚434.6～ 512.8m。\n须家河组二段（T3xj2）\n灰黄、浅灰色块状细粒长石石英砂岩，及灰、灰黑色泥岩、炭质页岩、煤线或煤层及菱铁矿，底部砂岩含菱铁矿结核。产：Podozamitessp.，Equisetum cf. sarrani；Darwinula sp.；Unionites? sp.等。厚19.2～272.4m。与上覆侏罗系自流井组珍珠冲段底部呈整合接触。\n（二）侏罗系（J）\n公园内侏罗系发育较齐全，分布广泛，为一套陆相红色碎屑岩，厚1212.8～3436.4m。自下而上分为下-中统自流井组，中统新田沟组、沙溪庙组；上统遂宁组、蓬莱镇组。\n（1）下-中侏罗统：岩石地层为自流井组（J1-2z），岩相、岩性稳定，化石丰富，属浅水湖相沉积。厚146.4～383.2m，整合覆于须家河组之上，可分为珍珠冲段、东岳庙段、马鞍山段、大安寨段四个岩性段。\n珍珠冲段（J1-2zz）：为一套杂色泥岩、粉砂岩，向上逐渐递变为暗紫色、紫红色泥岩、砂质泥岩夹灰色、灰绿色薄层或透镜状细粒长石石英砂岩。厚59.5～121.5m。\n东岳庙段（J1-2zdy）：由灰、深灰、绿灰色薄－中厚层状介壳灰岩、泥质灰岩、粉砂岩、微粒石英砂岩和介屑微粒砂岩组成，夹紫红色泥岩。厚4.3～10.7m，由南往北厚度加大，介壳灰岩层数有所增加，化石含量和种类增多。产Lepidotessp.，Ceratodus sp.及蛇颈龙类等脊椎动物化石。\n马鞍山段（J1-2zm）：岩性变化不大，以紫红色泥岩为主，夹少量黄灰色、黄绿色粉砂岩、细－微粒石英砂岩和岩屑石英砂岩，厚82.1～145m。本段产有瓣腮类、脊椎动物化石等。\n大安寨段（J1-2zd）：紫红色、暗紫红色泥岩、深灰色、灰白色中层石灰岩及浅绿色、浅黄色薄层状泥灰岩互层，偶夹灰白色薄层石灰质白云岩，厚0～44.2m。泥岩具钙质网纹，灰岩富含瓣腮类化石。上覆新田沟组（J2x）呈假整合接触。\n（2）中侏罗统：\n新田沟组（J2xt）：本组岩性为一套灰黄、黄灰色中层至块状中细粒石英砂岩夹杂色泥页岩，偶见黄色砂岩，底具砾岩。厚度0～40m。与上覆沙溪庙组一段（J2s1）呈假整合接触。\n沙溪庙组（J2s）分为二段。\n沙溪庙组一段（J2s1）：为一套暗紫色、紫红色泥岩夹2～3层灰、黄灰色厚层块状中细粒长石石英砂岩或岩屑长石砂岩。区内厚度109.3～215.4m，顶部以“叶肢介页岩”与上覆上沙溪庙组呈整合接触。该组泥岩比较稳定，砂岩有一定的变化，常夹砂岩透镜体，盛产脊椎动物化石。著名的大山铺蜀龙动物群即产于该组下部砂岩层中。\n沙溪庙组二段（J2s2）：暗紫色、紫红色泥岩与黄绿色、黄紫色长石石英砂岩不等厚互层，组成9～16个沉积韵律，每个韵律变化都很大。区内厚度665.3～872.4,。砂岩中交错层理发育，底面常见冲刷构造和泥砾、砾石等河床滞留沉积物。与上覆遂宁组（J3sn）整合接触。该组产Mamenchisaurus，Yangchuanosaurus、Szechuanosaurus，Stegosaurus，Plesiosaur。\n（3）上侏罗统\n遂宁组（J3sn）：该组岩性以鲜红色、棕红色钙质泥岩为主，夹少量灰白色、灰绿色粉细粒钙质石英砂岩，由下而上颜色变暗。砂岩层厚薄不一，偶夹薄层泥灰岩及钙质透镜体。厚192～253.4m。与上覆蓬莱镇组（J3p）整合接触。该组产介形类、叶肢介类化石。\n蓬莱镇组（J3p）：岩性为泥岩、砂质泥岩、长石石英砂岩，厚度140～350m。可进一步划分为两段。\n蓬莱镇组一段（J3p1）\n由红色泥岩组成，夹中－薄层状长石石英砂岩。底部偶见透镜状砂砾岩。顶部灰色、灰绿色页岩的“仓山页岩”为区域性标志层。厚140～260.4m。\n蓬莱镇组二段（J3p2）\n为棕红色钙质泥岩与长石石英砂岩组成不等厚互层。厚0～102.2m。与上覆下白垩统窝头山组（K1w）呈假整合接触。\n（三）白垩系（K）\n区内白垩系主要分布于南西部，为砖红色泥岩，划分为下统窝头山组，上统三合组。\n（1）下白垩统\n窝头山组（K1w）分为二段。\n窝头山组一段（K1w1）：砖红色厚层块状铁泥质不等粒长石石英砂岩，底为含砾砂岩或砾岩扁豆体，下部夹少许泥岩，顶为厚2～5m砖红色泥岩。与上覆二段呈整合接触。厚100.3～209.1m。\n窝头山组二段（K1w2）：砖红色块状—巨块状不等粒泥质长石砂岩。普遍具大型斜层理及平行层理，局部夹少许泥岩透镜体。与下伏窝头山组一段呈整合接触。厚100.3～209.1m。\n（2）上白垩统\n三合组（K2s）分为二段。\n三合组一段（K2s1）：砖红色薄-厚层不等粒泥质岩屑长石砂岩与泥岩不等厚互层。有时泥岩呈透镜体，偶见膨润土化。含较丰富的古生物化石，主要有瓣鳃、介形、轮藻等。厚161.1～197.3m。与上下地层均呈整合接触。\n三合组二段（K2s2）：砖红色厚层块状细粒岩屑长石砂岩、长石粉砂岩夹少许泥岩及泥岩透镜体。产丰富的介形类化石。与下伏三合组一段呈整合接触。厚503m。\n（四）古近系（E）\n柳嘉组（E1-2lj）：浅砖红色巨块状中粒泥钙质长石石英砂岩，巨型斜层理发育，顶部夹泥岩。与下伏三合组二段整合接触。厚＞88m。\n（五）第四系（Q）\n区内河流阶地出露范围狭小，主要发育于河流凸岸，呈长轴平行于河谷的串珠状。一般发育阶地3-4级，除Ⅰ级阶地属上叠阶地外，其它皆属基座阶地，并与下伏前第四系呈不整合接触，区内河流阶地堆积物均属流水冲积成因。一般各级阶地堆积物从下往上均具有河床相砾石层-河漫滩相砂泥层的二元结构，其厚度与河流大小呈正比关系，主要河流（岷江）阶地堆积物的厚度较大，一般8～15m，最厚达22m；次要河流（涪江、沱江）的厚度较小，一般3～8m，最大15m。区内第四系除缺失下更新统外，有中更新统（Q2al）、上更新统（Q3al）、全新统Ⅰ级阶地（Q41+2al）、全新统现代河漫滩（Q43al）。\n', '', '', '', '', '');
+INSERT INTO `geological` VALUES ('1', '1', ' 自贡地质公园位于四川盆地南部，其地质发展与四川盆地紧密相关。四川盆地在大地构造上位于横亘中国南方的“扬子地块”的西部。震旦纪—三叠纪中期，这里还是波涛覆盖的古特提斯海（Tethys）东侧的一片滨浅海。三叠纪晚期发生的强烈构造运动——印支运动，地壳整体抬升，从此结束了海相沉积的历史。', '公园所在区域出露地层为中生界和新生界。其中：三叠系下、中统及上统普遍遭受不同程度剥蚀或沉积缺失；上侏罗统上部广泛被剥蚀；下白垩统部分有缺失；新近系和下更新统全部沉积缺失。\n公园出露最老的地层为三叠系，包括下统嘉陵江组，中统雷口坡组及上统须家河组。侏罗系在区内分布最广，自下而上有下统自流井组（包括珍珠冲段、东岳庙段、马鞍山段、大安寨段），中统新田沟组、沙溪庙组，上统遂宁组、蓬莱镇组。白垩系仅出露在南西一带，下统窝头山组，上统三合组。新生界有始新统的柳嘉组和第四系，柳嘉组残存于宜宾柳嘉镇一带；第四系主要分布于长江及其支流沿岸。公园内主要的含盐矿地层为三叠系嘉陵江组和雷口坡组；主要的恐龙化石赋存地层为沙溪庙组。\n（一）三叠系（T）\n三叠系主要分布于公园北侧，由一套海相碳酸盐岩与陆相的碎屑岩及含煤层系组成。\n（1）下三叠统：岩石地层为嘉陵江组（T1j），可划分为4个岩性段，总厚314.6～614.5m。\n一段（T1j1）：浅灰色中－薄层状灰岩，偶夹暗紫、浅黄色钙质页岩，西南部夹岩屑凝灰岩。该组含岩盐、卤水和天然气等矿产。厚106～158m。\n二段（T1j2）：绿黄、暗紫色页岩夹少许灰岩，西南部夹少量粉砂岩。厚51～75m。\n三段（T1j3）：灰色中－薄层状灰岩，白云质灰岩，局部夹生物碎屑灰岩。厚100～120m。\n四段（T1j4）：浅灰色中层状白云岩夹角砾状白云岩。富产膏盐，是区内岩盐、黑卤的重要含矿层位。与上覆雷口坡组（T2l）底部“绿豆岩”呈整合接触，但厚度变化较大，厚76～200m。\n其中一、三段以灰岩为主，二、四段以白云岩、岩溶角砾岩为主。二、四段，尤以四段中富产膏盐，是区内岩盐、黑卤的重要含矿层位。\n（2）中三叠统：岩石地层为雷口坡组（T2l），可划分为4个岩性段，总厚0～288m。\n一段（T2l1）：灰色薄－中厚层状含泥质白云岩夹紫红、黄绿、黑色白云质泥岩，其底为灰绿色“绿豆岩”，夹膏岩层。厚37～55m。该段底部的“绿豆岩”是区内嘉陵江组与雷口坡组区分的良好标志层，K2O含量6.25～8.72%。\n二段（T2l2）：黄色薄层状泥质白云岩夹黄绿、紫红色粉砂岩，夹膏岩层。厚70～110m。\n三段（T2l3）：灰色中－薄层状灰岩，白云岩，局部夹白云质灰岩。厚319m。\n四段（T2l4）：灰色厚层状含泥质白云岩。厚57～76m。与上覆须家河组呈假整合接触。\n本组中一、三段的碳酸盐岩中产黑卤水，属沉积变质卤水。\n（3）上三叠统：岩石地层为须家河组（T3xj）。本组岩性、厚度均变化较大。砂岩及裂隙中含淋滤变质卤水，为黄卤。该组还含有煤层。沉积环境为河湖、沼泽相。厚532～764m。\n须家河组一段（T3xj1）\n灰－灰黑色泥岩、灰质页岩含煤线夹中层或块状长石石英砂岩。产：Pterophyllumptilim，Neocalamitescarrerei，Otozamites sp.，Taeniopterisrhizomoides，Toditesdenticulata；Darwinulapraecipua；Modiolus cf. frugi；Anyuanestheria? sp.等。厚434.6～ 512.8m。\n须家河组二段（T3xj2）\n灰黄、浅灰色块状细粒长石石英砂岩，及灰、灰黑色泥岩、炭质页岩、煤线或煤层及菱铁矿，底部砂岩含菱铁矿结核。产：Podozamitessp.，Equisetum cf. sarrani；Darwinula sp.；Unionites? sp.等。厚19.2～272.4m。与上覆侏罗系自流井组珍珠冲段底部呈整合接触。\n（二）侏罗系（J）\n公园内侏罗系发育较齐全，分布广泛，为一套陆相红色碎屑岩，厚1212.8～3436.4m。自下而上分为下-中统自流井组，中统新田沟组、沙溪庙组；上统遂宁组、蓬莱镇组。\n（1）下-中侏罗统：岩石地层为自流井组（J1-2z），岩相、岩性稳定，化石丰富，属浅水湖相沉积。厚146.4～383.2m，整合覆于须家河组之上，可分为珍珠冲段、东岳庙段、马鞍山段、大安寨段四个岩性段。\n珍珠冲段（J1-2zz）：为一套杂色泥岩、粉砂岩，向上逐渐递变为暗紫色、紫红色泥岩、砂质泥岩夹灰色、灰绿色薄层或透镜状细粒长石石英砂岩。厚59.5～121.5m。\n东岳庙段（J1-2zdy）：由灰、深灰、绿灰色薄－中厚层状介壳灰岩、泥质灰岩、粉砂岩、微粒石英砂岩和介屑微粒砂岩组成，夹紫红色泥岩。厚4.3～10.7m，由南往北厚度加大，介壳灰岩层数有所增加，化石含量和种类增多。产Lepidotessp.，Ceratodus sp.及蛇颈龙类等脊椎动物化石。\n马鞍山段（J1-2zm）：岩性变化不大，以紫红色泥岩为主，夹少量黄灰色、黄绿色粉砂岩、细－微粒石英砂岩和岩屑石英砂岩，厚82.1～145m。本段产有瓣腮类、脊椎动物化石等。\n大安寨段（J1-2zd）：紫红色、暗紫红色泥岩、深灰色、灰白色中层石灰岩及浅绿色、浅黄色薄层状泥灰岩互层，偶夹灰白色薄层石灰质白云岩，厚0～44.2m。泥岩具钙质网纹，灰岩富含瓣腮类化石。上覆新田沟组（J2x）呈假整合接触。\n（2）中侏罗统：\n新田沟组（J2xt）：本组岩性为一套灰黄、黄灰色中层至块状中细粒石英砂岩夹杂色泥页岩，偶见黄色砂岩，底具砾岩。厚度0～40m。与上覆沙溪庙组一段（J2s1）呈假整合接触。\n沙溪庙组（J2s）分为二段。\n沙溪庙组一段（J2s1）：为一套暗紫色、紫红色泥岩夹2～3层灰、黄灰色厚层块状中细粒长石石英砂岩或岩屑长石砂岩。区内厚度109.3～215.4m，顶部以“叶肢介页岩”与上覆上沙溪庙组呈整合接触。该组泥岩比较稳定，砂岩有一定的变化，常夹砂岩透镜体，盛产脊椎动物化石。著名的大山铺蜀龙动物群即产于该组下部砂岩层中。\n沙溪庙组二段（J2s2）：暗紫色、紫红色泥岩与黄绿色、黄紫色长石石英砂岩不等厚互层，组成9～16个沉积韵律，每个韵律变化都很大。区内厚度665.3～872.4,。砂岩中交错层理发育，底面常见冲刷构造和泥砾、砾石等河床滞留沉积物。与上覆遂宁组（J3sn）整合接触。该组产Mamenchisaurus，Yangchuanosaurus、Szechuanosaurus，Stegosaurus，Plesiosaur。\n（3）上侏罗统\n遂宁组（J3sn）：该组岩性以鲜红色、棕红色钙质泥岩为主，夹少量灰白色、灰绿色粉细粒钙质石英砂岩，由下而上颜色变暗。砂岩层厚薄不一，偶夹薄层泥灰岩及钙质透镜体。厚192～253.4m。与上覆蓬莱镇组（J3p）整合接触。该组产介形类、叶肢介类化石。\n蓬莱镇组（J3p）：岩性为泥岩、砂质泥岩、长石石英砂岩，厚度140～350m。可进一步划分为两段。\n蓬莱镇组一段（J3p1）\n由红色泥岩组成，夹中－薄层状长石石英砂岩。底部偶见透镜状砂砾岩。顶部灰色、灰绿色页岩的“仓山页岩”为区域性标志层。厚140～260.4m。\n蓬莱镇组二段（J3p2）\n为棕红色钙质泥岩与长石石英砂岩组成不等厚互层。厚0～102.2m。与上覆下白垩统窝头山组（K1w）呈假整合接触。\n（三）白垩系（K）\n区内白垩系主要分布于南西部，为砖红色泥岩，划分为下统窝头山组，上统三合组。\n（1）下白垩统\n窝头山组（K1w）分为二段。\n窝头山组一段（K1w1）：砖红色厚层块状铁泥质不等粒长石石英砂岩，底为含砾砂岩或砾岩扁豆体，下部夹少许泥岩，顶为厚2～5m砖红色泥岩。与上覆二段呈整合接触。厚100.3～209.1m。\n窝头山组二段（K1w2）：砖红色块状—巨块状不等粒泥质长石砂岩。普遍具大型斜层理及平行层理，局部夹少许泥岩透镜体。与下伏窝头山组一段呈整合接触。厚100.3～209.1m。\n（2）上白垩统\n三合组（K2s）分为二段。\n三合组一段（K2s1）：砖红色薄-厚层不等粒泥质岩屑长石砂岩与泥岩不等厚互层。有时泥岩呈透镜体，偶见膨润土化。含较丰富的古生物化石，主要有瓣鳃、介形、轮藻等。厚161.1～197.3m。与上下地层均呈整合接触。\n三合组二段（K2s2）：砖红色厚层块状细粒岩屑长石砂岩、长石粉砂岩夹少许泥岩及泥岩透镜体。产丰富的介形类化石。与下伏三合组一段呈整合接触。厚503m。\n（四）古近系（E）\n柳嘉组（E1-2lj）：浅砖红色巨块状中粒泥钙质长石石英砂岩，巨型斜层理发育，顶部夹泥岩。与下伏三合组二段整合接触。厚＞88m。\n（五）第四系（Q）\n区内河流阶地出露范围狭小，主要发育于河流凸岸，呈长轴平行于河谷的串珠状。一般发育阶地3-4级，除Ⅰ级阶地属上叠阶地外，其它皆属基座阶地，并与下伏前第四系呈不整合接触，区内河流阶地堆积物均属流水冲积成因。一般各级阶地堆积物从下往上均具有河床相砾石层-河漫滩相砂泥层的二元结构，其厚度与河流大小呈正比关系，主要河流（岷江）阶地堆积物的厚度较大，一般8～15m，最厚达22m；次要河流（涪江、沱江）的厚度较小，一般3～8m，最大15m。区内第四系除缺失下更新统外，有中更新统（Q2al）、上更新统（Q3al）、全新统Ⅰ级阶地（Q41+2al）、全新统现代河漫滩（Q43al）。\n', '无', '无', '自贡市位于四川盆地南部。大地构造属中国地台扬子地台四川台坳中的凹陷，称“自贡凹陷”。地质构造凹陷内部构造简单，地层产状平缓。东南部褶皱紧密，构造狭长；西北部构造相对宽缓。褶皱轴多呈北东－南西向，各构造轴彼此呈北西－南东向雁行排列，从西而东有10个小背斜和小向斜。\n地质公园大地构造位置属于上扬子古陆块（一级）、四川前陆盆地（二级）、威远隆起（三级）南缘，东南与华蓥山前拗褶带相接，西南与叙永-筠连叠加褶皱带相邻。总的构造特点是地表以平缓开阔的褶皱为主，断裂次之，深部构造展布与地表基本一致。基底构造则是以深大断裂为主。\n地质公园的基底是在晋宁运动之后定型，形成了以华蓥山、岷江和威远-荣县三条深大断裂为边界，以浅变质的火山碎屑岩和花岗岩为基底的北东向的大型负向构造。在此基底之上，沉积了从晚元古代到古近系巨厚的沉积盖层。在加里东运动、华力西―印支运动和燕山—喜马拉雅运动的作用下，形成了三个特征明显的构造层，即加里东构造层、华力西―印支构造层和燕山—喜马拉雅构造层。\n', '本区地质构造运动和构造形迹，为自贡地区的岩盐、卤水、天然气的富集提供了良好的构造条件。区内矿产资源比较单一，主要有岩盐、卤水、天然气，其开发利用程度都较高。其它矿产有煤、石灰石、石英砂岩、石膏、石油（与天然气伴生）等。岩盐产于自流井背斜轴部，赋存地层为下三叠统嘉陵江组，埋深870～1400m。\n原生卤水的生成受古坳陷控制，后期的保存和聚集受现今构造控制。喜山期的背斜或构造复合部位，地应力集中，裂隙密集，层间褶曲较多，盐丘构造发育，为卤水的运移与储集提供了良好的空间，促成了原生卤水的局部富集。天然气产气层位主要为二叠系阳新统、三叠系嘉陵江组气藏和雷口坡组气藏。自贡地区自流井背斜在须家河组、雷口坡组中有零星的石油矿化点显示产出，但不具工业价值。\n', '在地球演化历史上，恐龙自三叠纪中期出现至白垩纪末绝灭，经历了约一亿六千多万年的发展历史，几乎贯穿整个中生代，但中生代的各个阶段并非都有大量的恐龙化石产出。早、中侏罗世，地球上绝大多数区域板块裂陷，海洋面积扩大，陆地面积缩小，使得这一时期的陆相地层分布有限，仅在欧洲、非洲、澳大利亚和印度等地有少量分布，但其中的古生物化石，特别是恐龙化石非常贫乏。自贡地质公园范围内自三叠纪晚期至侏罗纪晚期的地层连续，出露完整，其中含有极其丰富的古脊椎动物化石，为系统研究恐龙的演化史提供了极为宝贵的化石佐证。因此，该地区是地球演化历史上侏罗纪时期陆相环境的代表性地区。\n');
 
 -- ----------------------------
 -- Table structure for geospecimen
@@ -453,12 +468,19 @@ CREATE TABLE `geospecimen` (
   `note` text COMMENT '备注',
   `img` text COMMENT '照片',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地质标本';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地质标本';
 
 -- ----------------------------
 -- Records of geospecimen
 -- ----------------------------
-INSERT INTO `geospecimen` VALUES ('1', '1', 'fkjdsakljf', '富士达', 'fas', '范德萨', 'fdsfsdf', 'fdsafdas', 'fdsaffer', '2018-06-03', '范德萨', '富士达', '254', '法撒旦', '发生的纷纷热风', '范德萨额', 'http://www.geopark.com/production/15677565882520.jpg');
+INSERT INTO `geospecimen` VALUES ('2', '1', '1', '马门溪龙Mamenchisaurus', '', '', '', '', '', '', '', '', '', '', '中国发现的最大的蜥脚类恐龙之一，在宜宾市马鸣溪渡口发现化石，属蜥脚类亚马目。此属动物全长约22米，体躯高将近14米。它的颈特别长，相当于体长的一半，不仅构成颈的每一颈椎长，且颈椎数亦多达19个，是蜥脚类中最多的一种。颈肋也是所有恐龙中最长的（最长颈肋可达12.1米）。\nIt is one of the biggest sauropod dinosaurs discovered in China, and its fossils are discovered in Maming Stream Ferry of Yibin City. It belongs to the Sauropod Amazon order. This genus of animals has a total length of about 22 meters, with a body height of almost 14 meters. Its neck is particularly long, which is equal to half of the length of the body. Each cervical neck length is formed, and further the number of cervical, most in Sauropod, is up to 19. The cervical rib is the longest of all dinosaurs (the most long neck rib is up to 12.1 meters).', '', '/images/geospecimen/15717992798474.jpg,/images/geospecimen/15717992801485.jpg');
+INSERT INTO `geospecimen` VALUES ('3', '1', '2', '太白华阳龙Huayangosaurus taibaii', '', '', '', '', '', '', '', '', '', '', '因四川古称“华阳国”，并为纪念我国唐代久居四川的大诗人李太白，研究者给它取了现在的这样一个属种名——太白华阳龙。太白华阳龙产于自贡大山铺，时代为中侏罗世（距今约1.6亿年前），它是目前世界上已知的生存时代最早、较原始的剑龙化石记录。太白华阳龙是一种中等大小的原始剑龙，体长4.3米，其主要特点是头大而厚重，呈三角形，颈子较短，前肢大大短于后肢，但四足着地行走。背部两列骨板比较小，形状多变，尾端具两对板状尾刺。\nBecause Sichuanwere called \"Huayang\" in ancient times and at the same time in memory of the China\'s Tang Dynasty poet Li Bai who lived in Sichuan for a long time, researchers gave its current genus and species name Huayangosaurus taibaii. Huayangosaurus taibaii was discovered in the Zigong mountains, and lived in the Middle Jurassic era (about 160 million years ago). It is recorded that Huayangosaurus taibaii is regarded as the earliest and more primitive Stegosaurus fossils currently known in the world. Huayangosaurus taibaii is primitive Stegosaurus with a medium sized body in a length of 4.3 meters, and its main features are a large and heavy head in triangular shape, short neck, forelimbs much shorter than the hind legs, and walking on four feet. Two-column back bone plate is smaller and in variable shape, and there are two pairs of plate-like trailing thorns at its tail.\n', '', '/images/geospecimen/15717994054496.jpg');
+INSERT INTO `geospecimen` VALUES ('4', '1', '3', '蜀龙Shunosaurus', '', '', '', '', '', '', '', '', '', '', '目前为止，在自贡大山铺化石群中发现最多的恐龙种类是种独特的蜥脚下目恐龙，生存于晚侏罗世（距今约1.4亿年前）的中国四川省。蜀龙的属名来自于四川省的古名“蜀”。蜀龙的化石发现于自贡市大山铺的下沙溪庙组。\nIt has been founded so far in the Zigong mountain fossils that the most species of dinosaur is a unique Sauropoda dinosaur, living in the Late Jurassic (about 140 million years ago) in Sichuan Province, China. The genus name of Shunosaurus comes from the ancient name of Sichuan Province \"Shu\". The fossil of Shunosaurus was discovered in the Lower Shaximiao Formation of the Dashapu Town of Zigong City.', '', '/images/geospecimen/15717995407297.jpg');
+INSERT INTO `geospecimen` VALUES ('5', '1', '4', '天府峨眉龙Omeisaurus tianfuensis', '', '', '', '', '', '', '', '', '', '', '大山铺发现的蜥脚类恐龙中，个体最大的就是天府峨眉龙，天府峨嵋龙，生活于侏罗纪中期（距今约1.6亿年前）的一种体形较大的恐龙，体长12 至 14米，高5至7米，活着时体重约二三十吨，头较大，头骨高度为长度的二分之一多它的颈椎很长，所以脖子显得特别长，最长的颈椎为最长的背椎的3 倍，超过尾巴长度的1.5倍。\nIt is the largest kind of sauropod dinosaur found in the mountains. It lived in the Middle Jurassic (about 160 million years ago), and has a large shape with a body length of 12 to 14 meters and a height of 5 to 7 meters. When it was alive, it weighed about 20~30 tons; the head is large, and the head skull height is more than one half of the length. Its neck is very long, so the neck looks particularly long, and the longest cervical vertebra is 3 times of the longest back vertebra and more than 1.5 times of the length of the tail.', '', '/images/geospecimen/15717997173208.jpg');
+INSERT INTO `geospecimen` VALUES ('6', '1', '5', '多齿灵龙Agilisaurus Multidens', '', '', '', '', '', '', '', '', '', '', '一种小型鸟脚类恐龙，（身长1到2米）、二足、善于奔跑的草食性恐龙。有5颗稍微弯曲的简单的前上颌齿，10颗或11颗侧扁的上颌齿，其齿冠前后加宽，两边有边缘小齿；它们的下颌有大约13-14颗牙齿，前3-4颗牙齿比较简单，呈圆锥状，其它牙齿的齿冠内外扁，与上颌齿一样具有边缘小齿。这样的牙齿形式被叫做异齿型的齿式。\nIt is a small kind of ornithopod dinosaur (height 1 to 2 meters), which are herbivorous dinosaurs with two feet and good at running. It has 5 slightly curved maxillary anterior teeth in simple stage, and 10 or 11 laterally compressed maxillary teeth, in which the crowns are widen in the front and rear and the margin denticulate are provided at both sides. Its jaws have approximately 13-14 teeth, in which the front 3-4 teeth are relatively simple in a conical shape, and the crowns of other teeth are flat with margin denticulate as the maxillary tooth. This tooth form is called heterodonty type.', '', '/images/geospecimen/15718128764799.jpg');
+INSERT INTO `geospecimen` VALUES ('7', '1', '6', '四川巨棘龙Gigantspinosaurus sichuanensis', '', '', '', '', '', '', '', '', '', '', '晚侏罗世（距今约1.4亿年前）生活在自贡地区的一种形态较为奇特的剑龙，所谓“巨棘”是指它肩部长有一对巨大的、左右对称的逗号状骨棘——肩棘,头骨相对较小，牙齿少，且呈勺状，颈部短，身体背面有15对对称排列的小背板，形状多变，多呈三角形。这类通常生活在河畔湖滨的丛林地带，以幼嫩的灌木树叶为食。\nIt is a kind of odder Stegosaurus existing in Zigong in the late Jurassic (about 140 million years ago). The so-called \"giant spine\" refers to shoulder spines, which is a pair of huge, symmetrical comma-shaped bone spines on its shoulder. It has a relatively small skull, fewer teeth in a spoon-shape, short neck, and 15 pairs of small mezzanines symmetrically arranged on its back with variable shapes, mostly in triangle shape. This kind of Stegosaurus usually lived on the riverside and lakeside jungles, and fed on tender leaves of shrubs.', '', '/images/geospecimen/157181292772210.jpg');
+INSERT INTO `geospecimen` VALUES ('8', '1', '7', '和平永川龙Yangchuanosaurus hepingensis', '', '', '', '', '', '', '', '', '', '', '生存于晚侏罗世（距今约1.4亿年前），因化石产于自贡市和平乡而得名，是一种大型的肉食性恐龙，为永川龙属的一新种。它体长约9米，头大而笨重，颌上长有匕首状的锋利牙齿；前肢短小，后肢长，靠两脚行走，爪大而尖锐。它生活在河湖之滨的高地丛莽之中，捕食植食性恐龙和其它动物。是异常凶猛的肉食龙。\nIt existed in the late Jurassic (about 140 million years ago) and got its name from its fossils discovered at Heping township of Zigong city, which was a large carnivorous dinosaur, regarded as a new species of Yangchuanosaurus. Its body length has about 9 meters; its head is large and bulky with dagger-shaped sharp teeth on its jaws; and it has short forelimbs and long hind limbs, walking on two feet with large and sharp claws. It lived in the highland jungles around rivers and lakes, preyed on vegetarian dinosaurs and other animals, and were extraordinarily fierce carnosaur.', '', '/images/geospecimen/157181297243611.jpg');
+INSERT INTO `geospecimen` VALUES ('9', '1', '9', '劳氏灵龙Agilisaurus louderbacki', '', '', '', '', '', '', '', '', '', '', '劳氏灵龙是一种长约2米的小型恐龙。主要特点是头短高，眼睛大，颈子短，尾巴特别长，前肢短小，后肢长而粗壮，体态纤细灵巧，善于两足快速奔跑。常出没于灌木丛之中，机警，善迅跑，杂食。\nIt is a small dinosaur about 2 meters. The main feature is that it has a short and high head, big eyes, short neck, a particularly long tail, short forelimbs, long and stout hind legs, and slim and smart body, and it is good at running fast on two feet. It hunted among the bushes, ran swiftly, and was alert and omnivorous.', '', '/images/geospecimen/157181302960612.jpg');
 
 -- ----------------------------
 -- Table structure for gueststat
@@ -475,7 +497,7 @@ CREATE TABLE `gueststat` (
   `update_time` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='游客统计';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='游客统计';
 
 -- ----------------------------
 -- Records of gueststat
@@ -484,10 +506,6 @@ INSERT INTO `gueststat` VALUES ('1', '1', '2012', '63.400000', '无', '1', '2019
 INSERT INTO `gueststat` VALUES ('2', '1', '2013', '64.900000', '无', '', '2019-09-20 17:58:58', '2019-09-20 17:59:05', null);
 INSERT INTO `gueststat` VALUES ('3', '1', '2014', '88.800000', '无', '', '2019-09-20 17:59:27', '2019-09-20 17:59:27', null);
 INSERT INTO `gueststat` VALUES ('4', '1', '2015', '302.800000', '无', '', '2019-09-20 17:59:49', '2019-09-20 17:59:49', null);
-INSERT INTO `gueststat` VALUES ('5', '1', '2012', '63.400000', '无', '1', '2019-10-16 15:35:38', '2019-10-16 15:35:38', null);
-INSERT INTO `gueststat` VALUES ('6', '1', '2013', '64.900000', '无', '2', '2019-10-16 15:35:38', '2019-10-16 15:35:38', null);
-INSERT INTO `gueststat` VALUES ('7', '1', '2014', '88.800000', '无', '3', '2019-10-16 15:35:38', '2019-10-16 15:35:38', null);
-INSERT INTO `gueststat` VALUES ('8', '1', '2015', '302.800000', '无', '4', '2019-10-16 15:35:38', '2019-10-16 15:35:38', null);
 
 -- ----------------------------
 -- Table structure for humanlandscape
@@ -512,139 +530,77 @@ CREATE TABLE `humanlandscape` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=270 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='人文景观';
+) ENGINE=InnoDB AUTO_INCREMENT=272 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='人文景观';
 
 -- ----------------------------
 -- Records of humanlandscape
 -- ----------------------------
-INSERT INTO `humanlandscape` VALUES ('142', '1', 'ZG1008', '青龙水库', null, null, '104.8310833', '29.42438889', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('143', '1', 'ZG1010', '世平村梯田', null, null, '104.855444444436', '29.402194444442198', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('144', '1', 'ZG1011', '江姐故居', null, null, '104.847888888881', '29.376555555553299', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('145', '1', 'ZG1012', '雁溪谷', null, null, '104.908638888881', '29.429861111108899', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('146', '1', 'ZG1017', '王爷庙', null, null, '104.76774999999201', '29.3493888888867', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('147', '1', 'ZG1021', '茶马古道•漆树乐善坊', null, null, '104.66594444443599', '29.202488888886698', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('148', '1', 'ZG1030', '卢德铭故居', null, null, '104.664527777769', '29.263972222220001', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('149', '1', 'ZG1041', '老唐梯田', null, null, '104.714638888881', '29.3061388888867', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('150', '1', 'ZG1046', '中坝钟氏庄园', null, null, '104.595333333325', '29.2976111111089', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('151', '1', 'ZG1058', '奉先桥', null, null, '104.48977777776901', '29.3493055555533', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('152', '1', 'ZG1062', '药王寺摩崖造像', null, null, '104.50327777776999', '29.309472222219998', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('153', '1', 'ZG1064', '洞云寺', null, null, '104.675972222214', '29.331499999997799', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('154', '1', 'ZG1069', '桅杆坳村梯田', null, null, '104.192861111103', '29.2488888888867', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('155', '1', 'ZG1074', '乐德红土地', null, null, '104.37394444443601', '29.35447222222', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('156', '1', 'ZG1078', '窝棚湾摩崖造像', null, null, '104.28338888888101', '29.3899444444422', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('157', '1', 'ZG1104', '杨家山茶园', null, null, '104.182638888881', '29.4044166666644', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('158', '1', 'ZG1105', '小井沟水库', null, null, '104.165138888881', '29.4028888888867', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('159', '1', 'ZG1107', '高坎山崖墓群', null, null, '104.19199999999201', '29.386972222219999', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('160', '1', 'ZG1109', '永顺桥四方碑', null, null, '104.174861111103', '29.3899444444422', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('161', '1', 'ZG1114', '花雾山休闲庄', null, null, '104.320972222214', '29.476833333331101', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('162', '1', 'ZG1126', '观音岩摩崖造像', null, null, '104.227083333325', '29.452222222220001', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('163', '1', 'ZG1127', '真武山醒悟寺', null, null, '104.228999999992', '29.447027777775499', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('164', '1', 'ZG1132', '郭家冲碉楼', null, null, '104.137999999992', '29.480583333331101', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('165', '1', 'ZG1145', '杨泗岩摩崖石刻', null, null, '104.331249999992', '29.5019999999978', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('166', '1', 'ZG1153', '伍寨坪', null, null, '104.306305555547', '29.5063055555533', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('167', '1', 'ZG1155', '黄茅埂茶园', null, null, '104.29713888888099', '29.5429999999978', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('168', '1', 'ZG1161', '佛耳湾摩崖造像', null, null, '104.28019444443601', '29.394027777775499', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('169', '1', 'ZG1162', '佛耳坝摩崖造像', null, null, '104.275833333325', '29.392527777775499', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('170', '1', 'ZG1163', '棚石岩摩崖造像', null, null, '104.269055555547', '29.392361111108901', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('171', '1', 'ZG1166', '凉高山牌坊群', null, null, '104.80766666665799', '29.387749999997801', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('172', '1', 'ZG1181', '恒侯宫', null, null, '104.765805555547', '29.351861111108899', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('173', '1', 'ZG2007', '自贡彩灯公园', null, null, '104.766611111103', '29.3575833333311', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('174', '1', 'ZG2008', '中国彩灯博物馆', null, null, '104.76630555554701', '29.354694444442199', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('175', '1', 'ZG2010', '三多古寨', null, null, '104.87205555554701', '29.4508611111089', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('176', '1', 'ZG2018', '艾叶古镇', null, null, '104.679972222214', '29.3562777777755', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('177', '1', 'ZG2019', '艾叶码头', null, null, '104.681055555547', '29.354166666664401', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('178', '1', 'ZG2020', '雷公坡崖墓群', null, null, '104.68347222221399', '29.355777777775501', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('179', '1', 'ZG2021', '天池寺', null, null, '104.704138888881', '29.357527777775498', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('180', '1', 'ZG2022', '贡井老街', null, null, '104.709861111103', '29.352472222220001', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('181', '1', 'ZG2023', '贵州庙', null, null, '104.709583333325', '29.352361111108898', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('182', '1', 'ZG2024', '贡井南华宫', null, null, '104.70888888888101', '29.351999999997801', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('183', '1', 'ZG2025', '陈家祠堂', null, null, '104.710361111103', '29.351722222220001', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('184', '1', 'ZG2026', '张伯卿公馆', null, null, '104.714583333325', '29.3435833333311', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('185', '1', 'ZG2043', '花香田园', null, null, '104.66480555554701', '29.365388888886699', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('186', '1', 'ZG2046', '七一水库', null, null, '104.584861111103', '29.353277777775499', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('187', '1', 'ZG2063', '吴玉章故居', null, null, '104.523444444436', '29.376777777775601', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('188', '1', 'ZG2069', '七零水库', null, null, '104.52405555554699', '29.400388888886699', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('189', '1', 'ZG2096', '棋盘山水库', null, null, '104.40027777777', '29.306944444442198', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('190', '1', 'ZG2104', '洞子湾石室', null, null, '104.381111111103', '29.318749999997799', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('191', '1', 'ZG2114', '老筒车人工瀑布', null, null, '104.168888888881', '29.3393611111089', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('192', '1', 'ZG2117', '大观桥牌坊', null, null, '104.169333333325', '29.3392777777756', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('193', '1', 'ZG2118', '盐井坝摩崖造像', null, null, '104.159388888881', '29.345916666664401', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('194', '1', 'ZG2126', '白鹿洞摩崖造像', null, null, '104.250111111103', '29.294388888886701', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('195', '1', 'ZG2134', '白云寺', null, null, '104.25669444443599', '29.438611111108901', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('196', '1', 'ZG2140', '跳石河水库', null, null, '104.11952777777', '29.475083333331099', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('197', '1', 'ZG2146', '荣县镇南塔', null, null, '104.42377777777', '29.453361111108901', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('198', '1', 'ZG2147', '荣县二佛', null, null, '104.419805555547', '29.453333333331098', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('199', '1', 'ZG2154', '双溪水库', null, null, '104.410333333325', '29.474611111108899', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('200', '1', 'ZG2160', '五根树村茶园', null, null, '104.20366666665799', '29.597749999997799', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('201', '1', 'ZG2165', '乐山竹园烈士纪念园', null, null, '104.146999999992', '29.540305555553299', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('202', '1', 'ZG2166', '来牟千佛崖摩崖造像', null, null, '104.188611111103', '29.520416666664399', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('203', '1', 'ZG2169', '荣县大佛', null, null, '104.428777777769', '29.455694444442202', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('204', '1', 'ZG2170', '虎榜山摩崖造像', null, null, '104.533138888881', '29.4033611111089', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('205', '1', 'ZG2171', '西秦会馆', null, null, '104.768277777769', '29.351916666664401', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('206', '1', 'ZG1008', '青龙水库', null, null, '104.831083333325', '29.4243888888867', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('207', '1', 'ZG1010', '世平村梯田', null, null, '104.855444444436', '29.402194444442198', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('208', '1', 'ZG1011', '江姐故居', null, null, '104.847888888881', '29.376555555553299', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('209', '1', 'ZG1012', '雁溪谷', null, null, '104.908638888881', '29.429861111108899', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('210', '1', 'ZG1017', '王爷庙', null, null, '104.76774999999201', '29.3493888888867', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('211', '1', 'ZG1021', '茶马古道•漆树乐善坊', null, null, '104.66594444443599', '29.202488888886698', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('212', '1', 'ZG1030', '卢德铭故居', null, null, '104.664527777769', '29.263972222220001', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('213', '1', 'ZG1041', '老唐梯田', null, null, '104.714638888881', '29.3061388888867', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('214', '1', 'ZG1046', '中坝钟氏庄园', null, null, '104.595333333325', '29.2976111111089', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('215', '1', 'ZG1058', '奉先桥', null, null, '104.48977777776901', '29.3493055555533', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('216', '1', 'ZG1062', '药王寺摩崖造像', null, null, '104.50327777776999', '29.309472222219998', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('217', '1', 'ZG1064', '洞云寺', null, null, '104.675972222214', '29.331499999997799', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('218', '1', 'ZG1069', '桅杆坳村梯田', null, null, '104.192861111103', '29.2488888888867', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('219', '1', 'ZG1074', '乐德红土地', null, null, '104.37394444443601', '29.35447222222', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('220', '1', 'ZG1078', '窝棚湾摩崖造像', null, null, '104.28338888888101', '29.3899444444422', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('221', '1', 'ZG1104', '杨家山茶园', null, null, '104.182638888881', '29.4044166666644', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('222', '1', 'ZG1105', '小井沟水库', null, null, '104.165138888881', '29.4028888888867', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('223', '1', 'ZG1107', '高坎山崖墓群', null, null, '104.19199999999201', '29.386972222219999', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('224', '1', 'ZG1109', '永顺桥四方碑', null, null, '104.174861111103', '29.3899444444422', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('225', '1', 'ZG1114', '花雾山休闲庄', null, null, '104.320972222214', '29.476833333331101', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('226', '1', 'ZG1126', '观音岩摩崖造像', null, null, '104.227083333325', '29.452222222220001', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('227', '1', 'ZG1127', '真武山醒悟寺', null, null, '104.228999999992', '29.447027777775499', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('228', '1', 'ZG1132', '郭家冲碉楼', null, null, '104.137999999992', '29.480583333331101', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('229', '1', 'ZG1145', '杨泗岩摩崖石刻', null, null, '104.331249999992', '29.5019999999978', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('230', '1', 'ZG1153', '伍寨坪', null, null, '104.306305555547', '29.5063055555533', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('231', '1', 'ZG1155', '黄茅埂茶园', null, null, '104.29713888888099', '29.5429999999978', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('232', '1', 'ZG1161', '佛耳湾摩崖造像', null, null, '104.28019444443601', '29.394027777775499', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('233', '1', 'ZG1162', '佛耳坝摩崖造像', null, null, '104.275833333325', '29.392527777775499', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('234', '1', 'ZG1163', '棚石岩摩崖造像', null, null, '104.269055555547', '29.392361111108901', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('235', '1', 'ZG1166', '凉高山牌坊群', null, null, '104.80766666665799', '29.387749999997801', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('236', '1', 'ZG1181', '恒侯宫', null, null, '104.765805555547', '29.351861111108899', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('237', '1', 'ZG2007', '自贡彩灯公园', null, null, '104.766611111103', '29.3575833333311', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('238', '1', 'ZG2008', '中国彩灯博物馆', null, null, '104.76630555554701', '29.354694444442199', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('239', '1', 'ZG2010', '三多古寨', null, null, '104.87205555554701', '29.4508611111089', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('240', '1', 'ZG2018', '艾叶古镇', null, null, '104.679972222214', '29.3562777777755', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('241', '1', 'ZG2019', '艾叶码头', null, null, '104.681055555547', '29.354166666664401', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('242', '1', 'ZG2020', '雷公坡崖墓群', null, null, '104.68347222221399', '29.355777777775501', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('243', '1', 'ZG2021', '天池寺', null, null, '104.704138888881', '29.357527777775498', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('244', '1', 'ZG2022', '贡井老街', null, null, '104.709861111103', '29.352472222220001', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('245', '1', 'ZG2023', '贵州庙', null, null, '104.709583333325', '29.352361111108898', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('246', '1', 'ZG2024', '贡井南华宫', null, null, '104.70888888888101', '29.351999999997801', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('247', '1', 'ZG2025', '陈家祠堂', null, null, '104.710361111103', '29.351722222220001', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('248', '1', 'ZG2026', '张伯卿公馆', null, null, '104.714583333325', '29.3435833333311', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('249', '1', 'ZG2043', '花香田园', null, null, '104.66480555554701', '29.365388888886699', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('250', '1', 'ZG2046', '七一水库', null, null, '104.584861111103', '29.353277777775499', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('251', '1', 'ZG2063', '吴玉章故居', null, null, '104.523444444436', '29.376777777775601', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('252', '1', 'ZG2069', '七零水库', null, null, '104.52405555554699', '29.400388888886699', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('253', '1', 'ZG2096', '棋盘山水库', null, null, '104.40027777777', '29.306944444442198', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('254', '1', 'ZG2104', '洞子湾石室', null, null, '104.381111111103', '29.318749999997799', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('255', '1', 'ZG2114', '老筒车人工瀑布', null, null, '104.168888888881', '29.3393611111089', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('256', '1', 'ZG2117', '大观桥牌坊', null, null, '104.169333333325', '29.3392777777756', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('257', '1', 'ZG2118', '盐井坝摩崖造像', null, null, '104.159388888881', '29.345916666664401', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('258', '1', 'ZG2126', '白鹿洞摩崖造像', null, null, '104.250111111103', '29.294388888886701', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('259', '1', 'ZG2134', '白云寺', null, null, '104.25669444443599', '29.438611111108901', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('260', '1', 'ZG2140', '跳石河水库', null, null, '104.11952777777', '29.475083333331099', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('261', '1', 'ZG2146', '荣县镇南塔', null, null, '104.42377777777', '29.453361111108901', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('262', '1', 'ZG2147', '荣县二佛', null, null, '104.419805555547', '29.453333333331098', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('263', '1', 'ZG2154', '双溪水库', null, null, '104.410333333325', '29.474611111108899', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('264', '1', 'ZG2160', '五根树村茶园', null, null, '104.20366666665799', '29.597749999997799', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('265', '1', 'ZG2165', '乐山竹园烈士纪念园', null, null, '104.146999999992', '29.540305555553299', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('266', '1', 'ZG2166', '来牟千佛崖摩崖造像', null, null, '104.188611111103', '29.520416666664399', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('267', '1', 'ZG2169', '荣县大佛', null, null, '104.428777777769', '29.455694444442202', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('268', '1', 'ZG2170', '虎榜山摩崖造像', null, null, '104.533138888881', '29.4033611111089', null, null, null, null, null, null, null, null, null);
-INSERT INTO `humanlandscape` VALUES ('269', '1', 'ZG2171', '西秦会馆', null, null, '104.768277777769', '29.351916666664401', null, null, null, null, null, null, null, null, null);
+INSERT INTO `humanlandscape` VALUES ('9', '1', 'C064', '尖山风景区', '位于自流井区荣边镇尖山村', '', '104.64983333', '29.267083333', '', '尖山自然风景旅游区以林地和湖光山色为主要特色，景区内有7个主要景点，分别是尖山湖、农团山、狮子湾、永安古镇、开后宫、何禾祠、金银湖。景区位于自贡自流井区荣边镇，总面积1.9km2，区内森林面积超过总面积的70％，湖面积389亩，湖水水质清澈，其周边还有艺术小镇，卢德铭故居等景点，此区域地形地貌为低山，多发育小型丹霞陡壁，同时该景区是自贡世界地质公园的重要组成部分。', '', 'ZG1016', '', '/images/humanlandscape/157197374751368.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('142', '1', 'C030', '青龙水库', '位于自贡市东北部，大安区大山铺镇和团结镇之间，东经104°49′51.87″，北纬29°25′27.83″。', '', '104.8310833', '29.42438889', '', '建于1954年，占地4km2，集雨面积10多平方公里，库容面积600多亩，库容水量206万立方米。整个水库大体呈“U”字型，水库水质清澈，水库两岸长着成片浮萍，清风吹过水面泛起点点涟漪。这里的生态环境良好，可以看见野鸭和白鹭，每当阳光洒下湖面和周围的动植物形成独特而美丽的画卷，是一处休闲娱乐的好去处。', '', 'ZG1008', '', '/images/humanlandscape/15719702719340.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('143', '1', 'C031', '世平村梯田', '位于大安区团结镇世平村，东经104°51′19.57″，北纬29°24′07.88″。', '', '104.85544444', '29.402194444', '', '梯田位于丘陵地区两个小山丘之间，层层分布，南北向延伸，梯坎呈弧状，每级梯田长约400m，宽约130m，每层梯田之间高约0.3-1m。梯田四周岩性为沙溪庙组二段（J2s2）紫红色泥岩。受农耕文化影响农民在原地貌上逐年耕作形成此梯田地貌，此地区水量充沛，农民多耕作为水田，是此地区农民大米的主要产地。', '', 'ZG1010', '', '/images/humanlandscape/15719703420451.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('144', '1', 'C037', '江姐故居', '江姐故居坐落于自贡市大安区大山铺镇江家湾，东经104°50′52.41″，北纬29°22′35.58″。', '', '104.84788889', '29.376555556', '', '1970年被大火烧毁，所幸当时屋内并无起居生活用品，2007年，故居恢复并向游客开放，现已被列为省、市、区爱国主义教育基地，房屋为反正的“L”形建筑，木质框架结构，顶上盖瓦，共七间房，分为流芳厅、传奇厅、求学革命厅、生平厅以及卧室实物展示。是爱国主义教育的良好场所。', '', 'ZG1011', '', '/images/humanlandscape/15719703571672.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('145', '1', 'C028', '雁溪谷', '雁溪谷位于四川省自贡市大安区何市镇高庙村，东经104°54′31.06″，北纬29°25′47.54″。', '', '104.90863889', '29.429861111', '', '是自贡赏花基地之一，景区以高庙村为主，以相邻的三和村、黄桷村、八甲村等地为辅，占地面积3.3km2。景区内旅游设施齐全种类较多。景区内可见小山湖泊，亭子阁楼以及各种植物相互争艳，同时也有自行车骑游道，欢乐儿童乐园，水上娱乐项目等。景区周边发现有多处地层剖面出露及交错层理。', '', 'ZG1012', '', '/images/humanlandscape/15719703984253.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('146', '1', 'C052', '王爷庙', '位于自流井区和平镇富台山社区，东经104°46′03.92″，北纬29°20′57.77″。', '', '104.76775', '29.349388889', '', '王爷庙是一座精美的清代建筑，占地面积1000m2。始建年代不详，但不晚于清同治年间。清光绪三十二年（1906）又新建成一座戏楼。王爷庙依山临水，独特形胜，庙中保存完好的戏台，是四川以不常见的清代川剧舞台。有一石崖上刻有“唤鱼台”三个大字，相传为苏东坡笔迹。王爷庙对于研究当时川剧乃至社会习俗，风土人情，都有重要的史料价值。', '', 'ZG1017', '', '/images/humanlandscape/15719704372954.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('147', '1', 'C066', '茶马古道•漆树乐善坊', '位于自流井区漆树乡星星村，东经104°39′57.39″，北纬29°18′08.96″。', '', '104.66594444', '29.202488889', '', '乐善坊修建于清咸丰元年，坐西南向东北，为两柱单门三楼，通高4.9m，通宽3.25m，门宽1.25m，高1.76m，碑文记载了自贡最早的四大盐商中的颜昌英、李振亨投资修路，打通盐运通道的事迹。特别是碑文中首次出现了“自贡”二字，较史籍记载提前了60年。对研究清代自贡盐业历史和城市发展具有重要的历史价值。', '', 'ZG1021', '', '/images/humanlandscape/15719704775165.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('148', '1', 'C065', '卢德铭故居', '卢德铭故居位于自流井区仲权镇竹元村狮子湾，东经104°39′52.30″，北纬29°15′50.32″。', '', '104.66452778', '29.263972222', '', '修建于清代，坐东向西，建筑面积约511.68m2，院落进深25.9m，面阔39.2m，乡村房屋为左厢房，面积为116.12m2，建筑整体结构为一正、两偏三面房屋的三合院布局。单檐悬山式屋顶，小青瓦屋面，做叠瓦脊，穿斗式木结构，土筑墙和竹编墙，为典型的川南名居做法，具有明显的地域性和代表性。屋内在保留原有物品的基础上进行了布展，共分为七大部分，分别为立志报国，文成武备，秋收起义，血杀芦溪，浩气长存，家园情', '', 'ZG1030', '', '/images/humanlandscape/15719705245126.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('149', '1', 'C063', '老唐梯田', '位于贡井区仲权镇磨刀岭村，东经104°42′52.65″，北纬29°18′22.90″。', '', '104.71463889', '29.306138889', '', '为一连串的梯田，梯田平面上为呈“U”型分布，梯田沿21°方向延伸后转弯沿239°方向延伸长度约738m，梯田共计21级阶坎，梯田宽约40-120m，上部梯田的用水由最低处的池塘供给，梯田总落差约12m。梯田为当地人根据地形地貌而人为改造形成。', '', 'ZG1041', '', '/images/humanlandscape/15719705784667.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('150', '1', 'C062', '中坝钟氏庄园', '位于贡井区龙潭镇中坝村，东经104°35′43.19″，北纬29°17′51.42″。', '', '104.59533333', '29.297611111', '', '为一座十分典型的具有川南民居特色的四合院。庄园坐北朝南，始建于清咸丰四年（1854年），整体建筑占地面积7197.12m2，其中碉楼占地面积57m2。碉楼位于庄园东北角，为砖木结构，方形楼阁式，边长7.5m，通高16.9m，歇山式四角攒尖屋顶。庄园建筑结构为木结构，穿斗式梁式构架，悬山式屋顶，小青瓦屋面。碉楼及附属是清代川南地区典型的民居建筑，其柱础、门窗、板枋、吊檐、木雕宫灯、屋脊泥塑精美，其主体建筑布局至今保存完好，', '', 'ZG1046', '', '/images/humanlandscape/15719705934078.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('151', '1', 'C034', '奉先桥', '', '', '104.48977778', '29.349305556', '', '位于荣县双石镇高滩村，东经104°29′23.22″，北纬29°20′57.58″。俗称高滩大桥，建于清同治八年（1869），横跨旭水河，东西走向，为三孔石桥，桥长53m，宽6.5m，高13.3m，桥身微呈弧形，桥面用条石铺成，两侧有桥柱，桥两端各有长7m的石级踏道。奉先桥是荣县现存唯一保持原有风貌的古代桥梁，为研究清代桥梁建筑结构、风格提供了难得的实物资料。', '', 'ZG1058', '', '/images/humanlandscape/15719706431299.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('152', '1', 'C061', '药王寺摩崖造像', '', '', '104.50327778', '29.309472222', '', '位于荣县鼎新镇鲤鱼村，东经104°30′11.77″，北纬29°18′34.09″。药王寺摩崖造像凿刻于明万历三年（1575年），共两龛，造像4尊，龛呈矩形，敝口平顶。共中1号龛造像三尊，药王孙思邈居于尊为，左手托龙头，右手持药丸，端坐于虎背，2号龛内供奉观音立像1尊。现已修建庙宇保护，是县级文物保护单位。为研究荣县明代中晚期石刻造像艺术及中医文化的发展提供了重要实物资料。', '', 'ZG1062', '', '/images/humanlandscape/157197069440910.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('153', '1', 'C041', '洞云寺', '', '', '104.67597222', '29.3315', '', '位于贡井区建设镇柳林村，东经104°40′33.52″，北纬29°19′33.41″。洞云寺始建于唐，现有大雄宝殿、天王殿、观音殿、五观堂、住宿等殿堂，占地约五亩。前有旭水河，背依洞云山。标志性建筑为千佛塔，总高约13m，共分为十级，为六方柱状，塔上刻有佛像，每级塔檐吊有铃铛。该寺香火旺盛，调查时正遇佛法大会，善男信女依次作揖，大师们端坐念经，总人数约为二三十人。', '', 'ZG1064', '', '/images/humanlandscape/157197073655211.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('154', '1', 'C057', '桅杆坳村梯田', '', '', '104.19286111', '29.248888889', '', '位于荣县雷音乡桅杆坳村，东经104°11′34.34″，北纬29°14′56.04″。梯田分布于山沟中，走向约为315°，可见阶坎为7个，阶坎间距离约为40-80m，梯田多用于种植蔬菜瓜果，偶尔可见鱼塘。站在高处远眺，夕阳的照耀下组合成一幅美丽的画卷。从卫星影像图可看出梯田沿山沟呈分支状分布，分布面积较大，在该区域的山谷中都可以看到。', '', 'ZG1069', '', '/images/humanlandscape/157197077092612.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('155', '1', 'C058', '乐德红土地', '', '', '104.37394444', '29.354472222', '', '位于自贡市荣县南部乐德镇天宫庙村，东经104°22′26.15″，北纬29°21′16.05″。其母岩为白垩系窝头山组（K1w）砖红色铁泥质砂岩和泥岩。约1亿年前的四川盆地气候炎热干旱，沉积所形成的岩石因含丰富的铁质经氧化而呈赭红色；随着地壳运动发展，这些岩石重新裸露出地表，并经风化、淋滤等自然作用而形成为红色土壤。该区域已打造出荣县粮经复合种植基地，主要采取旱地玉米套辣椒种植模式。自“乐德红土地”纳入世界地质公园以来，建成“红土地”观光线路2km，红辣椒采摘园1.2万平方米，农家乐10家，迎来了国内外游', '', 'ZG1074', '', '/images/humanlandscape/157197080578913.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('156', '1', 'C024', '窝棚湾摩崖造像', '', '', '104.28338889', '29.389944444', '', '位于荣县正紫镇窝棚湾村，东经104°17′00.19″，北纬29°23′23.85″。窝棚湾摩崖造像凿刻于唐代晚期，分布面积27.52㎡。摩崖造像共1龛14尊，主像释迦牟尼佛通高3.4m，头饰螺髻，身着袈裟，结跏趺坐于莲台上。龛右壁刻有高2m多的天王像，天王内穿金刚甲，外披战袍，手持长剑。龛左右两壁还刻有12尊弟子像，龛后壁顶部雕刻飞天图案。窝棚湾摩崖整龛造像具有典型的晚唐造像特征，对研究唐代晚期的佛教造像艺术具有一定的价值。', '', 'ZG1078', '', '/images/humanlandscape/157197090568514.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('157', '1', 'C018', '杨家山茶园', '', '', '104.18263889', '29.404416667', '', '位于荣县保华镇坝基田村及红豆树村，东经104°10′57.76″，北纬29°24′15.97″。茶田呈阶梯状分布于各小山丘上，茶树高矮一致，整齐别致，茶树中种植桂花树，高低错落。正值雨后，茶树显得特别翠绿，部分村民正忙着采摘，据他们描述，茶树比以前种植其他农作物轻松多了，收入也增加了，附近应该有将近万亩茶树。', '', 'ZG1104', '', '/images/humanlandscape/157197094839715.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('158', '1', 'C017', '小井沟水库', '', '', '104.16513889', '29.402888889', '', '位于荣县保华镇红豆树村岷江一级支流越溪河上游的小井沟峡谷，东经104°09′54.53″，北纬29°24′10.44″。坝址控制流域面积587km2，工程主要由水库枢纽、输水工程和灌区渠系工程组成，主坝坝型为混凝土面板堆石坝，最大坝高88.37m，水库总库容1.66亿立方米，兴利库容1.11亿立方米，总干渠年饮水量1.1亿立方米，为二等大（2）型工程，工程建成后每年可以向自贡市供水9452万立方米，灌溉土地面积14.56万亩，解决灌区23.35万人的饮水安全问题，水库水质清澈，碧波荡漾，水库周边岩性为须家', '', 'ZG1105', '', '/images/humanlandscape/157197100251216.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('159', '1', 'C020', '高坎山崖墓群', '', '', '104.192', '29.386972222', '', '位于荣县保华镇高石坝村，东经104°11′31.17″，北纬29°23′13.05″。当地人俗称蛮子洞，所处岩性为沙溪庙组二段（（J2s2））黄灰色块状粗砂岩，分布面积300m2。整个崖墓群分布在长约50m距地面3-6m的崖壁上，共有崖墓12座，分别编号M1-M12。其中M2长5.9m，宽2.95m，由长方形的墓道和墓室组成，幕门呈长方形，墓室内左右壁及后壁均有长方形壁龛，壁龛四周刻有鱼纹等较为简单的线条纹饰，具有典型的汉代特征，对研究地区汉代民情及葬俗具有较高的价值。', '', 'ZG1107', '', '/images/humanlandscape/157197106542217.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('160', '1', 'C019', '永顺桥四方碑', '', '', '104.17486111', '29.389944444', '', '位于荣县礼佳镇高石坝村，东经104°10′29.53″，北纬29°23′23.84″。永顺桥四方碑是一座清代中晚期民间集资修桥铺路的记事功德牌，坐西向东，立面面积1.44m2。碑帽为四角攒尖顶，一重檐下南、北、西方向依次各刻“永顺桥”三字，东面刻一小龛，龛内刻一尊佛像呈结跏跌坐于莲台上。底层四方碑柱上刻有修桥序文、功德名单及所募资金使用情况。永顺桥四方碑佛像雕刻精美，碑文内容丰富，对研究荣县清代各界民众捐资修路补桥及账目公开等情况具有一定价值。四方碑附近石板路与四方碑同期修建，四方碑龛内佛像于2018年被', '', 'ZG1109', '', '/images/humanlandscape/157197124872019.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('161', '1', 'C012', '花雾山休闲庄', '', '', '104.32097222', '29.476833333', '', '位于荣县铁厂镇曹家坪村，东经104°19′15.54″，北纬29°28′36.59″。花雾山休闲庄为中国西部陶都森林花海项目之一，花雾山休闲庄以红青瓦浓郁乡土建筑特色风格，其内建筑面积达2000余平方米，内设餐饮、住宿、棋牌、茶房等休闲娱乐养生一体化，周边约六百余亩桂花园、乐昌含笑园，金合欢园、日本紫薇园，生态垂钓场，有机蔬菜采摘园，家禽园。负氧离子高，是休闲娱乐的好地方。以各个季节的花为主要观赏点，一月有早樱，二三月有茶花，四月有杜鹃花、红花槐，五六月有栀子花，七八月有乐昌含笑、金合欢，九十月有桂花，十', '', 'ZG1114', '', '/images/humanlandscape/157197123339418.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('162', '1', 'C009', '观音岩摩崖造像', '', '', '104.22708333', '29.452222222', '', '位于荣县长山镇得胜村，东经104°13′37.49″，北纬29°27′08.04″。观音岩摩崖造像坐东南向西北，分布面积约28m2，开凿在高5m，长30m的山岩上，共7龛，其中造像龛4处，记事碑3处，为清乾隆五十六年所造。该摩崖造像对研究清代时期佛教在西南地区发展情况具有一定价值。原坐标位置为杂草杂树丛生的小山丘，询问附近居民已无人知晓，最终在原定点167°方向约1.2km处的自流井组珍珠冲段（J1-2zz）黄灰色砂岩上发现该资源点。', '', 'ZG1126', '', '/images/humanlandscape/157197139913120.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('163', '1', 'C010', '真武山醒悟寺', '', '', '104.229', '29.447027778', '', '位于长山镇五通坝，东经104°13′44.45″，北纬29°26′49.33″。地名真武山，荣县西北36km，有305省道从山下通过，山形独特，既不连山，又不断带。该特殊的地形受北西侧两组倾向相反，近于北东向展布的逆断层控制，北西侧正好为两组逆断层围陷的盆地，南东侧成为相对突起的低山。始建于唐初有将维清四人投资修建四合院寺庙，占地60亩，后因1958年大办钢铁时拆除，于1997年3月恢复。该寺现有四幢殿堂，雕刻佛像和菩萨像120尊，房舍四百余间，能住几千人。目前该寺最大的观音即将完工，为飘海观音，通高38', '', 'ZG1127', '', '/images/humanlandscape/157197144533121.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('164', '1', 'C007', '郭家冲碉楼', '', '', '104.138', '29.480583333', '', '位于荣县留佳镇坳田村，东经104°08′16.83″，北纬29°28′50.11″。建于中华民国三十六年（1947），是当地汪姓大户修建的一处防卫工事建筑，坐西南向东北，通高13.6m，共4层。整体为砖木结构，硬山式屋顶。楼体平面呈方形，边长4.7m，地基用条石砌成，碉楼每层有木质楼梯通往上层，在其二、三、四楼墙壁四周均有内宽外窄的斗形射击孔及花窗。郭家冲碉楼外观造型精美，内部结构紧密、坚固，为研究荣县民国后期的社会状况及防卫建筑风格提供了重要实物资料。', '', 'ZG1132', '', '/images/humanlandscape/157197147177022.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('165', '1', 'C006', '杨泗岩摩崖石刻', '', '', '104.33125', '29.502', '', '位于荣县铁厂镇石笋沟村，东经104°19′52.53″，北纬29°30′07.20″。得名于断崖上的杨泗将军塑像。明清时期，乡民为保地方安宁，在崖上凿洞建庙，供奉杨泗将军。现存洞穴四室，壁嵌有清代碑刻六块，乡民立杆点天灯的残痕犹在。', '', 'ZG1145', '', '/images/humanlandscape/157197149538123.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('166', '1', 'C005', '伍寨坪', '', '', '104.30630556', '29.506305556', '', '位于荣县铁厂镇黑观音村的山上，东经104°18′22.73″，北纬29°30′22.75″。现已修建水泥路，路的两侧都为栀子花，延长近1km，栀子花面积约为400亩，树高约60-180cm，此季节已经零星开花，四周为一片苍翠中洒满星星点点的白色花瓣，四周群山连绵，在沟谷中有大片梯田，真是桃花园的景象。', '', 'ZG1153', '', '/images/humanlandscape/157197152569024.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('167', '1', 'C004', '黄茅埂茶园', '', '', '104.29713889', '29.543', '', '位于荣县双古镇黄茅埂村，东经104°17′49.71″，北纬29°32′34.77″。茶园面积较大，该区域沟谷两侧都为茶园，主要分布于双古镇，观山镇、铁厂镇，为当地主要经济作物。茶树高约20cm-40cm之间，有新栽种茶树，老茶树现已结新芽，满眼翠绿。该地区岩性为须家河组（T3xj）黄灰色砂岩。位于此处可见茶园四周为陡峭的山体，四周有绝壁发育。', '', 'ZG1155', '', '/images/humanlandscape/157197154995725.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('168', '1', 'C021', '佛耳湾摩崖造像', '', '', '104.28019444', '29.394027778', '', '位于荣县度佳镇芭蕉湾村19组农田旁，东经104°16′48.71″，北纬29°23′38.44″。分布面积约12m2，凿刻于高约4.5m，长约3m的崩落正立岩石上，为唐-北宋年间所刻。现存两个大龛，正面东南侧龛已无佛像，西北侧为一坐立观音，高约1.2m，风化较严重，面部已不太清晰，正面东南侧右上角有成片的小龛，大小多为长9cm，高6cm，深4cm，西北面有两尊佛像。背面有一大龛，分布有五排，每排约10个，共计52个佛像，大小约高18cm，宽10cm，有一定风化现象。造像共31龛146尊，造像内容多为一佛二', '', 'ZG1161', '', '/images/humanlandscape/157197158075526.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('169', '1', 'C023', '佛耳坝摩崖造像', '', '', '104.27583333', '29.392527778', '', '位于荣县度佳镇芭蕉湾村16组竹林下农田旁，东经104°16′33.03″，北纬29°23′33.19″。分布面积约63m2，开凿在高约3m，周长约21m的大石头周围，共31龛146尊。造像内容多为一佛二僧二菩萨，也有观音、大势至、地藏等，风化较为严重，其中8号龛方形平顶，为一佛二弟子二菩萨二力士，龛左壁立观音像1尊。此处原有2块此种摩崖造像，因人为损坏，只有1块留存至今，此块摩崖造像风化非常严重，若后期不修复保护，造像会慢慢风化而消失。摩崖造像为研究唐宋时期佛教在西南地区的发展及石刻造像等提供了重要的实物', '', 'ZG1162', '', '/images/humanlandscape/157197160945727.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('170', '1', 'C022', '棚石岩摩崖造像', '', '', '104.26905556', '29.392361111', '', '位于荣县度佳镇芭蕉湾村15组居民房后，东经104°16′08.64″，北纬29°23′32.53″。分布面积45.32m2，造像坐北向南，凿刻于长约6m，高约5m的大岩石上，岩石为沙溪庙组二段（J2s2）黄灰色砂岩，岩石平行层理与交错层理发育，造像共3龛17樽，1号龛高1.3m，宽1.38m，深0.7m，龛内造像为一佛二弟子二菩萨，佛高0.45m，头残，身着袈裟，结跏趺坐于莲台上，两侧侍立二弟子二菩萨。2号龛内造像12尊，均为跏趺坐小佛像，3号龛已毁。摩崖造像为研究唐宋时期佛教在西南地区的发展及石刻造像等', '', 'ZG1163', '', '/images/humanlandscape/157197164945228.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('171', '1', 'C036', '凉高山牌坊群', '', '', '104.80766667', '29.38775', '', '位于自贡市大安区凉高山镇董家村，东经104°48′27.65″，北纬29°23′15.88″。牌坊群共7座牌坊，分别为凉高山的张氏节孝坊和王氏节孝坊，大山铺镇的颜氏节孝坊和回龙桥碑铭坊，凤凰乡的谢氏节孝坊和何氏节孝坊，大安街的阮家大坟四脚坊7座牌坊。2007年6月申报为省级文物保护单位。整个牌坊群以节孝坊为主，大多建于光绪年间，历史最长的是建于乾隆年间的何氏节孝坊。该牌坊群种类齐全，结构科学，雕刻工艺精湛，装饰精美，是反映和研究明清时期地方文化不可多得的实物资料。', '', 'ZG1166', '', '/images/humanlandscape/157197167295629.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('172', '1', 'C050', '桓侯宫', '位于自流井区中华路341号，东经104°45′56.92″，北纬29°21′06.08″。', '', '104.76580556', '29.351861111', '', '桓侯宫俗称张爷庙，始建于清乾隆年间，后被焚毁，现有建筑为清同治四年（1865年）至清光绪元年（1875年）原址复建，是一座屠沽行帮会馆，该建筑为砖木结构，是一座由山门、正殿、戏楼、钟楼、鼓楼、月台组成的四合院，建筑面积560m²，占地面积约1240m²，穿斗抬梁式混合梁架，重演卷棚歇山屋顶（照片3-247）。自贡桓侯宫布局精巧，装饰精美，是研究盐业资本主义发展、会馆演进、帮会发展的重要实物资料，现为全国重点文物保护单位。', '', 'ZG1181', '', '/images/humanlandscape/15743914886537-桓侯宫.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('173', '1', 'C048', '自贡彩灯公园', '', '', '104.76661111', '29.357583333', '', '位于自流井区新街街道龙凤山社区，东经104°45′59.85″，北纬29°21′27.30″。彩灯公园始建于1925年，公园造型的特点一是有水，二是有山，三是紧凑，四周环绕，错落有致，整个公园就像一个硕大的灯组。每年春节前后在此举办自贡灯会，持续时间约1个月，现已成功举办了25届。公园四周建有大量游乐设施，平时也是当地居民休闲散步游乐的场所。公园内还建有湖泊、解放纪念碑、廊桥，出口彩灯文化产品质量安全示范区展示厅（中国彩灯博物馆）等设施。', '', 'ZG2007', '', '/images/humanlandscape/157197173093230.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('174', '1', 'C049', '中国彩灯博物馆', '', '', '104.76630556', '29.354694444', '', '位于自流井区新街街道龙凤山社区自贡彩灯公园内，东经104°45′58.72″，北纬29°21′16.87″。始建于1990年6月，占地面积2200kn2，总建筑面积6375m2（共5层），建筑以彩灯文化为主题，造型以正方几何形体重叠组合，悬挑宫灯形角窗和镶嵌面的圆形、棱形灯窗，构成了一组大型宫灯形建筑。\n中国彩灯博物馆内，以序厅中国灯文化历史、中国灯文化、自贡灯会、中华彩灯四部分构筑的陈列框进行陈列，既有旧石器时期至民国年间的灯史文物和灯史文献，又有国内城市的特色彩灯，还有自贡灯会历次在国内外展出的精品佳', '', 'ZG2008', '', '/images/humanlandscape/157197177769131.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('175', '1', 'C027', '三多古寨', '', '', '104.87205556', '29.450861111', '', '三多古寨位于自贡市大安区三多寨镇徐家村，东经104°52′19.42″，北纬29°27′3.07″。建于清朝咸丰三年（1853年），由李、颜、王姓三大盐业世家领头凑巨资修建，寓在于三多之意，多福、多寿、多男子也。三多寨堡呈环状，有五个寨门。整个古寨位于一个砂岩组成的山丘上，四周多为悬崖峭壁，军事上易守难攻，由于砂岩抗风化能力较强，且此处地势较高，古人就地取材，依托砂岩山体修建了此寨堡，寨墙多数保存较完好，局部已破坏，高约8m，宽约4m。寨堡因盐而生，因盐而兴，为千年盐都自贡市开盐文化的重要组成部分，其建寨', '', 'ZG2010', '', '/images/humanlandscape/157197179538832.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('176', '1', 'C038', '艾叶古镇', '', '', '104.67997222', '29.356277778', '', '位于贡井区艾叶镇回龙村，东经104°40′47.93″，北纬29°21′22.63″。艾叶古镇历史悠久，是贡井矿盐采制的发祥地之一，自西汉时期以来便开始采卤制盐，距今已有两千多年历史。现今的古镇格局形成于清代咸丰时期（1851-1861年），地处自贡盐场最西端,沿滏溪河而建，向南北、东西向延伸，呈“T”字形，历来是水、陆盐运的枢纽和要津，是“自贡盐运第一镇”。现保留平康桥、平康堰、艾叶滩码头和横街、天宫堂、汉墓群等众多遗迹。2014年，入选“中国历史文化名镇”。古建筑及街道（艾叶街段）保存较完好的长约35', '', 'ZG2018', '', '/images/humanlandscape/157197182965733.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('177', '1', 'C040', '艾叶码头', '', '', '104.68105556', '29.354166667', '', '位于贡井区艾叶镇回龙村，东经104°40′51.80″，北纬29°21′11.97″。艾叶码头坐西向东，始建于清咸丰时期，由上、下两个码头构成，占地面积650m2，该码头主要用于盐、煤的运输，是古贡井最大的码头。该码头是贡井地区现存最完整的盐业交通运输工程，具有较高的历史价值，2013年3月被评为全国重点文物保护单位。清代康熙三十五年（公元1696年）为方便运盐船只、木筏直接翻滩，减少转运，在艾叶滩上开凿出宽约4.2m、长约160m的船槽形成行船甬道。光绪三十年（公元1904年）为提高水位，便利船只通行，', '', 'ZG2019', '', '/images/humanlandscape/157197184092334.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('178', '1', 'C039', '雷公坡崖墓群', '', '', '104.68347222', '29.355777778', '', '位于自贡市贡井区艾叶镇东北侧小山丘上，东经104°41′0.50″，北纬29°21′20.75″。崖墓群分布面积2500m2，共有24座墓葬，该崖墓群是自贡市迄今发现的规模最大、数量最多的汉代崖墓，对研究东汉时期自贡地区的经济和社会发展具有重要的历史和科学研究价值。现今仍是当地的墓葬群之一，原因是此地位于小山丘上，风水好，且地层为沙溪庙组二段（J2s2）巨厚层粗砂岩，易保存尸体，且不易被破坏。', '', 'ZG2020', '', '/images/humanlandscape/157197189044735.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('179', '1', 'C042', '天池寺', '', '', '104.70413889', '29.357527778', '', '位于自贡市贡井区艾叶镇东北侧山丘之顶（最高处），东经104°42′14.89″，北纬29°21′27.14″。建于北宋仁宗年间，该寺前身为海潮寺，原系峨嵋山大乘寺的分寺，原寺因火灾焚毁，于明朝洪武年间移址天池山重建天池寺，建筑面积约7193.85m2。主殿为大雄宝殿，建于清同治时期（公园1856-1874年），重檐歇山江南园林式小青瓦建筑风格，全木结构，是僧侣朝暮课诵、集中修行的地方，四周还有周通宝殿、钟楼、西方三圣殿（三宝殿）、六和楼、祖堂、如意楼、药师殿、鼓楼、密宗殿、财宝天王殿、念佛堂、五观堂、客堂', '', 'ZG2021', '', '/images/humanlandscape/157197190328936.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('180', '1', 'C043', '贡井老街', '', '', '104.70986111', '29.352472222', '', '位于贡井区旭水河西岸，东经104°42′35.47″，北纬29°21′8.92″。占地447000m2，是以明清建筑为主的盐业历史文化街区。街区相对旭水河形成了两级台地，并在两级台地之间形成了一条南北向的陡岩，将台地划分得非常明确，加之旭水河自南而北蜿蜒流过，自然景色十分优美。贡井老街、河街一带，是自贡市的发祥地之一。老街建筑多为黑白相间的瓦楼结构，现代化痕迹较弱，韵味十足。', '', 'ZG2022', '', '/images/humanlandscape/157197193124137.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('181', '1', 'C044', '贵州庙', '', '', '104.70958333', '29.352361111', '', '位于自贡市贡井区贡井老街，东经104°42′54.46″，北纬29°21′8.49″。建筑面积1355.6m2，整个建筑为四合院带配院布局，砖木结构，现为市级文物保护单位。贵州庙大门墙高约10m，宽约12m，门上保存有精美石刻，外墙局部破损严重，门窗、外墙木板等皆已损坏，外表整体较陈旧。', '', 'ZG2023', '', '/images/humanlandscape/157197200465338.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('182', '1', 'C045', '贡井南华宫', '', '', '104.70888889', '29.352', '', '位于贡井区新华街南华巷，东经104°42′31.98″，北纬29°21′7.21″。又称岭南会馆，始建于清光绪二十五年（公元1899年），坐北向南，占地面积约4000m2。主殿雄伟壮观，脊饰宏大精美，三星浮雕栩栩如生，四周宫墙绘有山、水、虫、鱼、花草、人物等，古韵悠远。南华宫门墙高约10m，宽约45m，整体较破损，周边墙壁可见修缮缝补痕迹，大门及外墙窗户均损坏，外墙整体气势宏伟，因长期无专人维护较破旧。', '', 'ZG2024', '', '/images/humanlandscape/157197202773539.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('183', '1', 'C046', '陈家祠堂', '', '', '104.71036111', '29.351722222', '', '位于贡井老街，东经104°42′37.27″，北纬29°21′06.25″。始建于清光绪二十七年（1901年），占地面积770m2。建筑为砖木结构，由正堂、厢房楼、戏楼构成四合院布局，飞檐翘角，精巧别致。陈家祠堂也为贡井区非物质文化遗产展示展演基地和爱国者主义教育基地，其中以“龚扇”国家级最为出名，祠堂高约10m，祠堂内戏团文化发展较高，祠堂分上下两层结构，至今保存完好。', '', 'ZG2025', '', '/images/humanlandscape/157197205228240.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('184', '1', 'C047', '张伯卿公馆', '', '', '104.71458333', '29.343583333', '', '位于自贡市贡井区新华街青杠林路，东经104°42′52.49″，北纬29°20′36.88″。始建于民国十二年，即1923年，是按当时重庆德国领事馆的建筑式样，仿罗马建筑设计建造的。公馆的主楼俗称罗马楼，高约15m，面积约为2000m2。罗马楼及其花园内的亭、台、楼、阁、湖、榭、花径，构成了一座既恢宏大气，又紧凑美观的园林式建筑群。2013年被国务院公布为全国重点文物保护单位。张伯卿公馆系自贡盐商张伯卿的私人花园，解放后收归人民政府管理，1955年正式改名为贡井人民公园，对外开放。整个公馆占地面积约为16', '', 'ZG2026', '', '/images/humanlandscape/157197207765841.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('185', '1', 'C035', '花香田园', '', '', '104.66480556', '29.365388889', '', '自贡花香田园景区位于自贡市贡井区艾叶镇六房村9组，东经104°39′53.30″，北纬29°21′55.37″。分为园林花卉生产区、盆景艺术展区、休闲农业旅游服务区、农耕文化和农事体验区、生态水产区、农产品加工区、特色农产品展销区、现代设施农业体验区、生态采摘区、生态养老区、户外运动区。园区内还有湖泊、古盐井等，风景优美。', '', 'ZG2043', '', '/images/humanlandscape/157197210376042.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('186', '1', 'C033', '七一水库', '', '', '104.58486111', '29.353277778', '', '位于贡井区白庙镇斑竹村，东经104°35′5.54″，北纬29°21′11.78″。水库地层为沙溪庙组二段（J2s2），岩性为砂岩。水库集水面呈树枝状，为峡谷型水库，即在峡谷下游截流筑坝蓄水而成，水库长约1.4km，宽约200m，蓄水量大，有三个分支，最长约350m，最宽约130m。水库四周发育植被茂密，多为树木及杂草，水质清澈景色怡人。该水库主要用于防洪、灌溉、水源等，为当地社会做出了巨大贡献。', '', 'ZG2046', '', '/images/humanlandscape/157197212472343.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('187', '1', 'C032', '吴玉章故居', '', '', '104.52344444', '29.376777778', '', '位于荣县双石镇新村，东经104°31′24.44″，北纬29°22′36.38″。故居坐东北朝西南，建于清道光十七年（1837年）至光绪四年（1878年），原占地面积5000m2，1958年吴玉章回乡视察，将其旧宅捐出创办荣县师范学校，1938年，学校迁至荣县旭阳镇，并保留部分旧宅，在此基础上建成吴玉章故居陈列馆，陈列馆为四合院布局，由正房、门房和两侧厢房组成，旧居独成一个院落，包括吴玉章的卧房、书楼等房屋，总占地面积1366m2，整体为悬山式屋顶，穿斗式梁架，砖木结构建筑。陈列馆共有14间房屋，通过生活', '', 'ZG2063', '', '/images/humanlandscape/157197214896244.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('188', '1', 'C026', '七零水库', '', '', '104.52405556', '29.400388889', '', '位于荣县望佳镇虎板村，东经104°31′26.64″，北纬29°24′1.38″。七零水库属于小型水库，为饮用水备用水源水库，水库建于1975年，集雨面积0.98km²，水面面积260亩，坝顶长度95.8m，最大坝高15.2m，坝顶宽度1.4m，坝底宽8.9m，坝顶高程370.8m，溢洪道底板高程369.6m，死库容高程259.4m，总库容114.8万m³，其中兴利库容91.24万m³，调决库容17.56万m³，死库容6万m³。水库周边发育大量植被，水质清澈，是一处峡谷风光典型地。', '', 'ZG2069', '', '/images/humanlandscape/157197217012745.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('189', '1', 'C060', '棋盘山水库', '', '', '104.40027778', '29.306944444', '', '棋盘山水库坐落于棋盘村严家山中，东经104°24′0.98″，北纬29°18′25.01″。是一座峡谷型水库，即在峡谷下游狭窄处筑坝后蓄水而成，所以水库呈树枝状，狭长带状。水库长约1.2km，最宽约130m，呈近南北向延伸。水库坝体呈弧状，长约80m，宽约6m，最高约25m。此水库四周为粗砂岩绝壁，蓄水效果较好，周边发育有砖红色丹霞地貌，如方山、岩墙等，水库水质较好，栖息有少量水鸟，周边也生长许多植被。此处有山有水，有红（岩石颜色）有绿（植被颜色），是一处山水风光，峡谷地貌绝佳地。', '', 'ZG2096', '', '/images/humanlandscape/157197219551046.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('190', '1', 'C059', '洞子湾石室', '', '', '104.38111111', '29.31875', '', '位于荣县乐湾镇板凳坳村，东经104°22′52.65″，北纬29°19′7.50″。石室名为清风洞，为明朝末年所建，是一处为躲避兵灾匪患而开山凿刻的避难场所。石室共有进出和透光的门洞5处，储藏室1处，用于放置物品的石龛1处，通道1处，石室4间。石室面积约70m2，最大石室约为25m2，石室外侧为陡壁，高约10m。', '', 'ZG2104', '', '/images/humanlandscape/157197222178347.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('191', '1', 'C054', '老筒车人工瀑布', '', '', '104.16888889', '29.339361111', '', '位于荣县东佳镇老筒车村，东经104°10′7.96″，北纬29°20′27.70″。为人工修建堤坝后形成，此堤坝主要用于筑坝蓄水用于灌溉、防洪。瀑布由3个圆弧状坝坎组成，总长约80m，单个长约25m，落差约4m，雨季水量较大，流量约为5m³/s，水声较宏大，水质较清澈，周边生长有大量植被，多为树木、灌木等，周边还有屋舍、农田，立于桥上观赏此瀑布，风景一绝，为一处较好的人工瀑布。', '', 'ZG2114', '', '/images/humanlandscape/157197224368648.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('192', '1', 'C055', '大观桥牌坊', '', '', '104.16933333', '29.339277778', '', '位于荣县东佳镇老筒车越溪河东岸，东经104°10′9.61″，北纬29°20′27.35″。建于清代同治十二年（1873年），为石质仿木结构，材质为紫红色砂岩，牌坊整体高约8m，宽约5m，其中主门高208cm、宽138cm，副门高145cm、宽68cm。牌坊上刻有对联：题名还喜石玲珑、稳步不虞波宕漾和万事待将来、铭功思己佳，还刻有花卉虫鱼、戏剧人物、宝剑书卷、村落住宅等浮雕。石刻浮雕工艺精美，它对研究清代民俗及建筑特色均有意义。', '', 'ZG2117', '', '/images/humanlandscape/157197227796249.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('193', '1', 'C053', '盐井坝摩崖造像', '', '', '104.15938889', '29.345916667', '', '位于荣县东佳镇冯家塘村盐井坝越溪河东岸沙溪庙组二段（J2s2）砂岩岩壁上，东经104°9′33.84″，北纬29°20′45.26″。盐井坝摩崖造像坐东南向西北，造像高约90cm，宽约50cm，分布面积约3.3m2。龛内主像为净瓶观音像，有头光及身光，左右两侧有似飞天状侍从相对而立。右侧侍从头上有卷幔，双手合于胸前，足踏云彩，左侧侍从残缺。造像左侧立有功德碑，右侧有造像记。盐井坝摩崖造像对研究清代荣县地区佛教发展及石刻造像艺术具有一定的价值。', '', 'ZG2118', '', '/images/humanlandscape/157197288664550.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('194', '1', 'C056', '白鹿洞摩崖造像', '', '', '104.25011111', '29.294388889', '', '', '', 'ZG2126', '', '', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('195', '1', 'C011', '白云寺', '', '', '104.25669444', '29.438611111', '', '白云寺坐落于度佳镇高湾村3组瓜瓢山山顶上，东经104°15′24.07″，北纬29°26′18.97″。有登高望远之优势。始建于唐朝开元年间（距今1200年左右），清末民初进行过维修。寺内有大雄宝殿、弥陀殿、七佛殿、观音殿、药师殿、天王殿、念佛堂、五观堂、罗汉堂、会议室、居士林、箱房等建筑，占地约50亩，建筑面积5000m²，大雄宝殿占地700m²，弥陀殿及两座配殿占地500m²，七佛殿占地200m²。寺内共有佛像80余尊均为塑像，都穿金绘彩，栩栩如生。其中弥陀殿殿高30m，弥陀佛像高18m，气势宏伟，庄', '', 'ZG2134', '', '/images/humanlandscape/157197296146351.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('196', '1', 'C008', '跳石河水库', '', '', '104.11952778', '29.475083333', '', '跳石河水库坐落于留佳镇大屋坡村，东经104°7′10.28″，北纬29°28′30.33″。离镇约3km，水库建于1972年，属一小型水库，拱坝，坝高19.4m，坝长86m，坝宽3.4m，聚雨面积17.5km²，总库容406万m³，有效库容200万m³，设计灌溉9142亩，有效灌面8011亩，渠道长度19.258km。此水库属于峡谷型水库，即在峡谷下游狭窄处截流建坝而成，水库汇水面呈狭长带状，北东向，长约5km。水库两岸发育有大量植被，生长茂密，水库中还有野鸭等野生动物栖居。', '', 'ZG2140', '', '/images/humanlandscape/157197299136252.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('197', '1', 'C015', '荣县镇南塔', '', '', '104.42377778', '29.453361111', '', '镇南塔坐落于荣县旭阳镇波罗村城南500m的龙头山巅，东经104°25′25.64″，北纬29°27′12.06″。此山为一个沙溪庙组二段（J2s2）黄灰色块状砂岩体，地基非常坚硬。镇南塔，建于宋代，保存基本完好。塔为砖石仿宋结构，外观近似密檐塔，实际为楼阁式塔。塔高约31.5m，共有10层，上面9层每层高约2.5m，最下面一层高约5m，塔基高约3m，塔基为黄灰色砂岩条石砌成，呈正方形，边长约8m，塔呈方形，边长约5m。塔身为灰白色，也称为白塔。', '', 'ZG2146', '', '/images/humanlandscape/157197302068653.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('198', '1', 'C014', '荣县二佛', '', '', '104.41980556', '29.453333333', '', '位于荣县旭阳镇二佛村，东经104°25′11.29″，北纬29°27′12.04″。二佛寺始建于唐宋时期，有上千尊佛像，建造年代久远，寺内建筑主要为砖木结构。其寺内的荣县二佛坐西南向东北，凿刻于唐代，是在沙溪庙组二段（J2s2）黄灰色砂岩形成的绝壁上雕刻而成。龛呈平顶方形，高8.5m，宽7.3m。龛内主像为弥勒坐佛，高5.8m，宽2.6m，其头饰螺髻，左手持摩尼珠，赤足踏莲，端坐于金刚座上。佛像有背光，浅浮雕有十二尊，结跏跌坐化佛像。荣县二佛对研究唐宋时期佛教在西南地区发展及石刻造像艺术水平，具有较高的历', '', 'ZG2147', '', '/images/humanlandscape/157197304758254.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('199', '1', 'C013', '双溪水库', '', '', '104.41033333', '29.474611111', '', '位于荣县余家岩村沱江水系釜溪河一级支流旭水河上游，东经104°24′37.18″，北纬29°28′28.63″。是一座集防洪、城市供水、灌溉等多功能综合利用的中型水利工程，是全国防洪重点中型水库。双溪水库总库容5800万立方米，正常库容5500万立方米，兴利库容4380万m3，防洪库容316万m3，死库容1120万立方米，水库集雨面积80.25km2，大坝坝型为粘土斜墙石渣坝，最大坝高50m，坝轴线长400m，水库设计灌面21.6万亩。此水库也为双溪湖自然风景区，以亚热带低山湖泊为主体，其大坝雄伟壮观，湖', '', 'ZG2154', '', '/images/humanlandscape/157197308261855.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('200', '1', 'C001', '五根树村茶园', '', '', '104.20366667', '29.59775', '', '位于荣县复兴乡五根树村，东经104°12′13.20″，北纬29°35′51.85″。茶园土质为沙溪庙组一段（J2s1）黄灰色砂岩，土质较浅，适合种植茶树，此茶园分布面积较大，面积大于3万m²，茶树高约40cm，生长非常好，为绿茶，茶树呈带状、弧状、层状分布，层层叠叠，非常规整，其观赏价值巨佳。此茶园是当地支柱产业，主要经济来源。', '', 'ZG2160', '', '/images/humanlandscape/157197311361156.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('201', '1', 'C002', '乐山竹园烈士纪念园', '', '', '104.147', '29.540305556', '', '位于乐山市井研县竹园镇大坪村竹园铺，东经104°08′49.21″，北纬29°32′25.11″。1947年12月上旬，人民解放军攻克重庆，数十万大军兵锋直逼川西平原。在井研乡竹园铺，我二野三兵团二十八师经过18小时的激烈战斗，全歼号称“天下第一团”的国民党二北军三十一师九十一团。竹园铺战斗创解放战争中最后一次大会战一一成都战役大捷首战，在大西南的解放战争中起到了关键性作用。这场战争是成都战役中打得最艰苦、最惨烈的一次，90名指战员壮烈牺牲，很多年仅十八九岁。此纪念园用于纪念此战役中牺牲的先烈烈士，也是四', '', 'ZG2165', '', '/images/humanlandscape/157197314234857.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('202', '1', 'C003', '来牟千佛崖摩崖造像', '', '', '104.18861111', '29.520416667', '', '位于荣县来牟镇李东桥村，东经104°11′18.97″，北纬29°31′13.55″。来牟千佛崖摩崖造像是一处唐宋时期的石雕佛像群，共6龛，造像357尊。其中1号龛为龛中龛，外龛呈矩形平顶，共7层，共有佛像314尊，均为法珈跌坐，整座龛座为禽类动物，兽头13只，内龛位于正中，造像19尊，主像为3尊佛像，有背光，均法珈跌坐于莲台上。4号龛为燃灯古佛，千佛崖摩崖造像造像精美别致，保存较为完整，为研究唐宋时期佛教在西南地区的发展及石刻造像等提供了重要的实物资料。', '', 'ZG2166', '', '/images/humanlandscape/157197317260358.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('203', '1', 'C016', '荣县大佛', '', '', '104.42877778', '29.455694444', '', '位于荣县旭阳镇大佛路，东经104°25′43.64″，北纬29°27′20.51″。荣县大佛建造于唐代，凿刻于沙溪庙组二段（J2s2）巨厚砂岩中，高36.67m，头长8.74m，肩宽12.67m，体宽14.6m，膝高12m，脚宽3.5m，是世界第二大石刻佛像和世界第一大石刻释迦牟尼佛像，大佛依山凿成，头与山巅齐平，气势宏伟，造型庄严圆满，形神具备。大佛所在庙宇名开化寺，后称大佛禅寺，整个庙宇由山门殿、大雄宝殿、地藏殿、观音殿、达摩殿、罗汉堂、藏经楼等建筑组成，禅林古刹，错落有致，寺内还有大肚弥勒、达摩渡江', '', 'ZG2169', '', '/images/humanlandscape/157197320055559.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('204', '1', 'C025', '虎榜山摩崖造像', '', '', '104.53313889', '29.403361111', '', '位于荣县双石镇虎板村虎榜山，东经104°31′59.30″，北纬29°24′12.07″。造像坐东南朝西北，凿刻于清代，是在沙溪庙组二段（J2s2）巨厚砂岩中雕刻而成，分布面积22.27m²，摩崖造像窟龛为四柱三开间，重檐歇山顶，牌楼式建筑形质，高5.8m，宽3.84m，龛内刻观音像1尊，正上方二重檐上刻有“慈航宫”三字，其东北方向25m外有一天然洞穴，常年有水溢出而不枯，造像由此而建。该摩崖造像对研究当地清代时期祈雨等民俗民情具有一定价值。', '', 'ZG2170', '', '/images/humanlandscape/157197323301360.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('205', '1', 'C051', '西秦会馆', '', '', '104.76827778', '29.351916667', '', '位于自贡市自流井区解放路，东经104°46′5.83″，北纬29°23′40.49″。于1959年建馆，是中国最早的专业博物馆之一，它收藏、研究、展示自贡两千多年来精湛的井盐顿钻凿井、采卤、制造工艺和天然气开采等方面的知识，馆址为全国重点文物保护单位西秦会馆。西秦会馆为清代陕西盐商修建的同乡会馆，始建于清乾隆元年（公元1756年），占地6000m²，其建筑多为木质结构，雄伟壮观，典雅。', '', 'ZG2171', '', '/images/humanlandscape/157197325623861.jpg', null, null, null);
+INSERT INTO `humanlandscape` VALUES ('271', '1', 'C029', '跃进朝阳渠', '水渠位于自贡市大安区新民镇白果村乡村水泥公路旁，东经104°45′22.98″，北纬29°25′38.79″。', '', '104.756389', '29.427444', '', '此水渠修建于1971年，建材为黄灰色砂岩（为沙溪庙组二段（J2s2）），沿70°方向延伸，长约90m，最高处高约8m。水渠下有21个桥洞，桥洞最大跨度长约6m，高约6m，最小跨度长约1.7m，高约1.3m。水渠深约70cm，宽约65cm。水渠现已废弃约7年，当时主要用于农业灌溉，从釜溪河引水。水渠两端现已损毁，但水渠主体保存较完好（照片3-254）。此水渠当时为此地人民做出了巨大贡献，创造了巨大社会经济价值。', '', 'ZG2004', '', '/images/humanlandscape/15743916536008-跃进朝阳渠.jpg', null, null, null);
 
 -- ----------------------------
 -- Table structure for humenexhibit
@@ -690,12 +646,35 @@ CREATE TABLE `legal` (
   `note` text COMMENT '备注',
   `url` text COMMENT '存储地址',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园管理法律法规';
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园管理法律法规';
 
 -- ----------------------------
 -- Records of legal
 -- ----------------------------
-INSERT INTO `legal` VALUES ('1', '1', '1', '1', '1', '1', '1', '1', '1', '1111', '/files/legal/15689712045831.jpg,/files/legal/15689712080282.png');
+INSERT INTO `legal` VALUES ('1', '1', '1', '中华人民共和国宪法', '1982.12.04', '中华人民共和国第五届全国人民代表大会', '1', '中华人民共和国宪法', '（1982年12月4日第五届全国人民代表大会第五次会议通过 1982年12月4日全国人民代表大会公告公布施行', '', '/files/legal/15742426823660-中华人民共和国宪法.docx');
+INSERT INTO `legal` VALUES ('2', '1', '2', '中华人民共和国森林法', '1984.06.20', '中华人民共和国第六届全国代表大会常务委员会', '', '中华人民共和国森林法', '（１９８４年９月２０日第六届全国人民代表大会常务委员会第七次会议通过　根据１９９８年４月２９日第九届全国人民代表大会常务委员会第二次会议《关于修改〈中华人民共和国森林法〉的决定》修正 根据2009年8月27日第十一届全国人民代表大会常务委员会第十次会议《关于修改部分法律的决定》修改）', '', '/files/legal/15742527115880-中华人民共和国森林法.docx');
+INSERT INTO `legal` VALUES ('3', '1', '3', '中华人民共和国风景名胜区管理暂行条例', '1985.06.07', '中华人民共和国国务院', '', '中华人民共和国风景名胜区条例', '', '', '/files/legal/15742528801851-中华人民共和国风景名胜区管理暂行条例.docx');
+INSERT INTO `legal` VALUES ('4', '1', '4', '中华人民共和国矿产资源法', '1986.03.19', '中华人民共和国第六届全国代表大会常务委员会', '', '中华人民共和国矿产资源法', '中华人民共和国矿产资源法', '', '/files/legal/15742531532482-中华人民共和国矿产资源法.docx');
+INSERT INTO `legal` VALUES ('5', '1', '5', '中华人民共和国土地管理法', '1986.06.25', '中华人民共和国第九届全国代表大会常务委员会', '', '中华人民共和国土地管理法', '（1986年6月25日第六届全国人民代表大会常务委员会第十六次会议通过　根据1988年12月29日第七届全国人民代表大会常务委员会第五次会议《关于修改〈中华人民共和国土地管理法〉的决定》第一次修正　1998年8月29日第九届全国人民代表大会常务委员会第四次会议修订　根据2004年8月28日第十届全国人民代表大会常务委员会第十一次会议《关于修改〈中华人民共和国', '', '/files/legal/15742532450203-中华人民共和国土地管理法.docx');
+INSERT INTO `legal` VALUES ('6', '1', '6', '中华人民共和国野生动物保护法', '1988.11.08', '中华人民共和国第七届全国代表大会常务委员会', '', '中华人民共和国野生动物保护法', '中华人民共和国野生动物保护法', '', '/files/legal/15742533822814-中华人民共和国野生动物保护法.docx');
+INSERT INTO `legal` VALUES ('7', '1', '7', '中华人民共和国环境保护法', '1989.12.26', '中华人民共和国第七届全国代表大会常务委员会', '', '中华人民共和国环境保护法', '中华人民共和国环境保护法', '', '/files/legal/15742538519785-中华人民共和国环境保护法.docx');
+INSERT INTO `legal` VALUES ('8', '1', '8', '中华人民共和国自然保护区条例', '1994.09.20', '中国国务院第 24 次会议', '', '中华人民共和国自然保护区条例', '中华人民共和国自然保护区条例', '', '/files/legal/15742539661376-中华人民共和国自然保护区条例.docx');
+INSERT INTO `legal` VALUES ('9', '1', '9', '地质遗迹保护管理规定', '1995', '中华人民共和国原地质矿产部 21 号令', '', '地质遗迹保护管理规定', '地质遗迹保护管理规定', '', '/files/legal/15742540423137-地质遗迹保护管理规定.docx');
+INSERT INTO `legal` VALUES ('10', '1', '10', '中华人民共和国土地管理法实施条例', '1998.12.24', '中华人民共和国国务院第 12 次常务会议', '', '中华人民共和国土地管理法实施条例', '中华人民共和国土地管理法实施条例', '', '/files/legal/15742541137728-中华人民共和国土地管理法实施条例.docx');
+INSERT INTO `legal` VALUES ('11', '1', '11', '四川省自然保护区管理条例', '1999.10.14', '四川省第九届人民代表大会常务委员会第十一次会议', '', '四川省自然保护区管理条例', '四川省自然保护区管理条例', '', '/files/legal/15742541772119-四川省自然保护区管理条例.docx');
+INSERT INTO `legal` VALUES ('12', '1', '12', '中华人民共和国森林法实施条例', '2000.01.29', '中华人民共和国国务院', '', '中华人民共和国森林法实施条例', '中华人民共和国森林法实施条例', '', '/files/legal/157425424619910-中华人民共和国森林法实施条例.docx');
+INSERT INTO `legal` VALUES ('13', '1', '13', '地质资料管理条例', '2002.03.19', '中华人民共和国国务院', '', '地质资料管理条例', '地质资料管理条例', '', '/files/legal/157425443225111-地质资料管理条例.docx');
+INSERT INTO `legal` VALUES ('14', '1', '14', '中华人民共和国科学技术普及法', '2002.06.29', '第九届全国人民代表大会常务委员会第二十八次会议', '', '中华人民共和国科学技术普及法', '中华人民共和国科学技术普及法', '', '/files/legal/157425448529412-中华人民共和国科学技术普及法.docx');
+INSERT INTO `legal` VALUES ('15', '1', '15', '中华人民共和国文物保护法', '2002.10.28', '第九届全国人民代表大会常务委员会第三十次会议', '', '中华人民共和国文物保护法', '中华人民共和国文物保护法', '', '/files/legal/157425458361513-中华人民共和国文物保护法.docx');
+INSERT INTO `legal` VALUES ('16', '1', '16', '中华人民共和国环境影响评价法', '2002.10.28', '第九届全国人民代表大会常务委员会第三十次会议', '', '中华人民共和国环境影响评价法', '中华人民共和国环境影响评价法', '', '/files/legal/157425465495514-中华人民共和国环境影响评价法.docx');
+INSERT INTO `legal` VALUES ('17', '1', '17', '中华人民共和国文物保护法实施条例', '2003.05.18', '中华人民共和国国务院', '', '中华人民共和国文物保护法实施条例', '中华人民共和国文物保护法实施条例', '', '/files/legal/15743245096650-中华人民共和国文物保护法实施条例.docx');
+INSERT INTO `legal` VALUES ('18', '1', '18', '中华人民共和国风景名胜区条例', '2006.09.06', '中华人民共和国国务院', '', '中华人民共和国风景名胜区条例', '中华人民共和国风景名胜区条例', '', '/files/legal/15743246334761-中华人民共和国风景名胜区条例.docx');
+INSERT INTO `legal` VALUES ('19', '1', '19', '古生物化石保护条例', '2010.9.05', '中华人民共和国国务院', '', '古生物化石保护条例', '古生物化石保护条例', '', '/files/legal/15743247557932-古生物化石保护条例.docx');
+INSERT INTO `legal` VALUES ('20', '1', '20', '全国主体功能区规划', '2010.12.21', '中华人民共和国国务院', '', '全国主体功能区规划', '全国主体功能区规划', '', '/files/legal/15743248778033-全国主体功能区规划.docx');
+INSERT INTO `legal` VALUES ('21', '1', '21', '四川省世界遗产保护条例', '2002.01.18', '四川省第九届人民代表大会常务委员会第二十七次会议', '', '四川省世界遗产保护条例', '四川省世界遗产保护条例', '', '/files/legal/15743249259884-四川省世界遗产保护条例.docx');
+INSERT INTO `legal` VALUES ('22', '1', '22', '古生物化石保护条例实施办法', '2012.12.11', '2012 年国土资源部第 4 次部务会议', '', '古生物化石保护条例实施办法', '古生物化石保护条例实施办法', '', '/files/legal/15743249783775-古生物化石保护条例实施办法.docx');
+INSERT INTO `legal` VALUES ('23', '1', '23', '中华人民共和国旅游法', '2013.04.25', '中华人民共和国第十二届全国人民代表大会常务员会第二次会议委', '', '中华人民共和国旅游法', '中华人民共和国旅游法', '', '/files/legal/15743250382556-中华人民共和国旅游法.docx');
+INSERT INTO `legal` VALUES ('24', '1', '24', '博物馆条例', '2015.01.14', '中华人民共和国国务院', '', '博物馆条例', '博物馆条例', '', '/files/legal/15743250893557-博物馆条例.docx');
 
 -- ----------------------------
 -- Table structure for managementagency
@@ -720,9 +699,9 @@ CREATE TABLE `managementagency` (
 -- Records of managementagency
 -- ----------------------------
 INSERT INTO `managementagency` VALUES ('1', '1', '管理处', '无', '陶宏', '王文伟', '管理处主任', '4', '陶宏、王文伟、孙莉、王玲玲', '保护地质遗迹资源，开发地学科普教育，推动旅游经济发展；负责地质公园建设管理，地质遗迹保护、利用，组织开展地质公园研究、考察、科学普及、宣传教育等活动', '无');
-INSERT INTO `managementagency` VALUES ('2', '1', '盐业历史博物馆', '无', '程龙刚', '无', '副馆长', '16', '', '22', '无');
-INSERT INTO `managementagency` VALUES ('3', '1', '恐龙馆', '无', '李健', '无', '馆长', '30', null, '无', '无');
-INSERT INTO `managementagency` VALUES ('4', '1', '燊海井', '无', '无', '无', '无', '0', null, '', '无');
+INSERT INTO `managementagency` VALUES ('2', '1', '盐业历史博物馆', '无', '程龙刚', '无', '副馆长', '16', '程龙刚 黄健 梁鹰 邓军 李敏 周劲 侯虹 李貌 张新国 林鹰 王放兰 晏冰聪 邹丽莎 姚晶晶 王莹 廖雪薇', '负责盐业历史博物馆地质遗迹、文物保护、开发、管理和建设工作', '无');
+INSERT INTO `managementagency` VALUES ('3', '1', '自贡恐龙博物馆', '无', '李健', '无', '馆长', '30', '叶勇 江山 徐娟 李飞 高玉辉 彭光照 郝宝鞘 李毅 曾上游 吴林 舒纯康 朱莎 余勇 罗舒 余刚 杨华 凌曼 何旭 张永聪 王晓娟 胡晓冬 陈蓓艳 王晓娟 陈丹妮 余蝶 王梦远 万小惠 毛静 王梦雨', '负责恐龙馆地质遗迹、文物保护、开发、管理和建设工作', '无');
+INSERT INTO `managementagency` VALUES ('4', '1', '燊海井', '无', '无', '无', '无', '11', '李玲琳 王玉 李亚兰 王文倩 杨霞 张雪 罗芹 杨夏敏 柯林利 李玲 程小玲', '负责燊海井地质遗迹保护、开发、管理和建设工作', '无');
 
 -- ----------------------------
 -- Table structure for manageperson
@@ -742,7 +721,7 @@ CREATE TABLE `manageperson` (
   `job` varchar(256) DEFAULT NULL COMMENT '工作内容',
   `img` text COMMENT '照片',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='管理人员';
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='管理人员';
 
 -- ----------------------------
 -- Records of manageperson
@@ -750,64 +729,63 @@ CREATE TABLE `manageperson` (
 INSERT INTO `manageperson` VALUES ('1', '1', '陶宏', '男', '汉族', '1963.11', '四川省教育学院', '化学教育', '无', '副研究员', '地质公园管理', '/images/geolandscape/15689650367790.jpg');
 INSERT INTO `manageperson` VALUES ('2', '1', '王文伟', '男', '汉族', '1983.04', '成都理工大学', '第四纪地质学', '硕士研究生', '文博馆员', '地质公园管理', '/images/geolandscape/15689651894001.jpg');
 INSERT INTO `manageperson` VALUES ('3', '1', '孙莉', '女', '汉族', '1983.09', '中国地质大学（北京）', '自然地理学', '硕士研究生', '业务科长、文博馆员', '公园管理、遗迹保护及评价、环境教育', '/images/geolandscape/15689672480172.jpg');
-INSERT INTO `manageperson` VALUES ('5', '0', '姓名', '性别', '民族', '出生年月', '毕业院校', '专业', '学历学位', '职务职称', '工作内容', '');
-INSERT INTO `manageperson` VALUES ('6', '1', '王玲玲', '女', '汉', '1987.01', '贵州大学', '生态学', '硕士研究生', '文博馆员', '生态保育', '');
-INSERT INTO `manageperson` VALUES ('7', '2', '程龙刚', '男', '汉', '1973.9', '四川大学', '行政管理', '本科', '副馆长、文博副研究馆员', '盐业史研究、盐文化研究、博物馆学研究', '');
-INSERT INTO `manageperson` VALUES ('8', '2', '黄健', '男', '汉', '1963.9', '四川电大、自贡\n师专\n', '汉语语言文学、英语', '本科', '文博副研究员', '盐业历史及文物、博物馆学研究', '');
-INSERT INTO `manageperson` VALUES ('9', '2', '梁鹰', '男', '汉', '1958.07', '自贡教育学院', '英语', '大专', '文博馆员', '英语', '');
-INSERT INTO `manageperson` VALUES ('10', '2', '邓军', '男', '汉', '1984.12', '西南大学', '民族学', '研究生，法学硕士', '文博馆员', '盐业历史文化研究', '');
-INSERT INTO `manageperson` VALUES ('11', '2', '李敏', '女', '汉', '1982.3', '四川师范大学', '专门史', '硕士研究生', '文博馆员', '文物保护', '');
-INSERT INTO `manageperson` VALUES ('12', '2', '周劲', '男', '汉', '1980.1', '四川师范大学', '专门史', '硕士研究生', '文博馆员', '展陈设计', '');
-INSERT INTO `manageperson` VALUES ('13', '2', '侯虹', '男', '汉', '1969.11', '中央电大', '行政管理', '本科', '文博馆员', '文物保护研究、盐业史研究', '');
-INSERT INTO `manageperson` VALUES ('14', '2', '李貌', '女', '汉', '1977.4', '乐山师范学院', '音乐学', '本科', '文博馆员', '科普教育', '');
-INSERT INTO `manageperson` VALUES ('15', '2', '张新国', '女', '汉', '1961.5', '中央党校', '行政管理', '本科', '群文馆员', '文物修复', '');
-INSERT INTO `manageperson` VALUES ('16', '2', '林鹰', '女', '汉', '1967.1', '四川省委党校', '行政管理', '本科', '群文馆员', '文物修复', '');
-INSERT INTO `manageperson` VALUES ('17', '2', '王放兰', '女', '汉', '1985.8', '四川师范大学', '翻译', '硕士', '导游', '中文、英文讲解', '');
-INSERT INTO `manageperson` VALUES ('18', '2', '晏冰聪', '女', '汉', '1989.8', '河北大学', '旅游管理', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('19', '2', '邹丽莎', '女', '汉', '1986.04', '成都理工大学广播影视学院', '播音主持', '本科', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('20', '2', '姚晶晶', '女', '汉', '1986.3', '眉山职业技术学院', '旅游管理', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('21', '2', '王莹', '女', '汉', '1988.11', '四川文化传媒职业学院', '旅游管理', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('22', '2', '廖雪薇', '女', '汉', '1988.12', '四川文化传媒职业学院', '旅游管理', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('23', '3', '叶勇', '男', '汉', '1967.05', '南京大学', '古生物地层学', '本科/学士', '研究部主任、文博研究馆员', '古生物地层学及\n博物馆学研究\n', '');
-INSERT INTO `manageperson` VALUES ('24', '3', '江山', '男', '汉', '1976.07', '成都理工大学', '地质学', '本科/学士', '研究部副主任、文博副研究馆员', '古生物地层学及博物馆学研究', '');
-INSERT INTO `manageperson` VALUES ('25', '3', '徐娟', '女', '汉', '1970.1', '中共中央党校函授学院', '法律', '本科', '科教部主任、群文馆员\n', '科普教育', '');
-INSERT INTO `manageperson` VALUES ('26', '3', '李飞', '男', '汉', '1982.02', '中国地质大学', '地质学/地质\n工程\n', '本科/硕士', '科教部副主任、文博馆员', '古生物研究及科普教育\n', '');
-INSERT INTO `manageperson` VALUES ('27', '3', '高玉辉', '男', '汉', '1961.09', '四川大学', '动物学', '学士', '副研究员', '古生物研究', '');
-INSERT INTO `manageperson` VALUES ('28', '3', '彭光照', '男', '汉', '1963.09', '中科院古脊椎动物与古人类研究所', '古生物学与\n地层学', '硕士', '研究馆员', '古生物学与地层学研究、博物馆学研究', '');
-INSERT INTO `manageperson` VALUES ('29', '3', '郝宝鞘', '男', '汉', '1984.02', '云南大学', '古生物学与地层学', '硕士研究生', '文博馆员', '古生物与地层学研究', '');
-INSERT INTO `manageperson` VALUES ('30', '3', '李毅', '女', '汉', '1972.08', '中共四川省委党校', '经济管理', '本科', '信息中心副主任、助理会计师', '英语、环境教育、网络科普', '');
-INSERT INTO `manageperson` VALUES ('31', '3', '曾上游', '', '', '1963.08', '中共四川省委党校', '行政管理', '大专', '保卫科副科长、群文馆员\n', '科普宣传', '');
-INSERT INTO `manageperson` VALUES ('32', '3', '吴林', '女', '汉', '1965.05', '西南师范大学', '财会审计', '大专', '群文馆员', '藏品管理', '');
-INSERT INTO `manageperson` VALUES ('33', '3', '舒纯康', '男', '汉', '1962.11', '中共四川省委党校函授学院\n', '法律', '本科', '文博馆员', '化石野外调查', '');
-INSERT INTO `manageperson` VALUES ('34', '3', '朱莎', '女', '汉', '1978.1', '四川理工学院', '会计学', '本科', '文博馆员', '科普教育', '');
-INSERT INTO `manageperson` VALUES ('35', '3', '余勇', '男', '汉', '1970.03', '自贡师专', '美术', '大专', '陈列部主任、二级美术师\n', '展示设计、恐龙绘画', '');
-INSERT INTO `manageperson` VALUES ('36', '3', '罗舒', '女', '汉', '1991.06', '重庆大学', '动画', '本科/学士', '文博馆员', '美术设计、恐龙绘画', '');
-INSERT INTO `manageperson` VALUES ('37', '3', '余刚', '男', '汉', '1960.1', '四川师范大学', '汉语言文学', '大专', '群文馆员', '摄影摄像', '');
-INSERT INTO `manageperson` VALUES ('38', '3', '杨华', '男', '汉', '1985.05', '四川理工大学', '电子信息科学与技术', '本科/学士', '助理工程师', '电子设备维护与信息化建设', '');
-INSERT INTO `manageperson` VALUES ('39', '3', '凌曼', '女', '汉', '1970.01', '四川理工学院', '美术', '大专', '二级美术师', '展示设计、恐龙绘画', '');
-INSERT INTO `manageperson` VALUES ('40', '3', '何旭', '男', '汉', '1973.04', '四川大学网络教育学院\n', '信息与技术', '本科', '工程师', '电子设备维护与信息化建设', '');
-INSERT INTO `manageperson` VALUES ('41', '3', '张永聪', '女', '汉', '1982.08', '泸州医学院外国语学院\n', '医药英语', '本科/学士', '助理翻译', '英语翻译', '');
-INSERT INTO `manageperson` VALUES ('42', '3', '王晓娟', '女', '汉', '1977.11', '四川省委党校', '经济管理', '本科', '文博助理馆员', '讲解', '');
-INSERT INTO `manageperson` VALUES ('43', '3', '胡晓冬', '男', '汉', '1976.01', '四川大学', '信息与技术经济管理', '本科', '群文助理馆员', '藏品管理', '');
-INSERT INTO `manageperson` VALUES ('44', '3', '陈蓓艳', '女', '汉', '1976.07', '四川理工学院', '工商管理', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('45', '3', '王晓娟', '女', '汉', '1977.11', '四川省委党校函授学院', '经济管理', '本科', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('46', '3', '陈丹妮', '女', '汉', '1990.02', '四川理工学院', '法学', '本科', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('47', '3', '余蝶', '女', '汉', '1985.09', '四川理工学院', '汉语言文学', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('48', '3', '王梦远', '女', '汉', '1990.08', '江西服装学院', '服装设计', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('49', '3', '万小惠', '女', '汉', '1989.11', '四川师范大学文理学院', '英语', '本科/学士', '导游', '中文、英文讲解', '');
-INSERT INTO `manageperson` VALUES ('50', '3', '毛静', '女', '汉', '1991.03', '自贡电视广播大学', '行政管理', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('51', '3', '王梦雨', '女', '汉', '1990.1', '西华师范大学', '播音与主持', '本科/学士', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('52', '4', '李玲琳', '女', '汉', '1985.5.27', '四川外语学院', '计算机及英语\n', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('53', '4', '王玉', '女', '汉', '1983.4.3', '中共四川省委党校函授学院', '经济管理', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('54', '4', '李亚兰', '女', '汉', '1986.10.15', '四川外语学院重庆南方翻译学院', '英语（旅游酒店管理）', '大专', '导游', '中文、英文讲解', '');
-INSERT INTO `manageperson` VALUES ('55', '4', '王文倩', '女', '汉', '1991.2.25', '四川音乐学院', '现代流行舞系', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('56', '4', '杨霞', '女', '汉', '1987.8.17', '四川理工学院', '工商管理', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('57', '4', '张雪', '女', '汉', '1992.12.13', '肇庆市工程技术学院', '旅游与酒店管理', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('58', '4', '罗芹', '女', '汉', '1981.8.20', '中央广播电视大学', '工商管理', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('59', '4', '杨夏敏', '女', '汉', '1987.10.17', '中央广播电视大学', '法律', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('60', '4', '柯林利', '女', '汉', '1978.5.12', '党校', '法律', '大专', '导游', '中文讲解', '');
-INSERT INTO `manageperson` VALUES ('61', '4', '李玲', '女', '汉', '1989.8.24', '四川外语学院成都学院', '英语', '本科', '导游', '中文、英语、西班牙语讲解', '');
-INSERT INTO `manageperson` VALUES ('62', '4', '程小玲', '女', '汉', '1986.6.3', '四川理工学院', '商务英语', '大专', '导游', '中文、英语讲解', '');
+INSERT INTO `manageperson` VALUES ('6', '1', '王玲玲', '女', '汉', '1987.01', '贵州大学', '生态学', '硕士研究生', '文博馆员', '生态保育', '/images/geolandscape/15717984056340.jpg');
+INSERT INTO `manageperson` VALUES ('7', '2', '程龙刚', '男', '汉', '1973.9', '四川大学', '行政管理', '本科', '副馆长、文博副研究馆员', '盐业史研究、盐文化研究、博物馆学研究', '/images/geolandscape/15717984311491.jpg');
+INSERT INTO `manageperson` VALUES ('8', '2', '黄健', '男', '汉', '1963.9', '四川电大、自贡师专', '汉语语言文学、英语', '本科', '文博副研究员', '盐业历史及文物、博物馆学研究', '/images/geolandscape/15717984934892.jpg');
+INSERT INTO `manageperson` VALUES ('9', '2', '梁鹰', '男', '汉', '1958.07', '自贡教育学院', '英语', '大专', '文博馆员', '英语', '/images/geolandscape/15717985003403.jpg');
+INSERT INTO `manageperson` VALUES ('10', '2', '邓军', '男', '汉', '1984.12', '西南大学', '民族学', '研究生，法学硕士', '文博馆员', '盐业历史文化研究', '/images/geolandscape/15718950689630.jpg');
+INSERT INTO `manageperson` VALUES ('11', '2', '李敏', '女', '汉', '1982.3', '四川师范大学', '专门史', '硕士研究生', '文博馆员', '文物保护', '/images/geolandscape/15718950773781.jpg');
+INSERT INTO `manageperson` VALUES ('12', '2', '周劲', '男', '汉', '1980.1', '四川师范大学', '专门史', '硕士研究生', '文博馆员', '展陈设计', '/images/geolandscape/15718950841022.jpg');
+INSERT INTO `manageperson` VALUES ('13', '2', '侯虹', '男', '汉', '1969.11', '中央电大', '行政管理', '本科', '文博馆员', '文物保护研究、盐业史研究', '/images/geolandscape/15718950999033.jpg');
+INSERT INTO `manageperson` VALUES ('14', '2', '李貌', '女', '汉', '1977.4', '乐山师范学院', '音乐学', '本科', '文博馆员', '科普教育', '/images/geolandscape/15718951084404.jpg');
+INSERT INTO `manageperson` VALUES ('15', '2', '张新国', '女', '汉', '1961.5', '中央党校', '行政管理', '本科', '群文馆员', '文物修复', '/images/geolandscape/15718952879256.jpg');
+INSERT INTO `manageperson` VALUES ('16', '2', '林鹰', '女', '汉', '1967.1', '四川省委党校', '行政管理', '本科', '群文馆员', '文物修复', '/images/geolandscape/15718952038145.jpg');
+INSERT INTO `manageperson` VALUES ('17', '2', '王放兰', '女', '汉', '1985.8', '四川师范大学', '翻译', '硕士', '导游', '中文、英文讲解', '/images/geolandscape/15718953069477.jpg');
+INSERT INTO `manageperson` VALUES ('18', '2', '晏冰聪', '女', '汉', '1989.8', '河北大学', '旅游管理', '大专', '导游', '中文讲解', '/images/geolandscape/15718953216748.jpg');
+INSERT INTO `manageperson` VALUES ('19', '2', '邹丽莎', '女', '汉', '1986.04', '成都理工大学广播影视学院', '播音主持', '本科', '导游', '中文讲解', '/images/geolandscape/15718953323829.jpg');
+INSERT INTO `manageperson` VALUES ('20', '2', '姚晶晶', '女', '汉', '1986.3', '眉山职业技术学院', '旅游管理', '大专', '导游', '中文讲解', '/images/geolandscape/157189534199410.jpg');
+INSERT INTO `manageperson` VALUES ('21', '2', '王莹', '女', '汉', '1988.11', '四川文化传媒职业学院', '旅游管理', '大专', '导游', '中文讲解', '/images/geolandscape/157189535159711.jpg');
+INSERT INTO `manageperson` VALUES ('22', '2', '廖雪薇', '女', '汉', '1988.12', '四川文化传媒职业学院', '旅游管理', '大专', '导游', '中文讲解', '/images/geolandscape/157189536279412.jpg');
+INSERT INTO `manageperson` VALUES ('23', '3', '叶勇', '男', '汉', '1967.05', '南京大学', '古生物地层学', '本科/学士', '研究部主任、文博研究馆员', '古生物地层学及博物馆学研究', '/images/geolandscape/157189537401313.jpg');
+INSERT INTO `manageperson` VALUES ('24', '3', '江山', '男', '汉', '1976.07', '成都理工大学', '地质学', '本科/学士', '研究部副主任、文博副研究馆员', '古生物地层学及博物馆学研究', '/images/geolandscape/157189538428014.jpg');
+INSERT INTO `manageperson` VALUES ('25', '3', '徐娟', '女', '汉', '1970.1', '中共中央党校函授学院', '法律', '本科', '科教部主任、群文馆员', '科普教育', '/images/geolandscape/157189545680318.jpg');
+INSERT INTO `manageperson` VALUES ('26', '3', '李飞', '男', '汉', '1982.02', '中国地质大学', '地质学/地质工程', '本科/硕士', '科教部副主任、文博馆员', '古生物研究及科普教育', '/images/geolandscape/157189539337915.jpg');
+INSERT INTO `manageperson` VALUES ('27', '3', '高玉辉', '男', '汉', '1961.09', '四川大学', '动物学', '学士', '副研究员', '古生物研究', '/images/geolandscape/157189540448916.jpg');
+INSERT INTO `manageperson` VALUES ('28', '3', '彭光照', '男', '汉', '1963.09', '中科院古脊椎动物与古人类研究所', '古生物学与地层学', '硕士', '研究馆员', '古生物学与地层学研究、博物馆学研究', '/images/geolandscape/157189543670817.jpg');
+INSERT INTO `manageperson` VALUES ('29', '3', '郝宝鞘', '男', '汉', '1984.02', '云南大学', '古生物学与地层学', '硕士研究生', '文博馆员', '古生物与地层学研究', '/images/geolandscape/157189546740919.jpg');
+INSERT INTO `manageperson` VALUES ('30', '3', '李毅', '女', '汉', '1972.08', '中共四川省委党校', '经济管理', '本科', '信息中心副主任、助理会计师', '英语、环境教育、网络科普', '/images/geolandscape/157189548745220.jpg');
+INSERT INTO `manageperson` VALUES ('31', '3', '曾上游', '', '', '1963.08', '中共四川省委党校', '行政管理', '大专', '保卫科副科长、群文馆员', '科普宣传', '/images/geolandscape/157189549834421.jpg');
+INSERT INTO `manageperson` VALUES ('32', '3', '吴林', '女', '汉', '1965.05', '西南师范大学', '财会审计', '大专', '群文馆员', '藏品管理', '/images/geolandscape/157189552731222.jpg');
+INSERT INTO `manageperson` VALUES ('33', '3', '舒纯康', '男', '汉', '1962.11', '中共四川省委党校函授学院', '法律', '本科', '文博馆员', '化石野外调查', '/images/geolandscape/157189553673723.jpg');
+INSERT INTO `manageperson` VALUES ('34', '3', '朱莎', '女', '汉', '1978.1', '四川理工学院', '会计学', '本科', '文博馆员', '科普教育', '/images/geolandscape/157189554832024.jpg');
+INSERT INTO `manageperson` VALUES ('35', '3', '余勇', '男', '汉', '1970.03', '自贡师专', '美术', '大专', '陈列部主任、二级美术师', '展示设计、恐龙绘画', '/images/geolandscape/157189556020025.jpg');
+INSERT INTO `manageperson` VALUES ('36', '3', '罗舒', '女', '汉', '1991.06', '重庆大学', '动画', '本科/学士', '文博馆员', '美术设计、恐龙绘画', '/images/geolandscape/157189557128826.jpg');
+INSERT INTO `manageperson` VALUES ('37', '3', '余刚', '男', '汉', '1960.1', '四川师范大学', '汉语言文学', '大专', '群文馆员', '摄影摄像', '/images/geolandscape/157189558453027.jpg');
+INSERT INTO `manageperson` VALUES ('38', '3', '杨华', '男', '汉', '1985.05', '四川理工大学', '电子信息科学与技术', '本科/学士', '助理工程师', '电子设备维护与信息化建设', '/images/geolandscape/157189559340228.jpg');
+INSERT INTO `manageperson` VALUES ('39', '3', '凌曼', '女', '汉', '1970.01', '四川理工学院', '美术', '大专', '二级美术师', '展示设计、恐龙绘画', '/images/geolandscape/157189560392629.jpg');
+INSERT INTO `manageperson` VALUES ('40', '3', '何旭', '男', '汉', '1973.04', '四川大学网络教育学院', '信息与技术', '本科', '工程师', '电子设备维护与信息化建设', '/images/geolandscape/157189562143030.jpg');
+INSERT INTO `manageperson` VALUES ('41', '3', '张永聪', '女', '汉', '1982.08', '泸州医学院外国语学院', '医药英语', '本科/学士', '助理翻译', '英语翻译', '/images/geolandscape/157189563115531.jpg');
+INSERT INTO `manageperson` VALUES ('42', '3', '王晓娟', '女', '汉', '1977.11', '四川省委党校', '经济管理', '本科', '文博助理馆员', '讲解', '/images/geolandscape/157189563931832.jpg');
+INSERT INTO `manageperson` VALUES ('43', '3', '胡晓冬', '男', '汉', '1976.01', '四川大学', '信息与技术经济管理', '本科', '群文助理馆员', '藏品管理', '/images/geolandscape/157189566168033.jpg');
+INSERT INTO `manageperson` VALUES ('44', '3', '陈蓓艳', '女', '汉', '1976.07', '四川理工学院', '工商管理', '大专', '导游', '中文讲解', '/images/geolandscape/157189567043534.jpg');
+INSERT INTO `manageperson` VALUES ('45', '3', '王晓娟', '女', '汉', '1977.11', '四川省委党校函授学院', '经济管理', '本科', '导游', '中文讲解', '/images/geolandscape/157189567876735.jpg');
+INSERT INTO `manageperson` VALUES ('46', '3', '陈丹妮', '女', '汉', '1990.02', '四川理工学院', '法学', '本科', '导游', '中文讲解', '/images/geolandscape/157189568864536.jpg');
+INSERT INTO `manageperson` VALUES ('47', '3', '余蝶', '女', '汉', '1985.09', '四川理工学院', '汉语言文学', '大专', '导游', '中文讲解', '/images/geolandscape/157189569886537.jpg');
+INSERT INTO `manageperson` VALUES ('48', '3', '王梦远', '女', '汉', '1990.08', '江西服装学院', '服装设计', '大专', '导游', '中文讲解', '/images/geolandscape/157189570865938.jpg');
+INSERT INTO `manageperson` VALUES ('49', '3', '万小惠', '女', '汉', '1989.11', '四川师范大学文理学院', '英语', '本科/学士', '导游', '中文、英文讲解', '/images/geolandscape/157189571826639.jpg');
+INSERT INTO `manageperson` VALUES ('50', '3', '毛静', '女', '汉', '1991.03', '自贡电视广播大学', '行政管理', '大专', '导游', '中文讲解', '/images/geolandscape/157189572893540.jpg');
+INSERT INTO `manageperson` VALUES ('51', '3', '王梦雨', '女', '汉', '1990.1', '西华师范大学', '播音与主持', '本科/学士', '导游', '中文讲解', '/images/geolandscape/157189573752841.jpg');
+INSERT INTO `manageperson` VALUES ('52', '4', '李玲琳', '女', '汉', '1985.5.27', '四川外语学院', '计算机及英语', '大专', '导游', '中文讲解', '/images/geolandscape/157189574618642.jpg');
+INSERT INTO `manageperson` VALUES ('53', '4', '王玉', '女', '汉', '1983.4.3', '中共四川省委党校函授学院', '经济管理', '大专', '导游', '中文讲解', '/images/geolandscape/157189575895343.jpg');
+INSERT INTO `manageperson` VALUES ('54', '4', '李亚兰', '女', '汉', '1986.10.15', '四川外语学院重庆南方翻译学院', '英语（旅游酒店管理）', '大专', '导游', '中文、英文讲解', '/images/geolandscape/157189576985644.jpg');
+INSERT INTO `manageperson` VALUES ('55', '4', '王文倩', '女', '汉', '1991.2.25', '四川音乐学院', '现代流行舞系', '大专', '导游', '中文讲解', '/images/geolandscape/157189577732645.jpg');
+INSERT INTO `manageperson` VALUES ('56', '4', '杨霞', '女', '汉', '1987.8.17', '四川理工学院', '工商管理', '大专', '导游', '中文讲解', '/images/geolandscape/157189578641846.jpg');
+INSERT INTO `manageperson` VALUES ('57', '4', '张雪', '女', '汉', '1992.12.13', '肇庆市工程技术学院', '旅游与酒店管理', '大专', '导游', '中文讲解', '/images/geolandscape/157189579648247.jpg');
+INSERT INTO `manageperson` VALUES ('58', '4', '罗芹', '女', '汉', '1981.8.20', '中央广播电视大学', '工商管理', '大专', '导游', '中文讲解', '/images/geolandscape/157189580676548.jpg');
+INSERT INTO `manageperson` VALUES ('59', '4', '杨夏敏', '女', '汉', '1987.10.17', '中央广播电视大学', '法律', '大专', '导游', '中文讲解', '/images/geolandscape/157189581474349.jpg');
+INSERT INTO `manageperson` VALUES ('60', '4', '柯林利', '女', '汉', '1978.5.12', '党校', '法律', '大专', '导游', '中文讲解', '/images/geolandscape/157189582432550.jpg');
+INSERT INTO `manageperson` VALUES ('61', '4', '李玲', '女', '汉', '1989.8.24', '四川外语学院成都学院', '英语', '本科', '导游', '中文、英语、西班牙语讲解', '/images/geolandscape/157189583205351.jpg');
+INSERT INTO `manageperson` VALUES ('62', '4', '程小玲', '女', '汉', '1986.6.3', '四川理工学院', '商务英语', '大专', '导游', '中文、英语讲解', '/images/geolandscape/157189583949152.jpg');
 
 -- ----------------------------
 -- Table structure for mineralright
@@ -854,11 +832,16 @@ CREATE TABLE `museum` (
   `email` varchar(256) DEFAULT NULL COMMENT 'E-MAIL',
   `note` text COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='博物馆基本情况';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='博物馆基本情况';
 
 -- ----------------------------
 -- Records of museum
 -- ----------------------------
+INSERT INTO `museum` VALUES ('1', '1', '自贡恐龙博物馆', '67000平方米', '1987年正式对外开放', '自贡世界地质公园管理处', '自贡恐龙博物馆是自贡世界地质公园核心景区之一，位于四川省自贡市的东北部，距市中心9公里，是在世界著名的“大山铺恐龙化石群遗址”上就地兴建的一座大型遗址类博物馆，也是我国第一座专门性恐龙博物馆，占地面积6.6万多平方米，以收藏、研究、展示中侏罗世恐龙及其它伴生脊椎动物为特色。博物馆于1987年正式对外开放，经过二十年的发展，自贡恐龙博物馆已经成为世界上收藏中侏罗世恐龙最丰富的博物馆、世界三大恐龙遗址博物馆之一、首批“国家一级博物馆”、联合国教科文组织批准的“中国自贡世界地质公园”核心景区、国土资源部科普教育基地。', '馆藏化石标本几乎囊括了距今2.05-1.37亿年前侏罗纪时期所有已知恐龙种类，收藏有近300个古脊椎动物个体的上万件化石标本，完整恐龙骨架30多具，稀有头骨10余个，并拥有许多恐龙蛋、恐龙皮肤印模、骨质尾锤、恐龙足迹等珍稀化石，具有极高的科研和观赏价值。 这里既是科学家进行恐龙化石研究的绝好场所，也是展示史前生命奇迹、进行科学普及的重要基地。', '四川省自贡市大安区大山铺238号', '+86- 0813-5802095', 'office@zdm.cn ', '自贡恐龙博物馆的现有基本陈列“侏罗纪恐龙世界”，按照“恐龙世界——恐龙遗址——恐龙时代的动植物——珍品厅——恐龙再现”顺序展开，吸收现代陈列理念，采用场景式展示、拟人化组合，辅之以声、光、电及多媒体等展示手段，展开了一幅蔚为壮观、神奇瑰丽史前画卷，再现了由恐龙及许多早已消失的物种构成的神秘多姿的侏罗纪时代。同时，还突出展示了博物馆的精华―化石埋藏现场，给人以强烈的视觉冲击和心灵震撼，充分体现了专业博物馆与遗址博物馆的双重特色。');
+INSERT INTO `museum` VALUES ('2', '1', '自贡市盐业历史博物馆', '6000平方米', '1959年', '自贡世界地质公园管理处', '位于市中心解放路，于1959年建馆，是中国最早的专业博物馆之一，它收藏、研究、展示自贡两千多年来精湛的井盐顿钻凿井、采卤、制盐工艺和天然气开采等方面的知识，馆址为全国重点文物保护单位西秦会馆，西秦会馆为清代陕西盐商修建的同乡会馆，始建于清乾隆元年（1736），占地6000平方米。建筑气势宏伟，设计精巧，融宫廷建筑与民间建筑风格为一体，精美而保存完好的西秦会馆是自贡盐业兴旺发达的见证，也是古代建筑史上的奇葩。自贡盐业历史博物馆是国家二级博物馆，国家3A级旅游景区。', '博物馆现有藏品12553件，珍贵文物172件。藏品中既有世界唯一的一套中国古代钻修治井工具群，又有以“中国最古老股票”为代表的一大批盐业契约、档案，还有反映四川、云南、西藏、山西、河北、江苏、浙江等盐区的盐业文物。此外，还收藏有一批传世文物、艺术珍品，主要以仇英、张大千、丰子恺、赵熙等大师的作品为代表。博物馆内陈列了大量珍贵的文物、模型、照片和标本，从钻井、采卤、输卤、制盐等方面再现了井盐生产技术的沿革和发展，生动表现了以深井钻凿技术为中心的古代井盐生产工艺，体现了历代劳动人民的创造才能。', '四川·自贡市解放路173号', '+86- 0813-2202083', '无', '自贡市盐业历史博物馆是自贡世界地质公园核心景区之一，坐落在四川省自贡市市中区龙峰山下，其馆址为“西秦会馆”，以收藏、研究和陈列中国井盐历史文物为基本功能，是中国目前为止唯一的井盐史专业博物馆。\n\n博物馆的馆址“西秦会馆”是清乾隆元年（1736）到自流井地区经营盐业的陕西籍商人合资修建的，占地约三千平方米，历时十六载竣工，建筑设计精巧，结构繁复，融宫廷建筑与民间建筑风格于一体，形成了自己鲜明的特征和个性，被誉为中国古代建筑的瑰宝。');
+INSERT INTO `museum` VALUES ('3', '1', '燊海井', '6000平方米左右', '1988年被公布为全国重点文物保护单位', '自贡世界地质公园管理处', '世界上第一口人工钻凿超千米的深井，位于大安区长堰塘，距市中心3公里。凿成于清道光十五年（1835），深1004.12米。是中国古代钻井工艺成熟的标志，综合地体现了中国古代钻井技术发展的水平，是世界科技史上的重要里程碑，其凿井技术被誉为中国古代“第五大发明”和“世界石油钻井之父”。1988年被公布为全国重点文物保护单位。', '燊海井是一眼以产天然气为主兼产黑卤的生产井，曾日产天然气8500立方米和黑卤14立方米，烧盐锅八十余口。现烧盐锅8口，日产盐2500公斤。它的主要建筑有碓房、大车房和灶房，主要生产设备碓架、井架、大车等保存完好，1984年经过一次大的修复。', '四川省自贡市大安区大安街289号', '+86- 0813-5106214', '无', '现存燊海井占地面积6000平方米左右，保留着十九世纪初的布局和风貌，是一处典型的清代井盐生产现场。跨门入内，左侧是高为十八点四米的井架和碓房，右侧为推汲卤水的大车房。从碓房和大车房之间拾级而上，是采用传统的煎制方法生产食盐的灶房，以及柜房和盐仓。');
+INSERT INTO `museum` VALUES ('4', '1', '荣县大佛', '无', '', '自贡世界地质公园管理处', '位于荣县城东500米处的大佛崖，海拔379-416米。大佛依崖而凿，佛头与山齐高，是一尊弥勒摩崖石刻造像，始凿于宋代元丰八年（1085），于元佑七年（1092）凿成，为世界第一大弥勒摩崖石刻造像、世界第二大石刻佛像。', '荣县大佛依崖而凿，佛头与山齐高，是一尊唐代摩崖石刻造像，距今已有1100年历史。大佛像通高36.67米、头长8.74米，是全世界最大的释迦牟尼佛像，世界第二大石刻佛像。', '四川省自贡市荣县旭阳镇大佛街大佛寺1号，643010 ', '+86- 0813-6161156', '无', '荣县大佛寺景区是自贡世界地质公园重要景区之一，位于四川省自贡市荣县城区大佛街大佛寺一号，距自贡34公里，处于成渝高速公路中段，沿自雅公路可直达景区。是国家4A级旅游景点、四川省文物保护单位。大佛寺坐落在荣县城郊大佛山（亦称真如岩）山麓，山门书题“大佛禅寺”，以石刻大佛命名。大佛寺始建于唐代，气势雄伟、衣纹流畅、慈眉善目、神韵飘然，是古代艺术家和劳动人民匠心独运的上乘之作，是中国石刻遗存之艺术瑰宝。');
+INSERT INTO `museum` VALUES ('5', '1', '彩灯博物馆', '占地面积22,000m2，总建筑面积6,375m2', '1990年6月', '自贡世界地质公园管理处', '中国彩灯博物馆坐落于自贡市彩灯公园内，始建于1990年6月，占地面积22,000m2，总建筑面积6,375m2，建筑以彩灯文化为主题，造型以正方几何形体重叠组合，悬挑宫灯形角窗和镶嵌面的圆形、棱形灯窗，构成了一组大型宫灯形建筑。', '中国彩灯博物馆内设8个展厅，分数十个单元，以中国彩灯历史、自贡灯会发展史、自贡彩灯精品和中外彩灯风情四大部分构筑的陈列框架进行陈列，既有旧石器时期至民国年间的灯史文物和灯史文献，又有部分国家和国内部分城市的特色彩灯，还有自贡灯会历次在国内外展出的精品佳作，成为中国灯文化和自贡灯会的缩影。', '四川省自贡市自流井区中华路公园路6号', '无', '无', '中国彩灯博物馆作为中国彩灯文化“收藏、保护、研究、展示”的专门机构，是迄今国内乃至世界上唯一的一座彩灯文化专业博物馆，被国际旅游界专家誉为“最具东方文化神韵、极具开发潜能”的博物馆。');
 
 -- ----------------------------
 -- Table structure for museumexhibition
@@ -875,11 +858,21 @@ CREATE TABLE `museumexhibition` (
   `img` text COMMENT '图片地址',
   `exhibitiondesc` text COMMENT '展厅描述',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='博物馆展厅';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='博物馆展厅';
 
 -- ----------------------------
 -- Records of museumexhibition
 -- ----------------------------
+INSERT INTO `museumexhibition` VALUES ('2', '1', '1', null, '1', '知识厅Hall for Basic Knowledge of Geology', '', '/images/museumexhibition/15717979854560.jpg,/images/museumexhibition/15717979905731.jpg', '以“恐龙的奥秘”为主题，按照“什么是恐龙”、“恐龙的起源与分类”、“恐龙生活的时代”、“恐龙的生活习性”、“恐龙灭绝之谜”、“可触摸的恐龙化石”和“恐龙拓片”等内容，对恐龙的来龙去脉作了通俗而系统的介绍。同时，还对地层序列、构造演化等基本地球科学知识进行了介绍。\nWith a theme of “Dinosaur Mystery”, this hall is divided into several sections, such as “What is Dinosaur?”、“The Origin and Classification of Dinosaurs”,“Age of Dinosaurs”，“Life habits of Dinosaurs”，“Mystery of Dinosaur Extinction”,“Touchable Dinosaur Fossils”,“Dinosaur Rubbings”and so on . It is a comprehensive introduction for dinosaurs. Meanwhile, it also introduces the basic knowledge of Earth sciences, such as stratigraphic sequence, tectonic evolution and so on.');
+INSERT INTO `museumexhibition` VALUES ('3', '1', '1', null, '2', '恐龙标本陈列厅Fossil Display Hall', '', '/images/museumexhibition/15717986191252.jpg', '标本陈列厅展出了14种20多具不同大小的恐龙骨架，它们均产于自贡的侏罗系地层中，这些恐龙骨架采用了生态情景式陈列，组合成为了8个生动有趣的生活场景：“生死时速”、“奋起反击”、“温馨家庭”、“舔犊情深”、“结伴而行”、“延续生命”、“弱肉强食”、“垂死挣扎”。它们对自贡地区侏罗纪恐龙动物群的生态面貌和组合特征做出了形象而生动的诠释。\nThere are about 20 large vertebrate skeletons in the Fossil Display Hall. They are discovered in the Middle Jurassic strata (ca.160 Ma ago) in Dashanpu fossil site. Among them, there are 8 dinosaur skeletons, 1 peterosaur skeletons and 1plesiosaur skeletons, as well as fishes, turtles, amphibians, Tritylodontidaes. These fossils recovery a vivid Dashanpu Dinosaur Fauna composition and their ecological environment.');
+INSERT INTO `museumexhibition` VALUES ('4', '1', '1', null, '3', '化石埋藏厅On-site Buried Dinosaur Fossil Site', '', '/images/museumexhibition/15717988294493.jpg', '化石埋藏厅总面积1,350平方米，是目前世界上可提供观赏的最大规模的中侏罗世恐龙化石埋藏现场。在这里，距今1亿6千万年前的恐龙化石依然原地保留在地层中，其骨骼、形态清晰可见。它们或首尾相接，排布有序；或重迭堆积，或交错横陈。其数量之众多，埋藏之丰富，着实令人叹为观止，被称作“世界奇观”，是“恐龙群窟”的缩影。\nCovering an area of 1,350m2, this site is the largest locality for enjoying on-site buried Middle Jurassic dinosaur fossils in the world. Here, the dinosaur fossils (ca. 160 Ma ago) are still well-preserved in their original formation, the skeletons and patterns can be seen obviously. They are either heads connected with tails or orderly piled up layer upon layer and overlapped each other, the most vertebraes are still articulated. Such abundant and exquisitely preserved dinosaur fossils in one site are amazing, so it is called as a miniature of “World’ s Wonder” or “Dinosaur Tomb”. Each individual fossil is briefly interpreted.');
+INSERT INTO `museumexhibition` VALUES ('5', '1', '1', null, '4', '恐龙时代植物厅Hall for Mesozoic Animal and Plant Fossils', '', '/images/museumexhibition/157181320631613.jpg', '距今2.5—0.65亿年前的中生代，气候温暖潮润，植被繁茂，恐龙空前繁盛，因而又被称为“恐龙时代”。当恐龙逐渐在陆地上称霸的时候，其他种类的爬行动物则统治着海洋和天空，而鱼类、两栖类、早期鸟类和哺乳类以及大量无脊椎动物也在海、陆、空各自的生态领域里繁衍生息。生物的多样性维系着中生代的生态平衡，恐龙则依赖着其他生物而得以称霸地球一亿多年。\nDuring the Mesozoic Era (ca. 250-65 Ma ago). The climate was warm and humid, with lush vegetation and unprecedented large number of dinosaurs, so the Mesozoic was named as “the Age of Dinosaurs”. When dinosaur were dominating the land, the other reptiles were dominating the ocean and sky. Fishes, amphibians, early birds, mammals and a large number of invertebrates lived and reproduced in their own ecological territories. The high biodiversity maintained the ecological balance in the Mesozoic, and dinosaurs had been lasted for more than 100 million years, relying on other lives.');
+INSERT INTO `museumexhibition` VALUES ('6', '1', '1', null, '5', '珍品厅Treasure Fossil Hall', '', '/images/museumexhibition/157181336907914.jpg,/images/museumexhibition/157181337367715.jpg,/images/museumexhibition/157181337371416.jpg,/images/museumexhibition/157181337372417.jpg,/images/museumexhibition/157181337400118.jpg', '自贡地质公园不仅以恐龙化石发现数量众多，种类齐全闻名于世，而且还以化石保存完好驰名中外。其中，有不少标本属“世界级”的“孤品”和珍品，它们在珍品厅集中展示，可谓洋洋大观，令人叹为观止。\nZigong Geopark is famed not only by its numerous and varied dinosaur fossils in the word, but also by its perfect preservation, Among them, there are some exclusive fossils even in the world, some of them are displaying in this hall, it is so amazing for their attractiveness and value.');
+INSERT INTO `museumexhibition` VALUES ('7', '1', '2', null, '6', '盐业历史博物馆地质展厅Hall for Geological Knowledge', '', '/images/museumexhibition/157181784518519.jpg', '科普教育是地质公园的宗旨之一，地质展厅除了对公园及地质遗迹整体介绍外，重点介绍了与井盐形成相关的地质知识，以便游人更好地了解自贡地质公园。\nGeological popularization is one of the major purpose of geopark. Besides a comprehensive introduction to the geoheritage in the whole geopark, this hall also highlights the geological knowledge related to the formation of salt deposits and relationship between the salt deposits and later Jurassic dinosaur fossils, so visitors can get a better understanding about Zigong Geopark');
+INSERT INTO `museumexhibition` VALUES ('8', '1', '2', null, '7', '井盐历史展厅Hall for Well Salt Industry History', '', '/images/museumexhibition/157181790168620.jpg', '中国井盐肇始自贡。自贡井盐开采始于东汉，兴于唐宋，盛于明清。追溯历史，从“牧羊女酌流识盐脉”，到世界第一口超千米深井的凿成，该厅展示了近两千年自贡井盐开采、炼制的发展历程和重要阶段，其中的井盐科技十大发明无不凝聚了中华民族的智慧结晶。\nThe well salt production in China was originated in Zigong, started in the Eastern Han Dynasty (25-220), thrived in the Tang and Song Dynasties (618-1276), and reached its heyday in the Ming and Qing Dynasties (1368-1911). With a history of two thousand years, this hall shows the development and milestones of well salt exploration, well drilling, salt making technology in Zigong in term of abundant cultural relics, photos, reconstructions and interactive models. Among them, the ten innovations of well salt technology greatly embody the wisdom of the Chinese Nation.');
+INSERT INTO `museumexhibition` VALUES ('9', '1', '2', null, '8', '凿井工具陈列厅Hall for Well Drilling Tools', '', '/images/museumexhibition/157181795183321.jpg', '通过大量珍贵的文物、模型、照片和标本，从钻井、修治井、采卤、输卤、制盐等方面，以实物的形式真实、形象、逼真地再现了井盐生产过程及技术的发明和沿革历程，再现了以深井钻凿技术为中心的古代井盐生产工艺，这种技术发明完成了从人力挖掘到机械凿井的飞跃，实现了人类勘探开发地下资源的重大突破，开创了现代钻探技术的先河，被誉为中国古代“第五大发明”。\nWith a large number of precious cultural relics, models, photos and specimens, this hall faithfully and vividly shows the technical innovations and development of the salt well drilling, maintenance and repair, brine extraction, transportation, salt making processes. The exhibition is centered by the deep well drilling technology from manpower drilling to mechanic production, which realized the great breakthrough to explore underground resources in mankind history. The well drilling technology in Zigong pioneered the modern drilling technology. Therefore, the deep well drilling technology is credited as “the fifth greatest innovation” in ancient China.');
+INSERT INTO `museumexhibition` VALUES ('10', '1', '2', null, '9', '演示操作厅Demonstrating and Operational Hall', '', '/images/museumexhibition/157181802848122.jpg', '通过凿井、修治井模型和各种生产工具模型，参观者可以进行现场模拟生产操作，从而进一步增加对井盐生产的感性认识，体会科学技术发明对生产进步的巨大推动作用。\nThrough a variety of drilling, repairing and maintaining well and production models, visitors can conduct an on-site simulation of well salt production, so that they can gain more perceptual knowledge of well salt production. With this experience, they will realize that technical progress would be the greatest push power to industrial production.');
+INSERT INTO `museumexhibition` VALUES ('11', '1', '2', null, '10', '盐税史陈列厅Salt Taxation History Exhibition Hall', '', '/images/museumexhibition/157181812515223.jpg', '在中国盐业史上，自贡井盐曾经占有重要地位。自贡盐税为国家和地方作出过巨大贡献，并因此而生成深远的文化意义。自贡盐税史陈列厅以电脑喷绘、图片、图表为主，以档案、文物、模型、多媒体等手段为辅，突出反映自贡盐税在四川乃至中国历史上有地位的事件、人物和成就，展示自贡盐税的发展成就和突出贡献。\nIn the history of the salt industry in China, salt from Zigong brine wells once held a pivotal role. Zigong salt tax contributed substantially to the local region and the country, and thus also had extensive cultural significance. Main exhibits of the Salt Taxation History Exhibition Hall are presented by digitized air brush posters, photos and graphs, supplemented by documents, artifacts, models and multimedia, to illustrate the historic events, individuals and achievements of Zigong salt tax, as well as the feats and contributions related to the growth of salt tax from Zigong.');
 
 -- ----------------------------
 -- Table structure for naturallandscape
@@ -904,32 +897,18 @@ CREATE TABLE `naturallandscape` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='自然景观';
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='自然景观';
 
 -- ----------------------------
 -- Records of naturallandscape
 -- ----------------------------
-INSERT INTO `naturallandscape` VALUES ('9', '1', 'ZG1016', '尖山风景区', null, null, '104.64983333332501', '29.267083333331101', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('10', '1', 'ZG1024', '飞龙峡', null, null, '104.64811111110301', '29.235138888886699', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('11', '1', 'ZG1086', '金花桫椤自然保护区', null, null, '104.142388888881', '29.262388888886701', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('12', '1', 'ZG1094', '同心树', null, null, '104.116611111103', '29.320027777775501', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('13', '1', 'ZG1141', '高石梯国家森林公园', null, null, '104.338583333325', '29.5081944444422', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('14', '1', 'ZG2059', '吴家山村黄桷树', null, null, '104.552111111103', '29.3882777777755', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('15', '1', 'ZG2113', '九龙庙黄葛树', null, null, '104.171166666658', '29.322083333331101', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('16', '1', 'ZG1016', '尖山风景区', null, null, '104.64983333332501', '29.267083333331101', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('17', '1', 'ZG1024', '飞龙峡', null, null, '104.64811111110301', '29.235138888886699', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('18', '1', 'ZG1086', '金花桫椤自然保护区', null, null, '104.142388888881', '29.262388888886701', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('19', '1', 'ZG1094', '同心树', null, null, '104.116611111103', '29.320027777775501', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('20', '1', 'ZG1141', '高石梯国家森林公园', null, null, '104.338583333325', '29.5081944444422', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('21', '1', 'ZG2059', '吴家山村黄桷树', null, null, '104.552111111103', '29.3882777777755', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('22', '1', 'ZG2113', '九龙庙黄葛树', null, null, '104.171166666658', '29.322083333331101', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('23', '1', 'ZG1016', '尖山风景区', null, null, '104.64983333332501', '29.267083333331101', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('24', '1', 'ZG1024', '飞龙峡', null, null, '104.64811111110301', '29.235138888886699', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('25', '1', 'ZG1086', '金花桫椤自然保护区', null, null, '104.142388888881', '29.262388888886701', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('26', '1', 'ZG1094', '同心树', null, null, '104.116611111103', '29.320027777775501', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('27', '1', 'ZG1141', '高石梯国家森林公园', null, null, '104.338583333325', '29.5081944444422', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('28', '1', 'ZG2059', '吴家山村黄桷树', null, null, '104.552111111103', '29.3882777777755', null, null, null, null, null, null, null, null, null);
-INSERT INTO `naturallandscape` VALUES ('29', '1', 'ZG2113', '九龙庙黄葛树', null, null, '104.171166666658', '29.322083333331101', null, null, null, null, null, null, null, null, null);
+INSERT INTO `naturallandscape` VALUES ('10', '1', 'N007', '飞龙峡', '位于自流井区农团镇东升村，东经104°38′53.16″，北纬29°14′06.53″', '', '104.64811111', '29.235138889', '', '飞龙峡距城区15km，森林覆盖率达到70％以上。由尖山和农团两个2A级风景区组成，属亚热带季风性湿润气候。该区域自然天成，森林茂密，植被丰富，山清水秀，景色宜人，更兼有独具特色的川南民俗和厚重的佛教文化底蕴，乃朝佛冶性，消夏避暑，生态旅游，养生度假的好所在。飞龙峡又名陡沟子，有川南小三峡之美名，山峰耸立，丹霞地貌发育，岩腔、绝壁常见，谷幽水深，碧水十里，蜿蜒如烈龙飞空。', '', 'ZG1024', '', '/images/humanlandscape/157197377302669.jpg', null, null, null);
+INSERT INTO `naturallandscape` VALUES ('11', '1', 'N006', '金花桫椤自然保护区', '位于荣县金花镇大坪村，东经104°08′32.58″，北纬29°15′44.63″。', '', '104.14238889', '29.262388889', '', '桫椤谷长2km，面积约10km2，出露地层为白垩系下统（140-99百万年前）窝头山组砖红色砂岩。桫椤谷以其正规的桫椤树而闻名，16000多株桫椤分布于幽谷中，形成壮美独特的桫椤群落景观。谷类还发育有四方井瀑布，钟乳石等地质遗迹景观。', '', 'ZG1086', '', '/images/humanlandscape/157197381331470.jpg', null, null, null);
+INSERT INTO `naturallandscape` VALUES ('12', '1', 'N003', '同心树', '位于荣县东佳镇大屋嘴村，东经104°06′59.78″，北纬29°19′12.13″。', '', '104.11661111', '29.320027778', '', '两树长在一起，据当地八九十岁老人说这两颗树树龄起码有两百年历史以上的历史。两棵树其中一颗为黄桷树，另一颗为黄栎树。整个黄栎树被黄桷树包裹其中，呈现良好的分层现象，黄栎树以纵向生长为主，黄桷树以横向生长为主。两棵树木长势良好，枝叶茂盛。黄桷树高约8m，黄栎树高约30m左右，树直径约1.2m左右，在该点260°方向约150m处有百年历史的红豆树，直径约80cm。', '', 'ZG1094', '', '/images/humanlandscape/157197383091671.jpg', null, null, null);
+INSERT INTO `naturallandscape` VALUES ('13', '1', 'N001', '高石梯省级森林公园', '位于自贡市荣县城郊铁厂镇山王庙村，东经104°20′18.86″，北纬29°30′29.45″。', '', '104.33858333', '29.508194444', '', '地处川南盆中地区，距荣县县城15km，距自贡60km，距成都190km，公园面积182.13公顷。原为荣县国营林场国有林地，1985年开始接待游人，1992年建立县级森林公园，1993年审定为省级森林公园，2018年审定为国家级森林公园。公园内自然风景秀丽，林幽峰奇，以地质地貌的奇特和生长良好的天然次生林群构成特有的川南低山自然风光。景区内山峦起伏，云雾飘渺。30多座山峰绵延横亘，有狮子头、癞蛤蟆、罗盘石、天鹅抱蛋等著名景观。公园早在清光绪33年被基督教会华西教作为外国人在四川的四大避暑胜地之一。', '', 'ZG1141', '', '/images/humanlandscape/157197385280372.jpg', null, null, null);
+INSERT INTO `naturallandscape` VALUES ('14', '1', 'N002', '吴家山村黄桷树', '位于贡井区成佳镇吴家山村村头，东经104°33′7.60″，北纬29°23′17.78″。', '', '104.55211111', '29.388277778', '', '是一颗古树名木，桑科，榕属，此树至少有300年历史，名黄桷树。树干直径约230cm，周长约4人合抱，树高约25m，伞径约13m，树根下部局部已毁坏，主要是树虫原因。其树根十分粗壮，听当地人介绍“此树前后修剪了三次树枝，原伞径可达50m，树干可高达40-60m，很远都能看见，是鸟类的栖息地”。现树木还生长新叶，生长良好。', '', 'ZG2059', '', '/images/humanlandscape/157197387562273.jpg', null, null, null);
+INSERT INTO `naturallandscape` VALUES ('15', '1', 'N004', '九龙庙黄葛树', '位于荣县东佳镇老筒车村九龙庙，东经104°10′16.21″，北纬29°19′19.51″。', '', '104.17116667', '29.322083333', '', '此树名为黄葛树，桑科榕属，树龄110余年，树干树径约1.2m，需三人合抱，高约15m，枝叶繁茂，呈伞状，伞径约20m，绿意盈盈，为古树名木，为此处增添无限生机。', '', 'ZG2113', '', '/images/humanlandscape/157197391583074.jpg', null, null, null);
+INSERT INTO `naturallandscape` VALUES ('30', '1', 'N005', '桫椤', '位于荣县金花镇大坪村，东经104°08′24.53″，北纬29°15′42.88″。', '', '104.140147', '29.261911', '', '桫椤分为赤桫椤和黑桫椤，赤桫椤又名树蕨，属国家二级保护植物之一。侏罗纪时代，桫椤与恐龙同时生存于陆地上，是食草类恐龙的主要食物。荣县桫椤谷，因其地形复杂，山高谷深，这里生长的桫椤未遭第四纪冰川的破坏保存下来，繁衍至今。古老的桫椤，是大自然遭受浩劫之后的幸存者，被誉为植物中的“活化石”而成片生长的桫椤，更被视为珍稀之极。生长在桫椤谷的大片桫椤，地处深壑沟谷中，地层为白垩纪砖红色耖岩，已开发风景区的桫椤生长分布地域达4公里长，100余米宽，有桫椤树16000多株，形成带状分布。植株一般高3-4m，最高达8-10m，树干直径20-30cm；桫椤树型美观，叶如凤尾，有的独立成株，有的两三株并在一起生长，枝繁叶茂、遮天蔽日，形成十分壮美的景观（照片3-202），其旅游探险猎奇的价值十分突出。', '', 'ZG1190', '', '/images/humanlandscape/15743918815129-桫椤.jpg', null, null, null);
 
 -- ----------------------------
 -- Table structure for news
@@ -1006,12 +985,12 @@ CREATE TABLE `park` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园概况';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园概况';
 
 -- ----------------------------
 -- Records of park
 -- ----------------------------
-INSERT INTO `park` VALUES ('1', '1', '自贡联合国教科文组织世界地质公园', 'AAAAA', '四川省自贡市', '自贡', '456122', '无', '无', '1630.46km2', '地质遗迹', '保护区总面积约361.03km2，占调查区面积约40.15%。', '2001年3月', '自贡地质公园位于素有“千年盐都、恐龙之乡、南国灯城”美誉的四川省自贡市，北起荣县复兴乡青龙山，南至荣县金华乡桫椤谷，西达自贡与乐山市界，东抵大安区三多寨镇，面积为1630.46平方千米。 \n在距今约2.5亿年前（晚古生代—早中生代），公园区域完成了海陆转换，残留的咸水盆地形成盐类矿床；地质构造运动继续进行，形成了平原、河流、湖沼相间的盆地。距今1亿多年前（中—晚侏罗世）以来，恐龙等生物繁荣昌盛，在适当的条件下形成了恐龙、硅化木化石群。公元1世纪以来，生活在此的先民们，开采古海洋形成的盐类矿床，创造了灿烂的盐业文明。\n独特而丰富的恐龙化石、举世闻名的井盐文化、源远流长的文化传承、得天独厚的生态环境和谐统一，记录了公园地区从远古到现代的沧海桑田、铺开了一幅幅蔚为壮观、神奇瑰丽的画卷。\n', '自贡', '国土资源部', null, null, '自贡管理局', null, null, null);
+INSERT INTO `park` VALUES ('1', '1', '自贡联合国教科文组织世界地质公园', '无', '四川省自贡市', '自贡', '643000', '无', '无', '1630.46km2', '地质遗迹', '按照地质遗迹的等级、保存现状和可保护性进行划分。保护区划应当遵循自然属地和行政区划的原则，坚持点、线、面多角度保护的原则，坚持重点保护与一般保护相结合的原则，坚持保护与利用兼顾的原则，并结合最新的中共中央办公厅、国务院办公厅印发的《关于建立以国家公园为主体的自然保护地体系的指导意见》文件要求，主要划分一般控制区（调查区内需核心保护的地质遗迹及人文资源已划入文物保护单位，此次不再划与文物保护重叠的核心保护区）。未划入保护区的地质遗迹主要为点状保护，其中部分地质遗迹以及人文点已作为文物保护单位，其保护严格按照文物保护的要求，对于此类点所在区域不在单独划分核心保护区和一般控制区。', '2001年3月', '自贡地质公园位于素有“千年盐都、恐龙之乡、南国灯城”美誉的四川省自贡市，北起荣县复兴乡青龙山，南至荣县金华乡桫椤谷，西达自贡与乐山市界，东抵大安区三多寨镇，面积为1630.46平方千米。 \n在距今约2.5亿年前（晚古生代—早中生代），公园区域完成了海陆转换，残留的咸水盆地形成盐类矿床；地质构造运动继续进行，形成了平原、河流、湖沼相间的盆地。距今1亿多年前（中—晚侏罗世）以来，恐龙等生物繁荣昌盛，在适当的条件下形成了恐龙、硅化木化石群。公元1世纪以来，生活在此的先民们，开采古海洋形成的盐类矿床，创造了灿烂的盐业文明。\n独特而丰富的恐龙化石、举世闻名的井盐文化、源远流长的文化传承、得天独厚的生态环境和谐统一，记录了公园地区从远古到现代的沧海桑田、铺开了一幅幅蔚为壮观、神奇瑰丽的画卷。\n', '自贡世界地质公园以独特的古动物、采矿遗迹、地层剖面为导向性地质遗迹景观为主，融稀有性和独特性于一体，具极高的科研价值和观赏价值，', '中华人民共和国自然资源部', '遵循“保护第一、科学规划、合理开发、永续利用”的指导思想，历年来，调查区的保护工作如下：\n（1）1982年5月，时任中央军委副秘书长的张爱萍将军在视察了大山铺恐龙化石发掘现场之后指示，要“就地建馆，就地研究，就地陈列”。\n（2）1982年12月，国家计委批准立项，在现场修建遗址博物馆——自贡恐龙博物馆。\n（3）1983年，成立了自贡恐龙博物馆筹建领导小组，其下属科研发掘队负责遗址的发掘和保护。\n（4）1987年，自贡恐龙博物馆建成并对外开放；从而成为中国首座集恐龙化石原地保护、标本展示和科学研究于一体的大型综合博物馆，实现了中国古生物化石保护的新突破。\n（5）1990年，自贡恐龙博物馆完成了省级文物保护单位的报批及遗址保护范围的初步划定工作，并于1991年被四川省人民政府公布为省级文物保护单位。\n（6）1991年，向联合国教科文卫组织世界遗产委员会推荐“世界自然遗产”，入选《世界地质遗址提名目录》。\n（7）1992年，自贡市人民政府批准遗址保护范围的划定。\n（8）1995年四川省人民政府公布了遗址的保护范围和建设控制地带。\n（9）1999年3月，自贡市建设委员会发文[自建发规(1998)365号]，将化石集中埋藏区纳入自贡恐龙博物馆二期工程建设规划重点保护和开发范围之内。根据国家的有关法律法规，以“保护为主，抢救第一”、“有效保护，合理利用，加强管理”为前提，贯彻以保护现状为主，防止或减缓化石破坏的原则，把遗址划分为三级保护区∶重点保护区，以恐龙馆围墙四周各向外延伸30m的范围内，不得增建任何永久和临时性建筑物。一般保护区，以恐龙馆围墙四周各向外延伸120m的范围内，不得增建任何永久性建筑物。建设控制地带，重点增加绿化，为将来建立恐龙生态复原区和其他功能区奠定基础。\n（10）2001年3月，自贡恐龙地质公园被国土资源部批准为首批国家地质公园，使得公园内珍贵的地质遗迹从根本上得到了有效的保护。\n（11）2002年9月，自贡恐龙国家地质公园揭碑开园。\n（12）2008年2月，自贡地质公园申请世界地质公园成功，以世界级地质公园的要求严格对地质遗迹进行\n（13）2011年12月，中国自贡世界地质公园在自贡市大山铺镇恐龙博物馆前的主碑广场正式揭碑开园。\n（14）2012年9月，自贡世界地质公园顺利通过第一次中期评估。\n（15）2013年11月，自贡大山铺评为首批国家级重点保护古生物化石集中产地。\n（16）2016年，自贡世界地质公园顺利通过第二次中期评估。\n2008年成立由市政府支持的自贡地质公园管理委员会，2012年成立自贡世界地质公园管理委员会，负责制定《自贡世界地质公园发展规划》，建设及推广地质公园。\n2009年成立自贡世界地质公园管理处，负责地质公园日常运转，协调管委会及所属及相关部门的协同工作。\n', '地质公园位于四川盆地中南部，此区域构造活动弱，地层较稳定，为化石保存及盐矿储存提供了基础环境。在漫长的地壳运动过程中，形成了众多具有重要价值的地质遗迹。按照国土资源部2017年《地质遗迹调查规范》的最新分类可将调查区地质遗迹分为基础地质大类、地貌景观大类、地质灾害大类地质遗迹3大类8类13亚类，共计有179个地质遗迹点。\n\n', '中华人民共和国自然资源部', null, null, null);
 
 -- ----------------------------
 -- Table structure for parkinfo
@@ -1042,7 +1021,7 @@ CREATE TABLE `parkinfo` (
 -- ----------------------------
 -- Records of parkinfo
 -- ----------------------------
-INSERT INTO `parkinfo` VALUES ('1', '1', '12510200560713156T', '陶宏', '', '孙莉', '+86-0979-8421539', '陶宏、王文伟、孙莉、王玲玲', 'https://www.ziggeopark.com/', '0813-2218611', '813-2218611', '中华人民共和国自然资源部', '财政补助收支统管、全额保障', '158974244@qq.com', '自贡市自流井区解放路安全巷63号 643000', '2019-08-29 14:52:38', '2019-10-22 14:29:51', null);
+INSERT INTO `parkinfo` VALUES ('1', '1', '12510200560713156T', '陶宏', '', '孙莉', '+86-0979-8421539', '陶宏、王文伟、孙莉、王玲玲', 'https://www.ziggeopark.com/', '0813-2218611', '813-2218611', '中华人民共和国自然资源部', '财政补助收支统管、全额保障', '158974244@qq.com', '自贡市自流井区解放路安全巷63号 643000', '2019-08-29 14:52:38', '2019-11-17 19:34:07', null);
 
 -- ----------------------------
 -- Table structure for parklibrary
@@ -1063,13 +1042,51 @@ CREATE TABLE `parklibrary` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园专家库与导游库';
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园专家库与导游库';
 
 -- ----------------------------
 -- Records of parklibrary
 -- ----------------------------
-INSERT INTO `parklibrary` VALUES ('1', '1', '1', '1', '1', '1', '1', '1', '/images/parklibrary/15689861279750.jpg', '22', null, null, null);
-INSERT INTO `parklibrary` VALUES ('2', '1', '52893475', '阿大', '男', '200012', '科研', '聘用', '11.jpg', '啊哈', null, null, null);
+INSERT INTO `parklibrary` VALUES ('3', '1', '1', '陈蓓艳', '2', '1976.07', '工商管理', '自贡恐龙博物馆', '/images/parklibrary/15722473278750.jpg', '讲解语种：中文\n毕业院校：四川理工学院	\n本岗位工作年限：12\n\n', null, null, null);
+INSERT INTO `parklibrary` VALUES ('4', '1', '2', '王晓娟', '2', '1977.11', '经济管理', '自贡恐龙博物馆', '/images/geolandscape/157189567876735.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('5', '1', '3', '陈丹妮', '2', '1990.02', '法学', '自贡恐龙博物馆', '/images/geolandscape/157189568864536.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('6', '1', '4', '余蝶', '2', '1985.09', '汉语言文学', '自贡恐龙博物馆', '/images/geolandscape/157189569886537.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('7', '1', '5', '王梦远', '2', '1990.08', '服装设计', '自贡恐龙博物馆', '/images/geolandscape/157189570865938.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('8', '1', '6', '万小惠', '2', '1989.11', '英语', '自贡恐龙博物馆', '/images/geolandscape/157189571826639.jpg', '中文、英文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('9', '1', '7', '毛静', '2', '1991.03', '行政管理', '自贡恐龙博物馆', '/images/geolandscape/157189572893540.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('10', '1', '8', '王梦雨', '2', '1990.1', '播音与主持', '自贡恐龙博物馆', '/images/geolandscape/157189573752841.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('11', '1', '9', '王放兰', '2', '1985.8', '翻译', '盐业历史博物馆', '/images/geolandscape/15718953069477.jpg', '中文、英文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('12', '1', '10', '晏冰聪', '2', '1989.8', '旅游管理', '盐业历史博物馆', '/images/geolandscape/15718953216748.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('13', '1', '11', '邹丽莎', '2', '1986.04', '播音主持', '盐业历史博物馆', '/images/geolandscape/15718953323829.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('14', '1', '12', '姚晶晶', '2', '1986.3', '旅游管理', '盐业历史博物馆', '/images/geolandscape/157189534199410.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('15', '1', '13', '王莹', '2', '1988.11', '旅游管理', '盐业历史博物馆', '/images/geolandscape/157189535159711.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('16', '1', '14', '廖雪薇', '2', '1988.12', '旅游管理', '盐业历史博物馆', '/images/geolandscape/157189536279412.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('17', '1', '15', '李玲琳', '2', '1985.5.27', '计算机及英语', '燊海井', '/images/geolandscape/157189574618642.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('18', '1', '16', '王玉', '2', '1983.4.3', '经济管理', '燊海井', '/images/geolandscape/157189575895343.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('19', '1', '17', '李亚兰', '2', '1986.10.15', '英语（旅游酒店管理）', '燊海井', '/images/geolandscape/157189576985644.jpg', '中文、英文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('20', '1', '18', '王文倩', '2', '1991.2.25', '现代流行舞系', '燊海井', '/images/geolandscape/157189577732645.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('21', '1', '19', '杨霞', '2', '1987.8.17', '工商管理', '燊海井', '/images/geolandscape/157189578641846.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('22', '1', '20', '张雪', '2', '1992.12.13', '旅游与酒店管理', '燊海井', '/images/geolandscape/157189579648247.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('23', '1', '21', '罗芹', '2', '1981.8.20', '工商管理', '燊海井', '/images/geolandscape/157189580676548.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('24', '1', '22', '杨夏敏', '2', '1987.10.17', '法律', '燊海井', '/images/geolandscape/157189581474349.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('25', '1', '23', '柯林利', '2', '1978.5.12', '法律', '燊海井', '/images/geolandscape/157189582432550.jpg', '中文讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('26', '1', '24', '李玲', '2', '1989.8.24', '英语', '燊海井', '/images/geolandscape/157189583205351.jpg', '中文、英语、西班牙语讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('27', '1', '25', '程小玲', '2', '1986.6.3', '商务英语', '燊海井', '/images/geolandscape/157189583949152.jpg', '中文、英语讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('28', '1', '26', '舒纯康', '1', '1962.11', '法律', '盐业历史博物馆', '/images/geolandscape/157189553673723.jpg', '化石野外调查', null, null, null);
+INSERT INTO `parklibrary` VALUES ('29', '1', '27', '朱莎', '2', '1978.1', '会计学', '盐业历史博物馆', '/images/geolandscape/157189554832024.jpg', '科普教育', null, null, null);
+INSERT INTO `parklibrary` VALUES ('30', '1', '28', '余勇', '1', '1970.03', '美术', '盐业历史博物馆', '/images/geolandscape/157189556020025.jpg', '展示设计、恐龙绘画', null, null, null);
+INSERT INTO `parklibrary` VALUES ('31', '1', '29', '罗舒', '2', '1991.06', '动画', '盐业历史博物馆', '/images/geolandscape/157189557128826.jpg', '美术设计、恐龙绘画', null, null, null);
+INSERT INTO `parklibrary` VALUES ('32', '1', '30', '余刚', '1', '1960.1', '汉语言文学', '盐业历史博物馆', '/images/geolandscape/157189558453027.jpg', '摄影摄像', null, null, null);
+INSERT INTO `parklibrary` VALUES ('33', '1', '31', '杨华', '1', '1985.05', '电子信息科学与技术', '盐业历史博物馆', '/images/geolandscape/157189559340228.jpg', '电子设备维护与信息化建设', null, null, null);
+INSERT INTO `parklibrary` VALUES ('34', '1', '32', '凌曼', '2', '1970.01', '美术', '盐业历史博物馆', '/images/geolandscape/157189560392629.jpg', '展示设计、恐龙绘画', null, null, null);
+INSERT INTO `parklibrary` VALUES ('35', '1', '33', '何旭', '1', '1973.04', '信息与技术', '盐业历史博物馆', '/images/geolandscape/157189562143030.jpg', '电子设备维护与信息化建设', null, null, null);
+INSERT INTO `parklibrary` VALUES ('36', '1', '34', '张永聪', '2', '1982.08', '医药英语', '盐业历史博物馆', '/images/geolandscape/157189563115531.jpg', '英语翻译', null, null, null);
+INSERT INTO `parklibrary` VALUES ('37', '1', '35', '王晓娟', '2', '1977.11', '经济管理', '盐业历史博物馆', '/images/geolandscape/157189563931832.jpg', '讲解', null, null, null);
+INSERT INTO `parklibrary` VALUES ('38', '1', '36', '胡晓冬', '1', '1976.01', '信息与技术经济管理', '盐业历史博物馆', '/images/geolandscape/157189566168033.jpg', '藏品管理', null, null, null);
+INSERT INTO `parklibrary` VALUES ('39', '1', '37', '徐娟', '2', '1970.1', '法律', '盐业历史博物馆', '/images/geolandscape/157189545680318.jpg', '科普教育', null, null, null);
+INSERT INTO `parklibrary` VALUES ('40', '1', '38', '李貌', '2', '1977.4', '音乐学', '自贡恐龙博物馆', '/images/geolandscape/15718951084404.jpg', '科普教育', null, null, null);
+INSERT INTO `parklibrary` VALUES ('41', '1', '39', '张新国', '2', '1961.5', '行政管理', '自贡恐龙博物馆', '/images/geolandscape/15718952879256.jpg', '文物修复', null, null, null);
+INSERT INTO `parklibrary` VALUES ('42', '1', '40', '林鹰', '2', '1967.1', '行政管理', '自贡恐龙博物馆', '/images/geolandscape/15718952038145.jpg', '文物修复', null, null, null);
 
 -- ----------------------------
 -- Table structure for parkmeeting
@@ -1140,12 +1157,25 @@ CREATE TABLE `parkrelation` (
   `update_time` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='缔结姊妹公园';
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='缔结姊妹公园';
 
 -- ----------------------------
 -- Records of parkrelation
 -- ----------------------------
-INSERT INTO `parkrelation` VALUES ('1', '1', '111', '111', '111', '111', '1111', 'http://www.geopark.com/parkrelation/15686248370360.jpg', null, '2019-09-16 17:10:21', null);
+INSERT INTO `parkrelation` VALUES ('1', '1', '敦煌联合国教科文组织世界地质公园', '位于甘肃省敦煌市，由雅丹景区、鸣沙山-月牙泉景区以及自然景观游览区和文化遗址游览区组成', '2015年10月', '', '敦煌联合国教科文组织世界地质公园位于甘肃省敦煌市，由雅丹景区、鸣沙山-月牙泉景区以及自然景观游览区和文化遗址游览区组成，面积2067.2平方公里。2015年9月，成功加入世界地质公园网络。\n\n特殊的地质背景和极端干旱的气候条件形成的地貌景观，与特殊的地理位置和古丝绸之路形成的文化遗址在这里浑然成为一体。雅丹地貌、鸣沙山-月牙泉，以及沙漠、戈壁和西湖湿地是大自然的造化；莫高窟、古丝绸之路文化遗址阳关、玉门关以及古军事遗址汉长城、河仓城等则是敦煌文化历史的写照。\n\n2015年10月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/15743879476430-敦煌联合国教科文组织世界地质公园.png', null, '2019-11-22 09:59:13', null);
+INSERT INTO `parkrelation` VALUES ('2', '1', '光雾山—诺水河联合国教科文组织世界地质公园', '四川省巴中市境内', '2017年3月', '', '光雾山-诺水河联合国教科文组织世界地质公园位于四川省巴中市境内，2018年4月加入世界地质公园网络。\n\n公园对于解析特提斯外围盆地、秦岭（中央）造山带以及四川盆地地质演化历史，乃至整个扬子地块的演化发展具有重要科学意义，也是研究扬子地块北缘与秦岭造山带、龙门山造山带之间的构造转换关系，及大陆动力学和中国喀斯特南北差异的关键区域。公园人文历史悠久，始于秦、兴于汉的米仓古道，纵贯秦巴山区，北上三秦下通巴渝，连接中原黄河文明与西南巴蜀文明，秦汉时期的官仓平和牟阳古城等人文历史景观保存良好，薅草锣鼓、巴山皮影、茅山歌、巴山背二歌等众多民俗文化在此传承发扬。\n\n2017年3月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/15743880402071-光雾山-诺水河联合国教科文组织世界地质公园.png', '2019-11-22 10:00:47', '2019-11-22 10:00:47', null);
+INSERT INTO `parkrelation` VALUES ('3', '1', '贵州兴义国家地质公园', '贵州省黔西南布依族苗族自治州兴义市', '2017年6月', '', '兴义国家地质公园以喀斯特锥峰、岩溶地貌景观和贵州龙动物群古生物化石产地为主题特色。\n\n兴义是我国锥型喀斯特发育最为典型、连片分布面积最广的地区，以峰谷、峰丛、峰林、石林、丘峰溶源、钙华瀑布、溶斗、溶洞、瀑布群、泉群等景观组合为特色，构成了神奇迷人的自然景观。兴义山川秀丽、风景优美，景观以发育于三叠纪岩层中的峰丛峰林、峡谷飞瀑为主，更有举世罕见的三叠纪贵州龙动物群和三叠纪大型相变带地质遗迹，为世人认知、感悟三叠纪的地质圣地。\n\n2017年6月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/15743881122582-贵州兴义国家地质公园.png', '2019-11-22 10:01:55', '2019-11-22 10:01:55', null);
+INSERT INTO `parkrelation` VALUES ('4', '1', '湖南湘西国家地质公园', '湖南省吉首市乾州新区载福路', '2018年3月', '', '湘西国家地质公园拥有记录扬子地台演化的完整沉积序列，以及“芙蓉统”、“排碧阶”、“古丈阶”3个全球地层年代，包括2枚寒武系全球层剖面“金钉子”、世界上规模最大的红色碳酸盐岩石林等优势地质资源，是地质生态与民族文化相融合的完美典范。\n\n2018年3月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/15743881818633-湖南湘西国家地质公园.png', '2019-11-22 10:03:03', '2019-11-22 10:03:03', null);
+INSERT INTO `parkrelation` VALUES ('5', '1', '可可托海联合国教科文组织世界地质公园', '新疆阿尔泰地区富蕴县和青河县', '2015年4月', '', '可可托海联合国教科文组织世界地质公园以典型矿床和矿山遗址为主体景观。2017年5月，经联合国教科文组织批准，加入世界地质公园网络。\n\n可可托海花岗伟晶岩稀有金属矿床、富蕴断裂带地震遗迹和额尔齐斯河花岗岩地貌等构成公园的三大主要地质遗迹类型。园内的三号矿为世界级的花岗伟晶岩矿床，发现矿物84种，被誉为天然矿物博物馆，与世界上同类矿脉相比，三号矿脉中的铍资源储量居世界第一。可可托海地处新疆东北部的富蕴县境内，由世界地震博物馆之称的卡拉先格尔地震断裂带、北国江南之誉的可可苏里、中国第二寒极伊雷木湖及著名的额尔齐斯大峡谷四大景区组成。由于特殊的地质构造、风雨侵蚀和流水切割，可可托海形成许多深沟峡谷，成为集山景、水景、草原、奇石、温泉等奇观于一体的自然景观区。这里不仅是新疆的“冷极”，也是全国少有的“宝石之乡”，还是世界罕见的“天然矿物陈列馆”。\n\n2015年4月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/15743882409194-可可托海联合国教科文组织世界地质公园.png', '2019-11-22 10:04:02', '2019-11-22 10:04:02', null);
+INSERT INTO `parkrelation` VALUES ('6', '1', '昆仑山联合国教科文组织世界地质公园', '青海省海西蒙古族藏族自治州格尔木市', '2014年5月', '', '昆仑山联合国教科文组织世界地质公园位于昆仑山东段，海拔3091-6178米，面积7033.17平方千米。\n\n公园以冰川冰缘地貌、地震遗迹等景观闻名于世，它们记录了公园地区多次洋-陆转化、青藏高原隆起和5次冰期。同时，被誉为“万山之祖”的昆仑山自古就在中华民族的文化历史上具有显赫地位，它孕育了中国神话体系之一的昆仑神话体系。道教昆仑派也发源于此，文化历史源远流长。\n\n2014年5月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/15743882924485-昆仑山联合国教科文组织世界地质公园.png', '2019-11-22 10:04:54', '2019-11-22 10:04:54', null);
+INSERT INTO `parkrelation` VALUES ('7', '1', '兰卡威联合国教科文组织世界地质公园', '马来西亚', '2008年2月', '', '兰卡威联合国教科文组织世界地质公园是马来西亚乃至东南亚的第一个世界地质公园网络成员。分布在浮罗交怡岛西北部的马青长组是世界上最老的地层，年龄为5.5亿年。出露于的Chuping灰岩具有2.8亿年的高龄，在公园东北部，很容易就能发现一些前所未见的最漂亮和最迷人的地层。\n\n事实上，地质公园概念不仅仅强调地质构造和风景，它还包括当地居民如何通过有效的保护和发展生态旅游来维持和培育地质遗迹。\n\n2008年2月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/15743883355556-兰卡威联合国教科文组织世界地质公园.png', '2019-11-22 10:05:37', '2019-11-22 10:05:37', null);
+INSERT INTO `parkrelation` VALUES ('8', '1', '雷琼联合国教科文组织世界地质公园', '海南省海口市、广东省湛江市', '2015年10月', '', '雷琼联合国教科文组织世界地质公园在地质学上属于雷琼陆谷火山带。公园是雷琼裂谷发生演化南海盆地扩张的火山学和岩石学记录。\n\n公园内火山密集，共有101座火山。火山类型几乎涵盖了玄武质岩浆爆发与蒸汽岩浆爆发的所有类型：熔岩锥、碎屑锥（溅落锥、岩渣锥）、混合锥、玛珥火山（低平火口、凝灰岩环）。其数量之多，类型之多样，保存之完整，为我国第四纪火山带之首。它是一部第四纪玄武岩火山学的天然巨著。\n\n公园地处热带与南亚热带的过渡区，生态群落具有独特性与多样性等特征。\n\n公园内有多处的火山石古民居、古寺石庙，玄武岩石器具等文物古迹，反映了当地民俗与火山地貌的关系，文化积淀深厚。\n\n2015年10月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/15743883851457-雷琼联合国教科文组织世界地质公园.png', '2019-11-22 10:06:26', '2019-11-22 10:06:26', null);
+INSERT INTO `parkrelation` VALUES ('9', '1', '龙虎山联合国教科文组织世界地质公园', '江西省鹰潭市', '2011年2月', '', '江西龙虎山联合国世界地质公园位于中国江西省鹰潭市，龙虎山丹霞地貌类型多样，拥有幼年期、壮年期到老年期丹霞地貌的完整序列，尤以壮年期地貌为主体。整个园区呈现一幅碧水丹山的天然画卷，是具有典型意义的丹霞地貌。同时，由于分布着奇特的火山岩地貌及典型地层剖面，因此具有很高的科学价值和审美旅游观赏价值。\n\n2011年2月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/15743884367098-江西龙虎山联合国世界地质公园.png', '2019-11-22 10:07:18', '2019-11-22 10:07:18', null);
+INSERT INTO `parkrelation` VALUES ('10', '1', '内蒙古巴彦淖尔国家地质公园', '内蒙古巴彦淖尔市', '2014年12月', '', '巴彦淖尔国家地质公园位于内蒙古自治区西部,特殊的地质构造、地理位置、生态环境和气候条件形成了集山脉、沙漠、高原、湖泊和河流于一体的地貌景观，属于国内罕见的多种地貌单元交汇的综合性地质公园。高耸入云的阴山、浩渺如烟的沙漠、险峻多姿的石林、奔腾不息的黄河、一望无垠的草原、星罗棋布的湖泊、珍贵稀有的恐龙化石、典型的地质剖面、与闻名遐迩的阴山岩画遗迹凝聚人类智慧的黄河水利枢纽工程交相辉映。它不仅是进行地质科学知识普及的天然博物馆，也是旅游休闲度假的胜地。\n\n2014年12月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/15743884821579-巴彦淖尔国家地质公园.png', '2019-11-22 10:08:03', '2019-11-22 10:08:03', null);
+INSERT INTO `parkrelation` VALUES ('11', '1', '泰山联合国教科文组织世界地质公园', '山东省泰安市东岳大街501号', '2018年4月', '', '泰山联合国教科文组织世界地质公园位于山东省中西部，公园内自然景观宏伟壮丽，文化内涵深厚。走进地质公园，你可以看到许多的地质奇观：古老的泰山岩群、色彩斑斓的彩石溪、高耸似烛的天柱峰、突兀峻峭的扇子崖、地势险要的仙人桥、景色诱人的飞瀑等等。泰山雄、险、奇、秀、幽、奥、旷等自然景观向世人昭示，这是一处天然的地学博物馆，是一本古老的地质史书，大自然在这里发挥了最神奇的想象力，以它的鬼斧神工创造了人间胜景，成就了泰山独具特色的地质地貌。在这里，你们既能感受到自然与人文景观的魅力，又能够找到大自然历经近28亿年“洗礼”而形成的世界罕见的地质遗迹。\n\n2018年4月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/157438853316510-泰山联合国教科文组织世界地质公园.png', '2019-11-22 10:08:54', '2019-11-22 10:08:54', null);
+INSERT INTO `parkrelation` VALUES ('12', '1', '西班牙马埃斯特地质公园', '西班牙特鲁埃尔省', '2017年9月', '', '西班牙马埃斯特地质公园是欧洲地质公园网络建立的四个初始成员之一。\n\n马埃斯特地质公园位于西班牙特鲁埃尔（Teruel）省内，公园占地约27万公顷，主要包含以白垩纪到第三纪灰岩地貌和构造地貌为主的阿利亚加地质公园和以研究恐龙为主的迪纳泊莱斯恐龙研究项目及恐龙化石博物展示馆。公园内盆地中含丰富古生物化石，尤其是恐龙骨骼化石、恐龙足迹化石和硅化木十分丰富。这里曾挖掘出相对完整的欧洲最大的恐龙骨骼化石，研究成果被国际著名杂志“科学”期刊刊登。\n\n2017年9月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/157438855889611-西班牙马埃斯特地质公园.png', '2019-11-22 10:09:30', '2019-11-22 10:11:42', null);
+INSERT INTO `parkrelation` VALUES ('13', '1', '希腊莱斯沃斯岛联合国教科文组织世界地质公园', '希腊', '2017年9月', '', '莱斯沃岛联合国教科文组织世界地质公园是欧洲地质公园网络建立的四个初始成员之一。\n\n莱斯沃斯岛位于爱琴海东北部，是希腊第三大岛，面积1630平方千米。2000万年前爱琴海北部火山喷发，导致火山碎屑物质从东向西流动。这些火山碎屑物质掩埋了当时莱斯沃斯岛西部生长的茂密森林。由于火山碎屑物质移动迅速，森林中的树干、树枝和树叶几乎顷刻间被掩埋，植物的形态特征和树木的内部结构被完好地保护下来。除石化树干外，还可看到保存完好的石化树根、果实、树叶和树种。莱斯沃斯石化森林为我们提供了大量有关远古植物群的组成和特征以及气候条件的信息。\n\n2017年9月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/157438861830712-希腊莱斯沃斯岛联合国教科文组织世界地质公园.png', '2019-11-22 10:10:19', '2019-11-22 10:10:19', null);
+INSERT INTO `parkrelation` VALUES ('14', '1', '兴文联合国教科文组织世界地质公园', '四川省宜宾市兴文县古宋镇香山东路64号', '2009年7月', '', '兴文联合国教科文组织世界地质公园位于四川省宜宾市兴文县，地处四川盆地南部与云贵高原过渡带。公园内石灰岩广泛分布，特殊的地理位置、地质构造和气候环境条件形成了兴文式喀斯特岩溶地貌，是国内最早对天坑研究和命名地，也是研究西南地区喀斯特地貌的典型地区之一。公园内保存了距今约4.9亿年—2.5亿年各时代的碳酸盐或含碳酸盐地层，地层中含有极其丰富的海相古生物化石和沉积相标志。各类地质遗迹与神秘的僰人历史文化和浓郁的苗族文化共同构成了一幅完美的自然山水画卷。\n\n2009年7月，与自贡联合国教科文组织世界地质公园缔结姊妹。', '/images/parkrelation/157438864346113-兴文联合国教科文组织世界地质公园.png', '2019-11-22 10:11:11', '2019-11-22 10:11:11', null);
 
 -- ----------------------------
 -- Table structure for parktopic
@@ -1168,12 +1198,43 @@ CREATE TABLE `parktopic` (
   `img` text COMMENT '照片',
   `url` text COMMENT '存储地址',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园专题研究';
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园专题研究';
 
 -- ----------------------------
 -- Records of parktopic
 -- ----------------------------
-INSERT INTO `parktopic` VALUES ('1', '1', '023465467', '放大发', '放大算法撒地方', '幅度萨芬', '热尔为', '飞洒地方撒旦', '范德萨', '发撒打发是', '范德萨热舞日前', '范德萨发生er', 'er发射点发生妨到', '/images/parktopic/15694237337910.jpg', '/files/researchpaper/15694237253990.txt');
+INSERT INTO `parktopic` VALUES ('1', '1', '报告编号', '《盐业史研究》\nResearch on Salt Industry History', '成果类型', '', '20120325', '《盐业史研究》编辑部', '主管单位', '主题词', '成果摘要', '公园收藏情况', '2012年1期', '', '');
+INSERT INTO `parktopic` VALUES ('33', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20120625', '《盐业史研究》编辑部', '', '', '', '', '2012年2期', '', '');
+INSERT INTO `parktopic` VALUES ('34', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20120925', '《盐业史研究》编辑部', '', '', '', '', '2012年3期', '', '');
+INSERT INTO `parktopic` VALUES ('35', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20121225', '《盐业史研究》编辑部', '', '', '', '', '2012年4期', '', '');
+INSERT INTO `parktopic` VALUES ('36', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20130325', '《盐业史研究》编辑部', '', '', '', '', '2013年1期', '', '');
+INSERT INTO `parktopic` VALUES ('37', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20130625', '《盐业史研究》编辑部', '', '', '', '', '2013年2期', '', '');
+INSERT INTO `parktopic` VALUES ('38', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '', '《盐业史研究》编辑部', '', '', '', '', '2013年3期', '', '');
+INSERT INTO `parktopic` VALUES ('40', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20131225', '《盐业史研究》编辑部', '', '', '', '', '2013年4期', '', '');
+INSERT INTO `parktopic` VALUES ('41', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20140325', '《盐业史研究》编辑部', '', '', '', '', '2014年1期', '', '');
+INSERT INTO `parktopic` VALUES ('42', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20140625', '《盐业史研究》编辑部', '', '', '', '', '2014年2期', '', '');
+INSERT INTO `parktopic` VALUES ('43', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20140925', '《盐业史研究》编辑部', '', '', '', '', '2014年3期', '', '');
+INSERT INTO `parktopic` VALUES ('44', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20141225', '《盐业史研究》编辑部', '', '', '', '', '2014年4期', '', '');
+INSERT INTO `parktopic` VALUES ('45', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20150325', '《盐业史研究》编辑部', '', '', '', '', '2015年1期', '', '');
+INSERT INTO `parktopic` VALUES ('46', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20150625', '《盐业史研究》编辑部', '', '', '', '', '2015年2期', '', '');
+INSERT INTO `parktopic` VALUES ('47', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20150925', '《盐业史研究》编辑部', '', '', '', '', '2015年3期', '', '');
+INSERT INTO `parktopic` VALUES ('48', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20151225', '《盐业史研究》编辑部', '', '', '', '', '2015年4期', '', '');
+INSERT INTO `parktopic` VALUES ('49', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20160325', '《盐业史研究》编辑部', '', '', '', '', '2016年1期', '', '');
+INSERT INTO `parktopic` VALUES ('50', '1', '', '《盐业史研究》\nResearch on Salt Industry History', '', '', '20160625', '《盐业史研究》编辑部', '', '', '', '', '2016年2期', '', '');
+INSERT INTO `parktopic` VALUES ('51', '1', '', '《“画”说恐龙》\nKnowing Dinosaurs From Paintings', '', '凌曼、余勇', '2014年', '四川省出版集团四川人民出版社', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('52', '1', '', '《盐都故实》\nActual Stories about the Salt Capital ', '', '宋良曦', '2014年', '四川人民出版社', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('53', '1', '', '<<亚洲第一龙——马门溪龙揭秘>>\nUncover the Mysteries of Mamenchisaurus,the First Biggest Dinosaur in Asia ', '', '叶  勇', '2013年', '上海科技教育出版社', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('54', '1', '', '《百问百答》100\n Questions and Answers', '', '自贡地质公园管理处', '2015年', '四川人民出版社', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('55', '1', '', '《传承文明 记住乡愁》\n Civilization Inheritage and Nostalgia Memory', '', '自贡盐业历史博物馆', '2015年', '自贡盐业历史博物馆编', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('56', '1', '', '《发现2014自贡文化遗产摄影作品集》\nDiscovery of 2014–-- A Photo Collection of Zigong Cultural Heritages ', '', '自贡市文化广播新闻出版局', '2014年', '', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('57', '1', '', '《十万个为什么——侏罗纪恐龙乐园》\nMr. Know All --- Paradise of the Jurassic Dinosaurs', '', '李飞 王强 周之俭', '2016年', '《十万个为什么》编辑部', '', '', '', '', '2016年增刊', '', '');
+INSERT INTO `parktopic` VALUES ('58', '1', '', '《盐井传奇 恐龙故乡》\nThe Legend of Salt Wells, the Hometown of Dinosaurs', '', '李忠东  邢立达等', '2015年', '星球地图出版社', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('59', '1', '', '《中国古脊椎动物志》第二卷 第五册 鸟臀类恐龙\nOrnithischians, Book 5, Volume 2, On Chinese Paleontological Vertebrates', '', '彭光照等', '2015年', '科学出版社', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('60', '1', '', '《中国世界地质公园十周年巡礼》\nOn the Ten years of the UNESCO Geoparks of China', '', '自贡地质公园管理处', '2015年', '自贡地质公园管理处', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('61', '1', '', '《自贡地质公园》画册\nA Picture Album of Zigong Geopark ', '', '自贡地质公园管理处', '2015年', '四川人民出版社', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('62', '1', '', '《自贡地质公园论文集》\nA Collection of Papers of Zigong Geopark', '', '自贡地质公园管理处', '2015年', '四川人民出版社', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('63', '1', '', '《自贡恐龙》画册\nA Picture Album of Zigong Dinosaurs', '', '', '2011年', '四川人民出版社', '', '', '', '', '', '', '');
+INSERT INTO `parktopic` VALUES ('64', '1', '', '《自贡恐龙发现100年研究文集》\nCollected Works on the 1oo Anniversary of the Discovery of Zigong Dinosaurs', '', '', '2015年', '自贡恐龙博物馆', '', '', '', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for picdocs
@@ -1189,12 +1250,29 @@ CREATE TABLE `picdocs` (
   `url` text COMMENT '存储地址',
   `note` text COMMENT '文件描述',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='文件资料';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='文件资料';
 
 -- ----------------------------
 -- Records of picdocs
 -- ----------------------------
-INSERT INTO `picdocs` VALUES ('1', '1', '11', '11', '11', '11', '/images/picdocs/15689640464980.jpg,/images/picdocs/15689640608942.jpg', '1111');
+INSERT INTO `picdocs` VALUES ('1', '1', '1', '2016自贡世界地质公园规划-卫星遥感影像图', '2016年', '自贡世界地质公园管理处', '/images/picdocs/15724063118880.jpg', '1111');
+INSERT INTO `picdocs` VALUES ('2', '1', '2', '2016自贡世界地质公园规划-画界实际资料图', '2016年', '自贡世界地质公园管理处', '/images/picdocs/15724064893871.jpg', '');
+INSERT INTO `picdocs` VALUES ('3', '1', '3', '2016自贡世界地质公园规划-地质遗迹及其他自然人文资源分布图', '2016年', '自贡世界地质公园管理处', '/images/picdocs/15724066300452.jpg', '');
+INSERT INTO `picdocs` VALUES ('4', '1', '4', '2016自贡世界地质公园规划-规划总图', '2016年', '自贡世界地质公园管理处', '/images/picdocs/15725042429250.jpg', '规划总图');
+INSERT INTO `picdocs` VALUES ('5', '1', '5', '2016自贡世界地质公园规划-功能分区图', '2016年', '自贡世界地质公园管理处', '/images/picdocs/15725045620361.jpg', '功能分区图');
+INSERT INTO `picdocs` VALUES ('6', '1', '6', '2016自贡世界地质公园规划-保护规划图', '2016年', '自贡世界地质公园管理处', '/images/picdocs/15725046177262.jpg', '保护规划图');
+INSERT INTO `picdocs` VALUES ('7', '1', '7', '2016自贡世界地质公园规划-土地利用规划图', '2016年', '自贡世界地质公园管理处', '/images/picdocs/15725046808233.jpg', '土地利用规划图');
+INSERT INTO `picdocs` VALUES ('8', '1', '8', '自贡世界地质公园新增区域地质遗迹调查与评价项目地质遗迹分布图', '2019年10月', '地质公园管理处', '/images/picdocs/15742385846560-自贡世界地质公园新增区域地质遗迹调查与评价项目地质遗迹分布图.JPG', '');
+INSERT INTO `picdocs` VALUES ('9', '1', '9', '自贡世界地质公园新增区域地质遗迹调查与评价项目地质遗迹保护规划建议图', '2019年10月', '地质公园管理处', '/images/picdocs/15739917324341-自贡世界地质公园新增区域地质遗迹调查与评价项目地质遗迹保护规划建议图.JPG', '');
+INSERT INTO `picdocs` VALUES ('10', '1', '10', '地质公园科普活动照片-幼儿园', '', '地质公园管理处', '/images/picdocs/157399670182424-2013汇东幼儿园小朋友在画天车.JPG,/images/picdocs/157399670182423-2012袋鼠妈妈幼儿园.JPG,/images/picdocs/157399670183725-2013.12.13汇东幼儿园吉祥物选取.jpg,/images/picdocs/157399670186726-2012袋鼠妈妈参观.JPG,/images/picdocs/157399670186927-2012袋鼠妈妈幼儿园参观.JPG,/images/picdocs/157399670189029-2013汇东幼儿园小朋友在天街画画.JPG,/images/picdocs/157399670187528-2012袋鼠妈妈幼儿园小朋友.JPG,/images/picdocs/157399670191430-2013金童双语幼儿园参观.JPG,/images/picdocs/157399670194131-2013金童双语幼儿园合影.JPG,/images/picdocs/157399670197732-2014年袋鼠妈妈幼儿园亲子植树活动.jpg,/images/picdocs/157399670204833-2015仁和半岛袋鼠妈妈幼儿园科普活动 (1).jpg,/images/picdocs/157399670204833-2015袋鼠妈妈幼儿园榫卯 比赛 (2).JPG,/images/picdocs/157399670206034-2015袋鼠妈妈幼儿园榫卯 比赛 (1).JPG,/images/picdocs/157399670206635-2015年袋鼠妈妈幼儿园参观 (1).JPG,/images/picdocs/157399670212437-2015仁和半岛袋鼠妈妈幼儿园科普活动.jpg,/images/picdocs/157399670213238-2015年袋鼠妈妈幼儿园参观.JPG,/images/picdocs/157399670210836-2015袋鼠妈妈幼儿园榫卯 比赛.jpg,/images/picdocs/157399670216539-20160419袋鼠妈妈幼儿园 (8).jpg,/images/picdocs/157399670217540-IMG_3891.jpg,/images/picdocs/157399670217941-IMG_3881.jpg,/images/picdocs/157399670729942-照片 289.jpg', '');
+INSERT INTO `picdocs` VALUES ('11', '1', '11', '地质公园科普活动照片-小学生', '', '地质公园管理处', '/images/picdocs/157399679820444-8月1日不眠夜.JPG,/images/picdocs/157399679820845-2014年“世界地球日”2.jpg,/images/picdocs/157399679821646-2012青少年宫师生参观.jpg,/images/picdocs/157399679821647-2012青少年宫参观.jpg,/images/picdocs/157399679824148-“我心中的恐龙”绘画比赛.jpg,/images/picdocs/157399679828450-2014年全国科普日活动1.jpg,/images/picdocs/157399679826349-2013富顺县团委留守儿童集体.JPG,/images/picdocs/157399679830251-2015关工委未成年人 (1).jpg,/images/picdocs/157399679831853-2015关工委未成年人.jpg,/images/picdocs/157399679834454-2015年香港救恩书院.JPG,/images/picdocs/157399679831752-2014年红旗小学参观博物馆.JPG,/images/picdocs/157399679840855-2015小记者参观博物馆.JPG,/images/picdocs/157399679842956-2016凤凰小学参观博物馆.jpg,/images/picdocs/157399679843858-2016刘山中心校参观博物馆.jpg,/images/picdocs/157399679845059-2016绿盛学校参观博物馆.JPG,/images/picdocs/157399679842957-2015 迎新春·绘会馆.JPG,/images/picdocs/157399679847160-2015育英小学参观抗战胜利展.JPG,/images/picdocs/157399679855461-2016孝心讲故事 (1).JPG,/images/picdocs/157399679857862-2016孝心讲故事.JPG,/images/picdocs/157399681439563-BSS_1838.jpg,/images/picdocs/157399681439867-BSS_1849.jpg,/images/picdocs/157399681439565-BSS_1848.jpg,/images/picdocs/157399681439866-BSS_1844.jpg,/images/picdocs/157399681439564-2016永安小学参观博物馆.JPG,/images/picdocs/157399681439968-BSS_1846.jpg,/images/picdocs/157399681450169-BSS_1851.jpg,/images/picdocs/157399681450270-BSS_1850.jpg,/images/picdocs/157399681450271-BSS_1858.jpg,/images/picdocs/157399681451072-BSS_1961.JPG,/images/picdocs/157399681451273-BSS_1856.jpg,/images/picdocs/157399681451974-BSS_1857.jpg,/images/picdocs/157399681460277-BSS_1997.JPG,/images/picdocs/157399681459976-BSS_2003.JPG,/images/picdocs/157399681460478-BSS_2007.JPG,/images/picdocs/157399681461179-BSS_2008.JPG,/images/picdocs/157399681459275-BSS_1999.JPG,/images/picdocs/157399681461179-BSS_2018.JPG,/images/picdocs/157399681469480-BSS_2023.JPG,/images/picdocs/157399681470781-BSS_2041.JPG,/images/picdocs/157399683052484-BSS_2063.JPG,/images/picdocs/157399683052482-BSS_2062.JPG,/images/picdocs/157399683055585-BSS_2044.JPG,/images/picdocs/157399683055986-BSS_2043.JPG,/images/picdocs/157399683052483-BSS_2045.JPG,/images/picdocs/157399683057887-BSS_2066.JPG,/images/picdocs/157399683065688-BSS_2076.JPG,/images/picdocs/157399683067691-BSS_2069.JPG,/images/picdocs/157399683067489-BSS_2068.JPG,/images/picdocs/157399683067490-BSS_2071.JPG,/images/picdocs/157399683068092-BSS_2073.JPG,/images/picdocs/157399683076793-BSS_2084.JPG,/images/picdocs/157399683079595-BSS_2079.JPG,/images/picdocs/157399683079996-BSS_2078.JPG,/images/picdocs/157399683081397-BSS_2100.JPG,/images/picdocs/157399683079494-BSS_2081.JPG,/images/picdocs/157399683082998-BSS_2088.JPG,/images/picdocs/157399683091799-BSS_2102.JPG,/images/picdocs/1573996830939100-BSS_2108.JPG,/images/picdocs/1573996830949101-BSS_2103.JPG,/images/picdocs/1573996848301103-BSS_2132.JPG,/images/picdocs/1573996848301102-BSS_2133.JPG,/images/picdocs/1573996848313104-BSS_2123.JPG,/images/picdocs/1573996848329106-BSS_2113.JPG,/images/picdocs/1573996848329107-BSS_2117.JPG,/images/picdocs/1573996848326105-BSS_2118.JPG,/images/picdocs/1573996848392108-BSS_2137.JPG,/images/picdocs/1573996848422110-BSS_2141.JPG,/images/picdocs/1573996848421109-BSS_2140.JPG,/images/picdocs/1573996848428111-BSS_2171.JPG,/images/picdocs/1573996848436113-BSS_2186.JPG,/images/picdocs/1573996848433112-BSS_2170.JPG,/images/picdocs/1573996848492114-BSS_2193.JPG,/images/picdocs/1573996848519116-BSS_2206.JPG,/images/picdocs/1573996848520117-BSS_2208.JPG,/images/picdocs/1573996848527118-BSS_2212.JPG,/images/picdocs/1573996848514115-BSS_2197.JPG,/images/picdocs/1573996848546119-BSS_2217.JPG,/images/picdocs/1573996848613120-BSS_2221.JPG,/images/picdocs/1573996848617121-BSS_2223.JPG,/images/picdocs/1573996865901122-BSS_2236.JPG,/images/picdocs/1573996865901123-BSS_2230.JPG,/images/picdocs/1573996865901124-BSS_2228.JPG,/images/picdocs/1573996865901125-BSS_2229.JPG,/images/picdocs/1573996865915126-BSS_2226.JPG,/images/picdocs/1573996865933127-BSS_2224.JPG,/images/picdocs/1573996865990128-BSS_2238.JPG,/images/picdocs/1573996866002129-BSS_2239.JPG,/images/picdocs/1573996866017132-BSS_2252.JPG,/images/picdocs/1573996866017131-BSS_2246.JPG,/images/picdocs/1573996866080134-BSS_2253.JPG,/images/picdocs/1573996866007130-BSS_2244.JPG,/images/picdocs/1573996866023133-BSS_2250.JPG,/images/picdocs/1573996866101135-BSS_2254.JPG,/images/picdocs/1573996866134136-BSS_2282.JPG,/images/picdocs/1573996866188137-BSS_2291.JPG,/images/picdocs/1573996866195138-BSS_2288.JPG,/images/picdocs/1573996866207140-BSS_2255.JPG,/images/picdocs/1573996866204139-BSS_2299.JPG,/images/picdocs/1573996866213141-BSS_2300.JPG,/images/picdocs/1573996875707142-第二期小小讲解员1.JPG,/images/picdocs/1573996875718143-BSS_2423.JPG,/images/picdocs/1573996875718144-BSS_2422.JPG,/images/picdocs/1573996875733147-小小讲解员1.jpg,/images/picdocs/1573996875728145-BSS_2401.JPG,/images/picdocs/1573996875731146-第二期小小讲解员.jpg,/images/picdocs/1573996875799148-自贡恐龙科普季2.jpg,/images/picdocs/1573996875832149-小小讲解员3.jpg,/images/picdocs/1573996875929151-小小讲解员4.JPG,/images/picdocs/1573996875929150-小小讲解员2.jpg', '');
+INSERT INTO `picdocs` VALUES ('12', '1', '12', '地质公园科普活动照片-中学生', '', '地质公园管理处', '/images/picdocs/1573996948892152-2012自贡艺术学校听讲解.JPG,/images/picdocs/1573996948893153-2013年冰河动物展照片.jpg,/images/picdocs/1573996948910155-2013荣县9+3藏区学生参观.jpg,/images/picdocs/1573996948904154-2012自贡艺术学校参观.JPG,/images/picdocs/1573996948963156-2012飞鱼学校参观博物馆.JPG,/images/picdocs/1573996948963157-2012飞鱼学校参观.JPG,/images/picdocs/1573996949015158-2015梧桐学校榫卯大比拼.JPG,/images/picdocs/1573996949023159-2014年青少年宫参观 (1).JPG,/images/picdocs/1573996949079160-2014年青少年宫参观.JPG,/images/picdocs/1573996949090161-2015年解放中学参观博物馆.JPG,/images/picdocs/1573996949126162-2015盐博课堂 (1).JPG,/images/picdocs/1573996949145163-2015盐博课堂.JPG,/images/picdocs/1573996949154164-2016世界地球日 (1).JPG,/images/picdocs/1573996949226165-2016二十八中参观博物馆.JPG,/images/picdocs/1573996949248166-照片 279.jpg,/images/picdocs/1573996949252167-照片 302.jpg,/images/picdocs/1573996949287168-2016世界地球日.JPG,/images/picdocs/1573996949380169-学生参观冰河展-2.JPG', '');
+INSERT INTO `picdocs` VALUES ('13', '1', '13', '地质公园科普活动照片-大学生', '', '地质公园管理处', '/images/picdocs/1573996974015170-2015年四川师范大学学生参观 (1).JPG,/images/picdocs/1573996974016172-2015香港苗圃 (1).JPG,/images/picdocs/1573996974015171-2015四川师范大学参观博物馆 (1).JPG,/images/picdocs/1573996974018173-2015年四川师范大学学生参观.JPG,/images/picdocs/1573996974020174-2015四川师范大学参观博物馆.JPG,/images/picdocs/1573996974026175-2015香港苗圃.JPG,/images/picdocs/1573996974102176-IMG_0908.JPG,/images/picdocs/1573996974119178-IMG_2703.JPG,/images/picdocs/1573996974114177-IMG_2593.JPG,/images/picdocs/1573996974128179-IMG_0932.JPG,/images/picdocs/1573996974145180-IMG_20141122_143824.jpg', '');
+INSERT INTO `picdocs` VALUES ('14', '1', '14', '地质公园科普活动照片-进学校', '', '地质公园管理处', '/images/picdocs/1573997033320181-3月30日“话说恐龙”科普巡讲进校园第一站于佳乡小学.jpg,/images/picdocs/1573997033342182-2012贡井艾叶小学积极回答问题.JPG,/images/picdocs/1573997033355184-06月25日“恐龙世界几多谜”主题班会.jpg,/images/picdocs/1573997033355185-5月15日《龙宫讲坛》—进化论：人类思想的飞跃.jpg,/images/picdocs/1573997033347183-6月—9月自贡市汇东实验学校;恐龙吉祥物名字和故事征集.jpg,/images/picdocs/1573997033401187-2012贡井艾叶小学科普活动.JPG,/images/picdocs/1573997033369186-4月21日旭川中学讲座.jpg,/images/picdocs/1573997033460188-2012省盐校知识讲座.JPG,/images/picdocs/1573997033466190-2012汇西小学回答问题.JPG,/images/picdocs/1573997033464189-2012汇西小学科普活动.JPG,/images/picdocs/1573997033489191-2012省盐校师生听讲.JPG,/images/picdocs/1573997033531192-2012仲权小学回答问题.JPG,/images/picdocs/1573997033540194-2012仲权小学讲课.JPG,/images/picdocs/1573997033534193-2012育英小学学生观看展板.JPG,/images/picdocs/1573997033545195-2012育英小学科普活动.JPG,/images/picdocs/1573997033558196-2013博物馆走进英杰希望小学.JPG,/images/picdocs/1573997033565197-2013.12.12汇东实验学校吉祥物选取.jpg,/images/picdocs/1573997033605198-2013刘山小学同学积极回答问题.JPG,/images/picdocs/1573997033605199-2013刘山小学科普讲座.JPG,/images/picdocs/1573997033618200-2013英杰小学同学回答问题.JPG,/images/picdocs/1573997045729202-2014年博物馆进漆树中心校科普活动照片.JPG,/images/picdocs/1573997045733203-2015.5.18汇兴小学 科普讲座IMG_1394.JPG,/images/picdocs/1573997045726201-2015.5.18汇兴小学 科普讲座IMG_1389.JPG,/images/picdocs/1573997045748204-2014年博物馆进漆树中心校科普活动照片 (1).JPG,/images/picdocs/1573997045819207-2015博物馆走进麻柳小学.JPG,/images/picdocs/1573997045823208-2015博物馆走进麻柳小学 (1).JPG,/images/picdocs/1573997045810205-2014年博物馆进荣边小学科普活动.JPG,/images/picdocs/1573997045814206-2014年博物馆进荣边小学科普活动 (1).JPG,/images/picdocs/1573997045855209-2015瓦市中心校 (1).JPG,/images/picdocs/1573997045858210-2015瓦市中心校.JPG,/images/picdocs/1573997045944211-2015祝家小学科普活动.JPG,/images/picdocs/1573997045954212-江姐小学人偶剧.jpg,/images/picdocs/1573997045961213-2016杜快小学讲座 (1).JPG,/images/picdocs/1573997045961214-2016杜快小学讲座.JPG,/images/picdocs/1573997046003215-2015祝家小学科普活动 (1).JPG', '');
+INSERT INTO `picdocs` VALUES ('15', '1', '15', '地质公园科普活动照片-市民、社区、乡镇', '', '地质公园管理处', '/images/picdocs/1573997102081216-2014年“国际博物馆日”1.jpg,/images/picdocs/1573997102084218-2014年“世界地球日”1.jpg,/images/picdocs/1573997102083217-2014年“国际博物馆日”.jpg,/images/picdocs/1573997102089219-9月27日世界旅游日科普宣传活动.jpg,/images/picdocs/1573997102130220-5.18博物馆日活动.jpg,/images/picdocs/1573997102143221-4.22地球日.jpg,/images/picdocs/1573997102155223-2014年刘山镇党员参观.JPG,/images/picdocs/1573997102155222-2014年刘山镇党员参观 (1).JPG,/images/picdocs/1573997102171224-2015年5月15日广华社区IMG_1363.JPG,/images/picdocs/1573997102171225-2015年5月15日广华社区IMG_1360.JPG,/images/picdocs/1573997102262227-2015年童话佳年 (1).JPG,/images/picdocs/1573997102262226-2015年流动文明形象大使 (1).JPG,/images/picdocs/1573997102322228-2015年童话佳年 (2).JPG,/images/picdocs/1573997102322228-2015七夕音乐会 (1).JPG,/images/picdocs/1573997102322229-2015年童话佳年.JPG,/images/picdocs/1573997102357230-2015七夕音乐会.JPG,/images/picdocs/1573997102374231-2015年流动文明形象大使.JPG,/images/picdocs/1573997102422232-2015年流动文明形象大使 (2).JPG,/images/picdocs/1573997102476233-2015挑（背）盐竞赛活动 (1).JPG,/images/picdocs/1573997102525234-2015挑（背）盐竞赛活动.JPG,/images/picdocs/1573997117365235-2015迎春文化惠民活动—西秦艺苑.jpg,/images/picdocs/1573997117375236-2015迎春文化惠民活动—西秦艺苑 (1).JPG,/images/picdocs/1573997117386237-2015争做品德高尚自贡人 (1).JPG,/images/picdocs/1573997117388238-2015西南石油局老党员参观抗战胜利展 (1).jpg,/images/picdocs/1573997117402240-2015西南石油局老党员参观抗战胜利展.jpg,/images/picdocs/1573997117418241-2016-5月10日 土柱村 童心画恐龙.jpg,/images/picdocs/1573997117389239-2015争做品德高尚自贡人.JPG,/images/picdocs/1573997117449242-2016五一活动 (1).JPG,/images/picdocs/1573997117495243-2016盐博课堂.JPG,/images/picdocs/1573997117499244-2016盐博课堂 (1).JPG,/images/picdocs/1573997117521247-2016五一活动.JPG,/images/picdocs/1573997117500245-2016理工学校志愿者活动 (1).jpg,/images/picdocs/1573997117521246-20141220_152638.jpg,/images/picdocs/1573997117579248-20141220_151455.jpg,/images/picdocs/1573997117600249-IMG_6883.JPG,/images/picdocs/1573997117602250-IMG_6903.JPG,/images/picdocs/1573997117613252-IMG_20160328_140443.jpg,/images/picdocs/1573997117613253-IMG_6897.JPG,/images/picdocs/1573997117603251-20141220_154431.jpg,/images/picdocs/1573997126815255-土柱村化石科普讲座 (1).JPG,/images/picdocs/1573997126815257-土柱村化石科普讲座 (2).JPG,/images/picdocs/1573997126815258-IMG_20160328_140456.jpg,/images/picdocs/1573997126815254-IMG_20160328_140534.jpg,/images/picdocs/1573997126815256-IMG_20160328_141804.jpg', '');
+INSERT INTO `picdocs` VALUES ('16', '1', '16', '地质公园科普活动照片-地球馆日、博物馆日', '', '地质公园管理处', '/images/picdocs/1573997170416261-IMG_3952.jpg,/images/picdocs/1573997170409259-IMG_6870.JPG,/images/picdocs/1573997170409260-IMG_3924.jpg,/images/picdocs/1573997170427263-IMG_0464.JPG,/images/picdocs/1573997170424262-IMG_3973.jpg,/images/picdocs/1573997170456264-IMG_0500.JPG,/images/picdocs/1573997170478265-IMG_7008.JPG,/images/picdocs/1573997170489266-IMG_6971.JPG', '');
+INSERT INTO `picdocs` VALUES ('17', '1', '17', '地质公园科普活动照片-与Communication with Hong Kong Students', '', '地质公园管理处', '/images/picdocs/1573997218517267-IMG_2494.jpg,/images/picdocs/1573997218631269-DSC_3790.jpg,/images/picdocs/1573997218631268-DSC_3761.jpg,/images/picdocs/1573997218718270-DSC_3945.jpg,/images/picdocs/1573997218718271-DSC_4244.jpg,/images/picdocs/1573997218924272-IMG_9044.JPG,/images/picdocs/1573997219099273-IMG_9063.JPG,/images/picdocs/1573997219172274-IMG_9207.JPG,/images/picdocs/1573997219211275-IMG_9431.JPG,/images/picdocs/1573997219267276-IMG_9445.JPG,/images/picdocs/1573997219267276-IMG_9443.JPG', '');
+INSERT INTO `picdocs` VALUES ('18', '1', '11', '自贡世界地质公园范围图-终副本', '', '地质公园管理处', '/images/picdocs/1573998532136277-自贡世界地质公园范围图-终副本.jpg', '');
 
 -- ----------------------------
 -- Table structure for planning
@@ -1214,12 +1292,24 @@ CREATE TABLE `planning` (
   `url` text COMMENT '文件地址',
   `note` text COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园规划';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='公园规划';
 
 -- ----------------------------
 -- Records of planning
 -- ----------------------------
-INSERT INTO `planning` VALUES ('1', '1', '11', null, '11', '11', null, '11', '11', '11', '/files/planning/156896048333312.txt', '111');
+INSERT INTO `planning` VALUES ('1', '1', '1', '城市发展规划', '自贡市城市总体规划', '11', '无', '2011-2030年', '自贡市城市总体规划', '自贡市城市总体规划', '/files/planning/15743253828389-自贡市城市总体规划.docx,/files/planning/157432590393813-市域综合交通系统规划图.jpg,/files/planning/157432590393710-中心城区开发边界划定图.jpg,/files/planning/157432590393812-市域生态建设与环境保护规划图.jpg,/files/planning/157432590393711-中心城区用地布局规划图2020.jpg,/files/planning/157432590393710-中心城区空间结构规划图.jpg,/files/planning/157432590393710-中心城区用地布局规划图.jpg,/files/planning/157432590461914-市域空间管制规划图.jpg,/files/planning/157432590463315-市域城镇体系空间结构规划图.jpg,/files/planning/157432590466216-市域城镇体系现状图.jpg,/files/planning/157432590469318-规划区范围划定图.jpg,/files/planning/157432590468517-规划区四区划定图.jpg', '');
+INSERT INTO `planning` VALUES ('2', '1', '2', '旅游规划', '自贡市旅游发展总体规划', '', '', '', '', '', '', '');
+INSERT INTO `planning` VALUES ('3', '1', '3', '旅游规划', '自贡市“十三五”旅游发展规划', '', '', '2016-2020年', '', '', '', '');
+INSERT INTO `planning` VALUES ('4', '1', '4', '土地利用规划', '自贡市土地利用总体规划调整完善方案', '2018-07-04', '自贡市国土资源局', '2014-2020年', '自贡市土地利用总体规划调整完善方案', '自贡市土地利用总体规划调整完善方案', '/files/planning/157432726865219-自贡市规划调整完善方案.doc', '');
+INSERT INTO `planning` VALUES ('5', '1', '5', '矿产规划', '自贡市矿产资源总体规划', '2018-11-29', '自贡市国土资源局', '2016-2020年', '自贡市矿产资源总体规划', '自贡市矿产资源总体规划', '/files/planning/157432749911420-附件3：四川省自贡市矿产资源总体规划(2016-2020年).pdf', '');
+INSERT INTO `planning` VALUES ('6', '1', '6', '交通规划', '自贡市交通规划', '', '', '2016-2020年', '', '', '', '');
+INSERT INTO `planning` VALUES ('7', '1', '7', '旅游规划', '荣县旅游发展总体规划', '', '', '2016-2020年', '', '', '', '');
+INSERT INTO `planning` VALUES ('8', '1', '8', '土地利用规划', '荣县土地利用总体规划调整完善方案', '', '', '2014-2020年', '', '', '', '');
+INSERT INTO `planning` VALUES ('9', '1', '9', '矿产规划', '荣县矿产资源总体规划', '', '', '2016-2020年', '', '', '', '');
+INSERT INTO `planning` VALUES ('10', '1', '10', '交通规划', '荣县交通规划', '', '', '2016-2020年', '', '', '', '');
+INSERT INTO `planning` VALUES ('11', '1', '11', '地质公园规划', '自贡世界地质公园规划（2010）', '', '', '2009-2020年', '', '', '', '');
+INSERT INTO `planning` VALUES ('12', '1', '12', '地质公园规划', '自贡世界地质公园规划（2016）', '', '', '2016-2030年', '', '', '', '');
+INSERT INTO `planning` VALUES ('13', '1', '13', '国家地质公园规划', '中国自贡世界地质公园规划', '2016年3月', '地质公园管理处', '（2016—2030）', '自贡世界地质公园规划 专项研究报告 （2016—2030）自贡世界地质公园扩资调查 综合考察报告', '', '/files/planning/15724058236700.doc,/files/planning/15724058341571.doc,/files/planning/15724059178202.pdf', '');
 
 -- ----------------------------
 -- Table structure for production
@@ -1267,12 +1357,108 @@ CREATE TABLE `researchpaper` (
   `note` text COMMENT '备注',
   `url` text COMMENT '存储地址',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='相关科研论文';
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='相关科研论文';
 
 -- ----------------------------
 -- Records of researchpaper
 -- ----------------------------
-INSERT INTO `researchpaper` VALUES ('3', '1', '1111', '222', '阿大', '2010', '阿大', 'SCI', '1', '2', '及时达', '大大', '111', '111.pdf');
+INSERT INTO `researchpaper` VALUES ('3', '1', '1', '无', 'Christian 彭光照 叶勇 等', '2013', '蜥脚类恐龙颈部姿态的生物力学重建和选择性优势，及进食策略——以杨氏马门溪龙为例 “Biomechanical Reconstructions and Selective Advantages of Neck Poses and Feeding Strategies of Sauropods with the Example of Mamenchisaurus', '《公共科学图书馆 》 SCI“PLoS ONE”', '无', '无', '无', '无', '2013年10期', '111.pdf');
+INSERT INTO `researchpaper` VALUES ('4', '1', '', '', '邢立达\n叶勇等', '2015', '中国西南下白垩统夹关组发现的东亚最长的兽脚类足迹，及多样化的蜥脚类、兽脚类和鸟脚类足迹组合\n“The longest theropod trackway from East Asia, and a diverse sauropod-, theropod-, and ornithopod-track assemblage from the Lower Cretaceous Jiaguan Formation, southwest China”', '《白垩纪研究》\nSCI刊物“Cretaceous Research”\n', '', '', '', '', '2015年总56期', '');
+INSERT INTO `researchpaper` VALUES ('5', '1', '', '', '邢立达\n叶勇\n等', '2015', '中国陕西子州县中侏罗世延安组的兽脚类和鸟臀类足迹\nTheropod and Ornithischian Footprints from the Middle Jurassic Yanan Formation of Zizhou County, Shaanxi, China”', 'SCI刊物“Ichnos”\n《痕迹学》+D91', '', '', '', '', '2015年22期', '');
+INSERT INTO `researchpaper` VALUES ('6', '1', '', '', '邢立达\n彭光照\n叶勇\n等', '2015', '足迹传说：中国西南四川省昭觉县一种早白垩世的蜥脚类足迹\nTracking a Legend: An Early Cretaceous Sauropod Trackway from Zhaojue County, Sichuan Province, Southwestern China', 'SCI刊物“Ichnos”\n（痕迹学）', '', '', '', '', '2015年22期', '');
+INSERT INTO `researchpaper` VALUES ('7', '1', '', '', '邢立达\n叶勇\n等', '\n\n2016\n', '中国陕西子州县中侏罗世延安组的兽脚类和鸟臀类足迹\nTheropod and Ornithischian Footprints from the Middle Jurassic Yanan Formation of Zizhou County, Shaanxi, China”', 'SCI刊物“Ichnos”\n（痕迹学）', '', '', '', '', '2015年23期', '');
+INSERT INTO `researchpaper` VALUES ('8', '1', '', '', '邢立达\n叶 勇等', '2013', '“Middle Jurassic theropod trackways from the Panxi region, Southwest China and a consideration of their geologic age”（中国西南攀西地区中侏罗世兽脚类恐龙足迹及其地质年代的探讨）', '《古世界》\nSCI 《Palaeoworld》\n', '', '', '', '', '2013年22期', '');
+INSERT INTO `researchpaper` VALUES ('9', '1', '', '', '申岑\nPratt \n郝宝鞘等', '2013', '中国南方奥斯坦型化石研究\nThe search for Orsten-type fossils in southern China', '《古世界》\nSCI《Palaeoworld》\n', '', '', '', '', '2013年22期', '');
+INSERT INTO `researchpaper` VALUES ('10', '1', '', '', '邢立达\n彭光照\n叶 勇等', '2014', '中国四川盆地晚三叠世的一种可能属于两足行走的初龙类的不寻常足迹\n“An unusual trackway of a possibly bipedal archosaur from the Late Triassic of the Sichuan Basin, China”                           ', '《波兰古生物学报》\nSCI刊物 Acta Palaeontologica Polonica\n', '', '', '', '', '2014年59卷4期', '');
+INSERT INTO `researchpaper` VALUES ('11', '1', '', '', '邢立达\n彭光照\n叶勇\n等', '2014', '中国西南四川省上三叠统宝顶组首次发现的手兽足迹和可能的  涉水禽类足迹组合\n“First chirothere and possible grallatorid footprint assemblage from the Upper Triassic Baoding Formation of Sichuan Province, southwestern China”', '《古地理古气候古生态学》\nSCI刊物 Palaeogeography, Palaeoclimatology, Palaeoecology \n', '', '', '', '', ' 2014年412卷', '');
+INSERT INTO `researchpaper` VALUES ('12', '1', '', '', '佟海燕\n叶勇\n彭光照等', '2012', '中国四川盆地晚侏罗世新疆龟科化石的修订\n“A revision of xinjiangchelyid turtles from the Late Jurassic of Sichuan Basin, China', '《(古生物学纪要》\nSCI刊物“Annales de Paleontologie”\n', '', '', '', '', '2012年2期', '');
+INSERT INTO `researchpaper` VALUES ('13', '1', '', '', '邢立达\n彭光照\n叶  勇等', '2014', '中国四川自贡下侏罗统自流井组的蜥脚类和小型兽脚类足迹，及四川盆地三叠纪-侏罗纪恐龙化石和足迹化石简述\n“Sauropod and Small Theropod Tracks from the Lower Jurassic Ziliujing Formation of Zigong City, Sichuan, China, with an Overview of Triassic–Jurassic Dinosaur Fossils and Footprints of the Sichuan Basin”', '《痕迹学》\nSCI刊物“Ichnos”\n', '', '', '', '', '  2014年21期', '');
+INSERT INTO `researchpaper` VALUES ('14', '1', '', '', '邢立达\n彭光照\n叶  勇等', '2014', '中国四川省威远县下侏罗统珍珠冲组的大型兽脚类足迹：回顾、新观察及特别保存\nLarge theropod trackway from the Lower Jurassic Zhenzhuchong Formation of Weiyuan County, Sichuan Province, China: Review, new observations and special preservation      ', '《古世界》\nSCI刊物“Palaeoworld”', '', '', '', '', '2014年第23卷3~4期', '');
+INSERT INTO `researchpaper` VALUES ('15', '1', '', '', '邢立达\n叶  勇等', '2014', '中国鄂尔多斯盆地白垩纪的非鸟兽脚类足迹——嘉陵足迹及这类足迹化石的修订：对足迹分类学和造迹者形态学上的意义\n“The non-avian theropod track Jialingpus from the Cretaceous of the Ordos Basin, China, with a revision of the type material: Implications for ichnotaxonomy and trackmaker morphology” ', '《古世界》\nSCI刊物“Palaeoworld”', '', '', '', '', '2014年第23卷\n2期', '');
+INSERT INTO `researchpaper` VALUES ('16', '1', '', '', '邢立达\n叶  勇\n等', '2014', '中国甘肃省兰州市红谷区河口群的亚洲足迹型足迹及大型兽脚类足迹之脚跟\nAsianopodus-type footprints from the Hekou Group of Honggu District, Lanzhou City, Gansu, China and the “heel” of large theropod tracks', '《古世界》\nSCI刊物“Palaeoworld”\n', '', '', '', '', '2014年第23卷\n2期', '');
+INSERT INTO `researchpaper` VALUES ('17', '1', '', '', '邢立达\n彭光照\n叶 勇等', '2012', '“两种恐龙化石保护材料性能探讨”Discussion on the Performance of the two kinds of Dinosaur Fossil Protection Material', ' 《信阳师范学院学报》\nJournal of Xinyang Normal University(JCR-SCI)\n（自然科学版)', '', '', '', '', '2012年2期', '');
+INSERT INTO `researchpaper` VALUES ('18', '1', '', '', '叶 勇\n彭光照\n江 山', '2012', '四川盆地恐龙足迹化石研究综述\nAn Overview of the Research on Dinosaur Footprint Fossils in Sichuan Basin ', '《地质学刊》\nJournal of Geology ', '', '', '', '', '2012年2期', '');
+INSERT INTO `researchpaper` VALUES ('19', '1', '', '', '程龙刚\n周  劲', '2012', '贡井盐场节约献金救国运动纪实\nA Record of the Donation Movement of Gongjing Saltworks', '《四川档案》\nSichuan Archive', '', '', '', '', '2012年2期', '');
+INSERT INTO `researchpaper` VALUES ('20', '1', '', '', '程龙刚\n缪自平\n等', '2012', '盐晶纪 \nRecords of Salt Crystals ', '《中华手工》\nChinese Handicraft', '', '', '', '', '2012年7期', '');
+INSERT INTO `researchpaper` VALUES ('21', '1', '', '', '孙莉', '2012', 'The Earth Heritage Conservation and Scientific Popularization of Zigong Global Geopark Dinosaur Museum', ' The 5th International UNESCO Conference on Geoparks', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('22', '1', '', '', '郝宝鞘\n舒纯康\n叶勇', '2012', '自贡第四纪哺乳类化石\nThe Quaternary Mammal Fossils in Zigong', '《第13届古脊椎动物学会年会论文集》\nThe 13th Vertebrate Paleontology Conference Proceedings', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('23', '1', '', '', '关谷透', '2012', '云南楚雄早侏罗世初龙类幼年个体材料的研究\nThe Research of IndividualJuvenile Archosaur of Early Jurassic in Chuxiong,Yunnan', '《第五届恐龙宝宝和恐龙蛋国际学术会议”交流和报告》\nCommunication and reporting of The Fifth International Conference on dinosaur baby and dinosaur egg', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('24', '1', '', '', '彭光照\n邢立达\n叶 勇\n', '2012', '四川自贡下侏罗统自流井组的小型兽脚类\nSmall Theropod Tracks from the Lower Jurassic Ziliujing Formation of Zigong City, Sichuan, China', '《重庆綦江国际恐龙足迹学术研讨会”交流和报告，收入本次大会论文摘要集》\nCommunication and reporting on International Symposium on dinosaur footprints,Qijiang, Chongqing', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('25', '1', '', '', '曾舸', '2012', '利用资源  服务经济 \nDevelop Economy with the Resources', '省科博协第五次学术研讨会交流\nCommunication  on the Fifth Symposium of Sichuan Provincial Science Museum Association', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('26', '1', '', '', '张正权', '2012', '坚持把强化党性观念提升党员意识作为我馆党建工作的重点\nTake Strengthening the concetpt of Party and emhancing the awareness of Party Member as the Priority of our Museum ', '市文广新局系统党建理论研讨会\nTheory of the Party construction Seminar--Department of Culture, Radio, Film, TV, Press and Publication of Zigong', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('27', '1', '', '', '黄飞', '2012', '加强旅游信用档案建设 提升自贡世界地质公园内涵 \nImprove the Construction of Travel Credit Archive  Emhance the Connotation of Zigong Global Geopark', '《四川理工学院学报 》\nJournal of SUSE', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('28', '1', '', '', '黄 飞', '2012', '事业单位有必要建立专业技术人员业绩档案\nThe Necessity for Public Institutions to Establish Performance Archive for Professional Techinicians', '《四川省经科协作四组暨川南七地市档案学术研讨会论文集》\n Sichuan Provincial Economic Science and Technology Archives Working Group of Fourth Groups (Seven Places in Southern Sichuan)of Archives Academic Experience Exchange', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('29', '1', '', '', '郝宝鞘', '2012', '对地质类公园藏品的思考\nReview about the Collections of Geopark', '中国自然科学博物馆协会《通讯》\nChinese Association of Natural Science Museums《Communication》', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('30', '1', '', '', '曾 舸', '2012', '浅谈如何做好联络员工作\nBrief Talk about How to Refine Communicators\' work', '中国自然科学博物馆协会《通讯》\nChinese Association of Natural Science Museums《Communication》', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('31', '1', '', '', '郝宝鞘', '2012', '藏品的收藏与管理\nThe Collection and Management of Exhibits', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('32', '1', '', '', '曾 舸', '2012', '努力探索地质公园科普工作新路径\nEndeavor to Find New Path for Geopark Science Popularization', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('33', '1', '', '', '彭光照 ', '2012', '中国恐龙类地质公园发展思路的探讨\nDisscussion about the Development of Dinosaur-Orented Geopark in China', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('34', '1', '', '', '李飚', '2012', '香港地质公园初探\nThe first Exploration of Hongkong Geopark', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('35', '1', '', '', '李飞', '2012', '浅谈地质公园内化石遗址的保护—以自贡世界地质公园大山铺恐龙化石群遗址为例\nBrief Talk about the Conservation of Fossils in the Park---Take Dashanpu Dinosaur Fossil Quarry for Example', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('36', '1', '', '', '江  山', '2012', '自贡荣县青龙山恐龙化石群的保护和开发利用\nThe Conservation and Development of Dinosaur Fossils at Qinglong Mountain, Rong County,Zigong', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('37', '1', '', '', '徐娟', '2012', '浅谈地质公园如何利用资源开展科普社教活动——以自贡世界地质公园恐龙博物馆为例\nBrief Talk about how to Use Resources to hold Science Popularization Activities---Take Zigong Dinosaru Museum for Example', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('38', '1', '', '', '朱莎', '2012', '新的起点 新的使命——浅议如何提高博物馆一线人员的服务意识New Starting Point New Mission---Brief Talk about How to Improve the Serving Awareness of Front-line Staff of Museum', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('39', '1', '', '', '吴林', '2012', '浅谈博物馆藏品管理信息化建设工作---以自贡世界地质公园恐龙园区为例 \nBrief Talk about the Informatization Construction of Museum Collections---Take Zigong Global Geopark for Example', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('40', '1', '', '', '舒纯康', '2012', '化石遗址现场的保护与利用工作\nThe Protection and Utilization of Fossil Site', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('41', '1', '', '', '胡晓冬', '2012', '地质公园娱乐服务功能分析 \nAnalysis of  the Entertainment Service Function of Geopark ', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('42', '1', '', '', '彭慧', '2013', '《拓片制作的传统与突破》\nTradition and Breakthrough of Rubbings ', '《管理学家》 \nChina Manage Magazine', '', '', '', '', '  2013年2月', '');
+INSERT INTO `researchpaper` VALUES ('43', '1', '', '', '彭慧', '2013', '《宋代绍熙府儒学碑考》 \n   Research on the Shaoxifu Confucian Stele of the Song Dynasty', '《四川文物》\nHeritage in Sichuan Province Chi', '', '', '', '', '  2013年2月', '');
+INSERT INTO `researchpaper` VALUES ('44', '1', '', '', '邢立达Lockley \n叶勇\n等', '2013', '重庆晚侏罗世两处兽脚类足迹组合与四川盆地侏罗纪地层\n“Two theropod track assemblages from the Jurassic of Chongqing, China, and the Jurassic Stratigraphy of Sichuan Basin”', '《古脊椎动物学报》\nJournal of Vertebrate Paleontology ', '', '', '', '', '2013年2期', '');
+INSERT INTO `researchpaper` VALUES ('45', '1', '', '', '李敏', '2013', '20世纪90年代以来中国盐文化研究综述\nAn Overview of the Research on Chinese Salt Culture Since 1990s', '《盐业史研究》\nSalt Industry History Research', '', '', '', '', '2013年2期', '');
+INSERT INTO `researchpaper` VALUES ('46', '1', '', '', '宋良曦', '2014', '初论自贡盐商的首创精神  \n  On the Pioneering Spirite of Zigong Salt Merchants', '《盐业史研究》\nSalt Industry History Research', '', '', '', '', '2014年3期', '');
+INSERT INTO `researchpaper` VALUES ('47', '1', '', '', '宋青山', '2014', '发展风正劲 扬帆再起航——写在“自贡市盐业历史博物馆建馆55周年纪念专刊”出版之际。\nAn Article Written on the Publishment of the Special Edition to Commemorize the 55th Aniversary of Zigong Well-salt Industry History Museum', '《盐业史研究》\nSalt Industry History Research', '', '', '', '', '2014年3期', '');
+INSERT INTO `researchpaper` VALUES ('48', '1', '', '', '黄健', '2014', '试析川盐运道上西秦会馆(陕西庙)的分布及规模                \n On the Distribution and Scales of Xiqin Guildhall (Shanxi Temple)Through Sichuan Salt Transportation Path', '《盐业史研究》\nSalt Industry History Research', '', '', '', '', '2014年3期', '');
+INSERT INTO `researchpaper` VALUES ('49', '1', '', '', '宋良曦', '2014', '解读自贡盐文化拓展盐文化产业\nAnalyzing Zigong Salt Culture, Expanding Salt Culture Industry', '盐文化研究论丛（第七辑）\nSalt Culture Research Review the 7th issue', '', '', '', '', '2014年5-1', '');
+INSERT INTO `researchpaper` VALUES ('50', '1', '', '', '程龙刚', '2014', '深处之味寻访中国古盐井 \nSearching for Chinese Old Salt Wells', '《中国国家旅游》\nChina National Travel', '', '', '', '', '2014年5期', '');
+INSERT INTO `researchpaper` VALUES ('51', '1', '', '', '程龙刚', '2014', '古盐井 “千年盐都”的城市记忆   \n City Memories of the Salt Capital over 1,000 Years ', '《中国文化遗产》\nChina Cultural Heritage', '', '', '', '', '2014年5期', '');
+INSERT INTO `researchpaper` VALUES ('52', '1', '', '', '李敏', '2014', '自贡盐业遗迹的集体保护\nCollective Protection for Zigong Well-salt Industry Relics', '《盐文化研究论丛》（第七辑）', '', '', '', '', '2014年5月', '');
+INSERT INTO `researchpaper` VALUES ('53', '1', '', '', '邓建国\n叶勇\n等', '2014', '恐龙化石的人工加速腐蚀研究\nResearch on the Artificial Accelerated Corrosion of Dinosaur Fossils', '《西南师范大学学报》（自然科学版）Journal of Southwest China Normal University', '', '', '', '', '2014年7期', '');
+INSERT INTO `researchpaper` VALUES ('54', '1', '', '', '陶宏\n孙莉', '2014', ' Employee Training Program of Zigong Global Geopark ', 'The 6th International Congress on Geoparks, 2014', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('55', '1', '', '', '孙莉', '2014', 'Community Participation Project in Zigong Global Geopark', 'The 6th International Congress on Geoparks, 2014', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('56', '1', '', '', '叶  勇\n邓建国\n彭光照\n等', '2014', '恐龙化石保护新材料研制的探索与实践\nExploration and Practice on the Development of New Material forDinosaur Fossil Protection', '旅游地学与地质公园研究论文集第二十集', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('57', '1', '', '', '李飞', '2015', '沉睡的寐龙\nThe Sleeping Mei Dinosaur', '《十万个为什么.动物大揭秘》100,000 Whys Reveal Animals', '', '', '', '', '2015年1-2，\n总第522-523期', '');
+INSERT INTO `researchpaper` VALUES ('58', '1', '', '', '彭慧', '2015', '《辛亥革命荣县独立刍议》\nOn the Independence of Rongxian County in the 1911 Revolution', '《中华文化论坛》\nForum on Chinese Culture', '', '', '', '', '2015年12月', '');
+INSERT INTO `researchpaper` VALUES ('59', '1', '', '', '江山', '2015', '科学保护恐龙化石\nProtect Dinosaur Fossil in Scientific Way', '《化石保护与研究通讯》\nFossil Protection and Research Communications', '', '', '', '', '2015年1期', '');
+INSERT INTO `researchpaper` VALUES ('60', '1', '', '', '邓建国\n叶勇\n等\n', '2015', '利用XRD，XRF，FT-IR和Rs分析甘肃酒泉恐龙化石及围岩\nAnalyse Dinosaur Fossils and the Enclosing Rock in Jiuquan,Gansu with XRD,XRF,FT-IR and RS', '《西南大学学报》（自然科学版）\nJournal of Southwest University', '', '', '', '', '2015年1期', '');
+INSERT INTO `researchpaper` VALUES ('61', '1', '', '', '叶  勇', '2015', '杨钟健教授与自贡恐龙的不解之缘\nThe Deep Relations Between Professor Yang Zhongjian and Zigong Dinosaurs', '《化石》\nFossil', '', '', '', '', '2015年3期', '');
+INSERT INTO `researchpaper` VALUES ('62', '1', '', '', '江山 \n叶勇\n', '2015', '大山铺恐龙公墓现形记\nthe Discovery of Dashanpu Dinosaur Cemetery', '《化石》\nFossil', '', '', '', '', '2015年3期', '');
+INSERT INTO `researchpaper` VALUES ('63', '1', '', '', '彭光照\n郝宝鞘', '2015', '蜀龙动物群——一个承上启下的恐龙动物群\nShunosaurus Fauna---a Collecting Link Species of Dinosaurs', '《化石》\nFossil', '', '', '', '', '2015年3期', '');
+INSERT INTO `researchpaper` VALUES ('64', '1', '', '', '程龙刚', '2015', '寻访自贡抗战文物铭记盐都抗战记忆\nSeraching for Cultural Relics Left During Zigong Anti-Japanese War ', '《盐业史研究》\nSalt Industry History Research', '', '', '', '', '2015年3期', '');
+INSERT INTO `researchpaper` VALUES ('65', '1', '', '', '李夏薇\n邓 军', '2015', '文化线路保护与大众传播研究——以自贡盐业博物馆对川盐古道的保护与\n传播为例\n Research on the Protection and Mass Communication of Cultural Trails --- Illustrated by Zigong Well-salt Industry History Museum\'s Experience on Old Sichuan Salt Passage ', '《盐业史研究》\nSalt Industry History Research', '', '', '', '', '2015年4期', '');
+INSERT INTO `researchpaper` VALUES ('66', '1', '', '', '江山\n彭光照\n叶勇', '2015', '中国剑龙类恐龙化石\nStegosaur Fossils of China ', '地质学刊\nJoural of Geology', '', '', '', '', '2015年4期', '');
+INSERT INTO `researchpaper` VALUES ('67', '1', '', '', '邓军', '2015', '川盐古道文化遗产现状与保护研究\nResearch on the Situation and Protection of the Cultural Heritages Through Old Sichuan Salt Passage ', '四川理工学院学报(社会科学版)\nJournal of Sichuan University of Science & Engineering JCR-SSCI', '', '', '', '', '2015年5期', '');
+INSERT INTO `researchpaper` VALUES ('68', '1', '', '', '李飞', '2015', '给《侏罗纪公园》挑刺\nFind the Error of Jurassic Park', '《化石》\nFossil', '', '', '', '', '2015年第三期总第165期', '');
+INSERT INTO `researchpaper` VALUES ('69', '1', '', '', '徐娟\n李飞', '2015', '“复活”恐龙，让它与博物馆一起成长 \nRevived Dinosaurs Grow Together with Museum', '《化石》\nFossil', '', '', '', '', '2015年第三期总第165期', '');
+INSERT INTO `researchpaper` VALUES ('70', '1', '', '', '陈蓓艳', '2015', '“自贡恐龙博物馆小小讲解员”公益活动让孩子们的暑期更精彩 The Little Tour Guide of Zigong Dinosaur Museum Enriched Children\" Summer Holiday', '《化石》\nFossil', '', '', '', '', '2015年总\n第165期', '');
+INSERT INTO `researchpaper` VALUES ('71', '1', '', '', '曾  舸', '2015', '自贡恐龙巡游世界\nZigong Dinosaurs World Tour', '《化石保护与研究》\nFossil Protection and Research', '', '', '', '', '通讯2015年第1期', '');
+INSERT INTO `researchpaper` VALUES ('72', '1', '', '', '李毅', '2015', '蜥脚类恐龙的“流星锤”\nthe Meteor Hammer of Sauropord Dinosaurs', '《化石》\nFossil', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('73', '1', '', '', '李毅', '2015', '侏罗纪的使者\nJurassic Messenger', '《化石》\nFossil', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('74', '1', '', '', '孙莉', '2015', 'Zigong Geopark of China: An Established Geotourism Destination', 'The 4th Asia-Pacific Geopark Network San’in Kaigan Symposium, 2015', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('75', '1', '', '', '陶宏\n孙莉', '2015', '让地质公园扬起社会主义核心价值观培养的风帆\nTo Foster Core Socialist Values in Geoparks', '四川省未成年人思想道德建设工作优秀论文\nSichuan Excellent Paper about Emhancing Juveniles\' Moral Standards ', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('76', '1', '', '', '江山\n叶勇\n彭光照', '2016', '自贡地质公园恐龙化石的保护和开发利用——以青龙山恐龙化石群遗址为例\nProtection and Development of the Dinosaur Fossils in Zigong Geopark--- Illustrated by Qinglongshan Dinosaur Fossil Site', '《四川地质学报 》\nActa Geologica Sichuan', '', '', '', '', '2016年1期', '');
+INSERT INTO `researchpaper` VALUES ('77', '1', '', '', '邓军', '2016', '传统手工艺类非物质文化遗产生产性保护的经验与反思\nExperiences and Introspection of the Protection on the Handicrafted Traditional Intangible Cultural Heritages', '《+四川理工学院学报(社会科学版)\nJournal of Sichuan University of Science & Engineering JCR-SSCI', '', '', '', '', '2016年1期', '');
+INSERT INTO `researchpaper` VALUES ('78', '1', '', '', '\n邢立达\nKlein\n  叶勇\n等', '\n\n2013', '重庆晚侏罗世两处兽脚类足迹组合与四川盆地侏罗纪地层\n“Two theropod track assemblages from the Jurassic of Chongqing, China, and the Jurassic Stratigraphy of Sichuan Basin”', '\n《古脊椎动物学报》 \nJournal of Vertebrate Paleontology ', '', '', '', '', '2013第52卷\n2期', '');
+INSERT INTO `researchpaper` VALUES ('79', '1', '', '', '\n邢立达\nKlein\n 叶勇\n等', '\n\n2013', '中国四川盆地上三叠统最古老的兽脚类恐龙和似哺乳四足类动物足迹\n“Earliest records of theropod and mammal-like tetrapod footprints in the Upper Triassic of Sichuan Basin, China”\n', '\n《古脊椎动物学报》 \nJournal of Vertebrate Paleontology ', '', '', '', '', '2013第52卷3期', '');
+INSERT INTO `researchpaper` VALUES ('80', '1', '', '', '邓建国\n彭光照\n等', '\n\n2014', '利用XRD、XRF、FT-IR和RS分析浙江缙云恐龙化石及围岩\nAnalysis of Dinosaur Fossils and Surrounding Ｒocks from Jinyun \nＲegion by XＲD，XＲF，FT-IＲ and Ｒs', '《信阳师范学院学报》（自然科学版）\nJournal of Xinyang Normal University\n(JCR-SCI)', '', '', '', '', '2014年7期', '');
+INSERT INTO `researchpaper` VALUES ('81', '1', '', '', '\n郝宝鞘', '\n2013', '《博物馆黄金周的思考——以自贡恐龙博物馆为例》\nReview of Museums\'Golden Week for Tourism---Taking Zigong Dinosaur Museum for Example', '《中国自然科学博物馆协会通讯》\nChinese Association of Natural Science Museums Communication', '', '', '', '', '  2013年2期', '');
+INSERT INTO `researchpaper` VALUES ('82', '1', '', '', '\n郝宝鞘', '\n2013', '《兽脚类恐龙后脚趾的对立现象》\nthe Opposite  Phenomena of the Back Digits of Theropod Dinosaurs', '《中国古生物学会第27届学术年会论文摘要集》\nAbstract for the 27th annual seminar Palaeontological Society of China', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('83', '1', '', '', '\n邢立达\n叶勇等', '\n2014', '新疆恐龙足迹的最早记录\n“Earliest records of dinosaur footprints in Xinjiang, China”', '《古脊椎动物学报》\n Journal of Vertebrate Paleontology', '', '', '', '', '2014年52卷3期', '');
+INSERT INTO `researchpaper` VALUES ('84', '1', '', '', '程龙刚', '', '中国古代食盐产地研究的总结之作——《中国古代食盐产地分布和变迁研究》\n评介Comment on the Research of the Distribution and Changes of Chinese Ancient Salt Production Areas', 'Salt Industry History Research', '', '', '', '', '2014年2期', '');
+INSERT INTO `researchpaper` VALUES ('85', '1', '', '', '程龙刚', '', '专家汇聚自贡研讨川盐古道与区域发展\nDiscussion on the Old Sichuan Salt Path and Its Regional Development', '《中国文物报》\nChina Cultural Relics News', '', '', '', '', '2014年2期', '');
+INSERT INTO `researchpaper` VALUES ('86', '1', '', '', '程龙刚', '', '自贡盐道向天边——自贡盐运古道文化遗产掠影\nGlimpses of Cultural Heritages through the Old Salt Passage in Zigong  ', 'Salt Industry History Research', '', '', '', '', '2014年3期', '');
+INSERT INTO `researchpaper` VALUES ('87', '1', '', '', '邢立达\n叶勇\n等', '', '中国晚侏罗世一新的蜥脚类恐龙及马门溪龙类的多样性、分布和系统关系\nA new sauropod dinosaur from the Late Jurassic of China and the diversity, distribution, and relationships of mamenchisaurids”', '《古脊椎动物学报》\n Journal of Vertebrate Paleontology \n', '', '', '', '', '2015年1期', '');
+INSERT INTO `researchpaper` VALUES ('88', '1', '', '', '叶勇', '', '四川恐龙多，自贡是个窝——大山铺恐龙动物群的发现和研究\nThe Discovery and Research of Dashanpu Dinosaur Fauna', '《化石保护与研究通讯》\nFossil Protection and Research Communication', '', '', '', '', '2015年1期', '');
+INSERT INTO `researchpaper` VALUES ('89', '1', '', '', '邓军', '', '川盐古道研究刍论--基于川盐古道的实地考察  \n On the Research of the Old Sichuan Salt Passage --- Based on Its Field Investigaion', '《盐业史研究》\nSalt Industry History Research', '', '', '', '', '2015年2期', '');
+INSERT INTO `researchpaper` VALUES ('90', '1', '', '', '曾舸', '', '努力探索地质公园科普工作新路径——以自贡恐龙走进大型商场为例\nEndeavor to explore new path for Geopark Science Popularization---Take Zigong Dinosaurs Entering Super Mall for Example', '《自贡世界地质公园论文集》\nthe Paper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('91', '1', '', '', '邢立达\n彭光照\n叶勇等', '2015', '中国西南四川盆地一河道发现的早白垩世蜥脚类和鸟脚类行迹\nEarly Cretaceous sauropods and ornithopod trackways from a stream course in Sichuan basin, southwest China', '《美国新墨西哥州博物馆自然历史和科学通报》68卷，化石记录第四集\nNew Mexico Museum of Natural History and Science Bulletin 68，2015 ，Fossil Record 4', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('92', '1', '', '', '曾舸', '', '2015年自贡恐龙博物馆巡展广受好评\nGood Comments Zigong Dinosaur Museum Received during Its Tour Exhibition in 2015', '《四川科技》第12期 \nSichuan Science the 12th issue', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('93', '1', '', '', '曾舸', '2012', '利用场馆资源平台，拓展博物馆教育功能To Extend the Educational Function of Museum Through its Venue and Resources  \n', '《四川省科博协文集》（第一辑）2013\nThe  Article Collections of the Association of Sichuan Science Museums(the 1st aublum)\n\n\n', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('94', '1', '', '', '程龙刚', '', '守望文明传播文化\nWatching Civilization and Spreading Culture', '《中国文化报》\nChina Culture Daily', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('95', '1', '', '', '陶虹', '2012', '自贡盐场黄黑卤盐盛衰演变\nThe Historical Evolution of Yellow and Black Haloid Salt of Zigong', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('96', '1', '', '', '邓建国\n刘东亮\n叶勇', '2012', '自贡恐龙化石风华成因分析及保护意见\nWeathering Cause Analysis of Zigong Dinosaur Fossils and Conservation Opinions', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('97', '1', '', '', '王文伟', '2012', '自贡世界地质公园旅游SWOT分析及发展措施研究 \nThe SWOT Analysis and Development Research of Zigong Global Geopark Travelling', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('98', '1', '', '', '江山\n彭光照\n叶勇', '2012', '探索地质公园与旅游的结合\nExploring the Combination of Geopark and Tourism', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
+INSERT INTO `researchpaper` VALUES ('99', '1', '', '', '黄健', '2012', '自贡盐帮会浅析\nBrief Analysis of Yanbang Alliance', '《自贡世界地质公园研讨会论文集》\nPaper Collections of Zigong Global Geopark', '', '', '', '', '', '');
 
 -- ----------------------------
 -- Table structure for sampling
@@ -1319,11 +1505,270 @@ CREATE TABLE `scienceactivity` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='科普活动';
+) ENGINE=InnoDB AUTO_INCREMENT=260 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='科普活动';
 
 -- ----------------------------
 -- Records of scienceactivity
 -- ----------------------------
+INSERT INTO `scienceactivity` VALUES ('1', '1', '自贡灯会暨自贡——  荥经旅游 推介会', '2012年1月17日', '成都', '旅游 推介会', '宣传自贡灯会及自贡旅游资源', '自贡市外事侨务和旅游局', '主办单位：自贡市外事侨务和旅游局', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('2', '1', '自贡灯会暨自贡——  荥经旅游\n推介会', '2012年1月16日', '重 庆', '旅游\n推介会', '宣传自贡灯会及自贡旅游资源', '自贡市外事侨务和旅游局', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('3', '1', '盐文化、盐之都”', '2012年1月20日', '市委党校', '', '专家讲座“盐文化、盐之都”，博物馆的盐业专家向市委党校的工作人员讲述了自贡千年盐业历史，让大家深刻感到井盐文化独有的魅力。', '自贡市盐业历史博物馆', '参加人数：', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('4', '1', '科技之春', '2012年3月2日', '舒坪文化广场', '', '“科技之春”科普月活动启动仪式。博物馆走进舒坪镇文化广场，向广大市民普及盐文化知识，宣传健康用盐常识。', '自贡市科技局', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('5', '1', '科技之春', '2012年3月14日', '沿滩兴隆镇', '', '“科技之春”科普月活动。博物馆走进沿滩兴隆镇，向广大市民普及盐文化知识，宣传健康用盐常识。', '自贡市科技局', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('6', '1', '神奇的盐都、可爱的家乡', '2012年3月31日', '仲权小学', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到仲权小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：900', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('7', '1', '感知千年盐都', '2012年4月1日', '自贡市艺术\n学校', '', '走进博物馆“感知千年盐都”活动。自贡市艺术学校参观井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，了解家乡千年盐业历史。', '自贡市盐业历史博物馆', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('8', '1', '神奇的盐都，可爱的家乡', '2012年4月9日', '育英小学', '', '博物馆走进校园“神奇的盐都，可爱的家乡”科普活动。博物馆宣教人员来到育英小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览。', '自贡市盐业历史博物馆', '参加人数：1100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('9', '1', '感知千年盐都', '2012年4月13日', '育英小学', '', '走进博物馆“感知千年盐都”活动。育英小学师生参观井盐科技史陈列，让师生们了解家乡的千年盐业历史，感受古代盐工们的惊人智慧。', '自贡市盐业历史博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('10', '1', '“保护环境，做地球小主人”科普报告会', '2012年4月19日', '自贡恐龙博物馆多功能厅', '科普讲座', '举办科普报告会、有奖知识问答、互动游戏、博物馆免费参观讲解', '自贡市国土资源局、自贡恐龙博物馆', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('11', '1', '世界地球日：节约资源 保护环境 做保护地球小主人', '2012年4月22日', '自流井老街', '主题科普           宣传活动', '发放宣传资料、接受公众咨询、举办科普讲座', '自贡市国土资源局、自贡恐龙博物馆       ', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('12', '1', '神奇的盐都、可爱的家乡', '2012年5月11日', '贡井艾叶小学', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到贡井艾叶小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：130', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('13', '1', '自贡世界地质公园', '2012年5月14日', '四川省盐校', '', '自贡世界地质公园知识讲座，博物馆的盐业专家向省盐校的师生们普及世界地质公园知识，让大家可以更进一步了解我们的家乡自贡。', '自贡世界地质公园', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('14', '1', '神奇的盐都、可爱的家乡', '2012年5月15日', '汇西小学', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到汇西小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：900', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('15', '1', '“国际博物馆日”宣传活动', '2012年5月17日', '春华广场', '科普宣传活动', '现场展示恐龙化石模型、设立咨询点，接受公众咨询、发放《文物保护法》、《博物馆管理办法》、博物馆简介等宣传资料、5月18日国际博物馆日当天，门票将实行半价优惠。\n', '自贡市文化新闻出版局', '参加人数：2000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('16', '1', '5.19“中国旅游日”宣传活动', '2012年5月18日', '春华广场', '科普宣传活动', '现场为荣获“全国旅游系统先进集体奖”授牌、设立咨询点，接受公众咨询、发放旅游宣传资料、“神奇盐都 最美自贡”旅游风光摄影大赛优秀作品展示、举办文艺演出活动。\n\n', '自贡市外事侨务和旅游局', '参加人数：', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('17', '1', '认识自贡世界地质公园   探寻侏罗纪', '2012年5月21日', '自贡市汇东实验学校', '科普讲座', '科普知识讲座、学生同唱一首歌、有奖知识问答、恐龙拼板竞赛、看谁画得像、向联合国专家赠画', '自贡恐龙博物馆', '参加人数：30', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('18', '1', '自贡世界地质公园知识讲座', '2012年5月21日', '二十八中', '', '自贡世界地质公园知识讲座，博物馆的盐业专家向二十八中的师生们普及世界地质公园知识，让大家可以更进一步了解我们的家乡自贡。', '自贡世界地质公园', '参加人数：70', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('19', '1', '“相约重庆·牵手世界”——第十六届中国重庆都市旅游节暨第四届中国重庆城际旅游\n交易会', '2012年5月21日', '重庆市旅游局、渝中区人民政府', '旅游宣传', '参加“都市旅游产业融合发展论坛”、举办公众展示活动，设立宣传咨询点，接受公众咨询、现场举办有奖知识问答、机器恐龙展示及自贡特色旅游产品宣传推介等活动、参加2012中国旅游推介展示会', '重庆市解放碑', '参加人数：900', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('20', '1', '庆祝六一', '2012年6月1日', '博物馆', '', '庆祝六一儿童节，少年儿童免费参观博物馆。博物馆每年都会在六一儿童节对未成年人免费开放。', '自贡市盐业历史博物馆', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('21', '1', '漫论盐文化，解读盐之都', '2012年9月7日', '市政府', '', '盐都论坛“漫论盐文化，解读盐之都”。博物馆的盐业专家向市政府的领导干部进行了一场深入、全面的盐文化讲座，让大家对自贡有一个更加深入的了解。', '自贡市盐业历史博物馆', '参加人数：90', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('22', '1', '感知千年盐都', '2012年9月12日、14日、20日、21日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。自贡市袋鼠妈妈幼儿园的小朋友参观井盐科技史陈列，了解家乡的千年盐业历史，感受古代盐工们的惊人智慧。从小培养热爱家乡、宣传家乡的良好意识。', '自贡市盐业历史博物馆', '参加人数：150', '/images/scienceactivity/15719924312780.jpg,/images/scienceactivity/15719924312832.jpg,/images/scienceactivity/15719924312791.jpg,/images/scienceactivity/15719924312853.jpg', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('23', '1', '感知千年盐都', '2012年9月13日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。贝贝幼儿园小朋友参观井盐科技史陈列，让小朋友们了解家乡的千年盐业历史，感受古代盐工们的惊人智慧。', '自贡市盐业历史博物馆', '参加人数：80', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('24', '1', '感知千年盐都', '2012年9月13日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。贝贝幼儿园小朋友参观井盐科技史陈列，让小朋友们了解家乡的千年盐业历史，感受古代盐工们的惊人智慧。', '自贡市盐业历史博物馆', '参加人数：90', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('25', '1', '感知千年盐都”', '2012年10月7日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。自贡职业技术学校师生参观井盐科技史陈列，让师生们了解家乡的千年盐业历史，认识自己的家乡。', '自贡市盐业历史博物馆', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('26', '1', '感知千年盐都', '2012年10月18日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。自贡市青少年宫师生参观井盐科技史陈列，让师生们了解家乡的千年盐业历史，了解自贡的井盐文化。', '自贡市盐业历史博物馆', '参加人数：80', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('27', '1', '弘扬盐文化，建设文化自贡', '2012年10月17日', '市委办公厅', '', '专家讲座“弘扬盐文化，建设文化自贡”。 博物馆盐业专家向市政府的领导干部进行了一场深入、全面的盐文化讲座，让大家对自贡有一个更加深入的了解，了解自贡独特的井盐文化。', '自贡市盐业历史博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('28', '1', '盐之都与盐文化', '2012年10月20日', '四川理工学院', '', '专家讲座“盐之都与盐文化”（自贡文化论坛），博物馆的盐业专家向理工学院的师生们进行了一场深入、全面的盐文化讲座，让大家对自贡有一个更加深入的了解与认识。', '自贡市盐业历史博物馆', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('29', '1', '盐文化与经济发展', '2012年10月30日', '四川理工学院', '', '专家讲座“盐文化与经济发展”（釜溪论坛），博物馆的盐业专家向理工学院的师生们进行了一场深入、全面的盐文化讲座，让在座的师生们对自贡有一个更加全面的认识。', '自贡市盐业历史博物馆', '参加人数：', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('30', '1', '神奇的盐都，可爱的家乡', '2012年10月31日', '五宝镇小学', '', '博物馆走进校园“神奇的盐都，可爱的家乡”科普活动，博物馆宣教人员来到五宝镇小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('31', '1', '盐文化、盐之', '2012年11月15日', '市委党校', '', '专家讲座“盐文化、盐之都”， 博物馆的盐业专家向市委党校的工作人员进行了一场深入浅出的盐文化讲座，让大家对自贡有一个深入的了解，深刻感受了自贡千年盐都的魅力。', '自贡市盐业历史博物馆', '参加人数：', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('32', '1', '恐龙科普下乡镇系列活动——走进建设镇', '2012年11月23日', '自贡市贡井区建设镇', '科普活动', '播放宣传片、发放宣传资料、接受公众咨询、组装恐龙骨架；有奖知识问答', '自贡恐龙博物馆', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('33', '1', '恐龙姐姐讲故事', '2012年12月26日', '自贡市绿盛实验学校', '科普活动', '发放宣传资料、恐龙姐姐讲故事、判断对错、 现场答疑', '自贡恐龙博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('34', '1', '自贡灯会暨自贡旅游推介会', '2013年1月22-23日', '重庆东方花苑饭店', '', '宣传推介、签订合作协议、发放宣传资料', '自贡市外事侨务和旅游局', '参加人数：120', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('35', '1', '自贡灯会暨自贡旅游推介会', '2013年1月24日', '成都', '', '宣传推介、签订合作协议、发放宣传资料', '自贡市外事侨务和旅游局', '参加人数：120', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('36', '1', '感知千年盐都', '2013年1月26日', '博物馆', '', '“感知千年盐都”.富顺县团委留守儿童参观博物馆感受古代盐工巧夺天工的盐场技艺，了解家乡千年盐业历史。', '自贡市盐业历史博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('37', '1', '旅游线路考察\n对接会', '2013年2月3日', '英祥锦江大酒店', '', '宣传推介、签订合作意向书、发放宣传资料', '自贡市外事侨务和旅游局', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('38', '1', '旅游线路考察\n对接会', '2013年2月5日', '英祥锦江大酒店', '', '宣传推介、签订合作意向书、发放宣传资料', '自贡市外事侨务和旅游局', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('39', '1', '2013年自贡市“科技服务农村发展”', '2013年3月13', '贡井\n建设镇', '', '参与科技局组织的2013年自贡市“科技服务农村发展”科普月活动，博物馆走进贡井建设镇，向广大市民普及盐文化知识，宣传健康用盐常识。', '科技局组织', '参加人数：1200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('40', '1', '“感知千年盐都”', '2013年3月19', '博物馆', '', '“感知千年盐都” 汇东幼儿园的小朋友们参观博物馆，让小朋友们了解自己的家乡，感受古代盐工巧夺天工的盐场技艺，了解家乡千年盐业历史。', '自贡市盐业历史博物馆', '参加人数：80', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('41', '1', '自贡市中小学生社会实践活动', '2013年4月1日开始', '自贡恐龙博物馆', '科普\n活动', '中小学、幼儿园社会实践活动，参观恐龙博物馆、听科普讲解', '自贡恐龙博物馆', '参加人数：10000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('42', '1', '第44个“世界地球日”科普宣传周\n活动', '2013年4月16—22日', '自贡恐龙博物馆', '主题\n科普           宣传\n活动', '发放宣传资料、接受公众咨询', '自贡恐龙博物馆', '参加人数：4400', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('43', '1', '发布我馆大型户外广告', '2013年4月起', '宜宾', '合作\n宣传', '', '自贡恐龙博物馆', '参加人数：', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('44', '1', '“感知千年盐都”', '2013年4月26日', '博物馆', '', '“感知千年盐都” 自贡六中的师生门参观博物馆，让大家了解自己在家乡，感受古代盐工巧夺天工的盐场技艺，了解家乡千年盐业历史。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('45', '1', '“低碳环保我能行 快乐行走观恐龙”主题征文活动', '2013年4月22—30日', '自贡恐龙博物馆', '征文\n比赛', '全校范围内进行绘画比赛', '自贡恐龙博物馆自贡市  第六中学校', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('46', '1', '“我心中的恐龙”                      绘画比赛', '2013年4—6月', '自贡恐龙博物馆', '绘画比赛', '全校范围内进行绘画比赛', '自贡恐龙博物馆         自贡市塘坎上小学', '参加人数：200', '/images/scienceactivity/15719930912444.jpg,/images/scienceactivity/15719930912475.jpg', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('47', '1', '“新白雪公主与七个小矮人” 大型互动梦幻人偶童话剧宜宾巡演宣传\n活动', '2013年5月', '宜宾', '大型互动梦幻人偶童话剧', '印制优惠参观券、在所有宣传活动及宣传海报等资料中注入我馆宣传画面', '宜宾远方文化演艺公司', '参加人数：4000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('48', '1', '国际博物馆宣传咨询活动', '2013年5月16日', '汇东春华广场', '', '国际博物馆宣传咨询活动。博物馆工作人员来到春花广场，向市民们宣传“国际博物馆日”，免费接受市民现场咨询', '自贡市文化局', '参加人数：800', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('49', '1', '“5.18国际博物馆日”科普宣传活动', '2013年5月18日', '自贡恐龙博物馆春华广场', '主题\n科普           宣传\n活动', '发放宣传资料、接受公众咨询、优惠参观', '自贡恐龙博物馆', '参加人数：2500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('50', '1', '“神奇的盐都、可爱的家乡”', '2013年5月21日', '英杰希望溪中学', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到英杰希望小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('51', '1', '“宣传和认识经验科技”', '2013年5月22日', '博物馆', '', '“宣传和认识经验科技”理工学院大二学生参观博物馆。四川理工学院的大学生们来到博物馆参观，感受千年盐都在魅力，了解千年盐都在历史。', '自贡市盐业历史博物馆', '参加人数：15', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('52', '1', '“2013年科技活动周”科普宣传活动', '2013年5月19                 —25日', '自贡恐龙博物馆', '主题\n科普           宣传\n活动', '发放宣传资料、接受公众咨询、优惠参观', '自贡恐龙博物馆', '参加人数：5000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('53', '1', '六一儿童节对未成年人免费开放', '2013年6月1日', '博物馆', '', '六.一儿童节免费参观博物馆。博物馆每年都会在六一儿童节对未成年人免费开放。', '自贡市盐业历史博物馆', '参加人数：80', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('54', '1', '袋鼠妈妈幼儿园感知盐味', '2013年6月19日', '博物馆', '', '袋鼠妈妈幼儿园感知盐味。让小朋友们了解自己的家乡，感受古代盐工巧夺天工的盐场技艺，了解家乡千年盐业历史。', '自贡市盐业历史博物馆', '参加人数：25', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('55', '1', '袋鼠妈妈幼儿园感知盐味', '2013年6月2日', '博物馆', '', '袋鼠妈妈幼儿园感知盐味。让小朋友们了解自己的家乡，感受古代盐工巧夺天工的盐场技艺，了解家乡千年盐业历史。', '自贡市盐业历史博物馆', '参加人数：30', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('56', '1', '袋鼠妈妈幼儿园感知盐味', '2013年6月21日', '博物馆', '', '袋鼠妈妈幼儿园感知盐味。让小朋友们了解自己的家乡，感受古代盐工巧夺天工的盐场技艺，了解家乡千年盐业历史。', '自贡市盐业历史博物馆', '参加人数：30', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('57', '1', '自贡市宣传文化干部培训', '2013年6月24日', '宣传部', '', '自贡市宣传文化干部培训班。博物馆的盐业专家对文化干部们进行了一场深入、全面的盐文化讲座，让大家更加深入的认识自贡。', '自贡市盐业历史博物', '参加人数：120', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('58', '1', '实现中国梦谱写自流井篇章夏令营', '2013年7月9日', '博物馆', '', '实现中国梦谱写自流井篇章夏令营。自贡青少年宫在同学们参观博物馆，感受古代盐工巧夺天工的盐场技艺，感受盐业历史魅力。', '自贡市盐业历史博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('59', '1', '科协留守儿童感知千年盐都', '2013年7月16日', '博物馆', '', '科协留守儿童感知千年盐都。 留守儿童参观博物馆，让大家认识盐从哪里来，了解自贡千年盐都的历史。', '自贡市盐业历史博物馆', '参加人数：30', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('60', '1', '“解读盐之都、龙之乡、灯之城”', '2013年7月16日', '市委党校', '', '“解读盐之都、龙之乡、灯之城”。博物馆的盐业专家对工作人员进行了一场深入浅出的盐文化讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：80', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('61', '1', '关工委留守儿童“感知千年盐都”', '2013年7月17日', '博物馆', '', '关工委留守儿童“感知千年盐都”。关工委组织留守儿童参观博物馆，让孩子们感受古代盐工巧夺天工的盐场技艺，感受盐业历史魅力。', '自贡市盐业历史博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('62', '1', '自贡城市发展', '2013年7月17日', '市委', '', '自贡城市发展。博物馆的盐业专家对工作人员进行了一场深入浅出的盐文化知识讲座，让大家更加深入的认识自贡。', '自贡市盐业历史博物馆', '参加人数：80', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('63', '1', '白果社区留守儿童“感知千年盐都”', '2013年7月22日', '博物馆', '', '白果社区留守儿童“感知千年盐都”。社区留守儿童参观博物馆，让孩子们感受古代盐工巧夺天工的盐场技艺，感受盐业历史魅力。', '自贡市盐业历史博物馆', '参加人数：36', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('64', '1', '“重返侏罗纪——自贡恐龙奔袭蓉城”主题科普活动', '2013年6月28日          —8月15日', '四川科技馆', '特色科普活动', '恐龙展览、恐龙科普讲解、恐龙科普知识讲座、恐龙专家面对面、“恐龙是怎样站起来的”装架活动、“恐龙绝灭大家说”投票活动、“把恐龙带回家”模型制作、碟片放映、恐龙征文、绘画比赛', '四川科技馆            自贡恐龙博物馆', '参加人数：60000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('65', '1', '“盐之都、龙之乡、灯之城”', '2013年9月3日', '理工学院', '', '“盐之都、龙之乡、灯之城”。博物馆的盐业专家对在校师生们进行了一场深入浅出的盐文化知识讲座，让大家更加深入的认识自贡，认识自贡文化历史。', '自贡市盐业历史博物馆', '参加人数：80', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('66', '1', '理工迎新推广活动', '2013年9月1—20日', '自贡恐龙博物馆', '科普\n活动', '优惠参观活动', '自贡恐龙博物馆 空城季网', '参加人数：1162', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('67', '1', '“强化科学解说，普及地学知识”地学科普宣传周活动', '2013年9月23—29日', '自贡恐龙博物馆、土柱村', '主题\n科普           宣传\n活动', '发放宣传资料、接受公众咨询、举办专题讲座', '自贡世界地质公园管理处自贡恐龙博物馆', '参加人数：4000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('68', '1', '地质公园科普活动', '2013年', '自贡恐龙博物馆', '', '地质公园科普活动。博物馆工作人员来到恐龙博物馆，认真学习地质公园科普知识，学习如何做好地质公园科普工作。', '自贡市盐业历史博物馆', '参加人数：800', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('69', '1', '穿越：猛犸象遇上自贡龙——黑龙江冰河动物全球首展', '2013年9月26日                —10月27日', '自贡恐龙博物馆', '冰河动物临展', '举办冰河动物展览、发放宣传资料、接受公众咨询', '自贡恐龙博物馆        哈尔滨耀庆古生物化石修复有限公司', '参加人数：10000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('70', '1', '世界旅游日科普宣传活动', '2013年9月27日', '自贡市春华广场', '主题\n科普           宣传\n活动', '发放宣传资料、接受公众咨询', '自贡市外事侨务和旅游局', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('71', '1', '“画出我心中最可爱的自贡恐龙”主题绘画活动', '2013年10月1—7日', '自贡恐龙博物馆', '现场\n绘画', '国庆黄金周来馆参观观众免费绘画活动', '自贡恐龙博物馆', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('72', '1', '“恐龙伴我畅游童话世界——自贡恐龙博物馆《爱丽丝梦游仙境》童话剧赠票活动”', '2013年10月17日', '邓萍小学', '科普人偶剧', '人偶剧表演、博物馆参观', '自贡恐龙博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('73', '1', '“爱在龙乡，筑梦童年——爱丽丝梦游仙境童话剧爱心赠票观剧活动”', '2013年10月20日', '四川理工学院科学会堂', '科普人\n偶剧', '人偶剧表演、博物馆参观', '自贡恐龙博物馆', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('74', '1', '“我心中的自贡恐龙代言人”\n设计大赛', '2013年10—11月', '四川理工学院艺术学院', '设计\n大赛', '全校范围内进行恐龙形象设计比赛，并评出一、二、三等奖和优秀奖', '自贡恐龙博物馆', '参加人数：400', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('75', '1', '解中学生参观\n博物馆', '2013年11月22日', '博物馆', '', '解中学生参观博物馆，让同学们感受古代盐工巧夺天工的盐场技艺，感受盐业历史魅力。', '自贡市盐业历史博物馆', '参加人数：210', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('76', '1', '解中学生参观\n博物馆', '2013年11月29日', '博物馆', '', '解中学生参观博物馆，让同学们感受古代盐工巧夺天工的盐场技艺，认识自己在家乡自贡。', '自贡市盐业历史博物馆', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('77', '1', '解中学生参观\n博物馆', '2013年12月6日', '博物馆', '', '解中学生参观博物馆，让同学们了解自贡文化历史，感受盐业历史魅力，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：190', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('78', '1', '吉祥物征集\n投票活动', '2013年12月12日', '汇东实验学校', '投票\n活动', '选取自贡恐龙博物馆                吉祥物形象', '自贡恐龙博物馆', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('79', '1', '吉祥物征集投票\n活动', '2013年12月13日', '汇东\n幼儿园', '投票\n活动', '选取自贡恐龙博物馆               吉祥物形象', '自贡恐龙博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('80', '1', '解中学生参观\n博物馆', '2013年12月13日', '博物馆', '', '解中学生参观博物馆，让同学们感知千年盐都的魅力，了解自贡井盐文化历史，认识自己的家乡自贡。', '自贡市盐业历史博物馆', '参加人数：180', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('81', '1', '自贡灯会暨自贡——  荥经旅游推介会', '2014年1月7日', '成 都', '旅游推介会', '宣传自贡灯会及自贡旅游资源', '自贡市外事侨务和旅游局', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('82', '1', '自贡灯会暨自贡——  荥经旅游推介会', '2014年1月8日', '重 庆', '旅游推介会', '宣传自贡灯会及自贡旅游资源', '自贡市外事侨务和旅游局', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('83', '1', '画说恐龙——          凌曼、余勇恐龙绘画艺术作品展', '2014年1月24日—            3月31日', '自贡恐龙博物馆', '临  展', '宣传自贡灯会及自贡旅游资源', '自贡市文广新局 、自贡市国土局 、自贡市文联', '参加人数：27000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('84', '1', '大手牵小手，               播下绿色希望', '2014年3月12日', '自贡恐龙博物馆', '亲子植树活动', '亲子植树活动、亲子趣味竞猜、亲子表演、恐龙博物馆现场参观。\n', '袋鼠妈妈幼儿园-自贡恐龙\n博物馆', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('85', '1', '自贡恐龙科普季', '2014年3月—4月', '自贡恐龙博物馆', '中小学、幼儿园社会实践活动', '中小学、幼儿园社会实践活动，孩子们到恐龙博物馆现场参观、听科普讲解。', '自贡恐龙博物馆', '参加人数：2000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('86', '1', '“科技之春”社科普及日咨询服务活动，“自贡市科技创新，驱动农村发展”科普周活动仪式', '2014年3月4日', '何市镇', '', '科技局组织的2014自贡市社科界“科技之春”社科普及日咨询服务活动，“自贡市科技创新，驱动农村发展”科普周活动仪式。博物馆走进何市镇，向广大市民普及盐文化知识，宣传健康用盐常识。并送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，赠送科普读物。', '自贡市科技局', '参加人数：3000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('87', '1', '走进博物馆“感知千年盐都”科普活动', '2014年3月7日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。袋鼠妈妈幼儿园小朋友们参观了《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：30', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('88', '1', '“科技之春”社科普及日咨询服务活动', '2014年3月11日', '广华社区', '', '参与科技局组织的2014自贡市社科界“科技之春”社科普及日咨询服务活动。博物馆走进广华社区，向广大市民普及盐文化知识，宣传健康用盐常识。并送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，赠送科普读物和生活日用品。', '自贡市科技局', '参加人数：36', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('89', '1', '走进博物馆“感知千年盐都”科普活动', '2014年3月13日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。红旗乡小学一年级参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：110', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('90', '1', '走进博物馆“感知千年盐都”科普活动', '2014年3月16日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。自贡三中参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：26', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('91', '1', '“自贡历史文脉”专题讲座', '2014年3月20日', '市委党校', '', '“自贡历史文脉”专题讲座。博物馆的盐业专家在市委党校进行了一场深入浅出的家乡文化知识讲座，让大家更加深入的认识自贡，认识家乡。 ', '自贡市盐业历史博物馆', '参加人数：69', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('92', '1', '博物馆走进校园“盐的故事”科普展览', '2014年3月25日', '四川理工学院黄岭校区', '', '博物馆走进校园“盐的故事”科普展览。博物馆宣教人员来到四川理工学院黄岭校区举办“盐的故事”科普展览。分发宣传单1500余份，吸引观众2000余人。', '自贡市盐业历史博物馆', '参加人数：2000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('93', '1', '“解读盐之都、龙之乡、灯之城”专题\n讲座', '2014年3月26日', '科迪城五楼', '', '“解读盐之都、龙之乡、灯之城”专题讲座。博物馆的盐业专家对孩子们进行了一场深入浅出的家乡文化知识讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：90', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('94', '1', '走进博物馆“感知千年盐都”科普活动', '2014年3月28日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。沿滩永安镇中心校参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('95', '1', '走进博物馆“感知千年盐都”科普活动', '2014年3月29日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。四川电视台阳关起跑线自贡小记者参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：25', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('96', '1', '走进博物馆“感知千年盐都”科普活动', '2014年3月30日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。四川电视台阳关起跑线自贡小记者参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：30', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('97', '1', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动', '2014年3月31日', '广华小学', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到 广华小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：70', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('98', '1', '情暧新盐都，欢乐进万家——2014送文化下基层活动走进\n河口镇', '2014年4月10日', '荣县\n河口镇', '科普宣传活动', '恐龙古生物知识现场咨询、发放科普宣传资料、恐龙化石模型展示及现场科普讲解、恐龙骨架现场安装表演、特色文艺节目表演、《盐的故事》科普展览\n\n', '自贡文广新局', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('99', '1', '情暧新盐都，欢乐进万家——2014送文化下基层活动走进郭街核桃湾社区', '2014年4月14日', '郭街核桃湾社区', '科普宣传活动', '恐龙古生物知识现场咨询、发放科普宣传资料、恐龙化石模型展示及现场科普讲解、恐龙骨架现场安装表演、特色文艺节目表演、《盐的故事》科普展览', '自贡文广新局', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('100', '1', '“情暖新盐都，欢乐进万家”现场服务及慰问活动', '2014年4月21日', '自贡起重', '', '4月21日，盐文化普及基地——自贡市盐业历史博物馆在板仓自贡起重组织了“情暖新盐都，欢乐进万家”现场服务及慰问活动，在现场开展了盐文化、盐业科普宣传、咨询，发放宣传资料、科普小手册500余份。', '自贡市盐业历史博物馆', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('101', '1', '“世界地球日”宣传咨询活动', '2014年4月22日', '恐龙\n博物馆', '', '“世界地球日”宣传咨询活动。博物馆工作人员来到恐龙博物馆世界地质公园广场，宣传“世界地球日”，爱护环境、爱护家乡、爱护地球。在现场开展了盐文化、盐业科普宣传、咨询，发放宣传资料、科普小手册300余份。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('102', '1', '4.22世界地球日', '2014年4月22日', '自贡恐龙博物馆', '主题科普            宣传活动', '第45个世界地球日活动当天共向游人发送宣传品300余份，接受咨询100余人次。下午邀请江姐小学四年级学生，在恐龙馆多功能厅参加“地球E教室”视频连线活动，在小吴哥哥的带领下游览了香港世界地质公园', '自贡世界地质公园管委会自贡国土资源管理局           自贡恐龙\n博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('103', '1', '“情暖新盐都，欢乐进万家”现场服务及慰问活动', '2014年4月25日', '防化营', '', '4月25日，盐文化普及基地——自贡市盐业历史博物馆在三八路防化营组织了“情暖新盐都，欢乐进万家”现场服务及慰问活动，在现场开展了盐文化、盐业科普宣传、咨询，发放宣传资料、科普小手册500余份。', '自贡市盐业历史博物馆', '发放500份资料', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('104', '1', '走进博物馆“感知千年盐都”科普活动', '2014年4月25日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。解中初二学生参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：150', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('105', '1', '送文化下基层文化惠民活动', '2014年4月3日', '舒平镇', '', '2014年送文化下基层文化惠民活动。博物馆走进舒坪镇，向广大市民普及盐文化知识，宣传健康用盐常识。', '自贡市盐业历史博物馆', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('106', '1', '走进博物馆“感知千年盐都”科普活动', '2014年5月9日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。解中学生参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：150', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('107', '1', '情暧新盐都，欢乐进万家——2014送文化下基层活动走进自贡舒平镇', '2014年4月30日', '自贡舒平镇', '科普宣传活动', '恐龙古生物知识现场咨询、发放科普宣传资料、恐龙化石模型展示及现场科普讲解、恐龙骨架现场安装表演、特色文艺节目表演、《盐的故事》科普展览', '自贡文广新局', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('108', '1', '“灯文化 ”（釜溪论坛）专题 报告', '2014年5月15日', '理工学院', '', '“灯文化 ”（釜溪论坛）专题 报告。博物馆的盐业专家在理工学院进行了一场深入浅出的家乡文化知识讲座，让大家更加深入的认识自贡，认识自贡文化历史。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('109', '1', '走进博物馆“感知千年盐都”科普活动', '2014年5月16日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。解中学生参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：150', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('110', '1', '5月18日国际博物馆宣传活动暨自贡市文化志愿者行动\n启动仪式', '2014年5月18日', '春华广场', '', '5月18日国际博物馆宣传活动暨自贡市文化志愿者行动启动仪式在春华广场举行。博物馆工作人员向市民们宣传“国际博物馆日”，免费接受市民现场咨询，并发放宣传资料。', '自贡市盐业历史博物馆', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('111', '1', '5.18国际博物馆日宣传活动暨自贡市文化志愿者行动启动仪式', '2014年5月18日', '自贡市春华广场', '科普宣传活动', '文广新局组织了各类团体的文艺演出，其中包括歌舞、杂技和小品，设立咨询台，发放宣传资料，接受市民问询', '自贡文广新局', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('112', '1', '“解读盐之都、龙之乡、灯之城”专题\n讲座', '2014年5月21日', '自贡二十七中', '', '“解读盐之都、龙之乡、灯之城”专题讲座。博物馆的盐业专家对同学们进行了一场深入浅出的家乡文化知识讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：400', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('113', '1', '“解读盐之都、龙之乡、灯之城”专题\n讲座', '2014年5月29日', '市委大礼堂', '', '“解读盐之都、龙之乡、灯之城”专题讲座。博物馆的盐业专家对工作人员进行了一场深入浅出的家乡文化知识讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('114', '1', '走进博物馆“感知千年盐都”科普活动', '2014年5月31日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。檀木林小学五年级参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：40', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('115', '1', '“自贡历史文化与五个自贡建设”专题讲座', '2014年6月5日', '自贡电大', '', '“自贡历史文化与五个自贡建设”专题讲座。博物馆的盐业专家在自贡电大进行了一场深入浅出的家乡文化知识讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('116', '1', '走进博物馆“感知千年盐都”科普活动', '2014年6月9日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。四川师范大学师生参观《中国井盐科技史》基本陈列，了解盐都历史，感受古代盐工巧夺天工的盐场技艺。 ', '自贡市盐业历史博物馆', '参加人数：140', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('117', '1', '“解读盐之都、龙之乡、灯之城”专题讲座', '2014年6月11日', '市委党校', '', '“解读盐之都、龙之乡、灯之城”专题讲座。博物馆的盐业专家对市委党校的工作人员进行了一场深入浅出的家乡文化知识讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：97', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('118', '1', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动', '2014年6月13日', '荣边小学', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到 荣边小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('119', '1', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动', '2014年6月18日', '漆树乡小学', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到 漆树乡小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：180', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('120', '1', '非遗保护与城镇化同行', '2014年6月21日', '自贡市春华广场', '科普宣传活动', '设立咨询台，发放宣传资料，               接受市民问询', '自贡文广新局', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('121', '1', '走进乡镇普及“盐的故事”', '2014年6月26日', '于佳镇', '', '于佳镇，向广大市民普及盐文化知识，宣传健康用盐常识。', '自贡市盐业历史博物馆', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('122', '1', '小小讲解员', '2014年7月-8月', '自贡恐龙博物馆', '小小讲解员                义务\n讲解', '在50多名报名者中，选出了21名“小小讲解员”，经过博物馆培训考核后，到博物馆上岗服务共计97次，为观众讲解服务1000余次。', '自贡恐龙博物馆', '参加人数：20', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('123', '1', '走进博物馆“感知千年盐都”科普活动', '2014年7月14日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。留守儿童参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：40', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('124', '1', '美德少年四川行', '2014年7月15日', '燊海井景区', '参观                       ', '参观制盐的过程，领略凿井的智慧', '燊海井景区', '参加人数：154', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('125', '1', '走进博物馆“感知千年盐都”科普活动', '2014年7月17日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。关工委留守儿童参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：85', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('126', '1', '走进博物馆“感知千年盐都”科普活动', '2014年7月18日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。刘山镇党员参观《中国井盐科技史》基本陈列，了解家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：10', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('127', '1', '“解读盐之都、龙之乡、灯之城”专题\n讲座', '2014年9月1日', '自贡卫校', '', '“解读盐之都、龙之乡、灯之城”专题讲座。博物馆的盐业专家在自贡卫校进行了一场深入浅出的家乡文化知识讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('128', '1', '“解读盐之都、龙之乡、灯之城”专题\n讲座', '2014年9月11日', '自贡卫校', '', '“解读盐之都、龙之乡、灯之城”专题讲座。博物馆的盐业专家在自贡卫校进行了一场深入浅出的家乡文化知识讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('129', '1', '践行群众路线，           做政策的传播人', '2014年7月25日', '自贡市            高山井\n社区', '科普宣传活动', '发送恐龙博物馆宣传单200余份，解答群众疑问', '自贡市自流井区', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('130', '1', '首届四川国际旅游博览会', '2014年9月26-28', '乐山峨眉山市水晶广场', '旅游推介会', '设立宣传咨询点，发放宣传资料，接受公众咨询、宣传展示我馆独特的恐龙资源', '四川省旅游局、乐山市人民政府、四川博览事务局', '参加人数：3000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('131', '1', '全国科普日活动                 “创新发展，全民 行动”', '2014年9月25日', '自贡恐龙博物馆', '科普宣传活动', '精彩的科普文艺、参观恐龙博物馆和科普展区、举办科普讲座、科技培训、青少年科技活动、科普教育基地开放日等活动', '自贡市科协                     自贡市\n《纲要》办                                    ', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('132', '1', '“解读盐之都、龙之乡、灯之城”专题\n讲座', '2014年10月1日', '青少年宫', '', '“解读盐之都、龙之乡、灯之城”专题讲座。博物馆的盐业专家对孩子们进行了一场深入浅出的家乡文化知识讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('133', '1', '走进博物馆“感知千年盐都”科普活动', '2014年10月19日', '青少年宫', '', '走进博物馆“感知千年盐都”科普活动。自贡市青少年宫的师生们参观《中国井盐科技史》基本陈列，了解自己的家乡历史，感受古代盐工巧夺天工的盐场技艺。', '自贡市盐业历史博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('134', '1', '香港狮子会自然教育基金分享活动', '2014年10月13日-14日', '绿盛实验学校', '地质公园进学校活动', '香港世界地质公园杨家明博士讲座、狮子会自然教育基金分享活动', '自贡世界地质公园管理处、绿盛实验学校', '参加人数：', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('135', '1', '“解读盐之都、龙之乡、灯之城”\n专题讲座', '2014年11月11日', '东锅厂', '', '“解读盐之都、龙之乡、灯之城”专题讲座。博物馆的盐业专家对东锅厂的工作人员进行了一场深入浅出的家乡文化知识讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：250', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('136', '1', '“走进遍地盐井的都市”专家讲座', '2014年11月22日', '恐龙园区多功能厅', '', '“走进遍地盐井的都市”专家讲座，自贡盐业历史博物馆的宣教老师在恐龙园区多功能厅，向内江师范学院的师生讲述盐的故事。', '自贡市盐业历史博物馆', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('137', '1', '“走进遍地盐井的都市”专家讲座', '2014年11月23日', '恐龙园区多功能厅', '', '“走进遍地盐井的都市”专家讲座，自贡盐业历史博物馆的宣教老师在恐龙园区多功能厅，向内江师范学院的师生讲述盐的故事。', '自贡市盐业历史博物馆', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('138', '1', '恐龙儿童人偶剧             《恐龙去哪儿了》             首场演出', '2014年12月20日', '自贡恐龙博物馆', '恐龙儿童人偶剧', '通过讲述呆萌小恐龙穿越到现代，在森林里发生的互助有爱的故事，向青少年儿童普及恐龙科普知识，传递爱心正能量，演出结束后还进行了有奖科普知识问答、“自贡市公益活动实践基地”的授牌仪式', '自贡恐龙\n博物馆                  ', '参加人数：600', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('139', '1', '童话佳年·欢聚盐博', '2015年1月1日', '自贡市盐业历史博物馆，以下简称“博物馆”', '', '1月1日元旦节博物馆开展了“童话佳年·欢聚盐博”大型亲子活动。通过知识问答、益智游戏增进孩子与家长之间的情感交流，懂的团结合作，感受成功的喜悦。同时让孩子们感受了节日的气氛，促进儿童对自贡盐业历史文化的普及。', '自贡市盐业历史博物馆', '参加人数：230', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('140', '1', ' 中华农耕文化巡展', '2015年1月1日—31日', '博物馆', '', '自贡市盐业历史博物馆与中国农业博物馆在盐史馆内联合举办了“中华农耕文化巡展”，共计展出农耕农具近200件。通过这些实物的展出展示了中华民族的祖先创造出的灿烂辉煌的中华农耕文化，以及对世界特别是东南亚和欧洲农业生产的积极影响。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('141', '1', '传承文化、记住乡愁”征文比赛', '2015年1月', '自贡市各小学', '', '乡愁是人们对生命源头的眺望和对文化母体的挂念。它一是一个地域历史文化的基因，渗透于居民的血液之中。为保护家乡文化遗产、传承文化、留住乡愁。自贡市教育局、自贡市盐业历史博物馆、世界地质公园管理处联合扬州个园博物馆，于2015年1月共同举办了中小学生“传承文化、记住乡愁”征文比赛。', '自贡市盐业历史博物馆', '参加人数：600', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('142', '1', '    盐都记忆', '2015年1月16日', '国税局', '', '“盐都记忆”——自贡盐业历史博物馆的盐业专家对国税工作人员进行了一场深入浅出的盐文化讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('143', '1', '第21届自贡恐龙国际灯会暨自贡世界地质公园旅游推介会', '2015年1月20日', '成都', '旅游推介会', '宣传自贡灯会及自贡世界地质公园情况', '自贡市外事侨务和旅游局           自贡世界地质公园管委会', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('144', '1', '第22届自贡恐龙国际灯会暨 自贡世界地质公园旅游推介会', '2015年1月21日', '乐山', '旅游推介会', '宣传自贡灯会及自贡世界地质公园情况', '自贡市外事侨务和旅游局        自贡世界地质公园管委会', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('145', '1', '第23届自贡恐龙国际灯会暨                自贡世界地质公园旅游推介会', '2015年1月22日', '重庆', '旅游推介会', '宣传自贡灯会及自贡世界地质公园情况', '自贡市外事侨务和旅游局         自贡世界地质公园管委会', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('146', '1', '三下乡”现场服务及慰问活动', '2015年1月27日', '沿滩区九洪乡', '', '1月27日上午，盐文化普及基地——自贡市盐业历史博物馆参加了由中共自贡市委、市政府在沿滩九洪乡市民广场组织的情暖盐都——2015年自贡市文化科技卫生“三下乡”现场服务及慰问活动，在现场开展了盐文化、盐业科普宣传、咨询，发放宣传资料、科普小手册1200余份。', '自贡市盐业历史博物馆', '参加人数：1200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('147', '1', '中国世界地质公园十周年巡展', '2015年2月2日-3月18日', '自贡市盐业历史博物馆、自贡恐龙博物馆', '展览', '专题展览，向公众展示中国世界地质公园10周年的发展历程', '自贡世界地质公园管理处、中国国家地质公园网路中心', '参加人数：30000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('148', '1', '中国世界地质公园10周年回顾展', '2015年2月2日—15日', '博物馆', '', '由中国国家地质公园网络中心和自贡世界地质公园共同主办的《中国世界地质公园10周年回顾展》在自贡市盐业历史博物馆举行。此次活动主要宣传、展示了十年来中国地质遗迹保护和世界地质公园的发展成就。', '自贡世界\n地质公园', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('149', '1', '  迎新春·绘会馆', '2015年2月8日', '博物馆', '', '2月8日下午，在博物馆内举办了“迎新春·绘会馆”少儿现场绘画比赛。近60名小朋友参加了此次活动。活动通过集体参观、现场绘画、有奖问答等五个环节组成。整个活动现场气氛热烈、热闹非凡。', '自贡市盐业历史博物馆', '参加人数：260', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('150', '1', '“流动文明形象大使”城市文化培训启动仪式', '2015年2月12日', '博物馆', '', '2015年2月12日下午，由自贡市盐业历史博物馆、自贡市交通管理运输处主办的自贡市“流动文明形象大使”城市文化培训启动仪式在西秦会馆内举行。我馆向各出租汽车公司赠送了宣传资料，并对参加启动仪式的出租汽车司机进行了现场培训。本次培训将进一步提高我市驾驶员素质，增强他们对千年盐都的了解。', '自贡市盐业历史博物馆', '参加人数：150', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('151', '1', '展骥途程—自贡迎新春‘挑（背）盐’竞赛活动', '2015年2月14日', '龙湖公园', '', '自贡市盐业历史博物馆于2015年2月14日在自贡市沿滩区龙湖公园组织了“展骥途程—自贡迎新春‘挑（背）盐’竞赛活动”。此次竞赛活动吸引了广大市民积极、热情的参与。选手们认为，这是对自贡井盐文化的一种新传播，是值得参与和肯定健康的公益活动。', '自贡市盐业历史博物馆', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('152', '1', '2015迎春文化惠民活动—西秦艺苑', '2015年2月20日', '博物馆', '', '春节期间博物馆开展了“2015迎春文化惠民活动—西秦艺苑”。在西秦会馆献技楼大戏台上通过增加传统折子戏、杂技等表演，丰富了游客的游览内容，增添了节日气氛。', '自贡市盐业历史博物馆', '参加人数：3000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('153', '1', '神奇的盐都、可爱的家乡', '2015年3月13日', '光大街\n小学', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到光大街小学开展盐文化和家乡教育科普讲座，为同学们送去《盐的故事》、《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：1200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('154', '1', '   感知千年盐都', '2015年3月15日', '博物馆', '', '走进博物馆“感知千年盐都”蜀光中学文保会同学们参观井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，感受盐业历史魅力。', '自贡市盐业历史博物馆', '参加人数：30', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('155', '1', '    科技之春', '2015年3月16日', '贡井马槽塘社区', '', '参与科技局组织的2015自贡市社科界“科技之春”科普月咨询服务活动。开展“盐与健康”博物馆走进社区科普活动。3月16日上午，宣教团队走进贡井马槽塘社区，向广大市民普及盐文化知识，宣传健康用盐常识，并发放食用盐、洗涤盆、香皂、毛巾等生活用品。', '科技局', '参加人数：180', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('156', '1', '  感知千年盐都', '2015年3月17日', '博物馆', '', '特殊群体未成年人走进博物馆“感知千年盐都”科普活动。3月17日下午，自贡市特殊教育学校（盲聋哑学校）全校师生共计120人参观博物馆，并开展互动赠送礼品等。通过这次活动让孩子们感受古代盐工巧夺天工的盐场技艺，感受盐业历史魅力。同时也感受社会各个渠道各个方面对他们的关怀和温暖。', '自贡市盐业历史博物馆', '参加人数：120', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('157', '1', '    盐与健康', '2015年3月20日', '长土镇罗石塔社区', '', '“盐与健康”博物馆走进社区专题活动。3月16日上午，宣教团队走进贡井马槽塘社区，向广大市民普及盐文化知识，宣传健康用盐常识，并发放食用盐、洗涤盆、香皂、毛巾等生活用品。', '自贡市盐业历史博物馆', '参加人数：160', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('158', '1', '宣传和认识经验科技', '2015年3月20日', '博物馆', '', '“宣传和认识经验科技”蜀光中学主题科普活动。蜀光中学的学生们专程来到博物馆参观，感受千年盐都的魅力，了解千年盐都的历史。', '自贡市盐业历史博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('159', '1', '西秦大戏台2015年文化惠民活动', '2015年3月28日—6月20日', '博物馆', '', '在2015年3月至6月期间，为丰富自贡市民的业余文化生活，自贡市盐业历史博物馆同自贡市川剧艺术中心精心筹办了“西秦大戏台2015年文化惠民活动”，在西秦会馆献技楼大戏台上为市民免费上演《秋江》、《活捉三郎》等传统折子戏，广受市民欢迎。', '自贡市盐业历史博物馆', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('160', '1', '自贡恐龙100年系列活动——            “话说恐龙”科普巡讲进校园         第一站', '2015年3月30日', '荣县于佳乡小学', '科普讲座、           互动游戏', ' 荣县于佳乡小学全校300余名学生和老师到现场参加了活动，发放恐龙科普宣传资料300余份，并进行了恐龙知识讲座、“恐龙知识有奖问答”、现场绘画比赛—“看谁画的像”和互动游戏—“我是恐龙小达人”', '自贡恐龙博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('161', '1', ' 青少年教育活动体验活动项目库', '2015年3月—11月', '自贡恐龙博物馆', '中小学、幼儿园社会实践活动', '中小学、幼儿园社会实践活动，孩子们到恐龙博物馆现场参观、听科普讲解', '自贡恐龙博物馆', '参加人数：10000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('162', '1', '自贡恐龙100年系列活动——                   “话说恐龙”科普巡讲进校园                   第二站', '2015年4月21日', '自贡旭川中学', '科普讲座          ', '自贡旭川中学初二年级三个班的180余名学生和老师到现场参加了活动；我馆的科普老师为同学们进行了恐龙知识讲座，并结合4.22世界地球日进行环境保护的宣传。', '自贡恐龙博物馆               自贡市图书馆', '参加人数：180', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('163', '1', '争做品德高尚自贡人', '2015年4月21日', '博物馆', '', '4月21日上午，由自贡市精神文明建设办公室与我馆联合主办的自贡市“争做品德高尚自贡人”道德模范与学校师生交流互动活动在我馆成功举行。我市七名道德模范代表与解放路中学的100多名师生聚集在一起，零距离交流如何做一个品德高尚的人，如何让善行无疆。', '自贡市盐业历史博物馆', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('164', '1', '珍惜地球资源，转变发展方式', '2015年4月22日', '春华广场', '', '“珍惜地球资源，转变发展方式”第46个世界地球日主题宣传咨询活动于4月22日在自贡市春华广场进行。', '自贡市盐业历史博物馆', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('165', '1', '解读盐之都、龙之乡、灯之城', '2015年4月22日', '图书馆', '', '“解读盐之都、龙之乡、灯之城”主题讲座。博物馆的盐业专家在自贡市图书馆对工作人员进行了一场深入浅出的家乡文化讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('166', '1', '珍惜地球资源，转变发展方式              ——第46个世界地球周                 主题宣传活动', '2015年4月22日', '自贡春华广场', '科普宣传活动', '这次活动在自贡春华广场进行，此次活动内容以“珍惜地球资源 转变发展方式”为主题，吸引了广大市民前来了解咨询，活动进展示了《中国世界地质公园10周年》、向市民发放调查问卷、发放宣传资料200余份，纪念品100余份、提供咨询服务200余次\n', '自贡世界地质公园管理处               自贡恐龙博物馆               盐业历史博物馆', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('167', '1', '自贡恐龙发现100年“神奇的恐龙”系列讲座之《探寻恐龙的奥秘》', '2015年4月25日', '自贡恐龙博物馆', '科普讲座          ', '成都泡桐树中学初一年级三个班的180余名学生和老师到现场参加了活动，参观博物馆展厅、听专业讲解，参加恐龙拓片、观看4D影片、3D照片拍摄等互动项目、互动游戏：“人体恐龙拼图”大比拼、恐龙知识讲座——《探寻恐龙的奥秘》、互动环节——“恐龙知识有奖问答”。 \n', '成都泡桐树中学              自贡恐龙博物馆               ', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('168', '1', '参观制盐的过程，领略凿井的智慧', '2015年4月26日', '燊海井景区', '参观', '参观制盐的过程，领略凿井的智慧，并组织学生开展活动（分组以画画的形式，展现凿井的过程，最终进行评比）', '自贡市外事侨务和旅游局', '参加人数：158', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('169', '1', '传承文明·记住乡愁”征文比赛颁奖仪式', '2015年4月28日', '博物馆', '', '4月28日上午，“传承文明·记住乡愁”征文比赛在我馆内举行了颁奖仪式，表彰了获奖征文100余篇。包括初中组、小学组一等奖征文各一篇，二等奖征文各5篇、三等奖征文各10篇以及优秀奖征文各50篇。并将获奖征文印刷为科普读物《“传承文明·记住乡愁”自贡市中小学生获奖征文集》供全市广大师生参考学习。', '自贡市盐业历史博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('170', '1', '《盐的故事》科普展览', '2015年4月30日', '富台山社区', '', '博物馆走进社区“盐的故事”科普展览。博物馆宣教人员来到富台山社区开展“盐的故事”科普展览，向市民宣传如何健康用盐。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('171', '1', '   盐商争霸赛', '2015年5月1日—3日', '博物馆', '', '五一假期为满足游客们多种参观方式，同时更好的普及博物馆的科学知识。自贡市盐业历史博物馆特通过《掌上微信博物馆》开展了“盐商争霸赛”盐业知识大比拼的活动，并为游客们准备了丰富的奖品。通过这种寓教于乐的游戏比赛，让游客的假期充满“盐”味。', '自贡市盐业历史博物馆', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('172', '1', '《盐的故事》科普展览', '2015年5月4日', '舒平镇群众文化广场', '', '博物馆走进社区“盐的故事”科普展览。博物馆宣教人员来到舒平镇群众文化广场开展“盐的故事”科普展览，向市民宣传如何健康用盐。', '自贡市盐业历史博物馆', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('173', '1', '自贡世界地质公园科普报告会', '2015年5月6日', '四川理工学院', '科普讲座', '自贡恐龙专家彭光照走进四川理工学院作自贡恐龙的科普报告', '自贡世界地质公园管理处', '参加人数：', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('174', '1', '《盐的故事》科普展览', '2015年5月8日', '红旗乡大岩社区', '', '博物馆走进社区“盐的故事”科普展览。博物馆宣教人员来到红旗乡大岩社区开展“盐的故事”科普展览，向市民宣传如何健康用盐。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('175', '1', '自贡恐龙发现100年系列活动——“龙宫讲坛”之                     《达尔文与进化论》', '2015年5月15日', '自贡恐龙博物馆', '专家讲座          ', '自贡江姐小学的100余名学生和老师到博物馆学习专题讲座《达尔文与进化论》从达尔文的生平故事到进化论的出现，我国著名杂志《化石》主编郭建崴教授，用深入浅出的方法给孩子们讲了一堂生动的进化论课程， ', '自贡恐龙博物馆               ', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('176', '1', '自贡恐龙发现100年系列活动“龙宫讲坛”之《进化论—人类思想的飞跃》', '2015年5月15日', '自贡曙光中学', '专家讲座          ', '我国著名杂志《化石》主编郭建崴教授，到自贡曙光中学为400余名高一的学生进行了专题讲座《进化论—人类思想的飞跃》', '自贡恐龙博物馆               ', '参加人数：400', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('177', '1', '“盐与健康”碘缺乏病防治宣传咨询活动', '2015年5月15日', '汇东公园', '', '5月15日上午，为庆祝全国科技活动周的到来，博物馆在汇东公园开展了一场“盐与健康”碘缺乏病防治宣传咨询活动，向广大市民宣传缺碘的危害和食盐过量易导致的疾病等。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('178', '1', '“5·18”国际博物馆日宣传咨询活动', '2015年5月16日', '普润广场', '', '5月16日上午，由自贡市文化局牵头，自贡市盐业历史博物馆、自贡恐龙博物馆、中国彩灯博物馆三馆联合来到自贡市普润电商城开展庆祝“5·18”国际博物馆日宣传咨询活动。向过往群众宣传博物馆、发放宣传资料并赠送食用盐、书签、文具等世界地质公园特色纪念品等。', '自贡市文化局', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('179', '1', '“传承文明，记住乡愁”科普学习活动', '2015年5-15至17日', '扬州市', '', '5月15日—17日我馆工作人员带领在“传承文明，记住乡愁”征文比赛中获得一等奖的两名学生飞往扬州开展科普学习活动，近距离感受扬州的盐商园林和不一样的盐商文化。', '自贡市盐业历史博物馆', '参加人数：2', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('180', '1', '   感知千年盐都', '2015年5月16日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。5月16日下午，自贡市广华社区40多名共产党员专程来到我馆参观《中国井盐科技史陈列》。感受古代盐工巧夺天工的盐场技艺，了解千年盐业历史。', '自贡市盐业历史博物馆', '参加人数：40', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('181', '1', '自贡恐龙发现100年                    “神奇的恐龙” 系列讲座之                      《恐龙世界几多谜》', '2015年5月16日', '自贡恐龙博物馆', '科普\n讲座          ', '为成都师范附属小学慧源校区二年级3班恐龙知识讲座、知识问答、展厅参观及讲解\n', '自贡恐龙博物馆               ', '参加人数：80', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('182', '1', '5.18国际\n博物馆日                 ——博物馆致力于社会的可持续发展', '2015年5月16日', '自贡普润城', '科普宣传活动', '广大市民前来咨询国际博物馆日的相关内容和优惠政策，发放博物馆宣传资料300余份、接受观众科普咨询200余次、陈列博物馆宣传展板', '自贡恐龙博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('183', '1', '庆祝“5·18”国际博物馆日', '2015年5月17日', '博物馆', '', '为庆祝“5·18”国际博物馆日，5月17日下午来自自贡川剧艺术中心的专业演员在盐业历史博物馆西秦大戏台上为广大市民献上了《瞎子算命》、《花田写扇》等传统川剧折子戏，深受市民和外地观众的喜爱。', '自贡市盐业历史博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('184', '1', '神奇的盐都、可爱的家乡', '2015年5月18日', '汇兴小学', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到汇兴小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('185', '1', '5.18国际博物馆日宣传活动', '2015年5月18日', '自贡方冲小区', '科普宣传活动', '为小区居民做了科普小讲座、宣传了博物馆日的由来以及我馆的惠民政策、互动问答', '自贡恐龙博物馆               ', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('186', '1', '神奇的盐都、可爱的家乡', '2015年5月20日', '麻柳小学', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到麻柳小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：120', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('187', '1', '“传承文明，记住乡愁”科普学习活动', '2015年5月23日', '成都市四川省博物院', '', '5月23日，我馆工作人员带领“传承文明，记住乡愁”征文比赛中获得二等奖的10名学生前往成都四川省博物院开展科普学习活动，培养同学们热爱博物馆学、热爱历史文化的良好习惯。', '自贡市盐业历史博物馆', '参加人数：10', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('188', '1', '“传承文明，记住乡愁”科普学习活动', '2015年5月23日', '恐龙馆、燊海井、盐史馆', '', '5月23日，我馆工作人员带领“传承文明，记住乡愁”征文比赛中获得三等奖的20名学生前往自贡市内恐龙博物馆、燊海井、盐史馆开展科普学习活动，向同学们介绍自贡世界地质公园各大园区核心景点的基本情况，从小培养孩子们热爱家乡、建设家乡的思想意识。', '自贡市盐业历史博物馆', '参加人数：20', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('189', '1', '全国科普讲解\n大赛', '2015年5月28日        —31日', '科学技术部办公厅', '讲解\n比赛', '全国100多名选手参加科普讲解大赛', '广州科技中心', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('190', '1', '  感知千年盐都', '2015年6月4日', '博物馆', '', '走进博物馆“感知千年盐都”科普参观活动。四川师范大学的师生们走进博物馆，感受千年盐都的独特魅力，了解千年盐都的历史。', '自贡市盐业历史博物馆', '参加人数：137', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('191', '1', '自贡恐龙发现100年系列活动——“恐龙世界几多谜”主题班会', '2015年6月5日', '自贡汇东实验学校南湖校区', '主题\n班会         ', '科普主题班会活动,进行了恐龙知识讲座、知识问答、畅所欲言聊恐龙——同学们来说说“最想和什么恐龙交朋友”、全班参与互动游戏——谁是恐龙小博士。\n', '自贡恐龙博物馆               ', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('192', '1', '   文化遗产日', '2015年6月13日', '博物馆', '', '6月13日上午，为迎接我国第十个“文化遗产日”，我馆协助文广新局在西秦会馆天街内举办了“自贡市2015年‘文化遗产日’非物质文化遗产宣传展演活动”，吸引了1000多名市民前来我馆观看、摄影、选购非遗产品等。', '自贡市盐业历史博物馆', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('193', '1', '自贡恐龙发现100同年系列活动：恐龙进校园——自贡市汇东实验学校恐龙吉祥物名字和故事征集活动\n', '2015年6月15日               —9月10日', '自贡汇东        实验学校', '科普活动', '有效投稿118人次，并评出一、二、三等奖共10个参赛作品', '自贡恐龙博物馆               ', '参加人数：118', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('194', '1', '自贡恐龙发现100同年系列活动：《神奇的恐龙》系列讲座  ——走进恐龙\n世界          \n', '2015年7月2日', '自贡恐龙博物馆', '科普\n讲座          ', '为香港救恩书院四川地质公园游学团进行了专题讲座，介绍有关恐龙的百科知识，以及我国的恐龙研究历史', '自贡恐龙博物馆               ', '参加人数：90', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('195', '1', '感知千年盐都', '2015年7月3日', '博物馆', '', '走进博物馆“感知千年盐都”科普参观活动。7月3日上午，舒平小学近80名留守儿童走进博物馆，参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史博物馆', '参加人数：78', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('196', '1', '\n第59期文博讲坛                     《走进恐龙世界》科普讲座\n', '2015年7月12日', '河北博物院', '专家\n讲座          ', '介绍有关恐龙的百科知识，通过播放恐龙主题科教片视频、亲手触摸恐龙化石标本等方式，把人们带回到数亿年前的“恐龙时代”', '河北博物院', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('197', '1', '第二期“小小讲解员”培训班', '2015年7月-8月', '自贡恐龙博物馆', '培训班', '42名“小小讲解员”，经过博物馆培训考核后，到博物馆上岗服务共计321次，为观众讲解服务2837次，', '自贡恐龙博物馆               ', '参加人数：42', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('198', '1', '参观制盐的过程，领略凿井的智慧', '2015年7月16日', '燊海井\n景区', '参观', '参观景区、听专业讲解；', '自贡市外事侨务和旅游局', '参加人数：123', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('199', '1', '抗战电影展映周活动', '2015年7月24日-30日', '汇东公园', '', '抗战电影展映周活动。7月24日-30日每晚7:30-9：30，为纪念抗战胜利70周年、激起民众抗战回忆、丰富市民业余文化生活，我馆联合安仁县电影博物馆，在自贡市汇东公园广场举办了《抗战电影活动周——优秀抗战电影展映及展览》活动，观影群众近千人，深受市民欢迎。', '自贡市盐业历史博物馆', '参加人数：900', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('200', '1', '“盐博课堂”第一期', '2015年7/27日-31日', '博物馆会议厅', '', '科普活动“盐博课堂”第一期正式开课。为丰富孩子们的暑期生活，让传统文化得到继承和发扬，自贡市盐业历史博物馆面向全市中小学生免费开设“盐博课堂”。课堂开设了盐文化、国学、剪纸、书法、美术五门课程，特邀市内权威专家现场授课，让孩子们在体验中华名族传统文化中度过了一个有意义的暑假。', '自贡市盐业历史博物馆', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('201', '1', '穿越侏罗纪——自贡恐龙博物馆             不眠夜活动', '2015年8月1日—8月2日', '自贡恐龙博物馆', '亲子活动', '招募了18个家庭共42人参加活动，通过趣味恐龙科普知识问答、恐龙涂鸦、龙宫寻宝、DIY恐龙、园区游览、夜游龙宫、4D影院、学搭帐篷、活动分享等', '自贡恐龙博物馆               ', '参加人数：42', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('202', '1', '自贡恐龙发现100年系列活动——“龙宫讲坛”之    \n征程——从鱼到人的演化之旅（王原）\n\n', '2015年8月3日', '自贡恐龙博物馆', '专家讲座          ', '中国古动物馆馆长王原，在自贡恐龙博物馆为预约报名的自贡市民，进行了免费的专题讲座《征程——从鱼到人的演化之旅》', '自贡恐龙博物馆               ', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('203', '1', '走进千年盐都——苗圃在行动', '2015年8月6日', '博物馆', '', '8月6日上午博物馆宣教团队和宜宾“苗圃行动”社会福利组织联合开展一次“走进千年盐都——苗圃在行动”科普活动。“苗圃行动”主要是以收养孤残儿童及弃婴抚养、治疗、康复于一身的儿童福利机构。通过这次来博物馆学习，孩子们了解到了自己每天吃的盐是怎么来的，感受古代盐工制盐的辛劳和今天幸福生活的来之不易。', '自贡市盐业历史博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('204', '1', '第64期文博讲坛                     《神奇的恐龙世界》', '2015年8月16日', '河北博物院', '专家讲座          ', '介绍有关恐龙的百科知识，通过播放恐龙主题科教片视频、亲手触摸恐龙化石标本等方式，把人们带回到数亿年前的“恐龙时代”', '河北博物院', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('205', '1', '自贡恐龙发现100年                    “神奇的恐龙” 系列讲座之        《探索恐龙》', '2015年8月20日', '自贡恐龙博物馆', '科普活动', '中国石化集团兴安盟石油局川渝石油基地服务中心关爱下一代委员会组织学生进行参观和讲座', '自贡恐龙博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('206', '1', '    七夕音乐会', '2015年8月20日', '博物馆', '', '“七夕音乐会”8月20日（农历七月初七）晚，在西秦会馆这座古老的建筑里，博物馆举办了一场别开生面的七夕音乐会。通过观看身着传统汉服祭祀祈福、聆听宛转悠扬的古筝、洞箫演奏等，市民们尽情的感受着中国传统文化节日的魅力。', '自贡市盐业历史博物馆', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('207', '1', '感知千年\n盐都', '2015年8月20日', '博物馆', '', '走进博物馆“感知千年盐都”关工委西南石油局未成年人参观博物馆，让孩子们感受古代盐工巧夺天工的盐场技艺，感受盐业历史魅力。', '自贡市盐业历史博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('208', '1', '历史不能忘记——近代以来中国人民抗击日本侵略展', '2015年8月26日', '博物馆', '', '50名70岁以上的老党员走进博物馆，观看庆祝抗战胜利70周年活动“历史不能忘记—近代以来中国人民抗击日本侵略展”专题展览，并交流倾谈抗战记忆。', '自贡市盐业历史博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('209', '1', '自贡恐龙发现100年系列活动\n——“我与自贡恐龙”中小学征文比赛\n', '2015年9月1日          —11月25日', '自贡市 ', '征文\n比赛', '在自贡市中小学中进行了一次有奖征文比赛、共200余所学校参与，经各学校推选、并报各区县教育局评选推荐，共1500余篇优秀作文参与最后的评选', '自贡市教育局                 自贡恐龙博物馆               ', '参加人数：5000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('210', '1', '感知千年盐都', '2015年9月17日', '博物馆', '', '走进博物馆“感知千年盐都”育英小学师生参观“铭记历史，开创未来”自贡抗战文物展。', '自贡市盐业历史博物馆', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('211', '1', '中国之美——榫卯技艺大比拼', '2015年9月23日', '博物馆', '', '科普活动“中国之美——榫卯技艺大比拼”。60名袋鼠妈妈幼儿园的小朋友在家长的陪同下走进博物馆，参加榫卯技艺大比拼活动。首先通过和西秦会馆古建筑的零距离接触，感受中国传统技艺榫卯拼接的博大精深。之后小朋友们亲自动手、现场操作，将一根根只有凳面、凳腿等零件的小板凳，通过榫卯拼接组装起来，活动现场气氛热烈，孩子们动手动脑乐在其中。', '自贡市盐业历史博物馆', '参加人数：150', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('212', '1', '神奇的盐都、可爱的家乡', '2015年9月29日', '牛佛镇祝家小学', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到偏远的牛佛镇祝家小学开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：100', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('213', '1', '首届国土资源科普讲解大赛', '2015年10月16—18日', '自贡市委礼堂', '讲解比赛', '全国各国土厅推选选手参加，共30名选手进入最后的总决赛', '国土资源科普\n基地             管理办公室', '参加人数：30', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('214', '1', '国土资源科普基地工作研讨会', '2015年10月16—18日', '自贡汇东大酒店', '科普研讨会', '全国各国土资源科普基地代表和专家们参加了研讨会', '国土资源科普\n基地             管理办公室', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('215', '1', '感知千年盐都', '2015年10月16日', '博物馆', '', '走进博物馆“感知千年盐都”科普活动。贡井青少年校外活动中心带领80名自贡市偏远山区儿童走进博物馆，让孩子们感受古代盐工巧夺天工的盐场技艺，感受家乡盐业历史魅力。', '自贡市盐业历史博物馆', '参加人数：80', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('216', '1', '感知千年盐都', '2015年10月18日', '博物馆', '', '走进博物馆“感知千年盐都”四川理工学院新生参观井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，了解千年盐业历史。', '自贡市盐业历史博物馆', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('217', '1', '感知千年盐都', '2015年10月20日', '博物馆', '', '走进博物馆“感知千年盐都”《自贡晚报》小记者参观博物馆，让孩子们感受古代盐工巧夺天工的盐场技艺，感受盐业历史魅力。', '自贡市盐业历史博物馆', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('218', '1', '“盐与健康”科普宣传', '2015年10月21日', '大安双兴敬老院', '', '10月21日（农历九月初九重阳节）博物馆走进敬老院开展“盐与健康”科普宣传和给老人送温暖活动。博物馆宣教人员来到大安区双兴敬老院开展“盐与健康”科普讲座，为老人们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送生活日用品。', '自贡市盐业历史博物馆', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('219', '1', '解读盐之都，弘扬盐文化', '2015年10月22日', '沿滩区政府', '', '“解读盐之都，弘扬盐文化”博物馆的盐业专家对沿滩青年干部进行了一场深入浅出的盐文化讲座，让大家更加深入的认识自贡，认识家乡。', '自贡市盐业历史博物馆', '参加人数：290', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('220', '1', '榫卯大比拼', '2015年10月31日', '博物馆', '', '“榫卯大比拼”科普活动。30名来自成都梧桐小学的学生走进博物馆参加榫卯技艺大比拼活动。首先通过和西秦会馆古建筑的零距离接触，感受中国传统技艺榫卯拼接的博大精深。之后同学们亲自动手、现场操作，将一根根只有凳面、凳腿等零件的小板凳，通过榫卯拼接组装起来，活动现场气氛热烈，孩子们动手动脑乐在其中。', '自贡市盐业历史博物馆', '参加人数：30', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('221', '1', '“市民科普月”活动', '2015年11月1日             —11月30日', '自贡恐龙博物馆', '科普活动', '自贡市民到博物馆参加科普活动、参观博物馆', '自贡恐龙博物馆', '参加人数：11953', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('222', '1', '感知千年盐都', '2015年11月5日', '博物馆', '', '“感知千年盐都”科普活动。成都锦途国际旅行社带着120名来自成都梧桐小学的学生参观博物馆，并在馆内进行了“榫卯技艺大比拼”的活动。让孩子们感受古代匠人巧夺天工的技艺，感受盐业历史魅力。', '自贡市盐业历史博物馆', '参加人数：120', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('223', '1', '神奇的盐都、可爱的家乡', '2015年11月12日', '袋鼠妈妈幼儿园', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到袋鼠妈妈幼儿园开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：40', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('224', '1', '主题班会：\n适应新生活，迎接新未来\n', '2015年11月20日', '自贡恐龙博物馆', '主题班会         ', '通过开展主题班会活动，讨论初中一年级新生需要适应的新变化：1、新环境，新同学，新老师。2、学习科目增多。3、学习方法、4、学习难度。5、自我管理。', '自贡江东实验学校', '参加人数：45', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('225', '1', '神奇的盐都、可爱的家乡', '2015年11月30日', '沿滩区瓦市中心校', '', '博物馆走进校园“神奇的盐都、可爱的家乡”科普活动。博物馆宣教人员来到沿滩区瓦市中心校开展盐文化和家乡教育科普讲座，为同学们送去《盐的故事》、《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史博物馆', '参加人数：60', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('226', '1', '恐龙儿童人偶剧              《恐龙去哪儿了》             演出', '2015年1月—12月', '市内各社区、农村学校', '恐龙儿童人偶剧', '通过讲述呆萌小恐龙穿越到现代，在森林里发生的互助有爱的故事，向青少年儿童普及恐龙科普知识，传递爱心正能量，演出结束后还进行了有奖科普知识问答。', '自贡恐龙博物馆                  ', '参加人数：2000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('227', '1', '感知千年盐都', '2015年12月3日', '博物馆', '', '“感知千年盐都”贡井青少年校外活动中心(偏远山区儿童)走进博物馆，孩子们通过对中国井盐科技史陈列的参观，感叹古代盐工巧夺天工的盐场技艺，感受家乡盐业历史魅力。', '自贡市盐业历史博物馆', '参加人数：170', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('228', '1', '孝传百家，\n爱满盐都', '2016年1月1日', '博物馆', '', '“孝传百家，爱满盐都”少儿讲孝心故事表演赛。小朋友们一一上台进行了孝心故事的表演，表演完之后每位小朋友还有一次砸金蛋的机会，通过这次活动，让小朋友们知道在家一定要孝敬自己的爸爸妈妈。\n', '自贡市盐业历史  博物馆', '参加人数：196', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('229', '1', '感知千年盐都', '2016年1月8日', '博物馆', '', '“感知千年盐都”沿滩九洪乡留守儿童参观博物馆。参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史  博物馆', '参加人数：40', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('230', '1', '大脑的软件—思维方法', '2016年1月17日', '自贡恐龙博物馆', '科普讲座          ', '通过讲座和互动提问的方式，讲解思维方法的重要，如何掌握科学的思维方法进行思考、学习。如何进行创新思维的训练。如何使用GOOGLE地球软件学习地理知识。', '自贡恐龙博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('231', '1', '亲情服务父老乡亲', '2016年1月19日', '贡井区龙潭镇', '', '三下乡活动启动仪式“亲情服务父老乡亲”。在贡井龙潭镇现场开展了盐文化、盐业科普宣传、咨询，发放宣传资料、科普小手册1200余份', '自贡市文化局', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('232', '1', '大脑的软件—思维方法', '2016年1月24日', '自贡恐龙博物馆', '科普\n讲座          ', '通过讲座和互动提问的方式，讲解思维方法的重要，如何掌握科学的思维方法进行思考、学习。如何进行创新思维的训练。如何使用GOOGLE地球软件学习地理知识。', '自贡恐龙博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('233', '1', ' 青少年教育活动体验活动项目库', '2016年3月—11月', '自贡恐龙博物馆', '中小学、幼儿园社会实践活动', '中小学、幼儿园社会实践活动，孩子们到恐龙博物馆现场参观、听科普讲解。', '自贡恐龙博物馆', '参加人数：10000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('234', '1', '扩园申请培训', '2016年3月1日-4月1日', '石笋沟、荣县大佛、朱家庙、土柱村、陈家祠堂、乐德红土地、恐龙博\n物馆', '培训\n讲座', '科普自贡世界地质公园扩园评估相关知识', '自贡世界地质公园管理处', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('235', '1', '“盐博课堂”第二期', '2016年1月23-31日', '盐博课堂教室', '', '“盐博课堂”第二期寒假班。为丰富孩子们的假期生活，让传统文化得到继承和发扬，自贡市盐业历史博物馆面向全市中小学生免费开设“盐博课堂”。特邀市内权威专家现场授课，让孩子们在体验中华名族传统文化中度过了一个有意义的假期。', '自贡市盐业历史  博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('236', '1', '感知千年盐都', '2016年3月10日', '博物馆', '', '“感知千年盐都”刘山中心校师生参观博物馆。参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史  博物馆', '参加人数：130', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('237', '1', '感知千年盐都', '2016年3月11日', '博物馆', '', '“感知千年盐都”绿盛实验学校师生参观博物馆。参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史  博物馆', '参加人数：320', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('238', '1', '神奇的盐都，可爱的家乡', '2016年3月16日', '杜快小学', '', '\"神奇的盐都，可爱的家乡\"富顺琵琶镇杜快小学科普讲座', '自贡市盐业历史  博物馆', '参加人数：500', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('239', '1', '感知千年盐都', '2016年3月17日', '博物馆', '', '“感知千年盐都”刘山中心校师生参观博物馆。博物馆宣教人员来到刘山中心校开展盐文化和家乡教育科普讲座，为同学们送去《西秦会馆建筑艺术展》、《百年沧桑巨变》等临时展览，并赠送科普读物和学习用品。', '自贡市盐业历史  博物馆', '参加人数：90', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('240', '1', '“盐与健康”科普讲座', '2016年3月23日', '白果小区', '', '“盐与健康”科普讲座走进白果社区。向广大市民普及盐文化知识，宣传健康用盐常识，并发放食用盐、洗涤盆、香皂、毛巾等生活用品。', '自贡市盐业历史  博物馆', '参加人数：70', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('241', '1', '《盐的故事》科普展览', '2016年3月24日', '富顺古佛镇', '', '《盐的故事》、博物馆下乡走进富顺古佛镇。博物馆宣教人员来到古佛镇群众文化广场开展“盐的故事”科普展览，向市民宣传如何健康用盐。', '自贡市盐业历史  博物馆', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('242', '1', '感知千年盐都', '2016年3月25日', '博物馆', '', '“感知千年盐都”凤凰小学参观博物馆。参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史  博物馆', '参加人数：95', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('243', '1', '   感知千年盐都', '2016年3月27日', '博物馆', '', '理工学院土木工程系学生志愿者服务。参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史  博物馆', '参加人数：17', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('244', '1', '   感知千年盐都', '2016年3月29日', '博物馆', '', '“感知千年盐都”沿滩区永安小学参观博物馆。参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史  博物馆', '参加人数：54', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('245', '1', '《盐的故事》科普巡展', '2016年3月29日', '富顺福善镇熊坝新村', '', '《盐的故事》科普巡展。博物馆宣教人员来到富顺福善镇熊坝新村开展“盐的故事”科普展览，向市民宣传如何健康用盐。', '自贡市盐业历史  博物馆', '参加人数：1000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('246', '1', '   感知千年盐都', '2016年4月1日', '博物馆', '', '“感知千年盐都”二十八中参观博物馆。参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史  博物馆', '参加人数：700', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('247', '1', '   感知千年盐都', '2016年4月7日', '博物馆', '', '“感知千年盐都”香港何德心小学参观博物馆。参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史  博物馆', '参加人数：36', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('248', '1', '自贡、香港青少年文化交流活动', '2016年4月7日', '绿盛实验学校', '两地学生交流活动', '地质公园美术课、绿盛学校大课间活动', '自贡世界地质公园管理处', '参加人数：300', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('249', '1', '香港狮子会何德心小学游学自贡世界地质公园', '2016年4月7日', '自贡恐龙博物馆、燊海井、自贡市盐业历史博物馆', '展厅参观              科普讲座          ', '1、参观博物馆、听专业讲解；\n2、恐龙知识讲座——《探寻恐龙的奥秘》；\n3、互动环节——“恐龙知识有奖问答”。\n4、赠送博物馆吉祥物玩偶。\n', '自贡世界地质公园管理处', '参加人数：45', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('250', '1', '税法知识进\n校园', '2016年4月16日', '博物馆', '', '“税法知识进校园”地税局带领汇东实验学校学生参观盐税厅及基本陈列', '自贡市地税局', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('251', '1', '地质公园与盐文化', '2016年4月20日', '贡井陈家祠堂', '', '“地质公园与盐文化”第47个世界地球日科普宣传活动。向当地青少年宣传博物馆、发放宣传资料并赠送食用盐、书签、文具等世界地质公园特色纪念品等。', '自贡世界地质公园', '参加人数：200', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('252', '1', ' 感知千年\n盐都', '2016年4月22日', '博物馆', '', '“感知千年盐都”农王学校和白庙学校参观博物馆。参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史  博物馆', '参加人数：70', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('253', '1', '中国之美—榫卯技艺大比拼', '2016年4月23日', '博物馆', '', '锦城国旅学生“中国之美—榫卯技艺大比拼”。锦城国旅学生参加榫卯技艺大比拼活动。首先通过和西秦会馆古建筑的零距离接触，感受中国传统技艺榫卯拼接的博大精深。之后小朋友们亲自动手、现场操作，将一根根只有凳面、凳腿等零件的小板凳，通过榫卯拼接组装起来，活动现场气氛热烈，孩子们动手动脑乐在其中。', '自贡市盐业历史  博物馆', '参加人数：40', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('254', '1', ' 第47个世界地球周                 主题宣传活动', '2016年2016-4-21—4月28', '自贡恐龙博物馆           土柱村', '主题科普宣传活动                  ', '1、科普讲座“观鸟：开启自然保育之门”讲座。                                            2、自贡地区常见野鸟图片展                          3、科普讲座“古生物化石的保护和恐龙相关知识”  ', '自贡世界地质公园管理处 自贡恐龙博物馆自贡市观鸟协会               ', '参加人数：2000', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('255', '1', '   感知千年盐都', '2016年4月29日', '博物馆', '', '“感知千年盐都”机关幼儿园师生参观博物馆。参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史  博物馆', '参加人数：180', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('256', '1', '童心绘恐龙', '2016年5月1日-10日', '土柱村', '社区活动', '四川理工学院、江姐小学师生在土柱村绘制恐龙壁画', '自贡世界地质公园管理处、自贡恐龙博物馆', '参加人数：50', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('257', '0', '', '', '', '', '', '', '', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('258', '0', '', '', '', '', '', '', '', '', null, null, null);
+INSERT INTO `scienceactivity` VALUES ('259', '1', '恐龙馆文化志愿科普活动进校园——走进新店镇中心小学', '2019年11月5日', '新店镇中心小学', '新店镇中心小学的全体师生', '什么是恐龙、恐龙的发现、恐龙的演化', '自贡恐龙博物馆科普工作者和志愿者', '为让更多的学生了解地球、化石，增长科普知识，11月5日上午，自贡恐龙博物馆科普工作者和志愿者走进新店镇中心小学，开展了“展史前印迹，述恐龙故事”2019自贡恐龙博物馆文化志愿主题活动。\n\n整个活动包括流动展览、科普课堂和科普互动。新店镇中心小学的全体师生参观了流动展览，对什么是恐龙、恐龙的发现、恐龙的演化有了一定了解。科普课堂上，同学们饶有兴致地听“飞哥聊恐龙”。生动的故事、丰富的图片、有趣的动画片，同学们看到和听到了很多课本外的古生物和科学知识。被称为“飞哥”的科普专家李飞不时问同学们：“如果霸王龙是你们的同学，他会害怕什么呢？”“投影上面有几条龙？几条恐龙？”“《侏罗纪公园》里有些什么恐龙？”\n活动在有趣的游戏和同学们的欢声笑语中结束。作为全国科普教育基地，自贡恐龙博物馆高度重视社会教育功能的发挥，长期开展“进乡镇、进学校、进社区”活动，将博物馆文化和科学知识送到公众身边。志愿者活动的开展，将深入推进馆校之间的交流互动，为下一代的成长发挥更大的作用。', '/images/scienceactivity/15743905702044-20191118112155499001.png,/images/scienceactivity/15743905702044-20191118112156851003.png,/images/scienceactivity/15743905702044-20191118112156160002.png,/images/scienceactivity/15743905702044-20191118112156124004.png', null, null, null);
 
 -- ----------------------------
 -- Table structure for sciencework
@@ -1345,12 +1790,17 @@ CREATE TABLE `sciencework` (
   `deleted_at` datetime DEFAULT NULL,
   `url` text COMMENT '存储地址',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='科普作品';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='科普作品';
 
 -- ----------------------------
 -- Records of sciencework
 -- ----------------------------
-INSERT INTO `sciencework` VALUES ('1', '1', '1', '1', '1', '1', '1', '1', '1', '111', null, null, null, '/files/sciencework/15694241986110.txt');
+INSERT INTO `sciencework` VALUES ('1', '1', '1', '自贡世界地质公园导游指南', '所有人', '杨更等', '', '', '是', '111', null, null, null, '/files/sciencework/15743896590290-自贡世界地质公园导游指南.pdf');
+INSERT INTO `sciencework` VALUES ('2', '1', '2', '自贡的盐是怎样来的', '所有人', '', '', '', '', '自贡是千年盐都，井盐生产历史悠久，到底自贡的盐是怎么来的呢？经近代地质学家的考察研究，原来与这一地区特殊的地质环境有密切关系。\n\n　　三叠系是四川盆地成盐作用最强，岩盐层分布广、厚度大、层位多的含盐层系，同时也是卤水的主要产层。自贡地区地处自流井凹陷，是四川盆地三叠系岩盐矿床形成与分布的典型地区。其中，上三叠统碎屑岩中产出黄卤，中、下三叠统碳酸盐岩中产出黑卤。\n\n　　自贡地区岩盐产于自流井背斜轴部，西起郭家坳，东至万家桥，在长约14km、宽3km的范围内，共发现有郭家坳、大坟堡、大山铺和万家桥四个盐体，所以，自贡的井盐比较丰富，能够支撑整个盐都的发展。', null, null, null, '');
+INSERT INTO `sciencework` VALUES ('3', '1', '3', '“恐龙”一词的由来', '所有人', '', '', '', '', '“恐龙”一词最早是由英国著名古生物学家理查德?欧文爵士 (Richard Owen，1804－1892) 于1841年提出，并于1842年正式创建的。1841年8月2日，不列颠科学协会在普利茅斯 (Plymorth) 召开学术会议。欧文在这个会上作了长达两个半小时的题为《关于英国爬行类化石》的学术报告。他在报告中，首先提出使用“恐龙”这个名字来概括当时已发现的三种大型古爬行动物：禽龙 (Iguanodon)、巨齿龙 (Megalosaurus) 和森林龙 (Hylaeosaurus)。1842年，他的这个长篇学术报告以《大不列颠化石爬行动物 (British Fossil Reptiles)》为书名，由不列颠科学协会出版，“恐龙”这个名字正式诞生了。', null, null, null, '');
+INSERT INTO `sciencework` VALUES ('4', '1', '4', '最早的自贡恐龙化石', '所有人', '', '', '', '', '　自贡恐龙的最早发现，是一位名叫乔治?D?劳德伯克的美国地质学家。1913～1915年间，应中国当时的中央资源委员会的邀请，在威远?荣县和自流井一带进行地质调查，目的主要是帮助中国寻找石油和天然气，意外地在荣县县城东南砂岩中发现1枚恐龙牙齿和1段股骨化石。\n\n　　这一重大发现，不仅叩开了自贡恐龙化石宝藏的大门，是自贡地区恐龙化石首次科学的发现，而且也是四川盆地乃至整个中国西南地区恐龙化石的最早科学记录。', null, null, null, '');
+INSERT INTO `sciencework` VALUES ('5', '1', '5', '古生物化石考察路线', '所有人', '', '', '', '', '', null, null, null, '/files/sciencework/15743900235021-古生物化石考察路线.docx');
+INSERT INTO `sciencework` VALUES ('6', '1', '6', '盐业遗迹考察路线', '所有人', '', '', '', '', '燊海井—自贡市盐业历史博物馆—艾叶古镇—汇东绿盛实验学校—亘古龙腾科技公司、灯贸股份公司—西秦会馆（川剧、民俗）\n\n考察内容简介\n\n    该路线是集盐业文化、民俗风情与科普教育、社区合作为一体的考察路线。完整再现了自贡地区历史上制盐（燊海井）、运盐（艾叶古镇）的全过程。而今，公园管理者在向当地居民宣传公园丰富的地质遗产、厚重的文化底蕴等知识，让他们对公园的情感在科普与教育中得到升华；同时，公园管理者与当地特色企业合作，与他们携手共建公园，使之走向世界。', null, null, null, '');
 
 -- ----------------------------
 -- Table structure for socialeconomy
@@ -1392,7 +1842,7 @@ CREATE TABLE `sys_menu` (
   `alias` varchar(64) DEFAULT NULL COMMENT '别名',
   `sort` int(11) DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8mb4 COMMENT='菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4 COMMENT='菜单表';
 
 -- ----------------------------
 -- Records of sys_menu
@@ -1412,8 +1862,8 @@ INSERT INTO `sys_menu` VALUES ('12', '1', '菜单管理', 'menu.html', '2', 'lay
 INSERT INTO `sys_menu` VALUES ('13', '12', '添加', '', '3', 'layui-icon-add-circle-fine', '1', '1', '2019-08-22 17:37:47', '2019-08-22 17:39:06', '0', '', 'sys:menu:add', '0');
 INSERT INTO `sys_menu` VALUES ('14', '12', '编辑', '', '3', 'layui-icon-edit', '1', '1', '2019-08-22 17:41:04', '2019-08-23 14:11:19', '0', '', 'sys:menu:edit', '0');
 INSERT INTO `sys_menu` VALUES ('15', '12', '删除', '', '3', 'layui-icon-delete', '1', '1', '2019-08-22 17:42:04', '2019-08-22 17:42:04', '0', '', 'sys:menu:delete', '0');
-INSERT INTO `sys_menu` VALUES ('16', '1', '资源管理', 'resource.html', '2', 'layui-icon-read', '1', '1', '2019-08-22 17:44:23', '2019-09-20 16:47:50', '0', 'resource', 'sys:resource:page', '4');
-INSERT INTO `sys_menu` VALUES ('17', '16', '刷新', '', '3', 'layui-icon-refresh', '1', '1', '2019-08-22 17:46:10', '2019-08-22 17:46:10', '0', '', 'sys:resource:refresh', '0');
+INSERT INTO `sys_menu` VALUES ('16', '1', '资源管理', 'resource.html', '2', 'layui-icon-read', '1', '1', '2019-08-22 17:44:23', '2019-11-22 10:21:22', '1', 'resource', 'sys:resource:page', '4');
+INSERT INTO `sys_menu` VALUES ('17', '16', '刷新', '', '3', 'layui-icon-refresh', '1', '1', '2019-08-22 17:46:10', '2019-11-22 10:21:22', '1', '', 'sys:resource:refresh', '0');
 INSERT INTO `sys_menu` VALUES ('18', '1', '任务管理', 'task.html', '2', 'layui-icon-flag', '1', '1', '2019-08-23 10:15:08', '2019-09-20 18:54:48', '1', 'task', 'sys:task:page', '5');
 INSERT INTO `sys_menu` VALUES ('19', '18', '添加', '', '3', 'layui-icon-add-circle-fine', '1', '1', '2019-08-23 10:16:23', '2019-09-20 18:54:49', '1', '', 'sys:task:add', '0');
 INSERT INTO `sys_menu` VALUES ('20', '18', '编辑', '', '3', 'layui-icon-edit', '1', '1', '2019-08-23 10:17:21', '2019-09-20 18:54:50', '1', '', 'sys:task:edit', '0');
@@ -1424,8 +1874,8 @@ INSERT INTO `sys_menu` VALUES ('24', '22', '公园环境状况', 'baseInfo-ecosy
 INSERT INTO `sys_menu` VALUES ('25', '31', '公园区域地质背景', 'baseInfo-geological.html', '2', 'layui-icon-picture-fine', '1', '1', '2019-08-27 17:07:04', '2019-09-20 16:51:00', '0', 'geological', 'geological:page', '1');
 INSERT INTO `sys_menu` VALUES ('26', '22', '社会经济状况', 'baseInfo-socialeconomy.html', '2', '', '1', '1', '2019-08-27 17:08:24', '2019-09-20 16:59:55', '1', 'socialeconomy', 'socialeconomy:page', '0');
 INSERT INTO `sys_menu` VALUES ('27', '0', '矿权管理', '', '1', 'layui-icon-util', '1', '1', '2019-08-28 14:37:21', '2019-09-20 16:57:34', '1', '', '', '0');
-INSERT INTO `sys_menu` VALUES ('28', '27', '矿权信息管理', 'base-mineralright.html', '2', '', '1', '1', '2019-08-28 14:40:45', '2019-08-28 14:40:45', '0', 'mineralright', 'mineralright:page', '0');
-INSERT INTO `sys_menu` VALUES ('29', '0', '科研研究与学术交流数据', '', '1', 'layui-icon-read', '1', '1', '2019-08-28 16:05:06', '2019-09-20 16:57:23', '0', '', '', '5');
+INSERT INTO `sys_menu` VALUES ('28', '27', '矿权信息管理', 'base-mineralright.html', '2', '', '1', '1', '2019-08-28 14:40:45', '2019-11-22 09:54:58', '1', 'mineralright', 'mineralright:page', '0');
+INSERT INTO `sys_menu` VALUES ('29', '0', '科学研究与学术交流数据', '', '1', 'layui-icon-read', '1', '1', '2019-08-28 16:05:06', '2019-10-31 17:06:02', '0', '', '', '5');
 INSERT INTO `sys_menu` VALUES ('30', '0', '博物馆展数据', '', '1', 'layui-icon-template', '1', '1', '2019-08-29 10:06:26', '2019-09-20 16:54:57', '0', '', '', '4');
 INSERT INTO `sys_menu` VALUES ('31', '0', '地质公园地质遗迹数据', '', '1', 'layui-icon-component', '1', '1', '2019-08-29 10:07:19', '2019-09-20 16:53:45', '0', '', '', '3');
 INSERT INTO `sys_menu` VALUES ('32', '22', '地质公园管理现状', 'pkmanage-parkinfo.html', '2', 'layui-icon-website', '1', '1', '2019-08-29 11:55:39', '2019-09-20 17:50:47', '0', 'pkmanage-parkinfo', 'parkinfo:page', '2');
@@ -1435,12 +1885,12 @@ INSERT INTO `sys_menu` VALUES ('35', '32', '删除', '', '3', 'layui-icon-delete
 INSERT INTO `sys_menu` VALUES ('36', '29', '相关科研论文', 'science-researchpaper.html', '2', '', '1', '1', '2019-08-29 13:41:32', '2019-09-20 16:56:50', '0', 'researchpaper', 'researchpaper:page', '1');
 INSERT INTO `sys_menu` VALUES ('37', '29', '公园专题研究', 'science-parktopic.html', '2', '', '1', '1', '2019-08-29 15:57:48', '2019-09-20 16:56:56', '0', 'parktopic', 'parktopic:page', '2');
 INSERT INTO `sys_menu` VALUES ('38', '29', '科普活动', 'science-scienceactivity.html', '2', '', '1', '1', '2019-08-29 17:09:43', '2019-09-20 16:57:03', '0', 'scienceactivity', 'scienceactivity:page', '3');
-INSERT INTO `sys_menu` VALUES ('39', '29', '科普资料', 'science-sciencework.html', '2', '', '1', '1', '2019-08-29 17:46:20', '2019-09-25 22:47:50', '0', 'sciencework', 'sciencework:page', '4');
-INSERT INTO `sys_menu` VALUES ('40', '0', '交流活动管理', '', '1', 'layui-icon-water', '1', '1', '2019-09-02 10:41:53', '2019-09-20 16:57:41', '1', '', '', '0');
-INSERT INTO `sys_menu` VALUES ('41', '40', '交流互展', 'data-exchangeexhibition.html', '2', 'layui-icon-top', '1', '1', '2019-09-02 10:44:04', '2019-09-20 16:57:43', '1', 'exchangeexhibition', 'exchangeexhibition:page', '0');
-INSERT INTO `sys_menu` VALUES ('42', '41', '添加', '', '3', 'layui-icon-add-circle-fine', '1', '1', '2019-09-02 10:45:45', '2019-09-20 16:57:44', '1', '', 'exchangeexhibition:add', '0');
-INSERT INTO `sys_menu` VALUES ('43', '41', '编辑', '', '3', 'layui-icon-edit', '1', '1', '2019-09-02 10:48:35', '2019-09-20 16:57:44', '1', '', 'exchangeexhibition:edit', '0');
-INSERT INTO `sys_menu` VALUES ('44', '41', '删除', '', '3', 'layui-icon-delete', '1', '1', '2019-09-02 10:49:28', '2019-09-20 16:57:45', '1', '', 'exchangeexhibition:delete', '0');
+INSERT INTO `sys_menu` VALUES ('39', '29', '科普资料', 'science-sciencework.html', '2', '', '1', '1', '2019-08-29 17:46:20', '2019-11-22 10:21:29', '0', 'sciencework', 'sciencework:page', '4');
+INSERT INTO `sys_menu` VALUES ('40', '0', '交流活动管理', '', '1', 'layui-icon-water', '1', '1', '2019-09-02 10:41:53', '2019-11-22 10:15:55', '0', '', '', '7');
+INSERT INTO `sys_menu` VALUES ('41', '40', '交流互展', 'data-exchangeexhibition.html', '2', 'layui-icon-top', '1', '1', '2019-09-02 10:44:04', '2019-11-22 09:54:45', '0', 'exchangeexhibition', 'exchangeexhibition:page', '0');
+INSERT INTO `sys_menu` VALUES ('42', '41', '添加', '', '3', 'layui-icon-add-circle-fine', '1', '1', '2019-09-02 10:45:45', '2019-11-22 09:54:46', '0', '', 'exchangeexhibition:add', '0');
+INSERT INTO `sys_menu` VALUES ('43', '41', '编辑', '', '3', 'layui-icon-edit', '1', '1', '2019-09-02 10:48:35', '2019-11-22 09:54:46', '0', '', 'exchangeexhibition:edit', '0');
+INSERT INTO `sys_menu` VALUES ('44', '41', '删除', '', '3', 'layui-icon-delete', '1', '1', '2019-09-02 10:49:28', '2019-11-22 09:54:47', '0', '', 'exchangeexhibition:delete', '0');
 INSERT INTO `sys_menu` VALUES ('45', '29', '专家与导游库', 'science-parklibrary.html', '2', '', '1', '1', '2019-09-02 12:38:40', '2019-09-20 16:55:48', '0', 'parklibrary', 'parklibrary:page', '5');
 INSERT INTO `sys_menu` VALUES ('46', '30', '博物馆基本情况', 'museum-baseInfo.html', '2', '', '1', '1', '2019-09-02 16:58:10', '2019-09-20 16:54:23', '0', 'museum-baseInfo', 'museum:page', '1');
 INSERT INTO `sys_menu` VALUES ('47', '30', '古生物化石标本', 'museum-geospecimen.html', '2', '', '1', '1', '2019-09-02 16:59:25', '2019-10-22 14:01:09', '0', 'geospecimen', 'geospecimen:page', '2');
@@ -1449,13 +1899,13 @@ INSERT INTO `sys_menu` VALUES ('49', '30', '人文展品', 'museum-humenexhibit.
 INSERT INTO `sys_menu` VALUES ('50', '30', '展板', 'museum-displayboard.html', '2', '', '1', '1', '2019-09-02 17:02:30', '2019-09-20 16:54:51', '0', 'displayboard', 'displayboard:page', '5');
 INSERT INTO `sys_menu` VALUES ('51', '22', '管理机构基本情况', 'pkmanage-managementagency.html', '2', '', '1', '1', '2019-09-03 17:20:39', '2019-09-20 16:48:42', '0', 'managementagency', 'managementagency:page', '3');
 INSERT INTO `sys_menu` VALUES ('52', '22', '公园相关法规文件', 'pkmanage-legal.html', '2', '', '1', '1', '2019-09-03 17:41:11', '2019-09-20 16:49:02', '0', 'legal', 'legal:page', '5');
-INSERT INTO `sys_menu` VALUES ('53', '31', '公园地质遗迹景点', 'pkmanage-geolandscape.html', '2', '', '1', '1', '2019-09-04 16:56:43', '2019-09-20 16:51:34', '0', 'geolandscape', 'geolandscape:page', '2');
-INSERT INTO `sys_menu` VALUES ('54', '31', '地质公园内人文景观', 'pkmanage-humanlandscape.html', '2', '', '1', '1', '2019-09-04 16:57:42', '2019-09-20 16:52:02', '0', 'humanlandscape', 'humanlandscape:page', '3');
+INSERT INTO `sys_menu` VALUES ('53', '31', '地质遗迹资源', 'pkmanage-geolandscape.html', '2', '', '1', '1', '2019-09-04 16:56:43', '2019-11-04 09:15:00', '0', 'geolandscape', 'geolandscape:page', '2');
+INSERT INTO `sys_menu` VALUES ('54', '31', '人文景观', 'pkmanage-humanlandscape.html', '2', '', '1', '1', '2019-09-04 16:57:42', '2019-11-04 09:15:55', '0', 'humanlandscape', 'humanlandscape:page', '3');
 INSERT INTO `sys_menu` VALUES ('55', '31', '地质灾害信息', 'pkmanage-earthquake.html', '2', '', '1', '1', '2019-09-04 16:58:56', '2019-09-20 16:52:53', '0', 'earthquake', 'earthquake:page', '5');
 INSERT INTO `sys_menu` VALUES ('56', '31', '与其他景区重叠情况', 'pkmanage-overlapping.html', '2', '', '1', '1', '2019-09-04 17:00:27', '2019-09-20 17:05:09', '1', 'overlapping', 'overlapping:page', '0');
 INSERT INTO `sys_menu` VALUES ('57', '31', '标示解说系统', 'pkmanage-commentary.html', '2', '', '1', '1', '2019-09-04 17:01:24', '2019-09-20 17:04:51', '1', 'commentary', 'commentary:page', '0');
 INSERT INTO `sys_menu` VALUES ('58', '31', '采样信息', 'pkmanage-sampling.html', '2', '', '1', '1', '2019-09-04 17:02:28', '2019-10-22 14:00:26', '1', 'sampling', 'sampling:page', '6');
-INSERT INTO `sys_menu` VALUES ('59', '40', '产品推介', 'data-production.html', '2', 'layui-icon-cart-simple', '1', '1', '2019-09-04 17:18:02', '2019-09-20 16:57:46', '1', 'production', 'production:page', '0');
+INSERT INTO `sys_menu` VALUES ('59', '40', '产品推介', 'data-production.html', '2', 'layui-icon-cart-simple', '1', '1', '2019-09-04 17:18:02', '2019-11-22 09:54:50', '1', 'production', 'production:page', '0');
 INSERT INTO `sys_menu` VALUES ('60', '59', '添加', '', '3', 'layui-icon-add-circle-fine', '1', '1', '2019-09-04 17:42:49', '2019-09-20 16:57:46', '1', '', 'production:add', '0');
 INSERT INTO `sys_menu` VALUES ('61', '59', '编辑', '', '3', 'layui-icon-edit', '1', '1', '2019-09-04 17:43:35', '2019-09-20 16:57:47', '1', '', 'production:edit', '0');
 INSERT INTO `sys_menu` VALUES ('62', '59', '删除', '', '3', 'layui-icon-delete', '1', '1', '2019-09-04 17:44:07', '2019-09-20 16:57:47', '1', '', 'production:delete', '0');
@@ -1463,21 +1913,22 @@ INSERT INTO `sys_menu` VALUES ('63', '40', '会议管理', 'data-parkmeeting.htm
 INSERT INTO `sys_menu` VALUES ('64', '63', '添加', '', '3', 'layui-icon-add-circle-fine', '1', '1', '2019-09-16 16:16:48', '2019-09-20 16:57:51', '1', '', 'parkmeeting:add', '0');
 INSERT INTO `sys_menu` VALUES ('65', '63', '编辑', '', '3', 'layui-icon-edit', '1', '1', '2019-09-16 16:17:40', '2019-09-20 16:57:51', '1', '', 'parkmeeting:edit', '0');
 INSERT INTO `sys_menu` VALUES ('66', '63', '删除', '', '3', 'layui-icon-delete', '1', '1', '2019-09-16 16:18:11', '2019-09-20 16:57:51', '1', '', 'parkmeeting:delete', '0');
-INSERT INTO `sys_menu` VALUES ('67', '40', '缔结姊妹公园', 'data-parkrelation.html', '2', 'layui-icon-login-wechat', '1', '1', '2019-09-16 17:04:06', '2019-09-20 16:57:52', '1', 'parkrelation', 'parkrelation:page', '0');
-INSERT INTO `sys_menu` VALUES ('68', '67', '添加', '', '3', 'layui-icon-add-circle-fine', '1', '1', '2019-09-16 17:05:12', '2019-09-20 16:57:54', '1', '', 'parkrelation:add', '0');
-INSERT INTO `sys_menu` VALUES ('69', '67', '编辑', '', '3', 'layui-icon-edit', '1', '1', '2019-09-16 17:05:57', '2019-09-20 16:57:54', '1', '', 'parkrelation:edit', '0');
-INSERT INTO `sys_menu` VALUES ('70', '67', '删除', '', '3', 'layui-icon-delete', '1', '1', '2019-09-16 17:06:33', '2019-09-20 16:57:55', '1', '', 'parkrelation:delete', '0');
+INSERT INTO `sys_menu` VALUES ('67', '40', '缔结姊妹公园', 'data-parkrelation.html', '2', 'layui-icon-login-wechat', '1', '1', '2019-09-16 17:04:06', '2019-11-22 09:53:54', '0', 'parkrelation', 'parkrelation:page', '0');
+INSERT INTO `sys_menu` VALUES ('68', '67', '添加', '', '3', 'layui-icon-add-circle-fine', '1', '1', '2019-09-16 17:05:12', '2019-11-22 09:53:29', '0', '', 'parkrelation:add', '0');
+INSERT INTO `sys_menu` VALUES ('69', '67', '编辑', '', '3', 'layui-icon-edit', '1', '1', '2019-09-16 17:05:57', '2019-11-22 09:53:30', '0', '', 'parkrelation:edit', '0');
+INSERT INTO `sys_menu` VALUES ('70', '67', '删除', '', '3', 'layui-icon-delete', '1', '1', '2019-09-16 17:06:33', '2019-11-22 09:53:30', '0', '', 'parkrelation:delete', '0');
 INSERT INTO `sys_menu` VALUES ('71', '22', '管理机构人员', 'pkmanage-manageperson.html', '2', '', '1', '1', '2019-09-18 10:22:08', '2019-09-20 16:48:51', '0', 'manageperson', 'manageperson:page', '4');
-INSERT INTO `sys_menu` VALUES ('72', '31', '地质公园内自然景观', 'pkmanage-naturallandscape.html', '2', '', '1', '1', '2019-09-19 15:55:46', '2019-09-20 16:52:30', '0', 'naturallandscape', 'naturallandscape:page', '4');
+INSERT INTO `sys_menu` VALUES ('72', '31', '其它自然景观', 'pkmanage-naturallandscape.html', '2', '', '1', '1', '2019-09-19 15:55:46', '2019-11-04 09:16:22', '0', 'naturallandscape', 'naturallandscape:page', '4');
 INSERT INTO `sys_menu` VALUES ('73', '22', '公园规划概况', 'pkmanage-planning.html', '2', 'layui-icon-unlink', '1', '1', '2019-09-20 10:09:01', '2019-09-20 16:49:09', '0', 'planning', 'planning:page', '6');
-INSERT INTO `sys_menu` VALUES ('74', '0', '影（音）像制品数据', '', '1', 'layui-icon-file', '1', '1', '2019-09-20 14:53:30', '2019-09-20 16:58:40', '0', '', '', '6');
+INSERT INTO `sys_menu` VALUES ('74', '0', '影（音）像制品数据', '', '1', 'layui-icon-file', '1', '1', '2019-09-20 14:53:30', '2019-11-22 10:16:02', '0', '', '', '6');
 INSERT INTO `sys_menu` VALUES ('75', '74', '其他图片资料', 'file-picdocs.html', '2', 'layui-icon-picture-fine', '1', '1', '2019-09-20 14:55:47', '2019-09-20 16:59:02', '0', 'picdocs', 'picdocs:page', '2');
 INSERT INTO `sys_menu` VALUES ('76', '74', '公园相关影像资料', 'file-vediodocs.html', '2', 'layui-icon-camera', '1', '1', '2019-09-20 15:12:57', '2019-09-20 16:59:20', '0', 'vediodocs', 'vediodocs:page', '1');
-INSERT INTO `sys_menu` VALUES ('77', '22', '公园游客统计', 'pkmanage-gueststat.html', '2', 'layui-icon-username', '1', '1', '2019-09-20 15:41:17', '2019-09-20 16:49:27', '0', 'gueststat', 'gueststat:page', '8');
+INSERT INTO `sys_menu` VALUES ('77', '22', '公园游客统计', 'pkmanage-gueststat.html', '2', 'layui-icon-username', '1', '1', '2019-09-20 15:41:17', '2019-10-28 10:33:22', '0', 'gueststat', 'gueststat:page', '8');
 INSERT INTO `sys_menu` VALUES ('78', '31', 'VR全景数据管理', 'pkmanage-vrdata.html', '2', '', '1', '1', '2019-09-25 11:20:31', '2019-09-25 13:51:08', '0', 'vrdata', 'vrdata:page', '7');
 INSERT INTO `sys_menu` VALUES ('79', '30', '博物馆展厅', 'pkmanage-museumexhibition.html', '2', '', '1', '1', '2019-09-25 11:25:27', '2019-09-25 11:26:16', '0', 'museumexhibition', 'museumexhibition:page', '1');
-INSERT INTO `sys_menu` VALUES ('80', '0', '数据管理', '', '1', 'layui-icon-date', '1', '1', '2019-09-25 20:18:59', '2019-09-25 20:18:59', '0', '', '', '7');
+INSERT INTO `sys_menu` VALUES ('80', '0', '数据管理', '', '1', 'layui-icon-date', '1', '1', '2019-09-25 20:18:59', '2019-11-22 10:15:42', '0', '', '', '8');
 INSERT INTO `sys_menu` VALUES ('81', '80', '数据信息', 'dataInfo.html', '2', '', '1', '1', '2019-09-25 20:23:06', '2019-09-25 20:23:06', '0', 'dataInfo', 'dataInfo:all', '1');
+INSERT INTO `sys_menu` VALUES ('82', '31', '文物保护单位', 'pkmanage-culturalsites.html', '2', 'layui-icon-home', '1', '1', '2019-11-22 14:32:36', '2019-11-22 14:32:36', '0', 'culturalsites', 'culturalsites:page', '8');
 
 -- ----------------------------
 -- Table structure for sys_menu_resource
@@ -1488,7 +1939,7 @@ CREATE TABLE `sys_menu_resource` (
   `menu_id` int(11) DEFAULT NULL COMMENT '菜单ID',
   `resource_id` varchar(32) DEFAULT NULL COMMENT '资源ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=468 DEFAULT CHARSET=utf8mb4 COMMENT='菜单资源关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=493 DEFAULT CHARSET=utf8mb4 COMMENT='菜单资源关系表';
 
 -- ----------------------------
 -- Records of sys_menu_resource
@@ -1552,8 +2003,6 @@ INSERT INTO `sys_menu_resource` VALUES ('191', '3', '6c3514540b1e2e1589a9c956627
 INSERT INTO `sys_menu_resource` VALUES ('192', '4', '54522abbe7d3a2a40e7edbc9339acc50');
 INSERT INTO `sys_menu_resource` VALUES ('193', '4', '179887b5bd6e42be960b83982a684b10');
 INSERT INTO `sys_menu_resource` VALUES ('194', '4', '6c3514540b1e2e1589a9c9566273c7c7');
-INSERT INTO `sys_menu_resource` VALUES ('195', '67', '49a3211ef7ddd065888fc6ad093bff6f');
-INSERT INTO `sys_menu_resource` VALUES ('196', '67', 'b0b5dc6a4d472e5160e289eee92ad5d4');
 INSERT INTO `sys_menu_resource` VALUES ('197', '68', 'd1cee74a3c8ecc212ec1fbfffd7d4b7a');
 INSERT INTO `sys_menu_resource` VALUES ('198', '69', '4f431508eaf3ae2b72c87ecde3334212');
 INSERT INTO `sys_menu_resource` VALUES ('199', '70', '1c42a29f7a1a0fb0c6c3e213ebd9d6e4');
@@ -1586,27 +2035,10 @@ INSERT INTO `sys_menu_resource` VALUES ('322', '24', 'f8afb5ec48a65cb7c9cd7e9372
 INSERT INTO `sys_menu_resource` VALUES ('323', '24', 'd431b135887822c5c012561c96f1ec84');
 INSERT INTO `sys_menu_resource` VALUES ('324', '24', 'a36d86152fb3241feef81a9ccee6faed');
 INSERT INTO `sys_menu_resource` VALUES ('325', '24', 'bc90809c5084a45eda6ece88e426d0b8');
-INSERT INTO `sys_menu_resource` VALUES ('326', '77', '5cc53e1d69c9023759841eb2c41f9bfd');
-INSERT INTO `sys_menu_resource` VALUES ('327', '77', '9c649f2b5cc9a0948958033038e6786b');
-INSERT INTO `sys_menu_resource` VALUES ('328', '77', 'de16f2ea5e499ebcb81154efec1d2df4');
-INSERT INTO `sys_menu_resource` VALUES ('329', '77', 'af29194331dabc32c641585380ff714f');
-INSERT INTO `sys_menu_resource` VALUES ('330', '77', 'b0b5dc6a4d472e5160e289eee92ad5d4');
 INSERT INTO `sys_menu_resource` VALUES ('331', '25', '4eac907c193cfa96ada396cdbfbacb31');
 INSERT INTO `sys_menu_resource` VALUES ('332', '25', '222549de7b85d74ff912e4e258670af6');
 INSERT INTO `sys_menu_resource` VALUES ('333', '25', '8690f1577b8abe64aa841cb763a32b47');
 INSERT INTO `sys_menu_resource` VALUES ('334', '25', 'ea1ff9435f36746204efc424f2386a3e');
-INSERT INTO `sys_menu_resource` VALUES ('335', '53', '2410dac6fb2e4396e28d720f19bc7c45');
-INSERT INTO `sys_menu_resource` VALUES ('336', '53', '7ad036add7309273ab46935c955cd547');
-INSERT INTO `sys_menu_resource` VALUES ('337', '53', 'd289b64ef206771d89ed2670d93049b9');
-INSERT INTO `sys_menu_resource` VALUES ('338', '53', 'e113d9ae14c1ba583228d0974ccdfab1');
-INSERT INTO `sys_menu_resource` VALUES ('339', '54', 'b5bd54c21e5412a49f4f656c8f33f77b');
-INSERT INTO `sys_menu_resource` VALUES ('340', '54', '328f29a3ed6b6f792f994aeb1c4abab5');
-INSERT INTO `sys_menu_resource` VALUES ('341', '54', '262bfee5cd0edf4d5cd47fa1f9380cb4');
-INSERT INTO `sys_menu_resource` VALUES ('342', '54', '07d648ddf63c20317df4f5cbf7786a48');
-INSERT INTO `sys_menu_resource` VALUES ('343', '72', 'e78b1e45561db580a21ebe962414aaa9');
-INSERT INTO `sys_menu_resource` VALUES ('344', '72', 'dcd22be9d250bc20abed2b5390259a3f');
-INSERT INTO `sys_menu_resource` VALUES ('345', '72', 'b42c4411f27e50bafc6094b31b323996');
-INSERT INTO `sys_menu_resource` VALUES ('346', '72', '1edadc539135c5dc8ea6dd767b51133a');
 INSERT INTO `sys_menu_resource` VALUES ('347', '55', '0a9c4972fbf5b50eb76d78cd40c8c269');
 INSERT INTO `sys_menu_resource` VALUES ('348', '55', '46947be1849f0a3fb065d4c4bb9e8ed4');
 INSERT INTO `sys_menu_resource` VALUES ('349', '55', '9d47323a8cf271afa3794a41d01ebd8d');
@@ -1679,6 +2111,31 @@ INSERT INTO `sys_menu_resource` VALUES ('464', '47', '61ffa059261d938164f12a0fea
 INSERT INTO `sys_menu_resource` VALUES ('465', '47', '6594f272facd4b263779a5898408d6f5');
 INSERT INTO `sys_menu_resource` VALUES ('466', '47', '6e8bb84dfd74bd76918cbc7b7b97e241');
 INSERT INTO `sys_menu_resource` VALUES ('467', '47', 'cd6de4b154e91389697aaa16f9e70f03');
+INSERT INTO `sys_menu_resource` VALUES ('468', '77', '5cc53e1d69c9023759841eb2c41f9bfd');
+INSERT INTO `sys_menu_resource` VALUES ('469', '77', '9c649f2b5cc9a0948958033038e6786b');
+INSERT INTO `sys_menu_resource` VALUES ('470', '77', 'de16f2ea5e499ebcb81154efec1d2df4');
+INSERT INTO `sys_menu_resource` VALUES ('471', '77', 'af29194331dabc32c641585380ff714f');
+INSERT INTO `sys_menu_resource` VALUES ('472', '77', 'b0b5dc6a4d472e5160e289eee92ad5d4');
+INSERT INTO `sys_menu_resource` VALUES ('473', '77', '6193837ebc7f6f3045d8a5fba88968ee');
+INSERT INTO `sys_menu_resource` VALUES ('474', '53', '2410dac6fb2e4396e28d720f19bc7c45');
+INSERT INTO `sys_menu_resource` VALUES ('475', '53', '7ad036add7309273ab46935c955cd547');
+INSERT INTO `sys_menu_resource` VALUES ('476', '53', 'd289b64ef206771d89ed2670d93049b9');
+INSERT INTO `sys_menu_resource` VALUES ('477', '53', 'e113d9ae14c1ba583228d0974ccdfab1');
+INSERT INTO `sys_menu_resource` VALUES ('478', '54', 'b5bd54c21e5412a49f4f656c8f33f77b');
+INSERT INTO `sys_menu_resource` VALUES ('479', '54', '328f29a3ed6b6f792f994aeb1c4abab5');
+INSERT INTO `sys_menu_resource` VALUES ('480', '54', '262bfee5cd0edf4d5cd47fa1f9380cb4');
+INSERT INTO `sys_menu_resource` VALUES ('481', '54', '07d648ddf63c20317df4f5cbf7786a48');
+INSERT INTO `sys_menu_resource` VALUES ('482', '72', 'e78b1e45561db580a21ebe962414aaa9');
+INSERT INTO `sys_menu_resource` VALUES ('483', '72', 'dcd22be9d250bc20abed2b5390259a3f');
+INSERT INTO `sys_menu_resource` VALUES ('484', '72', 'b42c4411f27e50bafc6094b31b323996');
+INSERT INTO `sys_menu_resource` VALUES ('485', '72', '1edadc539135c5dc8ea6dd767b51133a');
+INSERT INTO `sys_menu_resource` VALUES ('486', '67', '49a3211ef7ddd065888fc6ad093bff6f');
+INSERT INTO `sys_menu_resource` VALUES ('487', '67', 'b0b5dc6a4d472e5160e289eee92ad5d4');
+INSERT INTO `sys_menu_resource` VALUES ('488', '82', '6a0c5d0d2495feef251cd70123c9d985');
+INSERT INTO `sys_menu_resource` VALUES ('489', '82', 'c2f8625dfb6b6be6237567391faf0e62');
+INSERT INTO `sys_menu_resource` VALUES ('490', '82', 'c950d0767bbe74702259d06768faa283');
+INSERT INTO `sys_menu_resource` VALUES ('491', '82', 'd6c4ff80beeec0e3f6968775b906600e');
+INSERT INTO `sys_menu_resource` VALUES ('492', '82', 'b0b5dc6a4d472e5160e289eee92ad5d4');
 
 -- ----------------------------
 -- Table structure for sys_resource
@@ -1698,205 +2155,211 @@ CREATE TABLE `sys_resource` (
 -- ----------------------------
 -- Records of sys_resource
 -- ----------------------------
-INSERT INTO `sys_resource` VALUES ('034fe06c0ce7f3ad0db70e0ccf313dcc', '交流互展查询(分页)', '/exchangeexhibition/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/exchangeexhibition/page');
-INSERT INTO `sys_resource` VALUES ('039bec1c73824aebd6dac61de133f336', '管理机构编辑', '/managementagency/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/managementagency/{id}');
-INSERT INTO `sys_resource` VALUES ('0401dbc5d8eaad57931edbf0ee36a10c', '公园规划查询(分页)', '/planning/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/planning/page');
-INSERT INTO `sys_resource` VALUES ('0584acbf717e9848bfbd5cb2e149754a', '社会经济状况添加', '/socialeconomy', 'POST', '1', '2019-10-22 13:58:46', 'POST:/socialeconomy');
-INSERT INTO `sys_resource` VALUES ('06031eda73fcffa209c91c414a6b4766', 'openApi自然景观列表', '/openApi/naturallandscapeList', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/naturallandscapeList');
-INSERT INTO `sys_resource` VALUES ('061c512368ad8a4fa5632e1c2a39189c', '博物馆展厅编辑', '/museumexhibition/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/museumexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('07d648ddf63c20317df4f5cbf7786a48', '人文景观删除', '/humanlandscape/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/humanlandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('099a483818e8ec192f966b6bc6bacd0a', '科普作品添加', '/sciencework', 'POST', '1', '2019-10-22 13:58:45', 'POST:/sciencework');
-INSERT INTO `sys_resource` VALUES ('0a9c4972fbf5b50eb76d78cd40c8c269', '地灾信息查询(分页)', '/earthquake/page', 'GET', '1', '2019-10-22 13:58:45', 'GET:/earthquake/page');
-INSERT INTO `sys_resource` VALUES ('0b2af0dd22363820966999f84a845ea2', '影像资料添加', '/vediodocs', 'POST', '3', '2019-10-22 13:58:47', 'POST:/vediodocs');
-INSERT INTO `sys_resource` VALUES ('0b3acbd943d2bdf421984f80a96c9739', '科研论文删除', '/researchpaper/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/researchpaper/{id}');
-INSERT INTO `sys_resource` VALUES ('0ef17c27ae7717cc75b3940ad4958c29', '科普活动查询(分页)', '/scienceactivity/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/scienceactivity/page');
-INSERT INTO `sys_resource` VALUES ('104e2c82415429f04455f1d079890c96', '专家导游编辑', '/parklibrary/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/parklibrary/{id}');
-INSERT INTO `sys_resource` VALUES ('151d826eafc7b5174de85dd7df216b98', '图片资料删除', '/picdocs/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/picdocs/{id}');
-INSERT INTO `sys_resource` VALUES ('15da52a5f4f4a6eac3b0d6f046f040c9', '菜单删除', '/menu/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('166654543c708f5e91eab662095bd764', '重叠情况删除', '/overlapping/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/overlapping/{id}');
-INSERT INTO `sys_resource` VALUES ('16ec009eee72f9a3146f3ed6e6e3bccd', '标示解说添加', '/commentary', 'POST', '1', '2019-10-22 13:58:46', 'POST:/commentary');
-INSERT INTO `sys_resource` VALUES ('179887b5bd6e42be960b83982a684b10', '角色查询(所有)', '/role/list', 'GET', '3', '2019-10-22 13:58:46', 'GET:/role/list');
-INSERT INTO `sys_resource` VALUES ('1a78d8aa6ba0ffe46bc99de9c820a298', '导出xls', '/exportBackup/xls', 'GET', '1', '2019-10-22 13:58:46', 'GET:/exportBackup/xls');
-INSERT INTO `sys_resource` VALUES ('1adec59980b460bb8db5198953608b87', '任务编辑', '/task/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/task/{id}');
-INSERT INTO `sys_resource` VALUES ('1c42a29f7a1a0fb0c6c3e213ebd9d6e4', '缔结姊妹公园删除', '/parkrelation/{id}', 'DELETE', '3', '2019-10-22 13:58:45', 'DELETE:/parkrelation/{id}');
-INSERT INTO `sys_resource` VALUES ('1e1146393b91b9a02a11284eea132962', '公园信息删除', '/parkinfo/{id}', 'DELETE', '3', '2019-10-22 13:58:45', 'DELETE:/parkinfo/{id}');
-INSERT INTO `sys_resource` VALUES ('1edadc539135c5dc8ea6dd767b51133a', '自然景观编辑', '/naturallandscape/{id}', 'PUT', '1', '2019-10-22 13:58:45', 'PUT:/naturallandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('21b182bd4b864b88d6424717673c2fdd', '公园查询(分页)', '/park/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/park/page');
-INSERT INTO `sys_resource` VALUES ('222549de7b85d74ff912e4e258670af6', '地质背景编辑', '/geological/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/geological/{id}');
-INSERT INTO `sys_resource` VALUES ('22c8d4ad02ae696458f3de13053e4dbc', '专题研究查询(分页)', '/parktopic/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/parktopic/page');
-INSERT INTO `sys_resource` VALUES ('2410dac6fb2e4396e28d720f19bc7c45', '地质遗迹景观删除', '/geolandscape/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/geolandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('24bf74d47e8322146e38f0c68333f90c', '角色授权', '/role/{id}/menu', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/role/{id}/menu');
-INSERT INTO `sys_resource` VALUES ('262bfee5cd0edf4d5cd47fa1f9380cb4', '人文景观编辑', '/humanlandscape/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/humanlandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('2b46448ef3c969f64046c9ed8e294b41', '交流互展编辑', '/exchangeexhibition/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/exchangeexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('2c8f52fdf31d935744bf7b4a309e8d37', '导入xls', '/import/xls', 'POST', '1', '2019-10-22 13:58:46', 'POST:/import/xls');
-INSERT INTO `sys_resource` VALUES ('2caca33f4fa40079ba1d86d9961634a5', '矿权情况查询(分页)', '/mineralright/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/mineralright/page');
+INSERT INTO `sys_resource` VALUES ('034fe06c0ce7f3ad0db70e0ccf313dcc', '交流互展查询(分页)', '/exchangeexhibition/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/exchangeexhibition/page');
+INSERT INTO `sys_resource` VALUES ('039bec1c73824aebd6dac61de133f336', '管理机构编辑', '/managementagency/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/managementagency/{id}');
+INSERT INTO `sys_resource` VALUES ('0401dbc5d8eaad57931edbf0ee36a10c', '公园规划查询(分页)', '/planning/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/planning/page');
+INSERT INTO `sys_resource` VALUES ('0584acbf717e9848bfbd5cb2e149754a', '社会经济状况添加', '/socialeconomy', 'POST', '1', '2019-11-22 14:36:35', 'POST:/socialeconomy');
+INSERT INTO `sys_resource` VALUES ('06031eda73fcffa209c91c414a6b4766', 'openApi自然景观列表', '/openApi/naturallandscapeList', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/naturallandscapeList');
+INSERT INTO `sys_resource` VALUES ('061c512368ad8a4fa5632e1c2a39189c', '博物馆展厅编辑', '/museumexhibition/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/museumexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('07d648ddf63c20317df4f5cbf7786a48', '人文景观删除', '/humanlandscape/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/humanlandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('099a483818e8ec192f966b6bc6bacd0a', '科普作品添加', '/sciencework', 'POST', '1', '2019-11-22 14:36:35', 'POST:/sciencework');
+INSERT INTO `sys_resource` VALUES ('0a9c4972fbf5b50eb76d78cd40c8c269', '地灾信息查询(分页)', '/earthquake/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/earthquake/page');
+INSERT INTO `sys_resource` VALUES ('0b2af0dd22363820966999f84a845ea2', '影像资料添加', '/vediodocs', 'POST', '3', '2019-11-22 14:36:35', 'POST:/vediodocs');
+INSERT INTO `sys_resource` VALUES ('0b3acbd943d2bdf421984f80a96c9739', '科研论文删除', '/researchpaper/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/researchpaper/{id}');
+INSERT INTO `sys_resource` VALUES ('0ef17c27ae7717cc75b3940ad4958c29', '科普活动查询(分页)', '/scienceactivity/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/scienceactivity/page');
+INSERT INTO `sys_resource` VALUES ('104e2c82415429f04455f1d079890c96', '专家导游编辑', '/parklibrary/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/parklibrary/{id}');
+INSERT INTO `sys_resource` VALUES ('151d826eafc7b5174de85dd7df216b98', '图片资料删除', '/picdocs/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/picdocs/{id}');
+INSERT INTO `sys_resource` VALUES ('15da52a5f4f4a6eac3b0d6f046f040c9', '菜单删除', '/menu/{id}', 'DELETE', '3', '2019-11-22 14:36:35', 'DELETE:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('166654543c708f5e91eab662095bd764', '重叠情况删除', '/overlapping/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/overlapping/{id}');
+INSERT INTO `sys_resource` VALUES ('16ec009eee72f9a3146f3ed6e6e3bccd', '标示解说添加', '/commentary', 'POST', '1', '2019-11-22 14:36:34', 'POST:/commentary');
+INSERT INTO `sys_resource` VALUES ('179887b5bd6e42be960b83982a684b10', '角色查询(所有)', '/role/list', 'GET', '3', '2019-11-22 14:36:35', 'GET:/role/list');
+INSERT INTO `sys_resource` VALUES ('1a78d8aa6ba0ffe46bc99de9c820a298', '导出xls', '/exportBackup/xls', 'GET', '1', '2019-11-22 14:36:34', 'GET:/exportBackup/xls');
+INSERT INTO `sys_resource` VALUES ('1adec59980b460bb8db5198953608b87', '任务编辑', '/task/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/task/{id}');
+INSERT INTO `sys_resource` VALUES ('1c42a29f7a1a0fb0c6c3e213ebd9d6e4', '缔结姊妹公园删除', '/parkrelation/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/parkrelation/{id}');
+INSERT INTO `sys_resource` VALUES ('1e1146393b91b9a02a11284eea132962', '公园信息删除', '/parkinfo/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/parkinfo/{id}');
+INSERT INTO `sys_resource` VALUES ('1edadc539135c5dc8ea6dd767b51133a', '自然景观编辑', '/naturallandscape/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/naturallandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('21b182bd4b864b88d6424717673c2fdd', '公园查询(分页)', '/park/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/park/page');
+INSERT INTO `sys_resource` VALUES ('222549de7b85d74ff912e4e258670af6', '地质背景编辑', '/geological/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/geological/{id}');
+INSERT INTO `sys_resource` VALUES ('22c8d4ad02ae696458f3de13053e4dbc', '专题研究查询(分页)', '/parktopic/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/parktopic/page');
+INSERT INTO `sys_resource` VALUES ('2410dac6fb2e4396e28d720f19bc7c45', '地质遗迹景观删除', '/geolandscape/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/geolandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('24bf74d47e8322146e38f0c68333f90c', '角色授权', '/role/{id}/menu', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/role/{id}/menu');
+INSERT INTO `sys_resource` VALUES ('262bfee5cd0edf4d5cd47fa1f9380cb4', '人文景观编辑', '/humanlandscape/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/humanlandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('2b46448ef3c969f64046c9ed8e294b41', '交流互展编辑', '/exchangeexhibition/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/exchangeexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('2c8f52fdf31d935744bf7b4a309e8d37', '导入xls', '/import/xls', 'POST', '1', '2019-11-22 14:36:34', 'POST:/import/xls');
+INSERT INTO `sys_resource` VALUES ('2caca33f4fa40079ba1d86d9961634a5', '矿权情况查询(分页)', '/mineralright/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/mineralright/page');
 INSERT INTO `sys_resource` VALUES ('30928c0d0e2e7a454426990767919239', '事务测试', '/tasktransaction', 'POST', '1', '2019-08-29 09:41:56', 'POST:/tasktransaction');
-INSERT INTO `sys_resource` VALUES ('30f1ef71d284550e5f7144f2b0a79ad5', '产品推介编辑', '/production/{id}', 'PUT', '3', '2019-10-22 13:58:45', 'PUT:/production/{id}');
-INSERT INTO `sys_resource` VALUES ('328f29a3ed6b6f792f994aeb1c4abab5', '人文景观查询(分页)', '/humanlandscape/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/humanlandscape/page');
-INSERT INTO `sys_resource` VALUES ('33b8bec21288534e35fbccdfac9f1494', '博物馆基本情况删除', '/museum/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/museum/{id}');
-INSERT INTO `sys_resource` VALUES ('35497ac6603e18992159e83005be0d64', '公园编辑', '/park/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/park/{id}');
-INSERT INTO `sys_resource` VALUES ('36113bab48568e5885a8f34bcc91bb11', '管理机构添加', '/managementagency', 'POST', '1', '2019-10-22 13:58:46', 'POST:/managementagency');
-INSERT INTO `sys_resource` VALUES ('36c191be2786a1dfd730b649d9f9d88f', '管理人员编辑', '/manageperson/{id}', 'PUT', '1', '2019-10-22 13:58:45', 'PUT:/manageperson/{id}');
-INSERT INTO `sys_resource` VALUES ('375edb54e85dc981c8df62c76f3782ed', '菜单详情', '/menu/{id}', 'GET', '3', '2019-10-22 13:58:46', 'GET:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('37687195b63b44e0d22436080de117bc', '菜单编辑', '/menu/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('3a3445306b2ef32a0c5976a4d3e91f64', '生物标本编辑', '/biospecimen/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/biospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('3a62355efcfa84646b390d508efea9b6', '菜单添加', '/menu', 'POST', '3', '2019-10-22 13:58:46', 'POST:/menu');
-INSERT INTO `sys_resource` VALUES ('3dca30c2118ff6158ffa88191003128e', '用户删除', '/user/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('3e5a0b5a1156439cd32a82b7dfedc865', '重叠情况添加', '/overlapping', 'POST', '1', '2019-10-22 13:58:46', 'POST:/overlapping');
-INSERT INTO `sys_resource` VALUES ('3e97140625dc7fc53c2c7bbb0d01813c', '图片资料查询(分页)', '/picdocs/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/picdocs/page');
-INSERT INTO `sys_resource` VALUES ('43083dba76bdf1e10b51a95974f30141', '公园信息查询(分页)', '/parkinfo/page', 'GET', '3', '2019-10-22 13:58:45', 'GET:/parkinfo/page');
-INSERT INTO `sys_resource` VALUES ('442504feccde8320f201a26b363f2db9', '会议删除', '/parkmeeting/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/parkmeeting/{id}');
-INSERT INTO `sys_resource` VALUES ('4684b8f300152ee482a2fbd95a070a8e', '产品推介添加', '/production', 'POST', '3', '2019-10-22 13:58:45', 'POST:/production');
-INSERT INTO `sys_resource` VALUES ('46947be1849f0a3fb065d4c4bb9e8ed4', '地灾信息编辑', '/earthquake/{id}', 'PUT', '1', '2019-10-22 13:58:45', 'PUT:/earthquake/{id}');
-INSERT INTO `sys_resource` VALUES ('46a5d7a79e6ba91e6709f3361a2edd81', '角色添加', '/role', 'POST', '3', '2019-10-22 13:58:46', 'POST:/role');
-INSERT INTO `sys_resource` VALUES ('47aad34069f0e8713b6df562b4b2029f', '资源查询(分页)', '/resource/page', 'GET', '3', '2019-10-22 13:58:45', 'GET:/resource/page');
-INSERT INTO `sys_resource` VALUES ('49764a50d0e0f74790ced2586b03bff8', '用户状态设置', '/user/{id}/status', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/user/{id}/status');
-INSERT INTO `sys_resource` VALUES ('498fe7906e76a4caff0b82c9115d11a0', '博物馆展厅删除', '/museumexhibition/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/museumexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('49a3211ef7ddd065888fc6ad093bff6f', '缔结姊妹公园查询(分页)', '/parkrelation/page', 'GET', '3', '2019-10-22 13:58:45', 'GET:/parkrelation/page');
-INSERT INTO `sys_resource` VALUES ('49b2accbfba5ff13f7f1f9b368c310ec', '生物标本删除', '/biospecimen/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/biospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('4aa3a9dc3d7612e3eeab0eed6cf5fd75', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/geolandscapeInfo');
-INSERT INTO `sys_resource` VALUES ('4b67b670f546e7a11310a70c1383d795', '管理人员添加', '/manageperson', 'POST', '1', '2019-10-22 13:58:45', 'POST:/manageperson');
-INSERT INTO `sys_resource` VALUES ('4cc53717ed7201af2526a716f0071287', '科研论文查询(分页)', '/researchpaper/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/researchpaper/page');
-INSERT INTO `sys_resource` VALUES ('4eac907c193cfa96ada396cdbfbacb31', '地质背景删除', '/geological/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/geological/{id}');
-INSERT INTO `sys_resource` VALUES ('4f431508eaf3ae2b72c87ecde3334212', '缔结姊妹公园编辑', '/parkrelation/{id}', 'PUT', '3', '2019-10-22 13:58:45', 'PUT:/parkrelation/{id}');
-INSERT INTO `sys_resource` VALUES ('4f53b04b850f87536c19f6cb16f2ba32', '标示解说删除', '/commentary/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/commentary/{id}');
-INSERT INTO `sys_resource` VALUES ('4f59f04de013a04c9c4a2459382da5e9', '公园规划删除', '/planning/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/planning/{id}');
-INSERT INTO `sys_resource` VALUES ('4f680eaa21e61bfde7178684c506765f', '博物馆展厅添加', '/museumexhibition', 'POST', '1', '2019-10-22 13:58:46', 'POST:/museumexhibition');
+INSERT INTO `sys_resource` VALUES ('30f1ef71d284550e5f7144f2b0a79ad5', '产品推介编辑', '/production/{id}', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/production/{id}');
+INSERT INTO `sys_resource` VALUES ('328f29a3ed6b6f792f994aeb1c4abab5', '人文景观查询(分页)', '/humanlandscape/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/humanlandscape/page');
+INSERT INTO `sys_resource` VALUES ('33b8bec21288534e35fbccdfac9f1494', '博物馆基本情况删除', '/museum/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/museum/{id}');
+INSERT INTO `sys_resource` VALUES ('35497ac6603e18992159e83005be0d64', '公园编辑', '/park/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/park/{id}');
+INSERT INTO `sys_resource` VALUES ('36113bab48568e5885a8f34bcc91bb11', '管理机构添加', '/managementagency', 'POST', '1', '2019-11-22 14:36:34', 'POST:/managementagency');
+INSERT INTO `sys_resource` VALUES ('36c191be2786a1dfd730b649d9f9d88f', '管理人员编辑', '/manageperson/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/manageperson/{id}');
+INSERT INTO `sys_resource` VALUES ('375edb54e85dc981c8df62c76f3782ed', '菜单详情', '/menu/{id}', 'GET', '3', '2019-11-22 14:36:35', 'GET:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('37687195b63b44e0d22436080de117bc', '菜单编辑', '/menu/{id}', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('3a3445306b2ef32a0c5976a4d3e91f64', '生物标本编辑', '/biospecimen/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/biospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('3a62355efcfa84646b390d508efea9b6', '菜单添加', '/menu', 'POST', '3', '2019-11-22 14:36:35', 'POST:/menu');
+INSERT INTO `sys_resource` VALUES ('3dca30c2118ff6158ffa88191003128e', '用户删除', '/user/{id}', 'DELETE', '3', '2019-11-22 14:36:35', 'DELETE:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('3e5a0b5a1156439cd32a82b7dfedc865', '重叠情况添加', '/overlapping', 'POST', '1', '2019-11-22 14:36:34', 'POST:/overlapping');
+INSERT INTO `sys_resource` VALUES ('3e97140625dc7fc53c2c7bbb0d01813c', '图片资料查询(分页)', '/picdocs/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/picdocs/page');
+INSERT INTO `sys_resource` VALUES ('43083dba76bdf1e10b51a95974f30141', '公园信息查询(分页)', '/parkinfo/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/parkinfo/page');
+INSERT INTO `sys_resource` VALUES ('437ad0bd41cc263282bdf719cfdfe200', '下载文件', '/download{keyPath}/{fileName}', 'GET', '1', '2019-11-22 14:36:34', 'GET:/download{keyPath}/{fileName}');
+INSERT INTO `sys_resource` VALUES ('442504feccde8320f201a26b363f2db9', '会议删除', '/parkmeeting/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/parkmeeting/{id}');
+INSERT INTO `sys_resource` VALUES ('4684b8f300152ee482a2fbd95a070a8e', '产品推介添加', '/production', 'POST', '3', '2019-11-22 14:36:35', 'POST:/production');
+INSERT INTO `sys_resource` VALUES ('46947be1849f0a3fb065d4c4bb9e8ed4', '地灾信息编辑', '/earthquake/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/earthquake/{id}');
+INSERT INTO `sys_resource` VALUES ('46a5d7a79e6ba91e6709f3361a2edd81', '角色添加', '/role', 'POST', '3', '2019-11-22 14:36:35', 'POST:/role');
+INSERT INTO `sys_resource` VALUES ('47aad34069f0e8713b6df562b4b2029f', '资源查询(分页)', '/resource/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/resource/page');
+INSERT INTO `sys_resource` VALUES ('49764a50d0e0f74790ced2586b03bff8', '用户状态设置', '/user/{id}/status', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/user/{id}/status');
+INSERT INTO `sys_resource` VALUES ('498fe7906e76a4caff0b82c9115d11a0', '博物馆展厅删除', '/museumexhibition/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/museumexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('49a3211ef7ddd065888fc6ad093bff6f', '缔结姊妹公园查询(分页)', '/parkrelation/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/parkrelation/page');
+INSERT INTO `sys_resource` VALUES ('49b2accbfba5ff13f7f1f9b368c310ec', '生物标本删除', '/biospecimen/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/biospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('4aa3a9dc3d7612e3eeab0eed6cf5fd75', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/geolandscapeInfo');
+INSERT INTO `sys_resource` VALUES ('4b67b670f546e7a11310a70c1383d795', '管理人员添加', '/manageperson', 'POST', '1', '2019-11-22 14:36:34', 'POST:/manageperson');
+INSERT INTO `sys_resource` VALUES ('4cc53717ed7201af2526a716f0071287', '科研论文查询(分页)', '/researchpaper/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/researchpaper/page');
+INSERT INTO `sys_resource` VALUES ('4eac907c193cfa96ada396cdbfbacb31', '地质背景删除', '/geological/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/geological/{id}');
+INSERT INTO `sys_resource` VALUES ('4f431508eaf3ae2b72c87ecde3334212', '缔结姊妹公园编辑', '/parkrelation/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/parkrelation/{id}');
+INSERT INTO `sys_resource` VALUES ('4f53b04b850f87536c19f6cb16f2ba32', '标示解说删除', '/commentary/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/commentary/{id}');
+INSERT INTO `sys_resource` VALUES ('4f59f04de013a04c9c4a2459382da5e9', '公园规划删除', '/planning/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/planning/{id}');
+INSERT INTO `sys_resource` VALUES ('4f680eaa21e61bfde7178684c506765f', '博物馆展厅添加', '/museumexhibition', 'POST', '1', '2019-11-22 14:36:34', 'POST:/museumexhibition');
 INSERT INTO `sys_resource` VALUES ('502a61b04aad79fbddd5ecc70d4fc99c', '导出xls', '/export/xls', 'GET', '1', '2019-10-15 10:15:22', 'GET:/export/xls');
-INSERT INTO `sys_resource` VALUES ('512082c7c24e77c5496977206d823f48', '任务查询(分页)', '/task/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/task/page');
-INSERT INTO `sys_resource` VALUES ('544a69d536f460d511a271ac2468cafc', '科普活动添加', '/scienceactivity', 'POST', '1', '2019-10-22 13:58:46', 'POST:/scienceactivity');
-INSERT INTO `sys_resource` VALUES ('54522abbe7d3a2a40e7edbc9339acc50', '用户编辑', '/user/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('55295a3ce5c98c008672159097f20813', '上传图片', '/upload/img', 'POST', '1', '2019-10-22 13:58:46', 'POST:/upload/img');
-INSERT INTO `sys_resource` VALUES ('566f824387a06feea407439bd6f4be8f', '会议添加', '/parkmeeting', 'POST', '3', '2019-10-22 13:58:46', 'POST:/parkmeeting');
-INSERT INTO `sys_resource` VALUES ('5a1196055f5773be65b2669ea37f3978', 'openApi人文景观详情', '/openApi/humanlandscapeInfo', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/humanlandscapeInfo');
-INSERT INTO `sys_resource` VALUES ('5cc53e1d69c9023759841eb2c41f9bfd', '游客统计删除', '/gueststat/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/gueststat/{id}');
+INSERT INTO `sys_resource` VALUES ('512082c7c24e77c5496977206d823f48', '任务查询(分页)', '/task/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/task/page');
+INSERT INTO `sys_resource` VALUES ('544a69d536f460d511a271ac2468cafc', '科普活动添加', '/scienceactivity', 'POST', '1', '2019-11-22 14:36:35', 'POST:/scienceactivity');
+INSERT INTO `sys_resource` VALUES ('54522abbe7d3a2a40e7edbc9339acc50', '用户编辑', '/user/{id}', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('55295a3ce5c98c008672159097f20813', '上传图片', '/upload/img', 'POST', '1', '2019-11-22 14:36:35', 'POST:/upload/img');
+INSERT INTO `sys_resource` VALUES ('566f824387a06feea407439bd6f4be8f', '会议添加', '/parkmeeting', 'POST', '3', '2019-11-22 14:36:34', 'POST:/parkmeeting');
+INSERT INTO `sys_resource` VALUES ('5a1196055f5773be65b2669ea37f3978', 'openApi人文景观详情', '/openApi/humanlandscapeInfo', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/humanlandscapeInfo');
+INSERT INTO `sys_resource` VALUES ('5cc53e1d69c9023759841eb2c41f9bfd', '游客统计删除', '/gueststat/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/gueststat/{id}');
 INSERT INTO `sys_resource` VALUES ('5d3d1df82e3cbf85373f4e68afded452', '导入xls', '/import1/xls', 'POST', '1', '2019-10-16 09:52:37', 'POST:/import1/xls');
 INSERT INTO `sys_resource` VALUES ('5d678decf6c8a93b629ea4dc928dd2d4', '导出xls', '/excel/xls', 'GET', '1', '2019-09-25 22:25:54', 'GET:/excel/xls');
-INSERT INTO `sys_resource` VALUES ('61ffa059261d938164f12a0feae60779', '地质标本编辑', '/geospecimen/{id}', 'PUT', '1', '2019-10-22 13:58:45', 'PUT:/geospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('6588452dd7adc2cf0b3a634c7eaba578', '博物馆基本情况查询(分页)', '/museum/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/museum/page');
-INSERT INTO `sys_resource` VALUES ('6594f272facd4b263779a5898408d6f5', '地质标本添加', '/geospecimen', 'POST', '1', '2019-10-22 13:58:45', 'POST:/geospecimen');
-INSERT INTO `sys_resource` VALUES ('65bbd93b69d8dd2d5cade59dc0ccd8e6', '公园规划编辑', '/planning/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/planning/{id}');
-INSERT INTO `sys_resource` VALUES ('664f3db603c5855b208fc969984e1603', '采样信息添加', '/sampling', 'POST', '1', '2019-10-22 13:58:46', 'POST:/sampling');
-INSERT INTO `sys_resource` VALUES ('6847ea5e1845717af3d32125277a5eea', '管理机构查询(列表)', '/managementagency/list', 'GET', '3', '2019-10-22 13:58:46', 'GET:/managementagency/list');
-INSERT INTO `sys_resource` VALUES ('68655ee2d14ea4f555d8c6bd91004381', '科研论文编辑', '/researchpaper/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/researchpaper/{id}');
-INSERT INTO `sys_resource` VALUES ('6aa7aabe9b977d40b24dc5af059f2782', '人文展品编辑', '/humenexhibit/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/humenexhibit/{id}');
-INSERT INTO `sys_resource` VALUES ('6ab0f8a49671e489f11a1bef2fcaf102', '账户清除', '/account/token', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/account/token');
-INSERT INTO `sys_resource` VALUES ('6c3514540b1e2e1589a9c9566273c7c7', '用户详情', '/user/{id}', 'GET', '3', '2019-10-22 13:58:46', 'GET:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('6e8bb84dfd74bd76918cbc7b7b97e241', '地质标本删除', '/geospecimen/{id}', 'DELETE', '1', '2019-10-22 13:58:45', 'DELETE:/geospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('6f64396b3c7a68b40194169e09380fd0', '采样信息删除', '/sampling/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/sampling/{id}');
-INSERT INTO `sys_resource` VALUES ('7025c7532d2a58d3de4dde7c66d363f3', '资源刷新', '/resource', 'PUT', '3', '2019-10-22 13:58:45', 'PUT:/resource');
-INSERT INTO `sys_resource` VALUES ('70a8486a7b06e085a6e5d5249cd68c19', '博物馆查询(列表)', '/museum/list', 'GET', '3', '2019-10-22 13:58:46', 'GET:/museum/list');
-INSERT INTO `sys_resource` VALUES ('71d5f2e10db38eaebdaa44fa89cb1163', '任务删除', '/task/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/task/{id}');
-INSERT INTO `sys_resource` VALUES ('71ff8d6843b1023eaa48a6a0113b9307', '人文展品添加', '/humenexhibit', 'POST', '1', '2019-10-22 13:58:46', 'POST:/humenexhibit');
-INSERT INTO `sys_resource` VALUES ('72331b4d9d6a4d884f54d75b7ebc3b0b', '展板添加', '/displayboard', 'POST', '1', '2019-10-22 13:58:46', 'POST:/displayboard');
-INSERT INTO `sys_resource` VALUES ('729f78186228a271d4035747eb4ad465', '专题研究添加', '/parktopic', 'POST', '1', '2019-10-22 13:58:46', 'POST:/parktopic');
-INSERT INTO `sys_resource` VALUES ('7ad036add7309273ab46935c955cd547', '地质遗迹景观查询(分页)', '/geolandscape/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/geolandscape/page');
-INSERT INTO `sys_resource` VALUES ('7d5889685e76e54b05e5f88169fd5e20', '影像资料编辑', '/vediodocs/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/vediodocs/{id}');
-INSERT INTO `sys_resource` VALUES ('7e5982583c9805792c523b32ca5ef88b', '图片资料添加', '/picdocs', 'POST', '3', '2019-10-22 13:58:46', 'POST:/picdocs');
-INSERT INTO `sys_resource` VALUES ('7f4c9278a2d5d361b584e8db2c0f9d64', '采样信息编辑', '/sampling/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/sampling/{id}');
-INSERT INTO `sys_resource` VALUES ('8069b90f45605898c6b48c513785194e', '专题研究编辑', '/parktopic/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/parktopic/{id}');
-INSERT INTO `sys_resource` VALUES ('80e9634eadbb61b2d2c8e3b8477aa313', '会议查询(分页)', '/parkmeeting/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/parkmeeting/page');
-INSERT INTO `sys_resource` VALUES ('82755b8a0b46c30b88df630c0175c625', 'VR全景删除', '/vrdata/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/vrdata/{id}');
-INSERT INTO `sys_resource` VALUES ('82ae5ea4f71f8e9f4ff625dbc8d28819', '影像资料查询(分页)', '/vediodocs/page', 'GET', '3', '2019-10-22 13:58:47', 'GET:/vediodocs/page');
-INSERT INTO `sys_resource` VALUES ('82d143f7b01b3cb8cf2617a9efb7a8b8', '产品推介查询(分页)', '/production/page', 'GET', '3', '2019-10-22 13:58:45', 'GET:/production/page');
-INSERT INTO `sys_resource` VALUES ('842e33410b5a97b6c797e4782c97a90e', '账户获取', '/account/token', 'POST', '2', '2019-10-22 13:58:46', 'POST:/account/token');
-INSERT INTO `sys_resource` VALUES ('85b2608158865a37dd2c4cdd8c91f387', '公园信息编辑', '/parkinfo/{id}', 'PUT', '3', '2019-10-22 13:58:45', 'PUT:/parkinfo/{id}');
-INSERT INTO `sys_resource` VALUES ('86047dad161b62bae784f2f77cb44cb8', '管理机构删除', '/managementagency/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/managementagency/{id}');
-INSERT INTO `sys_resource` VALUES ('8690f1577b8abe64aa841cb763a32b47', '地质背景添加', '/geological', 'POST', '1', '2019-10-22 13:58:46', 'POST:/geological');
-INSERT INTO `sys_resource` VALUES ('8b98b499b8e85136a0cbb44fee38385a', '上传文件', '/upload/file', 'POST', '1', '2019-10-22 13:58:45', 'POST:/upload/file');
-INSERT INTO `sys_resource` VALUES ('8cb83a749812f5d14d518d080fa12773', '科普作品查询(分页)', '/sciencework/page', 'GET', '1', '2019-10-22 13:58:45', 'GET:/sciencework/page');
-INSERT INTO `sys_resource` VALUES ('8f0edeb755b80546b041872d0c867874', 'openApi地质遗迹景观列表', '/openApi/geolandscapeList', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/geolandscapeList');
-INSERT INTO `sys_resource` VALUES ('9113537364ae8b5e8864864039a6ce61', 'VR全景编辑', '/vrdata/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/vrdata/{id}');
-INSERT INTO `sys_resource` VALUES ('9141e80baac708a8863498ff7a41d276', '任务添加', '/task', 'POST', '1', '2019-10-22 13:58:46', 'POST:/task');
-INSERT INTO `sys_resource` VALUES ('91f929d78067ee9198830bad15703b52', 'VR全景查询(分页)', '/vrdata/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/vrdata/page');
-INSERT INTO `sys_resource` VALUES ('924b18eaf488496f46b09c2faa561a4c', 'VR全景添加', '/vrdata', 'POST', '1', '2019-10-22 13:58:46', 'POST:/vrdata');
-INSERT INTO `sys_resource` VALUES ('93541f9d26ff3e388f53744d70679dd4', '科普活动删除', '/scienceactivity/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/scienceactivity/{id}');
-INSERT INTO `sys_resource` VALUES ('9513d9c346dc6afdbcef07fad075ca96', '博物馆基本情况编辑', '/museum/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/museum/{id}');
-INSERT INTO `sys_resource` VALUES ('956578f7a1e6fe0239b03232faa0dfda', '公园规划添加', '/planning', 'POST', '3', '2019-10-22 13:58:46', 'POST:/planning');
-INSERT INTO `sys_resource` VALUES ('98c864bdce956341baa4f83cf8a74ddc', '法律法规查询(分页)', '/legal/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/legal/page');
-INSERT INTO `sys_resource` VALUES ('9964cc368380f9bd7c782855389068d2', '公园添加', '/park', 'POST', '1', '2019-10-22 13:58:46', 'POST:/park');
+INSERT INTO `sys_resource` VALUES ('6193837ebc7f6f3045d8a5fba88968ee', '游客统计报表查询', '/gueststat/list', 'GET', '3', '2019-11-22 14:36:34', 'GET:/gueststat/list');
+INSERT INTO `sys_resource` VALUES ('61ffa059261d938164f12a0feae60779', '地质标本编辑', '/geospecimen/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/geospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('6588452dd7adc2cf0b3a634c7eaba578', '博物馆基本情况查询(分页)', '/museum/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/museum/page');
+INSERT INTO `sys_resource` VALUES ('6594f272facd4b263779a5898408d6f5', '地质标本添加', '/geospecimen', 'POST', '1', '2019-11-22 14:36:34', 'POST:/geospecimen');
+INSERT INTO `sys_resource` VALUES ('65bbd93b69d8dd2d5cade59dc0ccd8e6', '公园规划编辑', '/planning/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/planning/{id}');
+INSERT INTO `sys_resource` VALUES ('664f3db603c5855b208fc969984e1603', '采样信息添加', '/sampling', 'POST', '1', '2019-11-22 14:36:35', 'POST:/sampling');
+INSERT INTO `sys_resource` VALUES ('6847ea5e1845717af3d32125277a5eea', '管理机构查询(列表)', '/managementagency/list', 'GET', '3', '2019-11-22 14:36:34', 'GET:/managementagency/list');
+INSERT INTO `sys_resource` VALUES ('68655ee2d14ea4f555d8c6bd91004381', '科研论文编辑', '/researchpaper/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/researchpaper/{id}');
+INSERT INTO `sys_resource` VALUES ('6a0c5d0d2495feef251cd70123c9d985', '文物保护单位添加', '/culturalsites', 'POST', '3', '2019-11-22 14:36:34', 'POST:/culturalsites');
+INSERT INTO `sys_resource` VALUES ('6aa7aabe9b977d40b24dc5af059f2782', '人文展品编辑', '/humenexhibit/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/humenexhibit/{id}');
+INSERT INTO `sys_resource` VALUES ('6ab0f8a49671e489f11a1bef2fcaf102', '账户清除', '/account/token', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/account/token');
+INSERT INTO `sys_resource` VALUES ('6c3514540b1e2e1589a9c9566273c7c7', '用户详情', '/user/{id}', 'GET', '3', '2019-11-22 14:36:35', 'GET:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('6e8bb84dfd74bd76918cbc7b7b97e241', '地质标本删除', '/geospecimen/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/geospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('6f64396b3c7a68b40194169e09380fd0', '采样信息删除', '/sampling/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/sampling/{id}');
+INSERT INTO `sys_resource` VALUES ('7025c7532d2a58d3de4dde7c66d363f3', '资源刷新', '/resource', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/resource');
+INSERT INTO `sys_resource` VALUES ('70a8486a7b06e085a6e5d5249cd68c19', '博物馆查询(列表)', '/museum/list', 'GET', '3', '2019-11-22 14:36:34', 'GET:/museum/list');
+INSERT INTO `sys_resource` VALUES ('71d5f2e10db38eaebdaa44fa89cb1163', '任务删除', '/task/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/task/{id}');
+INSERT INTO `sys_resource` VALUES ('71ff8d6843b1023eaa48a6a0113b9307', '人文展品添加', '/humenexhibit', 'POST', '1', '2019-11-22 14:36:34', 'POST:/humenexhibit');
+INSERT INTO `sys_resource` VALUES ('72331b4d9d6a4d884f54d75b7ebc3b0b', '展板添加', '/displayboard', 'POST', '1', '2019-11-22 14:36:34', 'POST:/displayboard');
+INSERT INTO `sys_resource` VALUES ('729f78186228a271d4035747eb4ad465', '专题研究添加', '/parktopic', 'POST', '1', '2019-11-22 14:36:34', 'POST:/parktopic');
+INSERT INTO `sys_resource` VALUES ('7ad036add7309273ab46935c955cd547', '地质遗迹景观查询(分页)', '/geolandscape/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/geolandscape/page');
+INSERT INTO `sys_resource` VALUES ('7d5889685e76e54b05e5f88169fd5e20', '影像资料编辑', '/vediodocs/{id}', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/vediodocs/{id}');
+INSERT INTO `sys_resource` VALUES ('7e5982583c9805792c523b32ca5ef88b', '图片资料添加', '/picdocs', 'POST', '3', '2019-11-22 14:36:34', 'POST:/picdocs');
+INSERT INTO `sys_resource` VALUES ('7f4c9278a2d5d361b584e8db2c0f9d64', '采样信息编辑', '/sampling/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/sampling/{id}');
+INSERT INTO `sys_resource` VALUES ('8069b90f45605898c6b48c513785194e', '专题研究编辑', '/parktopic/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/parktopic/{id}');
+INSERT INTO `sys_resource` VALUES ('80e9634eadbb61b2d2c8e3b8477aa313', '会议查询(分页)', '/parkmeeting/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/parkmeeting/page');
+INSERT INTO `sys_resource` VALUES ('82755b8a0b46c30b88df630c0175c625', 'VR全景删除', '/vrdata/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/vrdata/{id}');
+INSERT INTO `sys_resource` VALUES ('82ae5ea4f71f8e9f4ff625dbc8d28819', '影像资料查询(分页)', '/vediodocs/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/vediodocs/page');
+INSERT INTO `sys_resource` VALUES ('82d143f7b01b3cb8cf2617a9efb7a8b8', '产品推介查询(分页)', '/production/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/production/page');
+INSERT INTO `sys_resource` VALUES ('842e33410b5a97b6c797e4782c97a90e', '账户获取', '/account/token', 'POST', '2', '2019-11-22 14:36:35', 'POST:/account/token');
+INSERT INTO `sys_resource` VALUES ('85b2608158865a37dd2c4cdd8c91f387', '公园信息编辑', '/parkinfo/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/parkinfo/{id}');
+INSERT INTO `sys_resource` VALUES ('86047dad161b62bae784f2f77cb44cb8', '管理机构删除', '/managementagency/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/managementagency/{id}');
+INSERT INTO `sys_resource` VALUES ('8690f1577b8abe64aa841cb763a32b47', '地质背景添加', '/geological', 'POST', '1', '2019-11-22 14:36:34', 'POST:/geological');
+INSERT INTO `sys_resource` VALUES ('8b98b499b8e85136a0cbb44fee38385a', '上传文件', '/upload/file', 'POST', '1', '2019-11-22 14:36:35', 'POST:/upload/file');
+INSERT INTO `sys_resource` VALUES ('8cb83a749812f5d14d518d080fa12773', '科普作品查询(分页)', '/sciencework/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/sciencework/page');
+INSERT INTO `sys_resource` VALUES ('8f0edeb755b80546b041872d0c867874', 'openApi地质遗迹景观列表', '/openApi/geolandscapeList', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/geolandscapeList');
+INSERT INTO `sys_resource` VALUES ('9113537364ae8b5e8864864039a6ce61', 'VR全景编辑', '/vrdata/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/vrdata/{id}');
+INSERT INTO `sys_resource` VALUES ('9141e80baac708a8863498ff7a41d276', '任务添加', '/task', 'POST', '1', '2019-11-22 14:36:35', 'POST:/task');
+INSERT INTO `sys_resource` VALUES ('91f929d78067ee9198830bad15703b52', 'VR全景查询(分页)', '/vrdata/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/vrdata/page');
+INSERT INTO `sys_resource` VALUES ('924b18eaf488496f46b09c2faa561a4c', 'VR全景添加', '/vrdata', 'POST', '1', '2019-11-22 14:36:35', 'POST:/vrdata');
+INSERT INTO `sys_resource` VALUES ('93541f9d26ff3e388f53744d70679dd4', '科普活动删除', '/scienceactivity/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/scienceactivity/{id}');
+INSERT INTO `sys_resource` VALUES ('9513d9c346dc6afdbcef07fad075ca96', '博物馆基本情况编辑', '/museum/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/museum/{id}');
+INSERT INTO `sys_resource` VALUES ('956578f7a1e6fe0239b03232faa0dfda', '公园规划添加', '/planning', 'POST', '3', '2019-11-22 14:36:35', 'POST:/planning');
+INSERT INTO `sys_resource` VALUES ('98c864bdce956341baa4f83cf8a74ddc', '法律法规查询(分页)', '/legal/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/legal/page');
+INSERT INTO `sys_resource` VALUES ('9964cc368380f9bd7c782855389068d2', '公园添加', '/park', 'POST', '1', '2019-11-22 14:36:34', 'POST:/park');
 INSERT INTO `sys_resource` VALUES ('9a7d73a1f4ebe1e284337e98cf564aee', '导出xls', '/export1xls', 'GET', '1', '2019-10-15 10:15:22', 'GET:/export1xls');
-INSERT INTO `sys_resource` VALUES ('9be8e0df48c8ba879e5b079c73662ee4', '用户添加', '/user', 'POST', '3', '2019-10-22 13:58:46', 'POST:/user');
-INSERT INTO `sys_resource` VALUES ('9c649f2b5cc9a0948958033038e6786b', '游客统计编辑', '/gueststat/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/gueststat/{id}');
-INSERT INTO `sys_resource` VALUES ('9d47323a8cf271afa3794a41d01ebd8d', '地灾信息删除', '/earthquake/{id}', 'DELETE', '1', '2019-10-22 13:58:45', 'DELETE:/earthquake/{id}');
-INSERT INTO `sys_resource` VALUES ('a0a1a4a566471fe2a2556bd873a3f036', '生物标本添加', '/biospecimen', 'POST', '1', '2019-10-22 13:58:46', 'POST:/biospecimen');
-INSERT INTO `sys_resource` VALUES ('a114f29b98a6faa95ac89139008f0e8c', '会议编辑', '/parkmeeting/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/parkmeeting/{id}');
-INSERT INTO `sys_resource` VALUES ('a2cf21f89380c679e13e76a46e63de18', '角色查询(分页)', '/role/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/role/page');
-INSERT INTO `sys_resource` VALUES ('a36d86152fb3241feef81a9ccee6faed', '生态环境查询', '/ecosystem/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/ecosystem/page');
-INSERT INTO `sys_resource` VALUES ('a9301ba0ce8390ecd756fb60b0487496', '科普作品编辑', '/sciencework/{id}', 'PUT', '1', '2019-10-22 13:58:45', 'PUT:/sciencework/{id}');
-INSERT INTO `sys_resource` VALUES ('ab34bcc1abb35eb4c7926c4f8e88bfa0', '展板查询(分页)', '/displayboard/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/displayboard/page');
-INSERT INTO `sys_resource` VALUES ('abb48abd102deb57718e6210fd5b55f9', '矿权情况编辑', '/mineralright/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/mineralright/{id}');
-INSERT INTO `sys_resource` VALUES ('abe8fd7846f776abf7f9a52778a48cf0', '专家导游删除', '/parklibrary/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/parklibrary/{id}');
-INSERT INTO `sys_resource` VALUES ('af29194331dabc32c641585380ff714f', '游客统计查询(分页)', '/gueststat/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/gueststat/page');
-INSERT INTO `sys_resource` VALUES ('af63a08383a750461f23208b6d99bfc1', '重叠情况编辑', '/overlapping/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/overlapping/{id}');
-INSERT INTO `sys_resource` VALUES ('b0b5dc6a4d472e5160e289eee92ad5d4', '公园查询(列表)', '/park/list', 'GET', '3', '2019-10-22 13:58:46', 'GET:/park/list');
-INSERT INTO `sys_resource` VALUES ('b11f70e89e5f1fd419cce8af6f632e92', 'openApi自然景观详情', '/openApi/naturallandscapeInfo1', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/naturallandscapeInfo1');
-INSERT INTO `sys_resource` VALUES ('b42c4411f27e50bafc6094b31b323996', '自然景观删除', '/naturallandscape/{id}', 'DELETE', '1', '2019-10-22 13:58:45', 'DELETE:/naturallandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('b4a89208a3f348ad68f57a0ca16c94ec', '公园删除', '/park/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/park/{id}');
-INSERT INTO `sys_resource` VALUES ('b5bd54c21e5412a49f4f656c8f33f77b', '人文景观添加', '/humanlandscape', 'POST', '1', '2019-10-22 13:58:46', 'POST:/humanlandscape');
-INSERT INTO `sys_resource` VALUES ('b74d54f1f4be2958369a704a50f6900a', '交流互展添加', '/exchangeexhibition', 'POST', '3', '2019-10-22 13:58:46', 'POST:/exchangeexhibition');
-INSERT INTO `sys_resource` VALUES ('b799b91c2cb5d49953a7308c93aef3e6', '人文展品删除', '/humenexhibit/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/humenexhibit/{id}');
-INSERT INTO `sys_resource` VALUES ('b7b1c22076c0d28c8d0fe4c0b09b6a6e', '角色编辑', '/role/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/role/{id}');
-INSERT INTO `sys_resource` VALUES ('b9766aef2e0a38ab87f640ca592c3569', '科普作品删除', '/sciencework/{id}', 'DELETE', '1', '2019-10-22 13:58:45', 'DELETE:/sciencework/{id}');
-INSERT INTO `sys_resource` VALUES ('bab73118731876a830ed12630846422d', '博物馆展厅查询(分页)', '/museumexhibition/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/museumexhibition/page');
-INSERT INTO `sys_resource` VALUES ('bb72308d143b0fc7a397e2756fbc8d6f', 'openApi人文景观列表', '/openApi/humanlandscapeList', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/humanlandscapeList');
-INSERT INTO `sys_resource` VALUES ('bc90809c5084a45eda6ece88e426d0b8', '生态环境删除', '/ecosystem/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/ecosystem/{id}');
-INSERT INTO `sys_resource` VALUES ('c2db9729dcd4a7d703e45411bb445dfd', '账户密码修改', '/account/password', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/account/password');
-INSERT INTO `sys_resource` VALUES ('c360a16bbc9b4c5a8378d48bb1fa4ffd', '专题研究删除', '/parktopic/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/parktopic/{id}');
-INSERT INTO `sys_resource` VALUES ('c7e7ed1fdcc753f9fb5aab85bc639da6', '社会经济状况编辑', '/socialeconomy/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/socialeconomy/{id}');
-INSERT INTO `sys_resource` VALUES ('c83ae91d496426d8dc8c8d265f959cd0', '重叠情况查询(分页)', '/overlapping/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/overlapping/page');
-INSERT INTO `sys_resource` VALUES ('ca6fc80fa67b8178d040d951efed929e', '展板删除', '/displayboard/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/displayboard/{id}');
-INSERT INTO `sys_resource` VALUES ('cb5c88079e3665683307a99ee46a865e', '导入xls', '/importBackup/xls', 'POST', '1', '2019-10-22 13:58:45', 'POST:/importBackup/xls');
-INSERT INTO `sys_resource` VALUES ('cc88c5473c49ef83cad40ab279db16bf', '标示解说查询(分页)', '/commentary/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/commentary/page');
-INSERT INTO `sys_resource` VALUES ('cd6de4b154e91389697aaa16f9e70f03', '地质标本查询(分页)', '/geospecimen/page', 'GET', '1', '2019-10-22 13:58:45', 'GET:/geospecimen/page');
-INSERT INTO `sys_resource` VALUES ('cf2f5e841d1fa963c3a511c4ea23c6b8', '科研论文添加', '/researchpaper', 'POST', '1', '2019-10-22 13:58:46', 'POST:/researchpaper');
-INSERT INTO `sys_resource` VALUES ('cf644f767183f7940a094d82fd075ed5', '影像资料删除', '/vediodocs/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/vediodocs/{id}');
-INSERT INTO `sys_resource` VALUES ('d1cee74a3c8ecc212ec1fbfffd7d4b7a', '缔结姊妹公园添加', '/parkrelation', 'POST', '3', '2019-10-22 13:58:45', 'POST:/parkrelation');
-INSERT INTO `sys_resource` VALUES ('d245ace645ea40e898178ee13c24297f', '用户密码重置', '/user/{id}/password', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/user/{id}/password');
-INSERT INTO `sys_resource` VALUES ('d260fc5e4c10a4fbd1661acb739c6119', '矿权情况删除', '/mineralright/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/mineralright/{id}');
-INSERT INTO `sys_resource` VALUES ('d289b64ef206771d89ed2670d93049b9', '地质遗迹景观添加', '/geolandscape', 'POST', '1', '2019-10-22 13:58:46', 'POST:/geolandscape');
-INSERT INTO `sys_resource` VALUES ('d374ba0bb7e6ed122a2c04cbdb759b81', '人文展品查询(分页)', '/humenexhibit/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/humenexhibit/page');
-INSERT INTO `sys_resource` VALUES ('d3ec728a0d9d66b8351cd0278962a384', '图片资料编辑', '/picdocs/{id}', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/picdocs/{id}');
-INSERT INTO `sys_resource` VALUES ('d431b135887822c5c012561c96f1ec84', '生态环境编辑', '/ecosystem/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/ecosystem/{id}');
-INSERT INTO `sys_resource` VALUES ('d4dcfc78a6b0f5f84ede3740b391825f', '社会经济状况删除', '/socialeconomy/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/socialeconomy/{id}');
-INSERT INTO `sys_resource` VALUES ('d6119390317deda395c1487d401dd47f', '管理人员删除', '/manageperson/{id}', 'DELETE', '1', '2019-10-22 13:58:45', 'DELETE:/manageperson/{id}');
-INSERT INTO `sys_resource` VALUES ('d7b1e397718a5e2bb30ee16d81fe8839', '展板编辑', '/displayboard/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/displayboard/{id}');
-INSERT INTO `sys_resource` VALUES ('d81bffa6ffd70cc443703820b5a95e8d', '账户菜单', '/account/menus', 'GET', '1', '2019-10-22 13:58:46', 'GET:/account/menus');
-INSERT INTO `sys_resource` VALUES ('d83a249e0e0ed84806ecba2fd8c7148d', '菜单父级查询(下拉框)', '/menu/combos', 'GET', '3', '2019-10-22 13:58:46', 'GET:/menu/combos');
-INSERT INTO `sys_resource` VALUES ('d8544217f479cfb39559e4b94f413aaa', '资源查询(所有)', '/resource/list', 'GET', '3', '2019-10-22 13:58:45', 'GET:/resource/list');
-INSERT INTO `sys_resource` VALUES ('dcd22be9d250bc20abed2b5390259a3f', '自然景观查询(分页)', '/naturallandscape/page', 'GET', '1', '2019-10-22 13:58:45', 'GET:/naturallandscape/page');
-INSERT INTO `sys_resource` VALUES ('dd00babb9be667747337654d68354531', '科普活动编辑', '/scienceactivity/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/scienceactivity/{id}');
-INSERT INTO `sys_resource` VALUES ('ddf4e3fd39264da50eec54cfd02731f4', '角色删除', '/role/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/role/{id}');
-INSERT INTO `sys_resource` VALUES ('de16f2ea5e499ebcb81154efec1d2df4', '游客统计添加', '/gueststat', 'POST', '3', '2019-10-22 13:58:46', 'POST:/gueststat');
-INSERT INTO `sys_resource` VALUES ('de2199682fdb8768d3dada69bf282f63', '管理机构查询(分页)', '/managementagency/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/managementagency/page');
-INSERT INTO `sys_resource` VALUES ('de8b6406105c3ea1c71de78e0870595e', '菜单状态设置', '/menu/{id}/status', 'PUT', '3', '2019-10-22 13:58:46', 'PUT:/menu/{id}/status');
-INSERT INTO `sys_resource` VALUES ('dfdff4d1f7e710eb21962c2f6df810b4', '管理人员查询(分页)', '/manageperson/page', 'GET', '1', '2019-10-22 13:58:45', 'GET:/manageperson/page');
-INSERT INTO `sys_resource` VALUES ('e113d9ae14c1ba583228d0974ccdfab1', '地质遗迹景观编辑', '/geolandscape/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/geolandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('e39c62db55dba9e58d9f996096e97c63', '专家导游添加', '/parklibrary', 'POST', '1', '2019-10-22 13:58:46', 'POST:/parklibrary');
-INSERT INTO `sys_resource` VALUES ('e6785c61264683eaa3e7b6bcd5190f69', '法律法规添加', '/legal', 'POST', '1', '2019-10-22 13:58:46', 'POST:/legal');
-INSERT INTO `sys_resource` VALUES ('e742172f7e82773b48f7075ffbf3060c', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo1', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/geolandscapeInfo1');
-INSERT INTO `sys_resource` VALUES ('e78940daf86b9ac5563d539e8802429c', '账户详情', '/account/info', 'GET', '1', '2019-10-22 13:58:46', 'GET:/account/info');
-INSERT INTO `sys_resource` VALUES ('e78b1e45561db580a21ebe962414aaa9', '自然景观添加', '/naturallandscape', 'POST', '1', '2019-10-22 13:58:45', 'POST:/naturallandscape');
-INSERT INTO `sys_resource` VALUES ('e8294671c0aeae7195fc3c43e2457436', '生物标本查询(分页)', '/biospecimen/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/biospecimen/page');
-INSERT INTO `sys_resource` VALUES ('e94e936ee35513a5cbaa0b670a806677', '博物馆基本情况添加', '/museum', 'POST', '1', '2019-10-22 13:58:46', 'POST:/museum');
-INSERT INTO `sys_resource` VALUES ('ea1ff9435f36746204efc424f2386a3e', '地质背景查询(分页)', '/geological/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/geological/page');
-INSERT INTO `sys_resource` VALUES ('eb0766e055b34846e6f0e8a003dc0f51', '产品推介删除', '/production/{id}', 'DELETE', '3', '2019-10-22 13:58:45', 'DELETE:/production/{id}');
-INSERT INTO `sys_resource` VALUES ('ec06a315849b5fe61ea032f908e04998', 'openApi人文景观详情', '/openApi/humanlandscapeInfo1', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/humanlandscapeInfo1');
-INSERT INTO `sys_resource` VALUES ('eed40b7746f536ba707e8c7b3bc3d600', '公园信息添加', '/parkinfo', 'POST', '3', '2019-10-22 13:58:45', 'POST:/parkinfo');
-INSERT INTO `sys_resource` VALUES ('ef0c2202d21ea0a946a1aa1fc96b1099', '交流互展删除', '/exchangeexhibition/{id}', 'DELETE', '3', '2019-10-22 13:58:46', 'DELETE:/exchangeexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('f084f47ab2ec0ce7d2846ca0465f9926', '采样信息查询(分页)', '/sampling/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/sampling/page');
-INSERT INTO `sys_resource` VALUES ('f11ce5f9757df03f88b94a924c1f3512', '导出xls', '/exportxls', 'GET', '1', '2019-10-22 13:58:45', 'GET:/exportxls');
-INSERT INTO `sys_resource` VALUES ('f4912e9c64d9c95d761a642caac77a3c', '地灾信息添加', '/earthquake', 'POST', '1', '2019-10-22 13:58:45', 'POST:/earthquake');
-INSERT INTO `sys_resource` VALUES ('f4b369788d0d337b34bfe8e763168124', 'openApi自然景观详情', '/openApi/naturallandscapeInfo', 'GET', '2', '2019-10-22 13:58:46', 'GET:/openApi/naturallandscapeInfo');
-INSERT INTO `sys_resource` VALUES ('f86b169919bf24ce08507f2dcea7de8f', '标示解说编辑', '/commentary/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/commentary/{id}');
-INSERT INTO `sys_resource` VALUES ('f880f8a35613b38182612a061291f8a5', '菜单查询(所有)', '/menu/list', 'GET', '3', '2019-10-22 13:58:46', 'GET:/menu/list');
-INSERT INTO `sys_resource` VALUES ('f8afb5ec48a65cb7c9cd7e9372118748', '生态环境添加', '/ecosystem', 'POST', '1', '2019-10-22 13:58:46', 'POST:/ecosystem');
-INSERT INTO `sys_resource` VALUES ('fad1ecbafb22f1ac0f63486d71393745', '用户查询(分页)', '/user/page', 'GET', '3', '2019-10-22 13:58:46', 'GET:/user/page');
-INSERT INTO `sys_resource` VALUES ('fcefc2a889894309e8eaff8f5762240a', '法律法规编辑', '/legal/{id}', 'PUT', '1', '2019-10-22 13:58:46', 'PUT:/legal/{id}');
-INSERT INTO `sys_resource` VALUES ('fd1c22d987d0c74044917917a85acfdc', '矿权情况添加', '/mineralright', 'POST', '1', '2019-10-22 13:58:46', 'POST:/mineralright');
-INSERT INTO `sys_resource` VALUES ('fdbe8e0f7ae93c33c165fdbc68fdb719', '社会经济状况查询(分页)', '/socialeconomy/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/socialeconomy/page');
-INSERT INTO `sys_resource` VALUES ('fe7a8147c0721226e5de8e3e8f6ebf93', '专家导游查询(分页)', '/parklibrary/page', 'GET', '1', '2019-10-22 13:58:46', 'GET:/parklibrary/page');
-INSERT INTO `sys_resource` VALUES ('ffdbcf5be43ec6452a9b568c833f8f0a', '法律法规删除', '/legal/{id}', 'DELETE', '1', '2019-10-22 13:58:46', 'DELETE:/legal/{id}');
+INSERT INTO `sys_resource` VALUES ('9be8e0df48c8ba879e5b079c73662ee4', '用户添加', '/user', 'POST', '3', '2019-11-22 14:36:35', 'POST:/user');
+INSERT INTO `sys_resource` VALUES ('9c649f2b5cc9a0948958033038e6786b', '游客统计编辑', '/gueststat/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/gueststat/{id}');
+INSERT INTO `sys_resource` VALUES ('9d47323a8cf271afa3794a41d01ebd8d', '地灾信息删除', '/earthquake/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/earthquake/{id}');
+INSERT INTO `sys_resource` VALUES ('a0a1a4a566471fe2a2556bd873a3f036', '生物标本添加', '/biospecimen', 'POST', '1', '2019-11-22 14:36:34', 'POST:/biospecimen');
+INSERT INTO `sys_resource` VALUES ('a114f29b98a6faa95ac89139008f0e8c', '会议编辑', '/parkmeeting/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/parkmeeting/{id}');
+INSERT INTO `sys_resource` VALUES ('a2cf21f89380c679e13e76a46e63de18', '角色查询(分页)', '/role/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/role/page');
+INSERT INTO `sys_resource` VALUES ('a36d86152fb3241feef81a9ccee6faed', '生态环境查询', '/ecosystem/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/ecosystem/page');
+INSERT INTO `sys_resource` VALUES ('a9301ba0ce8390ecd756fb60b0487496', '科普作品编辑', '/sciencework/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/sciencework/{id}');
+INSERT INTO `sys_resource` VALUES ('ab34bcc1abb35eb4c7926c4f8e88bfa0', '展板查询(分页)', '/displayboard/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/displayboard/page');
+INSERT INTO `sys_resource` VALUES ('abb48abd102deb57718e6210fd5b55f9', '矿权情况编辑', '/mineralright/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/mineralright/{id}');
+INSERT INTO `sys_resource` VALUES ('abe8fd7846f776abf7f9a52778a48cf0', '专家导游删除', '/parklibrary/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/parklibrary/{id}');
+INSERT INTO `sys_resource` VALUES ('af29194331dabc32c641585380ff714f', '游客统计查询(分页)', '/gueststat/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/gueststat/page');
+INSERT INTO `sys_resource` VALUES ('af63a08383a750461f23208b6d99bfc1', '重叠情况编辑', '/overlapping/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/overlapping/{id}');
+INSERT INTO `sys_resource` VALUES ('b0b5dc6a4d472e5160e289eee92ad5d4', '公园查询(列表)', '/park/list', 'GET', '3', '2019-11-22 14:36:34', 'GET:/park/list');
+INSERT INTO `sys_resource` VALUES ('b11f70e89e5f1fd419cce8af6f632e92', 'openApi自然景观详情', '/openApi/naturallandscapeInfo1', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/naturallandscapeInfo1');
+INSERT INTO `sys_resource` VALUES ('b42c4411f27e50bafc6094b31b323996', '自然景观删除', '/naturallandscape/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/naturallandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('b4a89208a3f348ad68f57a0ca16c94ec', '公园删除', '/park/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/park/{id}');
+INSERT INTO `sys_resource` VALUES ('b5bd54c21e5412a49f4f656c8f33f77b', '人文景观添加', '/humanlandscape', 'POST', '1', '2019-11-22 14:36:34', 'POST:/humanlandscape');
+INSERT INTO `sys_resource` VALUES ('b74d54f1f4be2958369a704a50f6900a', '交流互展添加', '/exchangeexhibition', 'POST', '3', '2019-11-22 14:36:34', 'POST:/exchangeexhibition');
+INSERT INTO `sys_resource` VALUES ('b799b91c2cb5d49953a7308c93aef3e6', '人文展品删除', '/humenexhibit/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/humenexhibit/{id}');
+INSERT INTO `sys_resource` VALUES ('b7b1c22076c0d28c8d0fe4c0b09b6a6e', '角色编辑', '/role/{id}', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/role/{id}');
+INSERT INTO `sys_resource` VALUES ('b9766aef2e0a38ab87f640ca592c3569', '科普作品删除', '/sciencework/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/sciencework/{id}');
+INSERT INTO `sys_resource` VALUES ('bab73118731876a830ed12630846422d', '博物馆展厅查询(分页)', '/museumexhibition/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/museumexhibition/page');
+INSERT INTO `sys_resource` VALUES ('bb72308d143b0fc7a397e2756fbc8d6f', 'openApi人文景观列表', '/openApi/humanlandscapeList', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/humanlandscapeList');
+INSERT INTO `sys_resource` VALUES ('bc90809c5084a45eda6ece88e426d0b8', '生态环境删除', '/ecosystem/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/ecosystem/{id}');
+INSERT INTO `sys_resource` VALUES ('c2db9729dcd4a7d703e45411bb445dfd', '账户密码修改', '/account/password', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/account/password');
+INSERT INTO `sys_resource` VALUES ('c2f8625dfb6b6be6237567391faf0e62', '文物保护单位查询(分页)', '/culturalsites/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/culturalsites/page');
+INSERT INTO `sys_resource` VALUES ('c360a16bbc9b4c5a8378d48bb1fa4ffd', '专题研究删除', '/parktopic/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/parktopic/{id}');
+INSERT INTO `sys_resource` VALUES ('c7e7ed1fdcc753f9fb5aab85bc639da6', '社会经济状况编辑', '/socialeconomy/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/socialeconomy/{id}');
+INSERT INTO `sys_resource` VALUES ('c83ae91d496426d8dc8c8d265f959cd0', '重叠情况查询(分页)', '/overlapping/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/overlapping/page');
+INSERT INTO `sys_resource` VALUES ('c950d0767bbe74702259d06768faa283', '文物保护单位编辑', '/culturalsites/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/culturalsites/{id}');
+INSERT INTO `sys_resource` VALUES ('ca6fc80fa67b8178d040d951efed929e', '展板删除', '/displayboard/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/displayboard/{id}');
+INSERT INTO `sys_resource` VALUES ('cb5c88079e3665683307a99ee46a865e', '导入xls', '/importBackup/xls', 'POST', '1', '2019-11-22 14:36:34', 'POST:/importBackup/xls');
+INSERT INTO `sys_resource` VALUES ('cc88c5473c49ef83cad40ab279db16bf', '标示解说查询(分页)', '/commentary/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/commentary/page');
+INSERT INTO `sys_resource` VALUES ('cd6de4b154e91389697aaa16f9e70f03', '地质标本查询(分页)', '/geospecimen/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/geospecimen/page');
+INSERT INTO `sys_resource` VALUES ('cf2f5e841d1fa963c3a511c4ea23c6b8', '科研论文添加', '/researchpaper', 'POST', '1', '2019-11-22 14:36:35', 'POST:/researchpaper');
+INSERT INTO `sys_resource` VALUES ('cf644f767183f7940a094d82fd075ed5', '影像资料删除', '/vediodocs/{id}', 'DELETE', '3', '2019-11-22 14:36:35', 'DELETE:/vediodocs/{id}');
+INSERT INTO `sys_resource` VALUES ('d1cee74a3c8ecc212ec1fbfffd7d4b7a', '缔结姊妹公园添加', '/parkrelation', 'POST', '3', '2019-11-22 14:36:34', 'POST:/parkrelation');
+INSERT INTO `sys_resource` VALUES ('d245ace645ea40e898178ee13c24297f', '用户密码重置', '/user/{id}/password', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/user/{id}/password');
+INSERT INTO `sys_resource` VALUES ('d260fc5e4c10a4fbd1661acb739c6119', '矿权情况删除', '/mineralright/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/mineralright/{id}');
+INSERT INTO `sys_resource` VALUES ('d289b64ef206771d89ed2670d93049b9', '地质遗迹景观添加', '/geolandscape', 'POST', '1', '2019-11-22 14:36:34', 'POST:/geolandscape');
+INSERT INTO `sys_resource` VALUES ('d374ba0bb7e6ed122a2c04cbdb759b81', '人文展品查询(分页)', '/humenexhibit/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/humenexhibit/page');
+INSERT INTO `sys_resource` VALUES ('d3ec728a0d9d66b8351cd0278962a384', '图片资料编辑', '/picdocs/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/picdocs/{id}');
+INSERT INTO `sys_resource` VALUES ('d431b135887822c5c012561c96f1ec84', '生态环境编辑', '/ecosystem/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/ecosystem/{id}');
+INSERT INTO `sys_resource` VALUES ('d4dcfc78a6b0f5f84ede3740b391825f', '社会经济状况删除', '/socialeconomy/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/socialeconomy/{id}');
+INSERT INTO `sys_resource` VALUES ('d6119390317deda395c1487d401dd47f', '管理人员删除', '/manageperson/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/manageperson/{id}');
+INSERT INTO `sys_resource` VALUES ('d6c4ff80beeec0e3f6968775b906600e', '文物保护单位删除', '/culturalsites/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/culturalsites/{id}');
+INSERT INTO `sys_resource` VALUES ('d7b1e397718a5e2bb30ee16d81fe8839', '展板编辑', '/displayboard/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/displayboard/{id}');
+INSERT INTO `sys_resource` VALUES ('d81bffa6ffd70cc443703820b5a95e8d', '账户菜单', '/account/menus', 'GET', '1', '2019-11-22 14:36:35', 'GET:/account/menus');
+INSERT INTO `sys_resource` VALUES ('d83a249e0e0ed84806ecba2fd8c7148d', '菜单父级查询(下拉框)', '/menu/combos', 'GET', '3', '2019-11-22 14:36:35', 'GET:/menu/combos');
+INSERT INTO `sys_resource` VALUES ('d8544217f479cfb39559e4b94f413aaa', '资源查询(所有)', '/resource/list', 'GET', '3', '2019-11-22 14:36:35', 'GET:/resource/list');
+INSERT INTO `sys_resource` VALUES ('dcd22be9d250bc20abed2b5390259a3f', '自然景观查询(分页)', '/naturallandscape/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/naturallandscape/page');
+INSERT INTO `sys_resource` VALUES ('dd00babb9be667747337654d68354531', '科普活动编辑', '/scienceactivity/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/scienceactivity/{id}');
+INSERT INTO `sys_resource` VALUES ('ddf4e3fd39264da50eec54cfd02731f4', '角色删除', '/role/{id}', 'DELETE', '3', '2019-11-22 14:36:35', 'DELETE:/role/{id}');
+INSERT INTO `sys_resource` VALUES ('de16f2ea5e499ebcb81154efec1d2df4', '游客统计添加', '/gueststat', 'POST', '3', '2019-11-22 14:36:34', 'POST:/gueststat');
+INSERT INTO `sys_resource` VALUES ('de2199682fdb8768d3dada69bf282f63', '管理机构查询(分页)', '/managementagency/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/managementagency/page');
+INSERT INTO `sys_resource` VALUES ('de8b6406105c3ea1c71de78e0870595e', '菜单状态设置', '/menu/{id}/status', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/menu/{id}/status');
+INSERT INTO `sys_resource` VALUES ('dfdff4d1f7e710eb21962c2f6df810b4', '管理人员查询(分页)', '/manageperson/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/manageperson/page');
+INSERT INTO `sys_resource` VALUES ('e113d9ae14c1ba583228d0974ccdfab1', '地质遗迹景观编辑', '/geolandscape/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/geolandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('e39c62db55dba9e58d9f996096e97c63', '专家导游添加', '/parklibrary', 'POST', '1', '2019-11-22 14:36:34', 'POST:/parklibrary');
+INSERT INTO `sys_resource` VALUES ('e6785c61264683eaa3e7b6bcd5190f69', '法律法规添加', '/legal', 'POST', '1', '2019-11-22 14:36:34', 'POST:/legal');
+INSERT INTO `sys_resource` VALUES ('e742172f7e82773b48f7075ffbf3060c', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo1', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/geolandscapeInfo1');
+INSERT INTO `sys_resource` VALUES ('e78940daf86b9ac5563d539e8802429c', '账户详情', '/account/info', 'GET', '1', '2019-11-22 14:36:35', 'GET:/account/info');
+INSERT INTO `sys_resource` VALUES ('e78b1e45561db580a21ebe962414aaa9', '自然景观添加', '/naturallandscape', 'POST', '1', '2019-11-22 14:36:34', 'POST:/naturallandscape');
+INSERT INTO `sys_resource` VALUES ('e8294671c0aeae7195fc3c43e2457436', '生物标本查询(分页)', '/biospecimen/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/biospecimen/page');
+INSERT INTO `sys_resource` VALUES ('e94e936ee35513a5cbaa0b670a806677', '博物馆基本情况添加', '/museum', 'POST', '1', '2019-11-22 14:36:34', 'POST:/museum');
+INSERT INTO `sys_resource` VALUES ('ea1ff9435f36746204efc424f2386a3e', '地质背景查询(分页)', '/geological/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/geological/page');
+INSERT INTO `sys_resource` VALUES ('eb0766e055b34846e6f0e8a003dc0f51', '产品推介删除', '/production/{id}', 'DELETE', '3', '2019-11-22 14:36:35', 'DELETE:/production/{id}');
+INSERT INTO `sys_resource` VALUES ('ec06a315849b5fe61ea032f908e04998', 'openApi人文景观详情', '/openApi/humanlandscapeInfo1', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/humanlandscapeInfo1');
+INSERT INTO `sys_resource` VALUES ('eed40b7746f536ba707e8c7b3bc3d600', '公园信息添加', '/parkinfo', 'POST', '3', '2019-11-22 14:36:34', 'POST:/parkinfo');
+INSERT INTO `sys_resource` VALUES ('ef0c2202d21ea0a946a1aa1fc96b1099', '交流互展删除', '/exchangeexhibition/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/exchangeexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('f084f47ab2ec0ce7d2846ca0465f9926', '采样信息查询(分页)', '/sampling/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/sampling/page');
+INSERT INTO `sys_resource` VALUES ('f11ce5f9757df03f88b94a924c1f3512', '导出xls', '/exportxls', 'GET', '1', '2019-11-22 14:36:34', 'GET:/exportxls');
+INSERT INTO `sys_resource` VALUES ('f4912e9c64d9c95d761a642caac77a3c', '地灾信息添加', '/earthquake', 'POST', '1', '2019-11-22 14:36:34', 'POST:/earthquake');
+INSERT INTO `sys_resource` VALUES ('f4b369788d0d337b34bfe8e763168124', 'openApi自然景观详情', '/openApi/naturallandscapeInfo', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/naturallandscapeInfo');
+INSERT INTO `sys_resource` VALUES ('f86b169919bf24ce08507f2dcea7de8f', '标示解说编辑', '/commentary/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/commentary/{id}');
+INSERT INTO `sys_resource` VALUES ('f880f8a35613b38182612a061291f8a5', '菜单查询(所有)', '/menu/list', 'GET', '3', '2019-11-22 14:36:35', 'GET:/menu/list');
+INSERT INTO `sys_resource` VALUES ('f8afb5ec48a65cb7c9cd7e9372118748', '生态环境添加', '/ecosystem', 'POST', '1', '2019-11-22 14:36:34', 'POST:/ecosystem');
+INSERT INTO `sys_resource` VALUES ('fad1ecbafb22f1ac0f63486d71393745', '用户查询(分页)', '/user/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/user/page');
+INSERT INTO `sys_resource` VALUES ('fcefc2a889894309e8eaff8f5762240a', '法律法规编辑', '/legal/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/legal/{id}');
+INSERT INTO `sys_resource` VALUES ('fd1c22d987d0c74044917917a85acfdc', '矿权情况添加', '/mineralright', 'POST', '1', '2019-11-22 14:36:34', 'POST:/mineralright');
+INSERT INTO `sys_resource` VALUES ('fdbe8e0f7ae93c33c165fdbc68fdb719', '社会经济状况查询(分页)', '/socialeconomy/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/socialeconomy/page');
+INSERT INTO `sys_resource` VALUES ('fe7a8147c0721226e5de8e3e8f6ebf93', '专家导游查询(分页)', '/parklibrary/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/parklibrary/page');
+INSERT INTO `sys_resource` VALUES ('ffdbcf5be43ec6452a9b568c833f8f0a', '法律法规删除', '/legal/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/legal/{id}');
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -1911,7 +2374,7 @@ CREATE TABLE `sys_role` (
   `update_time` datetime NOT NULL COMMENT '修改时间',
   `remark` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
 
 -- ----------------------------
 -- Records of sys_role
@@ -1928,112 +2391,131 @@ CREATE TABLE `sys_role_menu` (
   `role_id` int(11) NOT NULL COMMENT '角色ID',
   `menu_id` int(11) NOT NULL COMMENT '菜单ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1785 DEFAULT CHARSET=utf8mb4 COMMENT='角色菜单关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=2046 DEFAULT CHARSET=utf8mb4 COMMENT='角色菜单关系表';
 
 -- ----------------------------
 -- Records of sys_role_menu
 -- ----------------------------
-INSERT INTO `sys_role_menu` VALUES ('1684', '2', '22');
-INSERT INTO `sys_role_menu` VALUES ('1685', '2', '26');
-INSERT INTO `sys_role_menu` VALUES ('1686', '2', '23');
-INSERT INTO `sys_role_menu` VALUES ('1687', '2', '32');
-INSERT INTO `sys_role_menu` VALUES ('1688', '2', '33');
-INSERT INTO `sys_role_menu` VALUES ('1689', '2', '34');
-INSERT INTO `sys_role_menu` VALUES ('1690', '2', '35');
-INSERT INTO `sys_role_menu` VALUES ('1691', '2', '51');
-INSERT INTO `sys_role_menu` VALUES ('1692', '2', '71');
-INSERT INTO `sys_role_menu` VALUES ('1693', '2', '52');
-INSERT INTO `sys_role_menu` VALUES ('1694', '2', '73');
-INSERT INTO `sys_role_menu` VALUES ('1695', '2', '24');
-INSERT INTO `sys_role_menu` VALUES ('1696', '2', '78');
-INSERT INTO `sys_role_menu` VALUES ('1697', '2', '77');
-INSERT INTO `sys_role_menu` VALUES ('1698', '2', '31');
-INSERT INTO `sys_role_menu` VALUES ('1699', '2', '56');
-INSERT INTO `sys_role_menu` VALUES ('1700', '2', '57');
-INSERT INTO `sys_role_menu` VALUES ('1701', '2', '25');
-INSERT INTO `sys_role_menu` VALUES ('1702', '2', '53');
-INSERT INTO `sys_role_menu` VALUES ('1703', '2', '54');
-INSERT INTO `sys_role_menu` VALUES ('1704', '2', '72');
-INSERT INTO `sys_role_menu` VALUES ('1705', '2', '55');
-INSERT INTO `sys_role_menu` VALUES ('1706', '2', '58');
-INSERT INTO `sys_role_menu` VALUES ('1707', '2', '30');
-INSERT INTO `sys_role_menu` VALUES ('1708', '2', '46');
-INSERT INTO `sys_role_menu` VALUES ('1709', '2', '79');
-INSERT INTO `sys_role_menu` VALUES ('1710', '2', '47');
-INSERT INTO `sys_role_menu` VALUES ('1711', '2', '48');
-INSERT INTO `sys_role_menu` VALUES ('1712', '2', '49');
-INSERT INTO `sys_role_menu` VALUES ('1713', '2', '50');
-INSERT INTO `sys_role_menu` VALUES ('1714', '2', '29');
-INSERT INTO `sys_role_menu` VALUES ('1715', '2', '36');
-INSERT INTO `sys_role_menu` VALUES ('1716', '2', '37');
-INSERT INTO `sys_role_menu` VALUES ('1717', '2', '38');
-INSERT INTO `sys_role_menu` VALUES ('1718', '2', '39');
-INSERT INTO `sys_role_menu` VALUES ('1719', '2', '45');
-INSERT INTO `sys_role_menu` VALUES ('1720', '2', '74');
-INSERT INTO `sys_role_menu` VALUES ('1721', '2', '76');
-INSERT INTO `sys_role_menu` VALUES ('1722', '2', '75');
-INSERT INTO `sys_role_menu` VALUES ('1723', '1', '1');
-INSERT INTO `sys_role_menu` VALUES ('1724', '1', '7');
-INSERT INTO `sys_role_menu` VALUES ('1725', '1', '8');
-INSERT INTO `sys_role_menu` VALUES ('1726', '1', '9');
-INSERT INTO `sys_role_menu` VALUES ('1727', '1', '10');
-INSERT INTO `sys_role_menu` VALUES ('1728', '1', '11');
-INSERT INTO `sys_role_menu` VALUES ('1729', '1', '2');
-INSERT INTO `sys_role_menu` VALUES ('1730', '1', '3');
-INSERT INTO `sys_role_menu` VALUES ('1731', '1', '4');
-INSERT INTO `sys_role_menu` VALUES ('1732', '1', '5');
-INSERT INTO `sys_role_menu` VALUES ('1733', '1', '6');
-INSERT INTO `sys_role_menu` VALUES ('1734', '1', '12');
-INSERT INTO `sys_role_menu` VALUES ('1735', '1', '13');
-INSERT INTO `sys_role_menu` VALUES ('1736', '1', '14');
-INSERT INTO `sys_role_menu` VALUES ('1737', '1', '15');
-INSERT INTO `sys_role_menu` VALUES ('1738', '1', '16');
-INSERT INTO `sys_role_menu` VALUES ('1739', '1', '17');
-INSERT INTO `sys_role_menu` VALUES ('1740', '1', '18');
-INSERT INTO `sys_role_menu` VALUES ('1741', '1', '19');
-INSERT INTO `sys_role_menu` VALUES ('1742', '1', '20');
-INSERT INTO `sys_role_menu` VALUES ('1743', '1', '21');
-INSERT INTO `sys_role_menu` VALUES ('1744', '1', '22');
-INSERT INTO `sys_role_menu` VALUES ('1745', '1', '26');
-INSERT INTO `sys_role_menu` VALUES ('1746', '1', '23');
-INSERT INTO `sys_role_menu` VALUES ('1747', '1', '32');
-INSERT INTO `sys_role_menu` VALUES ('1748', '1', '33');
-INSERT INTO `sys_role_menu` VALUES ('1749', '1', '34');
-INSERT INTO `sys_role_menu` VALUES ('1750', '1', '35');
-INSERT INTO `sys_role_menu` VALUES ('1751', '1', '51');
-INSERT INTO `sys_role_menu` VALUES ('1752', '1', '71');
-INSERT INTO `sys_role_menu` VALUES ('1753', '1', '52');
-INSERT INTO `sys_role_menu` VALUES ('1754', '1', '73');
-INSERT INTO `sys_role_menu` VALUES ('1755', '1', '24');
-INSERT INTO `sys_role_menu` VALUES ('1756', '1', '77');
-INSERT INTO `sys_role_menu` VALUES ('1757', '1', '31');
-INSERT INTO `sys_role_menu` VALUES ('1758', '1', '56');
-INSERT INTO `sys_role_menu` VALUES ('1759', '1', '57');
-INSERT INTO `sys_role_menu` VALUES ('1760', '1', '25');
-INSERT INTO `sys_role_menu` VALUES ('1761', '1', '53');
-INSERT INTO `sys_role_menu` VALUES ('1762', '1', '54');
-INSERT INTO `sys_role_menu` VALUES ('1763', '1', '72');
-INSERT INTO `sys_role_menu` VALUES ('1764', '1', '55');
-INSERT INTO `sys_role_menu` VALUES ('1765', '1', '58');
-INSERT INTO `sys_role_menu` VALUES ('1766', '1', '78');
-INSERT INTO `sys_role_menu` VALUES ('1767', '1', '30');
-INSERT INTO `sys_role_menu` VALUES ('1768', '1', '46');
-INSERT INTO `sys_role_menu` VALUES ('1769', '1', '79');
-INSERT INTO `sys_role_menu` VALUES ('1770', '1', '47');
-INSERT INTO `sys_role_menu` VALUES ('1771', '1', '48');
-INSERT INTO `sys_role_menu` VALUES ('1772', '1', '49');
-INSERT INTO `sys_role_menu` VALUES ('1773', '1', '50');
-INSERT INTO `sys_role_menu` VALUES ('1774', '1', '29');
-INSERT INTO `sys_role_menu` VALUES ('1775', '1', '36');
-INSERT INTO `sys_role_menu` VALUES ('1776', '1', '37');
-INSERT INTO `sys_role_menu` VALUES ('1777', '1', '38');
-INSERT INTO `sys_role_menu` VALUES ('1778', '1', '39');
-INSERT INTO `sys_role_menu` VALUES ('1779', '1', '45');
-INSERT INTO `sys_role_menu` VALUES ('1780', '1', '74');
-INSERT INTO `sys_role_menu` VALUES ('1781', '1', '76');
-INSERT INTO `sys_role_menu` VALUES ('1782', '1', '75');
-INSERT INTO `sys_role_menu` VALUES ('1783', '1', '80');
-INSERT INTO `sys_role_menu` VALUES ('1784', '1', '81');
+INSERT INTO `sys_role_menu` VALUES ('1926', '1', '1');
+INSERT INTO `sys_role_menu` VALUES ('1927', '1', '7');
+INSERT INTO `sys_role_menu` VALUES ('1928', '1', '8');
+INSERT INTO `sys_role_menu` VALUES ('1929', '1', '9');
+INSERT INTO `sys_role_menu` VALUES ('1930', '1', '10');
+INSERT INTO `sys_role_menu` VALUES ('1931', '1', '11');
+INSERT INTO `sys_role_menu` VALUES ('1932', '1', '2');
+INSERT INTO `sys_role_menu` VALUES ('1933', '1', '3');
+INSERT INTO `sys_role_menu` VALUES ('1934', '1', '4');
+INSERT INTO `sys_role_menu` VALUES ('1935', '1', '5');
+INSERT INTO `sys_role_menu` VALUES ('1936', '1', '6');
+INSERT INTO `sys_role_menu` VALUES ('1937', '1', '12');
+INSERT INTO `sys_role_menu` VALUES ('1938', '1', '13');
+INSERT INTO `sys_role_menu` VALUES ('1939', '1', '14');
+INSERT INTO `sys_role_menu` VALUES ('1940', '1', '15');
+INSERT INTO `sys_role_menu` VALUES ('1941', '1', '16');
+INSERT INTO `sys_role_menu` VALUES ('1942', '1', '17');
+INSERT INTO `sys_role_menu` VALUES ('1943', '1', '18');
+INSERT INTO `sys_role_menu` VALUES ('1944', '1', '19');
+INSERT INTO `sys_role_menu` VALUES ('1945', '1', '20');
+INSERT INTO `sys_role_menu` VALUES ('1946', '1', '21');
+INSERT INTO `sys_role_menu` VALUES ('1947', '1', '22');
+INSERT INTO `sys_role_menu` VALUES ('1948', '1', '26');
+INSERT INTO `sys_role_menu` VALUES ('1949', '1', '23');
+INSERT INTO `sys_role_menu` VALUES ('1950', '1', '32');
+INSERT INTO `sys_role_menu` VALUES ('1951', '1', '33');
+INSERT INTO `sys_role_menu` VALUES ('1952', '1', '34');
+INSERT INTO `sys_role_menu` VALUES ('1953', '1', '35');
+INSERT INTO `sys_role_menu` VALUES ('1954', '1', '51');
+INSERT INTO `sys_role_menu` VALUES ('1955', '1', '71');
+INSERT INTO `sys_role_menu` VALUES ('1956', '1', '52');
+INSERT INTO `sys_role_menu` VALUES ('1957', '1', '73');
+INSERT INTO `sys_role_menu` VALUES ('1958', '1', '24');
+INSERT INTO `sys_role_menu` VALUES ('1959', '1', '77');
+INSERT INTO `sys_role_menu` VALUES ('1960', '1', '31');
+INSERT INTO `sys_role_menu` VALUES ('1961', '1', '56');
+INSERT INTO `sys_role_menu` VALUES ('1962', '1', '57');
+INSERT INTO `sys_role_menu` VALUES ('1963', '1', '25');
+INSERT INTO `sys_role_menu` VALUES ('1964', '1', '53');
+INSERT INTO `sys_role_menu` VALUES ('1965', '1', '54');
+INSERT INTO `sys_role_menu` VALUES ('1966', '1', '72');
+INSERT INTO `sys_role_menu` VALUES ('1967', '1', '55');
+INSERT INTO `sys_role_menu` VALUES ('1968', '1', '58');
+INSERT INTO `sys_role_menu` VALUES ('1969', '1', '78');
+INSERT INTO `sys_role_menu` VALUES ('1970', '1', '82');
+INSERT INTO `sys_role_menu` VALUES ('1971', '1', '30');
+INSERT INTO `sys_role_menu` VALUES ('1972', '1', '46');
+INSERT INTO `sys_role_menu` VALUES ('1973', '1', '79');
+INSERT INTO `sys_role_menu` VALUES ('1974', '1', '47');
+INSERT INTO `sys_role_menu` VALUES ('1975', '1', '48');
+INSERT INTO `sys_role_menu` VALUES ('1976', '1', '49');
+INSERT INTO `sys_role_menu` VALUES ('1977', '1', '50');
+INSERT INTO `sys_role_menu` VALUES ('1978', '1', '29');
+INSERT INTO `sys_role_menu` VALUES ('1979', '1', '36');
+INSERT INTO `sys_role_menu` VALUES ('1980', '1', '37');
+INSERT INTO `sys_role_menu` VALUES ('1981', '1', '38');
+INSERT INTO `sys_role_menu` VALUES ('1982', '1', '39');
+INSERT INTO `sys_role_menu` VALUES ('1983', '1', '45');
+INSERT INTO `sys_role_menu` VALUES ('1984', '1', '74');
+INSERT INTO `sys_role_menu` VALUES ('1985', '1', '76');
+INSERT INTO `sys_role_menu` VALUES ('1986', '1', '75');
+INSERT INTO `sys_role_menu` VALUES ('1987', '1', '40');
+INSERT INTO `sys_role_menu` VALUES ('1988', '1', '41');
+INSERT INTO `sys_role_menu` VALUES ('1989', '1', '42');
+INSERT INTO `sys_role_menu` VALUES ('1990', '1', '43');
+INSERT INTO `sys_role_menu` VALUES ('1991', '1', '44');
+INSERT INTO `sys_role_menu` VALUES ('1992', '1', '59');
+INSERT INTO `sys_role_menu` VALUES ('1993', '1', '60');
+INSERT INTO `sys_role_menu` VALUES ('1994', '1', '61');
+INSERT INTO `sys_role_menu` VALUES ('1995', '1', '62');
+INSERT INTO `sys_role_menu` VALUES ('1996', '1', '63');
+INSERT INTO `sys_role_menu` VALUES ('1997', '1', '64');
+INSERT INTO `sys_role_menu` VALUES ('1998', '1', '65');
+INSERT INTO `sys_role_menu` VALUES ('1999', '1', '66');
+INSERT INTO `sys_role_menu` VALUES ('2000', '1', '67');
+INSERT INTO `sys_role_menu` VALUES ('2001', '1', '68');
+INSERT INTO `sys_role_menu` VALUES ('2002', '1', '69');
+INSERT INTO `sys_role_menu` VALUES ('2003', '1', '70');
+INSERT INTO `sys_role_menu` VALUES ('2004', '1', '80');
+INSERT INTO `sys_role_menu` VALUES ('2005', '1', '81');
+INSERT INTO `sys_role_menu` VALUES ('2006', '2', '22');
+INSERT INTO `sys_role_menu` VALUES ('2007', '2', '26');
+INSERT INTO `sys_role_menu` VALUES ('2008', '2', '23');
+INSERT INTO `sys_role_menu` VALUES ('2009', '2', '32');
+INSERT INTO `sys_role_menu` VALUES ('2010', '2', '33');
+INSERT INTO `sys_role_menu` VALUES ('2011', '2', '34');
+INSERT INTO `sys_role_menu` VALUES ('2012', '2', '35');
+INSERT INTO `sys_role_menu` VALUES ('2013', '2', '51');
+INSERT INTO `sys_role_menu` VALUES ('2014', '2', '71');
+INSERT INTO `sys_role_menu` VALUES ('2015', '2', '52');
+INSERT INTO `sys_role_menu` VALUES ('2016', '2', '73');
+INSERT INTO `sys_role_menu` VALUES ('2017', '2', '24');
+INSERT INTO `sys_role_menu` VALUES ('2018', '2', '77');
+INSERT INTO `sys_role_menu` VALUES ('2019', '2', '31');
+INSERT INTO `sys_role_menu` VALUES ('2020', '2', '56');
+INSERT INTO `sys_role_menu` VALUES ('2021', '2', '57');
+INSERT INTO `sys_role_menu` VALUES ('2022', '2', '25');
+INSERT INTO `sys_role_menu` VALUES ('2023', '2', '53');
+INSERT INTO `sys_role_menu` VALUES ('2024', '2', '54');
+INSERT INTO `sys_role_menu` VALUES ('2025', '2', '72');
+INSERT INTO `sys_role_menu` VALUES ('2026', '2', '55');
+INSERT INTO `sys_role_menu` VALUES ('2027', '2', '58');
+INSERT INTO `sys_role_menu` VALUES ('2028', '2', '78');
+INSERT INTO `sys_role_menu` VALUES ('2029', '2', '82');
+INSERT INTO `sys_role_menu` VALUES ('2030', '2', '30');
+INSERT INTO `sys_role_menu` VALUES ('2031', '2', '46');
+INSERT INTO `sys_role_menu` VALUES ('2032', '2', '79');
+INSERT INTO `sys_role_menu` VALUES ('2033', '2', '47');
+INSERT INTO `sys_role_menu` VALUES ('2034', '2', '48');
+INSERT INTO `sys_role_menu` VALUES ('2035', '2', '49');
+INSERT INTO `sys_role_menu` VALUES ('2036', '2', '50');
+INSERT INTO `sys_role_menu` VALUES ('2037', '2', '29');
+INSERT INTO `sys_role_menu` VALUES ('2038', '2', '36');
+INSERT INTO `sys_role_menu` VALUES ('2039', '2', '37');
+INSERT INTO `sys_role_menu` VALUES ('2040', '2', '38');
+INSERT INTO `sys_role_menu` VALUES ('2041', '2', '39');
+INSERT INTO `sys_role_menu` VALUES ('2042', '2', '45');
+INSERT INTO `sys_role_menu` VALUES ('2043', '2', '74');
+INSERT INTO `sys_role_menu` VALUES ('2044', '2', '76');
+INSERT INTO `sys_role_menu` VALUES ('2045', '2', '75');
 
 -- ----------------------------
 -- Table structure for sys_role_resource
@@ -2072,9 +2554,9 @@ CREATE TABLE `sys_user` (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', '超级管理员', 'root@163.com', '13866668888', '0', '1', '2019-08-23 10:56:12', '2019-10-22 15:01:23', 'admin', '$apr1$admin$Sl27Fb32LUppR7w2Ovw4V/', '127.0.0.1');
+INSERT INTO `sys_user` VALUES ('1', '超级管理员', 'root@163.com', '13866668888', '0', '1', '2019-08-23 10:56:12', '2019-11-22 14:13:09', 'admin', '$apr1$admin$Sl27Fb32LUppR7w2Ovw4V/', '127.0.0.1');
 INSERT INTO `sys_user` VALUES ('2', '阿大', '8888@163.com', '13888888888', '0', '1', '2019-08-23 10:57:17', '2019-08-23 10:57:17', 'lichee', '$apr1$lichee$2XUDSi4pQtv7EUyYcswB91', '127.0.0.1');
-INSERT INTO `sys_user` VALUES ('3', '李勇', '946509621@qq.com', '17723321245', '0', '1', '2019-09-17 17:31:06', '2019-09-18 17:59:54', 'liyong', '$apr1$liyong$f4uNIOJAUPQKwkBTU.QyD/', '127.0.0.1');
+INSERT INTO `sys_user` VALUES ('3', '李勇', '946509621@qq.com', '17723321245', '0', '1', '2019-09-17 17:31:06', '2019-11-22 11:19:27', 'liyong', '$apr1$liyong$f4uNIOJAUPQKwkBTU.QyD/', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for sys_user_role
@@ -2165,12 +2647,24 @@ CREATE TABLE `vediodocs` (
   `url` text COMMENT '存储地址',
   `note` text COMMENT '文件描述',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='影像资料';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='影像资料';
 
 -- ----------------------------
 -- Records of vediodocs
 -- ----------------------------
-INSERT INTO `vediodocs` VALUES ('1', '1', '1', '1', '1', '1', '/files/vediodocs/15689637354910.sql,/files/vediodocs/15689637396431.txt', '11111');
+INSERT INTO `vediodocs` VALUES ('1', '1', '1', '自贡地质公园2012-2016年临时展览统计表', '', '地质公园管理处', '/files/vediodocs/15739977377402-自贡地质公园2012-2016年临时展览统计表Statistical Table of Temporary Exhibitions of Zigong Geopark 2012-2016.pdf', '');
+INSERT INTO `vediodocs` VALUES ('2', '1', '2', '管理处——自贡世界地质公园2012-2016年开发旅游产品清单List of Tourism Products Developed by Zigong Geopark 2012 - 2016', '', '地质公园管理处', '/files/vediodocs/15739977763153-管理处——自贡世界地质公园2012-2016年开发旅游产品清单List of Tourism Products Developed by Zigong Geopark 2012 - 2016.pdf', '');
+INSERT INTO `vediodocs` VALUES ('3', '1', '3', '地质遗迹保护项目图片', '', '地质公园管理处', '/files/vediodocs/15739979104204-地质遗迹保护项目图片.pdf', '');
+INSERT INTO `vediodocs` VALUES ('4', '1', '4', '地质公园申请书', '', '地质公园管理处', '/files/vediodocs/15739980857555-I. 地质与景观 Geology and Landscape.pdf,/files/vediodocs/15739981438716-II.管理结构 Management Structure.pdf,/files/vediodocs/15739981491827-Ⅲ.信息和环境教育 Information and Environmental Educatio.pdf,/files/vediodocs/15739982180808-Ⅳ.地质旅游 Geotourism.pdf,/files/vediodocs/15739982526679-Ⅴ.区域可持续.pdf,/files/vediodocs/157399832623310-B表.pdf', '');
+INSERT INTO `vediodocs` VALUES ('5', '1', '5', '自贡世界地质公园扩资调查综合考察报告', '二〇一六年一月', '四川省地矿局物探队', '/files/vediodocs/157399844478211-自贡世界地质公园扩资调查综考报告2016.725中文.pdf', '');
+INSERT INTO `vediodocs` VALUES ('6', '1', '6', '10导游图折页版', '', '地质公园管理处', '/files/vediodocs/15739989720000-10导游图折页版.pdf,/files/vediodocs/15739989720121-导游指南版初.pdf,/files/vediodocs/15739992028014-10导游图折页封底.jpg,/files/vediodocs/15739992152115-10导游图折页封面2.jpg,/files/vediodocs/15739992152386-导游指南封.jpg', '');
+INSERT INTO `vediodocs` VALUES ('7', '1', '7', '自贡世界地质公园规划基础资料汇编', '2016年3月', '四川省自贡市人民政府 自贡世界地质公园管理处 四川省地质矿产勘查开发局物探队', '/files/vediodocs/15739990642482-2016基础资料汇编.pdf', '');
+INSERT INTO `vediodocs` VALUES ('8', '1', '8', '自贡世界地质公园规划 文本 （2016—2030）', '', '地质公园管理处', '/files/vediodocs/15739991805733-2016自贡文本.pdf', '');
+INSERT INTO `vediodocs` VALUES ('9', '1', '9', '自贡国家地质公园坐标范围的报告', '2017年7月28日', '自贡国土资源局', '/files/vediodocs/15739994285047-自贡国家地质公园坐标范围的报告.pdf', '');
+INSERT INTO `vediodocs` VALUES ('10', '1', '10', '中国自贡世界地质公园规划', '2009年12月', '自贡市人民政府', '/files/vediodocs/15739995092518-规划文本－A4.pdf', '');
+INSERT INTO `vediodocs` VALUES ('11', '1', '11', '国家地质公园申报材料', '', '地质公园管理处', '/files/vediodocs/15739997955999-地质公园申报书正式.pdf,/files/vediodocs/157399979561110-自贡恐龙地质公园总体规划报告书.pdf,/files/vediodocs/157399979561411-地质公园综合考察报告.pdf,/files/vediodocs/157399979567912-自贡恐龙博物馆（公园）照片集.pdf', '');
+INSERT INTO `vediodocs` VALUES ('12', '1', '12', '自贡世界地质公园吉成井井盐矿山遗迹保护项目可行性研究报告2014-11-29', '2014年11月', '自贡市国土资源局', '/files/vediodocs/157399994814913-自贡世界地质公园吉成井井盐矿山遗迹保护项目可行性研究报告2014-11-29.pdf', '');
+INSERT INTO `vediodocs` VALUES ('13', '1', '13', '自贡画册', '无', '无', '/files/vediodocs/157400005759614-1-17.pdf,/files/vediodocs/157400005763115-134-141.pdf,/files/vediodocs/157400005778916-142-163.pdf,/files/vediodocs/157400005805017-70-101.pdf,/files/vediodocs/157400005811718-102-133.pdf,/files/vediodocs/157400005812719-18-69.pdf', '');
 
 -- ----------------------------
 -- Table structure for vrdata
@@ -2184,8 +2678,18 @@ CREATE TABLE `vrdata` (
   `url` text COMMENT '访问地址',
   `vrdesc` text COMMENT 'vr描述',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地质公园VR全景数据';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地质公园VR全景数据';
 
 -- ----------------------------
 -- Records of vrdata
 -- ----------------------------
+INSERT INTO `vrdata` VALUES ('2', '1', '1', '三多寨', 'http://360.ziggeopark.com/pano//index.html?xml=sdz.xml', 'vr');
+INSERT INTO `vrdata` VALUES ('3', '1', '2', '恐龙博物馆', 'http://360.ziggeopark.com/KongLong360/', 'vr');
+INSERT INTO `vrdata` VALUES ('4', '1', '3', '燊海井', 'http://360.ziggeopark.com/ShenHaiJing360/', 'vr');
+INSERT INTO `vrdata` VALUES ('5', '1', '4', '盐业历史博物馆 ', 'http://360.ziggeopark.com/YanYie360/', 'vr');
+INSERT INTO `vrdata` VALUES ('6', '1', '5', '艾叶古镇', 'http://360.ziggeopark.com/pano/index.html?xml=ayz.xml', 'vr');
+INSERT INTO `vrdata` VALUES ('7', '1', '6', '东源井', 'http://360.ziggeopark.com/pano//index.html?xml=dyj.xml', 'vr');
+INSERT INTO `vrdata` VALUES ('8', '1', '7', '荣县大佛', 'http://360.ziggeopark.com/RongXianDaFu360/', 'vr');
+INSERT INTO `vrdata` VALUES ('9', '1', '8', '石笋沟', 'http://360.ziggeopark.com/pano//index.html?xml=ssg.xml', 'vr');
+INSERT INTO `vrdata` VALUES ('10', '1', '9', '花龙沟', 'http://360.ziggeopark.com/pano//index.html?xml=hlg.xml', 'vr');
+INSERT INTO `vrdata` VALUES ('11', '1', '10', '桫椤谷', 'http://360.ziggeopark.com/pano//index.html?xml=mlg.xml', 'vr');
