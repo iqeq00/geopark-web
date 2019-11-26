@@ -72,3 +72,7 @@
 * #### jetcache
 
 * #### quartz 定时任务
+
+* #### mysql 读写分离
+
+* #### redis 主从
