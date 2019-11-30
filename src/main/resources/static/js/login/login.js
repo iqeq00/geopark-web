@@ -33,8 +33,8 @@ layui.config({
                 type: 'POST',
                 contentType: 'application/json',
                 success: function (data) {
-                    console.log(data);
-                    console.log(data.result);
+                    // console.log(data);
+                    // console.log(data.result);
                     config.putUid(data.result.uid);
                     config.putToken(data.result.token);
                     location.replace(url);
