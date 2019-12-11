@@ -82,7 +82,7 @@ public class ImageUpload {
 			if (!file.isEmpty()) {
 				File savedir = mkDirs(fileFolder);
 //				fileName = imageScale.getImageName() + "-" + file.getOriginalFilename().substring(0,file.getOriginalFilename().lastIndexOf(".")) + "." + imageScale.contentType;
-				fileName = imageScale.getImageName() + "-" + file.getOriginalFilename();
+				fileName = imageScale.getImageName() + "-" + file.getOriginalFilename().trim();
 				File saveFile = new File(savedir, fileName);
 				FileUtils.copyInputStreamToFile(file.getInputStream(), saveFile);
 			}
