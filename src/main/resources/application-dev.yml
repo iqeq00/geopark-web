@@ -8,6 +8,11 @@ spring:
 #    port: 6379
 #    host: 172.16.254.16
 #    password: shop
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
 
 geopark:
   image:
