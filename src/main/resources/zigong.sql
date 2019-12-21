@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mysql16
-Source Server Version : 50718
-Source Host           : 172.16.254.16:3306
+Source Server         : localhost
+Source Server Version : 50528
+Source Host           : 127.0.0.1:3306
 Source Database       : zigong
 
 Target Server Type    : MYSQL
-Target Server Version : 50718
+Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2019-11-22 14:59:45
+Date: 2020-01-02 11:16:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -78,12 +78,51 @@ CREATE TABLE `culturalsites` (
   `level` varchar(256) DEFAULT NULL COMMENT '保护级别',
   `number` varchar(256) DEFAULT NULL COMMENT '含文物点数量',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='文物保护单位';
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='文物保护单位';
 
 -- ----------------------------
 -- Records of culturalsites
 -- ----------------------------
-INSERT INTO `culturalsites` VALUES ('6', '1', '2', '2', '2', '2', '2', '2', '2');
+INSERT INTO `culturalsites` VALUES ('6', '1', '西秦会馆', '第三批', '清', '古建筑', '自贡市自流井区新街街道龙凤山社区', '国保', '1');
+INSERT INTO `culturalsites` VALUES ('7', '1', '自贡桓侯宫', '第七批', '清', '古建筑', '自贡市自流井区新街街道龙凤山社区', '国保', '1');
+INSERT INTO `culturalsites` VALUES ('8', '1', '张伯卿公馆', '第七批', '中华民国', '近现代重要史迹及代表性建筑', '自贡市贡井区筱溪街道青杠林社区', '国保', '1');
+INSERT INTO `culturalsites` VALUES ('9', '1', '东源井古盐场', '第七批', '清', '近现代重要史迹及代表性建筑', '自贡市贡井区建设镇重滩村6组大塘山', '国保', '1');
+INSERT INTO `culturalsites` VALUES ('10', '1', '燊海井', '第三批', '清', '古建筑', '自贡市大安区大安街道大街社区289号', '国保', '');
+INSERT INTO `culturalsites` VALUES ('11', '1', '吉成井盐作坊遗址', '第七批', '清', '古建筑', '自贡市大安区龙井街道和大社区杨家冲上凤岭', '国保', '4');
+INSERT INTO `culturalsites` VALUES ('12', '1', '荣县大佛', '第六批', '唐', '石窟寺及石刻', '自贡市荣县旭阳镇桂林街社区大佛路1号', '国保', '1');
+INSERT INTO `culturalsites` VALUES ('13', '1', '吴玉章故居', '第六批', '清', '近现代重要史迹及代表性建筑', '自贡市荣县双石镇蔡家堰村6组蔡家堰', '国保', '1');
+INSERT INTO `culturalsites` VALUES ('14', '1', '荣县镇南塔', '第七批', '宋辽金', '古建筑', '自贡市荣县旭阳镇荣州路社区', '国保', '1');
+INSERT INTO `culturalsites` VALUES ('15', '1', '漆树乐善坊', '', '清咸丰元年（1851）', '古建筑', '自贡市自流井区漆树乡街中心', '', '');
+INSERT INTO `culturalsites` VALUES ('16', '1', '艾叶滩码头', '', '清', '古建筑', '自贡市贡井区艾叶镇李家桥社区3组', '', '');
+INSERT INTO `culturalsites` VALUES ('17', '1', '王爷庙', '第三批', '清', '古建筑', '自贡市自流井区新街街道龙凤山社区', '省保', '1');
+INSERT INTO `culturalsites` VALUES ('18', '1', '卢德铭故居', '第九批', '清光绪三十一年（1905）', '近现代重要史迹及代表性建筑', '自贡市自流井区仲权镇', '省保', '1');
+INSERT INTO `culturalsites` VALUES ('19', '1', '自贡陈家祠堂', '第七批', '清光绪二十七年（1901）', '古建筑', '自贡市贡井区贡井街顺岩碥33号', '省保', '1');
+INSERT INTO `culturalsites` VALUES ('20', '1', '中坝钟氏庄园', '第七批', '清咸丰四年（1854）', '近现代重要史迹及代表性建筑', '自贡市贡井区龙潭镇中坝村5组', '省保', '');
+INSERT INTO `culturalsites` VALUES ('21', '1', '雷公坡崖墓群', '第八批', '汉', '古墓葬', '自贡市贡井区艾叶镇石辊村6组', '省保', '1');
+INSERT INTO `culturalsites` VALUES ('22', '1', '贡井贵州庙', '第八批', '清同治六年（1867）', '古建筑', '自贡市贡井区贡井街道老街社区新华街21号', '省保', '1');
+INSERT INTO `culturalsites` VALUES ('23', '1', '贡井南华宫', '第八批', '清光绪二十五年（1899）', '古建筑', '自贡市贡井区贡井街道老街社区南华巷6号', '省保', '1');
+INSERT INTO `culturalsites` VALUES ('24', '1', '大山铺恐龙化石群埋藏遗址', '第三批', '旧石器', '其他', '自贡市大安区大山铺镇', '省保', '1');
+INSERT INTO `culturalsites` VALUES ('25', '1', '凉高山牌坊群', '第七批', '清', '古建筑', '自贡市大安区凉高山街', '省保', '7');
+INSERT INTO `culturalsites` VALUES ('26', '1', '三多古寨', '第九批', '清咸丰三年（1853）', '古建筑', '自贡市大安区三多寨镇', '省保', '');
+INSERT INTO `culturalsites` VALUES ('27', '1', '荣县二佛', '第八批', '唐', '石窟寺及石刻', '自贡市荣县旭阳镇二佛路社区', '省保', '1');
+INSERT INTO `culturalsites` VALUES ('28', '1', '通虹井天车', '', '中华民国十七年（1928）', '近现代重要史迹及代表性建筑', '自贡市自流井区火井沱', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('29', '1', '宝隆井天车', '', '清光绪三十二年（1907）', '古遗址', '自贡市自流井区火井沱', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('30', '1', '小桥井', '', '', '', '自贡市自流井区同兴路', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('31', '1', '大公井遗址', '', '南北朝', '古遗址', '自贡市贡井区贡井街河街子', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('32', '1', '云蒸井天车', '', '清', '古建筑', '自贡市贡井区长土镇张家山', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('33', '1', '双成井天车', '', '清同治五年（1866）', '古建筑', '自贡市大安区西山公园', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('34', '1', '源通井', '', '清光绪二十四年（1898）', '古建筑', '自贡市大安区政府南1.5公里', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('35', '1', '长山岭硅化木', '', '旧石器', '其他', '自贡市大安区凉高山南1公里', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('36', '1', '铁炉嘴冶铁遗址', '', '汉', '古遗址', '自贡市荣县铁厂镇曹家坪村五组', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('37', '1', '大观桥牌坊', '', '清同治十二年（1873）', '古建筑', '自贡市荣县东佳镇赵家桥村', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('38', '1', '奉先桥', '', '', '', '自贡市荣县乐德镇高滩村', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('39', '1', '窝棚湾摩崖造像', '', '唐代', '石窟寺及石刻', '自贡市荣县正紫镇窝棚湾村5组大佛崖', '市保', '1');
+INSERT INTO `culturalsites` VALUES ('40', '1', '青龙山恐龙化石点', '', '', '', '自贡市荣县复兴乡朱家庙村', '区县保', '1');
+INSERT INTO `culturalsites` VALUES ('41', '1', '虎榜山摩崖造像', '', '', '石窟寺及石刻', '自贡市荣县双石镇虎板村11组温家岩洞', '区县保', '1');
+INSERT INTO `culturalsites` VALUES ('42', '1', '药王寺摩崖造像', '', '', '石窟寺及石刻', '自贡市荣县鼎新镇鲤鱼村2组', '区县保', '1');
+INSERT INTO `culturalsites` VALUES ('43', '1', '来牟千佛崖摩崖造像', '', '', '石窟寺及石刻', '自贡市荣县来牟镇一洞桥村13组千佛崖', '区县保', '1');
+INSERT INTO `culturalsites` VALUES ('44', '1', '高坎山崖墓群', '', '', '', '自贡市荣县保华镇高石坎村8组蛮洞岭', '区县保', '1');
+INSERT INTO `culturalsites` VALUES ('45', '1', '郭家冲碉楼', '', '', '', '自贡市荣县留佳镇花红村14组', '区县保', '1');
 
 -- ----------------------------
 -- Table structure for displayboard
@@ -127,7 +166,7 @@ CREATE TABLE `earthquake` (
   `threat` varchar(256) DEFAULT NULL COMMENT '威胁对象',
   `note` text COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地灾信息';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地灾信息';
 
 -- ----------------------------
 -- Records of earthquake
@@ -1250,7 +1289,7 @@ CREATE TABLE `picdocs` (
   `url` text COMMENT '存储地址',
   `note` text COMMENT '文件描述',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='文件资料';
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='文件资料';
 
 -- ----------------------------
 -- Records of picdocs
@@ -1264,15 +1303,30 @@ INSERT INTO `picdocs` VALUES ('6', '1', '6', '2016自贡世界地质公园规划
 INSERT INTO `picdocs` VALUES ('7', '1', '7', '2016自贡世界地质公园规划-土地利用规划图', '2016年', '自贡世界地质公园管理处', '/images/picdocs/15725046808233.jpg', '土地利用规划图');
 INSERT INTO `picdocs` VALUES ('8', '1', '8', '自贡世界地质公园新增区域地质遗迹调查与评价项目地质遗迹分布图', '2019年10月', '地质公园管理处', '/images/picdocs/15742385846560-自贡世界地质公园新增区域地质遗迹调查与评价项目地质遗迹分布图.JPG', '');
 INSERT INTO `picdocs` VALUES ('9', '1', '9', '自贡世界地质公园新增区域地质遗迹调查与评价项目地质遗迹保护规划建议图', '2019年10月', '地质公园管理处', '/images/picdocs/15739917324341-自贡世界地质公园新增区域地质遗迹调查与评价项目地质遗迹保护规划建议图.JPG', '');
-INSERT INTO `picdocs` VALUES ('10', '1', '10', '地质公园科普活动照片-幼儿园', '', '地质公园管理处', '/images/picdocs/157399670182424-2013汇东幼儿园小朋友在画天车.JPG,/images/picdocs/157399670182423-2012袋鼠妈妈幼儿园.JPG,/images/picdocs/157399670183725-2013.12.13汇东幼儿园吉祥物选取.jpg,/images/picdocs/157399670186726-2012袋鼠妈妈参观.JPG,/images/picdocs/157399670186927-2012袋鼠妈妈幼儿园参观.JPG,/images/picdocs/157399670189029-2013汇东幼儿园小朋友在天街画画.JPG,/images/picdocs/157399670187528-2012袋鼠妈妈幼儿园小朋友.JPG,/images/picdocs/157399670191430-2013金童双语幼儿园参观.JPG,/images/picdocs/157399670194131-2013金童双语幼儿园合影.JPG,/images/picdocs/157399670197732-2014年袋鼠妈妈幼儿园亲子植树活动.jpg,/images/picdocs/157399670204833-2015仁和半岛袋鼠妈妈幼儿园科普活动 (1).jpg,/images/picdocs/157399670204833-2015袋鼠妈妈幼儿园榫卯 比赛 (2).JPG,/images/picdocs/157399670206034-2015袋鼠妈妈幼儿园榫卯 比赛 (1).JPG,/images/picdocs/157399670206635-2015年袋鼠妈妈幼儿园参观 (1).JPG,/images/picdocs/157399670212437-2015仁和半岛袋鼠妈妈幼儿园科普活动.jpg,/images/picdocs/157399670213238-2015年袋鼠妈妈幼儿园参观.JPG,/images/picdocs/157399670210836-2015袋鼠妈妈幼儿园榫卯 比赛.jpg,/images/picdocs/157399670216539-20160419袋鼠妈妈幼儿园 (8).jpg,/images/picdocs/157399670217540-IMG_3891.jpg,/images/picdocs/157399670217941-IMG_3881.jpg,/images/picdocs/157399670729942-照片 289.jpg', '');
-INSERT INTO `picdocs` VALUES ('11', '1', '11', '地质公园科普活动照片-小学生', '', '地质公园管理处', '/images/picdocs/157399679820444-8月1日不眠夜.JPG,/images/picdocs/157399679820845-2014年“世界地球日”2.jpg,/images/picdocs/157399679821646-2012青少年宫师生参观.jpg,/images/picdocs/157399679821647-2012青少年宫参观.jpg,/images/picdocs/157399679824148-“我心中的恐龙”绘画比赛.jpg,/images/picdocs/157399679828450-2014年全国科普日活动1.jpg,/images/picdocs/157399679826349-2013富顺县团委留守儿童集体.JPG,/images/picdocs/157399679830251-2015关工委未成年人 (1).jpg,/images/picdocs/157399679831853-2015关工委未成年人.jpg,/images/picdocs/157399679834454-2015年香港救恩书院.JPG,/images/picdocs/157399679831752-2014年红旗小学参观博物馆.JPG,/images/picdocs/157399679840855-2015小记者参观博物馆.JPG,/images/picdocs/157399679842956-2016凤凰小学参观博物馆.jpg,/images/picdocs/157399679843858-2016刘山中心校参观博物馆.jpg,/images/picdocs/157399679845059-2016绿盛学校参观博物馆.JPG,/images/picdocs/157399679842957-2015 迎新春·绘会馆.JPG,/images/picdocs/157399679847160-2015育英小学参观抗战胜利展.JPG,/images/picdocs/157399679855461-2016孝心讲故事 (1).JPG,/images/picdocs/157399679857862-2016孝心讲故事.JPG,/images/picdocs/157399681439563-BSS_1838.jpg,/images/picdocs/157399681439867-BSS_1849.jpg,/images/picdocs/157399681439565-BSS_1848.jpg,/images/picdocs/157399681439866-BSS_1844.jpg,/images/picdocs/157399681439564-2016永安小学参观博物馆.JPG,/images/picdocs/157399681439968-BSS_1846.jpg,/images/picdocs/157399681450169-BSS_1851.jpg,/images/picdocs/157399681450270-BSS_1850.jpg,/images/picdocs/157399681450271-BSS_1858.jpg,/images/picdocs/157399681451072-BSS_1961.JPG,/images/picdocs/157399681451273-BSS_1856.jpg,/images/picdocs/157399681451974-BSS_1857.jpg,/images/picdocs/157399681460277-BSS_1997.JPG,/images/picdocs/157399681459976-BSS_2003.JPG,/images/picdocs/157399681460478-BSS_2007.JPG,/images/picdocs/157399681461179-BSS_2008.JPG,/images/picdocs/157399681459275-BSS_1999.JPG,/images/picdocs/157399681461179-BSS_2018.JPG,/images/picdocs/157399681469480-BSS_2023.JPG,/images/picdocs/157399681470781-BSS_2041.JPG,/images/picdocs/157399683052484-BSS_2063.JPG,/images/picdocs/157399683052482-BSS_2062.JPG,/images/picdocs/157399683055585-BSS_2044.JPG,/images/picdocs/157399683055986-BSS_2043.JPG,/images/picdocs/157399683052483-BSS_2045.JPG,/images/picdocs/157399683057887-BSS_2066.JPG,/images/picdocs/157399683065688-BSS_2076.JPG,/images/picdocs/157399683067691-BSS_2069.JPG,/images/picdocs/157399683067489-BSS_2068.JPG,/images/picdocs/157399683067490-BSS_2071.JPG,/images/picdocs/157399683068092-BSS_2073.JPG,/images/picdocs/157399683076793-BSS_2084.JPG,/images/picdocs/157399683079595-BSS_2079.JPG,/images/picdocs/157399683079996-BSS_2078.JPG,/images/picdocs/157399683081397-BSS_2100.JPG,/images/picdocs/157399683079494-BSS_2081.JPG,/images/picdocs/157399683082998-BSS_2088.JPG,/images/picdocs/157399683091799-BSS_2102.JPG,/images/picdocs/1573996830939100-BSS_2108.JPG,/images/picdocs/1573996830949101-BSS_2103.JPG,/images/picdocs/1573996848301103-BSS_2132.JPG,/images/picdocs/1573996848301102-BSS_2133.JPG,/images/picdocs/1573996848313104-BSS_2123.JPG,/images/picdocs/1573996848329106-BSS_2113.JPG,/images/picdocs/1573996848329107-BSS_2117.JPG,/images/picdocs/1573996848326105-BSS_2118.JPG,/images/picdocs/1573996848392108-BSS_2137.JPG,/images/picdocs/1573996848422110-BSS_2141.JPG,/images/picdocs/1573996848421109-BSS_2140.JPG,/images/picdocs/1573996848428111-BSS_2171.JPG,/images/picdocs/1573996848436113-BSS_2186.JPG,/images/picdocs/1573996848433112-BSS_2170.JPG,/images/picdocs/1573996848492114-BSS_2193.JPG,/images/picdocs/1573996848519116-BSS_2206.JPG,/images/picdocs/1573996848520117-BSS_2208.JPG,/images/picdocs/1573996848527118-BSS_2212.JPG,/images/picdocs/1573996848514115-BSS_2197.JPG,/images/picdocs/1573996848546119-BSS_2217.JPG,/images/picdocs/1573996848613120-BSS_2221.JPG,/images/picdocs/1573996848617121-BSS_2223.JPG,/images/picdocs/1573996865901122-BSS_2236.JPG,/images/picdocs/1573996865901123-BSS_2230.JPG,/images/picdocs/1573996865901124-BSS_2228.JPG,/images/picdocs/1573996865901125-BSS_2229.JPG,/images/picdocs/1573996865915126-BSS_2226.JPG,/images/picdocs/1573996865933127-BSS_2224.JPG,/images/picdocs/1573996865990128-BSS_2238.JPG,/images/picdocs/1573996866002129-BSS_2239.JPG,/images/picdocs/1573996866017132-BSS_2252.JPG,/images/picdocs/1573996866017131-BSS_2246.JPG,/images/picdocs/1573996866080134-BSS_2253.JPG,/images/picdocs/1573996866007130-BSS_2244.JPG,/images/picdocs/1573996866023133-BSS_2250.JPG,/images/picdocs/1573996866101135-BSS_2254.JPG,/images/picdocs/1573996866134136-BSS_2282.JPG,/images/picdocs/1573996866188137-BSS_2291.JPG,/images/picdocs/1573996866195138-BSS_2288.JPG,/images/picdocs/1573996866207140-BSS_2255.JPG,/images/picdocs/1573996866204139-BSS_2299.JPG,/images/picdocs/1573996866213141-BSS_2300.JPG,/images/picdocs/1573996875707142-第二期小小讲解员1.JPG,/images/picdocs/1573996875718143-BSS_2423.JPG,/images/picdocs/1573996875718144-BSS_2422.JPG,/images/picdocs/1573996875733147-小小讲解员1.jpg,/images/picdocs/1573996875728145-BSS_2401.JPG,/images/picdocs/1573996875731146-第二期小小讲解员.jpg,/images/picdocs/1573996875799148-自贡恐龙科普季2.jpg,/images/picdocs/1573996875832149-小小讲解员3.jpg,/images/picdocs/1573996875929151-小小讲解员4.JPG,/images/picdocs/1573996875929150-小小讲解员2.jpg', '');
-INSERT INTO `picdocs` VALUES ('12', '1', '12', '地质公园科普活动照片-中学生', '', '地质公园管理处', '/images/picdocs/1573996948892152-2012自贡艺术学校听讲解.JPG,/images/picdocs/1573996948893153-2013年冰河动物展照片.jpg,/images/picdocs/1573996948910155-2013荣县9+3藏区学生参观.jpg,/images/picdocs/1573996948904154-2012自贡艺术学校参观.JPG,/images/picdocs/1573996948963156-2012飞鱼学校参观博物馆.JPG,/images/picdocs/1573996948963157-2012飞鱼学校参观.JPG,/images/picdocs/1573996949015158-2015梧桐学校榫卯大比拼.JPG,/images/picdocs/1573996949023159-2014年青少年宫参观 (1).JPG,/images/picdocs/1573996949079160-2014年青少年宫参观.JPG,/images/picdocs/1573996949090161-2015年解放中学参观博物馆.JPG,/images/picdocs/1573996949126162-2015盐博课堂 (1).JPG,/images/picdocs/1573996949145163-2015盐博课堂.JPG,/images/picdocs/1573996949154164-2016世界地球日 (1).JPG,/images/picdocs/1573996949226165-2016二十八中参观博物馆.JPG,/images/picdocs/1573996949248166-照片 279.jpg,/images/picdocs/1573996949252167-照片 302.jpg,/images/picdocs/1573996949287168-2016世界地球日.JPG,/images/picdocs/1573996949380169-学生参观冰河展-2.JPG', '');
-INSERT INTO `picdocs` VALUES ('13', '1', '13', '地质公园科普活动照片-大学生', '', '地质公园管理处', '/images/picdocs/1573996974015170-2015年四川师范大学学生参观 (1).JPG,/images/picdocs/1573996974016172-2015香港苗圃 (1).JPG,/images/picdocs/1573996974015171-2015四川师范大学参观博物馆 (1).JPG,/images/picdocs/1573996974018173-2015年四川师范大学学生参观.JPG,/images/picdocs/1573996974020174-2015四川师范大学参观博物馆.JPG,/images/picdocs/1573996974026175-2015香港苗圃.JPG,/images/picdocs/1573996974102176-IMG_0908.JPG,/images/picdocs/1573996974119178-IMG_2703.JPG,/images/picdocs/1573996974114177-IMG_2593.JPG,/images/picdocs/1573996974128179-IMG_0932.JPG,/images/picdocs/1573996974145180-IMG_20141122_143824.jpg', '');
-INSERT INTO `picdocs` VALUES ('14', '1', '14', '地质公园科普活动照片-进学校', '', '地质公园管理处', '/images/picdocs/1573997033320181-3月30日“话说恐龙”科普巡讲进校园第一站于佳乡小学.jpg,/images/picdocs/1573997033342182-2012贡井艾叶小学积极回答问题.JPG,/images/picdocs/1573997033355184-06月25日“恐龙世界几多谜”主题班会.jpg,/images/picdocs/1573997033355185-5月15日《龙宫讲坛》—进化论：人类思想的飞跃.jpg,/images/picdocs/1573997033347183-6月—9月自贡市汇东实验学校;恐龙吉祥物名字和故事征集.jpg,/images/picdocs/1573997033401187-2012贡井艾叶小学科普活动.JPG,/images/picdocs/1573997033369186-4月21日旭川中学讲座.jpg,/images/picdocs/1573997033460188-2012省盐校知识讲座.JPG,/images/picdocs/1573997033466190-2012汇西小学回答问题.JPG,/images/picdocs/1573997033464189-2012汇西小学科普活动.JPG,/images/picdocs/1573997033489191-2012省盐校师生听讲.JPG,/images/picdocs/1573997033531192-2012仲权小学回答问题.JPG,/images/picdocs/1573997033540194-2012仲权小学讲课.JPG,/images/picdocs/1573997033534193-2012育英小学学生观看展板.JPG,/images/picdocs/1573997033545195-2012育英小学科普活动.JPG,/images/picdocs/1573997033558196-2013博物馆走进英杰希望小学.JPG,/images/picdocs/1573997033565197-2013.12.12汇东实验学校吉祥物选取.jpg,/images/picdocs/1573997033605198-2013刘山小学同学积极回答问题.JPG,/images/picdocs/1573997033605199-2013刘山小学科普讲座.JPG,/images/picdocs/1573997033618200-2013英杰小学同学回答问题.JPG,/images/picdocs/1573997045729202-2014年博物馆进漆树中心校科普活动照片.JPG,/images/picdocs/1573997045733203-2015.5.18汇兴小学 科普讲座IMG_1394.JPG,/images/picdocs/1573997045726201-2015.5.18汇兴小学 科普讲座IMG_1389.JPG,/images/picdocs/1573997045748204-2014年博物馆进漆树中心校科普活动照片 (1).JPG,/images/picdocs/1573997045819207-2015博物馆走进麻柳小学.JPG,/images/picdocs/1573997045823208-2015博物馆走进麻柳小学 (1).JPG,/images/picdocs/1573997045810205-2014年博物馆进荣边小学科普活动.JPG,/images/picdocs/1573997045814206-2014年博物馆进荣边小学科普活动 (1).JPG,/images/picdocs/1573997045855209-2015瓦市中心校 (1).JPG,/images/picdocs/1573997045858210-2015瓦市中心校.JPG,/images/picdocs/1573997045944211-2015祝家小学科普活动.JPG,/images/picdocs/1573997045954212-江姐小学人偶剧.jpg,/images/picdocs/1573997045961213-2016杜快小学讲座 (1).JPG,/images/picdocs/1573997045961214-2016杜快小学讲座.JPG,/images/picdocs/1573997046003215-2015祝家小学科普活动 (1).JPG', '');
-INSERT INTO `picdocs` VALUES ('15', '1', '15', '地质公园科普活动照片-市民、社区、乡镇', '', '地质公园管理处', '/images/picdocs/1573997102081216-2014年“国际博物馆日”1.jpg,/images/picdocs/1573997102084218-2014年“世界地球日”1.jpg,/images/picdocs/1573997102083217-2014年“国际博物馆日”.jpg,/images/picdocs/1573997102089219-9月27日世界旅游日科普宣传活动.jpg,/images/picdocs/1573997102130220-5.18博物馆日活动.jpg,/images/picdocs/1573997102143221-4.22地球日.jpg,/images/picdocs/1573997102155223-2014年刘山镇党员参观.JPG,/images/picdocs/1573997102155222-2014年刘山镇党员参观 (1).JPG,/images/picdocs/1573997102171224-2015年5月15日广华社区IMG_1363.JPG,/images/picdocs/1573997102171225-2015年5月15日广华社区IMG_1360.JPG,/images/picdocs/1573997102262227-2015年童话佳年 (1).JPG,/images/picdocs/1573997102262226-2015年流动文明形象大使 (1).JPG,/images/picdocs/1573997102322228-2015年童话佳年 (2).JPG,/images/picdocs/1573997102322228-2015七夕音乐会 (1).JPG,/images/picdocs/1573997102322229-2015年童话佳年.JPG,/images/picdocs/1573997102357230-2015七夕音乐会.JPG,/images/picdocs/1573997102374231-2015年流动文明形象大使.JPG,/images/picdocs/1573997102422232-2015年流动文明形象大使 (2).JPG,/images/picdocs/1573997102476233-2015挑（背）盐竞赛活动 (1).JPG,/images/picdocs/1573997102525234-2015挑（背）盐竞赛活动.JPG,/images/picdocs/1573997117365235-2015迎春文化惠民活动—西秦艺苑.jpg,/images/picdocs/1573997117375236-2015迎春文化惠民活动—西秦艺苑 (1).JPG,/images/picdocs/1573997117386237-2015争做品德高尚自贡人 (1).JPG,/images/picdocs/1573997117388238-2015西南石油局老党员参观抗战胜利展 (1).jpg,/images/picdocs/1573997117402240-2015西南石油局老党员参观抗战胜利展.jpg,/images/picdocs/1573997117418241-2016-5月10日 土柱村 童心画恐龙.jpg,/images/picdocs/1573997117389239-2015争做品德高尚自贡人.JPG,/images/picdocs/1573997117449242-2016五一活动 (1).JPG,/images/picdocs/1573997117495243-2016盐博课堂.JPG,/images/picdocs/1573997117499244-2016盐博课堂 (1).JPG,/images/picdocs/1573997117521247-2016五一活动.JPG,/images/picdocs/1573997117500245-2016理工学校志愿者活动 (1).jpg,/images/picdocs/1573997117521246-20141220_152638.jpg,/images/picdocs/1573997117579248-20141220_151455.jpg,/images/picdocs/1573997117600249-IMG_6883.JPG,/images/picdocs/1573997117602250-IMG_6903.JPG,/images/picdocs/1573997117613252-IMG_20160328_140443.jpg,/images/picdocs/1573997117613253-IMG_6897.JPG,/images/picdocs/1573997117603251-20141220_154431.jpg,/images/picdocs/1573997126815255-土柱村化石科普讲座 (1).JPG,/images/picdocs/1573997126815257-土柱村化石科普讲座 (2).JPG,/images/picdocs/1573997126815258-IMG_20160328_140456.jpg,/images/picdocs/1573997126815254-IMG_20160328_140534.jpg,/images/picdocs/1573997126815256-IMG_20160328_141804.jpg', '');
+INSERT INTO `picdocs` VALUES ('10', '1', '10', '地质公园科普活动照片-幼儿园', '', '地质公园管理处', '/images/picdocs/157399670182424-2013汇东幼儿园小朋友在画天车.JPG,/images/picdocs/157399670182423-2012袋鼠妈妈幼儿园.JPG,/images/picdocs/157399670183725-2013.12.13汇东幼儿园吉祥物选取.jpg,/images/picdocs/157399670186726-2012袋鼠妈妈参观.JPG,/images/picdocs/157399670186927-2012袋鼠妈妈幼儿园参观.JPG,/images/picdocs/157399670189029-2013汇东幼儿园小朋友在天街画画.JPG,/images/picdocs/157399670187528-2012袋鼠妈妈幼儿园小朋友.JPG,/images/picdocs/157399670191430-2013金童双语幼儿园参观.JPG,/images/picdocs/157399670194131-2013金童双语幼儿园合影.JPG,/images/picdocs/157399670197732-2014年袋鼠妈妈幼儿园亲子植树活动.jpg,/images/picdocs/157399670204833-2015仁和半岛袋鼠妈妈幼儿园科普活动(1).jpg,/images/picdocs/157399670204833-2015袋鼠妈妈幼儿园榫卯比赛(2).JPG,/images/picdocs/157399670206034-2015袋鼠妈妈幼儿园榫卯比赛(1).JPG,/images/picdocs/157399670206635-2015年袋鼠妈妈幼儿园参观(1).JPG,/images/picdocs/157399670212437-2015仁和半岛袋鼠妈妈幼儿园科普活动.jpg,/images/picdocs/157399670213238-2015年袋鼠妈妈幼儿园参观.JPG,/images/picdocs/157399670210836-2015袋鼠妈妈幼儿园榫卯比赛.jpg,/images/picdocs/157399670216539-20160419袋鼠妈妈幼儿园(8).jpg,/images/picdocs/157399670217540-IMG_3891.jpg,/images/picdocs/157399670217941-IMG_3881.jpg', '');
+INSERT INTO `picdocs` VALUES ('11', '1', '11', '地质公园科普活动照片-小学生', '', '地质公园管理处', '/images/picdocs/157399679820444-8月1日不眠夜.JPG,/images/picdocs/157399679820845-2014年“世界地球日”2.jpg,/images/picdocs/157399679821646-2012青少年宫师生参观.jpg,/images/picdocs/157399679821647-2012青少年宫参观.jpg,/images/picdocs/157399679824148-“我心中的恐龙”绘画比赛.jpg,/images/picdocs/157399679828450-2014年全国科普日活动1.jpg,/images/picdocs/157399679826349-2013富顺县团委留守儿童集体.JPG,/images/picdocs/157399679830251-2015关工委未成年人(1).jpg,/images/picdocs/157399679831853-2015关工委未成年人.jpg,/images/picdocs/157399679834454-2015年香港救恩书院.JPG,/images/picdocs/157399679831752-2014年红旗小学参观博物馆.JPG,/images/picdocs/157399679840855-2015小记者参观博物馆.JPG,/images/picdocs/157399679842956-2016凤凰小学参观博物馆.jpg,/images/picdocs/157399679843858-2016刘山中心校参观博物馆.jpg,/images/picdocs/157399679845059-2016绿盛学校参观博物馆.JPG,/images/picdocs/157399679842957-2015迎新春·绘会馆.JPG,/images/picdocs/157399679847160-2015育英小学参观抗战胜利展.JPG,/images/picdocs/157399679855461-2016孝心讲故事(1).JPG,/images/picdocs/157399679857862-2016孝心讲故事.JPG,/images/picdocs/157399681439563-BSS_1838.jpg,/images/picdocs/157399681439867-BSS_1849.jpg,/images/picdocs/157399681439565-BSS_1848.jpg,/images/picdocs/157399681439866-BSS_1844.jpg,/images/picdocs/157399681439564-2016永安小学参观博物馆.JPG,/images/picdocs/157399681439968-BSS_1846.jpg,/images/picdocs/157399681450169-BSS_1851.jpg,/images/picdocs/157399681450270-BSS_1850.jpg,/images/picdocs/157399681450271-BSS_1858.jpg,/images/picdocs/157399681451072-BSS_1961.JPG,/images/picdocs/157399681451273-BSS_1856.jpg,/images/picdocs/157399681451974-BSS_1857.jpg,/images/picdocs/157399681460277-BSS_1997.JPG,/images/picdocs/157399681459976-BSS_2003.JPG,/images/picdocs/157399681460478-BSS_2007.JPG,/images/picdocs/157399681461179-BSS_2008.JPG,/images/picdocs/157399681459275-BSS_1999.JPG,/images/picdocs/157399681461179-BSS_2018.JPG,/images/picdocs/157399681469480-BSS_2023.JPG,/images/picdocs/157399681470781-BSS_2041.JPG,/images/picdocs/157399683052484-BSS_2063.JPG,/images/picdocs/157399683052482-BSS_2062.JPG,/images/picdocs/157399683055585-BSS_2044.JPG,/images/picdocs/157399683055986-BSS_2043.JPG,/images/picdocs/157399683052483-BSS_2045.JPG,/images/picdocs/157399683057887-BSS_2066.JPG,/images/picdocs/157399683065688-BSS_2076.JPG,/images/picdocs/157399683067691-BSS_2069.JPG,/images/picdocs/157399683067489-BSS_2068.JPG,/images/picdocs/157399683067490-BSS_2071.JPG,/images/picdocs/157399683068092-BSS_2073.JPG,/images/picdocs/157399683076793-BSS_2084.JPG,/images/picdocs/157399683079595-BSS_2079.JPG,/images/picdocs/157399683079996-BSS_2078.JPG,/images/picdocs/157399683081397-BSS_2100.JPG,/images/picdocs/157399683079494-BSS_2081.JPG,/images/picdocs/157399683082998-BSS_2088.JPG,/images/picdocs/157399683091799-BSS_2102.JPG,/images/picdocs/1573996830939100-BSS_2108.JPG,/images/picdocs/1573996830949101-BSS_2103.JPG,/images/picdocs/1573996848301103-BSS_2132.JPG,/images/picdocs/1573996848301102-BSS_2133.JPG,/images/picdocs/1573996848313104-BSS_2123.JPG,/images/picdocs/1573996848329106-BSS_2113.JPG,/images/picdocs/1573996848329107-BSS_2117.JPG,/images/picdocs/1573996848326105-BSS_2118.JPG,/images/picdocs/1573996848392108-BSS_2137.JPG,/images/picdocs/1573996848422110-BSS_2141.JPG,/images/picdocs/1573996848421109-BSS_2140.JPG,/images/picdocs/1573996848428111-BSS_2171.JPG,/images/picdocs/1573996848436113-BSS_2186.JPG,/images/picdocs/1573996848433112-BSS_2170.JPG,/images/picdocs/1573996848492114-BSS_2193.JPG,/images/picdocs/1573996848519116-BSS_2206.JPG,/images/picdocs/1573996848520117-BSS_2208.JPG,/images/picdocs/1573996848527118-BSS_2212.JPG,/images/picdocs/1573996848514115-BSS_2197.JPG,/images/picdocs/1573996848546119-BSS_2217.JPG,/images/picdocs/1573996848613120-BSS_2221.JPG,/images/picdocs/1573996848617121-BSS_2223.JPG,/images/picdocs/1573996865901122-BSS_2236.JPG,/images/picdocs/1573996865901123-BSS_2230.JPG,/images/picdocs/1573996865901124-BSS_2228.JPG,/images/picdocs/1573996865901125-BSS_2229.JPG,/images/picdocs/1573996865915126-BSS_2226.JPG,/images/picdocs/1573996865933127-BSS_2224.JPG,/images/picdocs/1573996865990128-BSS_2238.JPG,/images/picdocs/1573996866002129-BSS_2239.JPG,/images/picdocs/1573996866017132-BSS_2252.JPG,/images/picdocs/1573996866017131-BSS_2246.JPG,/images/picdocs/1573996866080134-BSS_2253.JPG,/images/picdocs/1573996866007130-BSS_2244.JPG,/images/picdocs/1573996866023133-BSS_2250.JPG,/images/picdocs/1573996866101135-BSS_2254.JPG,/images/picdocs/1573996866134136-BSS_2282.JPG,/images/picdocs/1573996866188137-BSS_2291.JPG,/images/picdocs/1573996866195138-BSS_2288.JPG,/images/picdocs/1573996866207140-BSS_2255.JPG,/images/picdocs/1573996866204139-BSS_2299.JPG,/images/picdocs/1573996866213141-BSS_2300.JPG,/images/picdocs/1573996875707142-第二期小小讲解员1.JPG,/images/picdocs/1573996875718143-BSS_2423.JPG,/images/picdocs/1573996875718144-BSS_2422.JPG,/images/picdocs/1573996875733147-小小讲解员1.jpg,/images/picdocs/1573996875728145-BSS_2401.JPG,/images/picdocs/1573996875731146-第二期小小讲解员.jpg,/images/picdocs/1573996875799148-自贡恐龙科普季2.jpg,/images/picdocs/1573996875832149-小小讲解员3.jpg,/images/picdocs/1573996875929151-小小讲解员4.JPG,/images/picdocs/1573996875929150-小小讲解员2.jpg', '');
+INSERT INTO `picdocs` VALUES ('12', '1', '12', '地质公园科普活动照片-中学生', '', '地质公园管理处', '/images/picdocs/1573996948892152-2012自贡艺术学校听讲解.JPG,/images/picdocs/1573996948893153-2013年冰河动物展照片.jpg,/images/picdocs/1573996948910155-2013荣县9+3藏区学生参观.jpg,/images/picdocs/1573996948904154-2012自贡艺术学校参观.JPG,/images/picdocs/1573996948963156-2012飞鱼学校参观博物馆.JPG,/images/picdocs/1573996948963157-2012飞鱼学校参观.JPG,/images/picdocs/1573996949015158-2015梧桐学校榫卯大比拼.JPG,/images/picdocs/1573996949023159-2014年青少年宫参观(1).JPG,/images/picdocs/1573996949079160-2014年青少年宫参观.JPG,/images/picdocs/1573996949090161-2015年解放中学参观博物馆.JPG,/images/picdocs/1573996949126162-2015盐博课堂(1).JPG,/images/picdocs/1573996949145163-2015盐博课堂.JPG,/images/picdocs/1573996949154164-2016世界地球日(1).JPG,/images/picdocs/1573996949226165-2016二十八中参观博物馆.JPG,/images/picdocs/1573996949248166-照片279.jpg,/images/picdocs/1573996949252167-照片302.jpg,/images/picdocs/1573996949287168-2016世界地球日.JPG,/images/picdocs/1573996949380169-学生参观冰河展-2.JPG', '');
+INSERT INTO `picdocs` VALUES ('13', '1', '13', '地质公园科普活动照片-大学生', '', '地质公园管理处', '/images/picdocs/1573996974015170-2015年四川师范大学学生参观(1).JPG,/images/picdocs/1573996974016172-2015香港苗圃(1).JPG,/images/picdocs/1573996974015171-2015四川师范大学参观博物馆(1).JPG,/images/picdocs/1573996974018173-2015年四川师范大学学生参观.JPG,/images/picdocs/1573996974020174-2015四川师范大学参观博物馆.JPG,/images/picdocs/1573996974026175-2015香港苗圃.JPG,/images/picdocs/1573996974102176-IMG_0908.JPG,/images/picdocs/1573996974119178-IMG_2703.JPG,/images/picdocs/1573996974114177-IMG_2593.JPG,/images/picdocs/1573996974128179-IMG_0932.JPG,/images/picdocs/1573996974145180-IMG_20141122_143824.jpg', '');
+INSERT INTO `picdocs` VALUES ('14', '1', '14', '地质公园科普活动照片-进学校', '', '地质公园管理处', '/images/picdocs/1573997033320181-3月30日“话说恐龙”科普巡讲进校园第一站于佳乡小学.jpg,/images/picdocs/1573997033342182-2012贡井艾叶小学积极回答问题.JPG,/images/picdocs/1573997033355184-06月25日“恐龙世界几多谜”主题班会.jpg,/images/picdocs/1573997033355185-5月15日《龙宫讲坛》—进化论：人类思想的飞跃.jpg,/images/picdocs/1573997033347183-6月—9月自贡市汇东实验学校;恐龙吉祥物名字和故事征集.jpg,/images/picdocs/1573997033401187-2012贡井艾叶小学科普活动.JPG,/images/picdocs/1573997033369186-4月21日旭川中学讲座.jpg,/images/picdocs/1573997033460188-2012省盐校知识讲座.JPG,/images/picdocs/1573997033466190-2012汇西小学回答问题.JPG,/images/picdocs/1573997033464189-2012汇西小学科普活动.JPG,/images/picdocs/1573997033489191-2012省盐校师生听讲.JPG,/images/picdocs/1573997033531192-2012仲权小学回答问题.JPG,/images/picdocs/1573997033540194-2012仲权小学讲课.JPG,/images/picdocs/1573997033534193-2012育英小学学生观看展板.JPG,/images/picdocs/1573997033545195-2012育英小学科普活动.JPG,/images/picdocs/1573997033558196-2013博物馆走进英杰希望小学.JPG,/images/picdocs/1573997033565197-2013.12.12汇东实验学校吉祥物选取.jpg,/images/picdocs/1573997033605198-2013刘山小学同学积极回答问题.JPG,/images/picdocs/1573997033605199-2013刘山小学科普讲座.JPG,/images/picdocs/1573997033618200-2013英杰小学同学回答问题.JPG,/images/picdocs/1573997045729202-2014年博物馆进漆树中心校科普活动照片.JPG,/images/picdocs/1573997045733203-2015.5.18汇兴小学科普讲座IMG_1394.JPG,/images/picdocs/1573997045726201-2015.5.18汇兴小学科普讲座IMG_1389.JPG,/images/picdocs/1573997045748204-2014年博物馆进漆树中心校科普活动照片(1).JPG,/images/picdocs/1573997045819207-2015博物馆走进麻柳小学.JPG,/images/picdocs/1573997045823208-2015博物馆走进麻柳小学(1).JPG,/images/picdocs/1573997045810205-2014年博物馆进荣边小学科普活动.JPG,/images/picdocs/1573997045814206-2014年博物馆进荣边小学科普活动(1).JPG,/images/picdocs/1573997045855209-2015瓦市中心校(1).JPG,/images/picdocs/1573997045858210-2015瓦市中心校.JPG,/images/picdocs/1573997045944211-2015祝家小学科普活动.JPG,/images/picdocs/1573997045954212-江姐小学人偶剧.jpg,/images/picdocs/1573997045961213-2016杜快小学讲座(1).JPG,/images/picdocs/1573997045961214-2016杜快小学讲座.JPG,/images/picdocs/1573997046003215-2015祝家小学科普活动(1).JPG', '');
+INSERT INTO `picdocs` VALUES ('15', '1', '15', '地质公园科普活动照片-市民、社区、乡镇', '', '地质公园管理处', '/images/picdocs/1573997102081216-2014年“国际博物馆日”1.jpg,/images/picdocs/1573997102084218-2014年“世界地球日”1.jpg,/images/picdocs/1573997102083217-2014年“国际博物馆日”.jpg,/images/picdocs/1573997102089219-9月27日世界旅游日科普宣传活动.jpg,/images/picdocs/1573997102130220-5.18博物馆日活动.jpg,/images/picdocs/1573997102143221-4.22地球日.jpg,/images/picdocs/1573997102155223-2014年刘山镇党员参观.JPG,/images/picdocs/1573997102155222-2014年刘山镇党员参观(1).JPG,/images/picdocs/1573997102171224-2015年5月15日广华社区IMG_1363.JPG,/images/picdocs/1573997102171225-2015年5月15日广华社区IMG_1360.JPG,/images/picdocs/1573997102262227-2015年童话佳年(1).JPG,/images/picdocs/1573997102262226-2015年流动文明形象大使(1).JPG,/images/picdocs/1573997102322228-2015年童话佳年(2).JPG,/images/picdocs/1573997102322228-2015七夕音乐会(1).JPG,/images/picdocs/1573997102322229-2015年童话佳年.JPG,/images/picdocs/1573997102357230-2015七夕音乐会.JPG,/images/picdocs/1573997102374231-2015年流动文明形象大使.JPG,/images/picdocs/1573997102422232-2015年流动文明形象大使(2).JPG,/images/picdocs/1573997102476233-2015挑（背）盐竞赛活动(1).JPG,/images/picdocs/1573997102525234-2015挑（背）盐竞赛活动.JPG,/images/picdocs/1573997117365235-2015迎春文化惠民活动—西秦艺苑.jpg,/images/picdocs/1573997117375236-2015迎春文化惠民活动—西秦艺苑(1).JPG,/images/picdocs/1573997117386237-2015争做品德高尚自贡人(1).JPG,/images/picdocs/1573997117388238-2015西南石油局老党员参观抗战胜利展(1).jpg,/images/picdocs/1573997117402240-2015西南石油局老党员参观抗战胜利展.jpg,/images/picdocs/1573997117418241-2016-5月10日土柱村童心画恐龙.jpg,/images/picdocs/1573997117389239-2015争做品德高尚自贡人.JPG,/images/picdocs/1573997117449242-2016五一活动(1).JPG,/images/picdocs/1573997117495243-2016盐博课堂.JPG,/images/picdocs/1573997117499244-2016盐博课堂(1).JPG,/images/picdocs/1573997117521247-2016五一活动.JPG,/images/picdocs/1573997117500245-2016理工学校志愿者活动(1).jpg,/images/picdocs/1573997117521246-20141220_152638.jpg,/images/picdocs/1573997117579248-20141220_151455.jpg,/images/picdocs/1573997117600249-IMG_6883.JPG,/images/picdocs/1573997117602250-IMG_6903.JPG,/images/picdocs/1573997117613252-IMG_20160328_140443.jpg,/images/picdocs/1573997117613253-IMG_6897.JPG,/images/picdocs/1573997117603251-20141220_154431.jpg,/images/picdocs/1573997126815255-土柱村化石科普讲座(1).JPG,/images/picdocs/1573997126815257-土柱村化石科普讲座(2).JPG,/images/picdocs/1573997126815258-IMG_20160328_140456.jpg,/images/picdocs/1573997126815254-IMG_20160328_140534.jpg,/images/picdocs/1573997126815256-IMG_20160328_141804.jpg', '');
 INSERT INTO `picdocs` VALUES ('16', '1', '16', '地质公园科普活动照片-地球馆日、博物馆日', '', '地质公园管理处', '/images/picdocs/1573997170416261-IMG_3952.jpg,/images/picdocs/1573997170409259-IMG_6870.JPG,/images/picdocs/1573997170409260-IMG_3924.jpg,/images/picdocs/1573997170427263-IMG_0464.JPG,/images/picdocs/1573997170424262-IMG_3973.jpg,/images/picdocs/1573997170456264-IMG_0500.JPG,/images/picdocs/1573997170478265-IMG_7008.JPG,/images/picdocs/1573997170489266-IMG_6971.JPG', '');
 INSERT INTO `picdocs` VALUES ('17', '1', '17', '地质公园科普活动照片-与Communication with Hong Kong Students', '', '地质公园管理处', '/images/picdocs/1573997218517267-IMG_2494.jpg,/images/picdocs/1573997218631269-DSC_3790.jpg,/images/picdocs/1573997218631268-DSC_3761.jpg,/images/picdocs/1573997218718270-DSC_3945.jpg,/images/picdocs/1573997218718271-DSC_4244.jpg,/images/picdocs/1573997218924272-IMG_9044.JPG,/images/picdocs/1573997219099273-IMG_9063.JPG,/images/picdocs/1573997219172274-IMG_9207.JPG,/images/picdocs/1573997219211275-IMG_9431.JPG,/images/picdocs/1573997219267276-IMG_9445.JPG,/images/picdocs/1573997219267276-IMG_9443.JPG', '');
-INSERT INTO `picdocs` VALUES ('18', '1', '11', '自贡世界地质公园范围图-终副本', '', '地质公园管理处', '/images/picdocs/1573998532136277-自贡世界地质公园范围图-终副本.jpg', '');
+INSERT INTO `picdocs` VALUES ('18', '1', '18', '自贡世界地质公园范围图-终副本', '', '地质公园管理处', '/images/picdocs/1573998532136277-自贡世界地质公园范围图-终副本.jpg', '');
+INSERT INTO `picdocs` VALUES ('19', '1', '19', '导游手册', '', '地质公园管理处', '/images/picdocs/15746023518460-2.png,/images/picdocs/15746023518462-4.png,/images/picdocs/15746023518460-5.png,/images/picdocs/15746023518460-3.png,/images/picdocs/15746023518461-6.png,/images/picdocs/15746023518460-1.jpg,/images/picdocs/15746023522784-7.png,/images/picdocs/15746023522825-12.png,/images/picdocs/15746023522836-9.png,/images/picdocs/15746023523017-11.png,/images/picdocs/15746023523278-10.png,/images/picdocs/15746023523469-8.png,/images/picdocs/157460235250010-17.png,/images/picdocs/157460235251613-13.png,/images/picdocs/157460235251112-18.png,/images/picdocs/157460235250411-14.png,/images/picdocs/157460235257214-15.png,/images/picdocs/157460235257315-16.png,/images/picdocs/157460235282916-19.png,/images/picdocs/157460235283217-20.png,/images/picdocs/157460236210821-25.png,/images/picdocs/157460236210718-23.png,/images/picdocs/157460236210718-22.png,/images/picdocs/157460236210820-26.png,/images/picdocs/157460236210922-24.png,/images/picdocs/157460236210719-21.png,/images/picdocs/157460236222723-27.png,/images/picdocs/157460236225924-30.png,/images/picdocs/157460236226125-31.png,/images/picdocs/157460236226426-32.png,/images/picdocs/157460236226727-28.png,/images/picdocs/157460236227028-29.png,/images/picdocs/157460236237029-34.png,/images/picdocs/157460236239132-37.png,/images/picdocs/157460236238130-33.png,/images/picdocs/157460236238731-36.png,/images/picdocs/157460236241133-35.png', '');
+INSERT INTO `picdocs` VALUES ('20', '1', '20', '导游图和折页', '', '地质公园管理处', '/images/picdocs/157460246133135-艾叶酒坊修改日2.jpg,/images/picdocs/157460246133134-艾叶酒坊修改中2.jpg,/images/picdocs/157460246133136-艾叶酒坊修改韩2.jpg,/images/picdocs/157460246137737-艾叶酒坊修改日1.jpg,/images/picdocs/157460246137738-艾叶酒坊修改中1.jpg,/images/picdocs/157460246138039-艾叶酒坊修改韩1.jpg,/images/picdocs/157460246171840-艾叶酒坊修改英222.jpg,/images/picdocs/157460246188641-茶叶修改韩2.jpg,/images/picdocs/157460246193242-艾叶酒坊修改英111.jpg,/images/picdocs/157460246193743-茶叶修改22222英.jpg,/images/picdocs/157460246198044-茶叶修改韩1.jpg,/images/picdocs/157460246199645-茶叶修改11111英.jpg,/images/picdocs/157460246223846-茶叶修改日1.jpg,/images/picdocs/157460246246547-茶叶修改中2.jpg,/images/picdocs/157460246251948-茶叶修改中1.jpg,/images/picdocs/157460246283049-硅木折页1-01中.jpg,/images/picdocs/157460246323150-硅木折页2-02中.jpg,/images/picdocs/157460246440852-导游图背面中英文.jpg,/images/picdocs/157460246440851-导游图正面中英文.jpg,/images/picdocs/157460247144053-硅木折页日1-01.jpg,/images/picdocs/157460247144054-硅木折页111英-01.jpg,/images/picdocs/157460247144053-硅木折页韩-01.jpg,/images/picdocs/157460247153856-硅木折页日2-02.jpg,/images/picdocs/157460247154157-硅木折页2222英-02.jpg,/images/picdocs/157460247152455-硅木折页韩-02.jpg,/images/picdocs/157460247552158-自贡地质公园折页日-01.jpg,/images/picdocs/157460247552158-自贡地质公园折页定中1-01.jpg,/images/picdocs/157460247552159-自贡地质公园折页定韩-01.jpg,/images/picdocs/157460247591360-自贡地质公园折页定中222-02.jpg,/images/picdocs/157460247593462-自贡地质公园折页定韩-02.jpg,/images/picdocs/157460247591461-自贡地质公园折页日222-02.jpg,/images/picdocs/157460247771063-自贡地质公园折页定111英-01.jpg,/images/picdocs/157460247807864-自贡地质公园折页定222英-02.jpg', '');
+INSERT INTO `picdocs` VALUES ('21', '1', '21', '科学考察指南', '', '地质公园管理处', '/images/picdocs/157460255893265-01-01.jpg,/images/picdocs/157460255893265-01-03.jpg,/images/picdocs/157460255900167-01-04.jpg,/images/picdocs/157460255911168-01-06.jpg,/images/picdocs/157460255933769-01-02.jpg,/images/picdocs/157460255945170-01-05.jpg,/images/picdocs/157460255969071-01-07.jpg,/images/picdocs/157460255979872-01-09.jpg,/images/picdocs/157460255989476-01-12.jpg,/images/picdocs/157460255981174-01-10.jpg,/images/picdocs/157460255980973-01-08.jpg,/images/picdocs/157460255987875-01-11.jpg,/images/picdocs/157460256020777-02-01.jpg,/images/picdocs/157460256034478-02-02.jpg,/images/picdocs/157460256065079-02-06.jpg,/images/picdocs/157460256096483-02-08.jpg,/images/picdocs/157460256088180-02-05.jpg,/images/picdocs/157460256098884-02-07.jpg,/images/picdocs/157460256091282-02-03.jpg,/images/picdocs/157460256089681-02-04.jpg,/images/picdocs/157460257321785-02-13.jpg,/images/picdocs/157460257324386-02-14.jpg,/images/picdocs/157460257332487-02-12.jpg,/images/picdocs/157460257333588-02-09.jpg,/images/picdocs/157460257335489-02-10.jpg,/images/picdocs/157460257344790-02-11.jpg,/images/picdocs/157460257407791-02-15.jpg,/images/picdocs/157460257410592-02-16.jpg,/images/picdocs/157460257430293-02-18.jpg,/images/picdocs/157460257435394-02-19.jpg,/images/picdocs/157460257440895-02-20.jpg,/images/picdocs/157460257445096-02-17.jpg,/images/picdocs/157460257481697-02-21.jpg,/images/picdocs/157460257505898-02-22.jpg,/images/picdocs/157460257512199-02-23.jpg,/images/picdocs/1574602575126100-02-25.jpg,/images/picdocs/1574602575339101-02-24.jpg,/images/picdocs/1574602575385102-02-26.jpg,/images/picdocs/1574602575620104-03-01.jpg,/images/picdocs/1574602575586103-02-27.jpg,/images/picdocs/1574602584663107-03-03.jpg,/images/picdocs/1574602584663108-03-04.jpg,/images/picdocs/1574602584661105-03-05.jpg,/images/picdocs/1574602584663109-03-02.jpg,/images/picdocs/1574602584661106-03-07.jpg,/images/picdocs/1574602584704110-03-06.jpg,/images/picdocs/1574602585053111-03-09.jpg,/images/picdocs/1574602585323112-03-08.jpg,/images/picdocs/1574602585560114-03-11.jpg,/images/picdocs/1574602585557113-科学考察指南封面.jpg,/images/picdocs/1574602585669115-03-12.jpg', '');
+INSERT INTO `picdocs` VALUES ('22', '1', '22', '科普材料小学生', '', '地质公园管理处', '/images/picdocs/1574602640164118-5.jpg,/images/picdocs/1574602640164121-2.jpg,/images/picdocs/1574602640164120-4.jpg,/images/picdocs/1574602640164119-6.jpg,/images/picdocs/1574602640164116-1.jpg,/images/picdocs/1574602640164117-3.jpg,/images/picdocs/1574602640792122-12.jpg,/images/picdocs/1574602640795124-10.jpg,/images/picdocs/1574602640850126-9.jpg,/images/picdocs/1574602640860127-8.jpg,/images/picdocs/1574602640795123-7.jpg,/images/picdocs/1574602640845125-11.jpg,/images/picdocs/1574602641111128-17.jpg,/images/picdocs/1574602641395129-封底.jpg,/images/picdocs/1574602641458130-15.jpg,/images/picdocs/1574602641503131-13.jpg,/images/picdocs/1574602641535132-14.jpg,/images/picdocs/1574602641567133-封面.jpg,/images/picdocs/1574602641574134-16.jpg,/images/picdocs/1574602641640135-人物介绍.jpg', '');
+INSERT INTO `picdocs` VALUES ('23', '1', '23', '科普手册大众版最终', '', '地质公园管理处', '/images/picdocs/1574602700938137-大众正文_页面_04.jpg,/images/picdocs/1574602700941138-大众正文_页面_06.jpg,/images/picdocs/1574602700938136-大众正文_页面_05.jpg,/images/picdocs/1574602700938136-大众正文_页面_02.jpg,/images/picdocs/1574602700938136-大众正文_页面_03.jpg,/images/picdocs/1574602700938136-大众正文_页面_01.jpg,/images/picdocs/1574602701168139-大众正文_页面_07.jpg,/images/picdocs/1574602701172141-大众正文_页面_12.jpg,/images/picdocs/1574602701173142-大众正文_页面_11.jpg,/images/picdocs/1574602701174143-大众正文_页面_10.jpg,/images/picdocs/1574602701172140-大众正文_页面_08.jpg,/images/picdocs/1574602701178144-大众正文_页面_09.jpg,/images/picdocs/1574602701450147-大众正文_页面_16.jpg,/images/picdocs/1574602701440145-大众正文_页面_18.jpg,/images/picdocs/1574602701446146-大众正文_页面_17.jpg,/images/picdocs/1574602701468149-大众正文_页面_14.jpg,/images/picdocs/1574602701463148-大众正文_页面_13.jpg,/images/picdocs/1574602701490150-大众正文_页面_15.jpg,/images/picdocs/1574602701686151-大众正文_页面_20.jpg,/images/picdocs/1574602701717152-大众正文_页面_19.jpg,/images/picdocs/1574602730250153-大众正文_页面_23.jpg,/images/picdocs/1574602730250153-大众正文_页面_21.jpg,/images/picdocs/1574602730250153-大众正文_页面_26.jpg,/images/picdocs/1574602730250154-大众正文_页面_25.jpg,/images/picdocs/1574602730250153-大众正文_页面_24.jpg,/images/picdocs/1574602730250153-大众正文_页面_22.jpg,/images/picdocs/1574602730493157-大众正文_页面_27.jpg,/images/picdocs/1574602730490156-大众正文_页面_29.jpg,/images/picdocs/1574602730487155-大众正文_页面_31.jpg,/images/picdocs/1574602730495158-大众正文_页面_28.jpg,/images/picdocs/1574602730497160-大众正文_页面_32.jpg,/images/picdocs/1574602730496159-大众正文_页面_30.jpg,/images/picdocs/1574602730608162-大众正文_页面_37.jpg,/images/picdocs/1574602730599161-大众正文_页面_35.jpg,/images/picdocs/1574602730611163-大众正文_页面_33.jpg,/images/picdocs/1574602730616164-大众正文_页面_38.jpg,/images/picdocs/1574602730623165-大众正文_页面_36.jpg,/images/picdocs/1574602730640166-大众正文_页面_34.jpg,/images/picdocs/1574602730714167-大众正文_页面_39.jpg,/images/picdocs/1574602730720168-大众正文_页面_40.jpg,/images/picdocs/1574602738058169-大众正文_页面_41.jpg,/images/picdocs/1574602738069171-大众正文_页面_43.jpg,/images/picdocs/1574602738065170-大众正文_页面_45.jpg,/images/picdocs/1574602738076172-大众正文_页面_44.jpg,/images/picdocs/1574602738076174-大众正文_页面_46.jpg,/images/picdocs/1574602738076173-大众正文_页面_42.jpg,/images/picdocs/1574602738170176-大众正文_页面_47.jpg,/images/picdocs/1574602738170177-大众正文_页面_50.jpg,/images/picdocs/1574602738167175-大众正文_页面_49.jpg,/images/picdocs/1574602738177178-大众正文_页面_51.jpg,/images/picdocs/1574602738188179-大众正文_页面_48.jpg,/images/picdocs/1574602738188180-大众正文_页面_52.jpg,/images/picdocs/1574602738261181-大众正文_页面_53.jpg,/images/picdocs/1574602738265182-大众正文_页面_56.jpg,/images/picdocs/1574602738265183-大众正文_页面_57.jpg,/images/picdocs/1574602738265184-大众正文_页面_55.jpg,/images/picdocs/1574602738279185-大众正文_页面_58.jpg,/images/picdocs/1574602738300186-大众正文_页面_54.jpg,/images/picdocs/1574602738335188-大众正文_页面_59.jpg,/images/picdocs/1574602738335187-大众正文_页面_60.jpg', '');
+INSERT INTO `picdocs` VALUES ('24', '1', '24', '导游手册路线图', '', '地质公园管理处', '/images/picdocs/1574602890922189-乐德-桫椤.png,/images/picdocs/1574602890922189-荣县-双溪-石笋-花龙.png,/images/picdocs/1574602890922189-恐龙馆-艾叶.png', '');
+INSERT INTO `picdocs` VALUES ('25', '1', '25', '化石形成过程', '', '地质公园管理处', '/images/picdocs/1574602944073190-化石形成过程.png', '');
+INSERT INTO `picdocs` VALUES ('26', '1', '26', '交通位置图', '', '地质公园管理处', '/images/picdocs/1574603010445191-最终版交通图721.png,/images/picdocs/1574603010445192-自贡地质公园交通图最终-导游图-副本.png,/images/picdocs/1574603010458193-自贡在世界的位置.jpg', '');
+INSERT INTO `picdocs` VALUES ('27', '1', '27', '科考路线', '', '地质公园管理处', '/images/picdocs/1574603056933195-路线2.png,/images/picdocs/1574603056933194-路线1.png,/images/picdocs/1574603056933194-路线3.png', '');
+INSERT INTO `picdocs` VALUES ('28', '1', '28', '化石发掘照片', '', '地质公园管理处', '/images/picdocs/1574603203270196-大山铺恐龙化石群.jpg,/images/picdocs/1574603203270196-大山铺后山化石埋藏示意图.jpg,/images/picdocs/1574603203270196-大山铺后山恐龙化石.jpg,/images/picdocs/1574603203394198-合川马门溪龙化石挖掘照片.jpg,/images/picdocs/1574603204071199-20世纪70年代末，恐龙馆科研2.jpg,/images/picdocs/1574603204199200-和平永川龙化石挖掘照片.jpg,/images/picdocs/1574603204223201-举世瞩目的侏罗纪恐龙化石遗址.jpg,/images/picdocs/1574603204333202-1989年在自贡新民乡发现的杨氏马门溪龙骨架.jpg,/images/picdocs/1574603204388203-恐龙挖掘现场3.jpg,/images/picdocs/1574603204390204-恐龙挖掘现场2.jpg,/images/picdocs/1574603204455205-青龙山化石埋藏示意图.jpg,/images/picdocs/1574603204533207-青龙山恐龙化石群.jpg,/images/picdocs/1574603204536208-杨氏马门溪龙化石产地.jpg,/images/picdocs/1574603204498206-大山铺化石发掘.jpg,/images/picdocs/1574603204635209-恐龙挖掘现场1.jpg,/images/picdocs/1574603204635210-恐龙化石现场.jpg', '');
+INSERT INTO `picdocs` VALUES ('29', '1', '29', '化石照片', '', '地质公园管理处', '/images/picdocs/1574603240254211-巴山酋龙复原图.jpg,/images/picdocs/1574603240254211-巴山酋龙-蜥脚类-中侏罗世-自贡大山铺.jpg,/images/picdocs/1574603240254211-巴山酋龙头骨.jpg,/images/picdocs/1574603240597212-大山铺川南龟.jpg,/images/picdocs/1574603240606213-大型兽脚类足迹化石.jpg,/images/picdocs/1574603240606214-大型兽脚类足迹化石1.jpg,/images/picdocs/1574603240632215-IMG_5601.JPG,/images/picdocs/1574603240640216-IMG_5621.JPG,/images/picdocs/1574603240642217-IMG_5711.JPG,/images/picdocs/1574603240822218-和平永川龙复原图.jpg,/images/picdocs/1574603240822219-和平永川龙头骨.jpg,/images/picdocs/1574603240831220-大型兽脚类足迹化石2.jpg,/images/picdocs/1574603240852221-和平永川龙头骨化石（余刚摄）.JPG,/images/picdocs/1574603240861222-和平永川龙-兽脚类-晚侏罗世-自贡和平乡.jpg,/images/picdocs/1574603241001223-剑龙皮肤照片（余刚摄）.JPG,/images/picdocs/1574603241086225-李氏蜀龙复原图.jpg,/images/picdocs/1574603241083224-皮肤印模化石.jpg,/images/picdocs/1574603241111226-李氏蜀龙头骨.jpg,/images/picdocs/1574603241144228-马门溪龙皮肤化石（余刚摄）.JPG,/images/picdocs/1574603241144227-李氏蜀龙-蜥脚类-晚侏罗世-自贡大山铺.jpg,/images/picdocs/1574603261120229-四川巨棘龙-副肩棘及皮肤印模化石2.jpg,/images/picdocs/1574603261120230-太白华阳龙复原图.jpg,/images/picdocs/1574603261120229-四川巨棘龙-剑龙类-晚侏罗世-自贡仲权乡.jpg,/images/picdocs/1574603261120231-蜀南孙氏鳄头骨.jpg,/images/picdocs/1574603261120232-四川巨棘龙复原图.jpg,/images/picdocs/1574603261120233-四川巨棘龙-副肩棘及皮肤印模化石1.jpg,/images/picdocs/1574603261549234-天府峨眉龙复原图.jpg,/images/picdocs/1574603261554235-太白华阳龙头骨.jpg,/images/picdocs/1574603261572236-太白华阳龙头骨化石（余刚摄）.JPG,/images/picdocs/1574603261581237-天府峨眉龙-蜥脚类-中侏罗世-自贡大山铺.jpg,/images/picdocs/1574603261597238-太白华阳龙-剑龙类-中侏罗世-自贡大山铺.jpg,/images/picdocs/1574603261628239-天府峨眉龙尾锤（余刚摄）.JPG,/images/picdocs/1574603261793242-杨氏马门溪龙复原图.jpg,/images/picdocs/1574603261777240-杨氏马门溪龙头骨.jpg,/images/picdocs/1574603261784241-小型兽脚类足迹化石2.jpg,/images/picdocs/1574603261816243-小型兽脚类足迹化石1.jpg,/images/picdocs/1574603261825244-西蜀鳄头骨-大山铺.jpg,/images/picdocs/1574603261870245-西蜀鳄头骨-沱江.jpg,/images/picdocs/1574603261932246-原始蜥脚类足迹化石.jpg,/images/picdocs/1574603261963247-杨氏马门溪龙-蜥脚类-晚侏罗世-自贡新民乡.jpg,/images/picdocs/1574603268511249-长头狭鼻翼龙1.jpg,/images/picdocs/1574603268514250-长头狭鼻翼龙3.jpg,/images/picdocs/1574603268510248-自贡巴蜀龟.jpg,/images/picdocs/1574603268520251-自贡地区特有的蜥脚类恐龙尾锤化石1.jpg,/images/picdocs/1574603268521252-长头狭鼻翼龙-翼龙类-中侏罗世-自贡大山铺.jpg,/images/picdocs/1574603268522253-周氏西蜀鳄头骨.jpg,/images/picdocs/1574603268646254-自贡地区特有的蜥脚类恐龙尾锤化石2.jpg,/images/picdocs/1574603268649255-自贡地区特有的蜥脚类恐龙尾锤化石3.jpg,/images/picdocs/1574603268655256-自贡地区特有的蜥脚类恐龙尾锤化石4.jpg', '');
+INSERT INTO `picdocs` VALUES ('30', '1', '30', '恐龙博物馆照片', '', '地质公园管理处', '/images/picdocs/1574603492050257-DSC01340.JPG,/images/picdocs/1574603492050259-地质公园龙山景观（余刚摄）.JPG,/images/picdocs/1574603492050257-大山铺恐龙化石群遗址.jpg,/images/picdocs/1574603492050258-3、自贡恐龙博物馆化石化石标本陈列厅--（余刚摄）.jpg,/images/picdocs/1574603492050257-2、自贡恐龙博物馆博物馆主馆外景--（余刚摄）.jpg,/images/picdocs/1574603492050257-地质遗迹陈列馆（效果图）.JPG,/images/picdocs/1574603492263261-恐龙博物馆照片.jpg,/images/picdocs/1574603492267262-恐龙蛋.jpg,/images/picdocs/1574603492341263-主碑广场.jpg,/images/picdocs/1574603492354264-照片341.jpg,/images/picdocs/1574603492389265-主碑.jpg,/images/picdocs/1574603492510266-自贡恐龙博物馆主馆照片.jpg,/images/picdocs/1574603492549267-自贡恐龙博物馆主展馆2.jpg,/images/picdocs/1574603492644268-自贡恐龙博物馆内部恐龙世界.jpg,/images/picdocs/1574603492832269-自贡恐龙馆陈列展示现场2.jpg,/images/picdocs/1574603493138270-自贡恐龙博物馆主展馆1.jpg,/images/picdocs/1574603493207271-自贡恐龙馆龙山.jpg,/images/picdocs/1574603493248272-自贡恐龙馆陈列展示现场1.jpg,/images/picdocs/1574603493279273-自贡恐龙博物馆主广场照片.jpg,/images/picdocs/1574603493548274-恐龙博物馆照片.bmp,/images/picdocs/1574603496379275-自贡恐龙馆中央大厅地下室.jpg', '');
+INSERT INTO `picdocs` VALUES ('31', '1', '31', '恐龙博物馆-吉祥物', '', '地质公园管理处', '/images/picdocs/1574603530681276-灵龙.jpg,/images/picdocs/1574603530681276-上龙.jpg,/images/picdocs/1574603530681276-翼龙.jpg,/images/picdocs/1574603530681276-蜀龙.jpg,/images/picdocs/1574603530681276-永川龙.jpg,/images/picdocs/1574603530681276-剑龙.jpg,/images/picdocs/1574603531190277-组合图.jpg', '');
+INSERT INTO `picdocs` VALUES ('32', '1', '32', '恐龙博物馆-恐龙化石', '', '地质公园管理处', '/images/picdocs/1574603561990279-壁山上龙.jpg,/images/picdocs/1574603561990278-多齿盐都龙骨架.jpg,/images/picdocs/1574603561990278-建设气龙.jpg,/images/picdocs/1574603561990278-劳氏灵龙.jpg,/images/picdocs/1574603561990278-9米蜀龙.jpg,/images/picdocs/1574603561990278-蜀龙.jpg,/images/picdocs/1574603562286279-天府峨眉龙.jpg,/images/picdocs/1574603562287280-太白华阳龙.jpg,/images/picdocs/1574603562309281-四川巨棘龙.jpg,/images/picdocs/1574603562420282-永川龙.jpg', '');
+INSERT INTO `picdocs` VALUES ('33', '1', '33', '恐龙博物馆-主碑', '', '地质公园管理处', '/images/picdocs/1574603590181283-10-自贡世界地质公园主碑雕塑.jpg,/images/picdocs/1574603590181284-恐龙博物馆.jpg,/images/picdocs/1574603590181283-照片154.jpg,/images/picdocs/1574603590269285-揭碑开园.JPG,/images/picdocs/1574603590294286-自贡恐龙博物馆主碑照片.jpg', '');
 
 -- ----------------------------
 -- Table structure for planning
@@ -1766,8 +1820,6 @@ INSERT INTO `scienceactivity` VALUES ('253', '1', '中国之美—榫卯技艺�
 INSERT INTO `scienceactivity` VALUES ('254', '1', ' 第47个世界地球周                 主题宣传活动', '2016年2016-4-21—4月28', '自贡恐龙博物馆           土柱村', '主题科普宣传活动                  ', '1、科普讲座“观鸟：开启自然保育之门”讲座。                                            2、自贡地区常见野鸟图片展                          3、科普讲座“古生物化石的保护和恐龙相关知识”  ', '自贡世界地质公园管理处 自贡恐龙博物馆自贡市观鸟协会               ', '参加人数：2000', '', null, null, null);
 INSERT INTO `scienceactivity` VALUES ('255', '1', '   感知千年盐都', '2016年4月29日', '博物馆', '', '“感知千年盐都”机关幼儿园师生参观博物馆。参观中国井盐科技史陈列，感受古代盐工巧夺天工的盐场技艺，体验盐业历史魅力。', '自贡市盐业历史  博物馆', '参加人数：180', '', null, null, null);
 INSERT INTO `scienceactivity` VALUES ('256', '1', '童心绘恐龙', '2016年5月1日-10日', '土柱村', '社区活动', '四川理工学院、江姐小学师生在土柱村绘制恐龙壁画', '自贡世界地质公园管理处、自贡恐龙博物馆', '参加人数：50', '', null, null, null);
-INSERT INTO `scienceactivity` VALUES ('257', '0', '', '', '', '', '', '', '', '', null, null, null);
-INSERT INTO `scienceactivity` VALUES ('258', '0', '', '', '', '', '', '', '', '', null, null, null);
 INSERT INTO `scienceactivity` VALUES ('259', '1', '恐龙馆文化志愿科普活动进校园——走进新店镇中心小学', '2019年11月5日', '新店镇中心小学', '新店镇中心小学的全体师生', '什么是恐龙、恐龙的发现、恐龙的演化', '自贡恐龙博物馆科普工作者和志愿者', '为让更多的学生了解地球、化石，增长科普知识，11月5日上午，自贡恐龙博物馆科普工作者和志愿者走进新店镇中心小学，开展了“展史前印迹，述恐龙故事”2019自贡恐龙博物馆文化志愿主题活动。\n\n整个活动包括流动展览、科普课堂和科普互动。新店镇中心小学的全体师生参观了流动展览，对什么是恐龙、恐龙的发现、恐龙的演化有了一定了解。科普课堂上，同学们饶有兴致地听“飞哥聊恐龙”。生动的故事、丰富的图片、有趣的动画片，同学们看到和听到了很多课本外的古生物和科学知识。被称为“飞哥”的科普专家李飞不时问同学们：“如果霸王龙是你们的同学，他会害怕什么呢？”“投影上面有几条龙？几条恐龙？”“《侏罗纪公园》里有些什么恐龙？”\n活动在有趣的游戏和同学们的欢声笑语中结束。作为全国科普教育基地，自贡恐龙博物馆高度重视社会教育功能的发挥，长期开展“进乡镇、进学校、进社区”活动，将博物馆文化和科学知识送到公众身边。志愿者活动的开展，将深入推进馆校之间的交流互动，为下一代的成长发挥更大的作用。', '/images/scienceactivity/15743905702044-20191118112155499001.png,/images/scienceactivity/15743905702044-20191118112156851003.png,/images/scienceactivity/15743905702044-20191118112156160002.png,/images/scienceactivity/15743905702044-20191118112156124004.png', null, null, null);
 
 -- ----------------------------
@@ -1920,9 +1972,9 @@ INSERT INTO `sys_menu` VALUES ('70', '67', '删除', '', '3', 'layui-icon-delete
 INSERT INTO `sys_menu` VALUES ('71', '22', '管理机构人员', 'pkmanage-manageperson.html', '2', '', '1', '1', '2019-09-18 10:22:08', '2019-09-20 16:48:51', '0', 'manageperson', 'manageperson:page', '4');
 INSERT INTO `sys_menu` VALUES ('72', '31', '其它自然景观', 'pkmanage-naturallandscape.html', '2', '', '1', '1', '2019-09-19 15:55:46', '2019-11-04 09:16:22', '0', 'naturallandscape', 'naturallandscape:page', '4');
 INSERT INTO `sys_menu` VALUES ('73', '22', '公园规划概况', 'pkmanage-planning.html', '2', 'layui-icon-unlink', '1', '1', '2019-09-20 10:09:01', '2019-09-20 16:49:09', '0', 'planning', 'planning:page', '6');
-INSERT INTO `sys_menu` VALUES ('74', '0', '影（音）像制品数据', '', '1', 'layui-icon-file', '1', '1', '2019-09-20 14:53:30', '2019-11-22 10:16:02', '0', '', '', '6');
+INSERT INTO `sys_menu` VALUES ('74', '0', '影（音）像制品相关文件数据', '', '1', 'layui-icon-file', '1', '1', '2019-09-20 14:53:30', '2019-11-22 22:27:49', '0', '', '', '6');
 INSERT INTO `sys_menu` VALUES ('75', '74', '其他图片资料', 'file-picdocs.html', '2', 'layui-icon-picture-fine', '1', '1', '2019-09-20 14:55:47', '2019-09-20 16:59:02', '0', 'picdocs', 'picdocs:page', '2');
-INSERT INTO `sys_menu` VALUES ('76', '74', '公园相关影像资料', 'file-vediodocs.html', '2', 'layui-icon-camera', '1', '1', '2019-09-20 15:12:57', '2019-09-20 16:59:20', '0', 'vediodocs', 'vediodocs:page', '1');
+INSERT INTO `sys_menu` VALUES ('76', '74', '公园相关影像文件资料', 'file-vediodocs.html', '2', 'layui-icon-camera', '1', '1', '2019-09-20 15:12:57', '2019-11-22 22:28:09', '0', 'vediodocs', 'vediodocs:page', '1');
 INSERT INTO `sys_menu` VALUES ('77', '22', '公园游客统计', 'pkmanage-gueststat.html', '2', 'layui-icon-username', '1', '1', '2019-09-20 15:41:17', '2019-10-28 10:33:22', '0', 'gueststat', 'gueststat:page', '8');
 INSERT INTO `sys_menu` VALUES ('78', '31', 'VR全景数据管理', 'pkmanage-vrdata.html', '2', '', '1', '1', '2019-09-25 11:20:31', '2019-09-25 13:51:08', '0', 'vrdata', 'vrdata:page', '7');
 INSERT INTO `sys_menu` VALUES ('79', '30', '博物馆展厅', 'pkmanage-museumexhibition.html', '2', '', '1', '1', '2019-09-25 11:25:27', '2019-09-25 11:26:16', '0', 'museumexhibition', 'museumexhibition:page', '1');
@@ -1939,7 +1991,7 @@ CREATE TABLE `sys_menu_resource` (
   `menu_id` int(11) DEFAULT NULL COMMENT '菜单ID',
   `resource_id` varchar(32) DEFAULT NULL COMMENT '资源ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=493 DEFAULT CHARSET=utf8mb4 COMMENT='菜单资源关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=498 DEFAULT CHARSET=utf8mb4 COMMENT='菜单资源关系表';
 
 -- ----------------------------
 -- Records of sys_menu_resource
@@ -2084,11 +2136,6 @@ INSERT INTO `sys_menu_resource` VALUES ('428', '75', '7e5982583c9805792c523b32ca
 INSERT INTO `sys_menu_resource` VALUES ('429', '75', '3e97140625dc7fc53c2c7bbb0d01813c');
 INSERT INTO `sys_menu_resource` VALUES ('430', '75', '151d826eafc7b5174de85dd7df216b98');
 INSERT INTO `sys_menu_resource` VALUES ('431', '75', 'b0b5dc6a4d472e5160e289eee92ad5d4');
-INSERT INTO `sys_menu_resource` VALUES ('432', '76', 'cf644f767183f7940a094d82fd075ed5');
-INSERT INTO `sys_menu_resource` VALUES ('433', '76', '0b2af0dd22363820966999f84a845ea2');
-INSERT INTO `sys_menu_resource` VALUES ('434', '76', '7d5889685e76e54b05e5f88169fd5e20');
-INSERT INTO `sys_menu_resource` VALUES ('435', '76', '82ae5ea4f71f8e9f4ff625dbc8d28819');
-INSERT INTO `sys_menu_resource` VALUES ('436', '76', 'b0b5dc6a4d472e5160e289eee92ad5d4');
 INSERT INTO `sys_menu_resource` VALUES ('437', '23', '21b182bd4b864b88d6424717673c2fdd');
 INSERT INTO `sys_menu_resource` VALUES ('438', '23', '35497ac6603e18992159e83005be0d64');
 INSERT INTO `sys_menu_resource` VALUES ('439', '23', '9964cc368380f9bd7c782855389068d2');
@@ -2136,6 +2183,11 @@ INSERT INTO `sys_menu_resource` VALUES ('489', '82', 'c2f8625dfb6b6be6237567391f
 INSERT INTO `sys_menu_resource` VALUES ('490', '82', 'c950d0767bbe74702259d06768faa283');
 INSERT INTO `sys_menu_resource` VALUES ('491', '82', 'd6c4ff80beeec0e3f6968775b906600e');
 INSERT INTO `sys_menu_resource` VALUES ('492', '82', 'b0b5dc6a4d472e5160e289eee92ad5d4');
+INSERT INTO `sys_menu_resource` VALUES ('493', '76', 'cf644f767183f7940a094d82fd075ed5');
+INSERT INTO `sys_menu_resource` VALUES ('494', '76', '0b2af0dd22363820966999f84a845ea2');
+INSERT INTO `sys_menu_resource` VALUES ('495', '76', '7d5889685e76e54b05e5f88169fd5e20');
+INSERT INTO `sys_menu_resource` VALUES ('496', '76', '82ae5ea4f71f8e9f4ff625dbc8d28819');
+INSERT INTO `sys_menu_resource` VALUES ('497', '76', 'b0b5dc6a4d472e5160e289eee92ad5d4');
 
 -- ----------------------------
 -- Table structure for sys_resource
@@ -2155,211 +2207,211 @@ CREATE TABLE `sys_resource` (
 -- ----------------------------
 -- Records of sys_resource
 -- ----------------------------
-INSERT INTO `sys_resource` VALUES ('034fe06c0ce7f3ad0db70e0ccf313dcc', '交流互展查询(分页)', '/exchangeexhibition/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/exchangeexhibition/page');
-INSERT INTO `sys_resource` VALUES ('039bec1c73824aebd6dac61de133f336', '管理机构编辑', '/managementagency/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/managementagency/{id}');
-INSERT INTO `sys_resource` VALUES ('0401dbc5d8eaad57931edbf0ee36a10c', '公园规划查询(分页)', '/planning/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/planning/page');
-INSERT INTO `sys_resource` VALUES ('0584acbf717e9848bfbd5cb2e149754a', '社会经济状况添加', '/socialeconomy', 'POST', '1', '2019-11-22 14:36:35', 'POST:/socialeconomy');
-INSERT INTO `sys_resource` VALUES ('06031eda73fcffa209c91c414a6b4766', 'openApi自然景观列表', '/openApi/naturallandscapeList', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/naturallandscapeList');
-INSERT INTO `sys_resource` VALUES ('061c512368ad8a4fa5632e1c2a39189c', '博物馆展厅编辑', '/museumexhibition/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/museumexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('07d648ddf63c20317df4f5cbf7786a48', '人文景观删除', '/humanlandscape/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/humanlandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('099a483818e8ec192f966b6bc6bacd0a', '科普作品添加', '/sciencework', 'POST', '1', '2019-11-22 14:36:35', 'POST:/sciencework');
-INSERT INTO `sys_resource` VALUES ('0a9c4972fbf5b50eb76d78cd40c8c269', '地灾信息查询(分页)', '/earthquake/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/earthquake/page');
-INSERT INTO `sys_resource` VALUES ('0b2af0dd22363820966999f84a845ea2', '影像资料添加', '/vediodocs', 'POST', '3', '2019-11-22 14:36:35', 'POST:/vediodocs');
-INSERT INTO `sys_resource` VALUES ('0b3acbd943d2bdf421984f80a96c9739', '科研论文删除', '/researchpaper/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/researchpaper/{id}');
-INSERT INTO `sys_resource` VALUES ('0ef17c27ae7717cc75b3940ad4958c29', '科普活动查询(分页)', '/scienceactivity/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/scienceactivity/page');
-INSERT INTO `sys_resource` VALUES ('104e2c82415429f04455f1d079890c96', '专家导游编辑', '/parklibrary/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/parklibrary/{id}');
-INSERT INTO `sys_resource` VALUES ('151d826eafc7b5174de85dd7df216b98', '图片资料删除', '/picdocs/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/picdocs/{id}');
-INSERT INTO `sys_resource` VALUES ('15da52a5f4f4a6eac3b0d6f046f040c9', '菜单删除', '/menu/{id}', 'DELETE', '3', '2019-11-22 14:36:35', 'DELETE:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('166654543c708f5e91eab662095bd764', '重叠情况删除', '/overlapping/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/overlapping/{id}');
-INSERT INTO `sys_resource` VALUES ('16ec009eee72f9a3146f3ed6e6e3bccd', '标示解说添加', '/commentary', 'POST', '1', '2019-11-22 14:36:34', 'POST:/commentary');
-INSERT INTO `sys_resource` VALUES ('179887b5bd6e42be960b83982a684b10', '角色查询(所有)', '/role/list', 'GET', '3', '2019-11-22 14:36:35', 'GET:/role/list');
-INSERT INTO `sys_resource` VALUES ('1a78d8aa6ba0ffe46bc99de9c820a298', '导出xls', '/exportBackup/xls', 'GET', '1', '2019-11-22 14:36:34', 'GET:/exportBackup/xls');
-INSERT INTO `sys_resource` VALUES ('1adec59980b460bb8db5198953608b87', '任务编辑', '/task/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/task/{id}');
-INSERT INTO `sys_resource` VALUES ('1c42a29f7a1a0fb0c6c3e213ebd9d6e4', '缔结姊妹公园删除', '/parkrelation/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/parkrelation/{id}');
-INSERT INTO `sys_resource` VALUES ('1e1146393b91b9a02a11284eea132962', '公园信息删除', '/parkinfo/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/parkinfo/{id}');
-INSERT INTO `sys_resource` VALUES ('1edadc539135c5dc8ea6dd767b51133a', '自然景观编辑', '/naturallandscape/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/naturallandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('21b182bd4b864b88d6424717673c2fdd', '公园查询(分页)', '/park/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/park/page');
-INSERT INTO `sys_resource` VALUES ('222549de7b85d74ff912e4e258670af6', '地质背景编辑', '/geological/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/geological/{id}');
-INSERT INTO `sys_resource` VALUES ('22c8d4ad02ae696458f3de13053e4dbc', '专题研究查询(分页)', '/parktopic/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/parktopic/page');
-INSERT INTO `sys_resource` VALUES ('2410dac6fb2e4396e28d720f19bc7c45', '地质遗迹景观删除', '/geolandscape/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/geolandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('24bf74d47e8322146e38f0c68333f90c', '角色授权', '/role/{id}/menu', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/role/{id}/menu');
-INSERT INTO `sys_resource` VALUES ('262bfee5cd0edf4d5cd47fa1f9380cb4', '人文景观编辑', '/humanlandscape/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/humanlandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('2b46448ef3c969f64046c9ed8e294b41', '交流互展编辑', '/exchangeexhibition/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/exchangeexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('2c8f52fdf31d935744bf7b4a309e8d37', '导入xls', '/import/xls', 'POST', '1', '2019-11-22 14:36:34', 'POST:/import/xls');
-INSERT INTO `sys_resource` VALUES ('2caca33f4fa40079ba1d86d9961634a5', '矿权情况查询(分页)', '/mineralright/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/mineralright/page');
+INSERT INTO `sys_resource` VALUES ('034fe06c0ce7f3ad0db70e0ccf313dcc', '交流互展查询(分页)', '/exchangeexhibition/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/exchangeexhibition/page');
+INSERT INTO `sys_resource` VALUES ('039bec1c73824aebd6dac61de133f336', '管理机构编辑', '/managementagency/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/managementagency/{id}');
+INSERT INTO `sys_resource` VALUES ('0401dbc5d8eaad57931edbf0ee36a10c', '公园规划查询(分页)', '/planning/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/planning/page');
+INSERT INTO `sys_resource` VALUES ('0584acbf717e9848bfbd5cb2e149754a', '社会经济状况添加', '/socialeconomy', 'POST', '1', '2020-01-02 11:15:36', 'POST:/socialeconomy');
+INSERT INTO `sys_resource` VALUES ('06031eda73fcffa209c91c414a6b4766', 'openApi自然景观列表', '/openApi/naturallandscapeList', 'GET', '2', '2020-01-02 11:15:36', 'GET:/openApi/naturallandscapeList');
+INSERT INTO `sys_resource` VALUES ('061c512368ad8a4fa5632e1c2a39189c', '博物馆展厅编辑', '/museumexhibition/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/museumexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('07d648ddf63c20317df4f5cbf7786a48', '人文景观删除', '/humanlandscape/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/humanlandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('099a483818e8ec192f966b6bc6bacd0a', '科普作品添加', '/sciencework', 'POST', '1', '2020-01-02 11:15:36', 'POST:/sciencework');
+INSERT INTO `sys_resource` VALUES ('0a9c4972fbf5b50eb76d78cd40c8c269', '地灾信息查询(分页)', '/earthquake/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/earthquake/page');
+INSERT INTO `sys_resource` VALUES ('0b2af0dd22363820966999f84a845ea2', '影像资料添加', '/vediodocs', 'POST', '3', '2020-01-02 11:15:36', 'POST:/vediodocs');
+INSERT INTO `sys_resource` VALUES ('0b3acbd943d2bdf421984f80a96c9739', '科研论文删除', '/researchpaper/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/researchpaper/{id}');
+INSERT INTO `sys_resource` VALUES ('0ef17c27ae7717cc75b3940ad4958c29', '科普活动查询(分页)', '/scienceactivity/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/scienceactivity/page');
+INSERT INTO `sys_resource` VALUES ('104e2c82415429f04455f1d079890c96', '专家导游编辑', '/parklibrary/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/parklibrary/{id}');
+INSERT INTO `sys_resource` VALUES ('151d826eafc7b5174de85dd7df216b98', '图片资料删除', '/picdocs/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/picdocs/{id}');
+INSERT INTO `sys_resource` VALUES ('15da52a5f4f4a6eac3b0d6f046f040c9', '菜单删除', '/menu/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('166654543c708f5e91eab662095bd764', '重叠情况删除', '/overlapping/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/overlapping/{id}');
+INSERT INTO `sys_resource` VALUES ('16ec009eee72f9a3146f3ed6e6e3bccd', '标示解说添加', '/commentary', 'POST', '1', '2020-01-02 11:15:36', 'POST:/commentary');
+INSERT INTO `sys_resource` VALUES ('179887b5bd6e42be960b83982a684b10', '角色查询(所有)', '/role/list', 'GET', '3', '2020-01-02 11:15:36', 'GET:/role/list');
+INSERT INTO `sys_resource` VALUES ('1a78d8aa6ba0ffe46bc99de9c820a298', '导出xls', '/exportBackup/xls', 'GET', '1', '2020-01-02 11:15:36', 'GET:/exportBackup/xls');
+INSERT INTO `sys_resource` VALUES ('1adec59980b460bb8db5198953608b87', '任务编辑', '/task/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/task/{id}');
+INSERT INTO `sys_resource` VALUES ('1c42a29f7a1a0fb0c6c3e213ebd9d6e4', '缔结姊妹公园删除', '/parkrelation/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/parkrelation/{id}');
+INSERT INTO `sys_resource` VALUES ('1e1146393b91b9a02a11284eea132962', '公园信息删除', '/parkinfo/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/parkinfo/{id}');
+INSERT INTO `sys_resource` VALUES ('1edadc539135c5dc8ea6dd767b51133a', '自然景观编辑', '/naturallandscape/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/naturallandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('21b182bd4b864b88d6424717673c2fdd', '公园查询(分页)', '/park/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/park/page');
+INSERT INTO `sys_resource` VALUES ('222549de7b85d74ff912e4e258670af6', '地质背景编辑', '/geological/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/geological/{id}');
+INSERT INTO `sys_resource` VALUES ('22c8d4ad02ae696458f3de13053e4dbc', '专题研究查询(分页)', '/parktopic/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/parktopic/page');
+INSERT INTO `sys_resource` VALUES ('2410dac6fb2e4396e28d720f19bc7c45', '地质遗迹景观删除', '/geolandscape/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/geolandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('24bf74d47e8322146e38f0c68333f90c', '角色授权', '/role/{id}/menu', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/role/{id}/menu');
+INSERT INTO `sys_resource` VALUES ('262bfee5cd0edf4d5cd47fa1f9380cb4', '人文景观编辑', '/humanlandscape/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/humanlandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('2b46448ef3c969f64046c9ed8e294b41', '交流互展编辑', '/exchangeexhibition/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/exchangeexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('2c8f52fdf31d935744bf7b4a309e8d37', '导入xls', '/import/xls', 'POST', '1', '2020-01-02 11:15:36', 'POST:/import/xls');
+INSERT INTO `sys_resource` VALUES ('2caca33f4fa40079ba1d86d9961634a5', '矿权情况查询(分页)', '/mineralright/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/mineralright/page');
 INSERT INTO `sys_resource` VALUES ('30928c0d0e2e7a454426990767919239', '事务测试', '/tasktransaction', 'POST', '1', '2019-08-29 09:41:56', 'POST:/tasktransaction');
-INSERT INTO `sys_resource` VALUES ('30f1ef71d284550e5f7144f2b0a79ad5', '产品推介编辑', '/production/{id}', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/production/{id}');
-INSERT INTO `sys_resource` VALUES ('328f29a3ed6b6f792f994aeb1c4abab5', '人文景观查询(分页)', '/humanlandscape/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/humanlandscape/page');
-INSERT INTO `sys_resource` VALUES ('33b8bec21288534e35fbccdfac9f1494', '博物馆基本情况删除', '/museum/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/museum/{id}');
-INSERT INTO `sys_resource` VALUES ('35497ac6603e18992159e83005be0d64', '公园编辑', '/park/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/park/{id}');
-INSERT INTO `sys_resource` VALUES ('36113bab48568e5885a8f34bcc91bb11', '管理机构添加', '/managementagency', 'POST', '1', '2019-11-22 14:36:34', 'POST:/managementagency');
-INSERT INTO `sys_resource` VALUES ('36c191be2786a1dfd730b649d9f9d88f', '管理人员编辑', '/manageperson/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/manageperson/{id}');
-INSERT INTO `sys_resource` VALUES ('375edb54e85dc981c8df62c76f3782ed', '菜单详情', '/menu/{id}', 'GET', '3', '2019-11-22 14:36:35', 'GET:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('37687195b63b44e0d22436080de117bc', '菜单编辑', '/menu/{id}', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/menu/{id}');
-INSERT INTO `sys_resource` VALUES ('3a3445306b2ef32a0c5976a4d3e91f64', '生物标本编辑', '/biospecimen/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/biospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('3a62355efcfa84646b390d508efea9b6', '菜单添加', '/menu', 'POST', '3', '2019-11-22 14:36:35', 'POST:/menu');
-INSERT INTO `sys_resource` VALUES ('3dca30c2118ff6158ffa88191003128e', '用户删除', '/user/{id}', 'DELETE', '3', '2019-11-22 14:36:35', 'DELETE:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('3e5a0b5a1156439cd32a82b7dfedc865', '重叠情况添加', '/overlapping', 'POST', '1', '2019-11-22 14:36:34', 'POST:/overlapping');
-INSERT INTO `sys_resource` VALUES ('3e97140625dc7fc53c2c7bbb0d01813c', '图片资料查询(分页)', '/picdocs/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/picdocs/page');
-INSERT INTO `sys_resource` VALUES ('43083dba76bdf1e10b51a95974f30141', '公园信息查询(分页)', '/parkinfo/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/parkinfo/page');
-INSERT INTO `sys_resource` VALUES ('437ad0bd41cc263282bdf719cfdfe200', '下载文件', '/download{keyPath}/{fileName}', 'GET', '1', '2019-11-22 14:36:34', 'GET:/download{keyPath}/{fileName}');
-INSERT INTO `sys_resource` VALUES ('442504feccde8320f201a26b363f2db9', '会议删除', '/parkmeeting/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/parkmeeting/{id}');
-INSERT INTO `sys_resource` VALUES ('4684b8f300152ee482a2fbd95a070a8e', '产品推介添加', '/production', 'POST', '3', '2019-11-22 14:36:35', 'POST:/production');
-INSERT INTO `sys_resource` VALUES ('46947be1849f0a3fb065d4c4bb9e8ed4', '地灾信息编辑', '/earthquake/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/earthquake/{id}');
-INSERT INTO `sys_resource` VALUES ('46a5d7a79e6ba91e6709f3361a2edd81', '角色添加', '/role', 'POST', '3', '2019-11-22 14:36:35', 'POST:/role');
-INSERT INTO `sys_resource` VALUES ('47aad34069f0e8713b6df562b4b2029f', '资源查询(分页)', '/resource/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/resource/page');
-INSERT INTO `sys_resource` VALUES ('49764a50d0e0f74790ced2586b03bff8', '用户状态设置', '/user/{id}/status', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/user/{id}/status');
-INSERT INTO `sys_resource` VALUES ('498fe7906e76a4caff0b82c9115d11a0', '博物馆展厅删除', '/museumexhibition/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/museumexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('49a3211ef7ddd065888fc6ad093bff6f', '缔结姊妹公园查询(分页)', '/parkrelation/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/parkrelation/page');
-INSERT INTO `sys_resource` VALUES ('49b2accbfba5ff13f7f1f9b368c310ec', '生物标本删除', '/biospecimen/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/biospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('4aa3a9dc3d7612e3eeab0eed6cf5fd75', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/geolandscapeInfo');
-INSERT INTO `sys_resource` VALUES ('4b67b670f546e7a11310a70c1383d795', '管理人员添加', '/manageperson', 'POST', '1', '2019-11-22 14:36:34', 'POST:/manageperson');
-INSERT INTO `sys_resource` VALUES ('4cc53717ed7201af2526a716f0071287', '科研论文查询(分页)', '/researchpaper/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/researchpaper/page');
-INSERT INTO `sys_resource` VALUES ('4eac907c193cfa96ada396cdbfbacb31', '地质背景删除', '/geological/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/geological/{id}');
-INSERT INTO `sys_resource` VALUES ('4f431508eaf3ae2b72c87ecde3334212', '缔结姊妹公园编辑', '/parkrelation/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/parkrelation/{id}');
-INSERT INTO `sys_resource` VALUES ('4f53b04b850f87536c19f6cb16f2ba32', '标示解说删除', '/commentary/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/commentary/{id}');
-INSERT INTO `sys_resource` VALUES ('4f59f04de013a04c9c4a2459382da5e9', '公园规划删除', '/planning/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/planning/{id}');
-INSERT INTO `sys_resource` VALUES ('4f680eaa21e61bfde7178684c506765f', '博物馆展厅添加', '/museumexhibition', 'POST', '1', '2019-11-22 14:36:34', 'POST:/museumexhibition');
+INSERT INTO `sys_resource` VALUES ('30f1ef71d284550e5f7144f2b0a79ad5', '产品推介编辑', '/production/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/production/{id}');
+INSERT INTO `sys_resource` VALUES ('328f29a3ed6b6f792f994aeb1c4abab5', '人文景观查询(分页)', '/humanlandscape/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/humanlandscape/page');
+INSERT INTO `sys_resource` VALUES ('33b8bec21288534e35fbccdfac9f1494', '博物馆基本情况删除', '/museum/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/museum/{id}');
+INSERT INTO `sys_resource` VALUES ('35497ac6603e18992159e83005be0d64', '公园编辑', '/park/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/park/{id}');
+INSERT INTO `sys_resource` VALUES ('36113bab48568e5885a8f34bcc91bb11', '管理机构添加', '/managementagency', 'POST', '1', '2020-01-02 11:15:36', 'POST:/managementagency');
+INSERT INTO `sys_resource` VALUES ('36c191be2786a1dfd730b649d9f9d88f', '管理人员编辑', '/manageperson/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/manageperson/{id}');
+INSERT INTO `sys_resource` VALUES ('375edb54e85dc981c8df62c76f3782ed', '菜单详情', '/menu/{id}', 'GET', '3', '2020-01-02 11:15:36', 'GET:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('37687195b63b44e0d22436080de117bc', '菜单编辑', '/menu/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/menu/{id}');
+INSERT INTO `sys_resource` VALUES ('3a3445306b2ef32a0c5976a4d3e91f64', '生物标本编辑', '/biospecimen/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/biospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('3a62355efcfa84646b390d508efea9b6', '菜单添加', '/menu', 'POST', '3', '2020-01-02 11:15:36', 'POST:/menu');
+INSERT INTO `sys_resource` VALUES ('3dca30c2118ff6158ffa88191003128e', '用户删除', '/user/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('3e5a0b5a1156439cd32a82b7dfedc865', '重叠情况添加', '/overlapping', 'POST', '1', '2020-01-02 11:15:36', 'POST:/overlapping');
+INSERT INTO `sys_resource` VALUES ('3e97140625dc7fc53c2c7bbb0d01813c', '图片资料查询(分页)', '/picdocs/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/picdocs/page');
+INSERT INTO `sys_resource` VALUES ('43083dba76bdf1e10b51a95974f30141', '公园信息查询(分页)', '/parkinfo/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/parkinfo/page');
+INSERT INTO `sys_resource` VALUES ('437ad0bd41cc263282bdf719cfdfe200', '下载文件', '/download{keyPath}/{fileName}', 'GET', '1', '2020-01-02 11:15:36', 'GET:/download{keyPath}/{fileName}');
+INSERT INTO `sys_resource` VALUES ('442504feccde8320f201a26b363f2db9', '会议删除', '/parkmeeting/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/parkmeeting/{id}');
+INSERT INTO `sys_resource` VALUES ('4684b8f300152ee482a2fbd95a070a8e', '产品推介添加', '/production', 'POST', '3', '2020-01-02 11:15:36', 'POST:/production');
+INSERT INTO `sys_resource` VALUES ('46947be1849f0a3fb065d4c4bb9e8ed4', '地灾信息编辑', '/earthquake/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/earthquake/{id}');
+INSERT INTO `sys_resource` VALUES ('46a5d7a79e6ba91e6709f3361a2edd81', '角色添加', '/role', 'POST', '3', '2020-01-02 11:15:36', 'POST:/role');
+INSERT INTO `sys_resource` VALUES ('47aad34069f0e8713b6df562b4b2029f', '资源查询(分页)', '/resource/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/resource/page');
+INSERT INTO `sys_resource` VALUES ('49764a50d0e0f74790ced2586b03bff8', '用户状态设置', '/user/{id}/status', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/user/{id}/status');
+INSERT INTO `sys_resource` VALUES ('498fe7906e76a4caff0b82c9115d11a0', '博物馆展厅删除', '/museumexhibition/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/museumexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('49a3211ef7ddd065888fc6ad093bff6f', '缔结姊妹公园查询(分页)', '/parkrelation/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/parkrelation/page');
+INSERT INTO `sys_resource` VALUES ('49b2accbfba5ff13f7f1f9b368c310ec', '生物标本删除', '/biospecimen/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/biospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('4aa3a9dc3d7612e3eeab0eed6cf5fd75', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo', 'GET', '2', '2020-01-02 11:15:36', 'GET:/openApi/geolandscapeInfo');
+INSERT INTO `sys_resource` VALUES ('4b67b670f546e7a11310a70c1383d795', '管理人员添加', '/manageperson', 'POST', '1', '2020-01-02 11:15:36', 'POST:/manageperson');
+INSERT INTO `sys_resource` VALUES ('4cc53717ed7201af2526a716f0071287', '科研论文查询(分页)', '/researchpaper/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/researchpaper/page');
+INSERT INTO `sys_resource` VALUES ('4eac907c193cfa96ada396cdbfbacb31', '地质背景删除', '/geological/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/geological/{id}');
+INSERT INTO `sys_resource` VALUES ('4f431508eaf3ae2b72c87ecde3334212', '缔结姊妹公园编辑', '/parkrelation/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/parkrelation/{id}');
+INSERT INTO `sys_resource` VALUES ('4f53b04b850f87536c19f6cb16f2ba32', '标示解说删除', '/commentary/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/commentary/{id}');
+INSERT INTO `sys_resource` VALUES ('4f59f04de013a04c9c4a2459382da5e9', '公园规划删除', '/planning/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/planning/{id}');
+INSERT INTO `sys_resource` VALUES ('4f680eaa21e61bfde7178684c506765f', '博物馆展厅添加', '/museumexhibition', 'POST', '1', '2020-01-02 11:15:36', 'POST:/museumexhibition');
 INSERT INTO `sys_resource` VALUES ('502a61b04aad79fbddd5ecc70d4fc99c', '导出xls', '/export/xls', 'GET', '1', '2019-10-15 10:15:22', 'GET:/export/xls');
-INSERT INTO `sys_resource` VALUES ('512082c7c24e77c5496977206d823f48', '任务查询(分页)', '/task/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/task/page');
-INSERT INTO `sys_resource` VALUES ('544a69d536f460d511a271ac2468cafc', '科普活动添加', '/scienceactivity', 'POST', '1', '2019-11-22 14:36:35', 'POST:/scienceactivity');
-INSERT INTO `sys_resource` VALUES ('54522abbe7d3a2a40e7edbc9339acc50', '用户编辑', '/user/{id}', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('55295a3ce5c98c008672159097f20813', '上传图片', '/upload/img', 'POST', '1', '2019-11-22 14:36:35', 'POST:/upload/img');
-INSERT INTO `sys_resource` VALUES ('566f824387a06feea407439bd6f4be8f', '会议添加', '/parkmeeting', 'POST', '3', '2019-11-22 14:36:34', 'POST:/parkmeeting');
-INSERT INTO `sys_resource` VALUES ('5a1196055f5773be65b2669ea37f3978', 'openApi人文景观详情', '/openApi/humanlandscapeInfo', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/humanlandscapeInfo');
-INSERT INTO `sys_resource` VALUES ('5cc53e1d69c9023759841eb2c41f9bfd', '游客统计删除', '/gueststat/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/gueststat/{id}');
+INSERT INTO `sys_resource` VALUES ('512082c7c24e77c5496977206d823f48', '任务查询(分页)', '/task/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/task/page');
+INSERT INTO `sys_resource` VALUES ('544a69d536f460d511a271ac2468cafc', '科普活动添加', '/scienceactivity', 'POST', '1', '2020-01-02 11:15:36', 'POST:/scienceactivity');
+INSERT INTO `sys_resource` VALUES ('54522abbe7d3a2a40e7edbc9339acc50', '用户编辑', '/user/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('55295a3ce5c98c008672159097f20813', '上传图片', '/upload/img', 'POST', '1', '2020-01-02 11:15:36', 'POST:/upload/img');
+INSERT INTO `sys_resource` VALUES ('566f824387a06feea407439bd6f4be8f', '会议添加', '/parkmeeting', 'POST', '3', '2020-01-02 11:15:36', 'POST:/parkmeeting');
+INSERT INTO `sys_resource` VALUES ('5a1196055f5773be65b2669ea37f3978', 'openApi人文景观详情', '/openApi/humanlandscapeInfo', 'GET', '2', '2020-01-02 11:15:36', 'GET:/openApi/humanlandscapeInfo');
+INSERT INTO `sys_resource` VALUES ('5cc53e1d69c9023759841eb2c41f9bfd', '游客统计删除', '/gueststat/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/gueststat/{id}');
 INSERT INTO `sys_resource` VALUES ('5d3d1df82e3cbf85373f4e68afded452', '导入xls', '/import1/xls', 'POST', '1', '2019-10-16 09:52:37', 'POST:/import1/xls');
 INSERT INTO `sys_resource` VALUES ('5d678decf6c8a93b629ea4dc928dd2d4', '导出xls', '/excel/xls', 'GET', '1', '2019-09-25 22:25:54', 'GET:/excel/xls');
-INSERT INTO `sys_resource` VALUES ('6193837ebc7f6f3045d8a5fba88968ee', '游客统计报表查询', '/gueststat/list', 'GET', '3', '2019-11-22 14:36:34', 'GET:/gueststat/list');
-INSERT INTO `sys_resource` VALUES ('61ffa059261d938164f12a0feae60779', '地质标本编辑', '/geospecimen/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/geospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('6588452dd7adc2cf0b3a634c7eaba578', '博物馆基本情况查询(分页)', '/museum/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/museum/page');
-INSERT INTO `sys_resource` VALUES ('6594f272facd4b263779a5898408d6f5', '地质标本添加', '/geospecimen', 'POST', '1', '2019-11-22 14:36:34', 'POST:/geospecimen');
-INSERT INTO `sys_resource` VALUES ('65bbd93b69d8dd2d5cade59dc0ccd8e6', '公园规划编辑', '/planning/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/planning/{id}');
-INSERT INTO `sys_resource` VALUES ('664f3db603c5855b208fc969984e1603', '采样信息添加', '/sampling', 'POST', '1', '2019-11-22 14:36:35', 'POST:/sampling');
-INSERT INTO `sys_resource` VALUES ('6847ea5e1845717af3d32125277a5eea', '管理机构查询(列表)', '/managementagency/list', 'GET', '3', '2019-11-22 14:36:34', 'GET:/managementagency/list');
-INSERT INTO `sys_resource` VALUES ('68655ee2d14ea4f555d8c6bd91004381', '科研论文编辑', '/researchpaper/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/researchpaper/{id}');
-INSERT INTO `sys_resource` VALUES ('6a0c5d0d2495feef251cd70123c9d985', '文物保护单位添加', '/culturalsites', 'POST', '3', '2019-11-22 14:36:34', 'POST:/culturalsites');
-INSERT INTO `sys_resource` VALUES ('6aa7aabe9b977d40b24dc5af059f2782', '人文展品编辑', '/humenexhibit/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/humenexhibit/{id}');
-INSERT INTO `sys_resource` VALUES ('6ab0f8a49671e489f11a1bef2fcaf102', '账户清除', '/account/token', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/account/token');
-INSERT INTO `sys_resource` VALUES ('6c3514540b1e2e1589a9c9566273c7c7', '用户详情', '/user/{id}', 'GET', '3', '2019-11-22 14:36:35', 'GET:/user/{id}');
-INSERT INTO `sys_resource` VALUES ('6e8bb84dfd74bd76918cbc7b7b97e241', '地质标本删除', '/geospecimen/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/geospecimen/{id}');
-INSERT INTO `sys_resource` VALUES ('6f64396b3c7a68b40194169e09380fd0', '采样信息删除', '/sampling/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/sampling/{id}');
-INSERT INTO `sys_resource` VALUES ('7025c7532d2a58d3de4dde7c66d363f3', '资源刷新', '/resource', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/resource');
-INSERT INTO `sys_resource` VALUES ('70a8486a7b06e085a6e5d5249cd68c19', '博物馆查询(列表)', '/museum/list', 'GET', '3', '2019-11-22 14:36:34', 'GET:/museum/list');
-INSERT INTO `sys_resource` VALUES ('71d5f2e10db38eaebdaa44fa89cb1163', '任务删除', '/task/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/task/{id}');
-INSERT INTO `sys_resource` VALUES ('71ff8d6843b1023eaa48a6a0113b9307', '人文展品添加', '/humenexhibit', 'POST', '1', '2019-11-22 14:36:34', 'POST:/humenexhibit');
-INSERT INTO `sys_resource` VALUES ('72331b4d9d6a4d884f54d75b7ebc3b0b', '展板添加', '/displayboard', 'POST', '1', '2019-11-22 14:36:34', 'POST:/displayboard');
-INSERT INTO `sys_resource` VALUES ('729f78186228a271d4035747eb4ad465', '专题研究添加', '/parktopic', 'POST', '1', '2019-11-22 14:36:34', 'POST:/parktopic');
-INSERT INTO `sys_resource` VALUES ('7ad036add7309273ab46935c955cd547', '地质遗迹景观查询(分页)', '/geolandscape/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/geolandscape/page');
-INSERT INTO `sys_resource` VALUES ('7d5889685e76e54b05e5f88169fd5e20', '影像资料编辑', '/vediodocs/{id}', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/vediodocs/{id}');
-INSERT INTO `sys_resource` VALUES ('7e5982583c9805792c523b32ca5ef88b', '图片资料添加', '/picdocs', 'POST', '3', '2019-11-22 14:36:34', 'POST:/picdocs');
-INSERT INTO `sys_resource` VALUES ('7f4c9278a2d5d361b584e8db2c0f9d64', '采样信息编辑', '/sampling/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/sampling/{id}');
-INSERT INTO `sys_resource` VALUES ('8069b90f45605898c6b48c513785194e', '专题研究编辑', '/parktopic/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/parktopic/{id}');
-INSERT INTO `sys_resource` VALUES ('80e9634eadbb61b2d2c8e3b8477aa313', '会议查询(分页)', '/parkmeeting/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/parkmeeting/page');
-INSERT INTO `sys_resource` VALUES ('82755b8a0b46c30b88df630c0175c625', 'VR全景删除', '/vrdata/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/vrdata/{id}');
-INSERT INTO `sys_resource` VALUES ('82ae5ea4f71f8e9f4ff625dbc8d28819', '影像资料查询(分页)', '/vediodocs/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/vediodocs/page');
-INSERT INTO `sys_resource` VALUES ('82d143f7b01b3cb8cf2617a9efb7a8b8', '产品推介查询(分页)', '/production/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/production/page');
-INSERT INTO `sys_resource` VALUES ('842e33410b5a97b6c797e4782c97a90e', '账户获取', '/account/token', 'POST', '2', '2019-11-22 14:36:35', 'POST:/account/token');
-INSERT INTO `sys_resource` VALUES ('85b2608158865a37dd2c4cdd8c91f387', '公园信息编辑', '/parkinfo/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/parkinfo/{id}');
-INSERT INTO `sys_resource` VALUES ('86047dad161b62bae784f2f77cb44cb8', '管理机构删除', '/managementagency/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/managementagency/{id}');
-INSERT INTO `sys_resource` VALUES ('8690f1577b8abe64aa841cb763a32b47', '地质背景添加', '/geological', 'POST', '1', '2019-11-22 14:36:34', 'POST:/geological');
-INSERT INTO `sys_resource` VALUES ('8b98b499b8e85136a0cbb44fee38385a', '上传文件', '/upload/file', 'POST', '1', '2019-11-22 14:36:35', 'POST:/upload/file');
-INSERT INTO `sys_resource` VALUES ('8cb83a749812f5d14d518d080fa12773', '科普作品查询(分页)', '/sciencework/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/sciencework/page');
-INSERT INTO `sys_resource` VALUES ('8f0edeb755b80546b041872d0c867874', 'openApi地质遗迹景观列表', '/openApi/geolandscapeList', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/geolandscapeList');
-INSERT INTO `sys_resource` VALUES ('9113537364ae8b5e8864864039a6ce61', 'VR全景编辑', '/vrdata/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/vrdata/{id}');
-INSERT INTO `sys_resource` VALUES ('9141e80baac708a8863498ff7a41d276', '任务添加', '/task', 'POST', '1', '2019-11-22 14:36:35', 'POST:/task');
-INSERT INTO `sys_resource` VALUES ('91f929d78067ee9198830bad15703b52', 'VR全景查询(分页)', '/vrdata/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/vrdata/page');
-INSERT INTO `sys_resource` VALUES ('924b18eaf488496f46b09c2faa561a4c', 'VR全景添加', '/vrdata', 'POST', '1', '2019-11-22 14:36:35', 'POST:/vrdata');
-INSERT INTO `sys_resource` VALUES ('93541f9d26ff3e388f53744d70679dd4', '科普活动删除', '/scienceactivity/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/scienceactivity/{id}');
-INSERT INTO `sys_resource` VALUES ('9513d9c346dc6afdbcef07fad075ca96', '博物馆基本情况编辑', '/museum/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/museum/{id}');
-INSERT INTO `sys_resource` VALUES ('956578f7a1e6fe0239b03232faa0dfda', '公园规划添加', '/planning', 'POST', '3', '2019-11-22 14:36:35', 'POST:/planning');
-INSERT INTO `sys_resource` VALUES ('98c864bdce956341baa4f83cf8a74ddc', '法律法规查询(分页)', '/legal/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/legal/page');
-INSERT INTO `sys_resource` VALUES ('9964cc368380f9bd7c782855389068d2', '公园添加', '/park', 'POST', '1', '2019-11-22 14:36:34', 'POST:/park');
+INSERT INTO `sys_resource` VALUES ('6193837ebc7f6f3045d8a5fba88968ee', '游客统计报表查询', '/gueststat/list', 'GET', '3', '2020-01-02 11:15:36', 'GET:/gueststat/list');
+INSERT INTO `sys_resource` VALUES ('61ffa059261d938164f12a0feae60779', '地质标本编辑', '/geospecimen/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/geospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('6588452dd7adc2cf0b3a634c7eaba578', '博物馆基本情况查询(分页)', '/museum/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/museum/page');
+INSERT INTO `sys_resource` VALUES ('6594f272facd4b263779a5898408d6f5', '地质标本添加', '/geospecimen', 'POST', '1', '2020-01-02 11:15:36', 'POST:/geospecimen');
+INSERT INTO `sys_resource` VALUES ('65bbd93b69d8dd2d5cade59dc0ccd8e6', '公园规划编辑', '/planning/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/planning/{id}');
+INSERT INTO `sys_resource` VALUES ('664f3db603c5855b208fc969984e1603', '采样信息添加', '/sampling', 'POST', '1', '2020-01-02 11:15:36', 'POST:/sampling');
+INSERT INTO `sys_resource` VALUES ('6847ea5e1845717af3d32125277a5eea', '管理机构查询(列表)', '/managementagency/list', 'GET', '3', '2020-01-02 11:15:36', 'GET:/managementagency/list');
+INSERT INTO `sys_resource` VALUES ('68655ee2d14ea4f555d8c6bd91004381', '科研论文编辑', '/researchpaper/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/researchpaper/{id}');
+INSERT INTO `sys_resource` VALUES ('6a0c5d0d2495feef251cd70123c9d985', '文物保护单位添加', '/culturalsites', 'POST', '3', '2020-01-02 11:15:36', 'POST:/culturalsites');
+INSERT INTO `sys_resource` VALUES ('6aa7aabe9b977d40b24dc5af059f2782', '人文展品编辑', '/humenexhibit/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/humenexhibit/{id}');
+INSERT INTO `sys_resource` VALUES ('6ab0f8a49671e489f11a1bef2fcaf102', '账户清除', '/account/token', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/account/token');
+INSERT INTO `sys_resource` VALUES ('6c3514540b1e2e1589a9c9566273c7c7', '用户详情', '/user/{id}', 'GET', '3', '2020-01-02 11:15:36', 'GET:/user/{id}');
+INSERT INTO `sys_resource` VALUES ('6e8bb84dfd74bd76918cbc7b7b97e241', '地质标本删除', '/geospecimen/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/geospecimen/{id}');
+INSERT INTO `sys_resource` VALUES ('6f64396b3c7a68b40194169e09380fd0', '采样信息删除', '/sampling/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/sampling/{id}');
+INSERT INTO `sys_resource` VALUES ('7025c7532d2a58d3de4dde7c66d363f3', '资源刷新', '/resource', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/resource');
+INSERT INTO `sys_resource` VALUES ('70a8486a7b06e085a6e5d5249cd68c19', '博物馆查询(列表)', '/museum/list', 'GET', '3', '2020-01-02 11:15:36', 'GET:/museum/list');
+INSERT INTO `sys_resource` VALUES ('71d5f2e10db38eaebdaa44fa89cb1163', '任务删除', '/task/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/task/{id}');
+INSERT INTO `sys_resource` VALUES ('71ff8d6843b1023eaa48a6a0113b9307', '人文展品添加', '/humenexhibit', 'POST', '1', '2020-01-02 11:15:36', 'POST:/humenexhibit');
+INSERT INTO `sys_resource` VALUES ('72331b4d9d6a4d884f54d75b7ebc3b0b', '展板添加', '/displayboard', 'POST', '1', '2020-01-02 11:15:36', 'POST:/displayboard');
+INSERT INTO `sys_resource` VALUES ('729f78186228a271d4035747eb4ad465', '专题研究添加', '/parktopic', 'POST', '1', '2020-01-02 11:15:36', 'POST:/parktopic');
+INSERT INTO `sys_resource` VALUES ('7ad036add7309273ab46935c955cd547', '地质遗迹景观查询(分页)', '/geolandscape/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/geolandscape/page');
+INSERT INTO `sys_resource` VALUES ('7d5889685e76e54b05e5f88169fd5e20', '影像资料编辑', '/vediodocs/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/vediodocs/{id}');
+INSERT INTO `sys_resource` VALUES ('7e5982583c9805792c523b32ca5ef88b', '图片资料添加', '/picdocs', 'POST', '3', '2020-01-02 11:15:36', 'POST:/picdocs');
+INSERT INTO `sys_resource` VALUES ('7f4c9278a2d5d361b584e8db2c0f9d64', '采样信息编辑', '/sampling/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/sampling/{id}');
+INSERT INTO `sys_resource` VALUES ('8069b90f45605898c6b48c513785194e', '专题研究编辑', '/parktopic/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/parktopic/{id}');
+INSERT INTO `sys_resource` VALUES ('80e9634eadbb61b2d2c8e3b8477aa313', '会议查询(分页)', '/parkmeeting/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/parkmeeting/page');
+INSERT INTO `sys_resource` VALUES ('82755b8a0b46c30b88df630c0175c625', 'VR全景删除', '/vrdata/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/vrdata/{id}');
+INSERT INTO `sys_resource` VALUES ('82ae5ea4f71f8e9f4ff625dbc8d28819', '影像资料查询(分页)', '/vediodocs/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/vediodocs/page');
+INSERT INTO `sys_resource` VALUES ('82d143f7b01b3cb8cf2617a9efb7a8b8', '产品推介查询(分页)', '/production/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/production/page');
+INSERT INTO `sys_resource` VALUES ('842e33410b5a97b6c797e4782c97a90e', '账户获取', '/account/token', 'POST', '2', '2020-01-02 11:15:36', 'POST:/account/token');
+INSERT INTO `sys_resource` VALUES ('85b2608158865a37dd2c4cdd8c91f387', '公园信息编辑', '/parkinfo/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/parkinfo/{id}');
+INSERT INTO `sys_resource` VALUES ('86047dad161b62bae784f2f77cb44cb8', '管理机构删除', '/managementagency/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/managementagency/{id}');
+INSERT INTO `sys_resource` VALUES ('8690f1577b8abe64aa841cb763a32b47', '地质背景添加', '/geological', 'POST', '1', '2020-01-02 11:15:36', 'POST:/geological');
+INSERT INTO `sys_resource` VALUES ('8b98b499b8e85136a0cbb44fee38385a', '上传文件', '/upload/file', 'POST', '1', '2020-01-02 11:15:36', 'POST:/upload/file');
+INSERT INTO `sys_resource` VALUES ('8cb83a749812f5d14d518d080fa12773', '科普作品查询(分页)', '/sciencework/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/sciencework/page');
+INSERT INTO `sys_resource` VALUES ('8f0edeb755b80546b041872d0c867874', 'openApi地质遗迹景观列表', '/openApi/geolandscapeList', 'GET', '2', '2020-01-02 11:15:36', 'GET:/openApi/geolandscapeList');
+INSERT INTO `sys_resource` VALUES ('9113537364ae8b5e8864864039a6ce61', 'VR全景编辑', '/vrdata/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/vrdata/{id}');
+INSERT INTO `sys_resource` VALUES ('9141e80baac708a8863498ff7a41d276', '任务添加', '/task', 'POST', '1', '2020-01-02 11:15:36', 'POST:/task');
+INSERT INTO `sys_resource` VALUES ('91f929d78067ee9198830bad15703b52', 'VR全景查询(分页)', '/vrdata/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/vrdata/page');
+INSERT INTO `sys_resource` VALUES ('924b18eaf488496f46b09c2faa561a4c', 'VR全景添加', '/vrdata', 'POST', '1', '2020-01-02 11:15:36', 'POST:/vrdata');
+INSERT INTO `sys_resource` VALUES ('93541f9d26ff3e388f53744d70679dd4', '科普活动删除', '/scienceactivity/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/scienceactivity/{id}');
+INSERT INTO `sys_resource` VALUES ('9513d9c346dc6afdbcef07fad075ca96', '博物馆基本情况编辑', '/museum/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/museum/{id}');
+INSERT INTO `sys_resource` VALUES ('956578f7a1e6fe0239b03232faa0dfda', '公园规划添加', '/planning', 'POST', '3', '2020-01-02 11:15:36', 'POST:/planning');
+INSERT INTO `sys_resource` VALUES ('98c864bdce956341baa4f83cf8a74ddc', '法律法规查询(分页)', '/legal/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/legal/page');
+INSERT INTO `sys_resource` VALUES ('9964cc368380f9bd7c782855389068d2', '公园添加', '/park', 'POST', '1', '2020-01-02 11:15:36', 'POST:/park');
 INSERT INTO `sys_resource` VALUES ('9a7d73a1f4ebe1e284337e98cf564aee', '导出xls', '/export1xls', 'GET', '1', '2019-10-15 10:15:22', 'GET:/export1xls');
-INSERT INTO `sys_resource` VALUES ('9be8e0df48c8ba879e5b079c73662ee4', '用户添加', '/user', 'POST', '3', '2019-11-22 14:36:35', 'POST:/user');
-INSERT INTO `sys_resource` VALUES ('9c649f2b5cc9a0948958033038e6786b', '游客统计编辑', '/gueststat/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/gueststat/{id}');
-INSERT INTO `sys_resource` VALUES ('9d47323a8cf271afa3794a41d01ebd8d', '地灾信息删除', '/earthquake/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/earthquake/{id}');
-INSERT INTO `sys_resource` VALUES ('a0a1a4a566471fe2a2556bd873a3f036', '生物标本添加', '/biospecimen', 'POST', '1', '2019-11-22 14:36:34', 'POST:/biospecimen');
-INSERT INTO `sys_resource` VALUES ('a114f29b98a6faa95ac89139008f0e8c', '会议编辑', '/parkmeeting/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/parkmeeting/{id}');
-INSERT INTO `sys_resource` VALUES ('a2cf21f89380c679e13e76a46e63de18', '角色查询(分页)', '/role/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/role/page');
-INSERT INTO `sys_resource` VALUES ('a36d86152fb3241feef81a9ccee6faed', '生态环境查询', '/ecosystem/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/ecosystem/page');
-INSERT INTO `sys_resource` VALUES ('a9301ba0ce8390ecd756fb60b0487496', '科普作品编辑', '/sciencework/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/sciencework/{id}');
-INSERT INTO `sys_resource` VALUES ('ab34bcc1abb35eb4c7926c4f8e88bfa0', '展板查询(分页)', '/displayboard/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/displayboard/page');
-INSERT INTO `sys_resource` VALUES ('abb48abd102deb57718e6210fd5b55f9', '矿权情况编辑', '/mineralright/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/mineralright/{id}');
-INSERT INTO `sys_resource` VALUES ('abe8fd7846f776abf7f9a52778a48cf0', '专家导游删除', '/parklibrary/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/parklibrary/{id}');
-INSERT INTO `sys_resource` VALUES ('af29194331dabc32c641585380ff714f', '游客统计查询(分页)', '/gueststat/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/gueststat/page');
-INSERT INTO `sys_resource` VALUES ('af63a08383a750461f23208b6d99bfc1', '重叠情况编辑', '/overlapping/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/overlapping/{id}');
-INSERT INTO `sys_resource` VALUES ('b0b5dc6a4d472e5160e289eee92ad5d4', '公园查询(列表)', '/park/list', 'GET', '3', '2019-11-22 14:36:34', 'GET:/park/list');
-INSERT INTO `sys_resource` VALUES ('b11f70e89e5f1fd419cce8af6f632e92', 'openApi自然景观详情', '/openApi/naturallandscapeInfo1', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/naturallandscapeInfo1');
-INSERT INTO `sys_resource` VALUES ('b42c4411f27e50bafc6094b31b323996', '自然景观删除', '/naturallandscape/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/naturallandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('b4a89208a3f348ad68f57a0ca16c94ec', '公园删除', '/park/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/park/{id}');
-INSERT INTO `sys_resource` VALUES ('b5bd54c21e5412a49f4f656c8f33f77b', '人文景观添加', '/humanlandscape', 'POST', '1', '2019-11-22 14:36:34', 'POST:/humanlandscape');
-INSERT INTO `sys_resource` VALUES ('b74d54f1f4be2958369a704a50f6900a', '交流互展添加', '/exchangeexhibition', 'POST', '3', '2019-11-22 14:36:34', 'POST:/exchangeexhibition');
-INSERT INTO `sys_resource` VALUES ('b799b91c2cb5d49953a7308c93aef3e6', '人文展品删除', '/humenexhibit/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/humenexhibit/{id}');
-INSERT INTO `sys_resource` VALUES ('b7b1c22076c0d28c8d0fe4c0b09b6a6e', '角色编辑', '/role/{id}', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/role/{id}');
-INSERT INTO `sys_resource` VALUES ('b9766aef2e0a38ab87f640ca592c3569', '科普作品删除', '/sciencework/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/sciencework/{id}');
-INSERT INTO `sys_resource` VALUES ('bab73118731876a830ed12630846422d', '博物馆展厅查询(分页)', '/museumexhibition/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/museumexhibition/page');
-INSERT INTO `sys_resource` VALUES ('bb72308d143b0fc7a397e2756fbc8d6f', 'openApi人文景观列表', '/openApi/humanlandscapeList', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/humanlandscapeList');
-INSERT INTO `sys_resource` VALUES ('bc90809c5084a45eda6ece88e426d0b8', '生态环境删除', '/ecosystem/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/ecosystem/{id}');
-INSERT INTO `sys_resource` VALUES ('c2db9729dcd4a7d703e45411bb445dfd', '账户密码修改', '/account/password', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/account/password');
-INSERT INTO `sys_resource` VALUES ('c2f8625dfb6b6be6237567391faf0e62', '文物保护单位查询(分页)', '/culturalsites/page', 'GET', '3', '2019-11-22 14:36:34', 'GET:/culturalsites/page');
-INSERT INTO `sys_resource` VALUES ('c360a16bbc9b4c5a8378d48bb1fa4ffd', '专题研究删除', '/parktopic/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/parktopic/{id}');
-INSERT INTO `sys_resource` VALUES ('c7e7ed1fdcc753f9fb5aab85bc639da6', '社会经济状况编辑', '/socialeconomy/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/socialeconomy/{id}');
-INSERT INTO `sys_resource` VALUES ('c83ae91d496426d8dc8c8d265f959cd0', '重叠情况查询(分页)', '/overlapping/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/overlapping/page');
-INSERT INTO `sys_resource` VALUES ('c950d0767bbe74702259d06768faa283', '文物保护单位编辑', '/culturalsites/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/culturalsites/{id}');
-INSERT INTO `sys_resource` VALUES ('ca6fc80fa67b8178d040d951efed929e', '展板删除', '/displayboard/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/displayboard/{id}');
-INSERT INTO `sys_resource` VALUES ('cb5c88079e3665683307a99ee46a865e', '导入xls', '/importBackup/xls', 'POST', '1', '2019-11-22 14:36:34', 'POST:/importBackup/xls');
-INSERT INTO `sys_resource` VALUES ('cc88c5473c49ef83cad40ab279db16bf', '标示解说查询(分页)', '/commentary/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/commentary/page');
-INSERT INTO `sys_resource` VALUES ('cd6de4b154e91389697aaa16f9e70f03', '地质标本查询(分页)', '/geospecimen/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/geospecimen/page');
-INSERT INTO `sys_resource` VALUES ('cf2f5e841d1fa963c3a511c4ea23c6b8', '科研论文添加', '/researchpaper', 'POST', '1', '2019-11-22 14:36:35', 'POST:/researchpaper');
-INSERT INTO `sys_resource` VALUES ('cf644f767183f7940a094d82fd075ed5', '影像资料删除', '/vediodocs/{id}', 'DELETE', '3', '2019-11-22 14:36:35', 'DELETE:/vediodocs/{id}');
-INSERT INTO `sys_resource` VALUES ('d1cee74a3c8ecc212ec1fbfffd7d4b7a', '缔结姊妹公园添加', '/parkrelation', 'POST', '3', '2019-11-22 14:36:34', 'POST:/parkrelation');
-INSERT INTO `sys_resource` VALUES ('d245ace645ea40e898178ee13c24297f', '用户密码重置', '/user/{id}/password', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/user/{id}/password');
-INSERT INTO `sys_resource` VALUES ('d260fc5e4c10a4fbd1661acb739c6119', '矿权情况删除', '/mineralright/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/mineralright/{id}');
-INSERT INTO `sys_resource` VALUES ('d289b64ef206771d89ed2670d93049b9', '地质遗迹景观添加', '/geolandscape', 'POST', '1', '2019-11-22 14:36:34', 'POST:/geolandscape');
-INSERT INTO `sys_resource` VALUES ('d374ba0bb7e6ed122a2c04cbdb759b81', '人文展品查询(分页)', '/humenexhibit/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/humenexhibit/page');
-INSERT INTO `sys_resource` VALUES ('d3ec728a0d9d66b8351cd0278962a384', '图片资料编辑', '/picdocs/{id}', 'PUT', '3', '2019-11-22 14:36:34', 'PUT:/picdocs/{id}');
-INSERT INTO `sys_resource` VALUES ('d431b135887822c5c012561c96f1ec84', '生态环境编辑', '/ecosystem/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/ecosystem/{id}');
-INSERT INTO `sys_resource` VALUES ('d4dcfc78a6b0f5f84ede3740b391825f', '社会经济状况删除', '/socialeconomy/{id}', 'DELETE', '1', '2019-11-22 14:36:35', 'DELETE:/socialeconomy/{id}');
-INSERT INTO `sys_resource` VALUES ('d6119390317deda395c1487d401dd47f', '管理人员删除', '/manageperson/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/manageperson/{id}');
-INSERT INTO `sys_resource` VALUES ('d6c4ff80beeec0e3f6968775b906600e', '文物保护单位删除', '/culturalsites/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/culturalsites/{id}');
-INSERT INTO `sys_resource` VALUES ('d7b1e397718a5e2bb30ee16d81fe8839', '展板编辑', '/displayboard/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/displayboard/{id}');
-INSERT INTO `sys_resource` VALUES ('d81bffa6ffd70cc443703820b5a95e8d', '账户菜单', '/account/menus', 'GET', '1', '2019-11-22 14:36:35', 'GET:/account/menus');
-INSERT INTO `sys_resource` VALUES ('d83a249e0e0ed84806ecba2fd8c7148d', '菜单父级查询(下拉框)', '/menu/combos', 'GET', '3', '2019-11-22 14:36:35', 'GET:/menu/combos');
-INSERT INTO `sys_resource` VALUES ('d8544217f479cfb39559e4b94f413aaa', '资源查询(所有)', '/resource/list', 'GET', '3', '2019-11-22 14:36:35', 'GET:/resource/list');
-INSERT INTO `sys_resource` VALUES ('dcd22be9d250bc20abed2b5390259a3f', '自然景观查询(分页)', '/naturallandscape/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/naturallandscape/page');
-INSERT INTO `sys_resource` VALUES ('dd00babb9be667747337654d68354531', '科普活动编辑', '/scienceactivity/{id}', 'PUT', '1', '2019-11-22 14:36:35', 'PUT:/scienceactivity/{id}');
-INSERT INTO `sys_resource` VALUES ('ddf4e3fd39264da50eec54cfd02731f4', '角色删除', '/role/{id}', 'DELETE', '3', '2019-11-22 14:36:35', 'DELETE:/role/{id}');
-INSERT INTO `sys_resource` VALUES ('de16f2ea5e499ebcb81154efec1d2df4', '游客统计添加', '/gueststat', 'POST', '3', '2019-11-22 14:36:34', 'POST:/gueststat');
-INSERT INTO `sys_resource` VALUES ('de2199682fdb8768d3dada69bf282f63', '管理机构查询(分页)', '/managementagency/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/managementagency/page');
-INSERT INTO `sys_resource` VALUES ('de8b6406105c3ea1c71de78e0870595e', '菜单状态设置', '/menu/{id}/status', 'PUT', '3', '2019-11-22 14:36:35', 'PUT:/menu/{id}/status');
-INSERT INTO `sys_resource` VALUES ('dfdff4d1f7e710eb21962c2f6df810b4', '管理人员查询(分页)', '/manageperson/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/manageperson/page');
-INSERT INTO `sys_resource` VALUES ('e113d9ae14c1ba583228d0974ccdfab1', '地质遗迹景观编辑', '/geolandscape/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/geolandscape/{id}');
-INSERT INTO `sys_resource` VALUES ('e39c62db55dba9e58d9f996096e97c63', '专家导游添加', '/parklibrary', 'POST', '1', '2019-11-22 14:36:34', 'POST:/parklibrary');
-INSERT INTO `sys_resource` VALUES ('e6785c61264683eaa3e7b6bcd5190f69', '法律法规添加', '/legal', 'POST', '1', '2019-11-22 14:36:34', 'POST:/legal');
-INSERT INTO `sys_resource` VALUES ('e742172f7e82773b48f7075ffbf3060c', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo1', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/geolandscapeInfo1');
-INSERT INTO `sys_resource` VALUES ('e78940daf86b9ac5563d539e8802429c', '账户详情', '/account/info', 'GET', '1', '2019-11-22 14:36:35', 'GET:/account/info');
-INSERT INTO `sys_resource` VALUES ('e78b1e45561db580a21ebe962414aaa9', '自然景观添加', '/naturallandscape', 'POST', '1', '2019-11-22 14:36:34', 'POST:/naturallandscape');
-INSERT INTO `sys_resource` VALUES ('e8294671c0aeae7195fc3c43e2457436', '生物标本查询(分页)', '/biospecimen/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/biospecimen/page');
-INSERT INTO `sys_resource` VALUES ('e94e936ee35513a5cbaa0b670a806677', '博物馆基本情况添加', '/museum', 'POST', '1', '2019-11-22 14:36:34', 'POST:/museum');
-INSERT INTO `sys_resource` VALUES ('ea1ff9435f36746204efc424f2386a3e', '地质背景查询(分页)', '/geological/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/geological/page');
-INSERT INTO `sys_resource` VALUES ('eb0766e055b34846e6f0e8a003dc0f51', '产品推介删除', '/production/{id}', 'DELETE', '3', '2019-11-22 14:36:35', 'DELETE:/production/{id}');
-INSERT INTO `sys_resource` VALUES ('ec06a315849b5fe61ea032f908e04998', 'openApi人文景观详情', '/openApi/humanlandscapeInfo1', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/humanlandscapeInfo1');
-INSERT INTO `sys_resource` VALUES ('eed40b7746f536ba707e8c7b3bc3d600', '公园信息添加', '/parkinfo', 'POST', '3', '2019-11-22 14:36:34', 'POST:/parkinfo');
-INSERT INTO `sys_resource` VALUES ('ef0c2202d21ea0a946a1aa1fc96b1099', '交流互展删除', '/exchangeexhibition/{id}', 'DELETE', '3', '2019-11-22 14:36:34', 'DELETE:/exchangeexhibition/{id}');
-INSERT INTO `sys_resource` VALUES ('f084f47ab2ec0ce7d2846ca0465f9926', '采样信息查询(分页)', '/sampling/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/sampling/page');
-INSERT INTO `sys_resource` VALUES ('f11ce5f9757df03f88b94a924c1f3512', '导出xls', '/exportxls', 'GET', '1', '2019-11-22 14:36:34', 'GET:/exportxls');
-INSERT INTO `sys_resource` VALUES ('f4912e9c64d9c95d761a642caac77a3c', '地灾信息添加', '/earthquake', 'POST', '1', '2019-11-22 14:36:34', 'POST:/earthquake');
-INSERT INTO `sys_resource` VALUES ('f4b369788d0d337b34bfe8e763168124', 'openApi自然景观详情', '/openApi/naturallandscapeInfo', 'GET', '2', '2019-11-22 14:36:35', 'GET:/openApi/naturallandscapeInfo');
-INSERT INTO `sys_resource` VALUES ('f86b169919bf24ce08507f2dcea7de8f', '标示解说编辑', '/commentary/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/commentary/{id}');
-INSERT INTO `sys_resource` VALUES ('f880f8a35613b38182612a061291f8a5', '菜单查询(所有)', '/menu/list', 'GET', '3', '2019-11-22 14:36:35', 'GET:/menu/list');
-INSERT INTO `sys_resource` VALUES ('f8afb5ec48a65cb7c9cd7e9372118748', '生态环境添加', '/ecosystem', 'POST', '1', '2019-11-22 14:36:34', 'POST:/ecosystem');
-INSERT INTO `sys_resource` VALUES ('fad1ecbafb22f1ac0f63486d71393745', '用户查询(分页)', '/user/page', 'GET', '3', '2019-11-22 14:36:35', 'GET:/user/page');
-INSERT INTO `sys_resource` VALUES ('fcefc2a889894309e8eaff8f5762240a', '法律法规编辑', '/legal/{id}', 'PUT', '1', '2019-11-22 14:36:34', 'PUT:/legal/{id}');
-INSERT INTO `sys_resource` VALUES ('fd1c22d987d0c74044917917a85acfdc', '矿权情况添加', '/mineralright', 'POST', '1', '2019-11-22 14:36:34', 'POST:/mineralright');
-INSERT INTO `sys_resource` VALUES ('fdbe8e0f7ae93c33c165fdbc68fdb719', '社会经济状况查询(分页)', '/socialeconomy/page', 'GET', '1', '2019-11-22 14:36:35', 'GET:/socialeconomy/page');
-INSERT INTO `sys_resource` VALUES ('fe7a8147c0721226e5de8e3e8f6ebf93', '专家导游查询(分页)', '/parklibrary/page', 'GET', '1', '2019-11-22 14:36:34', 'GET:/parklibrary/page');
-INSERT INTO `sys_resource` VALUES ('ffdbcf5be43ec6452a9b568c833f8f0a', '法律法规删除', '/legal/{id}', 'DELETE', '1', '2019-11-22 14:36:34', 'DELETE:/legal/{id}');
+INSERT INTO `sys_resource` VALUES ('9be8e0df48c8ba879e5b079c73662ee4', '用户添加', '/user', 'POST', '3', '2020-01-02 11:15:36', 'POST:/user');
+INSERT INTO `sys_resource` VALUES ('9c649f2b5cc9a0948958033038e6786b', '游客统计编辑', '/gueststat/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/gueststat/{id}');
+INSERT INTO `sys_resource` VALUES ('9d47323a8cf271afa3794a41d01ebd8d', '地灾信息删除', '/earthquake/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/earthquake/{id}');
+INSERT INTO `sys_resource` VALUES ('a0a1a4a566471fe2a2556bd873a3f036', '生物标本添加', '/biospecimen', 'POST', '1', '2020-01-02 11:15:36', 'POST:/biospecimen');
+INSERT INTO `sys_resource` VALUES ('a114f29b98a6faa95ac89139008f0e8c', '会议编辑', '/parkmeeting/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/parkmeeting/{id}');
+INSERT INTO `sys_resource` VALUES ('a2cf21f89380c679e13e76a46e63de18', '角色查询(分页)', '/role/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/role/page');
+INSERT INTO `sys_resource` VALUES ('a36d86152fb3241feef81a9ccee6faed', '生态环境查询', '/ecosystem/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/ecosystem/page');
+INSERT INTO `sys_resource` VALUES ('a9301ba0ce8390ecd756fb60b0487496', '科普作品编辑', '/sciencework/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/sciencework/{id}');
+INSERT INTO `sys_resource` VALUES ('ab34bcc1abb35eb4c7926c4f8e88bfa0', '展板查询(分页)', '/displayboard/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/displayboard/page');
+INSERT INTO `sys_resource` VALUES ('abb48abd102deb57718e6210fd5b55f9', '矿权情况编辑', '/mineralright/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/mineralright/{id}');
+INSERT INTO `sys_resource` VALUES ('abe8fd7846f776abf7f9a52778a48cf0', '专家导游删除', '/parklibrary/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/parklibrary/{id}');
+INSERT INTO `sys_resource` VALUES ('af29194331dabc32c641585380ff714f', '游客统计查询(分页)', '/gueststat/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/gueststat/page');
+INSERT INTO `sys_resource` VALUES ('af63a08383a750461f23208b6d99bfc1', '重叠情况编辑', '/overlapping/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/overlapping/{id}');
+INSERT INTO `sys_resource` VALUES ('b0b5dc6a4d472e5160e289eee92ad5d4', '公园查询(列表)', '/park/list', 'GET', '3', '2020-01-02 11:15:36', 'GET:/park/list');
+INSERT INTO `sys_resource` VALUES ('b11f70e89e5f1fd419cce8af6f632e92', 'openApi自然景观详情', '/openApi/naturallandscapeInfo1', 'GET', '2', '2020-01-02 11:15:36', 'GET:/openApi/naturallandscapeInfo1');
+INSERT INTO `sys_resource` VALUES ('b42c4411f27e50bafc6094b31b323996', '自然景观删除', '/naturallandscape/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/naturallandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('b4a89208a3f348ad68f57a0ca16c94ec', '公园删除', '/park/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/park/{id}');
+INSERT INTO `sys_resource` VALUES ('b5bd54c21e5412a49f4f656c8f33f77b', '人文景观添加', '/humanlandscape', 'POST', '1', '2020-01-02 11:15:36', 'POST:/humanlandscape');
+INSERT INTO `sys_resource` VALUES ('b74d54f1f4be2958369a704a50f6900a', '交流互展添加', '/exchangeexhibition', 'POST', '3', '2020-01-02 11:15:36', 'POST:/exchangeexhibition');
+INSERT INTO `sys_resource` VALUES ('b799b91c2cb5d49953a7308c93aef3e6', '人文展品删除', '/humenexhibit/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/humenexhibit/{id}');
+INSERT INTO `sys_resource` VALUES ('b7b1c22076c0d28c8d0fe4c0b09b6a6e', '角色编辑', '/role/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/role/{id}');
+INSERT INTO `sys_resource` VALUES ('b9766aef2e0a38ab87f640ca592c3569', '科普作品删除', '/sciencework/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/sciencework/{id}');
+INSERT INTO `sys_resource` VALUES ('bab73118731876a830ed12630846422d', '博物馆展厅查询(分页)', '/museumexhibition/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/museumexhibition/page');
+INSERT INTO `sys_resource` VALUES ('bb72308d143b0fc7a397e2756fbc8d6f', 'openApi人文景观列表', '/openApi/humanlandscapeList', 'GET', '2', '2020-01-02 11:15:36', 'GET:/openApi/humanlandscapeList');
+INSERT INTO `sys_resource` VALUES ('bc90809c5084a45eda6ece88e426d0b8', '生态环境删除', '/ecosystem/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/ecosystem/{id}');
+INSERT INTO `sys_resource` VALUES ('c2db9729dcd4a7d703e45411bb445dfd', '账户密码修改', '/account/password', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/account/password');
+INSERT INTO `sys_resource` VALUES ('c2f8625dfb6b6be6237567391faf0e62', '文物保护单位查询(分页)', '/culturalsites/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/culturalsites/page');
+INSERT INTO `sys_resource` VALUES ('c360a16bbc9b4c5a8378d48bb1fa4ffd', '专题研究删除', '/parktopic/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/parktopic/{id}');
+INSERT INTO `sys_resource` VALUES ('c7e7ed1fdcc753f9fb5aab85bc639da6', '社会经济状况编辑', '/socialeconomy/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/socialeconomy/{id}');
+INSERT INTO `sys_resource` VALUES ('c83ae91d496426d8dc8c8d265f959cd0', '重叠情况查询(分页)', '/overlapping/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/overlapping/page');
+INSERT INTO `sys_resource` VALUES ('c950d0767bbe74702259d06768faa283', '文物保护单位编辑', '/culturalsites/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/culturalsites/{id}');
+INSERT INTO `sys_resource` VALUES ('ca6fc80fa67b8178d040d951efed929e', '展板删除', '/displayboard/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/displayboard/{id}');
+INSERT INTO `sys_resource` VALUES ('cb5c88079e3665683307a99ee46a865e', '导入xls', '/importBackup/xls', 'POST', '1', '2020-01-02 11:15:36', 'POST:/importBackup/xls');
+INSERT INTO `sys_resource` VALUES ('cc88c5473c49ef83cad40ab279db16bf', '标示解说查询(分页)', '/commentary/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/commentary/page');
+INSERT INTO `sys_resource` VALUES ('cd6de4b154e91389697aaa16f9e70f03', '地质标本查询(分页)', '/geospecimen/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/geospecimen/page');
+INSERT INTO `sys_resource` VALUES ('cf2f5e841d1fa963c3a511c4ea23c6b8', '科研论文添加', '/researchpaper', 'POST', '1', '2020-01-02 11:15:36', 'POST:/researchpaper');
+INSERT INTO `sys_resource` VALUES ('cf644f767183f7940a094d82fd075ed5', '影像资料删除', '/vediodocs/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/vediodocs/{id}');
+INSERT INTO `sys_resource` VALUES ('d1cee74a3c8ecc212ec1fbfffd7d4b7a', '缔结姊妹公园添加', '/parkrelation', 'POST', '3', '2020-01-02 11:15:36', 'POST:/parkrelation');
+INSERT INTO `sys_resource` VALUES ('d245ace645ea40e898178ee13c24297f', '用户密码重置', '/user/{id}/password', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/user/{id}/password');
+INSERT INTO `sys_resource` VALUES ('d260fc5e4c10a4fbd1661acb739c6119', '矿权情况删除', '/mineralright/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/mineralright/{id}');
+INSERT INTO `sys_resource` VALUES ('d289b64ef206771d89ed2670d93049b9', '地质遗迹景观添加', '/geolandscape', 'POST', '1', '2020-01-02 11:15:36', 'POST:/geolandscape');
+INSERT INTO `sys_resource` VALUES ('d374ba0bb7e6ed122a2c04cbdb759b81', '人文展品查询(分页)', '/humenexhibit/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/humenexhibit/page');
+INSERT INTO `sys_resource` VALUES ('d3ec728a0d9d66b8351cd0278962a384', '图片资料编辑', '/picdocs/{id}', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/picdocs/{id}');
+INSERT INTO `sys_resource` VALUES ('d431b135887822c5c012561c96f1ec84', '生态环境编辑', '/ecosystem/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/ecosystem/{id}');
+INSERT INTO `sys_resource` VALUES ('d4dcfc78a6b0f5f84ede3740b391825f', '社会经济状况删除', '/socialeconomy/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/socialeconomy/{id}');
+INSERT INTO `sys_resource` VALUES ('d6119390317deda395c1487d401dd47f', '管理人员删除', '/manageperson/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/manageperson/{id}');
+INSERT INTO `sys_resource` VALUES ('d6c4ff80beeec0e3f6968775b906600e', '文物保护单位删除', '/culturalsites/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/culturalsites/{id}');
+INSERT INTO `sys_resource` VALUES ('d7b1e397718a5e2bb30ee16d81fe8839', '展板编辑', '/displayboard/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/displayboard/{id}');
+INSERT INTO `sys_resource` VALUES ('d81bffa6ffd70cc443703820b5a95e8d', '账户菜单', '/account/menus', 'GET', '1', '2020-01-02 11:15:36', 'GET:/account/menus');
+INSERT INTO `sys_resource` VALUES ('d83a249e0e0ed84806ecba2fd8c7148d', '菜单父级查询(下拉框)', '/menu/combos', 'GET', '3', '2020-01-02 11:15:36', 'GET:/menu/combos');
+INSERT INTO `sys_resource` VALUES ('d8544217f479cfb39559e4b94f413aaa', '资源查询(所有)', '/resource/list', 'GET', '3', '2020-01-02 11:15:36', 'GET:/resource/list');
+INSERT INTO `sys_resource` VALUES ('dcd22be9d250bc20abed2b5390259a3f', '自然景观查询(分页)', '/naturallandscape/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/naturallandscape/page');
+INSERT INTO `sys_resource` VALUES ('dd00babb9be667747337654d68354531', '科普活动编辑', '/scienceactivity/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/scienceactivity/{id}');
+INSERT INTO `sys_resource` VALUES ('ddf4e3fd39264da50eec54cfd02731f4', '角色删除', '/role/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/role/{id}');
+INSERT INTO `sys_resource` VALUES ('de16f2ea5e499ebcb81154efec1d2df4', '游客统计添加', '/gueststat', 'POST', '3', '2020-01-02 11:15:36', 'POST:/gueststat');
+INSERT INTO `sys_resource` VALUES ('de2199682fdb8768d3dada69bf282f63', '管理机构查询(分页)', '/managementagency/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/managementagency/page');
+INSERT INTO `sys_resource` VALUES ('de8b6406105c3ea1c71de78e0870595e', '菜单状态设置', '/menu/{id}/status', 'PUT', '3', '2020-01-02 11:15:36', 'PUT:/menu/{id}/status');
+INSERT INTO `sys_resource` VALUES ('dfdff4d1f7e710eb21962c2f6df810b4', '管理人员查询(分页)', '/manageperson/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/manageperson/page');
+INSERT INTO `sys_resource` VALUES ('e113d9ae14c1ba583228d0974ccdfab1', '地质遗迹景观编辑', '/geolandscape/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/geolandscape/{id}');
+INSERT INTO `sys_resource` VALUES ('e39c62db55dba9e58d9f996096e97c63', '专家导游添加', '/parklibrary', 'POST', '1', '2020-01-02 11:15:36', 'POST:/parklibrary');
+INSERT INTO `sys_resource` VALUES ('e6785c61264683eaa3e7b6bcd5190f69', '法律法规添加', '/legal', 'POST', '1', '2020-01-02 11:15:36', 'POST:/legal');
+INSERT INTO `sys_resource` VALUES ('e742172f7e82773b48f7075ffbf3060c', 'openApi地质遗迹景观详情', '/openApi/geolandscapeInfo1', 'GET', '2', '2020-01-02 11:15:36', 'GET:/openApi/geolandscapeInfo1');
+INSERT INTO `sys_resource` VALUES ('e78940daf86b9ac5563d539e8802429c', '账户详情', '/account/info', 'GET', '1', '2020-01-02 11:15:36', 'GET:/account/info');
+INSERT INTO `sys_resource` VALUES ('e78b1e45561db580a21ebe962414aaa9', '自然景观添加', '/naturallandscape', 'POST', '1', '2020-01-02 11:15:36', 'POST:/naturallandscape');
+INSERT INTO `sys_resource` VALUES ('e8294671c0aeae7195fc3c43e2457436', '生物标本查询(分页)', '/biospecimen/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/biospecimen/page');
+INSERT INTO `sys_resource` VALUES ('e94e936ee35513a5cbaa0b670a806677', '博物馆基本情况添加', '/museum', 'POST', '1', '2020-01-02 11:15:36', 'POST:/museum');
+INSERT INTO `sys_resource` VALUES ('ea1ff9435f36746204efc424f2386a3e', '地质背景查询(分页)', '/geological/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/geological/page');
+INSERT INTO `sys_resource` VALUES ('eb0766e055b34846e6f0e8a003dc0f51', '产品推介删除', '/production/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/production/{id}');
+INSERT INTO `sys_resource` VALUES ('ec06a315849b5fe61ea032f908e04998', 'openApi人文景观详情', '/openApi/humanlandscapeInfo1', 'GET', '2', '2020-01-02 11:15:36', 'GET:/openApi/humanlandscapeInfo1');
+INSERT INTO `sys_resource` VALUES ('eed40b7746f536ba707e8c7b3bc3d600', '公园信息添加', '/parkinfo', 'POST', '3', '2020-01-02 11:15:36', 'POST:/parkinfo');
+INSERT INTO `sys_resource` VALUES ('ef0c2202d21ea0a946a1aa1fc96b1099', '交流互展删除', '/exchangeexhibition/{id}', 'DELETE', '3', '2020-01-02 11:15:36', 'DELETE:/exchangeexhibition/{id}');
+INSERT INTO `sys_resource` VALUES ('f084f47ab2ec0ce7d2846ca0465f9926', '采样信息查询(分页)', '/sampling/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/sampling/page');
+INSERT INTO `sys_resource` VALUES ('f11ce5f9757df03f88b94a924c1f3512', '导出xls', '/exportxls', 'GET', '1', '2020-01-02 11:15:36', 'GET:/exportxls');
+INSERT INTO `sys_resource` VALUES ('f4912e9c64d9c95d761a642caac77a3c', '地灾信息添加', '/earthquake', 'POST', '1', '2020-01-02 11:15:36', 'POST:/earthquake');
+INSERT INTO `sys_resource` VALUES ('f4b369788d0d337b34bfe8e763168124', 'openApi自然景观详情', '/openApi/naturallandscapeInfo', 'GET', '2', '2020-01-02 11:15:36', 'GET:/openApi/naturallandscapeInfo');
+INSERT INTO `sys_resource` VALUES ('f86b169919bf24ce08507f2dcea7de8f', '标示解说编辑', '/commentary/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/commentary/{id}');
+INSERT INTO `sys_resource` VALUES ('f880f8a35613b38182612a061291f8a5', '菜单查询(所有)', '/menu/list', 'GET', '3', '2020-01-02 11:15:36', 'GET:/menu/list');
+INSERT INTO `sys_resource` VALUES ('f8afb5ec48a65cb7c9cd7e9372118748', '生态环境添加', '/ecosystem', 'POST', '1', '2020-01-02 11:15:36', 'POST:/ecosystem');
+INSERT INTO `sys_resource` VALUES ('fad1ecbafb22f1ac0f63486d71393745', '用户查询(分页)', '/user/page', 'GET', '3', '2020-01-02 11:15:36', 'GET:/user/page');
+INSERT INTO `sys_resource` VALUES ('fcefc2a889894309e8eaff8f5762240a', '法律法规编辑', '/legal/{id}', 'PUT', '1', '2020-01-02 11:15:36', 'PUT:/legal/{id}');
+INSERT INTO `sys_resource` VALUES ('fd1c22d987d0c74044917917a85acfdc', '矿权情况添加', '/mineralright', 'POST', '1', '2020-01-02 11:15:36', 'POST:/mineralright');
+INSERT INTO `sys_resource` VALUES ('fdbe8e0f7ae93c33c165fdbc68fdb719', '社会经济状况查询(分页)', '/socialeconomy/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/socialeconomy/page');
+INSERT INTO `sys_resource` VALUES ('fe7a8147c0721226e5de8e3e8f6ebf93', '专家导游查询(分页)', '/parklibrary/page', 'GET', '1', '2020-01-02 11:15:36', 'GET:/parklibrary/page');
+INSERT INTO `sys_resource` VALUES ('ffdbcf5be43ec6452a9b568c833f8f0a', '法律法规删除', '/legal/{id}', 'DELETE', '1', '2020-01-02 11:15:36', 'DELETE:/legal/{id}');
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -2554,7 +2606,7 @@ CREATE TABLE `sys_user` (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', '超级管理员', 'root@163.com', '13866668888', '0', '1', '2019-08-23 10:56:12', '2019-11-22 14:13:09', 'admin', '$apr1$admin$Sl27Fb32LUppR7w2Ovw4V/', '127.0.0.1');
+INSERT INTO `sys_user` VALUES ('1', '超级管理员', 'root@163.com', '13866668888', '0', '1', '2019-08-23 10:56:12', '2019-12-13 11:05:20', 'admin', '$apr1$admin$Sl27Fb32LUppR7w2Ovw4V/', '127.0.0.1');
 INSERT INTO `sys_user` VALUES ('2', '阿大', '8888@163.com', '13888888888', '0', '1', '2019-08-23 10:57:17', '2019-08-23 10:57:17', 'lichee', '$apr1$lichee$2XUDSi4pQtv7EUyYcswB91', '127.0.0.1');
 INSERT INTO `sys_user` VALUES ('3', '李勇', '946509621@qq.com', '17723321245', '0', '1', '2019-09-17 17:31:06', '2019-11-22 11:19:27', 'liyong', '$apr1$liyong$f4uNIOJAUPQKwkBTU.QyD/', '127.0.0.1');
 
@@ -2647,7 +2699,7 @@ CREATE TABLE `vediodocs` (
   `url` text COMMENT '存储地址',
   `note` text COMMENT '文件描述',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='影像资料';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='影像资料';
 
 -- ----------------------------
 -- Records of vediodocs
@@ -2665,6 +2717,13 @@ INSERT INTO `vediodocs` VALUES ('10', '1', '10', '中国自贡世界地质公园
 INSERT INTO `vediodocs` VALUES ('11', '1', '11', '国家地质公园申报材料', '', '地质公园管理处', '/files/vediodocs/15739997955999-地质公园申报书正式.pdf,/files/vediodocs/157399979561110-自贡恐龙地质公园总体规划报告书.pdf,/files/vediodocs/157399979561411-地质公园综合考察报告.pdf,/files/vediodocs/157399979567912-自贡恐龙博物馆（公园）照片集.pdf', '');
 INSERT INTO `vediodocs` VALUES ('12', '1', '12', '自贡世界地质公园吉成井井盐矿山遗迹保护项目可行性研究报告2014-11-29', '2014年11月', '自贡市国土资源局', '/files/vediodocs/157399994814913-自贡世界地质公园吉成井井盐矿山遗迹保护项目可行性研究报告2014-11-29.pdf', '');
 INSERT INTO `vediodocs` VALUES ('13', '1', '13', '自贡画册', '无', '无', '/files/vediodocs/157400005759614-1-17.pdf,/files/vediodocs/157400005763115-134-141.pdf,/files/vediodocs/157400005778916-142-163.pdf,/files/vediodocs/157400005805017-70-101.pdf,/files/vediodocs/157400005811718-102-133.pdf,/files/vediodocs/157400005812719-18-69.pdf', '');
+INSERT INTO `vediodocs` VALUES ('14', '1', '14', '自贡地质公园2012-2016年交流合作项目统计表', '', '地质公园管理处', '/files/vediodocs/15744327671560-2012—2016对外交流合作情况统计Statistical table of the Exchange and Cooperation Projects of Zigong Geopark 2012 - 2016.xlsx', '');
+INSERT INTO `vediodocs` VALUES ('15', '1', '15', '2016中评估——科研项目情况统计表Statistical Table of Scientific Research Projects of Zigong Geopark 2012 - 2016', '', '地质公园管理处', '/files/vediodocs/15744328146961-2016中评估——科研项目情况统计表Statistical Table of Scientific Research Projects of Zigong Geopark 2012 - 2016.doc', '');
+INSERT INTO `vediodocs` VALUES ('16', '1', '16', '自贡地质公园野外考察指南', '', '地质公园管理处', '/files/vediodocs/15744330878812-自贡新科考指南715.docx', '');
+INSERT INTO `vediodocs` VALUES ('17', '1', '17', '自贡盐运水道图件和文字', '', '地质公园管理处', '/files/vediodocs/15746031297780-盐运路线图.png,/files/vediodocs/15746031297780-自贡盐运水道中英双语--校对修改好.doc', '');
+INSERT INTO `vediodocs` VALUES ('18', '1', '18', '解说词', '', '地质公园管理处', '/files/vediodocs/15746033180167-荣县大佛解说.doc,/files/vediodocs/15746033180164-恐龙馆解说词.doc,/files/vediodocs/15746033180165-艾叶解说词.docx,/files/vediodocs/15746033180166-燊海井解说词(双语).doc,/files/vediodocs/15746033180163-荣县大佛寺解说（定稿） (双语).doc,/files/vediodocs/15746033180162-讲解词（最新稿）dinosaur+museum（英译文）.docx,/files/vediodocs/157460331818412-盐业历史博物馆讲解词.docx,/files/vediodocs/157460331818211-盐业历史博物馆讲解词(双语).docx,/files/vediodocs/15746033181508-石笋沟.docx,/files/vediodocs/157460331818110-朱家庙村.docx,/files/vediodocs/15746033181809-燊海井解说词.doc', '');
+INSERT INTO `vediodocs` VALUES ('19', '1', '19', '自贡地质公园工作进展报告2012-2015', '', '地质公园管理处', '/files/vediodocs/157460336767113-B表英文-7.29.docx,/files/vediodocs/157460336767214-B表中文-7.29.docx,/files/vediodocs/157460336822315-自贡地质公园工作进展报告2012-2015中文729.docx,/files/vediodocs/157460336823716-自贡地质公园工作进展报告2012-2015英文729.docx', '');
+INSERT INTO `vediodocs` VALUES ('20', '1', '20', '自贡世界地质公园新增区域地质遗迹资源调查项目设计书', '', '四川省地质矿产勘查开发局区域地质调查队', '/files/vediodocs/157460375642117-自贡地质遗迹调查设计书2019.4.9.docx,/files/vediodocs/157460376508418-1地质图.JPG,/files/vediodocs/157460377112319-2遥感影像图.JPG,/files/vediodocs/157460378172820-3地质遗迹及其他自然人文资源分布图.JPG,/files/vediodocs/157460384946121-4工作部署图.JPG', '');
 
 -- ----------------------------
 -- Table structure for vrdata
