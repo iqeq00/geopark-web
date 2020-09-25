@@ -98,7 +98,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
                 ids.add(val.getId());
             });
             if(ids.size() > 0) {
-                removeByIds(ids);
+                userRoleService.removeByIds(ids);
             }
             userRoleService.saveBatch(roleIds.stream().map(e -> new SysUserRole(uid, e)).collect(Collectors.toList()));
         }
